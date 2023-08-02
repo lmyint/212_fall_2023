@@ -1,0 +1,79 @@
+---
+title: "Topic 2: Advanced Data Visualization in ggplot2"
+---
+
+```{r echo=FALSE}
+library(tidyverse)
+```
+
+# Learning goals
+
+After this lesson, you should be able to:
+
+- Navigate the [ggplot2 reference page](https://ggplot2.tidyverse.org/reference/) to find the functions needed to create a desired visualization
+- Use the information on a function help page to construct desired plot features
+    - Scan the information in the **Usage** section to identify function arguments that must be set
+    - Understand how the function arguments work by using information in the **Arguments** section
+    - Annotate visual features of plots in the **Examples** section with their corresponding **Aesthetics**
+- Identify when it would be necessary to use different `data` arguments within the `ggplot()` and `geom_()` layers
+
+# Case study: recreating a NYT visualization
+
+We are going to recreate [this NYT visualization](https://www.nytimes.com/interactive/2016/02/19/us/2015-year-in-weather-temperature-precipitation.html) on record setting temperatures by expanding our `ggplot2` toolbox.
+
+**Class exercise 1:** Examine the temperature visualization. What variables underlie the visualization, and how do they map to visual elements (e.g., position, size, shape, and color of the glyphs)?
+
+```{text}
+#| code-fold: true
+#| code-summary: Response
+Insert solution here.
+```
+
+------------------------------------------------------------------------
+
+We can explore the "Geoms" section of the [ggplot2 reference page](https://ggplot2.tidyverse.org/reference/) to find a `geom` that corresponds to the visual elements in the temperature plot.
+
+**Class exercise 2:** Using both the small example visuals on the right and the names of the `geom`s, brainstorm some possibilities for `geoms` we might use to recreate the temperature visualization.
+
+------------------------------------------------------------------------
+
+We need to explore further by opening up the `geom` reference pages to understand if a particular `geom` is suitable for our task. We'll look at the following:
+
+- [`geom_bar()`](https://ggplot2.tidyverse.org/reference/geom_bar.html)
+- [`geom_linerange()`](https://ggplot2.tidyverse.org/reference/geom_linerange.html)
+- [`geom_rect()`](https://ggplot2.tidyverse.org/reference/geom_tile.html)
+
+When looking at a help page, it is useful to first look at the **Usage** and **Arguments** sections. The **Usage** section shows all of the possible inputs (arguments) to the geom--these are all of the ways that a `geom` can be customized. The **Arguments** section explains what each of these arguments does and the possible values they can take.
+
+```{r eval=FALSE}
+data(diamonds)
+
+ggplot(diamonds, aes(cut)) +
+    geom_bar()
+
+ggplot() +
+    geom_bar(mapping = aes(cut), data = diamonds)
+
+ggplot() +
+    geom_bar(aes(cut), diamonds)
+```
+
+Go through the full thought process for this part in the class QMD document, recording all intermediate plots and the decision making leading to the next iteration. Also discuss alt text in code chunk options.
+
+```{r}
+weather <- read_csv("sfo_weather.csv")
+
+ggplot(weather, aes(x = dateInYear)) +
+    geom_linerange(aes(ymin = RecordLow, ymax = RecordHigh), color = "#ECEBE3") +
+    geom_linerange(aes(ymin = NormalLow, ymax = NormalHigh), color = "#C8B8BA") +
+    geom_linerange(aes(ymin = Low, ymax = High), color = "#A90248") +
+    theme_classic()
+```
+
+# Practice
+
+In pairs, you will go through the same steps as above for the precipitation data. Throughout this course, we will be using the **pair programming** technique. Pair programming is [used effectively in industry](https://hackernoon.com/the-ultimate-guide-to-pair-programming-b606625bc784) to speed up individual employee's learning of a company's codebase and reduce time wasted on fixing bugs.
+
+Include information on driver and navigator responsibilities--link to video to watch in class?
+
+Remember to run into a new error!

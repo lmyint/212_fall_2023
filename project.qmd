@@ -1,0 +1,41 @@
+---
+title: "Project"
+sidebar: false
+---
+
+# Goal
+
+The goal of the project is to **build something awesome** that you can showcase on your digital portfolio (your personal website).
+
+# Project details
+
+You will be working on this project over the course of the semester. 
+
+Your project may align with work/projects from other classes--this is encouraged! Combining multiple course perspectives can significantly increase the quality of your work. There is a hard requirement that your project be able to be hosted digitally as part of your portfolio.
+
+# Project milestones
+
+## Milestone 1
+
+Identify a data context that interests you. Identify 3 different data sources that relate to that context. We might not have covered all of the tools needed to acquire that data at this point, so check in with the instructor about the sources that you've found to make sure that they're workable.
+
+- Note to self: Provide general guidance on what sources of data would be appropriate
+- Due date:
+
+## Milestone 2
+
+Brainstorm 3 questions about your data context and sources that pique your curiosity.
+
+- Shortly after milestone 1 because question-asking and iteration on that question-asking is key.
+
+## Milestone 3
+
+Perform the data acquisition, wrangling, visualization, and modeling needed to answer Research Question 1. Note that your question might not be amenable to modeling (or to modeling that you've learned about so far). In that case, I'm not requiring you to use modeling. Visualization is required though.
+
+## Milestone 4
+
+Same as Milestone 3 but for Research Question 2.
+
+## Milestone 5
+
+Same as Milestone 3 but for Research Question 3.

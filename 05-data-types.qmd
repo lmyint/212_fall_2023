@@ -1,0 +1,260 @@
+---
+title: "Topic 5: Wrangling numerics, logicals, factors, and dates"
+---
+
+# Learning goals
+
+After this lesson, you should be able to:
+
+- Determine the class of a given object and identify concerns to be wary of when manipulating that class of object (classes: numerics, logicals, factors, dates, strings, lists, data.frames/tibbles, matrices)
+- Explain what vector recycling is, when it is used, when it can be a problem, and how to avoid those problems
+- Explain the difference between implicit and explicit coercion
+- Extract date-time information using the `lubridate` package
+- Recode and manage factors using the `forcats` package
+- Manipulate and explore strings using the `stringr` package
+- Lists:
+    - See how many objects (like the result of `lm()`) are lists
+    - Subset lists by index and name
+    - Explore the structure of nested lists with `str()`
+- Data frames/tibbles
+    - Explain the difference between a `data.frame` and a `tibble` (list columns)
+- Matrices
+    - Subset matrices
+- Write R code to wrangle data from these different types
+- Recognize several new R errors and warnings related to data types
+
+
+# Setup
+
+```{r}
+library(tidyverse)
+library(lubridate)
+data(lakers)
+```
+
+# Numeric data
+
+## Numeric and integer classes
+
+Numbers that we see in R are generally of the `numeric` class, which are numbers with decimals. The `c()` function below is a way to create a vector of multiple numbers.
+
+```{r}
+numbers <- c(1, 2, 3)
+class(numbers)
+```
+
+R also has an `integer` class which will most often be formed when using the `:` operator to form regularly spaced sequences. 
+
+```{r}
+integers <- 1:3
+class(integers)
+```
+
+It will be important to know how to check whether a number is a `numeric` or `integer` because we'll be using the `purrr` package very shortly which checks types very strictly (e.g., `1` as an integer cannot be combined with `1` as a numeric)
+
+## Vector recycling
+
+Suppose that we wanted to update just the first two `points` values (e.g., we learned of a typo).
+
+```{r}
+point_update <- c(2,3)
+lakers2 <- lakers %>%
+    mutate(points = points + point_update)
+head(lakers$points)
+head(lakers2$points)
+```
+
+Uh oh! It looks like the `2,3` point update vector got repeated multiple times. This is called **vector recycling**. If you are trying to combine or compare vectors of different lengths, R will repeat (recycle) the shorter one as many times as it takes to make them the same length. When the longer vector's length isn't a multiple of the smaller one, we'll get a warning.
+
+```{r}
+point_update <- c(2,3,2)
+lakers2 <- lakers %>%
+    mutate(points = points + point_update)
+```
+
+## Explicit coercion
+
+In R there is a family of **coercion** functions that force a variable to be represented as a particular type. We have `as.numeric()` and `as.integer()` for numbers.
+
+Most commonly we will use these when numbers have accidentally been read in as a `character` or a `factor`. (More on factors later.)
+
+In the example below we have a set of 4 points values, but the last entry was mistakenly typed as a space in the spreadsheet (instead of as an empty cell). We can see when we display `points` that all of the values have quotes around them and that the class of the `points` object is a `character` vector. (More on working with `character` objects next time.)
+
+```{r}
+points <- c(2, 3, 0, " ")
+points
+class(points)
+```
+
+# Logical data
+
+Logical data result from comparisons:
+
+- Comparing numeric data uses the following operators
+    - `>`, `<`: greater and less than
+    - `>=`, `<`: greater and less than or equal to
+    - `==` exactly equal
+- Characters
+    - `variable=="specific choice"`
+    - `variable %in% c("choice1", "choice2", "choice3")`
+- Combining logical statements
+    - `&`: and
+    - `|`: or
+    
+Example: filter to 3-pointers against the Minnesota Timberwolves (`MIN` team).
+
+```{r}
+lakers_subs <- lakers %>%
+    filter(points==3 & team=="MIN")
+lakers_subs
+
+# These give the same results
+lakers %>%
+    filter(points==3, team=="MIN")
+lakers %>%
+    filter(points==3) %>%
+    filter(team=="MIN")
+```
+
+
+
+# Dates
+
+Creating date-time objects
+
+`ymd() ydm() mdy() myd() dmy() dym() yq() ym() my()`
+
+`ymd_hms() ymd_hm() ymd_h() dmy_hms() dmy_hm() dmy_h() mdy_hms() mdy_hm() mdy_h() ydm_hms() ydm_hm() ydm_h()`
+
+Extracting components of a date-time
+
+`year(), month(), day(), week(), hour(), minute(), second()`
+
+Now
+
+`now()`, `today()`
+
+Subtracting dates
+
+# Factors
+
+In R, factors are comprised of two components: the actual values of the data and the possible levels within the factor. Thus, to create a factor, you need to supply both these pieces of information.
+
+For example, if we were to create a character vector of the twelve months, we could certainly do that:
+
+
+```{r}
+## Update this after doing ymd() processing on lakers
+## all 12 months
+all_months <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+
+## our data
+some_months <- c("Mar", "Dec", "Jan",  "Apr", "Jul")
+```
+
+However, if we were to sort this vector, R would sort this vector alphabetically.
+
+```{r}
+# alphabetical sort
+sort(some_months)
+```
+
+While you and I know that this is not how months should be ordered, we haven’t yet told R that. To do so, we need to let R know that it’s a factor variable and what the levels of that factor variable should be.
+
+```{r}
+mon <- factor(some_months, levels = all_months)
+mon
+```
+
+Here, we specify all the possible values that the factor could take in the levels = all_months argument. So, even though not all twelve months are included in the some_months object, we’ve stated that all of the months are possible values. Further, when you sort this variable, it now sorts in the sensical way!
+
+**Update to use chickwts dataset?**
+
+```{r eval=FALSE}
+library(forcats)
+fct_relevel()
+fct_inorder() # skip this one?
+fct_infreq()
+fct_rev()
+fct_reorder()
+fct_recode()
+ifelse() + factor()
+```
+
+
+
+# Setup
+
+```{r}
+library(tidyverse)
+library(stringr)
+```
+
+# Strings
+
+```{r}
+str_length("hello")
+str_c("...", "hi", sep = " ")
+str_sub(c("Good", "Morning"), start = c(1,1), end = c(1,2)) # Also negative start and end
+str_sort(c("banana", "apple"))
+```
+
+## Regular expressions
+
+- `str_view()` - View the first occurrence in a string that matches the regex
+- `str_view_all()` - View all occurrences in a string that match the regex
+- `str_count()` - count the number of times a regex matches within a string
+- `str_detect()` - determine if regex is found within string
+- `str_subset()` - return subset of strings that match the regex
+- `str_extract()` - return portion of each string that matches the regex
+- `str_replace_{all}()` - replace portion of string that matches the regex with something else
+- `str_remove_{all}()` - like `str_replace(x, the_pattern, "")
+
+```{r}
+
+```
+
+
+## `glue` package
+
+```{r}
+library(glue)
+msleep %>%
+  mutate(description = glue("The {name} typically sleeps for {sleep_total * 60} minutes and is awake for {awake * 60} minutes each day.")) %>% 
+  select(name, sleep_total, awake, description)
+```
+
+## `tidytext` package
+
+
+# Lists
+
+Creating a named list
+
+Subsetting by numerical index, by name. Single and double bracket subsetting
+
+
+
+# Data frames/tibbles
+
+as.data.frame() and View() for viewing a long data frame
+
+
+
+
+# Matrices
+
+Most commonly comes up as a correlation matrix. row and colnames of matrices. Subsetting by numerical index or name
+
+
+
+
+
+
+
+
+
+
+
+
+

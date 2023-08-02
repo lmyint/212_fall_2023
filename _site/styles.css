@@ -1,0 +1,36 @@
+/********************************************************************/
+/************************** Schedule table **************************/
+/********************************************************************/
+.tg {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.tg td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 14px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+.tg th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 18px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+    background-color: #d7eaf7;
+}
+.tg .topleft {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top;
+}
+.tg .center {
+    text-align: center;
+    vertical-align: top;
+}

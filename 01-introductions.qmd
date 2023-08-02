@@ -1,0 +1,13 @@
+---
+title: "Topic 1: Introductions"
+---
+
+# Goals for today
+
+- Reflect on your goals for taking the course and what has worked and not worked for you as a learner in the past
+- Move the syllabus from a preliminary closer to a final stage: What should change about the syllabus? What needs to be clarified? What should stay the same?
+
+Keyboard shortcuts as a fun way to feel more like a data scientist
+
+- Cursor navigation, deleting words, selecting words
+- RStudio shortcuts

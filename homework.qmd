@@ -1,0 +1,17 @@
+---
+title: "Homework"
+sidebar: false
+---
+
+General instructions for homework:
+
+- Process section:
+    - On getting help
+        - Things I Googled or asked on ChatGPT: There is no shame in having items here! But making note of this is important for noticing what you're not "fluent" in yet. (e.g., when learning a new language, it would be helpful to write down words that you frequently have to look up to translate)
+        - Things I consulted with peers about
+        - Other resources that I consulted
+    - What was easy, medium, hard? Why?
+
+Common elements of weekly homework:
+
+- First part will always be to work on the most recent Tidy Tuesday.

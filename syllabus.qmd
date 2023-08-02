@@ -1,0 +1,272 @@
+---
+title: "Preliminary Syllabus"
+sidebar: false
+---
+
+<span style="color: red;">
+**Note to self:** Consult CUE syllabus review guide to make sure the tone of this syllabus is on target
+</span>
+
+# What is this course about?
+
+> Nature doesn't reveal its secrets easily.<br>
+> - *Thomas Kempa*
+
+Nor do data.
+
+But that is what can make data science so thrilling!
+
+This course is about empowering you with the **wisdom** to ask the best questions of data--ones that are meaningful, adaptive, and equity-minded--and the **technical savvy** to answer them. 
+
+While we will cover many important skills, they won't cover everything there is to know in a data science career. My other primary goal is for you to refine your **learning process** so that you feel confident learning new skills on your own in the future.
+
+::: {.callout-note collapse="true"}
+## Course catalog description
+
+This second course in the data science curriculum emphasizes advanced data wrangling and manipulation, interactive visualization, writing functions, working with data in databases, version control, and data ethics. Through open-ended and interdisciplinary projects, students practice the constant feedback loop of asking questions of the data, manipulating the data to help answer the question, and then returning to more questions. Prerequisite(s): COMP 112 and COMP 123 and STAT 155; STAT 253 recommended but not required.
+:::
+
+## Course learning goals
+
+By the end of this course you should be able to:
+
+- Sustain a habit of self-reflection in your learning process so that you are equipped for independent learning
+- Sustain a habit of self-reflection in your collaborative work so that you can form community no matter where you go
+- Create a variety of visualizations in ggplot2 that go beyond the plot types that you learned in STAT/COMP 112
+- Wrangle and visualize spatial data
+- Create interactive web applications and visualizations that adapt to user input
+- Wrangle arbitrarily messy data using functional programming tools in R
+- Acquire data from a variety of sources
+    - Write statements in structured query language (SQL) to access data from databases
+    - Write code to access data from application programming interfaces (APIs)
+    - Write code to scrape data from websites and evaluate the ethics of collecting such data
+- Use appropriate methods when working with missing data
+- Translate code between R and Python
+- Articulate the role of machine learning and causal inference in data science work
+- Craft compelling data stories with attention to ethical considerations
+- Maintain a digital portfolio of your data science projects
+
+
+
+# How to contact me
+
+I love getting to talk to students outside of class time--whether class-related or not. Come chat with me!
+
+I'll be setting times for drop-in hours based on feedback on what times are best for you. ***(Rename to AMA hours???)*** I'll update my drop-in hours here when they're finalized.
+
+**Where:** Olin-Rice 232<br>
+**When:** TBD
+
+I'm also happy to meet one-on-one with you if my normal drop-in hours don't work. You can schedule a time to meet with me via [Calendly](https://calendly.com/lmyint).
+
+I'll also often be at the Leonard Center from about 4:30-5:10 some weekdays. Feel free to stop by and chat!
+
+
+
+# Guiding values
+
+## Community is key
+
+There's something sacred about going on a journey in tandem with others. Triumphs feel more spirited and challenges feel less daunting when we can share them with others facing the same things. As a parent, it has been my lifeline to have friends with young children about the same age as my daughter for exactly this reason.
+
+Cultivating a good classroom community is one of my top priorities for us this semester. I'm not expecting everyone in the course to become best friends, but I do hope that in the process of learning together, you will come to value the insights that you gain from and give to your peers.
+
+## Reflection is paramount
+
+The *content* you learn will be cool (unbiased opinion!), but it is a **guarantee** that as technology evolves, some part of it will become out of date during your careers. What you will need to rely on when you leave Macalester is what I want to ensure you cultivate now: a good learning process. And the cornerstone of a good learning process is **reflection**.
+
+Reflection is not just fundamental to learning content--it's fundamental to learning any sort of intellectual, emotional, or physical skill. For this reason, I will be prioritizing reflection as a goal for our course in both content learning and collaborative learning (groupwork). (Note that these reflection goals are the first two course learning goals.)
+
+## Mistakes are valuable
+
+> An expert is a person who has made all the mistakes which can be made in a narrow field.<br>
+> - *Niels Bohr, Nobel Prize-winning physicist*
+
+I don't feel comfortable working with a new R package until I've seen the same errors over and over again. Seeing new errors helps me understand the constraints of the code and the assumptions that I was making about my data.
+
+We're going to be seeking out mistakes like my cats hunt for leftover meat scraps.
+
+(Insert picture of my cats)
+
+## Communication is a superpower
+
+Every time I go to a conference talk on a technical topic, it is striking how quickly laptops or phones come out because of the inability to follow. Academics notoriously struggle to make ideas accessible to others.
+
+I want communication to be very different for you.
+
+Every time you communicate ideas--whether through writing, visuals, or oral presentation--I want you to be a total boss. The end product of strong communication is a better experience for all those who have given you their attention. What's more, the *process* of crafting effective communication is invaluable for deepening your own understanding:
+
+<center>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Read to collect the dots, write to connect them <a href="https://t.co/YbgnKKFUNn">pic.twitter.com/YbgnKKFUNn</a></p>&mdash; David Perell (@david_perell) <a href="https://twitter.com/david_perell/status/1411871612702543872?ref_src=twsrc%5Etfw">July 5, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+
+
+
+# How to thrive and what to expect
+
+When taking a new course, figuring out the right workflow/cadence of effort throughout the week can be a big adjustment. And most of you have to do this for 4 different courses! Below are some suggestions for what to expect in the course and how to focus your time and attention before, during, and after class:
+
+## Before class
+
+Most class periods will have a required reading and associated Moodle checkpoint. My goal for the readings is for you to be familiarize yourself with concepts so that you're not seeing them for the first time in class. The checkpoint questions highlight key ideas from the reading and follow the same order as ideas from the reading.
+
+**Suggestion:** Scan the checkpoint questions before the reading to preview what the main ideas are. Keep these main points in mind as you read to guide your attention, and fill in answers to checkpoint questions as you read. Record or upvote questions in our Course Questions Google Doc ***(CREATE A GDOC AND LINK)***
+
+About every other week, we will discuss a podcast for the first ~20 minutes of class. These podcasts are meant to expose you aspects of data science in industry. Record anything that you're curious about, and come prepared to discuss.
+
+::: {.callout-tip collapse="false"}
+## Your own media contributions
+
+Throughout the semester, if you come across any media that is relevant to the course, feel free to suggest it as a discussion piece by emailing the instructor or posting it on our Slack channel. (ADD LINK)
+:::
+
+## During class
+
+Class time will be a mix of interactive lecture and longer stretches of group work. During the lecture portion, I will pause explanation frequently to prompt a short exercise or ask questions that you'll reflect on individually or together.
+
+**Suggestion:** Review your learning process and groupwork reflections at the start of class to frame how you want to engage in class. (Perhaps you've noted a struggle and want to try a new strategy.) I'll always leave a few minutes at the end of class for synthesis. Use this time to update your reflections and summarize the key takeaways from class.
+
+## After class
+
+**Suggestion:** After learning a new topic in class, it is helpful to immediately attempt the related exercises on the weekly homework.
+
+
+
+# Grading
+
+For a long time, I have been uncomfortable with the outsized role that letter grades play in education. The article *Teaching More by Grading Less (Or Differently)* by Schinske and Tanner ([source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4041495/)) was instrumental in shaping my viewpoints and may be an interesting read for you.
+
+In short, the letter grading system has a troubling history, and providing intermediate grades as feedback (e.g., letter or point grades on homework and exams) does not help students in the ways that teachers want: in general, it blocks students' understanding of the gaps in their knowledge and stifles a growth mindset.
+
+Unfortunately, I am required to submit a letter grade at the end of the course. I would like to propose the following ***preliminary*** grading system.
+
+::: {.callout-tip collapse="false"}
+As you read the following, make note of what uncertainties or worries you have and what you agree with.
+
+Come prepared to discuss with your classmates on the first day of class. We'll use the first day to collaboratively update this syllabus to be as beneficial to everyone as possible.
+:::
+
+```{=html}
+<style type="text/css">
+.tab-grading {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.tab-grading td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+.tab-grading th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+.tab-grading .tab-grading-9wq8 {
+    border-color: inherit;
+    text-align: center;
+    vertical-align: middle
+}
+.tab-grading .tab-grading-xwmr{background-color:#34ff34;border-color:inherit;text-align:left;vertical-align:top}
+.tab-grading .tab-grading-zk7v{background-color:#34ff34;border-color:inherit;text-align:center;vertical-align:middle}
+.tab-grading .tab-grading-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tab-grading .tab-grading-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tab-grading">
+<thead>
+  <tr>
+    <th class="tab-grading-0pky"></th>
+    <th class="tab-grading-7btt">Letter grade: A</th>
+    <th class="tab-grading-7btt">Letter grade: B</th>
+    <th class="tab-grading-7btt">Letter grade: C</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tab-grading-xwmr">Self-reflection in learning process</td>
+    <td class="tab-grading-zk7v" rowspan="2">Show <b>substantial growth</b> and <b>consistent thoughtfulness</b> throughout the semester</td>
+    <td class="tab-grading-zk7v" rowspan="2">Show <b>moderate</b> growth and thoughtfulness throughout the semester</td>
+    <td class="tab-grading-zk7v" rowspan="2">Show <b>some</b> growth and thoughtfulness throughout the semester</td>
+  </tr>
+  <tr>
+    <td class="tab-grading-xwmr">Self-reflection in collaborative learning (groupwork)</td>
+  </tr>
+  <tr>
+    <td class="tab-grading-0pky">Weekly homework</td>
+    <td class="tab-grading-9wq8">Pass <b>all</b> homework assignments</td>
+    <td class="tab-grading-9wq8">Pass <b>all but 1</b> homework assignment</td>
+    <td class="tab-grading-9wq8">Pass <b>all but 2</b> homework assignments</td>
+  </tr>
+  <tr>
+    <td class="tab-grading-0pky">Team teaching experience (around Week 5)</td>
+    <td class="tab-grading-9wq8" colspan="3">Design and teach a mini-lesson that meets specifications</td>
+  </tr>
+  <tr>
+    <td class="tab-grading-0pky">Final project</td>
+    <td class="tab-grading-0pky">Complete a project that is <b>high quality</span> in all of the following aspects:
+    <ul>
+      <li>Data wrangling, visualization, analysis, and interpretation</li>
+      <li>Workflow and organization<br>Addressing peer and instructor feedback</li>
+      <li>Giving feedback to peers</li>
+      <li>Ethical consideration and communication of results</li>
+    </td>
+    <td class="tab-grading-0pky">Complete a project that is <b>at least ok quality</b> in the aforementioned aspects and <b>high quality</b>in <b>some</b> aspects</td>
+    <td class="tab-grading-0pky">Complete a project that is <b>ok quality</b> in the aforementioned aspects</td>
+  </tr>
+</tbody>
+</table>
+```
+
+
+
+# Textbooks
+
+All textbooks are freely available online:
+
+- [Modern Data Science with R (3e)](https://mdsr-book.github.io/mdsr3e/) by Baumer, Kaplan, and Horton (Abbreviated as **MDSR**)
+- [R for Data Science (2e)](https://r4ds.hadley.nz/) by Wickham, Cetinkaya-Rundel, and Grolemund ((Abbreviated as **R4DS**))
+- [Introduction to Data Science: Data Analysis and Prediction Algorithms with R](http://rafalab.dfci.harvard.edu/dsbook/) by Irizarry (Abbreviated as **IDS**)
+- [Tidyverse Skills for Data Science](https://jhudatascience.org/tidyversecourse/) by Wright, Ellis, Hicks, and Peng (Abbreviated as **TSDS**)
+- [R Programming for Data Science](https://bookdown.org/rdpeng/rprogdatascience/) by Peng
+
+
+
+# Other policies
+
+## Late work
+
+x
+
+
+
+# Course project
+
+The best way to learn data science and feel like a data scientist is to work on meaningful data-driven projects. The course project will be a space for you to do just that! My goal is for you to complete a project that you would be excited to showcase on your digital portfolio (your personal website).
+
+
+
+# The environment you deserve
+
+I want you to succeed. Both here at Macalester and beyond. To help make this happen, I am committed to the following.
+
+**Respect:** Everyone comes from a different path through life, and it is our moral duty as human beings to listen to each other without judgment and to respect one another. I have no tolerance for discrimination of any kind, in and out of the classroom. If you are seeking campus resources regarding discrimination, the [Department of Multicultural Life](https://www.macalester.edu/multiculturallife/) and the [Center for Religious and Spiritual Life](https://www.macalester.edu/religiouslife/) are wonderful resources.
+
+**Sensitive Topics:** Data science applications span issues in science, policy, and society. As such, we may sometimes address topics that are sensitive for you. I will try to announce in class if an assignment or activity involves a potentially sensitive topic. If you have reservations about a particular topic, please come talk to me to discuss possible options.
+
+**Accommodations:** If you need accommodations for any reason, please contact [Disability Services](https://www.macalester.edu/studentaffairs/disabilityservices/accommodations/) to discuss your needs, and speak with me as soon as possible afterwards so that we can discuss your accommodation plan. If you already have official accommodations, please discuss these with me within the first week of class so that you get off to a great start. Contact me if you have other special circumstances. I will find resources for you.
+
+**Title IX:** You deserve a community free from discrimination, sexual harassment, hostility, sexual assault, domestic violence, dating violence, and stalking. If you or anyone you know has experienced harassment or discrimination, know that you are not alone. Macalester provides staff and resources to help you find support. More information is available on the [Title IX website](https://www.macalester.edu/titleix/).
+
+**General Health and Well-being:** (REVISE THE OVERLY ACADEMIC WORDING HERE) I care that you make your well-being a priority throughout this semester and your career here. Investing time into taking care of yourself will have profound impacts on all aspects of your life. Remember that beyond being a student, you are a human being carrying your own experiences, thoughts, emotions, and identities with you. It is important to acknowledge any stressors you may be facing, which can be mental, emotional, physical, cultural, financial, etc., and how they can have an impact on you. I encourage you to remember that you have a body with needs. In the classroom, eat when you are hungry, drink water, use the restroom, and step out if you are upset and need some air. Please do what is necessary so long as it does not impede your or others’ ability to be mentally and emotionally present in the course. Outside of the classroom, sleeping, moving your body, and connecting with others can be strategies to help you be resilient. If you are having difficulties maintaining your well-being, please don’t hesitate to contact me and/or find support from physical and mental health resources [here](https://docs.google.com/document/d/1lz-ii5yze_OSkQJqz_7pap7fRjG81LJh0_saBniP-zg/edit) and [here](https://docs.google.com/document/d/1iC-ykD8QJ-w2BVO1Gb0AobD-00Zq_8mznWR5C2mNiF0/edit?usp=sharing).
+
+
+
+

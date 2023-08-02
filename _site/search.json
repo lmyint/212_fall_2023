@@ -1,0 +1,359 @@
+[
+  {
+    "objectID": "homework.html",
+    "href": "homework.html",
+    "title": "Homework",
+    "section": "",
+    "text": "General instructions for homework:\n\nProcess section:\n\nOn getting help\n\nThings I Googled or asked on ChatGPT: There is no shame in having items here! But making note of this is important for noticing what you’re not “fluent” in yet. (e.g., when learning a new language, it would be helpful to write down words that you frequently have to look up to translate)\nThings I consulted with peers about\nOther resources that I consulted\n\nWhat was easy, medium, hard? Why?\n\n\nCommon elements of weekly homework:\n\nFirst part will always be to work on the most recent Tidy Tuesday."
+  },
+  {
+    "objectID": "06-functions-control-structs.html",
+    "href": "06-functions-control-structs.html",
+    "title": "Topic 6: Functions and control structures",
+    "section": "",
+    "text": "Learning goals\nAfter this lesson, you should be able to:\n\nRecognize when it would be useful to write a function\nIdentify the core components of a function definition and explain their role (the function() directive, arguments, argument defaults, function body, return value)\nDescribe the difference between argument matching by position and by name\nDescribe what the ... argument does and the rationale underlying the rules for named arguments in conjunction with ...\nWrite if-else, if-else if-else statements to conditionally execute code\nWrite your own function to carry out a repeated task\nProvide feedback on functions written by others\n\n\n\nNOTES\nInstead of introducing purrr, just do functions and basic control structures for this lesson\n\n\nPre-class preparation\nRead https://bookdown.org/rdpeng/rprogdatascience/functions.html or rather https://r4ds.had.co.nz/functions.html\nMoodle quiz - Ask students for input on “Gosh I just wish it was easier to do ___ in R”. This will lead into the “Finding existing functions” part of the activity.\n\n\nSetup\npurrr resources\n\nhttps://jennybc.github.io/purrr-tutorial/index.html\nhttps://www.rebeccabarter.com/blog/2019-08-19_purrr\n\n\nlibrary(purrr)\nlibrary(repurrrsive)\n\n\ndata(got_chars)\ngot &lt;- got_chars\n\n\n\nActivity ideas\nWriting functions from scratch: Function Challenge Relay: Divide the students into groups and set up stations with different R function challenges. Each station has a specific task that requires creating or using R functions. The groups rotate through the stations, completing the challenges together. For example, one station might require writing a function to calculate factorial, another to find the mean of a dataset, and so on.\nWrite a function that fits a linear model within subgroups of the data.\nFinding existing functions: Function Library Creation: Assign each group a specific topic or problem domain (e.g., mathematical functions, data manipulation, data visualization). Each group works together to research, design, and implement a set of R functions that address various aspects of their assigned topic. They can then share their function library with the class. Function Scavenger Hunt: Create a scavenger hunt where each group receives a list of R functions to find and examples of tasks to perform using those functions. The hunt can involve finding functions in R documentation, tutorials, or online resources. The group that completes the most tasks correctly wins.\nGroups can put together a nice resource for others (e.g., a cheat sheet). Something more user-friendly than a Google Doc.\nEditing functions writen by others: Function Debugging Party: Give each group a set of R functions with intentional errors or bugs. The groups work together to debug and correct the functions. This activity reinforces the importance of testing and troubleshooting code collaboratively. Function Code Review Workshop: Each group writes an R function and shares it with another group. The receiving group reviews the code, provides feedback, and suggests improvements. This exercise promotes collaborative code development and helps students learn from each other’s code.\n\n\nHomework\nHave students go from gap_nested -&gt; gap_simple and gap_split -&gt; gap_simple\nExtra: other combinations: ehh I don’t know if this is that useful\n\n\npurrr"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "STAT/COMP 212: Intermediate Data Science (Fall 2023)",
+    "section": "",
+    "text": "This is the course website for STAT/COMP 212: Intermediate Data Science at Macalester College for the Fall 2023 semester taught by Professor Leslie Myint. Materials were developed by Leslie Myint and Brianna Heggeseth."
+  },
+  {
+    "objectID": "slides/interactive-viz.html#why-use-interactive-visualization",
+    "href": "slides/interactive-viz.html#why-use-interactive-visualization",
+    "title": "Interactive visualization (Part 1)",
+    "section": "Why use interactive visualization?",
+    "text": "Why use interactive visualization?\nExamples:\n\nHow Music is Remembered\n\nFinding corresponding information in multiple views\n\n30 Years of American Anxieties\nWhen Women Make Headlines"
+  },
+  {
+    "objectID": "slides/interactive-viz.html#use-cases-for-interactivity",
+    "href": "slides/interactive-viz.html#use-cases-for-interactivity",
+    "title": "Interactive visualization (Part 1)",
+    "section": "Use cases for interactivity",
+    "text": "Use cases for interactivity\n\nChanging data representation: This is about changing the way that certain variables are displayed in a visualization. Often times, this is about changing the plot type.\nFocusing and getting details: Mousing over a plot element to see an exact data value. Zooming and panning. Common use case\nData transformation\nData selection and filtering: Highlighting and brushing. Also reordering for tables and matrices. Common use case\nFinding corresponding information in multiple views: Seeing a given case highlighted within multiple plots. Common use case"
+  },
+  {
+    "objectID": "slides/interactive-viz.html#the-plotly-package",
+    "href": "slides/interactive-viz.html#the-plotly-package",
+    "title": "Interactive visualization (Part 1)",
+    "section": "The plotly package",
+    "text": "The plotly package\n\nlibrary(plotly)\nlibrary(babynames)\n\nbnames &lt;- babynames %&gt;% filter(name %in% c(\"Leslie\", \"Margaux\"))\n\np &lt;- ggplot(bnames, aes(x = year, y = prop, color = sex, linetype = name)) +\n    geom_line()\np\n\n# ggplotly(p)"
+  },
+  {
+    "objectID": "01-introductions.html",
+    "href": "01-introductions.html",
+    "title": "Topic 1: Introductions",
+    "section": "",
+    "text": "Goals for today\n\nReflect on your goals for taking the course and what has worked and not worked for you as a learner in the past\nMove the syllabus from a preliminary closer to a final stage: What should change about the syllabus? What needs to be clarified? What should stay the same?\n\nKeyboard shortcuts as a fun way to feel more like a data scientist\n\nCursor navigation, deleting words, selecting words\nRStudio shortcuts"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Preliminary Syllabus",
+    "section": "",
+    "text": "Note to self: Consult CUE syllabus review guide to make sure the tone of this syllabus is on target"
+  },
+  {
+    "objectID": "syllabus.html#course-learning-goals",
+    "href": "syllabus.html#course-learning-goals",
+    "title": "Preliminary Syllabus",
+    "section": "Course learning goals",
+    "text": "Course learning goals\nBy the end of this course you should be able to:\n\nSustain a habit of self-reflection in your learning process so that you are equipped for independent learning\nSustain a habit of self-reflection in your collaborative work so that you can form community no matter where you go\nCreate a variety of visualizations in ggplot2 that go beyond the plot types that you learned in STAT/COMP 112\nWrangle and visualize spatial data\nCreate interactive web applications and visualizations that adapt to user input\nWrangle arbitrarily messy data using functional programming tools in R\nAcquire data from a variety of sources\n\nWrite statements in structured query language (SQL) to access data from databases\nWrite code to access data from application programming interfaces (APIs)\nWrite code to scrape data from websites and evaluate the ethics of collecting such data\n\nUse appropriate methods when working with missing data\nTranslate code between R and Python\nArticulate the role of machine learning and causal inference in data science work\nCraft compelling data stories with attention to ethical considerations\nMaintain a digital portfolio of your data science projects"
+  },
+  {
+    "objectID": "syllabus.html#community-is-key",
+    "href": "syllabus.html#community-is-key",
+    "title": "Preliminary Syllabus",
+    "section": "Community is key",
+    "text": "Community is key\nThere’s something sacred about going on a journey in tandem with others. Triumphs feel more spirited and challenges feel less daunting when we can share them with others facing the same things. As a parent, it has been my lifeline to have friends with young children about the same age as my daughter for exactly this reason.\nCultivating a good classroom community is one of my top priorities for us this semester. I’m not expecting everyone in the course to become best friends, but I do hope that in the process of learning together, you will come to value the insights that you gain from and give to your peers."
+  },
+  {
+    "objectID": "syllabus.html#reflection-is-paramount",
+    "href": "syllabus.html#reflection-is-paramount",
+    "title": "Preliminary Syllabus",
+    "section": "Reflection is paramount",
+    "text": "Reflection is paramount\nThe content you learn will be cool (unbiased opinion!), but it is a guarantee that as technology evolves, some part of it will become out of date during your careers. What you will need to rely on when you leave Macalester is what I want to ensure you cultivate now: a good learning process. And the cornerstone of a good learning process is reflection.\nReflection is not just fundamental to learning content–it’s fundamental to learning any sort of intellectual, emotional, or physical skill. For this reason, I will be prioritizing reflection as a goal for our course in both content learning and collaborative learning (groupwork). (Note that these reflection goals are the first two course learning goals.)"
+  },
+  {
+    "objectID": "syllabus.html#mistakes-are-valuable",
+    "href": "syllabus.html#mistakes-are-valuable",
+    "title": "Preliminary Syllabus",
+    "section": "Mistakes are valuable",
+    "text": "Mistakes are valuable\n\nAn expert is a person who has made all the mistakes which can be made in a narrow field. - Niels Bohr, Nobel Prize-winning physicist\n\nI don’t feel comfortable working with a new R package until I’ve seen the same errors over and over again. Seeing new errors helps me understand the constraints of the code and the assumptions that I was making about my data.\nWe’re going to be seeking out mistakes like my cats hunt for leftover meat scraps.\n(Insert picture of my cats)"
+  },
+  {
+    "objectID": "syllabus.html#communication-is-a-superpower",
+    "href": "syllabus.html#communication-is-a-superpower",
+    "title": "Preliminary Syllabus",
+    "section": "Communication is a superpower",
+    "text": "Communication is a superpower\nEvery time I go to a conference talk on a technical topic, it is striking how quickly laptops or phones come out because of the inability to follow. Academics notoriously struggle to make ideas accessible to others.\nI want communication to be very different for you.\nEvery time you communicate ideas–whether through writing, visuals, or oral presentation–I want you to be a total boss. The end product of strong communication is a better experience for all those who have given you their attention. What’s more, the process of crafting effective communication is invaluable for deepening your own understanding:\n\n\n\nRead to collect the dots, write to connect them pic.twitter.com/YbgnKKFUNn\n\n— David Perell (@david_perell) July 5, 2021"
+  },
+  {
+    "objectID": "syllabus.html#before-class",
+    "href": "syllabus.html#before-class",
+    "title": "Preliminary Syllabus",
+    "section": "Before class",
+    "text": "Before class\nMost class periods will have a required reading and associated Moodle checkpoint. My goal for the readings is for you to be familiarize yourself with concepts so that you’re not seeing them for the first time in class. The checkpoint questions highlight key ideas from the reading and follow the same order as ideas from the reading.\nSuggestion: Scan the checkpoint questions before the reading to preview what the main ideas are. Keep these main points in mind as you read to guide your attention, and fill in answers to checkpoint questions as you read. Record or upvote questions in our Course Questions Google Doc (CREATE A GDOC AND LINK)\nAbout every other week, we will discuss a podcast for the first ~20 minutes of class. These podcasts are meant to expose you aspects of data science in industry. Record anything that you’re curious about, and come prepared to discuss.\n\n\n\n\n\n\nYour own media contributions\n\n\n\n\n\nThroughout the semester, if you come across any media that is relevant to the course, feel free to suggest it as a discussion piece by emailing the instructor or posting it on our Slack channel. (ADD LINK)"
+  },
+  {
+    "objectID": "syllabus.html#during-class",
+    "href": "syllabus.html#during-class",
+    "title": "Preliminary Syllabus",
+    "section": "During class",
+    "text": "During class\nClass time will be a mix of interactive lecture and longer stretches of group work. During the lecture portion, I will pause explanation frequently to prompt a short exercise or ask questions that you’ll reflect on individually or together.\nSuggestion: Review your learning process and groupwork reflections at the start of class to frame how you want to engage in class. (Perhaps you’ve noted a struggle and want to try a new strategy.) I’ll always leave a few minutes at the end of class for synthesis. Use this time to update your reflections and summarize the key takeaways from class."
+  },
+  {
+    "objectID": "syllabus.html#after-class",
+    "href": "syllabus.html#after-class",
+    "title": "Preliminary Syllabus",
+    "section": "After class",
+    "text": "After class\nSuggestion: After learning a new topic in class, it is helpful to immediately attempt the related exercises on the weekly homework."
+  },
+  {
+    "objectID": "syllabus.html#late-work",
+    "href": "syllabus.html#late-work",
+    "title": "Preliminary Syllabus",
+    "section": "Late work",
+    "text": "Late work\nx"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Project",
+    "section": "",
+    "text": "The goal of the project is to build something awesome that you can showcase on your digital portfolio (your personal website)."
+  },
+  {
+    "objectID": "project.html#milestone-1",
+    "href": "project.html#milestone-1",
+    "title": "Project",
+    "section": "Milestone 1",
+    "text": "Milestone 1\nIdentify a data context that interests you. Identify 3 different data sources that relate to that context. We might not have covered all of the tools needed to acquire that data at this point, so check in with the instructor about the sources that you’ve found to make sure that they’re workable.\n\nNote to self: Provide general guidance on what sources of data would be appropriate\nDue date:"
+  },
+  {
+    "objectID": "project.html#milestone-2",
+    "href": "project.html#milestone-2",
+    "title": "Project",
+    "section": "Milestone 2",
+    "text": "Milestone 2\nBrainstorm 3 questions about your data context and sources that pique your curiosity.\n\nShortly after milestone 1 because question-asking and iteration on that question-asking is key."
+  },
+  {
+    "objectID": "project.html#milestone-3",
+    "href": "project.html#milestone-3",
+    "title": "Project",
+    "section": "Milestone 3",
+    "text": "Milestone 3\nPerform the data acquisition, wrangling, visualization, and modeling needed to answer Research Question 1. Note that your question might not be amenable to modeling (or to modeling that you’ve learned about so far). In that case, I’m not requiring you to use modeling. Visualization is required though."
+  },
+  {
+    "objectID": "project.html#milestone-4",
+    "href": "project.html#milestone-4",
+    "title": "Project",
+    "section": "Milestone 4",
+    "text": "Milestone 4\nSame as Milestone 3 but for Research Question 2."
+  },
+  {
+    "objectID": "project.html#milestone-5",
+    "href": "project.html#milestone-5",
+    "title": "Project",
+    "section": "Milestone 5",
+    "text": "Milestone 5\nSame as Milestone 3 but for Research Question 3."
+  },
+  {
+    "objectID": "02-adv-ggplot.html",
+    "href": "02-adv-ggplot.html",
+    "title": "Topic 2: Advanced Data Visualization in ggplot2",
+    "section": "",
+    "text": "── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\nLearning goals\nAfter this lesson, you should be able to:\n\nNavigate the ggplot2 reference page to find the functions needed to create a desired visualization\nUse the information on a function help page to construct desired plot features\n\nScan the information in the Usage section to identify function arguments that must be set\nUnderstand how the function arguments work by using information in the Arguments section\nAnnotate visual features of plots in the Examples section with their corresponding Aesthetics\n\nIdentify when it would be necessary to use different data arguments within the ggplot() and geom_() layers\n\n\n\nCase study: recreating a NYT visualization\nWe are going to recreate this NYT visualization on record setting temperatures by expanding our ggplot2 toolbox.\nClass exercise 1: Examine the temperature visualization. What variables underlie the visualization, and how do they map to visual elements (e.g., position, size, shape, and color of the glyphs)?\n\n\nResponse\nInsert solution here.\n\n\n\nWe can explore the “Geoms” section of the ggplot2 reference page to find a geom that corresponds to the visual elements in the temperature plot.\nClass exercise 2: Using both the small example visuals on the right and the names of the geoms, brainstorm some possibilities for geoms we might use to recreate the temperature visualization.\n\nWe need to explore further by opening up the geom reference pages to understand if a particular geom is suitable for our task. We’ll look at the following:\n\ngeom_bar()\ngeom_linerange()\ngeom_rect()\n\nWhen looking at a help page, it is useful to first look at the Usage and Arguments sections. The Usage section shows all of the possible inputs (arguments) to the geom–these are all of the ways that a geom can be customized. The Arguments section explains what each of these arguments does and the possible values they can take.\n\ndata(diamonds)\n\nggplot(diamonds, aes(cut)) +\n    geom_bar()\n\nggplot() +\n    geom_bar(mapping = aes(cut), data = diamonds)\n\nggplot() +\n    geom_bar(aes(cut), diamonds)\n\nGo through the full thought process for this part in the class QMD document, recording all intermediate plots and the decision making leading to the next iteration. Also discuss alt text in code chunk options.\n\nweather &lt;- read_csv(\"sfo_weather.csv\")\n\nRows: 365 Columns: 19\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr   (1): RecordText\ndbl  (15): Month, Day, Low, High, NormalLow, NormalHigh, RecordLow, LowYr, R...\nlgl   (2): Record, RecordP\ndate  (1): date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nggplot(weather, aes(x = dateInYear)) +\n    geom_linerange(aes(ymin = RecordLow, ymax = RecordHigh), color = \"#ECEBE3\") +\n    geom_linerange(aes(ymin = NormalLow, ymax = NormalHigh), color = \"#C8B8BA\") +\n    geom_linerange(aes(ymin = Low, ymax = High), color = \"#A90248\") +\n    theme_classic()\n\n\n\n\n\n\nPractice\nIn pairs, you will go through the same steps as above for the precipitation data. Throughout this course, we will be using the pair programming technique. Pair programming is used effectively in industry to speed up individual employee’s learning of a company’s codebase and reduce time wasted on fixing bugs.\nInclude information on driver and navigator responsibilities–link to video to watch in class?\nRemember to run into a new error!"
+  },
+  {
+    "objectID": "05-data-types.html",
+    "href": "05-data-types.html",
+    "title": "Topic 5: Wrangling numerics, logicals, factors, and dates",
+    "section": "",
+    "text": "After this lesson, you should be able to:\n\nDetermine the class of a given object and identify concerns to be wary of when manipulating that class of object (classes: numerics, logicals, factors, dates, strings, lists, data.frames/tibbles, matrices)\nExplain what vector recycling is, when it is used, when it can be a problem, and how to avoid those problems\nExplain the difference between implicit and explicit coercion\nExtract date-time information using the lubridate package\nRecode and manage factors using the forcats package\nManipulate and explore strings using the stringr package\nLists:\n\nSee how many objects (like the result of lm()) are lists\nSubset lists by index and name\nExplore the structure of nested lists with str()\n\nData frames/tibbles\n\nExplain the difference between a data.frame and a tibble (list columns)\n\nMatrices\n\nSubset matrices\n\nWrite R code to wrangle data from these different types\nRecognize several new R errors and warnings related to data types"
+  },
+  {
+    "objectID": "05-data-types.html#numeric-and-integer-classes",
+    "href": "05-data-types.html#numeric-and-integer-classes",
+    "title": "Topic 5: Wrangling numerics, logicals, factors, and dates",
+    "section": "Numeric and integer classes",
+    "text": "Numeric and integer classes\nNumbers that we see in R are generally of the numeric class, which are numbers with decimals. The c() function below is a way to create a vector of multiple numbers.\n\nnumbers &lt;- c(1, 2, 3)\nclass(numbers)\n\n[1] \"numeric\"\n\n\nR also has an integer class which will most often be formed when using the : operator to form regularly spaced sequences.\n\nintegers &lt;- 1:3\nclass(integers)\n\n[1] \"integer\"\n\n\nIt will be important to know how to check whether a number is a numeric or integer because we’ll be using the purrr package very shortly which checks types very strictly (e.g., 1 as an integer cannot be combined with 1 as a numeric)"
+  },
+  {
+    "objectID": "05-data-types.html#vector-recycling",
+    "href": "05-data-types.html#vector-recycling",
+    "title": "Topic 5: Wrangling numerics, logicals, factors, and dates",
+    "section": "Vector recycling",
+    "text": "Vector recycling\nSuppose that we wanted to update just the first two points values (e.g., we learned of a typo).\n\npoint_update &lt;- c(2,3)\nlakers2 &lt;- lakers %&gt;%\n    mutate(points = points + point_update)\nhead(lakers$points)\n\n[1] 0 0 0 0 0 2\n\nhead(lakers2$points)\n\n[1] 2 3 2 3 2 5\n\n\nUh oh! It looks like the 2,3 point update vector got repeated multiple times. This is called vector recycling. If you are trying to combine or compare vectors of different lengths, R will repeat (recycle) the shorter one as many times as it takes to make them the same length. When the longer vector’s length isn’t a multiple of the smaller one, we’ll get a warning.\n\npoint_update &lt;- c(2,3,2)\nlakers2 &lt;- lakers %&gt;%\n    mutate(points = points + point_update)\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `points = points + point_update`.\nCaused by warning in `points + point_update`:\n! longer object length is not a multiple of shorter object length"
+  },
+  {
+    "objectID": "05-data-types.html#explicit-coercion",
+    "href": "05-data-types.html#explicit-coercion",
+    "title": "Topic 5: Wrangling numerics, logicals, factors, and dates",
+    "section": "Explicit coercion",
+    "text": "Explicit coercion\nIn R there is a family of coercion functions that force a variable to be represented as a particular type. We have as.numeric() and as.integer() for numbers.\nMost commonly we will use these when numbers have accidentally been read in as a character or a factor. (More on factors later.)\nIn the example below we have a set of 4 points values, but the last entry was mistakenly typed as a space in the spreadsheet (instead of as an empty cell). We can see when we display points that all of the values have quotes around them and that the class of the points object is a character vector. (More on working with character objects next time.)\n\npoints &lt;- c(2, 3, 0, \" \")\npoints\n\n[1] \"2\" \"3\" \"0\" \" \"\n\nclass(points)\n\n[1] \"character\""
+  },
+  {
+    "objectID": "05-data-types.html#regular-expressions",
+    "href": "05-data-types.html#regular-expressions",
+    "title": "Topic 5: Wrangling numerics, logicals, factors, and dates",
+    "section": "Regular expressions",
+    "text": "Regular expressions\n\nstr_view() - View the first occurrence in a string that matches the regex\nstr_view_all() - View all occurrences in a string that match the regex\nstr_count() - count the number of times a regex matches within a string\nstr_detect() - determine if regex is found within string\nstr_subset() - return subset of strings that match the regex\nstr_extract() - return portion of each string that matches the regex\nstr_replace_{all}() - replace portion of string that matches the regex with something else\nstr_remove_{all}() - like `str_replace(x, the_pattern, ““)"
+  },
+  {
+    "objectID": "05-data-types.html#glue-package",
+    "href": "05-data-types.html#glue-package",
+    "title": "Topic 5: Wrangling numerics, logicals, factors, and dates",
+    "section": "glue package",
+    "text": "glue package\n\nlibrary(glue)\nmsleep %&gt;%\n  mutate(description = glue(\"The {name} typically sleeps for {sleep_total * 60} minutes and is awake for {awake * 60} minutes each day.\")) %&gt;% \n  select(name, sleep_total, awake, description)\n\n# A tibble: 83 × 4\n   name                       sleep_total awake description                     \n   &lt;chr&gt;                            &lt;dbl&gt; &lt;dbl&gt; &lt;glue&gt;                          \n 1 Cheetah                           12.1  11.9 The Cheetah typically sleeps fo…\n 2 Owl monkey                        17     7   The Owl monkey typically sleeps…\n 3 Mountain beaver                   14.4   9.6 The Mountain beaver typically s…\n 4 Greater short-tailed shrew        14.9   9.1 The Greater short-tailed shrew …\n 5 Cow                                4    20   The Cow typically sleeps for 24…\n 6 Three-toed sloth                  14.4   9.6 The Three-toed sloth typically …\n 7 Northern fur seal                  8.7  15.3 The Northern fur seal typically…\n 8 Vesper mouse                       7    17   The Vesper mouse typically slee…\n 9 Dog                               10.1  13.9 The Dog typically sleeps for 60…\n10 Roe deer                           3    21   The Roe deer typically sleeps f…\n# ℹ 73 more rows"
+  },
+  {
+    "objectID": "05-data-types.html#tidytext-package",
+    "href": "05-data-types.html#tidytext-package",
+    "title": "Topic 5: Wrangling numerics, logicals, factors, and dates",
+    "section": "tidytext package",
+    "text": "tidytext package"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Week\n    Tuesday\n    Thursday\n    Announcements\n  \n\n\n\n  \n    1\n    \n      Welcome! Designing our learning community \n      Before class: Review syllabus and respond to questions posed therein. \n      After class: x\n    \n    \n      Advanced visualization in ggplot \n      Before class: Review the construction of plots from STAT 112 and STAT 155. Complete Moodle checkpoint. \n      After class: x\n    \n    Look ahead to HW1\n  \n  \n  \n  \n  \n    2\n    \n      Advanced map visualization \n      Before class: Review map material from STAT/COMP 112 \n      After class: x\n    \n    \n      Interactive visualization (Part 1) & podcast discussion \n      Before class: Listen to The \"dashboard conspiracy\" podcast \n      After class: x\n    \n    Turn in HW1. Look ahead to HW2.\n  \n  \n  \n  \n  \n    3\n    \n      Interactive visualization (Part 2) \n      Before class: Read up through the \"Streamline computation\" section in this tutorial on reactive expressions \n      After class: x\n    \n    \n      Topic \n      Before class: Find a TidyTuesday dataset that you would be interested in exploring for a mini-project. \n      After class: x\n    \n    Turn in HW2. Look ahead to HW3.\n  \n  \n  \n  \n  \n    4\n    \n      Working with different data classes (Part 1) \n      Before class: Group 1 reads Chapter 13 (Logicals) of R4DS. Group 2 reads Chapter 14 (Numbers). Group 3 reads Chapter 18 (Dates/Times). \n      After class: x\n    \n    \n      Working with different data classes (Part 2) \n      Before class: Read Chapter 15 (Strings), Chapter 16 (Regular Expressions), and Chapter 17 (Factors) of R4DS. \n      After class: x\n    \n    Turn in HW3. Look ahead to HW4.\n  \n  \n  \n  \n  \n    5\n    \n      Writing functions \n      Before class: Read Chapter 26 (Functions) and Section 13.1 (if-else). \n      After class: x\n    \n    \n      Loops and iteration \n      Before class: Read Chapter 27 (Iteration) and the following parts of this tutorial: Up through (and including) \"Simplest usage: repeated looping with map\" \n      After class: x\n    \n    Turn in HW4. Look ahead to HW5.\n  \n  \n  \n  \n  \n    6\n    \n      Iteration with purrr \n      Before class: Read the remainder of this purrr tutorial. \n      After class: x\n    \n    \n      Data acquisition: databases \n      Before class: Read Chapter 22 (Databases). \n      After class: x\n    \n    Turn in HW5. Look ahead to HW6.\n  \n  \n  \n  \n  \n    7\n    \n      Data acquisition: APIs \n      Before class: Read Getting started with httr \n      After class: x\n    \n    \n      Data acquisition: Scraping \n      Before class: Read the rvest vignette \n      After class: x\n    \n    Turn in HW6. Look ahead to HW7."
+  },
+  {
+    "objectID": "activities.html",
+    "href": "activities.html",
+    "title": "Activities",
+    "section": "",
+    "text": "In-class activities"
+  },
+  {
+    "objectID": "03-adv-maps.html",
+    "href": "03-adv-maps.html",
+    "title": "Topic 3: Advanced Spatial Visualizations",
+    "section": "",
+    "text": "After this lesson, you should be able to:\n\nUnderstand the basics of a CRS (coordinate reference system)\nUnderstand and recognize different spatial file types and data types in R\nImplement some of the basic plotting with the sf package\nUnderstand foundational ideas in working with spatial data (aggregating spatial point data to a spatial region, joining spatial data sets)"
+  },
+  {
+    "objectID": "03-adv-maps.html#ellipsoid",
+    "href": "03-adv-maps.html#ellipsoid",
+    "title": "Topic 3: Advanced Spatial Visualizations",
+    "section": "Ellipsoid",
+    "text": "Ellipsoid\nWhile you might have learned that the Earth is a sphere, it is actually closer to an ellipsoid with a bulge at the equator. Additionally, the surface is irregular and not smooth. To define a CRS, we first need to choose a mathematical model represent a smooth approximation to the shape of the Earth. The common ellipsoid models are known as WGS84 and GRS80. See the illustration below of one ellipsoid model (shown in black) as compared to Earth’s true irregular surface (shown in red).\n\n\n\nIllustration of ellipsoid model and Earth’s irregular surface, centered to have an overall best fit. Source: www.icsm.gov.au"
+  },
+  {
+    "objectID": "03-adv-maps.html#datum",
+    "href": "03-adv-maps.html#datum",
+    "title": "Topic 3: Advanced Spatial Visualizations",
+    "section": "Datum",
+    "text": "Datum\nEach ellipsoid model has different ways to position it self relative to Earth depending on the center or origin. Each potential position and reference frame for representing the position of locations on Earth is called a datum.\nFor example, two different datum for the same ellipsoid model can provide a more accurate fit or approximation of the Earth’s surface depending on the region of interest (South America v. North America). For example, the NAD83 datum is a good fit for the GRS80 ellipsoid in North America, but SIRGAS2000 is a better fit for the GRS80 ellipsoid in South America. The illustration below shows one datum in which the center of the ellipsoid does not coincide with the center of Earth’s mass. With this position of the ellipsoid, we gain a better fit for the southern half of the Earth.\n\n\n\nIllustration of ellipsoid model and Earth’s irregular surface for a datum that better fits southern part (bottom right) of the Earth. Source: www.icsm.gov.au\n\n\nIt is useful to know that the Global Positioning System (GPS) uses the WGS84 ellipsoid model and a datum by the same name, which provides an overall best fit of the Earth.\nIf you have longitude and latitude coordinates for a location, it is important to know what datum and ellipsoid were used to define those positions.\nNote: In practice, the horizontal distance between WGS84 and NAD83 coordinates is about 3-4 feet in the US, which may not be significant for most applications.\n\nExercise\nGo to https://epsg.io/. Search for a location important to you (state, country, etc.). Filter based on Datum (Geodetic) on the right. Click on one geodetic datum options for your region of interest (make sure your location is listed under Area of Use). Repeat for three locations.\nProvide the region of interest (e.g. United States), the full datum name (e.g. North American Datum 1983), the shorthand name (e.g. NAD83, EPSG: 6269), and the ellipsoid (e.g. GRS 1980).\n\nLocation 1:\n\n\nLocation 2:\n\n\nLocation 3:\n\n\n\nExercise\nLet’s now practice specifying coordinates in a CRS.\nFor geographic coordinate reference systems, the coordinates of locations are specified by latitude (degrees north or south of the equator), longitude (degrees west or east of a prime meridian), and sometimes height.\nFind the location of Macalester College (OLRI) in longitude and latitude degrees.\n\nLongitude:\n\n\nLatitude:\n\nFor projected coordinate reference systems, the coordinates of locations are typically specified by easting (x) and northing (y). Go to https://epsg.io/, find the location, and transform the longitude and latitude using the following projected CRS: EPSG:26993.\nFind the location of Macalester College (OLRI) in northing and easting coordinates (in meters) for the CRS EPSG:26993.\n\nEasting:\n\n\nNorthing:"
+  },
+  {
+    "objectID": "03-adv-maps.html#projection",
+    "href": "03-adv-maps.html#projection",
+    "title": "Topic 3: Advanced Spatial Visualizations",
+    "section": "Projection",
+    "text": "Projection\nLastly, the Earth lives in a 3 dimensional (3D) world and most visualizations are on a 2 dimensional (2D) surface. We must choose a projection method to represent points, regions, and lines on Earth on a 2D map with distance units (typically meter, international foot, US survey foot). In that projection process, a 3D element will lose angle, area, and/or distance when projected onto a 2D surface, no matter which method is chosen.\nFor a good overview of common projection methods, see https://pubs.usgs.gov/gip/70047422/report.pdf.\nOne of the most commonly used projection is the Mercator projection which is a cylindrical map projection from the 1500’s. It became popular for navigation because it represented north as up and south as down everywhere and preserves local directions and shape. However, it inflates the size of regions far from the equator. Thus, Greenland, Antarctica, Canada, and Russia appear large relative to their actual land mass as compared to Central Africa. See the illustration below to compare the area/shape of the countries with the Mercator projection of the world (light blue) with the true areas/shapes (dark blue).\n\n\n\nSource: @neilrkaye\n\n\nBelow you can see four different world projections. Take note of what is lost in terms of angle, area, or distance in these projections.\n\nworld &lt;- ne_countries(scale = \"medium\", returnclass = \"sf\")\n\nError in value[[3L]](cond): Failed to install the rnaturalearthdata package.\n Please try installing the package for yourself using the following command: \n install.packages(\"rnaturalearthdata\")\n\n# Basic Map w/ labels\nggplot(data = world) + \n  geom_sf(color = \"black\", fill = \"#bada55\") +\n  labs(x = \"Longitude\", y = \"Latitude\", title = \"World Map - Mercator Projection\", subtitle = paste0(\"(\", length(unique(world$name)), \" countries)\")) +\n  theme_bw() \n\nError in eval(expr, envir, enclos): object 'world' not found\n\nggplot(data = world) +\n    geom_sf(color = \"black\", fill = \"#bada55\") +\n    coord_sf(crs = \"+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs\")  + \n  labs(title = \"Lambert Azimuthal Equal-Area Projection\", subtitle = \"Correctly represents area but not angles\") + \n  theme_bw()\n\nError in eval(expr, envir, enclos): object 'world' not found\n\nggplot(data = world) +\n    geom_sf(color = \"black\", fill = \"#bada55\") +\n    coord_sf(crs = \"+proj=fouc\") + \n  labs(title = \"Foucaut Projection\", subtitle = \"Correctly represents area, lots of distortion in high latitudes\") + \n  theme_bw() \n\nError in eval(expr, envir, enclos): object 'world' not found\n\nggplot(data = world) +\n    geom_sf(color = \"black\", fill = \"#bada55\") +\n    coord_sf(crs = \"+proj=natearth2\") + \n    labs(title = \"Natural Earth II Projection\", subtitle = \"Represents globe shape, distorted at high latitudes\") + \n  theme_bw() \n\nError in eval(expr, envir, enclos): object 'world' not found\n\n\n\nExercise\nCreate a world map with a different projection (beyond the four above). Go to https://proj.org/en/9.2/operations/projections/index.html and find another projection. Look for the proj-string and copy that to the crs = argument in coord_sf().\n\nggplot(data = world) +\n    geom_sf(color = \"black\", fill = \"#bada55\") +\n    coord_sf(crs = \"+proj=natearth2\") + \n    labs(title = \"?? Projection\", subtitle = \"??\") + \n  theme_bw() \n\nError in eval(expr, envir, enclos): object 'world' not found\n\n\nWhat is interesting, surprising, or different to you about the map of the Earth based on this projection?\n\nANSWER:\n\n\n\nExercise\nTalk with a neighbor about the projection they tried. What projection did they use and how is it different from the one you chose?\n\nANSWER:"
+  },
+  {
+    "objectID": "03-adv-maps.html#data-models",
+    "href": "03-adv-maps.html#data-models",
+    "title": "Topic 3: Advanced Spatial Visualizations",
+    "section": "Data Models",
+    "text": "Data Models\n\nVector\nVector data represents the world as a set of spatial geometries that are defined in terms of location coordinates (with a specified CRS) with non-spatial attributes or properties.\nThe three basic geometries are\n\nPoints: Locations defined based on a (x, y) coordinates.\nLines: A set of ordered points connected by straight lines.\nPolygons: A set of ordered points connected by straight lines, first and last point are the same.\n\nFor example, city locations can be represented with points, roads and rivers can be represented by lines, and geo-political boundaries and lakes can be represented by polygons.\nHundreds of file formats exist to store spatial vector data. A text file (such as .csv) can store the coordinates in two columns (x,y) in addition to a group id (needed for lines and polygons) plus attributes or properties in additional columns. Note that text files do not store the CRS. However, shapefiles (.shp) developed by ESRI is one of the most widely supported spatial vector file format (that includes the CRS). Additionally, GeoJSON (.geojson) and KML (.kml) are additional popular formats.\n\n\nExercise\nTo create maps, we’ll need to have access to some spatial data.\nGo to the following websites and download the vector data files indicated. Put all of the downloaded files/folders in same folder as this Rmd file.\n\nURL: https://team.carto.com/u/andrew/tables/andrew.us_states_hexgrid/public/map\n\nDownload File Type: GeoJSON\nName of File: us_states_hexgrid.geojson\n\nURL: https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/apportionment.csv\n\nDownload File Type: csv\nName of File: apportionment.csv\n\nURL: https://gisdata.mn.gov/dataset/loc-pop-centers\n\nDownload File Type: shapefile (.shp)\nName of File: shp_loc_pop_centers.zip (unzip this file to get a folder with the name shp_loc_pop_centers)\n\nURL: https://gisdata.mn.gov/dataset/us-mn-state-metc-water-lakes-rivers\n\nDownload File Type: shapefile (.shp)\nName of File: shp_water_lakes_rivers.zip (unzip this file to get a folder with the name shp_water_lakes_rivers)\n\n\n\n\nRaster\nRaster data represents the world using a continuous grid of cells where each cell has a single value. These values could be continuous such as elevation or precipitation or categorical such as land cover or soil type.\nTypically regular cells are square in shape but they can be rotated and sheared. Rectilinear and curvilinear shapes are also possible, depending on the spatial region of interest and CRS.\nBe aware that high resolution raster data involves a large number of small cells. This can slow down the computations and visualizations.\nMany raster file formats exist. One of the most popular is GeoTIFF (.tif or .tiff). More complex raster formats include NetCDF (.nc) and HDF (.hdf). To work with raster data in R, you’ll use the raster, terra, and the stars packages. If you are interested in learning more, check out https://r-spatial.github.io/stars/."
+  },
+  {
+    "objectID": "03-adv-maps.html#working-with-spatial-data-in-r",
+    "href": "03-adv-maps.html#working-with-spatial-data-in-r",
+    "title": "Topic 3: Advanced Spatial Visualizations",
+    "section": "Working with Spatial Data in R",
+    "text": "Working with Spatial Data in R\n\nRead in data to R\nFor each file format, we need use a different function to read in the data. See the examples below for reading in GeoJSON, csv, and shapefiles.\n\n# Read in GeoJSON file\nhex_spatial &lt;- geojsonio::geojson_read(\"us_states_hexgrid.geojson\", what = 'sp') \n\nError: File does not exist. Create it, or fix the path.\n\n# Read in CSV File\npop_growth &lt;- readr::read_csv('apportionment.csv') %&gt;% janitor::clean_names()\n\nError: 'apportionment.csv' does not exist in current working directory ('/Users/lesliemyint/Library/CloudStorage/GoogleDrive-lmyint@macalester.edu/My Drive/teaching/STAT212/2023_fall/212_fall_2023').\n\n# Read in Shapefiles\nmn_cities &lt;- sf::read_sf('shp_loc_pop_centers') #shp file/folder\n\nError: Cannot open \"shp_loc_pop_centers\"; The file doesn't seem to exist.\n\nmn_water &lt;- sf::read_sf('shp_water_lakes_rivers') #shp file/folder\n\nError: Cannot open \"shp_water_lakes_rivers\"; The file doesn't seem to exist.\n\n\n\n\nData classes in R\nWhen data is read it, an R data object is created of a default class. Notice the classes of the R objects we read in. Also, notice that an object may have multiple classes, which indicate the type of structure it has and how functions may interact with the object.\n\nclass(hex_spatial)\n\nError in eval(expr, envir, enclos): object 'hex_spatial' not found\n\nclass(pop_growth)\n\nError in eval(expr, envir, enclos): object 'pop_growth' not found\n\nclass(mn_cities)\n\nError in eval(expr, envir, enclos): object 'mn_cities' not found\n\nclass(mn_water)\n\nError in eval(expr, envir, enclos): object 'mn_water' not found\n\n\nOlder R Spatial classes\nIn the sp package, there are many spatial classes that hold slightly different data. All Spatial* classes have a bounding box (bbox) and a CRS.\n\nSpatialPoints, SpatialLines, and SpatialPolygons provide structure to hold the basic spatial geometries of points, lines, and polygons.\nSpatial*DataFrame extends the geometry classes to a data.frame-like object with non-spatial attribute data.\n\n\nhead(hex_spatial) \n\nError in eval(expr, envir, enclos): object 'hex_spatial' not found\n\n\n\n\nExercise\nBased on the summary of hex_spatial, what are the following:\n\nCRS:\nBBOX (extent):\nGeometry type:\n\nNewer R Spatial classes\nThe community is moving away from using older sp classes to sf classes. It is useful for you to know that the older versions exist but stick with the sf classes.\n\nsfc objects are modern, general versions of the spatial geometries from the sp package with a bbox, CRS, and many geometries available.\nsf objects are data.frame-like objects with a geometry column of class sfc\n\n\nmn_cities\n\nError in eval(expr, envir, enclos): object 'mn_cities' not found\n\n\n\n\nExercise\nBased on the summary of mn_cities, what are the following:\n\nCRS:\nBBOX:\nGeometry type:\n\nData Frames - Fortified Spatial Data\nData.frames or tbl (tibbles) are standard data formats that are not specific to spatial data. Our pop_growth data doesn’t include any coordinate information, so it can be stored simply as a data.frame (tbl, tbl_df, and spec_tbl_df are all sub classes of data.frame).\nYou may come across data.frames that contain coordinate information, so let’s see what that might look like. We can fortify our sp object to make it a data frame.\n\n# Convert Spatial*DataFrame to Data Frame\nhex_spatial_df &lt;- fortify(hex_spatial)\n\nError in eval(expr, envir, enclos): object 'hex_spatial' not found\n\nclass(hex_spatial_df)\n\nError in eval(expr, envir, enclos): object 'hex_spatial_df' not found\n\n\n\n\nExercise\nWhat are the variables in hex_spatial_df? Compare the first seven rows with the first spatial polygon of hex_spatial. Now describe the meaning of the variables in hex_spatial_df.\n\nhead(hex_spatial_df,7)\n\nError in eval(expr, envir, enclos): object 'hex_spatial_df' not found\n\nhex_spatial@polygons[[1]]\n\nError in eval(expr, envir, enclos): object 'hex_spatial' not found\n\n\n\nANSWER:\n\n\n\nConvert data class types\nWe can convert objects between these data classes with the following functions:\n\nfortify(x): sp object x to data.frame\nst_as_sf(x ): sp object x to sf\nst_as_sf(x, coords = c(\"long\", \"lat\")): data.frame x to sf as points\nTo convert a data.frame with columns of long, lat, and group containing polygon geometry information, you can use:\n\nst_as_sf(x, coords = c(\"long\", \"lat\")) %&gt;%\ngroup_by(group) %&gt;%\n  summarise(geometry = st_combine(geometry)) %&gt;%\n  st_cast(\"POLYGON\")\nWe won’t often want to convert our data to a Spatial* class from sp package, so we’ll exclude that in this activity.\n\n\nExercise\nConvert the hex_spatial data to an sf object called hex_spatial_sf. Complete these two ways\n\nhex_spatial directly to hex_spatial_sf AND\nhex_spatial_df to hex_spatial_sf.\n\n\n# Convert to SF from hex_spatial_df  \nhex_spatial_sf &lt;- hex_spatial_df %&gt;% ???  \n  \n# Convert to SF from hex_spatial\nhex_spatial_sf &lt;- hex_spatial %&gt;% ???\n\nError: &lt;text&gt;:6:0: unexpected end of input\n4: # Convert to SF from hex_spatial\n5: hex_spatial_sf &lt;- hex_spatial %&gt;% ???\n  ^"
+  },
+  {
+    "objectID": "03-adv-maps.html#hexbin-choropleth",
+    "href": "03-adv-maps.html#hexbin-choropleth",
+    "title": "Topic 3: Advanced Spatial Visualizations",
+    "section": "Hexbin Choropleth",
+    "text": "Hexbin Choropleth\nSource: https://r-graph-gallery.com/328-hexbin-map-of-the-usa.html\nIn this example, we’ll create an alternative choropleth map. Instead of using the actual geo-political boundaries, we will use hexagons to represent the U.S. states and maintain their relative directional position to each together. This approach results in each state having the same area in the graphic so that large regions don’t dominate the visual story.\n\nExercise\nDescribe what the following code chunks are doing. Be sure to consider the class of the data object, what the data object looks like to start, and what it looks like at the end of the chunk.\n\n# Chunk A\nhex_spatial_df  &lt;- hex_spatial_df %&gt;% \n  left_join(\n        data.frame(id = as.character(1:nrow(hex_spatial)) , \n        name = str_replace(hex_spatial$google_name,' \\\\(United States\\\\)',''), \n        abbr = hex_spatial$iso3166_2))\n\nError in eval(expr, envir, enclos): object 'hex_spatial_df' not found\n\n\n\nANSWER (Chunk A):\n\n\n# Chunk B\nhex_spatial_sf &lt;- hex_spatial_sf %&gt;% \n  mutate(name = str_replace(google_name,' \\\\(United States\\\\)',''),\n         abbr = iso3166_2)\n\nError in eval(expr, envir, enclos): object 'hex_spatial_sf' not found\n\n\n\nANSWER (Chunk B):\n\n\n# Chunk C\nhex_growth_df &lt;- left_join(hex_spatial_df, pop_growth, by = 'name')\n\nError in eval(expr, envir, enclos): object 'hex_spatial_df' not found\n\nhex_growth_sf &lt;- left_join(hex_spatial_sf, pop_growth, by = 'name')\n\nError in eval(expr, envir, enclos): object 'hex_spatial_sf' not found\n\n\n\nANSWER (Chunk C):\n\n\n# Chunk D\ncenters &lt;- data.frame(rgeos::gCentroid(hex_spatial,byid = TRUE), \n  abbr = hex_spatial$iso3166_2)\n\nError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'row.names': object 'hex_spatial' not found\n\nhex_growth_df %&gt;% \n  filter(year == 2020) %&gt;%\n  ggplot(aes(x = long, y = lat)) +\n  geom_polygon(aes(group = group, fill = percent_change_in_resident_population)) + \n  geom_text(data = centers, aes( x = x, y = y, label = abbr), color = 'white') +\n  labs(fill = 'Population Change (%)') + \n  ggthemes::theme_map() + theme(legend.position = 'bottom', legend.justification = 'right')\n\nError in eval(expr, envir, enclos): object 'hex_growth_df' not found\n\n\n\nANSWER (Chunk D):\n\n\n# Chunk E\nhex_growth_sf %&gt;% \n  filter(year == 2020) %&gt;%\n  ggplot() +\n  geom_sf(aes(fill = percent_change_in_resident_population)) + \n  geom_sf_text( aes(label = abbr), color = 'white') +\n  labs(fill = 'Population Change (%)') + \n  ggthemes::theme_map() + theme(legend.position = 'bottom', legend.justification = 'right')\n\nError in eval(expr, envir, enclos): object 'hex_growth_sf' not found\n\n\n\nANSWER (Chunk E):\n\n\n\nExercise\nUsing the hexbin spatial boundaires and the pop_growth data, make the following updates to the choropleth graphic:\n\nChange the outcome variable (different year or variable).\nChange the fill scale to be more meaningful and effective.\nMake one more update beyond the fill color to improve the effectiveness of the graphic.\n\nMake the graphic twice, once with geom_polygon() and once with geom_sf().\n\n\nBonus Challenge\nFind external state-level data online, read it into R, join it, and create a U.S. state hexbin map displaying that new state-level outcome."
+  },
+  {
+    "objectID": "03-adv-maps.html#mn-citycounty-example",
+    "href": "03-adv-maps.html#mn-citycounty-example",
+    "title": "Topic 3: Advanced Spatial Visualizations",
+    "section": "MN City/County example",
+    "text": "MN City/County example\n\nUnify CRS\nTo demonstrate other spatial geometries beyond polygons (the hexagons in the last example were spatial polygons), we’ll walk through create a map of MN with different layers of information (city point locations, county polygon boundaries, rivers as lines and polygons, and a raster elevation map). To add all of this information on one map, we need to ensure that the CRS is the same for all spatial datasets.\n\n#check CRS\nst_crs(mn_cities)\n\nError in eval(expr, envir, enclos): object 'mn_cities' not found\n\n#check CRS\nst_crs(mn_water)\n\nError in eval(expr, envir, enclos): object 'mn_water' not found\n\n#transform CRS of water to the same of the cities\nmn_water &lt;- mn_water %&gt;%\n  st_transform(crs = st_crs(mn_cities))\n\nError in eval(expr, envir, enclos): object 'mn_water' not found\n\n\n\n#load country boundaries data as sf object\nmn_counties &lt;- us_counties(resolution = \"high\", states = \"Minnesota\")\n\n#remove duplicate column names\nnames_counties &lt;- names(mn_counties)\nnames(mn_counties)[names_counties == 'state_name'] &lt;- c(\"state_name1\", \"state_name2\")\n\n#check CRS\nst_crs(mn_counties)\n\nCoordinate Reference System:\n  User input: EPSG:4326 \n  wkt:\nGEOGCRS[\"WGS 84\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Horizontal component of 3D system.\"],\n        AREA[\"World.\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]\n\n# Transform the CRS of county data to the more local CRS of the cities\nmn_counties &lt;- mn_counties %&gt;%\n  st_transform(crs = st_crs(mn_cities))\n\nError: object 'mn_cities' not found\n\nst_crs(mn_counties)\n\nCoordinate Reference System:\n  User input: EPSG:4326 \n  wkt:\nGEOGCRS[\"WGS 84\",\n    DATUM[\"World Geodetic System 1984\",\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Horizontal component of 3D system.\"],\n        AREA[\"World.\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]\n\n\n\n\nInitial Map: Counties and Cities\n\nggplot() + #plot frame\n  geom_sf(data = mn_counties, fill = NA) + #county boundary layer\n  geom_sf(data = mn_cities, size = 0.5) + #city point layer\n  ggthemes::theme_map()\n\nError in eval(expr, envir, enclos): object 'mn_cities' not found\n\n\n\nggplot() +\n  geom_sf(data = mn_counties, fill = 'wheat', color = \"tan\") + \n  geom_sf(data = mn_cities %&gt;% filter(Population &gt;= 10000), mapping = aes(color = Population,size = Population), alpha = 0.8)+ #cities layer\n  scale_color_viridis_c() + #continuous (gradient) color scale\n  labs(title = \"Minnesota Cities with Population &gt;= 10,000\") + \n  ggthemes::theme_map() + theme(legend.position = \"bottom\")  #move legend\n\nError in eval(expr, envir, enclos): object 'mn_cities' not found\n\n\n\n\nUpdated Map: Counties and Cities plus Elevation\n\nelevation &lt;- elevatr::get_elev_raster(mn_counties, z = 5, clip = 'bbox')\n\nError in loadNamespace(x): there is no package called 'rgdal'\n\nraster::crs(elevation) &lt;- sf::st_crs(mn_counties)\n\nError: object 'elevation' not found\n\n#Convert to Data Frame for plotting\nelev_df &lt;- elevation %&gt;% terra::as.data.frame(xy = TRUE)\n\nError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'as.data.frame': object 'elevation' not found\n\nnames(elev_df) &lt;-c('x','y','value')\n\nError: object 'elev_df' not found\n\nggplot() +\n  geom_raster(data = elev_df, aes(x = x,y = y,fill = value)) + # adding the elevation as first (bottom) layer\n  geom_sf(data = mn_counties, fill = NA, color = \"black\") + \n  geom_sf(data = mn_cities %&gt;% filter(Population &gt;= 10000), mapping = aes(color = Population,size = Population), alpha = 0.8)+ #cities layer\n  scale_color_viridis_c() + #continuous (gradient) color scale\n  scale_fill_gradient(low = 'darkgreen',high = 'white', guide = FALSE) + \n  labs(title = \"Minnesota Cities with Population &gt;= 10,000\") + \n  ggthemes::theme_map() + theme(legend.position = \"bottom\")  #move legend\n\nError in eval(expr, envir, enclos): object 'elev_df' not found\n\n\n\n\nZoom to Twin Cities Map\n\nSeven_countyarea &lt;- st_bbox(mn_counties %&gt;% filter(name %in% c(\"Anoka\", \"Hennepin\", \"Ramsey\", \"Dakota\", \"Carver\", \"Washington\", \"Scott\")))\n\n\nelevation &lt;- elevatr::get_elev_raster(mn_counties %&gt;% st_crop(Seven_countyarea), z = 9, clip = 'bbox')\n\nError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'addAttrToGeom': conversion from feature type sfc_GEOMETRY to sp is not supported\n\nraster::crs(elevation) &lt;- sf::st_crs(mn_counties)\n\nError: object 'elevation' not found\n\n#Convert to Data Frame for plotting\nelev_df &lt;- elevation %&gt;% terra::as.data.frame(xy = TRUE)\n\nError in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'as.data.frame': object 'elevation' not found\n\nnames(elev_df) &lt;-c('x','y','value')\n\nError: object 'elev_df' not found\n\nggplot() +\n  geom_raster(data = elev_df, aes(x = x,y = y,fill = value)) + \n  geom_sf(data = mn_counties, fill = NA, color = \"black\") + # county boundary layer\n  geom_sf(data = mn_water, fill = 'lightsteelblue1',color = 'lightsteelblue1') + # added a river/lake layer\n  geom_sf(data = mn_cities %&gt;% filter(Population &gt;= 10000), mapping = aes(color = Population,size = Population)) + #cities layer\n  coord_sf(xlim = Seven_countyarea[c(1,3)],ylim = Seven_countyarea[c(2,4)]) + # crop map to coordinates of seven county area\n  scale_color_viridis_c(option = 'magma') + #continuous (gradient) color scale\n  scale_fill_gradient(low = 'darkgreen',high = 'white') + #continuous (gradient) fill scale\n  labs(title = \"Twin Cities with Population &gt;= 10,000\") + \n  ggthemes::theme_map() + theme(legend.position = \"none\")  #remove legend\n\nError in eval(expr, envir, enclos): object 'elev_df' not found"
+  },
+  {
+    "objectID": "03-adv-maps.html#open-ended-exercise",
+    "href": "03-adv-maps.html#open-ended-exercise",
+    "title": "Topic 3: Advanced Spatial Visualizations",
+    "section": "Open-ended Exercise",
+    "text": "Open-ended Exercise\nThe following exercises will use census tract tidycensus data for Ramsey and Hennepin county and pedestrian/bike crash data (2019-2022) for St. Paul within Ramsey county in the Twin Cities. We provide several variables you can choose from in order to create maps that best fit your interest.\nLoad the data with the following code:\n\n\nError: 'Crash.csv' does not exist in current working directory ('/Users/lesliemyint/Library/CloudStorage/GoogleDrive-lmyint@macalester.edu/My Drive/teaching/STAT212/2023_fall/212_fall_2023').\n\n\n\nExercise: Joining and aggregation\nCreate a map of crashes per census tract in Ramsey county.\nFirst, transform the crashes data frame to a sf object have a point geometry using the code below.\n\ncrashes &lt;- st_as_sf(crashes, coords = c(\"Longitude\", \"Latitude\"), crs = \"NAD83\")\n\nError in eval(expr, envir, enclos): object 'crashes' not found\n\n\nCheck the CRS are the same for census2020 and crashes using st_crs() and transform if needed.\n\n#code here\n\nJoin the crashes and census dataset together and count the number of crashes per census tract. The function st_join can join to spatial data sets according to whether the spatial geometries of the right table intersect with the spatial geometries of the left table.\n\ncrashes_per_tract &lt;- st_join(??,??) %&gt;%\n  st_drop_geometry() %&gt;% #removes geometry - makes the following calculation more efficient \n  filter(!is.na(Accident_Datetime)) %&gt;%\n  count(??) \n\nError: &lt;text&gt;:1:32: unexpected ','\n1: crashes_per_tract &lt;- st_join(??,\n                                   ^\n\n\nJoin the census data with crashes_per_tract and then use a filter of n &gt; 0 to only keep the census tracts where crashes were recorded instead of all of Ramsey and Hennepin County.\n\ncrashes_per_tract_geo &lt;- ??? %&gt;% # sf object with census geometry goes first\n  left_join(??, by = ??) %&gt;%\n  filter(n &gt; 0)\n\nError: &lt;text&gt;:1:30: unexpected SPECIAL\n1: crashes_per_tract_geo &lt;- ??? %&gt;%\n                                 ^\n\n\nCreate the plot!!\n\nggplot() +\n  geom_sf(???) +\n  scale_fill_gradientn(colours = c(\"lightcyan\", \"lightcyan2\", \"lightskyblue3\", \"lightskyblue4\"))+\n  labs(fill = \"Crashes\", color = \"\", title = \"Number of pedestrian/bike crashes per census tract\") +\n  ggthemes::theme_map() + theme(legend.position = \"bottom\")\n\nError: &lt;text&gt;:2:14: unexpected ')'\n1: ggplot() +\n2:   geom_sf(???)\n                ^\n\n\n\n\nExercise: Adding layers\nPlot a variable of your choice for census tracts in Hennepin and Ramsey County and add roads to the map.\nStart by downloading a shape file. For example, you could search for “Minnesota roads shape file”. For this example, visit this site and download the Shapefile Zip File. Unzip the file and put the folder in the same location as this Rmd file.\nLoad in the shapefile using st_read().\n\nroads &lt;- sf::st_read(\"tl_2019_27_prisecroads\")\n\nError: Cannot open \"tl_2019_27_prisecroads\"; The file doesn't seem to exist.\n\nroads &lt;- roads %&gt;%\n  st_transform(crs = st_crs(census2020))\n\nError in eval(expr, envir, enclos): object 'roads' not found\n\n\nStart by using st_crop() to crop the roads map to the area we are interested in (Hennepin and Ramsey County).\n\nroads_sub &lt;- st_crop(roads,st_bbox(census2020))\n\nError in eval(expr, envir, enclos): object 'roads' not found\n\n\nCreate the map!!\n\nggplot() +\n  geom_sf(??)+ #put census tracts on map and fill by your variable of interest\n  geom_sf(?? ,fill = \"gray\", color = \"gray\", lwd = 0.2)+ #roads data here\n  labs(??)+ # add labels to fit your variables \n  scale_fill_gradientn(colours = c(\"lightcyan\", \"lightcyan2\", \"lightskyblue3\", \"lightskyblue4\"))+ # change to preferred color palette\n  theme_classic()+\n  theme(axis.line = element_blank(), \n        axis.text = element_blank(),\n        axis.ticks = element_blank(),\n        legend.position = \"bottom\", \n        plot.title.position = \"plot\", \n        plot.title = element_text(size = 8), \n        plot.subtitle = element_text(size = 8))\n\n\n\nBonus Challenge: Map design (if you have time)\nAdd some labels, a legend, a title, a scale bar, and credits to your map."
+  },
+  {
+    "objectID": "03-adv-maps.html#additional-resources",
+    "href": "03-adv-maps.html#additional-resources",
+    "title": "Topic 3: Advanced Spatial Visualizations",
+    "section": "Additional Resources",
+    "text": "Additional Resources\n\nSpatial Data Science https://r-spatial.org/book/\nLeaflet in R https://rstudio.github.io/leaflet/"
+  },
+  {
+    "objectID": "04-interactive-viz.html",
+    "href": "04-interactive-viz.html",
+    "title": "Topic 4: Interactive visualization",
+    "section": "",
+    "text": "After this lesson, you should be able to:\n\nEvaluate when it would be useful to use an interactive visualization or an animation and when it might not be necessary\nConstruct interactive visualizations and animations with plotly\nBuild a Shiny app that enables user to adjust visualization choices and explore linked visualizations"
+  },
+  {
+    "objectID": "04-interactive-viz.html#pair-programming-exercise",
+    "href": "04-interactive-viz.html#pair-programming-exercise",
+    "title": "Topic 4: Interactive visualization",
+    "section": "Pair “programming” exercise",
+    "text": "Pair “programming” exercise\nCatalog the app’s layout and interactivity features as part of the app planning phase.\n\nNavigator: Open up the neighborhood diversity app for reference. The Navigator should explore the interactive features of the app and help the Driver sketch out a schematic of the app.\nDriver: On a sheet of paper, sketch the layout and general features of the app as the Navigator navigates. Draw arrows to indicate what parts of the app update in response to user input. Your sketch might start off looking like this:"
+  },
+  {
+    "objectID": "04-interactive-viz.html#why-use-interactivity",
+    "href": "04-interactive-viz.html#why-use-interactivity",
+    "title": "Topic 4: Interactive visualization",
+    "section": "Why use interactivity?",
+    "text": "Why use interactivity?\nPros\n\nCan explore peculiarities more quickly with linked representations\nAllows guided exploration of results without needing to share data\n\nCons\n\nTakes longer to design\nAnalyst might spend longer exploring an interactive visualization than a series of static visualizations\nPoor design could result in information overload"
+  },
+  {
+    "objectID": "04-interactive-viz.html#common-features-of-interactive-visualizations",
+    "href": "04-interactive-viz.html#common-features-of-interactive-visualizations",
+    "title": "Topic 4: Interactive visualization",
+    "section": "Common features of interactive visualizations",
+    "text": "Common features of interactive visualizations\nCommon features of interactive visualizations include (reference):\n\nChanging data representation: providing options to change the type of plot displayed (e.g., allowing users to visualize temperature patterns over a month vs. over years)\nFocusing and getting details: mousing over part of a visualization to see an exact data value, zooming and panning\nData transformation: e.g., changing color scale, switching to/from log scale\nData selection and filtering: highlighting and brushing regions of a plot to focus the selected points; reordering and filtering data show in tables\nFinding corresponding information in multiple views: linked views that update dynamically based on interaction in another plot (often by zooming, panning, or selecting certain points)"
+  },
+  {
+    "objectID": "04-interactive-viz.html#shiny",
+    "href": "04-interactive-viz.html#shiny",
+    "title": "Topic 4: Interactive visualization",
+    "section": "Shiny",
+    "text": "Shiny\nThe neighborhood diversity app was made with the Shiny toolkit available in the shiny R package. Shiny facilitates building interactive web applications using R code without needing extensive knowledge of web coding technologies (e.g., HTML, CSS, and Javascript).\nLet’s look at an example app together. RStudio will create a template app when you go to File &gt; New File &gt; Shiny Web App. The application name can be neighborhood_diversity, and the application type can stay as the default “Single file (app.R)”. This creates a folder in your current directory called neighborhood_diversity with a single R code file called app.R.\nClick the Run App button to view the app in action.\nThe app.R has three components:\n\na user interface object (ui): this sets up the layout of the app\na server function (server): this defines how the app will react to user input\na call to the shinyApp() function: this launches the app\n\n\nBuilding the user interface (UI)\nThe first step in building a Shiny application is to set up the layout, or the User Interface (UI).\nOpen up the Shiny cheatsheet, and look at the Layouts section on the right side of the second page. Which layout pieces can we use to recreate the neighborhood diversity app?"
+  },
+  {
+    "objectID": "04-interactive-viz.html#the-plotly-package",
+    "href": "04-interactive-viz.html#the-plotly-package",
+    "title": "Topic 4: Interactive visualization",
+    "section": "The plotly package",
+    "text": "The plotly package\n\nlibrary(plotly)\n\nLoading required package: ggplot2\n\n\n\nAttaching package: 'plotly'\n\n\nThe following object is masked from 'package:ggplot2':\n\n    last_plot\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\n\nThe following object is masked from 'package:graphics':\n\n    layout\n\n\nOne use case:\n\ndata(babynames, package = \"babynames\")\nbnames &lt;- babynames %&gt;% filter(name %in% c(\"Leslie\", \"Margaux\"))\np &lt;- ggplot(bnames, aes(x = year, y = prop, color = sex, linetype = name)) +\n    geom_line()\n# ggplotly(p)\n\nAnother use case: animate\n\ndata(gapminder, package = \"gapminder\")\np &lt;- ggplot(gapminder, aes(gdpPercap, lifeExp, color = continent)) +\n    geom_point(aes(size = pop, frame = year, ids = country)) +\n    scale_x_log10() +\n    theme_classic()\n\nWarning in geom_point(aes(size = pop, frame = year, ids = country)): Ignoring\nunknown aesthetics: frame and ids\n\n# ggplotly(p)"
+  },
+  {
+    "objectID": "04-interactive-viz.html#ideas",
+    "href": "04-interactive-viz.html#ideas",
+    "title": "Topic 4: Interactive visualization",
+    "section": "Ideas",
+    "text": "Ideas\nTeach students about the flexdashboard package (https://pkgs.rstudio.com/flexdashboard/index.html). (Maybe put this as homework?)\n\nhttps://epirhandbook.com/en/dashboards-with-r-markdown.html\nPaper on dashboard design patterns and https://dashboarddesignpatterns.github.io/\nhttps://www.datapine.com/blog/dashboard-design-principles-and-best-practices/#dashboard-design-best-practices (Googled “theory of dashboard design”)\n\nTeach students about plotly and shiny–does flexdashboard intersect with plotly and/or shiny?\nThe Novel Coronavirus Research Compendium (NCRC): triage system was built with Shiny. (Slides on the process: https://jscholarship.library.jhu.edu/bitstream/handle/1774.2/62834/2020%20JHAllLibrariesLobner.pdf?sequence=1). I can’t seem to find the actual Shiny app."
+  },
+  {
+    "objectID": "04-interactive-viz.html#theory-of-dashboard-design",
+    "href": "04-interactive-viz.html#theory-of-dashboard-design",
+    "title": "Topic 4: Interactive visualization",
+    "section": "Theory of dashboard design",
+    "text": "Theory of dashboard design\nLead-in activity\n\nShow an example of two dashboards (or more) and have them compare the dashboards\nOr maybe a single interface that is familiar to them\n\nSchool-related possibilities: Moodle, DegreeWorks, 1600Grand\nMobile app\nXcel energy\n\nSplit students into groups where some groups look at a multipage PDF of visualizations–arising from the same plot on different subsets of data. The other group gets to look at an interactive visualization.\n\n\n\nConsider your audience\n\nWho will be using the dashboard and what information do they need?\n\nDetermine your goals\nChoose relevant metrics to display\nTell a story with your data\nProvide context"
+  }
+]

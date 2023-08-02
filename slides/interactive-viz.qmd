@@ -1,0 +1,39 @@
+---
+title: "Interactive visualization (Part 1)"
+format:
+  revealjs:
+    scrollable: true
+---
+
+## Why use interactive visualization?
+
+Examples:
+
+- [How Music is Remembered](https://pudding.cool/2020/07/song-decay/)
+    - Finding corresponding information in multiple views
+- [30 Years of American Anxieties](https://pudding.cool/2018/11/dearabby/)
+- [When Women Make Headlines](https://pudding.cool/2022/02/women-in-headlines/)
+
+## Use cases for interactivity
+
+- Changing data representation: This is about changing the way that certain variables are displayed in a visualization. Often times, this is about changing the plot type.
+- Focusing and getting details: Mousing over a plot element to see an exact data value. Zooming and panning. **Common use case**
+- Data transformation
+- Data selection and filtering: Highlighting and brushing. Also reordering for tables and matrices. **Common use case**
+- Finding corresponding information in multiple views: Seeing a given case highlighted within multiple plots. **Common use case**
+
+## The `plotly` package
+
+```{r echo=TRUE}
+library(plotly)
+library(babynames)
+
+bnames <- babynames %>% filter(name %in% c("Leslie", "Margaux"))
+
+p <- ggplot(bnames, aes(x = year, y = prop, color = sex, linetype = name)) +
+    geom_line()
+p
+
+# ggplotly(p)
+```
+

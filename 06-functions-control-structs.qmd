@@ -1,0 +1,75 @@
+---
+title: "Topic 6: Functions and control structures"
+---
+
+# Learning goals
+
+After this lesson, you should be able to:
+
+- Recognize when it would be useful to write a function
+- Identify the core components of a function definition and explain their role (the `function()` directive, arguments, argument defaults, function body, return value)
+- Describe the difference between argument matching by position and by name
+- Describe what the `...` argument does and the rationale underlying the rules for named arguments in conjunction with `...`
+- Write if-else, if-else if-else statements to conditionally execute code
+- Write your own function to carry out a repeated task
+- Provide feedback on functions written by others
+
+
+# NOTES
+
+Instead of introducing `purrr`, just do functions and basic control structures for this lesson
+
+
+# Pre-class preparation
+
+Read https://bookdown.org/rdpeng/rprogdatascience/functions.html or rather https://r4ds.had.co.nz/functions.html
+
+Moodle quiz
+- Ask students for input on "Gosh I just wish it was easier to do ___ in R". This will lead into the "Finding existing functions" part of the activity.
+
+# Setup
+
+`purrr` resources
+
+- https://jennybc.github.io/purrr-tutorial/index.html
+- https://www.rebeccabarter.com/blog/2019-08-19_purrr
+
+```{r}
+library(purrr)
+library(repurrrsive)
+```
+
+```{r}
+data(got_chars)
+got <- got_chars
+```
+
+
+# Activity ideas
+
+**Writing functions from scratch:**
+Function Challenge Relay: Divide the students into groups and set up stations with different R function challenges. Each station has a specific task that requires creating or using R functions. The groups rotate through the stations, completing the challenges together. For example, one station might require writing a function to calculate factorial, another to find the mean of a dataset, and so on.
+
+Write a function that fits a linear model within subgroups of the data.
+
+
+**Finding existing functions:**
+Function Library Creation: Assign each group a specific topic or problem domain (e.g., mathematical functions, data manipulation, data visualization). Each group works together to research, design, and implement a set of R functions that address various aspects of their assigned topic. They can then share their function library with the class.
+Function Scavenger Hunt: Create a scavenger hunt where each group receives a list of R functions to find and examples of tasks to perform using those functions. The hunt can involve finding functions in R documentation, tutorials, or online resources. The group that completes the most tasks correctly wins.
+
+Groups can put together a nice resource for others (e.g., a cheat sheet). Something more user-friendly than a Google Doc.
+
+**Editing functions writen by others:**
+Function Debugging Party: Give each group a set of R functions with intentional errors or bugs. The groups work together to debug and correct the functions. This activity reinforces the importance of testing and troubleshooting code collaboratively.
+Function Code Review Workshop: Each group writes an R function and shares it with another group. The receiving group reviews the code, provides feedback, and suggests improvements. This exercise promotes collaborative code development and helps students learn from each other's code.
+
+
+
+# Homework
+
+Have students go from gap_nested -> gap_simple and gap_split -> gap_simple
+
+Extra: other combinations: ehh I don't know if this is that useful
+
+# `purrr`
+

@@ -1,0 +1,136 @@
+---
+title: "Schedule"
+sidebar: false
+---
+
+```{=html}
+<table class="tg" data-quarto-disable-processing="true">
+<thead>
+  <tr>
+    <th class="topleft" style="width: 10%"><b>Week</b></th>
+    <th class="topleft" style="width: 30%"><b>Tuesday</b></th>
+    <th class="topleft" style="width: 30%"><b>Thursday</b></th>
+    <th class="topleft" style="width: 30%"><b>Announcements</b></th>
+  </tr>
+</thead>
+
+<tbody>
+  <tr>
+    <td class="topleft">1</td>
+    <td class="topleft">
+      <b>Welcome! Designing our learning community</b> <br>
+      Before class: Review syllabus and respond to questions posed therein. <br>
+      After class: x
+    </td>
+    <td class="topleft">
+      <b>Advanced visualization in ggplot</b> <br>
+      Before class: Review the construction of plots from STAT 112 and STAT 155. Complete Moodle checkpoint. <br>
+      After class: x
+    </td>
+    <td class="topleft">Look ahead to HW1</td>
+  </tr>
+  <!----------------------------------------------------------->
+  
+  
+  <tr>
+    <td class="topleft">2</td>
+    <td class="topleft">
+      <b>Advanced map visualization</b> <br>
+      Before class: Review map material from <a href="https://bcheggeseth.github.io/112_spring_2023/spatial-visualization.html">STAT/COMP 112</a> <br>
+      After class: x
+    </td>
+    <td class="topleft">
+      <b>Interactive visualization (Part 1) & podcast discussion</b> <br>
+      Before class: Listen to <a href="https://datastori.es/135-the-dashboard-conspiracy-with-lyn-bartram-and-alper-sarikaya/">The "dashboard conspiracy"</a> podcast <br>
+      After class: x
+    </td>
+    <td class="topleft">Turn in HW1. Look ahead to HW2.</td>
+  </tr>
+  <!----------------------------------------------------------->
+  
+  
+  <tr>
+    <td class="topleft">3</td>
+    <td class="topleft">
+      <b>Interactive visualization (Part 2)</b> <br>
+      Before class: Read up through the "Streamline computation" section in <a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson6/">this tutorial on reactive expressions</a> <br>
+      After class: x
+    </td>
+    <td class="topleft">
+      <b>Topic</b> <br>
+      Before class: Find a <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday dataset</a> that you would be interested in exploring for a mini-project. <br>
+      After class: x
+    </td>
+    <td class="topleft">Turn in HW2. Look ahead to HW3.</td>
+  </tr>
+  <!----------------------------------------------------------->
+  
+  
+  <tr>
+    <td class="topleft">4</td>
+    <td class="topleft">
+      <b>Working with different data classes (Part 1)</b> <br>
+      Before class: Group 1 reads <a href="https://r4ds.hadley.nz/logicals.html">Chapter 13 (Logicals)</a> of R4DS. Group 2 reads <a href="https://r4ds.hadley.nz/numbers.html">Chapter 14 (Numbers)</a>. Group 3 reads <a href="https://r4ds.hadley.nz/datetimes.html">Chapter 18 (Dates/Times)</a>. <br>
+      After class: x
+    </td>
+    <td class="topleft">
+      <b>Working with different data classes (Part 2)</b> <br>
+      Before class: Read <a href="https://r4ds.hadley.nz/strings.html">Chapter 15 (Strings)</a>, <a href="https://r4ds.hadley.nz/regexps.html">Chapter 16 (Regular Expressions)</a>, and <a href="https://r4ds.hadley.nz/factors.html">Chapter 17 (Factors)</a> of R4DS. <br>
+      After class: x
+    </td>
+    <td class="topleft">Turn in HW3. Look ahead to HW4.</td>
+  </tr>
+  <!----------------------------------------------------------->
+  
+  
+  <tr>
+    <td class="topleft">5</td>
+    <td class="topleft">
+      <b>Writing functions</b> <br>
+      Before class: Read <a href="https://r4ds.hadley.nz/functions.html">Chapter 26 (Functions)</a> and <a href="https://bookdown.org/rdpeng/rprogdatascience/control-structures.html#if-else">Section 13.1 (if-else)</a>. <br>
+      After class: x
+    </td>
+    <td class="topleft">
+      <b>Loops and iteration</b> <br>
+      Before class: Read <a href="https://r4ds.hadley.nz/iteration.html">Chapter 27 (Iteration)</a> and the following parts of <a href="https://www.rebeccabarter.com/blog/2019-08-19_purrr">this tutorial</a>: Up through (and including) "Simplest usage: repeated looping with map" <br>
+      After class: x
+    </td>
+    <td class="topleft">Turn in HW4. Look ahead to HW5.</td>
+  </tr>
+  <!----------------------------------------------------------->
+  
+  
+  <tr>
+    <td class="topleft">6</td>
+    <td class="topleft">
+      <b>Iteration with purrr</b> <br>
+      Before class: Read the remainder of this <a href="https://www.rebeccabarter.com/blog/2019-08-19_purrr">purrr tutorial</a>. <br>
+      After class: x
+    </td>
+    <td class="topleft">
+      <b>Data acquisition: databases</b> <br>
+      Before class: Read <a href="https://r4ds.hadley.nz/databases.html">Chapter 22 (Databases)</a>. <br>
+      After class: x
+    </td>
+    <td class="topleft">Turn in HW5. Look ahead to HW6.</td>
+  </tr>
+  <!----------------------------------------------------------->
+  
+  
+  <tr>
+    <td class="topleft">7</td>
+    <td class="topleft">
+      <b>Data acquisition: APIs</b> <br>
+      Before class: Read <a href="https://httr.r-lib.org/articles/quickstart.html">Getting started with httr</a> <br>
+      After class: x
+    </td>
+    <td class="topleft">
+      <b>Data acquisition: Scraping</b> <br>
+      Before class: Read the <a href="https://cran.r-project.org/web/packages/rvest/vignettes/rvest.html">rvest vignette</a> <br>
+      After class: x
+    </td>
+    <td class="topleft">Turn in HW6. Look ahead to HW7.</td>
+  </tr>
+</tbody>
+</table>
+```

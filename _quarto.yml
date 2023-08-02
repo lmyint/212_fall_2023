@@ -1,0 +1,41 @@
+project:
+  type: website
+
+website:
+  title: "STAT/COMP 212"
+  navbar:
+    left:
+      - file: index.qmd
+        text: "Home"
+      - file: schedule.qmd
+        text: "Schedule"
+      - file: syllabus.qmd
+        text: "Syllabus"
+      - file: activities.qmd
+        text: "Activities"
+      - file: homework.qmd
+        text: "Homework"
+      - file: project.qmd
+        text: "Project"
+
+  sidebar:
+    - title: "Activities"
+      style: "docked"
+      background: light
+      contents:
+        - 01-introductions.qmd
+        - 02-adv-ggplot.qmd
+        - 03-adv-maps.qmd
+        - 04-interactive-viz.qmd
+        - 05-data-types.qmd
+        - 06-functions-control-structs.qmd
+
+format:
+  html:
+    theme: minty
+    css: styles.css
+    toc: true
+    code-overflow: wrap
+
+editor: source
+
