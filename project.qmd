@@ -17,9 +17,10 @@ Your project may align with work/projects from other classes--this is encouraged
 
 ## Milestone 1
 
-Identify a data context that interests you. Identify 3 different data sources that relate to that context. We might not have covered all of the tools needed to acquire that data at this point, so check in with the instructor about the sources that you've found to make sure that they're workable.
+Identify a data context that interests you. Identify 3 different data sources that relate to that context. Think beyond a spreadsheet; the most interesting projects may involve collecting and aggregating data from multiple sources and formats. We might not have covered all of the tools needed to acquire that data at this point, so check in with the instructor about the sources that you've found to make sure that they're workable.
 
 - Note to self: Provide general guidance on what sources of data would be appropriate
+- Brianna comment: I might include the questions and data in the same milestone 1.
 - Due date:
 
 ## Milestone 2
@@ -28,14 +29,23 @@ Brainstorm 3 questions about your data context and sources that pique your curio
 
 - Shortly after milestone 1 because question-asking and iteration on that question-asking is key.
 
+- Brianna comment: If milestone 1 is done individually (?), structure milestone 2 to be group wise. Perhaps finalize data and questions. Each person create 1 "ugly" visualization to demonstrate viability (like a prototype).
+
 ## Milestone 3
 
 Perform the data acquisition, wrangling, visualization, and modeling needed to answer Research Question 1. Note that your question might not be amenable to modeling (or to modeling that you've learned about so far). In that case, I'm not requiring you to use modeling. Visualization is required though.
+
+- Brianna comment: Perform the data acquisition, wrangling, visualization, and modeling needed to answer one of Research Question. Present to class and get feedback. 
+
 
 ## Milestone 4
 
 Same as Milestone 3 but for Research Question 2.
 
+- Brianna comment: Adjust data, research question, as needed. Perform the data acquisition, wrangling, visualization, and modeling needed to answer one of Research Question. Submit "Rough Draft" to Instructor and get feedback. 
+
 ## Milestone 5
 
 Same as Milestone 3 but for Research Question 3.
+
+- Brianna comment: Adjust data, research question, as needed. Perform the data acquisition, wrangling, visualization, and modeling needed to answer one of Research Question. Submit Final Draft.

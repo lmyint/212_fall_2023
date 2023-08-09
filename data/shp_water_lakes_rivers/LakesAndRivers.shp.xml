@@ -1,0 +1,377 @@
+<metadata xml:lang="en">
+	<idinfo>
+		<native>Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 3; ESRI ArcCatalog 9.3.1.1850</native>
+		<descript>
+			<abstract>REQUIRED: A brief narrative summary of the data set.</abstract>
+			<purpose>REQUIRED: A summary of the intentions with which the data set was developed.</purpose>
+		</descript>
+		<citation>
+			<citeinfo>
+				<origin>REQUIRED: The name of an organization or individual that developed the data set.</origin>
+				<pubdate>REQUIRED: The date when the data set is published or otherwise made available for release.</pubdate>
+				<title>Lakes_and_Rivers_from_2005_OWF</title>
+				<geoform>vector digital data</geoform>
+				<onlink>\\rafs\gis\devel\data_devel\Water Features\Lakes and Rivers Data Needs Assessment\Master Geodatabase Creation\Master Hydro TEST 2.mdb</onlink>
+			</citeinfo>
+		</citation>
+		<timeperd>
+			<current>REQUIRED: The basis on which the time period of content information is determined.</current>
+			<timeinfo>
+				<sngdate>
+					<caldate>REQUIRED: The year (and optionally month, or month and day) for which the data set corresponds to the ground.</caldate>
+				</sngdate>
+			</timeinfo>
+		</timeperd>
+		<status>
+			<progress>REQUIRED: The state of the data set.</progress>
+			<update>REQUIRED: The frequency with which changes and additions are made to the data set after the initial data set is completed.</update>
+		</status>
+		<spdom>
+			<bounding>
+				<westbc>REQUIRED: Western-most coordinate of the limit of coverage expressed in longitude.</westbc>
+				<eastbc>REQUIRED: Eastern-most coordinate of the limit of coverage expressed in longitude.</eastbc>
+				<northbc>REQUIRED: Northern-most coordinate of the limit of coverage expressed in latitude.</northbc>
+				<southbc>REQUIRED: Southern-most coordinate of the limit of coverage expressed in latitude.</southbc>
+			</bounding>
+		</spdom>
+		<keywords/>
+		<accconst>REQUIRED: Restrictions and legal prerequisites for accessing the data set.</accconst>
+		<useconst>REQUIRED: Restrictions and legal prerequisites for using the data set after access is granted.</useconst>
+	</idinfo>
+	<dataIdInfo>
+		<envirDesc>Microsoft Windows 7 Version 6.1 (Build 7601) Service Pack 1; Esri ArcGIS 10.1.1.3143</envirDesc>
+		<dataLang>
+			<languageCode value="eng"/>
+			<countryCode value="USA"/>
+		</dataLang>
+		<idCitation>
+			<resTitle>MOWF_work6_annotation_joined</resTitle>
+			<presForm>
+				<PresFormCd value="005"/>
+			</presForm>
+		</idCitation>
+		<spatRpType>
+			<SpatRepTypCd value="001"/>
+		</spatRpType>
+	</dataIdInfo>
+	<metainfo>
+		<metstdn>FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+		<metstdv>FGDC-STD-001-1998</metstdv>
+		<mettc>local time</mettc>
+		<metc>
+			<cntinfo>
+				<cntorgp>
+					<cntper>REQUIRED: The person responsible for the metadata information.</cntper>
+					<cntorg>REQUIRED: The organization responsible for the metadata information.</cntorg>
+				</cntorgp>
+				<cntaddr>
+					<addrtype>REQUIRED: The mailing and/or physical address for the organization or individual.</addrtype>
+					<city>REQUIRED: The city of the address.</city>
+					<state>REQUIRED: The state or province of the address.</state>
+					<postal>REQUIRED: The ZIP or other postal code of the address.</postal>
+				</cntaddr>
+				<cntvoice>REQUIRED: The telephone number by which individuals can speak to the organization or individual.</cntvoice>
+			</cntinfo>
+		</metc>
+		<metd>20100730</metd>
+	</metainfo>
+	<mdLang>
+		<languageCode value="eng"/>
+		<countryCode value="USA"/>
+	</mdLang>
+	<mdStanName>ISO 19115 Geographic Information - Metadata</mdStanName>
+	<mdStanVer>DIS_ESRI1.0</mdStanVer>
+	<mdChar>
+		<CharSetCd value="004"/>
+	</mdChar>
+	<mdHrLv>
+		<ScopeCd value="005"/>
+	</mdHrLv>
+	<mdHrLvName>dataset</mdHrLvName>
+	<distinfo>
+		<resdesc>Downloadable Data</resdesc>
+	</distinfo>
+	<distInfo>
+		<distributor>
+			<distorTran>
+				<onLineSrc>
+					<orDesc>002</orDesc>
+					<linkage>file://\\rafs\gis\devel\data_devel\Water Features\Lakes and Rivers Data Needs Assessment\Master Geodatabase Creation\Master Hydro TEST 2.mdb</linkage>
+					<protocol>Local Area Network</protocol>
+				</onLineSrc>
+			</distorTran>
+			<distorFormat>
+				<formatName>Personal GeoDatabase Feature Class</formatName>
+			</distorFormat>
+		</distributor>
+		<distFormat>
+			<formatName>File Geodatabase Feature Class</formatName>
+		</distFormat>
+		<distTranOps>
+			<transSize Sync="TRUE">0.000</transSize>
+		</distTranOps>
+	</distInfo>
+	<spdoinfo>
+		<direct>Vector</direct>
+		<ptvctinf>
+			<esriterm Name="LakesAndRivers">
+				<efeatyp Sync="TRUE">Simple</efeatyp>
+				<efeageom code="4" Sync="TRUE"/>
+				<esritopo Sync="TRUE">FALSE</esritopo>
+				<efeacnt Sync="TRUE">0</efeacnt>
+				<spindex Sync="TRUE">FALSE</spindex>
+				<linrefer Sync="TRUE">FALSE</linrefer>
+			</esriterm>
+		</ptvctinf>
+	</spdoinfo>
+	<spref>
+		<horizsys>
+			<planar>
+				<planci>
+					<plance>coordinate pair</plance>
+					<plandu>meters</plandu>
+					<coordrep>
+						<absres>0.000064</absres>
+						<ordres>0.000064</ordres>
+					</coordrep>
+				</planci>
+			</planar>
+			<geodetic>
+				<horizdn>North American Datum of 1983</horizdn>
+				<ellips>Geodetic Reference System 80</ellips>
+				<semiaxis>6378137.000000</semiaxis>
+				<denflat>298.257222</denflat>
+			</geodetic>
+		</horizsys>
+		<vertdef>
+			<altsys>
+				<altenc>Explicit elevation coordinate included with horizontal coordinates</altenc>
+				<altres>0.000003</altres>
+			</altsys>
+		</vertdef>
+	</spref>
+	<refSysInfo>
+		<RefSystem>
+			<refSysID>
+				<identCode code="26915">NAD_1983_UTM_Zone_15N</identCode>
+				<idCodeSpace>EPSG</idCodeSpace>
+				<idVersion>7.11.2</idVersion>
+			</refSysID>
+		</RefSystem>
+	</refSysInfo>
+	<spatRepInfo>
+		<VectSpatRep>
+			<geometObjs Name="LakesAndRivers">
+				<geoObjTyp>
+					<GeoObjTypCd value="002" Sync="TRUE"/>
+				</geoObjTyp>
+				<geoObjCnt Sync="TRUE">0</geoObjCnt>
+			</geometObjs>
+			<topLvl>
+				<TopoLevCd value="001" Sync="TRUE"/>
+			</topLvl>
+		</VectSpatRep>
+	</spatRepInfo>
+	<eainfo>
+		<detailed Name="LakesAndRivers">
+			<enttyp>
+				<enttypl>MOWF_work6_annotation_joined</enttypl>
+				<enttypt Sync="TRUE">Feature Class</enttypt>
+				<enttypc Sync="TRUE">0</enttypc>
+			</enttyp>
+			<attr>
+				<attrlabl Sync="TRUE">FID</attrlabl>
+				<attalias Sync="TRUE">FID</attalias>
+				<attrtype Sync="TRUE">OID</attrtype>
+				<attwidth Sync="TRUE">4</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+				<attrdef Sync="TRUE">Internal feature number.</attrdef>
+				<attrdefs Sync="TRUE">Esri</attrdefs>
+				<attrdomv>
+					<udom Sync="TRUE">Sequential unique whole numbers that are automatically generated.</udom>
+				</attrdomv>
+			</attr>
+			<attr>
+				<attrlabl>Shape</attrlabl>
+				<attrdef>Feature geometry.</attrdef>
+				<attrdefs>ESRI</attrdefs>
+				<attrdomv>
+					<udom>Coordinates defining the features.</udom>
+				</attrdomv>
+				<attalias Sync="TRUE">Shape</attalias>
+				<attrtype Sync="TRUE">Geometry</attrtype>
+				<attwidth Sync="TRUE">0</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+			<attr>
+				<attrlabl>OWF_ID</attrlabl>
+				<attalias Sync="TRUE">OWF_ID</attalias>
+				<attrtype Sync="TRUE">String</attrtype>
+				<attwidth Sync="TRUE">8</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+			<attr>
+				<attrlabl>SYSTEM</attrlabl>
+				<attalias Sync="TRUE">SYSTEM</attalias>
+				<attrtype Sync="TRUE">String</attrtype>
+				<attwidth Sync="TRUE">6</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+			<attr>
+				<attrlabl>NAME_DNR</attrlabl>
+				<attalias Sync="TRUE">NAME_DNR</attalias>
+				<attrtype Sync="TRUE">String</attrtype>
+				<attwidth Sync="TRUE">50</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+			<attr>
+				<attrlabl>ALT_NAME</attrlabl>
+				<attalias Sync="TRUE">ALT_NAME</attalias>
+				<attrtype Sync="TRUE">String</attrtype>
+				<attwidth Sync="TRUE">25</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">PRIORITY_L</attrlabl>
+				<attalias Sync="TRUE">PRIORITY_L</attalias>
+				<attrtype Sync="TRUE">String</attrtype>
+				<attwidth Sync="TRUE">5</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">AREA_ACRES</attrlabl>
+				<attalias Sync="TRUE">AREA_ACRES</attalias>
+				<attrtype Sync="TRUE">Double</attrtype>
+				<attwidth Sync="TRUE">19</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">Shape_Leng</attrlabl>
+				<attalias Sync="TRUE">Shape_Leng</attalias>
+				<attrtype Sync="TRUE">Double</attrtype>
+				<attwidth Sync="TRUE">19</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+			</attr>
+			<attr>
+				<attrlabl Sync="TRUE">Shape_Area</attrlabl>
+				<attalias Sync="TRUE">Shape_Area</attalias>
+				<attrtype Sync="TRUE">Double</attrtype>
+				<attwidth Sync="TRUE">19</attwidth>
+				<atprecis Sync="TRUE">0</atprecis>
+				<attscale Sync="TRUE">0</attscale>
+				<attrdef Sync="TRUE">Area of feature in internal units squared.</attrdef>
+				<attrdefs Sync="TRUE">Esri</attrdefs>
+				<attrdomv>
+					<udom Sync="TRUE">Positive real numbers that are automatically generated.</udom>
+				</attrdomv>
+			</attr>
+		</detailed>
+	</eainfo>
+	<mdDateSt>20130514</mdDateSt>
+	<Esri>
+		<DataProperties>
+			<itemProps>
+				<itemName Sync="TRUE">LakesAndRivers</itemName>
+				<imsContentType Sync="TRUE">002</imsContentType>
+				<itemLocation>
+					<linkage Sync="TRUE">file://\\g46palgdrftp001\Z\var\ftp\gdrs_temp\update\us_mn_state_metc\water_lakes_rivers\shp\LakesAndRivers.shp</linkage>
+					<protocol Sync="TRUE">Local Area Network</protocol>
+				</itemLocation>
+				<itemSize Sync="TRUE">0.000</itemSize>
+			</itemProps>
+			<coordRef>
+				<type Sync="TRUE">Projected</type>
+				<geogcsn Sync="TRUE">GCS_North_American_1983</geogcsn>
+				<csUnits Sync="TRUE">Linear Unit: Meter (1.000000)</csUnits>
+				<projcsn Sync="TRUE">NAD_1983_UTM_Zone_15N</projcsn>
+				<peXml Sync="TRUE">&lt;ProjectedCoordinateSystem xsi:type='typens:ProjectedCoordinateSystem' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xs='http://www.w3.org/2001/XMLSchema' xmlns:typens='http://www.esri.com/schemas/ArcGIS/10.4'&gt;&lt;WKT&gt;PROJCS[&amp;quot;NAD_1983_UTM_Zone_15N&amp;quot;,GEOGCS[&amp;quot;GCS_North_American_1983&amp;quot;,DATUM[&amp;quot;D_North_American_1983&amp;quot;,SPHEROID[&amp;quot;GRS_1980&amp;quot;,6378137.0,298.257222101]],PRIMEM[&amp;quot;Greenwich&amp;quot;,0.0],UNIT[&amp;quot;Degree&amp;quot;,0.0174532925199433]],PROJECTION[&amp;quot;Transverse_Mercator&amp;quot;],PARAMETER[&amp;quot;False_Easting&amp;quot;,500000.0],PARAMETER[&amp;quot;False_Northing&amp;quot;,0.0],PARAMETER[&amp;quot;Central_Meridian&amp;quot;,-93.0],PARAMETER[&amp;quot;Scale_Factor&amp;quot;,0.9996],PARAMETER[&amp;quot;Latitude_Of_Origin&amp;quot;,0.0],UNIT[&amp;quot;Meter&amp;quot;,1.0],AUTHORITY[&amp;quot;EPSG&amp;quot;,26915]]&lt;/WKT&gt;&lt;XOrigin&gt;-5120900&lt;/XOrigin&gt;&lt;YOrigin&gt;-9998100&lt;/YOrigin&gt;&lt;XYScale&gt;450445547.3910538&lt;/XYScale&gt;&lt;ZOrigin&gt;-100000&lt;/ZOrigin&gt;&lt;ZScale&gt;10000&lt;/ZScale&gt;&lt;MOrigin&gt;-100000&lt;/MOrigin&gt;&lt;MScale&gt;10000&lt;/MScale&gt;&lt;XYTolerance&gt;0.001&lt;/XYTolerance&gt;&lt;ZTolerance&gt;0.001&lt;/ZTolerance&gt;&lt;MTolerance&gt;0.001&lt;/MTolerance&gt;&lt;HighPrecision&gt;true&lt;/HighPrecision&gt;&lt;WKID&gt;26915&lt;/WKID&gt;&lt;LatestWKID&gt;26915&lt;/LatestWKID&gt;&lt;/ProjectedCoordinateSystem&gt;</peXml>
+			</coordRef>
+			<lineage>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190610" Time="132950">CalculateField GISLibrary.DBO.MasterOpenWaterFeatures SITE_CODE_NAME "Bde Maka Ska" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190610" Time="133002">CalculateField GISLibrary.DBO.MasterOpenWaterFeatures NAME_FULL "Bde Maka Ska" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190610" Time="133012">CalculateField GISLibrary.DBO.MasterOpenWaterFeatures NAME_SHORT "Bde Maka Ska" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190610" Time="133025">CalculateField GISLibrary.DBO.MasterOpenWaterFeatures NAME_DNR "Bde Maka Ska" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\Merge" Date="20190614" Time="160603">Merge Existing_MOWF_no_less_3acres;To_add_new_MOWF_polygons_DNR_info M:\GIS_Projects\MasterOpenWaterFeatures\OpenWaterProject_2017\OpenWater.gdb\Updated_MOWF_with_new_polygons "OWF_ID "OWF_ID" true true false 8 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,OWF_ID,-1,-1;ID_SOURCE "ID_SOURCE" true true false 4 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,ID_SOURCE,-1,-1;DOWLKNUM "DOWLKNUM" true true false 8 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,DOWLKNUM,-1,-1,To_add_new_MOWF_polygons_DNR_info,dowlknum,-1,-1;GNIS_ID "GNIS_ID" true true false 8 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,GNIS_ID,-1,-1;AUTONUMBER "AUTONUMBER" true true false 8 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,AUTONUMBER,-1,-1;SUBDIVS "SUBDIVS" true true false 1 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,SUBDIVS,-1,-1;SUBDIV_ID "SUBDIV_ID" true true false 8 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,SUBDIV_ID,-1,-1;SID_SOURCE "SID_SOURCE" true true false 4 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,SID_SOURCE,-1,-1;SUBDOWLKNUM "SUBDOWLKNUM" true true false 8 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,SUBDOWLKNUM,-1,-1;SUBAUTONUMBER "SUBAUTONUMBER" true true false 8 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,SUBAUTONUMBER,-1,-1;EIMS_SITE_CODE "EIMS_SITE_CODE" true true false 8 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,EIMS_SITE_CODE,-1,-1;BASIN "BASIN" true true false 2 Short 0 0 ,First,#,Existing_MOWF_no_less_3acres,BASIN,-1,-1;EIMS_MAPCODE2 "EIMS_MAPCODE2" true true false 12 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,EIMS_MAPCODE2,-1,-1;SYSTEM "SYSTEM" true true false 6 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,SYSTEM,-1,-1;NAME_DNR "NAME_DNR" true true false 25 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,NAME_DNR,-1,-1;NAME_SHORT "NAME_SHORT" true true false 25 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,NAME_SHORT,-1,-1;NAME_FULL "NAME_FULL" true true false 30 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,NAME_FULL,-1,-1;ALT_NAME "ALT_NAME" true true false 25 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,ALT_NAME,-1,-1;ALT_SOURCE "ALT_SOURCE" true true false 4 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,ALT_SOURCE,-1,-1;NAME_SUB_SHORT "NAME_SUB_SHORT" true true false 30 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,NAME_SUB_SHORT,-1,-1;NAME_SUB_FULL "NAME_SUB_FULL" true true false 50 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,NAME_SUB_FULL,-1,-1;ALT_NAME_SUB "ALT_NAME_SUB" true true false 25 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,ALT_NAME_SUB,-1,-1;ALT_SUB_SOURCE "ALT_SUB_SOURCE" true true false 4 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,ALT_SUB_SOURCE,-1,-1;SITE_CODE_NAME "SITE_CODE_NAME" true true false 50 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,SITE_CODE_NAME,-1,-1;AREA_ACRES "AREA_ACRES" true true false 8 Double 0 0 ,First,#,Existing_MOWF_no_less_3acres,AREA_ACRES,-1,-1;PWI_CLASS "PWI_CLASS" true true false 2 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,PWI_CLASS,-1,-1,To_add_new_MOWF_polygons_DNR_info,pwi_class,-1,-1;PROD_DATE "PROD_DATE" true true false 8 Date 0 0 ,First,#,Existing_MOWF_no_less_3acres,PROD_DATE,-1,-1;GROUND_DATE "GROUND_DATE" true true false 8 Date 0 0 ,First,#,Existing_MOWF_no_less_3acres,GROUND_DATE,-1,-1;SOURCE "SOURCE" true true false 50 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,SOURCE,-1,-1;EDITOR_ID "EDITOR_ID" true true false 10 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,EDITOR_ID,-1,-1;HUC_8 "HUC_8" true true false 8 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,HUC_8,-1,-1;GlobalID "GlobalID" false false false 38 GlobalID 0 0 ,First,#,Existing_MOWF_no_less_3acres,GlobalID,-1,-1;PriorityLake "PriorityLake" true true false 5 Text 0 0 ,First,#,Existing_MOWF_no_less_3acres,PriorityLake,-1,-1;Shape_Length "Shape_Length" false true true 8 Double 0 0 ,First,#,Existing_MOWF_no_less_3acres,Shape_Length,-1,-1,To_add_new_MOWF_polygons_DNR_info,Shape_Length,-1,-1;Shape_Area "Shape_Area" false true true 8 Double 0 0 ,First,#,Existing_MOWF_no_less_3acres,Shape_Area,-1,-1,To_add_new_MOWF_polygons_DNR_info,Shape_Area,-1,-1;Join_Count "Join_Count" true true false 4 Long 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,Join_Count,-1,-1;TARGET_FID "TARGET_FID" true true false 4 Long 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,TARGET_FID,-1,-1;JOIN_FID "JOIN_FID" true true false 4 Long 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,JOIN_FID,-1,-1;gridcode "gridcode" true true false 4 Long 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,gridcode,-1,-1;Areas_acres "Areas_acres" true true false 8 Double 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,Areas_acres,-1,-1;fw_id "FW_ID" true true false 4 Long 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,fw_id,-1,-1;pw_basin_name "PW_BASIN_NAME" true true false 100 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,pw_basin_name,-1,-1;pw_parent_name "PW_PARENT_NAME" true true false 100 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,pw_parent_name,-1,-1;pw_sub_name "PW_SUB_NAME" true true false 100 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,pw_sub_name,-1,-1;sub_flag "SUB_FLAG" true true false 1 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,sub_flag,-1,-1;wb_class "WB_CLASS" true true false 20 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,wb_class,-1,-1;lake_class "LAKE_CLASS" true true false 2 Short 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,lake_class,-1,-1;acres "ACRES" true true false 8 Double 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,acres,-1,-1;shore_mi "SHORE_MI" true true false 8 Double 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,shore_mi,-1,-1;center_utm_x "CENTER_UTM_X" true true false 8 Double 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,center_utm_x,-1,-1;center_utm_y "CENTER_UTM_Y" true true false 8 Double 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,center_utm_y,-1,-1;cty_name "CTY_NAME" true true false 20 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,cty_name,-1,-1;dnr_region "DNR_REGION" true true false 2 Short 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,dnr_region,-1,-1;fsh_office "FSH_OFFICE" true true false 20 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,fsh_office,-1,-1;outside_mn "OUTSIDE_MN" true true false 1 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,outside_mn,-1,-1;delineated_by "DELINEATED_BY" true true false 8 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,delineated_by,-1,-1;delineation_date "DELINEATION_DATE" true true false 8 Date 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,delineation_date,-1,-1;delineation_src "DELINEATION_SRC" true true false 20 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,delineation_src,-1,-1;delineation_notes "DELINEATION_NOTES" true true false 254 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,delineation_notes,-1,-1;approved_by "APPROVED_BY" true true false 8 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,approved_by,-1,-1;approval_date "APPROVAL_DATE" true true false 8 Date 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,approval_date,-1,-1;approval_notes "APPROVAL_NOTES" true true false 254 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,approval_notes,-1,-1;publish_date "PUBLISH_DATE" true true false 8 Date 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,publish_date,-1,-1;lksdb_basin_id "LKSDB_BASIN_ID" true true false 4 Long 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,lksdb_basin_id,-1,-1;has_wld_flag "HAS_WLD_FLAG" true true false 1 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,has_wld_flag,-1,-1;wld_flag_type "WLD_FLAG_TYPE" true true false 50 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,wld_flag_type,-1,-1;unique_id "unique_id" true true false 4 Long 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,unique_id,-1,-1;created_user "created_user" true true false 255 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,created_user,-1,-1;created_date "created_date" true true false 8 Date 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,created_date,-1,-1;last_edited_user "last_edited_user" true true false 255 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,last_edited_user,-1,-1;last_edited_date "last_edited_date" true true false 8 Date 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,last_edited_date,-1,-1;ow_use "ow_use" true true false 1 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,ow_use,-1,-1;map_display "map_display" true true false 1 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,map_display,-1,-1;map_label "map_label" true true false 100 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,map_label,-1,-1;unique_guid "unique_guid" true true false 38 Guid 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,unique_guid,-1,-1;INSIDE_X "INSIDE_X" true true false 8 Double 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,INSIDE_X,-1,-1;INSIDE_Y "INSIDE_Y" true true false 8 Double 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,INSIDE_Y,-1,-1;Checked "Checked" true true false 5 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,Checked,-1,-1;Unique_code "Unique_code" true true false 20 Text 0 0 ,First,#,To_add_new_MOWF_polygons_DNR_info,Unique_code,-1,-1"</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="160811">CalculateField Updated_MOWF_with_new_polygons OWF_ID [DOWLKNUM] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="161025">CalculateField Updated_MOWF_with_new_polygons OWF_ID NULL VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="161034">CalculateField Updated_MOWF_with_new_polygons DOWLKNUM NULL VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="161045">CalculateField Updated_MOWF_with_new_polygons DOWLKNUM NULL VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="161049">CalculateField Updated_MOWF_with_new_polygons OWF_ID NULL VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="162437">CalculateField Updated_MOWF_with_new_polygons SUBDIVS [sub_flag] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="162930">CalculateField Updated_MOWF_with_new_polygons NAME_DNR [pw_parent_name] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="163225">CalculateField Updated_MOWF_with_new_polygons NAME_SUB_SHORT [pw_sub_name] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="163502">CalculateField Updated_MOWF_with_new_polygons SUBDIVS "N" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="163621">CalculateField Updated_MOWF_with_new_polygons SUBDIVS "Y" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="163857">CalculateField Updated_MOWF_with_new_polygons NAME_DNR2 [NAME_DNR] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="163909">CalculateField Updated_MOWF_with_new_polygons NAME_SHORT2 [NAME_SHORT] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="164012">CalculateField Updated_MOWF_with_new_polygons NAME_FULL2 [NAME_FULL] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="164126">CalculateField Updated_MOWF_with_new_polygons NAME_SUB_SHORT2 [NAME_SUB_SHORT] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="164208">CalculateField Updated_MOWF_with_new_polygons NAME_SUB_FULL2 [NAME_SUB_FULL] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="164309">CalculateField Updated_MOWF_with_new_polygons NAME_DNR2 [pw_parent_name] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="164350">CalculateField Updated_MOWF_with_new_polygons NAME_SHORT2 [pw_parent_name] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="164358">CalculateField Updated_MOWF_with_new_polygons NAME_FULL2 [pw_parent_name] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="164419">CalculateField Updated_MOWF_with_new_polygons NAME_SUB_SHORT2 [pw_sub_name] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="164425">CalculateField Updated_MOWF_with_new_polygons NAME_SUB_FULL2 [pw_sub_name] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="164821">CalculateField Updated_MOWF_with_new_polygons NAME_SHORT2 NULL VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="164941">CalculateField Updated_MOWF_with_new_polygons NAME_SHORT2 NULL VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="164946">CalculateField Updated_MOWF_with_new_polygons NAME_FULL2 NULL VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="165113">CalculateField Updated_MOWF_with_new_polygons NAME_SUB_FULL2 NULL VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="165920">CalculateField Updated_MOWF_with_new_polygons SYSTEM "River" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="165958">CalculateField Updated_MOWF_with_new_polygons SYSTEM "Lake" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="170041">CalculateField Updated_MOWF_with_new_polygons SYSTEM "Lake" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190614" Time="170200">CalculateField Updated_MOWF_with_new_polygons ID_SOURCE "DNR" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190617" Time="121352">CalculateField Updated_MOWF_with_new_polygons ID_SOURCE "METC" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190617" Time="124814">CalculateField Updated_MOWF_with_new_polygons PROD_DATE "6/14/2019" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190617" Time="124839">CalculateField Updated_MOWF_with_new_polygons GROUND_DATE "4/22/2016" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190617" Time="124959">CalculateField Updated_MOWF_with_new_polygons SOURCE "2016 7-county aerial" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190617" Time="125007">CalculateField Updated_MOWF_with_new_polygons EDITOR_ID "ressegel" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190617" Time="125111">CalculateField Updated_MOWF_with_new_polygons PWI_CLASS "NA" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190617" Time="125222">CalculateField Updated_MOWF_with_new_polygons BASIN 1 VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190617" Time="125306">CalculateField Updated_MOWF_with_new_polygons EIMS_MAPCODE2 "[OWF_ID]&amp;"-P0"&amp; [BASIN]" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190617" Time="125433">CalculateField Updated_MOWF_with_new_polygons EIMS_SITE_CODE [OWF_ID] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Analysis Tools.tbx\SpatialJoin" Date="20190617" Time="130910">SpatialJoin Updated_MOWF_with_new_polygons WBD\WBDHU8 M:\GIS_Projects\MasterOpenWaterFeatures\OpenWaterProject_2017\OpenWater.gdb\Updated_MOWF_with_new_polygo JOIN_ONE_TO_MANY KEEP_COMMON "OWF_ID "OWF_ID" true true false 8 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,OWF_ID,-1,-1;ID_SOURCE "ID_SOURCE" true true false 4 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,ID_SOURCE,-1,-1;DOWLKNUM "DOWLKNUM" true true false 8 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,DOWLKNUM,-1,-1;GNIS_ID "GNIS_ID" true true false 8 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,GNIS_ID,-1,-1;AUTONUMBER "AUTONUMBER" true true false 8 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,AUTONUMBER,-1,-1;SUBDIVS "SUBDIVS" true true false 1 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,SUBDIVS,-1,-1;SUBDIV_ID "SUBDIV_ID" true true false 8 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,SUBDIV_ID,-1,-1;SID_SOURCE "SID_SOURCE" true true false 4 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,SID_SOURCE,-1,-1;SUBDOWLKNUM "SUBDOWLKNUM" true true false 8 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,SUBDOWLKNUM,-1,-1;SUBAUTONUMBER "SUBAUTONUMBER" true true false 8 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,SUBAUTONUMBER,-1,-1;EIMS_SITE_CODE "EIMS_SITE_CODE" true true false 8 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,EIMS_SITE_CODE,-1,-1;BASIN "BASIN" true true false 2 Short 0 0 ,First,#,Updated_MOWF_with_new_polygons,BASIN,-1,-1;EIMS_MAPCODE2 "EIMS_MAPCODE2" true true false 12 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,EIMS_MAPCODE2,-1,-1;SYSTEM "SYSTEM" true true false 6 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,SYSTEM,-1,-1;NAME_DNR "NAME_DNR" true true false 50 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,NAME_DNR2,-1,-1;NAME_SHORT "NAME_SHORT" true true false 50 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,NAME_SHORT2,-1,-1;NAME_FULL "NAME_FULL" true true false 75 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,NAME_FULL2,-1,-1;ALT_NAME "ALT_NAME" true true false 25 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,ALT_NAME,-1,-1;ALT_SOURCE "ALT_SOURCE" true true false 4 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,ALT_SOURCE,-1,-1;NAME_SUB_SHORT "NAME_SUB_SHORT" true true false 50 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,NAME_SUB_SHORT2,-1,-1;NAME_SUB_FULL "NAME_SUB_FULL" true true false 75 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,NAME_SUB_FULL2,-1,-1;ALT_NAME_SUB "ALT_NAME_SUB" true true false 25 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,ALT_NAME_SUB,-1,-1;ALT_SUB_SOURCE "ALT_SUB_SOURCE" true true false 4 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,ALT_SUB_SOURCE,-1,-1;SITE_CODE_NAME "SITE_CODE_NAME" true true false 50 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,SITE_CODE_NAME,-1,-1;AREA_ACRES "AREA_ACRES" true true false 8 Double 0 0 ,First,#,Updated_MOWF_with_new_polygons,AREA_ACRES,-1,-1;PWI_CLASS "PWI_CLASS" true true false 2 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,PWI_CLASS,-1,-1;HUC_8 "HUC_8" true true false 8 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,HUC_8,-1,-1;PRIORITY_LAKE "PriorityLake" true true false 5 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,PriorityLake,-1,-1;PROD_DATE "PROD_DATE" true true false 8 Date 0 0 ,First,#,Updated_MOWF_with_new_polygons,PROD_DATE,-1,-1;GROUND_DATE "GROUND_DATE" true true false 8 Date 0 0 ,First,#,Updated_MOWF_with_new_polygons,GROUND_DATE,-1,-1;SOURCE "SOURCE" true true false 50 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,SOURCE,-1,-1;EDITOR_ID "EDITOR_ID" true true false 10 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,EDITOR_ID,-1,-1;GlobalID "GlobalID" false false false 38 GlobalID 0 0 ,First,#,Updated_MOWF_with_new_polygons,GlobalID,-1,-1;wb_class "WB_CLASS" true true false 20 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,wb_class,-1,-1;Checked "Checked" true true false 5 Text 0 0 ,First,#,Updated_MOWF_with_new_polygons,Checked,-1,-1;Shape_Length "Shape_Length" false true true 8 Double 0 0 ,First,#,Updated_MOWF_with_new_polygons,Shape_Length,-1,-1;Shape_Area "Shape_Area" false true true 8 Double 0 0 ,First,#,Updated_MOWF_with_new_polygons,Shape_Area,-1,-1;HUC8 "HUC8" true true false 8 Text 0 0 ,First,#,WBD\WBDHU8,HUC8,-1,-1" INTERSECT # #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190618" Time="122344">CalculateField Updated_MOWF_with_new_polys_HUC8 HUC_8 [HUC8] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190619" Time="093627">CalculateField Updated_MOWF_with_new_polygons EDITOR_ID "ressegel" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190619" Time="093705">CalculateField Updated_MOWF_with_new_polygons SOURCE "2016 7-county aerial" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190619" Time="093717">CalculateField Updated_MOWF_with_new_polygons GROUND_DATE "4/22/2016" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190619" Time="093726">CalculateField Updated_MOWF_with_new_polygons PROD_DATE "6/19/2019" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190726" Time="143714">CalculateField Updated_MOWF_with_new_polygons GROUND_DATE "4/22/2016" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190726" Time="143728">CalculateField Updated_MOWF_with_new_polygons EDITOR_ID "ressegel" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190726" Time="143747">CalculateField Updated_MOWF_with_new_polygons SOURCE "2016 7-county aerial" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190726" Time="143807">CalculateField Updated_MOWF_with_new_polygons PROD_DATE [created_date] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190726" Time="143956">CalculateField Updated_MOWF_with_new_polygons PROD_DATE InStr([created_date], " ") VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190726" Time="144028">CalculateField Updated_MOWF_with_new_polygons PROD_DATE Left( [created_date], InStr([created_date], " ")) VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190726" Time="144627">CalculateField Updated_MOWF_with_new_polygons SOURCE "2016 7-county aerial" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190726" Time="144648">CalculateField Updated_MOWF_with_new_polygons EDITOR_ID "ressegel" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190726" Time="144711">CalculateField Updated_MOWF_with_new_polygons GROUND_DATE "4/22/2016" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190726" Time="144723">CalculateField Updated_MOWF_with_new_polygons PROD_DATE "7/26/2019" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190730" Time="161919">CalculateField Updated_MOWF_with_new_polygons ALT_SOURCE "DNR (PWI)" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190730" Time="162036">CalculateField Updated_MOWF_with_new_polygons ALT_SOURCE "PWI" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190730" Time="164237">CalculateField Updated_MOWF_with_new_polygons PRIORITY_LAKE "N" VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190731" Time="092309">CalculateField Updated_MOWF_with_new_polygons OWF_ID_long [OWF_ID] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190731" Time="092949">CalculateField Updated_MOWF_with_new_polygons OWF_ID_long [OWF_ID] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190731" Time="093432">CalculateField Updated_MOWF_with_new_polygons Sub_OWF_ID_long [SUBDIV_ID] VB #</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.5\ArcToolbox\Toolboxes\Data Management Tools.tbx\Dissolve" Date="20190731" Time="094513">Dissolve Updated_MOWF_with_new_polygons "M:\GIS_Projects\MasterOpenWaterFeatures\2019 updates\MOWF_2019.gdb\Updated_MOWF\Final_Updated_LakesandRivers_with_new_polygons" OWF_ID;SYSTEM;NAME_DNR;ALT_NAME;PRIORITY_LAKE # MULTI_PART DISSOLVE_LINES</Process>
+				<Process ToolSource="c:\program files (x86)\arcgis\desktop10.7\ArcToolbox\Toolboxes\Conversion Tools.tbx\FeatureClassToFeatureClass" Date="20190822" Time="214117">FeatureClassToFeatureClass LakesAndRivers_Update "Database Connections\SDE@GISLibrary.sde\GISLibrary.DBO.NaturalResourcesHydrography" LakesAndRivers # "OWF_ID "OWF_ID" true true false 8 Text 0 0 ,First,#,LakesAndRivers_Update,OWF_ID,-1,-1;SYSTEM "SYSTEM" true true false 6 Text 0 0 ,First,#,LakesAndRivers_Update,SYSTEM,-1,-1;NAME_DNR "NAME_DNR" true true false 50 Text 0 0 ,First,#,LakesAndRivers_Update,NAME_DNR,-1,-1;ALT_NAME "ALT_NAME" true true false 25 Text 0 0 ,First,#,LakesAndRivers_Update,ALT_NAME,-1,-1;PRIORITY_LAKE "PriorityLake" true true false 5 Text 0 0 ,First,#,LakesAndRivers_Update,PRIORITY_LAKE,-1,-1;AREA_ACRES "AREA_ACRES" true true false 8 Double 0 0 ,First,#,LakesAndRivers_Update,AREA_ACRES,-1,-1;Shape_Length "Shape_Length" false true true 8 Double 0 0 ,First,#,LakesAndRivers_Update,Shape_Length,-1,-1;Shape_Area "Shape_Area" false true true 8 Double 0 0 ,First,#,LakesAndRivers_Update,Shape_Area,-1,-1" #</Process>
+				<Process ToolSource="C:\program files\arcgis\server\ArcToolbox\Toolboxes\Conversion Tools.tbx\FeatureClassToFeatureClass" Date="20201120" Time="000708">FeatureClassToFeatureClass /var/ftp/gdrs_temp/update\us_mn_state_metc\water_lakes_rivers\fgdb\water_lakes_rivers.gdb\LakesAndRivers /var/ftp/gdrs_temp/update\us_mn_state_metc\water_lakes_rivers\shp LakesAndRivers.shp # "OWF_ID "OWF_ID" true true false 8 Text 0 0 ,First,#,/var/ftp/gdrs_temp/update\us_mn_state_metc\water_lakes_rivers\fgdb\water_lakes_rivers.gdb\LakesAndRivers,OWF_ID,-1,-1;SYSTEM "SYSTEM" true true false 6 Text 0 0 ,First,#,/var/ftp/gdrs_temp/update\us_mn_state_metc\water_lakes_rivers\fgdb\water_lakes_rivers.gdb\LakesAndRivers,SYSTEM,-1,-1;NAME_DNR "NAME_DNR" true true false 50 Text 0 0 ,First,#,/var/ftp/gdrs_temp/update\us_mn_state_metc\water_lakes_rivers\fgdb\water_lakes_rivers.gdb\LakesAndRivers,NAME_DNR,-1,-1;ALT_NAME "ALT_NAME" true true false 25 Text 0 0 ,First,#,/var/ftp/gdrs_temp/update\us_mn_state_metc\water_lakes_rivers\fgdb\water_lakes_rivers.gdb\LakesAndRivers,ALT_NAME,-1,-1;PRIORITY_L "PriorityLake" true true false 5 Text 0 0 ,First,#,/var/ftp/gdrs_temp/update\us_mn_state_metc\water_lakes_rivers\fgdb\water_lakes_rivers.gdb\LakesAndRivers,PRIORITY_LAKE,-1,-1;AREA_ACRES "AREA_ACRES" true true false 8 Double 0 0 ,First,#,/var/ftp/gdrs_temp/update\us_mn_state_metc\water_lakes_rivers\fgdb\water_lakes_rivers.gdb\LakesAndRivers,AREA_ACRES,-1,-1;Shape_Leng "Shape_Leng" false true true 8 Double 0 0 ,First,#,/var/ftp/gdrs_temp/update\us_mn_state_metc\water_lakes_rivers\fgdb\water_lakes_rivers.gdb\LakesAndRivers,Shape_Length,-1,-1;Shape_Area "Shape_Area" false true true 8 Double 0 0 ,First,#,/var/ftp/gdrs_temp/update\us_mn_state_metc\water_lakes_rivers\fgdb\water_lakes_rivers.gdb\LakesAndRivers,Shape_Area,-1,-1" #</Process>
+			</lineage>
+		</DataProperties>
+		<SyncDate>20201120</SyncDate>
+		<SyncTime>00070700</SyncTime>
+		<ModDate>20201120</ModDate>
+		<ModTime>00070700</ModTime>
+		<CreaDate>20190823</CreaDate>
+		<CreaTime>07550700</CreaTime>
+		<ArcGISFormat>1.0</ArcGISFormat>
+		<SyncOnce>FALSE</SyncOnce>
+	</Esri>
+</metadata>

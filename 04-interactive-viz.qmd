@@ -26,6 +26,15 @@ Catalog the app's **layout** and **interactivity features** as part of the app p
 
 ![](images/04_example_schematic.png)
 
+::: {.callout-tip collapse="false"}
+## Stop to Reflect
+
+How has pair programming become easier and harder? 
+
+What do you need from your partner and what does your partner need from you?
+
+:::
+
 # Background
 
 ## Why use interactivity?
@@ -77,7 +86,12 @@ Open up the [Shiny cheatsheet](https://rstudio.github.io/cheatsheets/shiny.pdf),
 
 
 
+::: {.callout-tip collapse="false"}
+## Stop to Reflect
 
+How do you learn best, without getting overwhelmed? Consider approaches that have worked for you and discuss with your partner. Notice similarities and differences in how you learn best.  
+
+:::
 
 
 

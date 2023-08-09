@@ -26,7 +26,7 @@ After this lesson, you should be able to:
 
 # Setup
 
-```{r}
+```{r message=FALSE}
 library(tidyverse)
 library(lubridate)
 data(lakers)

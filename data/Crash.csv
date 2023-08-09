@@ -1,0 +1,943 @@
+﻿X,Y,Crash_Type,Accident_Datetime,Location,Latitude,Longitude,Posted_Speed,Road_Type,Pedestrian_Age,Pedestrian_Gender,Pedestrian_City_of_Residence,Pedestrian_Zip_Code,Biker_Age,Biker_Gender,Biker_City_of_Residence,Biker_Zip_Code,Pedestrian_Injury_Severity,Pedestrian_to_Hospital,Biker_Injury_Severity,Biker_to_Hospital,ObjectId,Vehicle_Direction_of_Travel
+-93.167,44.935,Bike,2020/07/29 18:30:00+00,PILLSBURY ST,44.962,-93.191,30,Local or City Street,,,,,22,M,SOUTH ST PAUL,55075,,,Possible Injury,No,1,Unknown
+-93.159,44.941,Pedestrian,2020/07/26 02:23:00+00,W THOMAS AVE,44.959,-93.139,30,Municipal State Aid Street,15,F,SAINT PAUL,55104,,,,,Possible Injury,No,,,2,Unknown
+-93.105,44.942,Pedestrian,2020/07/23 01:05:00+00,-- NOT ON ROADWAY --,44.955,-93.177,,All other roads,,,,,,,,,Possible Injury,No,,,3,Unknown
+-93.167,44.956,Bike,2020/07/20 19:14:00+00,W 9TH ST,44.948,-93.101,20,Municipal State Aid Street,,,,,65,M,SAINT PAUL,551021101,,,,No,4,Unknown
+-93.055,44.976,Bike,2020/07/18 14:30:00+00,N PELHAM BLVD,44.951,-93.2,25,Municipal State Aid Street,,,,,55,M,MINNEAPOLIS,554182900,,,Possible Injury,No,5,Unknown
+-93.124,44.956,Pedestrian,2020/07/17 02:35:00+00,S KENNETH ST,44.916,-93.185,30,Local or City Street,42,M,SAINT PAUL,551162606,,,,,Suspected Minor Injury,Yes,,,6,Unknown
+-93.157,44.981,Pedestrian,2020/07/17 02:35:00+00,S KENNETH ST,44.916,-93.185,30,Local or City Street,6,,ST. PAUL,55104,,,,,Suspected Minor Injury,No,,,7,Unknown
+-93.12,44.927,Bike,2020/07/17 00:23:00+00,N GROTTO ST,44.956,-93.131,30,Local or City Street,,,,,33,M,HINCKLEY,550375328,,,Possible Injury,No,8,Unknown
+-93.205,44.965,Bike,2020/07/13 12:11:00+00,N ST ALBANS ST,44.954,-93.129,30,Local or City Street,,,,,68,M,SAINT PAUL,55104,,,Possible Injury,Yes,9,Unknown
+-93.1,44.941,Bike,2020/07/10 21:34:00+00,E MARYLAND AVE,44.977,-93.074,25,County State Aid Highway,,,,,59,M,LITTLE CANADA,551171221,,,,No,10,Unknown
+-93.076,44.971,Bike,2020/07/06 14:22:00+00,DEALTON ST,44.911,-93.151,15,Local or City Street,,,,,36,M,SAINT PAUL,551162961,,,Suspected Minor Injury,Yes,11,Unknown
+-93.116,44.973,Bike,2020/07/02 17:43:00+00,W UNIVERSITY AVE,44.956,-93.177,25,County State Aid Highway,,,,,17,M,ST PAUL,55101,,,Suspected Minor Injury,No,12,Unknown
+-93.095,44.947,Pedestrian,2020/06/28 05:00:00+00,W CENTRAL AVE,44.953,-93.125,,Local or City Street,22,F,NORTH SAINT PAUL,551092282,,,,,Possible Injury,Yes,,,13,Unknown
+-93.106,44.957,Bike,2020/06/27 21:40:00+00,W PALACE ST,44.929,-93.134,30,Local or City Street,,,,,7,M,ST PAUL,55107,,,Suspected Minor Injury,No,14,Unknown
+-93.086,44.948,Bike,2020/06/27 22:22:00+00,W WATER ST,44.922,-93.117,,Local or City Street,,,,,38,,EAGAN,551211338,,,Suspected Minor Injury,No,15,Unknown
+-93.085,44.941,Pedestrian,2020/06/26 23:05:00+00,W CONCORDIA AVE,44.951,-93.166,,Local or City Street,58,M,MINNEAPOLIS,554043352,,,,,Possible Injury,Yes,,,16,Unknown
+-93.106,44.942,Pedestrian,2020/06/26 17:30:00+00,-- NOT ON ROADWAY --,44.954,-93.156,10,All other roads,41,M,ST. PAUL,55106,,,,,Possible Injury,No,,,17,Unknown
+-93.126,44.95,Pedestrian,2020/06/25 17:20:00+00,N FAIRVIEW AVE,44.944,-93.177,30,Municipal State Aid Street,13,F,ST PAUL,55104,,,,,Possible Injury,Yes,,,18,Unknown
+-93.167,44.945,Bike,2020/06/25 03:31:00+00,N FRANK ST,44.968,-93.053,25,Local or City Street,,,,,48,M,SAINT PAUL,551065311,,,Possible Injury,No,19,Unknown
+-93.046,44.963,Bike,2020/06/24 23:22:00+00,W HORTON AVE,44.977,-93.147,30,Local or City Street,,,,,32,F,SAINT PAUL,551041404,,,Possible Injury,No,20,Unknown
+-93.057,44.952,Bike,2020/06/23 21:25:00+00,S CLEVELAND AVE,,,30,Municipal State Aid Street,,,,,68,,SAINT PAUL,551162515,,,Suspected Minor Injury,Yes,21,Unknown
+-93.064,44.961,Pedestrian,2020/06/14 18:01:00+00,N LOEB ST,44.973,-93.125,30,Local or City Street,24,M,ST. COULD,55127,,,,,Suspected Minor Injury,Yes,,,22,Unknown
+-93.084,44.973,Bike,2020/06/13 20:30:00+00,E 2ND ST,44.946,-93.086,25,Local or City Street,,,,,32,M,MINNEAPOLIS,554031940,,,Suspected Minor Injury,No,23,Unknown
+-93.042,44.957,Bike,2020/06/06 23:45:00+00,S WINTHROP ST,44.935,-93.01,30,Municipal State Aid Street,,,,,8,M,ST. PAUL,55106,,,,No,24,Unknown
+-93.149,44.956,Pedestrian,2020/06/03 20:34:00+00,-- NOT ON ROADWAY --,44.961,-93.057,,All other roads,7,M,ST PAUL,55106,,,,,Suspected Minor Injury,Yes,,,25,Unknown
+-93.109,44.959,Pedestrian,2020/06/01 22:50:00+00,E SUBURBAN AVE,44.95,-93.019,10,Municipal State Aid Street,43,M,SAINT PAUL,551066516,,,,,Suspected Minor Injury,No,,,26,Unknown
+-93.085,44.95,Pedestrian,2020/05/31 00:30:00+00,E MINNEHAHA AVE,44.963,-93.036,30,State Trunk Highway,23,M,SAINT PAUL,551064638,,,,,Suspected Minor Injury,Yes,,,27,Unknown
+-93.142,44.927,Pedestrian,2020/05/26 18:41:00+00,OLD HUDSON RD,44.951,-93.01,,Municipal State Aid Street,38,F,SAINT PAUL,551195010,,,,,Suspected Minor Injury,No,,,28,Unknown
+-93.167,44.951,Pedestrian,2020/05/26 06:31:00+00,N GROTTO ST,44.956,-93.131,30,Local or City Street,40,F,,,,,,,Suspected Minor Injury,Yes,,,29,Unknown
+-93.025,44.991,Pedestrian,2020/05/24 06:39:00+00,FERONIA AVE,44.954,-93.18,30,Local or City Street,30,F,EAGAN,551012334,,,,,Suspected Serious Injury,Yes,,,30,Unknown
+-93.096,44.955,Bike,2020/05/24 00:31:00+00,N PROSPERITY AVE,44.975,-93.045,30,Local or City Street,,,,,16,M,ST.PAUL,55106,,,,No,31,Unknown
+-93.096,44.955,Pedestrian,2020/05/22 22:49:00+00,133,44.953,-93.133,30,All other roads,13,M,SAINT PAUL,55106,,,,,Suspected Serious Injury,No,,,32,Unknown
+-93.187,44.951,Pedestrian,2020/05/21 22:15:00+00,W UNIVERSITY AVE,44.956,-93.126,30,County State Aid Highway,32,,,,,,,,Suspected Minor Injury,Yes,,,33,Unknown
+-93.005,44.936,Bike,2020/05/20 20:15:00+00,W JEFFERSON AVE,44.931,-93.187,30,Local or City Street,,,,,12,M,ST. PAUL,55116,,,Suspected Minor Injury,No,34,Unknown
+-93.106,44.99,Pedestrian,2021/10/02 22:44:00+00,W UNIVERSITY AVE,44.956,-93.116,30,County State Aid Highway,13,F,SAINT PAUL,55106,,,,,Possible Injury,Yes,,,35,Unknown
+-93.149,44.955,Bike,2020/05/20 18:58:00+00,W WYOMING ST,44.921,-93.102,30,Local or City Street,,,,,27,M,WEST SAINT PAUL,551182203,,,Possible Injury,Yes,36,Unknown
+-93.064,44.957,Pedestrian,2020/05/16 05:00:00+00,N DESOTO ST,44.967,-93.081,30,Local or City Street,27,M,ST PAUL,55116,,,,,,No,,,37,Unknown
+-93.094,44.949,Bike,2020/05/16 01:20:00+00,E WHEELOCK PKWY,44.982,-93.055,30,Local or City Street,,,,,26,M,ST. PAUL,55106,,,Suspected Minor Injury,Yes,38,Unknown
+-93.157,44.954,Bike,2020/05/08 23:34:00+00,L'ORIENT ST,44.967,-93.091,30,Local or City Street,,,,,17,F,ST PAUL,55101,,,,No,39,Unknown
+-93.026,44.966,Bike,2020/05/07 22:12:00+00,N ARCADE ST,44.978,-93.066,,U.S. Trunk Highway,,,,,48,M,ST. PAUL,55106,,,Suspected Minor Injury,No,40,Unknown
+-93.107,44.949,Pedestrian,2020/04/28 21:42:00+00,CHARLES AVE,44.962,-93.19,30,Municipal State Aid Street,61,M,MINNEAPOLIS,554111373,,,,,Fatal,No,,,41,Unknown
+-93.025,44.987,Pedestrian,2020/04/24 18:00:00+00,W MARYLAND AVE,44.977,-93.119,,County State Aid Highway,26,F,MAPLEWOOD,551094336,,,,,Possible Injury,Yes,,,42,Unknown
+-93.074,44.966,Pedestrian,2020/04/23 19:34:00+00,W UNIVERSITY AVE,44.955,-93.127,30,County State Aid Highway,20,F,SAINT PAUL,551175157,,,,,Suspected Serious Injury,Yes,,,43,Unknown
+-93.116,44.947,Pedestrian,2020/04/18 03:20:00+00,E IVY AVE,44.981,-93.025,30,Local or City Street,23,F,SAINT PAUL,551062301,,,,,Suspected Minor Injury,Yes,,,44,Unknown
+-93.139,44.941,Pedestrian,2020/04/18 03:20:00+00,E IVY AVE,44.981,-93.025,30,Local or City Street,2,M,ST PAUL,55106,,,,,Suspected Minor Injury,Yes,,,45,Unknown
+-93.101,44.976,Bike,2020/03/27 21:21:00+00,E LARPENTEUR AVE,44.992,-93.077,5,County State Aid Highway,,,,,58,M,SAINT PAUL,551303318,,,Suspected Minor Injury,Yes,46,Unknown
+-93.167,44.927,Pedestrian,2020/03/23 03:13:00+00,N PROSPERITY AVE,44.978,-93.04,30,County State Aid Highway,24,M,ST PAUL,55106,,,,,,No,,,47,Unknown
+-93.095,44.949,Bike,2020/03/19 15:40:00+00,W 9TH ST,44.948,-93.102,30,Municipal State Aid Street,,,,,52,F,ST. PAUL,55102,,,,No,48,Unknown
+-93.166,44.955,Pedestrian,2020/03/17 20:52:00+00,W 7TH ST,44.904,-93.166,40,State Trunk Highway,28,F,SAINT PAUL,551162961,,,,,Possible Injury,Yes,,,49,Unknown
+-93.103,44.943,Pedestrian,2020/03/14 15:10:00+00,W EDMUND AVE,44.958,-93.167,30,Local or City Street,41,M,SAINT PAUL,551082444,,,,,Possible Injury,Yes,,,50,Unknown
+-93.127,44.97,Pedestrian,2020/03/12 00:12:00+00,W 7TH ST,44.909,-93.154,40,State Trunk Highway,15,F,ST PAUL,55116,,,,,Suspected Serious Injury,Yes,,,51,Unknown
+-93.069,44.966,Pedestrian,2020/03/07 15:30:00+00,W SELBY AVE,44.947,-93.147,30,Municipal State Aid Street,70,M,SAINT PAUL,551032343,,,,,Suspected Minor Injury,Yes,,,52,Unknown
+-93.109,44.94,Pedestrian,2020/03/03 03:29:00+00,N PARK ST,44.965,-93.104,20,Local or City Street,32,M,ST PAUL,55117,,,,,Possible Injury,Yes,,,53,Unknown
+-93.177,44.904,Pedestrian,2020/02/29 22:37:00+00,N WHITE BEAR AVE,44.963,-93.025,30,Local or City Street,60,M,SAINT PAUL,551064923,,,,,Suspected Serious Injury,Yes,,,54,Unknown
+-93.107,44.941,Pedestrian,2020/02/29 04:17:00+00,S SNELLING AVE,44.92,-93.167,30,State Trunk Highway,26,F,SAINT PAUL,551162237,,,,,Suspected Minor Injury,Yes,,,55,Unknown
+-93.149,44.963,Pedestrian,2020/02/28 16:51:00+00,N SNELLING AVE,44.953,-93.167,10,State Trunk Highway,48,M,ST.PAUL,55104,,,,,Possible Injury,Yes,,,56,Unknown
+-93.147,44.951,Pedestrian,2020/02/27 12:30:00+00,S FAIRVIEW AVE,44.934,-93.177,30,Municipal State Aid Street,23,F,ST PAUL,55105,,,,,Possible Injury,No,,,57,Unknown
+-93.126,44.952,Pedestrian,2020/02/27 12:26:00+00,S ROBERT ST,44.936,-93.081,30,State Trunk Highway,7,M,ST PAUL,55107,,,,,Suspected Serious Injury,Yes,,,58,Unknown
+-93.147,44.951,Pedestrian,2019/09/21 07:00:00+00,N ARKWRIGHT ST,44.985,-93.084,30,Local or City Street,40,F,SAINT PAUL,551065906,,,,,Possible Injury,No,,,59,Unknown
+-93.192,44.942,Bike,2020/02/17 12:24:00+00,959,44.951,-93.183,30,All other roads,,,,,56,M,SAINT PAUL,551161639,,,Suspected Minor Injury,No,60,Unknown
+-93.162,44.956,Pedestrian,2020/02/16 06:03:00+00,W 7TH ST,44.901,-93.172,30,State Trunk Highway,41,M,ST. PAUL,55104,,,,,Suspected Minor Injury,Yes,,,61,Unknown
+-93.137,44.921,Pedestrian,2020/02/16 06:03:00+00,W 7TH ST,44.901,-93.172,30,State Trunk Highway,36,M,WHITE BEAR LAKE,551103471,,,,,Possible Injury,Yes,,,62,Unknown
+-93.128,44.957,Pedestrian,2020/02/15 00:17:00+00,W UNIVERSITY AVE,44.955,-93.148,10,County State Aid Highway,41,F,MINNEAPOLIS,554112041,,,,,,No,,,63,Unknown
+-93.023,44.987,Bike,2020/01/29 01:27:00+00,N LEXINGTON AVE,44.953,-93.146,30,County State Aid Highway,,,,,44,M,SAINT PAUL,551161622,,,,No,64,Unknown
+-93.167,44.956,Bike,2022/06/09 13:15:00+00,E HYACINTH AVE,44.98,-93.066,25,Local or City Street,,,,,15,M,ST. PAUL,55101,,,Possible Injury,No,65,Unknown
+-93.162,44.956,Pedestrian,2020/02/13 00:30:00+00,S SNELLING AVE,44.939,-93.167,30,State Trunk Highway,20,F,ST PAUL,55104,,,,,Suspected Minor Injury,Yes,,,66,Unknown
+-93.187,44.951,Pedestrian,2020/02/12 18:15:00+00,W UNIVERSITY AVE,44.955,-93.153,5,County State Aid Highway,39,M,MINNEAPOLIS,554082415,,,,,Possible Injury,Yes,,,67,Unknown
+-93.167,44.939,Pedestrian,2020/02/08 19:01:00+00,W MARSHALL AVE,44.948,-93.192,30,County State Aid Highway,39,M,SAINT PAUL,551051714,,,,,,No,,,68,Unknown
+-93.144,44.99,Pedestrian,2020/02/08 02:11:00+00,W 7TH ST,44.909,-93.156,40,State Trunk Highway,,,,,,,,,Fatal,Yes,,,69,Unknown
+-93.097,44.989,Pedestrian,2020/01/16 12:17:00+00,N WHITE BEAR AVE,44.988,-93.025,30,County State Aid Highway,43,F,SAINT PAUL,551042613,,,,,Suspected Minor Injury,Yes,,,70,Unknown
+-93.119,44.977,Pedestrian,2020/02/02 04:55:00+00,E 7TH ST,44.963,-93.064,,State Trunk Highway,52,M,SAINT PAUL,551064210,,,,,,No,,,71,Unknown
+-93.135,44.956,Pedestrian,2020/02/02 08:30:00+00,E MINNEHAHA AVE,44.963,-93.025,30,State Trunk Highway,,F,,55106,,,,,Suspected Serious Injury,No,,,72,Unknown
+-93.104,44.943,Pedestrian,2020/02/01 23:16:00+00,E PRINCE ST,44.949,-93.084,30,Municipal State Aid Street,42,M,SAINT PAUL,551051489,,,,,Possible Injury,Yes,,,73,Unknown
+-93.085,44.941,Bike,2020/01/24 10:51:00+00,N RICE ST,44.956,-93.106,35,County State Aid Highway,,,,,32,M,SAINT PAUL,551095240,,,Suspected Minor Injury,Yes,74,Unknown
+-93.066,44.978,Bike,2020/01/23 00:10:00+00,W KELLOGG BLVD,44.944,-93.093,30,Municipal State Aid Street,,,,,61,M,WEST SAINT PAUL,551184402,,,Suspected Minor Injury,Yes,75,Unknown
+-93.074,44.97,Pedestrian,2020/01/22 13:00:00+00,W RANDOLPH AVE,44.927,-93.189,30,Municipal State Aid Street,67,F,MINNEAPOLIS,554065125,,,,,Possible Injury,No,,,76,Unknown
+-93.187,44.948,Pedestrian,2019/10/28 23:05:00+00,W 7TH ST,44.922,-93.136,,State Trunk Highway,70,M,SAINT PAUL,551163215,,,,,Possible Injury,No,,,77,Unknown
+-93.128,44.927,Pedestrian,2020/01/15 15:30:00+00,N ARCADE ST,44.977,-93.066,30,U.S. Trunk Highway,39,F,ST PAUL,55106,,,,,Suspected Minor Injury,Yes,,,78,Unknown
+-93.066,44.963,Pedestrian,2020/01/14 04:27:00+00,W SUMMIT AVE,44.941,-93.126,30,Municipal State Aid Street,20,M,ST PAUL,55104,,,,,Suspected Minor Injury,Yes,,,79,Unknown
+-93.203,44.96,Pedestrian,2020/01/09 00:45:00+00,N PARK ST,44.979,-93.104,30,Local or City Street,55,M,SAINT PAUL,55117,,,,,Possible Injury,No,,,80,Unknown
+-93.099,44.946,Pedestrian,2019/12/30 12:56:00+00,N WHITE BEAR AVE,44.952,-93.025,30,County State Aid Highway,57,F,SAINT PAUL,551163255,,,,,,No,,,81,Unknown
+-93.196,44.975,Pedestrian,2019/12/28 23:51:00+00,N ST ALBANS ST,44.949,-93.129,30,Local or City Street,25,M,SAINT PAUL,551062926,,,,,Possible Injury,No,,,82,Unknown
+-93.098,44.955,Pedestrian,2019/12/29 07:03:00+00,N FOREST ST,44.957,-93.061,30,Municipal State Aid Street,45,F,SAINT PAUL,551174427,,,,,Possible Injury,Yes,,,83,Unknown
+-93.086,44.978,Pedestrian,2019/12/25 15:32:00+00,N WHITE BEAR AVE,44.963,-93.025,30,County State Aid Highway,52,F,ST PAUL,55119,,,,,Possible Injury,No,,,84,Unknown
+-93.167,44.956,Pedestrian,2019/12/24 19:35:00+00,E FREMONT AVE,44.958,-93.063,10,Local or City Street,34,F,ST PAUL,55106,,,,,Possible Injury,Yes,,,85,Unknown
+-93.111,44.961,Pedestrian,2019/12/24 00:25:00+00,N WHITE BEAR AVE,44.984,-93.025,35,County State Aid Highway,22,M,ST PAUL,55106,,,,,Suspected Minor Injury,Yes,,,86,Unknown
+-93.166,44.977,Pedestrian,2019/12/20 00:20:00+00,W 7TH ST,44.91,-93.153,35,State Trunk Highway,43,F,SAINT PAUL,551163204,,,,,Possible Injury,Yes,,,87,Unknown
+-93.066,44.97,Pedestrian,2019/12/05 19:02:00+00,W 7TH ST,44.907,-93.16,30,State Trunk Highway,29,M,SAINT PAUL,551175333,,,,,,No,,,88,Unknown
+-93.083,44.949,Pedestrian,2019/12/17 23:25:00+00,N HAMPDEN AVE,44.962,-93.193,30,Local or City Street,40,M,MINNEAPOLIS,554071904,,,,,Suspected Minor Injury,No,,,89,Unknown
+-93.152,44.956,Pedestrian,2019/12/17 12:15:00+00,WABASHA STREET,,,30,Local or City Street,61,M,BURNSVILLE,553373687,,,,,Suspected Minor Injury,Yes,,,90,Unknown
+-93.177,44.904,Pedestrian,2019/12/13 23:03:00+00,N CLARENCE ST,44.978,-93.043,30,Municipal State Aid Street,32,M,SAINT PAUL,551063865,,,,,Suspected Minor Injury,No,,,91,Unknown
+-93.191,44.961,Bike,2019/11/25 13:55:00+00,RAYMOND AVE,44.974,-93.195,30,County State Aid Highway,,,,,30,M,ROCHESTER,559017586,,,,No,92,Unknown
+-93.085,44.977,Pedestrian,2019/12/11 22:56:00+00,N PASCAL ST,44.95,-93.162,30,Municipal State Aid Street,72,F,SAINT PAUL,551045304,,,,,Suspected Minor Injury,Yes,,,93,Unknown
+-93.066,44.978,Pedestrian,2019/12/11 01:02:00+00,E 7TH ST,44.962,-93.066,30,State Trunk Highway,20,M,SAINT PAUL,55106,,,,,Possible Injury,Yes,,,94,Unknown
+-93.177,44.904,Pedestrian,2019/12/08 23:15:00+00,N FOREST ST,44.978,-93.061,30,Local or City Street,13,F,ST. PAUL,55106,,,,,Suspected Minor Injury,No,,,95,Unknown
+-93.094,44.953,Pedestrian,2019/12/07 22:39:00+00,N WHITE BEAR AVE,44.982,-93.025,30,County State Aid Highway,69,M,SAINT PAUL,551062221,,,,,Possible Injury,No,,,96,Unknown
+-93.084,44.953,Pedestrian,2019/12/06 18:15:00+00,W 7TH ST,44.947,-93.1,30,State Trunk Highway,69,M,LITTLE CANADA,55117,,,,,Suspected Minor Injury,Yes,,,97,Unknown
+-93.145,44.916,Pedestrian,2019/12/05 23:10:00+00,E LARPENTEUR AVE,44.992,-93.039,30,County State Aid Highway,51,F,SAINT PAUL,55106,,,,,Fatal,No,,,98,Unknown
+-93.11,44.989,Pedestrian,2019/12/04 19:57:00+00,E CASE AVE,44.97,-93.074,30,Municipal State Aid Street,33,F,SAINT PAUL,551063711,,,,,Possible Injury,Yes,,,99,Unknown
+-93.005,44.936,Pedestrian,2019/12/03 15:30:00+00,N SNELLING AVE,44.956,-93.167,30,State Trunk Highway,62,M,SAINT PAUL,551304039,,,,,Suspected Serious Injury,Yes,,,100,Unknown
+-93.005,44.951,Pedestrian,2019/12/03 15:30:00+00,N SNELLING AVE,44.956,-93.167,30,State Trunk Highway,56,M,SAINT PAUL,55104,,,,,Possible Injury,No,,,101,Unknown
+-93.189,44.962,Pedestrian,2019/12/02 15:44:00+00,E TEDESCO ST,44.96,-93.078,30,Municipal State Aid Street,72,F,SAINT PAUL,551304556,,,,,Possible Injury,Yes,,,102,Unknown
+-93.156,44.956,Pedestrian,2019/11/30 23:31:00+00,N WHITE BEAR AVE,44.957,-93.025,30,County State Aid Highway,19,M,SAINT PAUL,551304213,,,,,,No,,,103,Unknown
+-93.095,44.944,Pedestrian,2019/11/30 02:30:00+00,N RICE ST,44.958,-93.106,30,County State Aid Highway,41,M,MINNEAPOLIS,554122023,,,,,Suspected Serious Injury,Yes,,,104,Unknown
+-93.084,44.977,Pedestrian,2019/11/25 23:53:00+00,E 6TH ST,44.95,-93.088,30,Municipal State Aid Street,37,F,MINNEAPOLIS,554184107,,,,,Suspected Minor Injury,Yes,,,105,Unknown
+-93.16,44.927,Pedestrian,2019/11/23 17:50:00+00,S PRIOR AVE,44.897,-93.182,,Local or City Street,74,M,EDEN PRAIRIE,553474307,,,,,Suspected Minor Injury,Yes,,,106,Unknown
+-93.116,44.962,Pedestrian,2019/11/23 01:32:00+00,N HAZELWOOD ST,44.978,-93.035,10,Local or City Street,41,F,SAINT PAUL,551051006,,,,,Suspected Minor Injury,Yes,,,107,Unknown
+-93.166,44.964,Pedestrian,2019/11/22 15:22:00+00,E 6TH ST,44.957,-93.073,30,Municipal State Aid Street,75,F,MINNEAPOLIS,55407,,,,,Possible Injury,Yes,,,108,Unknown
+-93.167,44.956,Pedestrian,2019/11/22 00:29:00+00,CHARLES AVE,44.957,-93.178,30,Municipal State Aid Street,12,F,ST PAUL,55104,,,,,Possible Injury,No,,,109,Unknown
+-93.147,44.977,Pedestrian,2019/11/21 15:34:00+00,,44.956,-93.165,10,All other roads,63,M,MINNEAPOLIS,55406,,,,,Possible Injury,No,,,110,Unknown
+-93.126,44.956,Pedestrian,2019/11/21 14:39:00+00,W UNIVERSITY AVE,44.956,-93.106,30,County State Aid Highway,55,F,ROSEVILLE,551133636,,,,,Suspected Minor Injury,Yes,,,111,Unknown
+-93.011,44.969,Pedestrian,2019/08/10 18:09:00+00,W KELLOGG BLVD,44.944,-93.103,30,Municipal State Aid Street,53,F,SAINT PAUL,551012253,,,,,Possible Injury,No,,,112,Unknown
+-93.011,44.969,Pedestrian,2019/03/17 03:43:00+00,W UNIVERSITY AVE,44.956,-93.109,35,County State Aid Highway,63,M,MAPLEWOOD,551195888,,,,,Suspected Serious Injury,Yes,,,113,Unknown
+-93.195,44.974,Pedestrian,2021/10/03 01:30:00+00,N RICE ST,44.956,-93.106,30,County State Aid Highway,55,M,SAINT PAUL,55103,,,,,,No,,,114,Unknown
+-93.126,44.977,Bike,2019/08/10 01:15:00+00,W MARSHALL AVE,44.948,-93.198,30,County State Aid Highway,,,,,24,F,MINNEAPOLIS,55407,,,Possible Injury,Yes,115,Unknown
+-93.106,44.977,Pedestrian,2022/06/09 01:10:00+00,-- NOT ON ROADWAY --,44.984,-93.066,,All other roads,65,F,SAINT PAUL,551063330,,,,,,No,,,116,Unknown
+-93.165,44.904,Pedestrian,2019/03/16 07:35:00+00,E MARYLAND AVE,44.977,-93.082,35,County State Aid Highway,22,F,SAINT PAUL,551062728,,,,,Fatal,Yes,,,117,Unknown
+-93.01,44.951,Pedestrian,2021/10/03 00:13:00+00,W GRAND AVE,44.94,-93.136,25,Municipal State Aid Street,51,M,MINNEAPOLIS,55412,,,,,Suspected Serious Injury,Yes,,,118,Unknown
+-93.099,44.96,Bike,2019/08/07 12:46:00+00,S LEXINGTON ST,44.94,-93.147,,County State Aid Highway,,,,,27,F,SAINT PAUL,55104,,,Suspected Minor Injury,Yes,119,Unknown
+-93.126,44.97,Pedestrian,2022/06/03 18:00:00+00,N RICE ST,44.965,-93.106,10,County State Aid Highway,83,M,MAHTOMEDI,551156833,,,,,Suspected Minor Injury,No,,,120,Unknown
+-93.086,44.968,Pedestrian,2019/03/14 18:00:00+00,7TH PLACE,,,30,Local or City Street,54,F,INVER GROVE HTS,55076,,,,,Possible Injury,No,,,121,Unknown
+-93.198,44.948,Pedestrian,2021/09/29 00:08:00+00,N ROBERT ST,44.95,-93.093,20,State Trunk Highway,20,F,HOPKINS,553437757,,,,,Possible Injury,Yes,,,122,Unknown
+-93.154,44.955,Pedestrian,2019/08/05 17:05:00+00,VANDALIA ST,44.957,-93.192,30,Municipal State Aid Street,27,M,BROOKLYN PARK,554433061,,,,,Suspected Minor Injury,Yes,,,123,Unknown
+-93.124,44.979,Bike,2022/06/02 22:40:00+00,W ARLINGTON AVE,44.985,-93.106,25,All other roads,,,,,14,M,SAINT PAUL,55107,,,Possible Injury,Yes,124,Unknown
+-93.131,44.941,Pedestrian,2019/03/13 11:29:00+00,E VALLEY ST,44.959,-93.099,30,Local or City Street,48,M,SAINT PAUL,551031851,,,,,Suspected Minor Injury,Yes,,,125,Unknown
+-93.046,44.985,Pedestrian,2021/09/28 21:45:00+00,-- NOT ON ROADWAY --,44.992,-93.086,,All other roads,51,M,MAPLEWOOD,551172036,,,,,Suspected Serious Injury,Yes,,,126,Unknown
+-93.106,44.96,Pedestrian,2019/08/03 03:04:00+00,W THOMAS AVE,44.959,-93.126,30,Municipal State Aid Street,55,M,MAPLEWOOD,551193174,,,,,Suspected Serious Injury,Yes,,,127,Unknown
+-93.126,44.947,Bike,2022/06/01 00:34:00+00,JOHNSON PKWY,44.975,-93.045,25,All other roads,,,,,18,M,ST PAUL,55106,,,Suspected Minor Injury,Yes,128,Unknown
+-93.078,44.92,Pedestrian,2019/11/21 13:43:00+00,W UNIVERSITY AVE,44.968,-93.206,30,County State Aid Highway,25,F,SAINT PAUL,55114,,,,,Suspected Minor Injury,No,,,129,Unknown
+-93.078,44.92,Pedestrian,2019/03/08 15:11:00+00,S PRIOR ST,44.927,-93.182,15,Local or City Street,21,F,EAGAN,551222412,,,,,Possible Injury,Yes,,,130,Unknown
+-93.066,44.97,Pedestrian,2019/03/11 22:16:00+00,N GROTTO ST,44.947,-93.131,30,Local or City Street,61,F,SAINT PAUL,551021071,,,,,Suspected Serious Injury,Yes,,,131,Unknown
+-93.182,44.958,Pedestrian,2019/03/08 21:20:00+00,N SNELLING AVE,44.959,-93.167,30,State Trunk Highway,12,F,SAINT PAUL,55104,,,,,Suspected Minor Injury,Yes,,,132,Unknown
+-93.157,44.948,Pedestrian,2019/02/26 21:45:00+00,W SAINT CLAIR AVE,44.934,-93.167,30,Municipal State Aid Street,64,M,LANDFALL,55128,,,,,Suspected Minor Injury,No,,,133,Unknown
+-93.152,44.956,Pedestrian,2019/03/08 03:29:00+00,W OSCEOLA AVE,44.936,-93.167,30,Local or City Street,54,M,SAINT PAUL,551052335,,,,,Possible Injury,No,,,134,Unknown
+-93.085,44.956,Bike,2019/03/05 23:15:00+00,W UNIVERSITY AVE,44.956,-93.106,30,County State Aid Highway,,,,,41,M,MINNEAPOLIS,55411,,,Possible Injury,Yes,135,Unknown
+-93.078,44.93,Pedestrian,2019/02/25 15:10:00+00,E JENKS AVE,44.971,-93.076,30,Local or City Street,47,F,SAINT PAUL,551066847,,,,,Possible Injury,No,,,136,Unknown
+-93.078,44.956,Pedestrian,2019/02/23 04:40:00+00,W TUSCARORA AVE,44.923,-93.133,,Local or City Street,24,M,WEST SAINT PAUL,551181147,,,,,Suspected Minor Injury,No,,,137,Unknown
+-93.136,44.918,Pedestrian,2019/02/19 14:55:00+00,E MARYLAND AVE,44.978,-93.066,30,County State Aid Highway,18,M,SAINT PAUL,55130,,,,,Suspected Minor Injury,Yes,,,138,Unknown
+-93.147,44.951,Pedestrian,2019/02/16 00:30:00+00,W UNIVERSITY AVE,44.956,-93.165,10,County State Aid Highway,57,F,ROBBINSDALE,554222020,,,,,Possible Injury,No,,,139,Unknown
+-93.066,44.963,Pedestrian,2019/02/16 00:19:00+00,N SIMPSON ST,44.964,-93.164,30,Local or City Street,39,F,ST PAUL,55106,,,,,Suspected Minor Injury,Yes,,,140,Unknown
+-93.126,44.956,Pedestrian,2019/02/07 01:38:00+00,N PASCAL ST,44.956,-93.162,35,Local or City Street,74,F,MINNEAPOLIS,554041034,,,,,,No,,,141,Unknown
+-93.132,44.924,Pedestrian,2019/01/28 20:45:00+00,N MARION ST,44.99,-93.11,,Local or City Street,4,F,ST. PAUL,55104,,,,,Suspected Minor Injury,Yes,,,142,Unknown
+-93.025,44.978,Bike,2019/01/25 22:56:00+00,W UNIVERSITY AVE,44.964,-93.198,30,County State Aid Highway,,,,,44,M,,,,,,No,143,Unknown
+-93.187,44.916,Pedestrian,2019/01/24 20:50:00+00,N DUNLAP ST,44.992,-93.149,,Local or City Street,72,M,SAINT PAUL,551082214,,,,,Suspected Serious Injury,Yes,,,144,Unknown
+-93.187,44.916,Pedestrian,2019/01/24 20:50:00+00,N MOORE ST,44.951,-93.184,25,Local or City Street,19,F,SHOREVIEW,55403,,,,,Suspected Minor Injury,Yes,,,145,Unknown
+-93.167,44.95,Pedestrian,2019/01/23 21:29:00+00,W 7TH ST,44.905,-93.164,40,State Trunk Highway,16,F,ST. PAUL,55105,,,,,Suspected Minor Injury,Yes,,,146,Unknown
+-93.045,44.957,Pedestrian,2019/01/20 20:50:00+00,INNER LA,44.914,-93.19,,All other roads,63,F,SAINT PAUL,551162018,,,,,Suspected Minor Injury,Yes,,,147,Unknown
+-93.08,44.95,Pedestrian,2019/01/17 21:45:00+00,N PROSPERITY AVE,44.977,-93.04,35,County State Aid Highway,65,F,SAINT PAUL,551067024,,,,,Possible Injury,Yes,,,148,Unknown
+-93.074,44.979,Pedestrian,2019/01/16 18:00:00+00,E 7TH ST,44.952,-93.087,,State Trunk Highway,55,M,SAINT PAUL,551012348,,,,,Suspected Serious Injury,Yes,,,149,Unknown
+-93.139,44.934,Pedestrian,2019/01/16 13:10:00+00,N ETNA ST,44.957,-93.042,30,Municipal State Aid Street,15,M,ST PAUL,55106,,,,,Suspected Serious Injury,Yes,,,150,Unknown
+-93.126,44.956,Pedestrian,2019/01/15 13:25:00+00,E 3RD ST,44.957,-93.033,35,Municipal State Aid Street,16,M,ST PAUL,55106,,,,,Suspected Minor Injury,Yes,,,151,Unknown
+-93.167,44.983,Pedestrian,2019/01/11 12:15:00+00,E MARYLAND AVE,44.977,-93.089,30,County State Aid Highway,37,M,SAINT PAUL,551031436,,,,,Possible Injury,No,,,152,Unknown
+-93.096,44.947,Bike,2019/01/10 22:55:00+00,W NEBRASKA ST,44.986,-93.106,30,Local or City Street,,,,,37,M,ROSEVILLE,551136749,,,Possible Injury,No,153,Unknown
+-93.191,44.962,Pedestrian,2019/01/09 23:29:00+00,N DALE ST,44.941,-93.126,30,County State Aid Highway,67,F,SAINT PAUL,551046907,,,,,Suspected Serious Injury,Yes,,,154,Unknown
+-93.18,44.963,Pedestrian,2019/01/09 07:48:00+00,N CEDAR ST,44.947,-93.094,30,Local or City Street,37,F,MINNEAPOLIS,554072285,,,,,,No,,,155,Unknown
+-93.167,44.959,Pedestrian,2019/01/07 23:40:00+00,E 11TH ST,44.953,-93.094,30,Municipal State Aid Street,58,99,SAINT PAUL,55101,,,,,Possible Injury,Yes,,,156,Unknown
+-93.105,44.944,Pedestrian,2019/01/05 21:34:00+00,N ARCADE ST,44.962,-93.066,30,U.S. Trunk Highway,70,M,ST PAUL,55106,,,,,Possible Injury,No,,,157,Unknown
+-93.167,44.955,Pedestrian,2019/01/05 18:14:00+00,E MARYLAND AVE,44.977,-93.035,30,County State Aid Highway,23,F,SAINT PAUL,55106,,,,,Suspected Minor Injury,No,,,158,Unknown
+-93.126,44.944,Pedestrian,2019/01/04 23:46:00+00,N MCKNIGHT RD,44.947,-93.005,40,County State Aid Highway,19,F,SAINT PAUL,551195034,,,,,Fatal,No,,,159,Unknown
+-93.165,44.963,Pedestrian,2019/01/04 23:46:00+00,N MCKNIGHT RD,44.947,-93.005,40,County State Aid Highway,22,F,SAINT PAUL,551195354,,,,,Suspected Serious Injury,Yes,,,160,Unknown
+-93.106,44.959,Pedestrian,2019/01/04 22:13:00+00,W UNIVERSITY AVE,44.956,-93.135,10,County State Aid Highway,30,F,SAINT PAUL,551044192,,,,,,No,,,161,Unknown
+-93.109,44.956,Bike,2022/08/29 22:07:00+00,ENERGY PARK DR,44.978,-93.204,20,Municipal State Aid Street,,,,,27,F,ST. PAUL,55104,,,Suspected Minor Injury,No,162,Unknown
+-93.147,44.959,Bike,2022/08/29 13:28:00+00,W PINEHURST AVE,44.919,-93.187,25,Local or City Street,,,,,24,,SAINT PAUL,551051318,,,Possible Injury,No,163,Unknown
+-93.025,44.987,Pedestrian,2022/08/28 04:55:00+00,E 12TH ST,44.954,-93.094,25,Local or City Street,67,M,HAM LAKE,553047334,,,,,Suspected Minor Injury,No,,,164,Unknown
+-93.114,44.983,Pedestrian,2022/08/26 21:31:00+00,W SELBY AVE,44.947,-93.116,25,Municipal State Aid Street,29,F,SAINT PAUL,551024668,,,,,Suspected Minor Injury,No,,,165,Unknown
+-93.116,44.938,Bike,2022/08/26 16:27:00+00,W WATER ST,44.92,-93.121,25,Local or City Street,,,,,36,M,COON RAPIDS,554482523,,,Suspected Minor Injury,No,166,Unknown
+-93.17,44.977,Pedestrian,2022/08/25 14:42:00+00,N ARCADE ST,44.977,-93.066,10,U.S. Trunk Highway,34,F,MAPLEWOOD,55119,,,,,Possible Injury,Yes,,,167,Unknown
+-93.066,44.97,Pedestrian,2022/08/24 18:05:00+00,W CONCORDIA AVE,44.951,-93.131,20,Municipal State Aid Street,,M,,,,,,,Suspected Serious Injury,Yes,,,168,Unknown
+-93.043,44.976,Bike,2022/08/21 18:45:00+00,HIDDEN FALLS DR,44.908,-93.192,15,Local or City Street,,,,,41,M,MINNEAPOLIS,554064512,,,Possible Injury,Yes,169,Unknown
+-93.005,44.933,Pedestrian,2022/08/23 20:00:00+00,839,44.947,-93.128,10,All other roads,44,M,SAINT PAUL,551046632,,,,,Possible Injury,Yes,,,170,Unknown
+-93.153,44.979,Pedestrian,2022/08/23 21:27:00+00,W 7TH ST,44.943,-93.104,30,State Trunk Highway,40,F,SAINT PAUL,551031371,,,,,Possible Injury,No,,,171,Unknown
+-93.156,44.956,Bike,2022/08/23 18:01:00+00,E LARPENTEUR AVE,44.992,-93.045,30,County State Aid Highway,,,,,13,M,ST PAUL,55106,,,Suspected Serious Injury,Yes,172,Unknown
+-93.111,44.956,Pedestrian,2022/08/23 00:00:00+00,S FINN ST,44.942,-93.19,,Local or City Street,22,F,MINNEAPOLIS,554072637,,,,,Suspected Serious Injury,Yes,,,173,Unknown
+-93.162,44.954,Pedestrian,2022/08/21 23:59:00+00,W LARPENTEUR AVE,44.992,-93.106,30,County State Aid Highway,57,M,SAINT PAUL,55117,,,,,Suspected Minor Injury,No,,,174,Unknown
+-93.051,44.978,Pedestrian,2022/08/21 03:23:00+00,E KELLOGG BLVD,44.95,-93.081,30,Municipal State Aid Street,34,M,HAM LAKE,553045106,,,,,Suspected Minor Injury,Yes,,,175,Unknown
+-93.093,44.944,Pedestrian,2022/08/17 20:17:00+00,ESTABROOK DR,44.98,-93.153,15,Local or City Street,3,M,,,,,,,Suspected Minor Injury,Yes,,,176,Unknown
+-93.018,44.947,Pedestrian,2022/08/13 15:30:00+00,E MARYLAND AVE,44.977,-93.025,,County State Aid Highway,41,F,SAINT PAUL,551303440,,,,,Possible Injury,Yes,,,177,Unknown
+-93.116,44.955,Pedestrian,2022/08/18 02:45:00+00,N ARCADE ST,44.976,-93.066,30,U.S. Trunk Highway,20,F,SAINT PAUL,551193902,,,,,Suspected Minor Injury,Yes,,,178,Unknown
+-93.074,44.968,Pedestrian,2022/08/11 18:07:00+00,W 7TH ST,44.943,-93.104,30,State Trunk Highway,49,F,WACONIA,553874557,,,,,Possible Injury,Yes,,,179,Unknown
+-93.102,44.929,Bike,2022/08/11 15:45:00+00,N PROSPERITY AVE,44.977,-93.04,30,County State Aid Highway,,,,,55,M,SAINT PAUL,551062731,,,Suspected Minor Injury,No,180,Unknown
+-93.147,44.953,Pedestrian,2022/08/10 14:29:00+00,W THOMAS AVE,44.959,-93.127,,Municipal State Aid Street,36,F,SAINT PAUL,551031619,,,,,Suspected Minor Injury,No,,,181,Unknown
+-93.096,44.955,Pedestrian,2022/08/10 03:04:00+00,N BATES AVE,44.959,-93.072,30,Local or City Street,,F,,,,,,,Possible Injury,No,,,182,Unknown
+-93.158,44.94,Pedestrian,2022/08/09 22:23:00+00,E 7TH ST,44.949,-93.094,30,State Trunk Highway,28,M,INVER GROVE HEIGHTS,550764488,,,,,Suspected Minor Injury,No,,,183,Unknown
+-93.126,44.947,Pedestrian,2022/08/08 21:48:00+00,N CHESTNUT ST,44.944,-93.105,,Local or City Street,30,F,BLOOMINGTON,554373333,,,,,Possible Injury,Yes,,,184,Unknown
+-93.097,44.948,Bike,2022/08/02 00:03:00+00,165,44.961,-93.025,30,All other roads,,,,,77,M,SAINT PAUL,55106,,,Suspected Minor Injury,No,185,Unknown
+-93.074,44.956,Bike,2022/07/31 21:40:00+00,W UNIVERSITY AVE,44.956,-93.159,,County State Aid Highway,,,,,10,M,MINNEAPOLIS,55405,,,Suspected Minor Injury,Yes,186,Unknown
+-93.072,44.959,Pedestrian,2022/07/29 00:30:00+00,W UNIVERSITY AVE,44.956,-93.147,,County State Aid Highway,,,,,,,,,Suspected Minor Injury,No,,,187,Unknown
+-93.187,44.954,Pedestrian,2022/07/29 00:30:00+00,W UNIVERSITY AVE,44.956,-93.147,,County State Aid Highway,,,,,,,,,Suspected Minor Injury,No,,,188,Unknown
+-93.167,44.964,Bike,2022/07/26 21:30:00+00,W UNIVERSITY AVE,44.956,-93.126,30,County State Aid Highway,,,,,35,M,MINNEAPOLIS,554041601,,,Suspected Minor Injury,No,189,Unknown
+-93.021,44.955,Pedestrian,2022/07/24 06:20:00+00,RAMP450,44.951,-93.015,30,All other roads,30,M,SAINT PAUL,551065337,,,,,Suspected Minor Injury,Yes,,,190,Unknown
+-93.106,44.981,Bike,2022/07/22 12:50:00+00,RAMP479,44.969,-93.164,30,All other roads,,,,,30,M,MINNEAPOLIS,554061717,,,,No,191,Unknown
+-93.149,44.913,Pedestrian,2022/07/21 09:45:00+00,-- NOT ON ROADWAY --,44.946,-93.165,,All other roads,47,M,MINNEAPOLIS,554033466,,,,,Possible Injury,Yes,,,192,Unknown
+-93.104,44.943,Pedestrian,2022/07/21 09:45:00+00,-- NOT ON ROADWAY --,44.946,-93.165,,All other roads,37,F,SAINT PAUL,551021895,,,,,Suspected Minor Injury,Yes,,,193,Unknown
+-93.043,44.978,Bike,2022/07/15 23:45:00+00,N RICE ST,44.979,-93.106,30,County State Aid Highway,,,,,60,M,SAINT PAUL,551061001,,,Suspected Minor Injury,No,194,Unknown
+-93.127,44.956,Bike,2022/07/11 18:23:00+00,W MARYLAND AVE,44.977,-93.116,30,County State Aid Highway,,,,,34,M,SAINT PAUL,55117,,,,No,195,Unknown
+-93.106,44.976,Bike,2022/07/11 18:23:00+00,W MARYLAND AVE,44.977,-93.116,30,County State Aid Highway,,,,,13,M,SAINT PAUL,55117,,,,No,196,Unknown
+-93.149,44.939,Pedestrian,2022/07/11 22:58:00+00,N RICE ST,44.978,-93.106,30,County State Aid Highway,72,M,,,,,,,Suspected Serious Injury,Yes,,,197,Unknown
+-93.045,44.975,Pedestrian,2022/07/10 04:30:00+00,N JACKSON ST,44.98,-93.096,25,County State Aid Highway,51,F,ST PAUL,55104,,,,,Suspected Minor Injury,Yes,,,198,Unknown
+-93.126,44.956,Bike,2022/07/09 16:59:00+00,N SIBLEY ST,44.948,-93.088,25,Municipal State Aid Street,,,,,52,M,ST. PAUL,55101,,,Possible Injury,Yes,199,Unknown
+-93.146,44.927,Bike,2022/07/06 12:30:00+00,S EVA ST,44.939,-93.081,,Municipal State Aid Street,,,,,69,M,MINNEAPOLIS,554064472,,,Suspected Minor Injury,No,200,Unknown
+-93.17,44.94,Bike,2022/07/08 12:50:00+00,E CASE AVE,44.97,-93.025,30,Local or City Street,,,,,60,M,MAPLEWOOD,551197177,,,Suspected Serious Injury,Yes,201,Unknown
+-93.159,44.927,Pedestrian,2022/07/07 16:23:00+00,S ROBERT ST,44.941,-93.085,30,State Trunk Highway,54,F,LAKEVILLE,550445640,,,,,Suspected Minor Injury,Yes,,,202,Unknown
+-93.084,44.977,Pedestrian,2022/07/06 00:32:00+00,E MARYLAND AVE,44.978,-93.043,30,County State Aid Highway,40,M,SAINT PAUL,551063452,,,,,Suspected Minor Injury,Yes,,,203,Unknown
+-93.159,44.927,Pedestrian,2022/07/05 04:18:00+00,SHEPARD RD,44.945,-93.087,40,County State Aid Highway,28,M,SAINT PAUL,551045415,,,,,Suspected Serious Injury,Yes,,,204,Unknown
+-93.156,44.909,Bike,2022/07/03 01:06:00+00,PHALEN DR,44.982,-93.056,20,Local or City Street,,,,,21,F,SAINT PAUL,551062665,,,Suspected Minor Injury,No,205,Unknown
+-93.069,44.972,Bike,2022/07/03 01:04:00+00,W 7TH ST,44.943,-93.104,5,State Trunk Highway,,,,,54,M,SAINT PAUL,551072348,,,Suspected Minor Injury,No,206,Unknown
+-93.057,44.96,Pedestrian,2022/07/02 01:55:00+00,W MARYLAND AVE,44.977,-93.109,30,County State Aid Highway,8,M,SAINT PAUL,55106,,,,,Suspected Minor Injury,Yes,,,207,Unknown
+-93.143,44.951,Pedestrian,2022/06/29 20:00:00+00,N RICE ST,44.956,-93.106,30,County State Aid Highway,16,F,,,,,,,Suspected Minor Injury,Yes,,,208,Unknown
+-93.087,44.937,Bike,2022/06/27 03:25:00+00,N ATLANTIC ST,44.965,-93.048,25,Local or City Street,,,,,48,M,MAHTOMEDI,55115,,,Possible Injury,Yes,209,Unknown
+-93.167,44.948,Pedestrian,2022/06/25 04:37:00+00,E MARYLAND AVE,44.978,-93.066,30,County State Aid Highway,39,M,ROSEVILLE,551136731,,,,,Suspected Minor Injury,Yes,,,210,Unknown
+-93.197,44.913,Pedestrian,2022/06/25 00:49:00+00,MOUNDS BLVD,44.956,-93.074,,U.S. Trunk Highway,18,M,SAINT PAUL,551064024,,,,,Suspected Minor Injury,No,,,211,Unknown
+-93.204,44.967,Pedestrian,2022/06/24 01:32:00+00,E WHEELOCK PKWY,44.991,-93.085,25,Local or City Street,18,M,SAINT PAUL,551193925,,,,,Suspected Minor Injury,Yes,,,212,Unknown
+-93.066,44.977,Pedestrian,2022/06/23 13:33:00+00,S WABASHA ST,44.948,-93.097,30,Municipal State Aid Street,61,F,SAINT PAUL,551023075,,,,,,No,,,213,Unknown
+-93.182,44.897,Bike,2022/06/21 22:40:00+00,N WALL ST,44.949,-93.085,5,Municipal State Aid Street,,,,,18,M,ST PAUL,55106,,,,No,214,Unknown
+-93.085,44.991,Pedestrian,2022/06/21 13:52:00+00,MINNESOTA ST,44.948,-93.093,25,Local or City Street,69,M,SAINT PAUL,551174538,,,,,Suspected Minor Injury,No,,,215,Unknown
+-93.035,44.978,Pedestrian,2022/06/21 04:11:00+00,W HIGHLAND PKWY,44.92,-93.167,,Municipal State Aid Street,45,M,SAINT PAUL,551021025,,,,,Suspected Serious Injury,Yes,,,216,Unknown
+-93.097,44.948,Bike,2022/06/18 23:30:00+00,N CLARENCE ST,44.992,-93.043,30,Local or City Street,,,,,26,M,SAINT PAUL,551062946,,,Suspected Serious Injury,No,217,Unknown
+-93.085,44.949,Bike,2022/06/18 01:25:00+00,W FORD PKWY,44.918,-93.19,10,County State Aid Highway,,,,,15,M,MINNEAPOLIS,55406,,,Suspected Minor Injury,No,218,Unknown
+-93.093,44.948,Bike,2022/06/17 23:22:00+00,N FARINGTON ST,44.963,-93.114,,Local or City Street,,,,,33,M,MINNEAPOLIS,554183022,,,Suspected Serious Injury,Yes,219,Unknown
+-93.167,44.92,Bike,2022/06/17 19:27:00+00,W RANDOLPH AVE,44.927,-93.139,25,County State Aid Highway,,,,,64,,SAINT PAUL,551024016,,,Possible Injury,No,220,Unknown
+-93.043,44.992,Pedestrian,2022/06/16 03:12:00+00,WARNER RD,44.948,-93.069,60,All other roads,44,M,SAINT PAUL,551072624,,,,,Fatal,No,,,221,Unknown
+-93.19,44.918,Pedestrian,2022/06/11 17:02:00+00,W THOMAS AVE,44.959,-93.116,25,Municipal State Aid Street,6,M,STPAUL,55103,,,,,Suspected Minor Injury,Yes,,,222,Unknown
+-93.114,44.963,Bike,2022/06/11 03:10:00+00,E MINNEHAHA AVE,44.963,-93.025,20,All other roads,,,,,36,M,SAINT PAUL,551064209,,,Possible Injury,No,223,Unknown
+-93.139,44.927,Bike,2022/06/10 21:25:00+00,N EUSTIS ST,44.965,-93.203,30,Local or City Street,,,,,47,F,MINNEAPOLIS,554171619,,,Suspected Minor Injury,No,224,Unknown
+-93.069,44.948,Pedestrian,2022/06/10 15:38:00+00,W UNIVERSITY AVE,44.956,-93.167,30,County State Aid Highway,100,M,,,,,,,Suspected Minor Injury,No,,,225,Unknown
+-93.116,44.959,Bike,2022/06/09 13:15:00+00,E HYACINTH AVE,44.98,-93.066,25,Local or City Street,,,,,15,M,ST. PAUL,55101,,,Possible Injury,No,226,Unknown
+-93.025,44.963,Pedestrian,2022/06/09 01:10:00+00,-- NOT ON ROADWAY --,44.984,-93.066,,All other roads,65,F,SAINT PAUL,551063330,,,,,,No,,,227,Unknown
+-93.203,44.965,Pedestrian,2022/06/03 18:00:00+00,N RICE ST,44.965,-93.106,10,County State Aid Highway,83,M,MAHTOMEDI,551156833,,,,,Suspected Minor Injury,No,,,228,Unknown
+-93.167,44.956,Bike,2022/06/02 22:40:00+00,W ARLINGTON AVE,44.985,-93.106,25,All other roads,,,,,14,M,SAINT PAUL,55107,,,Possible Injury,Yes,229,Unknown
+-93.066,44.98,Pedestrian,2022/05/28 07:21:00+00,W MARSHALL AVE,44.948,-93.2,,County State Aid Highway,46,M,MINNEAPOLIS,554121959,,,,,Fatal,Yes,,,230,Unknown
+-93.066,44.984,Pedestrian,2022/05/27 21:55:00+00,E SUBURBAN AVE,44.95,-93.025,30,All other roads,31,M,SAINT PAUL,551065710,,,,,Suspected Minor Injury,Yes,,,231,Unknown
+-93.106,44.965,Bike,2022/05/24 13:20:00+00,E MARYLAND AVE,44.977,-93.089,,County State Aid Highway,,,,,14,M,ST PAUL,55130,,,,No,232,Unknown
+-93.106,44.985,Pedestrian,2022/05/23 22:00:00+00,W JEFFERSON AVE,44.931,-93.167,30,Municipal State Aid Street,29,F,SAINT PAUL,551052050,,,,,Suspected Minor Injury,No,,,233,Unknown
+-93.2,44.948,Pedestrian,2022/05/20 05:32:00+00,E 7TH ST,44.955,-93.08,,All other roads,38,M,BLOOMINGTON,55420,,,,,Suspected Minor Injury,No,,,234,Unknown
+-93.025,44.95,Bike,2022/05/17 18:20:00+00,E KELLOGG BLVD,44.946,-93.089,30,Municipal State Aid Street,,,,,39,F,SAINT PAUL,551011681,,,Suspected Minor Injury,Yes,235,Unknown
+-93.089,44.977,Bike,2022/05/15 09:40:00+00,N RICE ST,44.985,-93.106,,County State Aid Highway,,,,,39,,SAINT PAUL,551174242,,,Possible Injury,No,236,Unknown
+-93.167,44.931,Pedestrian,2022/05/14 01:46:00+00,E WILSON AVE,44.954,-93.047,,Municipal State Aid Street,26,F,SAINT PAUL,551303583,,,,,Suspected Serious Injury,Yes,,,237,Unknown
+-93.08,44.955,Pedestrian,2022/05/11 01:21:00+00,S ROBERT ST,44.929,-93.081,30,Local or City Street,35,F,BURNSVILLE,553064679,,,,,Suspected Minor Injury,Yes,,,238,Unknown
+-93.089,44.946,Pedestrian,2022/05/11 01:21:00+00,S ROBERT ST,44.929,-93.081,30,Local or City Street,8,F,BURNSVILLE,55306,,,,,Suspected Minor Injury,Yes,,,239,Unknown
+-93.106,44.985,Bike,2022/05/10 14:01:00+00,N FAIRVIEW AVE,44.942,-93.177,25,Municipal State Aid Street,,,,,,,STPAUL,55104,,,Suspected Minor Injury,No,240,Unknown
+-93.047,44.954,Bike,2022/05/08 02:08:00+00,N WEIDE ST,44.972,-93.068,20,Local or City Street,,,,,12,F,SAINT PAUL,55106,,,Possible Injury,Yes,241,Unknown
+-93.081,44.929,Bike,2022/05/06 02:40:00+00,N SMITH AVE,44.946,-93.103,25,Municipal State Aid Street,,,,,55,M,SAINT PAUL,551022752,,,Suspected Minor Injury,No,242,Unknown
+-93.081,44.929,Bike,2021/05/09 22:45:00+00,796,44.933,-93.177,20,All other roads,,,,,36,M,ST. PAUL,55102,,,,No,243,Unknown
+-93.177,44.942,Pedestrian,2022/05/01 00:15:00+00,N MILTON ST,44.951,-93.139,25,Local or City Street,52,M,SAINT PAUL,551175121,,,,,,No,,,244,Unknown
+-93.068,44.972,Pedestrian,2022/04/28 21:30:00+00,NORTONIA AVE,44.967,-93.011,20,Local or City Street,13,M,MINNETONKA,55345,,,,,Possible Injury,Yes,,,245,Unknown
+-93.103,44.946,Bike,2021/05/09 21:59:00+00,N FOREST ST,44.959,-93.061,20,Municipal State Aid Street,,,,,9,M,ST PAUL,55106,,,Suspected Minor Injury,Yes,246,Unknown
+-93.177,44.933,Pedestrian,2019/11/20 21:30:00+00,85,44.966,-93.026,30,All other roads,29,F,MINNEAPOLIS,554183791,,,,,,No,,,247,Unknown
+-93.139,44.951,Pedestrian,2022/04/22 05:27:00+00,N DALE ST,44.958,-93.126,25,County State Aid Highway,24,M,SAINT PAUL,551042729,,,,,Suspected Serious Injury,Yes,,,248,Unknown
+-93.107,44.949,Pedestrian,2021/09/28 12:41:00+00,E 3RD ST,44.957,-93.035,25,Municipal State Aid Street,14,M,ST PAUL,55119,,,,,Possible Injury,No,,,249,Unknown
+-93.139,44.959,Pedestrian,2021/05/08 03:50:00+00,ALLEY,44.967,-93.095,15,All other roads,31,M,SAINT PAUL,551175524,,,,,Possible Injury,No,,,250,Unknown
+-93.011,44.967,Pedestrian,2022/04/21 00:37:00+00,E NEBRASKA AVE,44.987,-93.023,20,Local or City Street,36,M,SAINT PAUL,551194222,,,,,Suspected Minor Injury,Yes,,,251,Unknown
+-93.061,44.959,Pedestrian,2019/11/15 22:49:00+00,W COTTAGE AVE,44.983,-93.106,30,Local or City Street,66,M,SAINT PAUL,551174341,,,,,Suspected Minor Injury,No,,,252,Unknown
+-93.026,44.966,Pedestrian,2019/08/03 01:30:00+00,WILKIN ST,44.936,-93.106,30,Local or City Street,29,M,ST. PAUL,55116,,,,,Possible Injury,No,,,253,Unknown
+-93.126,44.958,Pedestrian,2022/04/21 00:37:00+00,E NEBRASKA AVE,44.987,-93.023,20,Local or City Street,26,F,APPLE VALLEY,551248388,,,,,Suspected Minor Injury,Yes,,,254,Unknown
+-93.035,44.957,Pedestrian,2019/08/03 00:54:00+00,W UNIVERSITY AVE,44.956,-93.158,,County State Aid Highway,63,M,SAINT PAUL,551021081,,,,,Suspected Minor Injury,Yes,,,255,Unknown
+-93.095,44.967,Bike,2019/08/02 18:30:00+00,S LEXINGTON ST,44.927,-93.147,30,County State Aid Highway,,,,,,,,,,,Possible Injury,Yes,256,Unknown
+-93.023,44.987,Bike,2019/08/02 11:25:00+00,123,44.967,-93.059,30,Local or City Street,,,,,50,M,SAINT PAUL,551304034,,,Suspected Minor Injury,No,257,Unknown
+-93.106,44.983,Pedestrian,2019/07/30 13:26:00+00,E PHALEN BLVD,44.97,-93.049,30,Municipal State Aid Street,45,F,SAINT PAUL,551303233,,,,,,No,,,258,Unknown
+-93.106,44.936,Pedestrian,2019/07/29 17:45:00+00,E MARYLAND AVE,44.978,-93.047,30,County State Aid Highway,25,F,SAINT PAUL,551175131,,,,,Possible Injury,Yes,,,259,Unknown
+-93.023,44.987,Pedestrian,2019/07/27 15:50:00+00,W 7TH ST,44.929,-93.125,30,State Trunk Highway,46,M,SAINT PAUL,551046925,,,,,Possible Injury,Yes,,,260,Unknown
+-93.158,44.956,Pedestrian,2019/07/27 22:35:00+00,N RICE ST,44.975,-93.106,30,County State Aid Highway,41,M,ST. PAUL,55117,,,,,,No,,,261,Unknown
+-93.147,44.927,Bike,2019/07/26 21:24:00+00,SPRUCE TREE AVE,44.955,-93.167,25,Local or City Street,,,,,53,M,SAINT PAUL,551174319,,,,No,262,Unknown
+-93.059,44.967,Pedestrian,2019/07/26 03:03:00+00,N PAYNE AVE,44.977,-93.074,30,Municipal State Aid Street,17,M,SAINT PAUL,55119,,,,,Suspected Minor Injury,Yes,,,263,Unknown
+-93.049,44.97,Pedestrian,2019/07/26 02:12:00+00,N WHITE BEAR AVE,44.953,-93.025,30,County State Aid Highway,20,F,SAINT PAUL,551064027,,,,,Possible Injury,No,,,264,Unknown
+-93.047,44.978,Bike,2019/07/24 22:05:00+00,W GRAND AVE,44.94,-93.139,30,Municipal State Aid Street,,,,,47,M,MARBLE HEAD,1945,,,Possible Injury,No,265,Unknown
+-93.125,44.929,Pedestrian,2019/07/22 22:19:00+00,W COMO AVE,44.96,-93.109,30,County State Aid Highway,20,F,SAINT PAUL,551032359,,,,,Suspected Minor Injury,Yes,,,266,Unknown
+-93.106,44.975,Bike,2019/07/22 14:30:00+00,W SAINT ANTHONY AVE,44.953,-93.177,5,Local or City Street,,,,,54,M,SAINT PAUL,551042681,,,Possible Injury,No,267,Unknown
+-93.167,44.955,Pedestrian,2019/07/22 02:10:00+00,JACKSON ST,44.954,-93.095,30,Municipal State Aid Street,30,M,SAINT PAUL,55102,,,,,Suspected Minor Injury,Yes,,,268,Unknown
+-93.074,44.977,Bike,2019/07/21 21:57:00+00,E 3RD ST,44.956,-93.069,30,Municipal State Aid Street,,,,,4,,ST. PAUL,55106,,,Possible Injury,Yes,269,Unknown
+-93.025,44.953,Bike,2019/07/18 21:10:00+00,N ARONA ST,44.986,-93.164,30,Local or City Street,,,,,20,M,SAINT PAUL,551063226,,,,No,270,Unknown
+-93.139,44.94,Pedestrian,2019/07/20 19:25:00+00,CESAR CHAVEZ  ST,44.93,-93.078,,Municipal State Aid Street,7,F,ST PAUL,55075,,,,,Suspected Minor Injury,No,,,271,Unknown
+-93.109,44.96,Bike,2019/07/14 21:37:00+00,E CASE AVE,44.97,-93.071,30,Municipal State Aid Street,,,,,16,M,ST PAUL,55106,,,,No,272,Unknown
+-93.177,44.953,Pedestrian,2019/07/10 22:41:00+00,E NEBRASKA AVE,44.987,-93.029,30,Local or City Street,3,F,ST PAUL,55130,,,,,Suspected Minor Injury,Yes,,,273,Unknown
+-93.095,44.954,Pedestrian,2019/07/08 23:10:00+00,N CLARK ST,44.969,-93.083,30,Local or City Street,5,F,ST. PAUL,55106,,,,,Suspected Minor Injury,Yes,,,274,Unknown
+-93.069,44.956,Pedestrian,2019/07/08 21:24:00+00,E 5TH ST,44.947,-93.092,5,Municipal State Aid Street,76,M,SAINT PAUL,551072235,,,,,Suspected Minor Injury,Yes,,,275,Unknown
+-93.164,44.986,Bike,2019/07/08 19:55:00+00,W UNIVERSITY AVE,44.957,-93.18,30,County State Aid Highway,,,,,22,M,OAKDALE,551282818,,,Suspected Serious Injury,Yes,276,Unknown
+-93.078,44.93,Bike,2019/07/07 23:06:00+00,W SUMMIT AVE,44.941,-93.126,30,Municipal State Aid Street,,,,,50,M,WEST SAINT PAUL,551181412,,,Possible Injury,Yes,277,Unknown
+-93.071,44.97,Pedestrian,2019/07/06 20:32:00+00,N WHITE BEAR AVE,44.963,-93.025,40,County State Aid Highway,13,M,ST. PAUL55109,55109,,,,,Suspected Minor Injury,No,,,278,Unknown
+-93.029,44.987,Pedestrian,2019/07/06 01:41:00+00,-- NOT ON ROADWAY --,44.953,-93.159,,Non-Trafficway,55,F,SAINT PAUL,551032354,,,,,Possible Injury,No,,,279,Unknown
+-93.083,44.969,Pedestrian,2019/07/05 21:00:00+00,W 7TH ST,44.921,-93.137,30,State Trunk Highway,50,M,SAINT PAUL,55116,,,,,Possible Injury,No,,,280,Unknown
+-93.092,44.947,Pedestrian,2019/07/05 04:47:00+00,W COOK AVE,44.973,-93.103,30,Local or City Street,39,F,COON RAPIDS,554333569,,,,,Suspected Minor Injury,No,,,281,Unknown
+-93.18,44.957,Pedestrian,2019/07/05 03:25:00+00,N ARKWRIGHT ST,44.985,-93.084,30,Local or City Street,10,F,WHITE BEAR LAKE,55110,,,,,Suspected Serious Injury,Yes,,,282,Unknown
+-93.094,44.949,Pedestrian,2019/07/02 14:18:00+00,S DALE ST,44.94,-93.126,30,County State Aid Highway,23,F,WHITE BEAR LAKE,551105557,,,,,Possible Injury,Yes,,,283,Unknown
+-93.126,44.941,Pedestrian,2019/07/02 04:01:00+00,W 7TH ST,44.943,-93.104,35,State Trunk Highway,59,M,SAINT PAUL,551022752,,,,,,No,,,284,Unknown
+-93.025,44.963,Pedestrian,2021/05/07 22:09:00+00,W SAINT ANTHONY AVE,44.952,-93.154,30,Municipal State Aid Street,73,M,SAINT PAUL,551044111,,,,,Suspected Minor Injury,Yes,,,285,Unknown
+-93.159,44.953,Pedestrian,2021/09/27 01:45:00+00,W JEFFERSON AVE,44.931,-93.137,10,All other roads,21,F,SAINT PAUL,551044827,,,,,Possible Injury,No,,,286,Unknown
+-93.137,44.921,Pedestrian,2019/07/02 02:15:00+00,E 3RD ST,44.957,-93.045,30,Municipal State Aid Street,58,F,ST PAUL,55106,,,,,Suspected Minor Injury,Yes,,,287,Unknown
+-93.103,44.973,Bike,2019/06/29 18:25:00+00,W SAINT CLAIR AVE,44.934,-93.118,30,Municipal State Aid Street,,,,,,,,,,,,No,288,Unknown
+-93.084,44.985,Bike,2019/06/25 12:03:00+00,WARNER RD,44.946,-93.085,40,County State Aid Highway,,,,,59,M,RICHFIELD,554231918,,,Suspected Serious Injury,Yes,289,Unknown
+-93.126,44.94,Pedestrian,2019/06/24 22:20:00+00,N CEDAR ST,44.946,-93.093,30,Municipal State Aid Street,48,M,ST PAUL,55106,,,,,Suspected Minor Injury,Yes,,,290,Unknown
+-93.104,44.943,Pedestrian,2019/06/24 12:29:00+00,CEDAR STREET,,,30,Local or City Street,70,M,ST. PAUL,55101,,,,,Suspected Minor Injury,Yes,,,291,Unknown
+-93.154,44.952,Bike,2019/06/22 00:30:00+00,N PAYNE AVE,44.978,-93.074,30,Municipal State Aid Street,,,,,57,M,MAPLEWOOD,55109,,,Suspected Minor Injury,No,292,Unknown
+-93.137,44.931,Bike,2019/06/21 02:42:00+00,N PAYNE AVE,44.975,-93.073,30,Municipal State Aid Street,,,,,18,M,SAINT PAUL,551061034,,,Possible Injury,Yes,293,Unknown
+-93.045,44.957,Pedestrian,2019/06/20 05:00:00+00,N RICE ST,44.957,-93.106,,County State Aid Highway,,,,,,,,,,No,,,294,Unknown
+-93.118,44.934,Pedestrian,2019/06/04 18:50:00+00,W BLAIR AVE,44.961,-93.167,45,Local or City Street,,,,,,,,,,No,,,295,Unknown
+-93.085,44.946,Bike,2019/06/20 01:00:00+00,1181 FOREST ST,,,10,Local or City Street,,,,,7,M,ST. PAUL,55106,,,Suspected Minor Injury,Yes,296,Unknown
+-93.093,44.946,Bike,2019/06/18 22:15:00+00,N RICE ST,44.959,-93.106,30,County State Aid Highway,,,,,33,F,SAINT PAUL,551031053,,,Suspected Minor Injury,Yes,297,Unknown
+,,Bike,2019/06/18 13:30:00+00,E 5TH ST,44.947,-93.091,30,Municipal State Aid Street,,,,,34,M,OAKDALE,551283323,,,Suspected Minor Injury,Yes,298,Unknown
+-93.074,44.978,Pedestrian,2019/06/16 02:00:00+00,N ARCADE ST,44.977,-93.066,30,U.S. Trunk Highway,12,F,WHITE BEAR LAKE,55110,,,,,Suspected Minor Injury,Yes,,,299,Unknown
+-93.073,44.975,Bike,2019/06/14 22:17:00+00,N DALE ST,44.967,-93.126,30,County State Aid Highway,,,,,15,M,SAINT PAUL,55104,,,Suspected Minor Injury,No,300,Unknown
+-93.106,44.957,Pedestrian,2019/06/15 03:08:00+00,S ROBERT ST,44.92,-93.081,30,All other roads,27,F,HASTINGS,550331953,,,,,Possible Injury,Yes,,,301,Unknown
+-93.167,44.961,Pedestrian,2019/06/13 23:45:00+00,W SAINT CLAIR AVE,44.934,-93.19,,Municipal State Aid Street,59,F,SAINT PAUL,551051234,,,,,Suspected Minor Injury,Yes,,,302,Unknown
+,,Pedestrian,2019/06/12 18:15:00+00,E CONGRESS ST,44.932,-93.081,30,Local or City Street,18,M,SAINT PAUL,551032303,,,,,Suspected Minor Injury,No,,,303,Unknown
+-93.106,44.959,Pedestrian,2019/06/10 17:07:00+00,E 6TH ST,44.95,-93.088,30,Municipal State Aid Street,41,F,ST. PAUL,55122,,,,,Possible Injury,No,,,304,Unknown
+-93.091,44.947,Pedestrian,2019/06/10 17:07:00+00,E 6TH ST,44.95,-93.088,30,Municipal State Aid Street,35,F,NORTH OAKS,55127,,,,,,No,,,305,Unknown
+-93.066,44.977,Pedestrian,2019/06/10 17:07:00+00,E 6TH ST,44.95,-93.088,30,Municipal State Aid Street,35,F,CHAMPLIN,55316,,,,,Suspected Minor Injury,No,,,306,Unknown
+-93.126,44.967,Pedestrian,2019/06/10 17:07:00+00,E 6TH ST,44.95,-93.088,30,Municipal State Aid Street,46,F,ST. PAUL,55101,,,,,,No,,,307,Unknown
+-93.081,44.92,Pedestrian,2019/06/10 17:07:00+00,E 6TH ST,44.95,-93.088,30,Municipal State Aid Street,51,F,ST. PAUL,55101,,,,,Possible Injury,Yes,,,308,Unknown
+-93.19,44.934,Pedestrian,2019/06/08 21:05:00+00,N WESTERN AVE,44.975,-93.116,30,Municipal State Aid Street,25,M,SAINT PAUL,551174833,,,,,Suspected Serious Injury,Yes,,,309,Unknown
+-93.081,44.932,Pedestrian,2019/06/08 04:37:00+00,N RICE ST,44.977,-93.106,35,County State Aid Highway,29,M,ST. PAUL,55117,,,,,Suspected Serious Injury,Yes,,,310,Unknown
+-93.088,44.95,Bike,2019/06/06 16:31:00+00,N DUNLAP ST,44.956,-93.149,30,Local or City Street,,,,,21,M,SAINT PAUL,551042544,,,Possible Injury,No,311,Unknown
+-93.088,44.95,Bike,2019/06/05 20:00:00+00,CESAR CHAVEZ  ST,44.932,-93.081,,Municipal State Aid Street,,,,,13,M,ST PAUL,55107,,,Possible Injury,No,312,Unknown
+-93.088,44.95,Pedestrian,2019/06/04 21:30:00+00,S SMITH AVE,44.929,-93.102,30,State Trunk Highway,44,F,SAINT PAUL,551072678,,,,,Suspected Minor Injury,Yes,,,313,Unknown
+-93.088,44.95,Bike,2019/06/04 23:28:00+00,W THOMAS AVE,44.959,-93.162,30,Municipal State Aid Street,,,,,42,,SAINT PAUL,551046419,,,Possible Injury,Yes,314,Unknown
+-93.088,44.95,Bike,2019/06/02 22:35:00+00,W MARSHALL AVE,44.948,-93.183,,County State Aid Highway,,,,,24,F,HERMANTOWN,55810,,,Possible Injury,Yes,315,Unknown
+-93.116,44.975,Pedestrian,2019/06/01 16:30:00+00,W SARGENT AVE,44.935,-93.167,30,Local or City Street,49,M,EAGAN,551223321,,,,,,No,,,316,Unknown
+-93.106,44.977,Bike,2019/06/01 14:40:00+00,S ALBERT ST,44.941,-93.159,30,Local or City Street,,,,,36,M,SAINT PAUL,551161333,,,Suspected Minor Injury,Yes,317,Unknown
+-93.149,44.956,Pedestrian,2019/06/01 05:11:00+00,W 7TH ST,44.942,-93.105,30,State Trunk Highway,52,M,STPAUL,55116,,,,,,No,,,318,Unknown
+-93.081,44.932,Pedestrian,2019/05/28 23:34:00+00,W UNIVERSITY AVE,44.956,-93.167,30,County State Aid Highway,51,M,WINONA,559872010,,,,,,No,,,319,Unknown
+-93.102,44.929,Pedestrian,2019/05/26 21:40:00+00,E GERANIUM AVE,44.976,-93.055,30,Local or City Street,4,M,ST. PAUL,55106,,,,,Possible Injury,No,,,320,Unknown
+-93.162,44.959,Pedestrian,2019/05/26 20:25:00+00,N KENT ST,44.956,-93.124,30,Local or City Street,76,M,MAPLEWOOD,55109,,,,,Possible Injury,Yes,,,321,Unknown
+-93.183,44.948,Bike,2019/05/25 22:00:00+00,N HAMLINE AVE,44.981,-93.157,,Municipal State Aid Street,,,,,28,M,SAINT PAUL,551041715,,,,No,322,Unknown
+-93.073,44.957,Pedestrian,2019/05/24 23:00:00+00,SHEPARD RD,44.927,-93.12,40,County State Aid Highway,29,F,SAINT PAUL,551024004,,,,,Suspected Minor Injury,Yes,,,323,Unknown
+-93.178,44.957,Pedestrian,2019/05/22 02:55:00+00,FRANKLIN AVE,44.965,-93.205,30,Municipal State Aid Street,78,M,SAINT PAUL,551141463,,,,,Suspected Minor Injury,Yes,,,324,Unknown
+-93.047,44.978,Bike,2019/05/22 01:15:00+00,EAGLE PKWY,44.941,-93.1,40,Local or City Street,,,,,13,F,ST. PAUL,55107,,,Suspected Minor Injury,Yes,325,Unknown
+-93.165,44.956,Pedestrian,2019/05/20 22:48:00+00,N EDGERTON ST,44.971,-93.076,30,County State Aid Highway,64,F,SAINT PAUL,551303947,,,,,Suspected Serious Injury,Yes,,,326,Unknown
+-93.106,44.956,Pedestrian,2019/05/19 18:59:00+00,W COOK AVE,44.973,-93.116,10,Local or City Street,36,F,SAINT PAUL,551175309,,,,,,No,,,327,Unknown
+-93.106,44.956,Pedestrian,2019/05/16 18:00:00+00,-- NOT ON ROADWAY --,44.947,-93.095,,Non-Trafficway,22,F,ST. PAUL,55101,,,,,Possible Injury,Yes,,,328,Unknown
+-93.103,44.944,Pedestrian,2019/05/15 00:59:00+00,N RICE ST,44.957,-93.106,,County State Aid Highway,54,F,SAINT PAUL,551065793,,,,,,No,,,329,Unknown
+-93.097,44.942,Bike,2019/05/14 23:00:00+00,N WACOUTA ST,44.948,-93.086,30,Local or City Street,,,,,10,F,ST PAUL,55108,,,,No,330,Unknown
+-93.109,44.956,Pedestrian,2019/05/07 21:40:00+00,E FILLMORE AVE,44.941,-93.085,30,Municipal State Aid Street,40,M,EAGAN,551211719,,,,,Possible Injury,No,,,331,Unknown
+-93.161,44.956,Pedestrian,2019/05/10 23:30:00+00,W 7TH ST,44.942,-93.106,25,State Trunk Highway,20,M,WOODBURY,551256710,,,,,,No,,,332,Unknown
+-93.106,44.956,Bike,2019/05/08 19:30:00+00,N DALE ST,44.95,-93.126,30,County State Aid Highway,,,,,67,M,SAINT PAUL,551023326,,,,No,333,Unknown
+-93.076,44.968,Pedestrian,2019/05/06 14:56:00+00,W LAUREL AVE,44.945,-93.167,,Local or City Street,21,F,IOWA CITY,52245,,,,,Suspected Minor Injury,Yes,,,334,Unknown
+-93.198,44.948,Pedestrian,2019/05/06 03:57:00+00,JOHNSON PKWY,44.963,-93.046,30,Municipal State Aid Street,20,F,SAINT PAUL,551064733,,,,,Suspected Minor Injury,No,,,335,Unknown
+-93.104,44.965,Pedestrian,2019/05/05 02:45:00+00,HUDSON RD,44.952,-93.057,30,Municipal State Aid Street,23,M,SAINT PAUL,551065783,,,,,Suspected Minor Injury,Yes,,,336,Unknown
+-93.066,44.984,Bike,2019/05/04 20:55:00+00,N MENDOTA ST,44.961,-93.064,30,Local or City Street,,,,,8,M,SAINT PAUL,55106,,,Possible Injury,Yes,337,Unknown
+-93.066,44.963,Pedestrian,2019/05/03 03:43:00+00,N ARKWRIGHT ST,44.973,-93.084,30,Municipal State Aid Street,41,F,SAINT PAUL,551303572,,,,,Suspected Minor Injury,No,,,338,Unknown
+-93.082,44.977,Pedestrian,2019/05/01 05:20:00+00,E 3RD ST,44.957,-93.042,35,Municipal State Aid Street,37,M,MINNEAPOLIS,554043315,,,,,Suspected Minor Injury,Yes,,,339,Unknown
+-93.106,44.96,Bike,2019/04/30 21:25:00+00,N DUNLAP ST,44.956,-93.149,,Local or City Street,,,,,43,M,YORK,55104,,,Possible Injury,Yes,340,Unknown
+-93.136,44.94,Bike,2019/04/24 23:34:00+00,N MARION ST,44.959,-93.109,10,County State Aid Highway,,,,,7,M,SAINT PAUL,55117,,,,No,341,Unknown
+-93.084,44.977,Pedestrian,2019/04/23 21:44:00+00,BROADWAY ST,44.95,-93.085,30,Municipal State Aid Street,41,M,SAINT PAUL,551064634,,,,,Possible Injury,Yes,,,342,Unknown
+-93.147,44.94,Bike,2019/04/23 19:40:00+00,W RANDOLPH AVE,44.927,-93.142,5,County State Aid Highway,,,,,28,F,ST PAUL,55102,,,,No,343,Unknown
+-93.005,44.961,Pedestrian,2019/04/21 04:37:00+00,W CONCORDIA AVE,44.951,-93.167,30,Local or City Street,,M,,,,,,,Suspected Serious Injury,Yes,,,344,Unknown
+-93.146,44.956,Bike,2019/04/20 15:19:00+00,E CALIFORNIA AVE,44.991,-93.025,30,Local or City Street,,,,,10,M,ST PAUL,55106,,,,No,345,Unknown
+-93.161,44.906,Pedestrian,2019/04/16 21:05:00+00,270,44.955,-93.096,30,Municipal State Aid Street,18,F,SAINT PAUL,551303510,,,,,Suspected Minor Injury,Yes,,,346,Unknown
+-93.116,44.956,Pedestrian,2019/04/16 21:05:00+00,270,44.955,-93.096,30,Municipal State Aid Street,18,F,SAINT PAUL,551193909,,,,,Suspected Minor Injury,Yes,,,347,Unknown
+-93.099,44.944,Pedestrian,2019/04/16 22:10:00+00,W CARROLL AVE,44.951,-93.187,,Local or City Street,22,F,ST PAUL,55104,,,,,Suspected Minor Injury,Yes,,,348,Unknown
+-93.111,44.962,Pedestrian,2019/04/10 20:32:00+00,S MCKNIGHT RD,44.936,-93.005,30,County State Aid Highway,16,F,ST PAUL,55119,,,,,,No,,,349,Unknown
+-93.066,44.977,Bike,2019/03/28 21:00:00+00,N RICE ST,44.99,-93.106,35,County State Aid Highway,,,,,23,M,SAINT PAUL,551173718,,,,No,350,Unknown
+-93.144,44.956,Pedestrian,2019/04/05 18:57:00+00,N DUNLAP ST,44.955,-93.149,30,Local or City Street,69,M,ST PAUL,55102,,,,,Possible Injury,Yes,,,351,Unknown
+-93.045,44.967,Bike,2019/04/03 17:58:00+00,N MENDOTA ST,44.957,-93.064,,Local or City Street,,,,,7,M,ST. PAUL,55106,,,,No,352,Unknown
+-93.098,44.948,Pedestrian,2019/03/27 21:45:00+00,E 7TH ST,44.949,-93.094,30,State Trunk Highway,34,M,SAINT PAUL,551073134,,,,,Suspected Minor Injury,Yes,,,353,Unknown
+-93.025,44.953,Pedestrian,2019/03/16 02:30:00+00,N HAMLINE AVE,44.954,-93.157,,Municipal State Aid Street,58,M,SAINT PAUL,551044115,,,,,Possible Injury,No,,,354,Unknown
+-93.106,44.96,Pedestrian,2019/03/23 01:34:00+00,E ROSS ST,44.966,-93.026,30,Local or City Street,49,F,PRIOR LAKE,553722918,,,,,Suspected Serious Injury,Yes,,,355,Unknown
+-93.089,44.951,Pedestrian,2019/03/21 11:04:00+00,N MARION ST,44.949,-93.107,30,Municipal State Aid Street,53,M,NORTH ST. PAUL,55109,,,,,Fatal,No,,,356,Unknown
+-93.045,44.975,Bike,2019/03/19 21:45:00+00,N WHITE BEAR AVE,44.987,-93.025,35,County State Aid Highway,,,,,47,M,SAINT PAUL,551061122,,,Suspected Minor Injury,Yes,357,Unknown
+-93.196,44.982,Pedestrian,2019/03/19 10:39:00+00,E PHALEN BLVD,44.966,-93.074,30,Municipal State Aid Street,32,M,SAINT PAUL,551193204,,,,,Suspected Minor Injury,Yes,,,358,Unknown
+-93.126,44.958,Pedestrian,2019/03/18 22:25:00+00,W SELBY AVE,44.947,-93.116,,Municipal State Aid Street,38,F,SAINT PAUL,554233662,,,,,Suspected Minor Injury,No,,,359,Unknown
+-93.106,44.95,Pedestrian,2021/09/26 03:00:00+00,N MILTON ST,44.941,-93.139,25,Local or City Street,19,M,SAINT PAUL,551121542,,,,,Suspected Minor Injury,No,,,360,Unknown
+-93.106,44.96,Pedestrian,2021/09/24 18:56:00+00,N SYLVAN ST,44.976,-93.101,30,Local or City Street,10,M,ST PAUL,55106,,,,,,No,,,361,Unknown
+-93.106,44.968,Pedestrian,2021/09/24 14:35:00+00,W RANDOLPH AVE,44.927,-93.167,,County State Aid Highway,57,F,SAINT PAUL,551041111,,,,,Possible Injury,Yes,,,362,Unknown
+-93.11,44.952,Pedestrian,2021/09/22 22:20:00+00,N CEDAR ST,44.949,-93.095,30,Local or City Street,46,,STPAUL,55101,,,,,Suspected Minor Injury,Yes,,,363,Unknown
+-93.167,44.942,Pedestrian,2021/09/18 20:00:00+00,1580 UNIVERSITY AVE,44.955,-93.166,10,Non Trafficway,69,F,NEW HOPE,55428,,,,,Possible Injury,No,,,364,Unknown
+-93.025,44.951,Pedestrian,2021/09/18 05:05:00+00,N CHESTNUT ST,44.943,-93.103,30,Municipal State Aid Street,20,M,SAINT PAUL,551066401,,,,,Possible Injury,Yes,,,365,Unknown
+-93.088,44.93,Pedestrian,2021/09/17 20:22:00+00,W FRONT AVE,44.97,-93.127,30,County State Aid Highway,15,M,SAINT PAUL,55104,,,,,Possible Injury,No,,,366,Unknown
+-93.09,44.947,Bike,2021/09/13 15:07:00+00,NEID LA,44.966,-93.069,25,Municipal State Aid Street,,,,,38,F,SAINT PAUL,551052824,,,,No,367,Unknown
+-93.119,44.977,Bike,2021/09/17 01:39:00+00,S SMITH AVE,44.94,-93.109,30,State Trunk Highway,,,,,34,,SAINT PAUL,55101,,,Possible Injury,No,368,Unknown
+-93.038,44.984,Bike,2021/09/15 17:03:00+00,SAINT PAUL AVE,44.904,-93.177,,Municipal State Aid Street,,,,,38,,SAINT PAUL,551163279,,,Suspected Minor Injury,Yes,369,Unknown
+-93.126,44.947,Pedestrian,2021/09/12 13:15:00+00,W 7TH ST,44.941,-93.107,30,State Trunk Highway,41,F,ST PAUL,55102,,,,,,No,,,370,Unknown
+-93.096,44.991,Bike,2021/09/11 18:13:00+00,W MINNEHAHA AVE,44.963,-93.149,35,Municipal State Aid Street,,,,,28,F,PLYMOUTH,554473628,,,Possible Injury,Yes,371,Unknown
+-93.106,44.99,Bike,2021/09/11 19:30:00+00,W CONCORDIA AVE,44.951,-93.147,,Municipal State Aid Street,,,,,15,M,ST.,55104,,,,No,372,Unknown
+-93.088,44.951,Pedestrian,2019/11/07 03:58:00+00,W SAINT ANTHONY AVE,44.952,-93.126,30,Municipal State Aid Street,23,M,SAINT PAUL,551046632,,,,,,No,,,373,Unknown
+-93.11,44.958,Pedestrian,2021/09/11 19:30:00+00,W CONCORDIA AVE,44.951,-93.147,,Municipal State Aid Street,15,M,ST. PAUL,55104,,,,,,No,,,374,Unknown
+-93.181,44.918,Pedestrian,2021/09/11 00:40:00+00,S CRETIN AVE,44.942,-93.192,30,Municipal State Aid Street,65,F,EDEN PRAIRIE,553472054,,,,,Suspected Serious Injury,Yes,,,375,Unknown
+-93.1,44.948,Pedestrian,2019/11/14 23:10:00+00,N PASCAL ST,44.956,-93.162,30,Municipal State Aid Street,31,M,MINNEAPOLIS,554012037,,,,,,No,,,376,Unknown
+-93.035,44.978,Pedestrian,2021/05/07 02:31:00+00,W 7TH ST,44.921,-93.137,30,State Trunk Highway,21,F,SAINT PAUL,551067218,,,,,Suspected Minor Injury,Yes,,,377,Unknown
+-93.04,44.967,Pedestrian,2021/09/10 21:30:00+00,W SHERBURNE AVE,44.957,-93.128,20,Local or City Street,18,M,SAINT PAUL,551304037,,,,,Possible Injury,No,,,378,Unknown
+-93.129,44.978,Pedestrian,2022/04/21 00:37:00+00,E NEBRASKA AVE,44.987,-93.023,20,Local or City Street,52,M,SAINT PAUL,551194222,,,,,Possible Injury,No,,,379,Unknown
+-93.1,44.94,Pedestrian,2021/05/04 23:00:00+00,W UNIVERSITY AVE,44.956,-93.167,30,County State Aid Highway,23,M,SAINT PAUL,551072459,,,,,Possible Injury,No,,,380,Unknown
+-93.2,44.96,Pedestrian,2019/11/14 23:10:00+00,N PASCAL ST,44.956,-93.162,30,Municipal State Aid Street,40,F,MINNEAPOLIS,550751055,,,,,,No,,,381,Unknown
+-93.167,44.956,Pedestrian,2022/04/19 12:38:00+00,N CLEVELAND AVE,44.951,-93.187,,County State Aid Highway,27,F,MINNEAPOLIS,554083720,,,,,Possible Injury,No,,,382,Unknown
+-93.164,44.977,Pedestrian,2021/09/08 14:41:00+00,W LINCOLN AVE,44.939,-93.167,20,Local or City Street,19,M,ST PAUL,55103,,,,,Suspected Minor Injury,No,,,383,Unknown
+-93.18,44.957,Bike,2021/05/05 00:24:00+00,W IDAHO AVE,44.99,-93.144,30,Local or City Street,,,,,9,F,SAINT PAUL,55117,,,Suspected Minor Injury,No,384,Unknown
+-93.108,44.991,Pedestrian,2019/11/12 09:43:00+00,N JACKSON ST,44.989,-93.097,10,County State Aid Highway,42,M,SAINT PAUL,551046518,,,,,Suspected Minor Injury,Yes,,,385,Unknown
+-93.106,44.988,Bike,2021/09/08 00:30:00+00,W MARYLAND AVE,44.977,-93.119,30,All other roads,,,,,26,,ST PAUL,55117,,,Possible Injury,No,386,Unknown
+-93.09,44.951,Pedestrian,2022/04/09 22:09:00+00,W UNIVERSITY AVE,44.956,-93.135,35,All other roads,40,M,SAINT PAUL,551042696,,,,,Suspected Serious Injury,Yes,,,387,Unknown
+-93.087,44.951,Pedestrian,2021/05/02 04:25:00+00,W 7TH ST,44.943,-93.104,25,State Trunk Highway,37,F,SAINT PAUL,551304511,,,,,Suspected Minor Injury,Yes,,,388,Unknown
+-93.172,44.899,Bike,2019/11/09 23:23:00+00,FILLMORE AVE,44.941,-93.085,30,Municipal State Aid Street,,,,,26,M,SAINT PAUL,551065229,,,,No,389,Unknown
+-93.073,44.926,Pedestrian,2022/04/08 01:59:00+00,E MARYLAND AVE,44.978,-93.066,35,County State Aid Highway,50,F,SAINT PAUL,551042311,,,,,Suspected Minor Injury,Yes,,,390,Unknown
+-93.151,44.951,Pedestrian,2021/09/06 16:11:00+00,N PAYNE AVE,44.97,-93.074,30,Municipal State Aid Street,41,M,SAINT PAUL,551304039,,,,,Suspected Serious Injury,Yes,,,391,Unknown
+-93.167,44.956,Bike,2021/04/29 20:35:00+00,N CLEVELAND AVE,44.948,-93.187,25,County State Aid Highway,,,,,30,F,MINNEAPOLIS,55404,,,Suspected Serious Injury,Yes,392,Unknown
+-93.106,44.99,Bike,2019/11/09 05:03:00+00,OSCEOLA AVE,44.927,-93.128,,Local or City Street,,,,,49,M,SAINT PAUL,551023533,,,Suspected Minor Injury,Yes,393,Unknown
+-93.106,44.97,Bike,2022/04/05 05:25:00+00,N ARCADE ST,44.963,-93.066,30,U.S. Trunk Highway,,,,,25,F,ST. PAUL,55106,,,Suspected Minor Injury,No,394,Unknown
+-93.167,44.918,Bike,2021/08/15 07:05:00+00,EB ISTH 94 AT MNTH 280,44.96,-93.203,60,Interstate Trunk Highway,,,,,21,M,SAINT PAUL,551081823,,,Suspected Minor Injury,Yes,395,Unknown
+-93.025,44.984,Bike,2021/04/19 09:46:00+00,W 6TH ST,44.946,-93.099,25,Municipal State Aid Street,,,,,61,M,SAINT PAUL,551021422,,,Suspected Minor Injury,No,396,Unknown
+-93.094,44.936,Bike,2019/11/08 17:15:00+00,ENERGY PARK DR,44.975,-93.196,10,County State Aid Highway,,,,,69,M,SAINT PAUL,551053430,,,Suspected Minor Injury,No,397,Unknown
+-93.056,44.947,Pedestrian,2022/03/30 16:58:00+00,E 14TH ST,44.955,-93.098,25,Local or City Street,19,F,ST. PAUL,55117,,,,,,No,,,398,Unknown
+-93.077,44.965,Bike,2021/09/03 22:23:00+00,E HAWTHORNE AVE,44.978,-93.086,,Local or City Street,,,,,60,M,SAINT PAUL,551063219,,,Possible Injury,Yes,399,Unknown
+-93.118,44.94,Pedestrian,2021/04/27 20:56:00+00,N SNELLING AVE,44.956,-93.167,35,State Trunk Highway,29,M,SAINT LOUIS PARK,554162904,,,,,,No,,,400,Unknown
+-93.13,44.92,Bike,2019/11/07 22:42:00+00,N GALTIER ST,44.961,-93.111,30,Local or City Street,,,,,37,M,ST PAUL,55106,,,Suspected Minor Injury,Yes,401,Unknown
+-93.106,44.957,Pedestrian,2022/03/23 11:42:00+00,COMO AVE,44.977,-93.166,35,County State Aid Highway,66,F,SAINT PAUL,551082644,,,,,Suspected Minor Injury,Yes,,,402,Unknown
+-93.084,44.949,Pedestrian,2021/09/01 23:27:00+00,E CASE AVE,44.97,-93.066,30,Municipal State Aid Street,22,M,SAINT PAUL,551064603,,,,,Possible Injury,Yes,,,403,Unknown
+-93.107,44.988,Pedestrian,2021/04/24 23:18:00+00,E KELLOGG BLVD,44.949,-93.083,20,Municipal State Aid Street,37,M,SAINT PAUL,551021055,,,,,Possible Injury,Yes,,,404,Unknown
+-93.091,44.952,Bike,2019/11/02 16:00:00+00,N GRIGGS ST,44.956,-93.152,30,Local or City Street,,,,,42,M,SAINT PAUL,551032258,,,,No,405,Unknown
+-93.102,44.945,Pedestrian,2022/03/22 21:10:00+00,RAMPEDGECUMBE RD,44.904,-93.177,30,All other roads,24,F,SAINT PAUL,551065109,,,,,Possible Injury,Yes,,,406,Unknown
+-93.036,44.978,Bike,2021/09/01 14:06:00+00,W UNIVERSITY AVE,44.961,-93.191,30,County State Aid Highway,,,,,21,,EDEN PRAIRIE,553473076,,,,No,407,Unknown
+-93.061,44.974,Pedestrian,2021/04/25 02:15:00+00,E MARYLAND AVE,44.977,-93.085,30,County State Aid Highway,34,M,SAINT PAUL,551304437,,,,,Suspected Minor Injury,Yes,,,408,Unknown
+-93.193,44.918,Bike,2019/11/06 21:10:00+00,E HAWTHORNE AVE,44.978,-93.066,30,Local or City Street,,,,,,M,ST PAUL,55106,,,Suspected Minor Injury,Yes,409,Unknown
+-93.074,44.986,Pedestrian,2022/03/22 21:10:00+00,RAMPEDGECUMBE RD,44.904,-93.177,30,All other roads,25,99,COON RAPIDS,554333052,,,,,Possible Injury,No,,,410,Unknown
+-93.102,44.927,Bike,2021/08/28 18:00:00+00,-- NOT ON ROADWAY --,44.953,-93.094,,All other roads,,,,,30,F,SAINT PAUL,551023076,,,Suspected Minor Injury,No,411,Unknown
+-93.063,44.971,Bike,2021/08/18 03:38:00+00,N LAFAYETTE RD,44.953,-93.084,30,All other roads,,,,,69,M,SAINT PAUL,551021005,,,Possible Injury,No,412,Unknown
+-93.146,44.949,Pedestrian,2021/08/22 02:00:00+00,W 7TH ST,44.916,-93.145,30,State Trunk Highway,53,F,MOUNDS VIEW,551125815,,,,,Possible Injury,No,,,413,Unknown
+-93.034,44.976,Bike,2021/08/19 09:28:00+00,W WHEELOCK PKWY,44.989,-93.11,25,Local or City Street,,,,,65,M,BLOOMINGTON,554381202,,,Suspected Minor Injury,Yes,414,Unknown
+-93.039,44.967,Bike,2021/08/19 02:24:00+00,GLENRIDGE AVE,44.936,-93.005,35,Local or City Street,,,,,14,M,ST. PAUL,55119,,,Possible Injury,Yes,415,Unknown
+-93.023,44.954,Pedestrian,2021/08/19 00:07:00+00,OLD HUDSON RD,44.951,-93.005,30,Municipal State Aid Street,69,M,SAINT PAUL,551174950,,,,,Possible Injury,Yes,,,416,Unknown
+-93.147,44.941,Pedestrian,2021/08/19 01:55:00+00,VANDALIA ST,44.962,-93.189,,All other roads,55,M,EAGAN,551222421,,,,,Suspected Serious Injury,Yes,,,417,Unknown
+-93.079,44.956,Pedestrian,2021/08/13 00:38:00+00,ALLEY,44.956,-93.156,5,All other roads,31,M,SAINT PAUL,551044247,,,,,Possible Injury,No,,,418,Unknown
+-93.105,44.943,Bike,2021/08/12 03:56:00+00,W 4TH ST,44.944,-93.095,20,Municipal State Aid Street,,,,,,,,,,,,No,419,Unknown
+-93.121,44.956,Pedestrian,2021/08/11 23:23:00+00,E MARYLAND AVE,44.977,-93.084,20,All other roads,,,,,,,,,Suspected Serious Injury,Yes,,,420,Unknown
+-93.118,44.956,Pedestrian,2021/08/07 11:15:00+00,-- NOT ON ROADWAY --,44.901,-93.17,,All other roads,71,M,SAINT PAUL,551163917,,,,,Suspected Minor Injury,Yes,,,421,Unknown
+-93.093,44.945,Bike,2021/08/06 02:45:00+00,N EDGERTON ST,44.97,-93.076,30,County State Aid Highway,,,,,26,M,SAINT PAUL,551303373,,,Possible Injury,No,422,Unknown
+-93.061,44.961,Pedestrian,2021/08/04 20:53:00+00,N EARL ST,44.978,-93.056,30,Local or City Street,44,M,SAINT PAUL,551062510,,,,,Suspected Minor Injury,Yes,,,423,Unknown
+-93.061,44.961,Pedestrian,2021/08/04 06:38:00+00,E 4TH ST,44.945,-93.094,,Municipal State Aid Street,31,M,SAINT PAUL,551062327,,,,,,No,,,424,Unknown
+-93.106,44.968,Pedestrian,2021/08/01 12:10:00+00,BERRY ST,44.966,-93.206,20,Local or City Street,39,F,SAINT PAUL,551141479,,,,,Possible Injury,No,,,425,Unknown
+-93.066,44.977,Pedestrian,2021/07/31 00:24:00+00,W SAINT ANTHONY AVE,44.952,-93.153,,Municipal State Aid Street,68,M,BROOKLYN PARK,554431802,,,,,Suspected Minor Injury,No,,,426,Unknown
+-93.066,44.981,Pedestrian,2021/07/30 20:37:00+00,CESAR CHAVEZ  ST,44.931,-93.08,25,Municipal State Aid Street,45,M,ST. PAUL,55107,,,,,Possible Injury,Yes,,,427,Unknown
+-93.06,44.953,Pedestrian,2021/07/29 19:15:00+00,W SAINT ANTHONY AVE,44.952,-93.146,30,Municipal State Aid Street,20,F,SAINT PAUL,551046903,,,,,Suspected Minor Injury,Yes,,,428,Unknown
+-93.157,44.956,Bike,2021/07/29 14:33:00+00,-- NOT ON ROADWAY --,44.957,-93.167,,All other roads,,,,,59,M,SAINT PAUL,551044519,,,Suspected Minor Injury,No,429,Unknown
+-93.185,44.954,Pedestrian,2021/07/26 03:35:00+00,W UNIVERSITY AVE,44.956,-93.114,30,County State Aid Highway,31,F,SAINT PAUL,551022410,,,,,Suspected Serious Injury,Yes,,,430,Unknown
+-93.101,44.944,Pedestrian,2021/07/24 15:39:00+00,E 7TH ST,44.967,-93.025,30,Municipal State Aid Street,64,M,SAINT PAUL,551193449,,,,,Possible Injury,No,,,431,Unknown
+-93.089,44.95,Pedestrian,2021/07/23 16:50:00+00,N BARCLAY ST,44.974,-93.039,30,Local or City Street,29,F,ST PAUL,55106,,,,,Suspected Serious Injury,Yes,,,432,Unknown
+-93.095,44.945,Bike,2021/07/22 15:55:00+00,TRANSFER RD,44.96,-93.187,30,County State Aid Highway,,,,,16,M,ST. PAUL,55108,,,Suspected Minor Injury,No,433,Unknown
+-93.144,44.949,Pedestrian,2021/07/22 04:15:00+00,E LAWSON AVE,44.972,-93.08,20,Local or City Street,18,M,FARIBAULT,550215328,,,,,Suspected Minor Injury,Yes,,,434,Unknown
+-93.147,44.951,Pedestrian,2021/07/22 04:15:00+00,E LAWSON AVE,44.972,-93.08,20,Local or City Street,19,F,MANKATO,560019233,,,,,Suspected Minor Injury,Yes,,,435,Unknown
+-93.184,44.948,Pedestrian,2021/07/21 18:05:00+00,N EDGERTON ST,44.97,-93.076,20,County State Aid Highway,2,F,ST PAUL,55106,,,,,Suspected Minor Injury,No,,,436,Unknown
+-93.046,44.992,Pedestrian,2021/07/20 05:29:00+00,N RICE ST,44.981,-93.106,30,County State Aid Highway,56,F,SOUTH ST PAUL,55075,,,,,Fatal,Yes,,,437,Unknown
+-93.058,44.977,Pedestrian,2021/07/17 20:37:00+00,N LEXINGTON AVE,44.952,-93.147,30,County State Aid Highway,56,F,ST PAUL,55105,,,,,Suspected Minor Injury,No,,,438,Unknown
+-93.177,44.955,Bike,2021/07/18 07:18:00+00,E 7TH ST,44.956,-93.078,30,State Trunk Highway,,,,,21,,GRAND MEADOW,559368640,,,Suspected Serious Injury,Yes,439,Unknown
+-93.17,44.901,Bike,2021/07/15 01:44:00+00,-- NOT ON ROADWAY --,44.979,-93.033,,All other roads,,,,,19,M,SAINT PAUL,551061522,,,Suspected Minor Injury,Yes,440,Unknown
+-93.025,44.987,Pedestrian,2021/07/13 02:22:00+00,W AURORA AVE,44.955,-93.142,30,Local or City Street,60,F,SAINT PAUL,551021071,,,,,Suspected Serious Injury,Yes,,,441,Unknown
+-93.105,44.944,Pedestrian,2021/07/13 01:20:00+00,N GALTIER ST,44.977,-93.111,,Local or City Street,30,F,SAINT PAUL,551175522,,,,,Suspected Minor Injury,Yes,,,442,Unknown
+-93.025,44.961,Pedestrian,2021/07/11 02:57:00+00,N ARKWRIGHT ST,44.978,-93.084,20,All other roads,49,M,SAINT PAUL,551042087,,,,,Possible Injury,Yes,,,443,Unknown
+-93.159,44.956,Bike,2021/07/09 18:30:00+00,N GROTTO ST,44.956,-93.131,30,Local or City Street,,,,,20,M,SAINT PAUL,551304317,,,Possible Injury,Yes,444,Unknown
+-93.147,44.956,Pedestrian,2021/07/07 13:26:00+00,E MAGNOLIA AVE,44.974,-93.037,30,Local or City Street,28,F,PLYMOUTH,55446,,,,,Possible Injury,No,,,445,Unknown
+-93.147,44.956,Pedestrian,2021/07/05 11:07:00+00,BROADWAY ST,44.954,-93.089,20,Local or City Street,31,M,ST PAUL,55101,,,,,Suspected Serious Injury,Yes,,,446,Unknown
+-93.126,44.956,Pedestrian,2021/07/04 03:14:00+00,N WACOUTA ST,44.949,-93.087,20,Municipal State Aid Street,52,M,SAINT PAUL,551012348,,,,,Suspected Minor Injury,Yes,,,447,Unknown
+-93.015,44.951,Pedestrian,2021/07/02 18:31:00+00,N LEXINGTON AVE,44.968,-93.147,30,County State Aid Highway,59,M,SAINT PAUL,551041431,,,,,Fatal,Yes,,,448,Unknown
+-93.164,44.969,Bike,2021/07/01 18:21:00+00,N PASCAL ST,44.948,-93.162,30,Municipal State Aid Street,,,,,17,M,SAINT PAUL,55116,,,Possible Injury,No,449,Unknown
+-93.165,44.946,Bike,2021/06/30 21:40:00+00,RAYMOND AVE,44.967,-93.198,10,County State Aid Highway,,,,,24,F,SAINT PAUL,551081933,,,Suspected Minor Injury,Yes,450,Unknown
+-93.165,44.946,Pedestrian,2021/06/29 21:36:00+00,S SMITH AVE,44.939,-93.109,30,State Trunk Highway,43,F,SAINT PAUL,551161425,,,,,Suspected Minor Injury,Yes,,,451,Unknown
+-93.106,44.979,Pedestrian,2021/06/28 22:20:00+00,W 7TH ST,44.928,-93.126,35,State Trunk Highway,46,F,SAINT PAUL,551024008,,,,,,No,,,452,Unknown
+-93.116,44.977,Bike,2021/06/27 00:09:00+00,STROH DR,44.964,-93.069,30,Local or City Street,,,,,8,M,ST. PAUL,55106,,,Possible Injury,Yes,453,Unknown
+-93.116,44.977,Bike,2021/06/27 15:50:00+00,N SNELLING AVE,44.952,-93.167,20,State Trunk Highway,,,,,57,M,ST PAUL,55104,,,Suspected Serious Injury,Yes,454,Unknown
+-93.106,44.978,Pedestrian,2021/03/01 02:52:00+00,E PHALEN BLVD,44.97,-93.049,35,Municipal State Aid Street,60,M,SAINT PAUL,551063454,,,,,Fatal,No,,,455,Unknown
+-93.096,44.98,Pedestrian,2021/06/24 22:01:00+00,W STANFORD AVE,44.932,-93.186,25,Local or City Street,51,F,BURNSVILLE,553372755,,,,,Suspected Minor Injury,No,,,456,Unknown
+-93.076,44.97,Bike,2021/06/23 23:58:00+00,SAINT PAUL AVE,44.912,-93.185,25,County State Aid Highway,,,,,61,M,SAINT PAUL,551161854,,,Suspected Minor Injury,Yes,457,Unknown
+-93.088,44.948,Pedestrian,2021/06/21 23:51:00+00,W THOMAS AVE,44.959,-93.157,25,Municipal State Aid Street,68,M,SAINT PAUL,551041338,,,,,Suspected Serious Injury,Yes,,,458,Unknown
+-93.102,44.929,Pedestrian,2021/06/18 10:00:00+00,W UNIVERSITY AVE,44.964,-93.199,30,County State Aid Highway,22,F,COLUMBIA HEIGHTS,554212979,,,,,Possible Injury,Yes,,,459,Unknown
+-93.106,44.965,Pedestrian,2021/06/13 01:00:00+00,-- NOT ON ROADWAY --,44.945,-93.027,,All other roads,2,M,ST. PAUL,55106,,,,,Suspected Serious Injury,No,,,460,Unknown
+,,Bike,2021/06/15 00:00:00+00,N MISSISSIPI ST,44.958,-93.09,20,Local or City Street,,,,,23,M,SAINT PAUL,55101,,,,No,461,Unknown
+-93.081,44.939,Bike,2021/06/12 13:40:00+00,MARSHALL AVE,,,25,Local or City Street,,,,,52,F,SAINT PAUL,551053522,,,Suspected Minor Injury,No,462,Unknown
+-93.093,44.95,Bike,2021/06/11 05:45:00+00,N ARCADE ST,44.966,-93.066,25,U.S. Trunk Highway,,,,,50,F,,55406,,,Suspected Minor Injury,Yes,463,Unknown
+-93.071,44.975,Pedestrian,2021/06/09 21:22:00+00,-- NOT ON ROADWAY --,44.977,-93.044,,All other roads,61,F,SAINT PAUL,551062328,,,,,Possible Injury,No,,,464,Unknown
+-93.056,44.978,Bike,2021/06/09 23:54:00+00,N LEXINGTON AVE,44.956,-93.146,30,County State Aid Highway,,,,,63,M,SAINT PAUL,551031778,,,Suspected Minor Injury,No,465,Unknown
+-93.101,44.948,Bike,2021/06/09 23:11:00+00,W JEFFERSON AVE,44.931,-93.139,25,Municipal State Aid Street,,,,,54,M,SAINT PAUL,551053327,,,Suspected Minor Injury,No,466,Unknown
+-93.025,44.97,Bike,2021/06/05 14:15:00+00,JOHNSON PKWY,44.957,-93.046,30,Local or City Street,,,,,26,F,SAINT PAUL,551045303,,,Suspected Minor Injury,No,467,Unknown
+-93.192,44.957,Bike,2021/06/07 21:30:00+00,W 7TH ST,44.912,-93.149,40,State Trunk Highway,,,,,38,M,SAINT PAUL,551051125,,,,No,468,Unknown
+-93.015,44.956,Pedestrian,2021/06/06 00:31:00+00,N FOREST ST,44.971,-93.061,20,Municipal State Aid Street,23,M,ST PAUL,55130,,,,,Suspected Minor Injury,Yes,,,469,Unknown
+-93.2,44.951,Pedestrian,2021/06/05 02:05:00+00,N FOREST ST,44.976,-93.061,20,Municipal State Aid Street,48,F,SAINT PAUL,551012348,,,,,Suspected Serious Injury,Yes,,,470,Unknown
+-93.094,44.945,Bike,2021/06/04 16:02:00+00,W CENTRAL AVE,44.953,-93.147,20,Local or City Street,,,,,25,M,SAINT PAUL,55104,,,Suspected Minor Injury,No,471,Unknown
+-93.185,44.916,Bike,2021/06/02 22:48:00+00,W OTTO AVE,44.92,-93.133,20,Municipal State Aid Street,,,,,60,M,SAINT PAUL,551024023,,,Suspected Minor Injury,Yes,472,Unknown
+-93.106,44.985,Pedestrian,2021/05/31 22:45:00+00,W UNIVERSITY AVE,44.956,-93.126,30,County State Aid Highway,20,M,SAINT PAUL,55104,,,,,Suspected Minor Injury,No,,,473,Unknown
+-93.157,44.923,Pedestrian,2021/05/29 02:24:00+00,-- NOT ON ROADWAY --,44.977,-93.045,,All other roads,47,F,SAINT PAUL,55106,,,,,Possible Injury,No,,,474,Unknown
+-93.206,44.966,Bike,2021/05/28 17:10:00+00,N PRIOR AVE,44.947,-93.183,25,Municipal State Aid Street,,,,,,,,,,,Suspected Minor Injury,No,475,Unknown
+-93.099,44.959,Pedestrian,2021/05/27 15:00:00+00,N PAYNE AVE,44.985,-93.074,30,Municipal State Aid Street,27,F,CHISAGO CITY,550139447,,,,,,No,,,476,Unknown
+-93.185,44.916,Pedestrian,2021/05/26 19:46:00+00,E MARYLAND AVE,44.978,-93.032,30,County State Aid Highway,25,F,SAINT PAUL,551062959,,,,,Suspected Minor Injury,No,,,477,Unknown
+-93.085,44.941,Pedestrian,2021/05/25 17:54:00+00,E COOK AVE,44.973,-93.057,25,Local or City Street,50,M,SAINT PAUL,551062727,,,,,Suspected Minor Injury,Yes,,,478,Unknown
+-93.043,44.978,Pedestrian,2021/05/23 19:35:00+00,N ARKWRIGHT ST,44.973,-93.084,30,Municipal State Aid Street,15,F,ST PAUL,55106,,,,,Suspected Minor Injury,No,,,479,Unknown
+-93.087,44.945,Bike,2021/05/22 17:15:00+00,N AVON ST,44.954,-93.133,20,Local or City Street,,,,,55,M,SAINT PAUL,551044672,,,Possible Injury,Yes,480,Unknown
+-93.056,44.982,Pedestrian,2021/05/22 00:55:00+00,S WINTHROP ST,44.93,-93.01,10,Local or City Street,2,M,SAINT PAUL,55119,,,,,Suspected Minor Injury,Yes,,,481,Unknown
+-93.086,44.992,Pedestrian,2021/05/17 22:47:00+00,W MARYLAND AVE,44.977,-93.126,45,Municipal State Aid Street,2,M,ST. PAUL,55106,,,,,,No,,,482,Unknown
+-93.104,44.943,Pedestrian,2021/05/17 21:29:00+00,W 7TH ST,44.943,-93.104,20,State Trunk Highway,58,F,GOSHEN,46528,,,,,Suspected Serious Injury,Yes,,,483,Unknown
+-93.126,44.959,Bike,2021/05/17 18:28:00+00,W UNIVERSITY AVE,44.956,-93.134,25,County State Aid Highway,,,,,41,,SAINT PAUL,551193841,,,Suspected Minor Injury,Yes,484,Unknown
+-93.153,44.952,Pedestrian,2021/05/15 20:14:00+00,N DALE ST,44.987,-93.126,30,County State Aid Highway,40,M,MOOSE LAKE,557679449,,,,,Possible Injury,No,,,485,Unknown
+-93.109,44.977,Pedestrian,2021/05/14 15:25:00+00,S WABASHA ST,44.937,-93.088,10,Municipal State Aid Street,69,F,WOODBURY,551252184,,,,,Suspected Serious Injury,Yes,,,486,Unknown
+-93.045,44.975,Pedestrian,2021/05/11 18:47:00+00,N WHITE BEAR AVE,44.989,-93.025,30,County State Aid Highway,63,M,ST PAUL,55106,,,,,Possible Injury,Yes,,,487,Unknown
+-93.08,44.931,Pedestrian,2021/05/11 02:00:00+00,N WHITE BEAR AVE,44.977,-93.025,30,County State Aid Highway,13,F,ST PAUL,55106,,,,,,No,,,488,Unknown
+-93.131,44.956,Pedestrian,2021/05/09 23:50:00+00,E JESSAMINE AVE,44.975,-93.084,20,Local or City Street,4,M,ST PAUL,55130,,,,,Suspected Serious Injury,Yes,,,489,Unknown
+-93.106,44.956,Pedestrian,2019/11/04 19:56:00+00,W MARYLAND AVE,44.977,-93.119,30,County State Aid Highway,33,M,SAINT PAUL,551175037,,,,,Suspected Minor Injury,Yes,,,490,Unknown
+-93.206,44.968,Pedestrian,2022/03/21 20:30:00+00,S LEXINGTON ST,44.913,-93.149,25,County State Aid Highway,69,F,ST. PAUL,55101,,,,,Suspected Minor Injury,Yes,,,491,Unknown
+-93.146,44.952,Pedestrian,2022/03/18 19:30:00+00,W NEBRASKA ST,44.986,-93.107,20,Local or City Street,14,F,ST. PAUL,55117,,,,,Possible Injury,Yes,,,492,Unknown
+-93.129,44.954,Bike,2021/04/24 03:10:00+00,W SAINT ANTHONY AVE,44.952,-93.146,30,Municipal State Aid Street,,,,,34,M,SAINT PAUL,551042623,,,,No,493,Unknown
+-93.048,44.965,Pedestrian,2019/11/01 01:12:00+00,N EDGERTON ST,44.98,-93.076,30,County State Aid Highway,7,F,ST. PAUL,55106,,,,,Suspected Minor Injury,Yes,,,494,Unknown
+-93.182,44.927,Pedestrian,2022/03/18 03:24:00+00,E 6TH ST,44.947,-93.094,20,Municipal State Aid Street,59,M,SAINT PAUL,551064001,,,,,Suspected Serious Injury,Yes,,,495,Unknown
+-93.167,44.957,Bike,2021/04/18 17:34:00+00,N FOREST ST,44.977,-93.061,30,Municipal State Aid Street,,,,,13,M,ST PAUL,55119,,,Possible Injury,Yes,496,Unknown
+-93.162,44.942,Pedestrian,2019/10/30 20:30:00+00,E CASE AVE,44.97,-93.066,30,Municipal State Aid Street,14,F,SAINT PAUL,55106,,,,,Possible Injury,No,,,497,Unknown
+-93.074,44.977,Pedestrian,2022/03/17 20:07:00+00,W UNIVERSITY AVE,44.956,-93.146,30,County State Aid Highway,16,M,SAINT PAUL,55117,,,,,Suspected Serious Injury,Yes,,,498,Unknown
+-93.066,44.978,Bike,2021/04/17 00:23:00+00,N FARINGTON ST,44.963,-93.114,25,Local or City Street,,,,,16,M,SAINT PAUL,55118,,,,No,499,Unknown
+-93.074,44.956,Pedestrian,2019/10/28 04:14:00+00,W MARYLAND AVE,44.977,-93.106,35,County State Aid Highway,31,M,ST PAUL,55117,,,,,Suspected Minor Injury,Yes,,,500,Unknown
+-93.085,44.991,Pedestrian,2022/03/17 14:08:00+00,OLD HUDSON RD,44.951,-93.008,,Municipal State Aid Street,33,F,SAINT PAUL,551065503,,,,,,No,,,501,Unknown
+-93.097,44.948,Pedestrian,2021/04/15 22:30:00+00,W UNIVERSITY AVE,44.956,-93.124,,County State Aid Highway,45,M,SAINT PAUL,551181620,,,,,Possible Injury,No,,,502,Unknown
+-93.085,44.949,Pedestrian,2019/10/23 03:56:00+00,E MARYLAND AVE,44.977,-93.027,35,County State Aid Highway,19,M,ST. PAUL,55106,,,,,Suspected Serious Injury,Yes,,,503,Unknown
+-93.093,44.948,Pedestrian,2019/10/22 22:47:00+00,S HAMLINE AVE,44.931,-93.157,30,Municipal State Aid Street,10,F,ST PAUL,55102,,,,,Possible Injury,No,,,504,Unknown
+-93.167,44.92,Bike,2019/10/20 18:02:00+00,E 7TH ST,44.963,-93.064,30,State Trunk Highway,,,,,15,M,ST PAUL,55106,,,Suspected Minor Injury,Yes,505,Unknown
+-93.043,44.992,Bike,2019/10/19 17:15:00+00,N SIBLEY ST,44.948,-93.087,30,Municipal State Aid Street,,,,,,,ST. PAUL,55107,,,Suspected Minor Injury,Yes,506,Unknown
+-93.19,44.918,Pedestrian,2019/10/18 23:41:00+00,N WOODBRIDGE ST,44.977,-93.109,30,Local or City Street,30,M,ST. PAUL,55117,,,,,Suspected Minor Injury,No,,,507,Unknown
+-93.114,44.963,Pedestrian,2019/10/18 14:22:00+00,N RICE ST,44.985,-93.106,35,County State Aid Highway,21,F,SAINT PAUL,55107,,,,,Possible Injury,Yes,,,508,Unknown
+-93.139,44.927,Bike,2019/10/17 00:06:00+00,N PROSPERITY AVE,44.975,-93.045,30,County State Aid Highway,,,,,41,M,SAINT PAUL,551194803,,,Suspected Minor Injury,Yes,509,Unknown
+-93.069,44.948,Pedestrian,2019/10/17 00:12:00+00,N DANFORTH ST,44.978,-93.125,30,Local or City Street,23,M,SAINT PAUL,551031049,,,,,Suspected Minor Injury,Yes,,,510,Unknown
+-93.116,44.959,Pedestrian,2019/10/16 23:15:00+00,E 4TH ST,44.945,-93.093,30,Municipal State Aid Street,68,M,ST PAUL,55101,,,,,Suspected Minor Injury,No,,,511,Unknown
+-93.025,44.963,Pedestrian,2019/10/16 00:17:00+00,W SAINT ANTHONY AVE,44.952,-93.121,30,Municipal State Aid Street,4,M,OAKDALE,55128,,,,,Suspected Minor Injury,Yes,,,512,Unknown
+-93.203,44.965,Pedestrian,2019/10/15 12:10:00+00,W MARSHALL AVE,44.948,-93.167,,County State Aid Highway,48,F,ST PAUL,55104,,,,,Possible Injury,No,,,513,Unknown
+-93.167,44.956,Pedestrian,2019/10/14 21:50:00+00,E ROSE AVE,44.977,-93.06,30,Local or City Street,54,F,SAINT PAUL,551062626,,,,,Possible Injury,Yes,,,514,Unknown
+-93.066,44.98,Pedestrian,2019/10/13 03:40:00+00,W UNIVERSITY AVE,44.956,-93.157,30,County State Aid Highway,37,M,MINNEAPOLIS,554043315,,,,,Suspected Serious Injury,Yes,,,515,Unknown
+-93.066,44.984,Pedestrian,2019/10/10 23:25:00+00,E WHEELOCK PKWY,44.991,-93.096,30,Local or City Street,42,F,SAINT PAUL,551173930,,,,,Possible Injury,Yes,,,516,Unknown
+-93.106,44.965,Bike,2019/10/10 23:00:00+00,W UNIVERSITY AVE,44.956,-93.176,30,County State Aid Highway,,,,,36,F,SILVER SPRINGS,34488,,,Possible Injury,Yes,517,Unknown
+-93.106,44.985,Bike,2019/09/24 00:51:00+00,E MAGNOLIA AVE,44.974,-93.023,30,Local or City Street,,,,,13,M,ST. PAUL,55106,,,Possible Injury,Yes,518,Unknown
+-93.045,44.975,Pedestrian,2019/10/09 22:00:00+00,W SUMMIT AVE,44.941,-93.192,30,Municipal State Aid Street,19,F,RIVER FALLS,54022,,,,,Possible Injury,Yes,,,519,Unknown
+-93.2,44.948,Pedestrian,2019/10/09 19:43:00+00,W SUMMIT AVE,44.941,-93.118,30,Municipal State Aid Street,37,M,WYOMING,550929051,,,,,Suspected Minor Injury,Yes,,,520,Unknown
+-93.025,44.95,Pedestrian,2019/10/09 15:00:00+00,W GRAND AVE,44.941,-93.109,10,Municipal State Aid Street,52,F,MAPLEWOOD,551172056,,,,,Suspected Minor Injury,Yes,,,521,Unknown
+-93.087,44.977,Pedestrian,2019/10/09 00:23:00+00,E MINNEHAHA AVE,44.963,-93.05,30,State Trunk Highway,56,M,SAINT PAUL,551064612,,,,,Suspected Minor Injury,Yes,,,522,Unknown
+-93.089,44.977,Bike,2019/10/07 20:18:00+00,N DALE ST,44.977,-93.126,30,County State Aid Highway,,,,,14,M,ST PAUL,55106,,,Possible Injury,Yes,523,Unknown
+-93.167,44.931,Pedestrian,2019/10/03 16:20:00+00,E KING ST,44.928,-93.079,30,Local or City Street,70,M,HUGO,550387900,,,,,Suspected Minor Injury,Yes,,,524,Unknown
+-93.08,44.955,Pedestrian,2019/10/03 23:29:00+00,W UNIVERSITY AVE,44.956,-93.165,30,County State Aid Highway,1,M,ST PAUL,55108,,,,,,No,,,525,Unknown
+-93.089,44.946,Pedestrian,2019/10/03 16:30:00+00,W RANDOLPH AVE,44.927,-93.16,10,County State Aid Highway,62,M,SAINT PAUL,551052554,,,,,,No,,,526,Unknown
+-93.106,44.985,Pedestrian,2019/10/03 11:59:00+00,N WESTERN AVE,44.962,-93.116,30,Municipal State Aid Street,8,F,SAINT PAUL,55104,,,,,Possible Injury,Yes,,,527,Unknown
+-93.047,44.954,Bike,2019/09/23 15:00:00+00,W ENGLEWOOD AVE,44.964,-93.166,15,Local or City Street,,,,,19,F,SAINT ANTHONY,55104,,,Suspected Minor Injury,No,528,Unknown
+-93.081,44.929,Pedestrian,2019/09/30 22:19:00+00,W UNIVERSITY AVE,44.956,-93.167,30,County State Aid Highway,52,M,MINNEAPOLIS,554112122,,,,,Possible Injury,Yes,,,529,Unknown
+-93.081,44.929,Bike,2019/09/30 19:50:00+00,W HORTON AVE,44.977,-93.147,30,Local or City Street,,,,,76,M,ROSEVILLE,551135819,,,,No,530,Unknown
+-93.177,44.942,Pedestrian,2019/09/29 14:54:00+00,W UNIVERSITY AVE,44.956,-93.126,30,County State Aid Highway,28,F,MINNEAPOLIS,554041622,,,,,Possible Injury,Yes,,,531,Unknown
+-93.068,44.972,Pedestrian,2019/09/28 22:25:00+00,E STILLWATER AVE,44.969,-93.011,10,Municipal State Aid Street,71,F,LAKE ELMO,550428440,,,,,Suspected Minor Injury,No,,,532,Unknown
+-93.139,44.951,Pedestrian,2019/09/28 22:25:00+00,E STILLWATER AVE,44.969,-93.011,10,Municipal State Aid Street,77,M,LAKE ELMO,550428440,,,,,,No,,,533,Unknown
+-93.011,44.967,Bike,2019/09/27 20:35:00+00,ENERGY PARK DR,44.974,-93.195,30,County State Aid Highway,,,,,32,F,ST. PAUL,55108,,,Suspected Serious Injury,Yes,534,Unknown
+-93.126,44.958,Pedestrian,2019/09/27 22:06:00+00,W MARYLAND AVE,44.977,-93.126,30,County State Aid Highway,49,F,SAINT PAUL,551032338,,,,,Suspected Minor Injury,Yes,,,535,Unknown
+-93.023,44.987,Bike,2019/09/25 22:38:00+00,N RICE ST,44.977,-93.106,30,County State Aid Highway,,,,,23,M,ST PAUL,55117,,,Suspected Minor Injury,Yes,536,Unknown
+-93.023,44.987,Bike,2019/09/25 11:39:00+00,SAINT PAUL AVE,44.904,-93.165,30,Municipal State Aid Street,,,,,34,F,SAINT PAUL,551066709,,,Possible Injury,Yes,537,Unknown
+-93.023,44.987,Pedestrian,2019/09/21 14:53:00+00,OLD HUDSON RD,44.951,-93.01,20,Municipal State Aid Street,71,F,SAINT PAUL,551065411,,,,,Suspected Minor Injury,Yes,,,538,Unknown
+-93.187,44.951,Bike,2019/09/21 00:16:00+00,JACKSON ST,44.96,-93.099,30,Municipal State Aid Street,,,,,8,M,ST PAUL,55130,,,Possible Injury,Yes,539,Unknown
+-93.135,44.956,Pedestrian,2019/09/19 23:12:00+00,W COMO AVE,44.97,-93.126,30,Municipal State Aid Street,47,M,NORTH SAINT PAUL,551096021,,,,,Suspected Minor Injury,Yes,,,540,Unknown
+-93.066,44.978,Bike,2019/09/18 22:01:00+00,N WESMINSTER ST,44.968,-93.086,30,Municipal State Aid Street,,,,,47,,MINNEAPOLIS,554122015,,,Possible Injury,Yes,541,Unknown
+-93.066,44.963,Bike,2019/09/18 22:34:00+00,N OTIS AVE,44.948,-93.198,,Local or City Street,,,,,50,M,MINNEAPOLIS,554192113,,,Suspected Minor Injury,No,542,Unknown
+-93.098,44.955,Bike,2019/09/18 20:28:00+00,N SYNDICATE ST,44.955,-93.154,30,Local or City Street,,,,,17,F,SAINT PAUL,55104,,,Possible Injury,No,543,Unknown
+-93.166,44.977,Bike,2019/09/17 22:10:00+00,N KENT ST,44.979,-93.124,,Local or City Street,,,,,13,M,ST.PAUL,55117,,,Possible Injury,Yes,544,Unknown
+-93.177,44.904,Bike,2019/09/17 23:14:00+00,S GROTTO ST,44.941,-93.131,30,Local or City Street,,,,,44,M,ST. PAUL,55104,,,Suspected Minor Injury,Yes,545,Unknown
+-93.177,44.904,Bike,2019/09/15 21:31:00+00,E ARLINGTON AVE,44.985,-93.046,35,Local or City Street,,,,,11,M,MAPLEWOOD,55109,,,Suspected Minor Injury,No,546,Unknown
+-93.149,44.913,Pedestrian,2019/09/16 20:15:00+00,W PENNSYLVANIA AVE,44.96,-93.106,30,County State Aid Highway,54,M,STILLWATER,550824778,,,,,,No,,,547,Unknown
+-93.107,44.986,Bike,2019/09/16 15:01:00+00,W SELBY AVE,44.947,-93.126,30,Municipal State Aid Street,,,,,49,,SAINT PAUL,551052746,,,Possible Injury,Yes,548,Unknown
+-93.094,44.947,Pedestrian,2019/09/15 21:45:00+00,E WYOMING ST,44.92,-93.078,30,Local or City Street,34,M,BAYPORT,550031489,,,,,,No,,,549,Unknown
+-93.146,44.956,Pedestrian,2019/09/15 21:45:00+00,E WYOMING ST,44.92,-93.078,30,Local or City Street,5,F,ST. PAUL,55106,,,,,Suspected Minor Injury,Yes,,,550,Unknown
+-93.008,44.951,Pedestrian,2019/09/12 21:10:00+00,E CASE AVE,44.97,-93.066,30,Municipal State Aid Street,25,F,ST PAUL,55106,,,,,Suspected Minor Injury,Yes,,,551,Unknown
+-93.093,44.944,Pedestrian,2019/09/12 19:35:00+00,N PRIOR AVE,44.958,-93.182,10,Municipal State Aid Street,53,F,MINNEAPOLIS,554122121,,,,,Suspected Minor Injury,Yes,,,552,Unknown
+-93.116,44.955,Bike,2019/09/12 11:34:00+00,W MARSHALL AVE,44.948,-93.157,30,County State Aid Highway,,,,,31,M,SAINT PAUL,551041414,,,,No,553,Unknown
+-93.074,44.968,Pedestrian,2019/09/11 16:50:00+00,W UNIVERSITY AVE,44.956,-93.152,30,County State Aid Highway,41,F,ST PAUL,55106,,,,,Possible Injury,Yes,,,554,Unknown
+-93.102,44.929,Bike,2019/09/11 12:00:00+00,GROVE ST,44.956,-93.085,30,Local or City Street,,,,,54,,ST. PAUL,550749682,,,,No,555,Unknown
+-93.147,44.953,Bike,2019/09/10 22:22:00+00,STATE ST,44.93,-93.078,30,Local or City Street,,,,,18,M,SOUTH SAINT PAUL,550752603,,,Possible Injury,No,556,Unknown
+-93.096,44.955,Bike,2019/09/11 01:02:00+00,N PAYNE AVE,44.956,-93.078,30,County State Aid Highway,,,,,24,M,CHIPPEWA FALLS,54729,,,Suspected Minor Injury,Yes,557,Unknown
+-93.158,44.94,Pedestrian,2019/09/09 16:30:00+00,KAY AVE,44.918,-93.136,30,Local or City Street,26,M,ST. PAUL,55102,,,,,,No,,,558,Unknown
+-93.126,44.947,Bike,2019/09/09 20:30:00+00,N LEXINGTON AVE,44.951,-93.147,30,County State Aid Highway,,,,,14,M,SAINT PAUL,55106,,,Suspected Minor Injury,Yes,559,Unknown
+-93.097,44.948,Pedestrian,2019/09/09 17:14:00+00,E MINNEHAHA AVE,44.963,-93.066,30,Municipal State Aid Street,82,F,AVE,55104,,,,,Suspected Minor Injury,No,,,560,Unknown
+-93.187,44.954,Pedestrian,2019/09/08 21:43:00+00,W UNIVERSITY AVE,44.956,-93.126,30,County State Aid Highway,17,F,ST. PAUL,55108,,,,,Suspected Minor Injury,Yes,,,561,Unknown
+-93.167,44.964,Pedestrian,2019/09/08 11:43:00+00,W 7TH ST,44.924,-93.132,30,State Trunk Highway,31,M,OAKDALE,551284531,,,,,Suspected Minor Injury,No,,,562,Unknown
+-93.021,44.955,Pedestrian,2019/09/06 22:15:00+00,N WHITE BEAR AVE,44.978,-93.025,35,County State Aid Highway,68,M,SAINT PAUL,551062304,,,,,Suspected Minor Injury,Yes,,,563,Unknown
+-93.106,44.981,Pedestrian,2019/09/07 23:51:00+00,W BOHLAND AVE,44.916,-93.187,10,Local or City Street,6,F,ST PAUL,55117,,,,,Suspected Minor Injury,Yes,,,564,Unknown
+-93.149,44.913,Pedestrian,2019/09/07 23:51:00+00,W BOHLAND AVE,44.916,-93.187,10,Local or City Street,38,F,SAINT PAUL,551161357,,,,,,No,,,565,Unknown
+-93.104,44.943,Bike,2019/08/28 17:00:00+00,W CARROLL AVE,44.95,-93.167,,Local or City Street,,,,,25,F,SAINT PAUL,55104,,,Possible Injury,No,566,Unknown
+-93.043,44.978,Bike,2019/09/06 20:58:00+00,E 3RD ST,44.957,-93.045,30,Municipal State Aid Street,,,,,,M,,,,,,No,567,Unknown
+-93.127,44.956,Bike,2019/09/05 21:51:00+00,N LAFAYETTE RD,44.95,-93.08,30,Municipal State Aid Street,,,,,40,M,ST. PAUL,55106,,,Suspected Minor Injury,Yes,568,Unknown
+-93.106,44.976,Bike,2019/09/04 23:00:00+00,E ORANGE AVE,44.979,-93.074,30,Local or City Street,,,,,40,M,SAINT PAUL,551303535,,,Possible Injury,Yes,569,Unknown
+-93.149,44.939,Bike,2019/09/04 22:49:00+00,W SAINT CLAIR AVE,44.934,-93.139,30,Municipal State Aid Street,,,,,57,M,SAINT PAUL,551053514,,,Suspected Minor Injury,Yes,570,Unknown
+-93.126,44.956,Bike,2019/09/04 17:34:00+00,N DALE ST,44.956,-93.126,30,County State Aid Highway,,,,,35,M,SAINT PAUL,55105,,,Suspected Minor Injury,Yes,571,Unknown
+-93.17,44.94,Pedestrian,2019/09/03 03:07:00+00,N SNELLING AVE,44.983,-93.167,30,State Trunk Highway,19,F,SAINT PAUL,551022921,,,,,Suspected Serious Injury,Yes,,,572,Unknown
+-93.131,44.947,Pedestrian,2019/09/01 14:38:00+00,S WABASHA ST,44.947,-93.096,10,Municipal State Aid Street,,F,SAINT PAUL,55101,,,,,Suspected Minor Injury,Yes,,,573,Unknown
+-93.066,44.977,Pedestrian,2019/08/30 17:48:00+00,TATUM ST,44.963,-93.18,30,Local or City Street,33,M,SOUTH SAINT PAUL,550751914,,,,,,No,,,574,Unknown
+-93.167,44.959,Pedestrian,2019/08/31 01:50:00+00,N SNELLING AVE,44.959,-93.167,30,State Trunk Highway,24,M,SAINT PAUL,551042317,,,,,Suspected Minor Injury,Yes,,,575,Unknown
+-93.149,44.956,Bike,2019/08/29 21:38:00+00,N CHESTNUT ST,44.944,-93.105,30,Municipal State Aid Street,,,,,47,M,SAINT PAUL,551022809,,,Suspected Minor Injury,No,576,Unknown
+-93.167,44.934,Bike,2019/08/29 19:44:00+00,SPRUCE TREE AVE,44.955,-93.167,30,Local or City Street,,,,,25,M,CHICAGO,60624,,,,No,577,Unknown
+-93.053,44.964,Pedestrian,2019/08/29 02:05:00+00,N DALE ST,44.944,-93.126,30,County State Aid Highway,51,M,SAINT PAUL,551141635,,,,,,No,,,578,Unknown
+-93.167,44.936,Bike,2019/08/27 12:51:00+00,N ASHBURY ST,44.963,-93.165,30,Local or City Street,,,,,38,M,SAINT PAUL,551041529,,,Suspected Minor Injury,No,579,Unknown
+-93.152,44.956,Bike,2019/08/28 08:15:00+00,W COMO AVE,44.959,-93.106,30,County State Aid Highway,,,,,55,M,COON RAPIDS,554333532,,,Possible Injury,Yes,580,Unknown
+-93.106,44.956,Pedestrian,2019/08/28 00:08:00+00,N MARION ST,44.956,-93.109,30,County State Aid Highway,7,M,SAINTPAUL,55101,,,,,,No,,,581,Unknown
+-93.025,44.988,Pedestrian,2019/08/27 22:28:00+00,W THOMAS AVE,44.959,-93.147,30,Municipal State Aid Street,35,F,SAINT PAUL,551042537,,,,,Possible Injury,Yes,,,582,Unknown
+-93.076,44.971,Pedestrian,2019/08/24 22:03:00+00,N WHITE BEAR AVE,44.987,-93.025,30,County State Aid Highway,30,M,SAINT PAUL,551063941,,,,,Suspected Minor Injury,No,,,583,Unknown
+-93.114,44.983,Bike,2019/08/23 20:30:00+00,N FARRINGTON ST,44.983,-93.114,30,Local or City Street,,,,,19,F,ST. PAUL,55107,,,Suspected Minor Injury,No,584,Unknown
+-93.133,44.923,Bike,2019/08/23 23:35:00+00,S WESTERN AVE,44.938,-93.116,30,Local or City Street,,,,,7,M,ST. PAUL,55117,,,Suspected Minor Injury,Yes,585,Unknown
+-93.044,44.967,Pedestrian,2019/08/23 18:10:00+00,COMO AVE,44.977,-93.17,30,County State Aid Highway,15,F,DULUTH,558042934,,,,,Suspected Minor Injury,No,,,586,Unknown
+-93.066,44.978,Pedestrian,2019/08/22 14:31:00+00,E CASE AVE,44.97,-93.066,30,Municipal State Aid Street,35,F,SAINT PAUL,551063804,,,,,Suspected Serious Injury,Yes,,,587,Unknown
+-93.192,44.934,Pedestrian,2019/08/20 19:52:00+00,N CLARENCE ST,44.976,-93.043,10,Municipal State Aid Street,5,M,ST PAUL,55130,,,,,,No,,,588,Unknown
+-93.114,44.956,Bike,2019/08/20 15:15:00+00,LOWER AFTON RD,44.933,-93.005,30,County State Aid Highway,,,,,16,M,ST. PAUL,55119,,,Suspected Minor Injury,No,589,Unknown
+-93.151,44.911,Pedestrian,2019/08/17 18:00:00+00,W MIDWAY PKWY,44.979,-93.153,10,Local or City Street,49,M,INVER GROVE HEIGHTS,550774450,,,,,,No,,,590,Unknown
+-93.165,44.956,Bike,2019/08/16 19:50:00+00,W UNIVERSITY AVE,44.956,-93.156,30,County State Aid Highway,,,,,27,M,SAINT PAUL,55104,,,,No,591,Unknown
+-93.164,44.964,Pedestrian,2019/08/15 21:30:00+00,W UNIVERSITY AVE,44.956,-93.111,10,County State Aid Highway,35,F,MINNEAPOLIS,55114,,,,,Possible Injury,No,,,592,Unknown
+-93.162,44.956,Pedestrian,2019/08/15 15:30:00+00,N PASCAL ST,44.954,-93.162,30,Municipal State Aid Street,54,M,ST PAUL,55105,,,,,Possible Injury,No,,,593,Unknown
+-93.11,44.99,Bike,2019/08/12 13:55:00+00,E MARYLAND AVE,44.978,-93.051,30,County State Aid Highway,,,,,84,M,SAINT PAUL,551063681,,,Suspected Minor Injury,Yes,594,Unknown
+-93.198,44.964,Bike,2022/03/12 18:15:00+00,W KELLOGG BLVD,44.944,-93.093,25,Municipal State Aid Street,,,,,34,M,SAINT PAUL,55107,,,Suspected Minor Injury,Yes,595,Unknown
+-93.149,44.992,Pedestrian,2021/10/22 10:30:00+00,PARKLAND CT,44.947,-93.018,25,Local or City Street,55,M,SAINT PAUL,551194922,,,,,Fatal,No,,,596,Unknown
+-93.184,44.951,Pedestrian,2022/03/10 20:12:00+00,N WESTERN AVE,44.955,-93.116,20,Municipal State Aid Street,53,F,ST PAUL,55103,,,,,Suspected Minor Injury,Yes,,,597,Unknown
+-93.164,44.905,Pedestrian,2022/03/09 22:00:00+00,N PAYNE AVE,44.968,-93.074,,Municipal State Aid Street,65,F,PAYNE,55106,,,,,Suspected Minor Injury,No,,,598,Unknown
+-93.19,44.914,Pedestrian,2022/03/09 00:22:00+00,W STEVENS ST,44.929,-93.102,,Local or City Street,73,F,SAINT PAUL,551072615,,,,,Suspected Serious Injury,Yes,,,599,Unknown
+-93.04,44.977,Pedestrian,2022/03/09 07:10:00+00,W CENTRAL AVE,44.953,-93.147,30,Local or City Street,34,M,MINNEAPOLIS,554041601,,,,,Suspected Minor Injury,No,,,600,Unknown
+-93.087,44.952,Pedestrian,2022/03/08 21:55:00+00,JACKSON ST,44.955,-93.096,25,Municipal State Aid Street,17,M,SAINT PAUL,551173828,,,,,,No,,,601,Unknown
+-93.042,44.957,Pedestrian,2022/03/07 02:46:00+00,W GRAND AVE,44.94,-93.158,25,All other roads,34,F,MINNEAPOLIS,554171363,,,,,Suspected Serious Injury,Yes,,,602,Unknown
+-93.033,44.957,Pedestrian,2022/03/02 01:50:00+00,W DAYTON AVE,44.947,-93.126,25,Local or City Street,24,M,ST.PAUL,55104,,,,,Suspected Minor Injury,Yes,,,603,Unknown
+-93.089,44.977,Bike,2022/03/01 19:00:00+00,S WABASHA ST,44.948,-93.097,25,Municipal State Aid Street,,,,,58,M,SAINT PAUL,55104,,,Suspected Minor Injury,Yes,604,Unknown
+-93.106,44.986,Pedestrian,2022/02/21 00:20:00+00,N CLEVELAND AVE,44.954,-93.187,30,County State Aid Highway,76,M,SAINT PAUL,551045034,,,,,Suspected Serious Injury,Yes,,,605,Unknown
+-93.126,44.941,Pedestrian,2022/02/12 23:56:00+00,W ENGLEWOOD AVE,44.964,-93.167,,Local or City Street,20,99,SAINT PAUL,551041171,,,,,,No,,,606,Unknown
+-93.094,44.947,Pedestrian,2022/02/11 10:55:00+00,-- NOT ON ROADWAY --,44.955,-93.021,,All other roads,44,F,MINNEAPOLIS,55407,,,,,,No,,,607,Unknown
+-93.094,44.953,Pedestrian,2022/01/29 02:37:00+00,N RICE ST,44.981,-93.106,,County State Aid Highway,64,M,SAINT PAUL,551043719,,,,,Suspected Serious Injury,Yes,,,608,Unknown
+-93.066,44.962,Pedestrian,2022/01/27 17:25:00+00,W 7TH ST,44.913,-93.149,30,State Trunk Highway,54,M,ST PAUL,55101,,,,,Suspected Serious Injury,Yes,,,609,Unknown
+-93.035,44.977,Pedestrian,2022/01/21 19:20:00+00,W 7TH ST,44.943,-93.104,20,State Trunk Highway,67,M,MENDOTA HEIGHTS,551201918,,,,,Possible Injury,No,,,610,Unknown
+-93.005,44.947,Pedestrian,2022/01/19 22:00:00+00,E MARYLAND AVE,44.978,-93.043,30,County State Aid Highway,11,M,SAINT PAUL,55106,,,,,Suspected Minor Injury,Yes,,,611,Unknown
+-93.005,44.947,Pedestrian,2022/01/12 17:00:00+00,W UNIVERSITY AVE,44.956,-93.127,25,County State Aid Highway,19,F,SAINT PAUL,551031515,,,,,,No,,,612,Unknown
+-93.135,44.956,Pedestrian,2022/01/11 22:35:00+00,N RICE ST,44.976,-93.106,30,County State Aid Highway,,M,UNKNOWN,55117,,,,,,No,,,613,Unknown
+-93.204,44.978,Pedestrian,2022/01/10 21:45:00+00,S DUNLAP ST,44.939,-93.149,25,Local or City Street,59,M,ST. PAUL,55102,,,,,Possible Injury,No,,,614,Unknown
+-93.187,44.919,Bike,2021/04/04 22:06:00+00,JOHNSON PKWY,44.975,-93.045,30,Municipal State Aid Street,,,,,41,M,ST. PAUL,55106,,,Possible Injury,No,615,Unknown
+-93.094,44.954,Pedestrian,2022/01/05 22:30:00+00,W UNIVERSITY AVE,44.956,-93.126,30,County State Aid Highway,29,M,SAINT PAUL,551251842,,,,,Possible Injury,Yes,,,616,Unknown
+-93.116,44.947,Pedestrian,2021/04/03 22:59:00+00,W RANDOLPH AVE,44.927,-93.146,25,County State Aid Highway,50,F,SAINT PAUL,551052995,,,,,Suspected Minor Injury,Yes,,,617,Unknown
+-93.121,44.92,Pedestrian,2022/01/02 20:42:00+00,934,44.94,-93.17,30,All other roads,71,F,MENDOTA HEIGHTS,55120,,,,,Suspected Minor Injury,No,,,618,Unknown
+-93.066,44.977,Pedestrian,2021/03/29 12:45:00+00,S ALBERT ST,44.927,-93.159,30,Local or City Street,52,F,SAINT PAUL,551161509,,,,,Suspected Minor Injury,Yes,,,619,Unknown
+-93.131,44.951,Pedestrian,2021/12/31 05:06:00+00,E MARYLAND AVE,44.977,-93.084,30,County State Aid Highway,31,F,SAINT PAUL,551046518,,,,,Suspected Serious Injury,Yes,,,620,Unknown
+-93.192,44.908,Pedestrian,2021/03/29 12:45:00+00,S ALBERT ST,44.927,-93.159,30,Local or City Street,51,M,SAINT PAUL,551161509,,,,,Suspected Minor Injury,Yes,,,621,Unknown
+-93.128,44.947,Pedestrian,2021/12/29 08:45:00+00,HOMER  ST,44.909,-93.156,25,Municipal State Aid Street,27,M,BROOKLYN PARK,55443,,,,,Suspected Minor Injury,Yes,,,622,Unknown
+-93.104,44.943,Pedestrian,2021/03/30 01:05:00+00,N WALSH ST,44.972,-93.069,20,Local or City Street,16,M,SAINT PAUL,551063127,,,,,,No,,,623,Unknown
+-93.045,44.992,Pedestrian,2021/03/27 02:48:00+00,E 6TH ST,44.96,-93.057,20,Municipal State Aid Street,3,M,ST. PAUL,55106,,,,,Possible Injury,No,,,624,Unknown
+-93.19,44.942,Pedestrian,2021/03/20 19:00:00+00,W CONCORDIA AVE,44.951,-93.143,30,Municipal State Aid Street,16,F,SAINT PAUL,551045434,,,,,Suspected Minor Injury,Yes,,,625,Unknown
+-93.106,44.992,Pedestrian,2021/03/17 01:30:00+00,S WABASHA ST,44.937,-93.087,10,Municipal State Aid Street,40,F,SAINT PAUL,55107,,,,,,No,,,626,Unknown
+-93.081,44.95,Pedestrian,2021/03/11 01:22:00+00,W MARSHALL AVE,44.948,-93.167,25,County State Aid Highway,44,M,ST. PAUL,55104,,,,,Possible Injury,No,,,627,Unknown
+-93.153,44.98,Bike,2021/03/07 23:00:00+00,S MISSISSIPPI RIVER BLVD,44.913,-93.197,30,Local or City Street,,,,,28,M,ST PAUL,55116,,,,No,628,Unknown
+-93.025,44.977,Pedestrian,2021/03/06 08:20:00+00,W UNIVERSITY AVE,44.967,-93.204,,County State Aid Highway,16,99,CANNON FALLS,550091107,,,,,Suspected Serious Injury,Yes,,,629,Unknown
+-93.066,44.976,Pedestrian,2021/03/02 18:20:00+00,E MARYLAND AVE,44.977,-93.066,30,County State Aid Highway,66,M,LANDFALL,55128,,,,,Possible Injury,Yes,,,630,Unknown
+-93.104,44.943,Pedestrian,2021/02/24 21:00:00+00,N MARION ST,44.949,-93.107,30,Municipal State Aid Street,17,F,ST PAUL,55109,,,,,Suspected Minor Injury,Yes,,,631,Unknown
+-93.04,44.977,Pedestrian,2021/02/26 02:45:00+00,E MARYLAND AVE,44.978,-93.047,35,County State Aid Highway,25,M,COLUMBIA HEIGHTS,554214030,,,,,Suspected Serious Injury,Yes,,,632,Unknown
+-93.127,44.959,Pedestrian,2021/02/19 05:29:00+00,W UNIVERSITY AVE,44.956,-93.106,30,County State Aid Highway,55,M,ST PAUL,55106,,,,,Suspected Serious Injury,Yes,,,633,Unknown
+-93.072,44.959,Pedestrian,2021/02/09 13:01:00+00,SHEPARD RD,44.942,-93.097,30,County State Aid Highway,50,M,STILLWATER,550821258,,,,,Suspected Serious Injury,Yes,,,634,Unknown
+-93.094,44.949,Pedestrian,2021/02/05 21:31:00+00,W UNIVERSITY AVE,44.956,-93.161,,County State Aid Highway,33,M,SAINT PAUL,551162754,,,,,Suspected Minor Injury,No,,,635,Unknown
+-93.105,44.944,Pedestrian,2021/02/03 13:52:00+00,N EDGERTON ST,44.968,-93.076,20,County State Aid Highway,59,F,SAINT PAUL,551063745,,,,,Possible Injury,Yes,,,636,Unknown
+-93.025,44.961,Pedestrian,2021/02/03 00:35:00+00,N PARK ST,44.965,-93.104,30,Local or City Street,52,M,SAINT PAUL,551175353,,,,,Suspected Serious Injury,Yes,,,637,Unknown
+-93.159,44.956,Pedestrian,2021/02/02 00:34:00+00,N ARCADE ST,44.963,-93.066,,U.S. Trunk Highway,36,M,ST PAUL,55106,,,,,,No,,,638,Unknown
+-93.147,44.956,Bike,2021/01/29 23:54:00+00,W PENNSYLVANIA AVE,44.96,-93.106,30,County State Aid Highway,,,,,28,M,SAINT PAUL,551031630,,,,No,639,Unknown
+-93.147,44.956,Pedestrian,2021/01/27 20:20:00+00,E MARYLAND AVE,44.977,-93.084,,County State Aid Highway,47,F,ST PAUL,55106,,,,,,No,,,640,Unknown
+-93.126,44.956,Pedestrian,2021/01/23 02:37:00+00,N MCKNIGHT RD,44.961,-93.005,25,County State Aid Highway,68,M,SAINT PAUL,551193918,,,,,Fatal,No,,,641,Unknown
+-93.015,44.951,Pedestrian,2021/01/22 00:22:00+00,W UNIVERSITY AVE,44.956,-93.146,25,County State Aid Highway,49,M,ST PAUL,55116,,,,,Suspected Minor Injury,Yes,,,642,Unknown
+-93.164,44.969,Pedestrian,2021/01/14 00:00:00+00,W 7TH ST,44.906,-93.161,10,State Trunk Highway,57,M,ST PAUL,55116,,,,,Possible Injury,No,,,643,Unknown
+-93.165,44.946,Pedestrian,2021/01/17 02:12:00+00,W UNIVERSITY AVE,44.956,-93.116,25,County State Aid Highway,54,M,MINNEAPOLIS,55413,,,,,Suspected Serious Injury,Yes,,,644,Unknown
+-93.165,44.946,Pedestrian,2021/01/15 22:00:00+00,W KELLOGG BLVD,44.944,-93.099,25,Municipal State Aid Street,19,F,ST. PAUL,55104,,,,,Suspected Minor Injury,No,,,645,Unknown
+-93.106,44.979,Bike,2021/01/14 11:51:00+00,N GALTIER ST,44.962,-93.111,20,Local or City Street,,,,,63,M,SAINT PAUL,551031778,,,,No,646,Unknown
+-93.116,44.977,Pedestrian,2021/01/12 14:50:00+00,E MARYLAND AVE,44.977,-93.066,30,County State Aid Highway,25,F,NO. ST. PAUL,55119,,,,,Suspected Serious Injury,Yes,,,647,Unknown
+-93.116,44.977,Pedestrian,2020/12/28 21:00:00+00,W UNIVERSITY AVE,44.956,-93.144,30,County State Aid Highway,21,M,MINNEAPOLIS,55455,,,,,,No,,,648,Unknown
+-93.106,44.978,Pedestrian,2020/12/26 03:30:00+00,JOHNSON PKWY,44.967,-93.045,30,County State Aid Highway,56,M,SAINT PAUL,551044724,,,,,,No,,,649,Unknown
+-93.096,44.98,Pedestrian,2020/12/22 03:12:00+00,W 7TH ST,44.948,-93.098,20,State Trunk Highway,66,M,SAINT PAUL,551022992,,,,,Possible Injury,Yes,,,650,Unknown
+-93.088,44.948,Pedestrian,2020/12/08 23:00:00+00,OLD HUDSON RD,44.953,-93.025,25,Municipal State Aid Street,61,M,SAINT PAUL,551195045,,,,,Suspected Minor Injury,No,,,651,Unknown
+-93.081,44.939,Pedestrian,2020/12/16 12:30:00+00,N RICE ST,44.96,-93.106,,County State Aid Highway,51,M,WEST ST PAUL,55118,,,,,Suspected Serious Injury,Yes,,,652,Unknown
+-93.025,44.97,Pedestrian,2020/12/14 21:02:00+00,N WACOUTA ST,44.951,-93.089,30,Municipal State Aid Street,25,M,SAINT PAUL,551275030,,,,,Suspected Minor Injury,No,,,653,Unknown
+-93.085,44.941,Bike,2020/12/12 23:05:00+00,E PHALEN BLVD,44.975,-93.045,25,Municipal State Aid Street,,,,,57,,SAINT PAUL,551064439,,,,No,654,Unknown
+-93.043,44.978,Pedestrian,2020/12/10 17:45:00+00,W DOSWELL AVE,44.982,-93.196,25,Local or City Street,,F,ST PAUL,55108,,,,,Possible Injury,Yes,,,655,Unknown
+-93.087,44.945,Bike,2020/12/06 23:01:00+00,N DALE ST,44.958,-93.126,30,County State Aid Highway,,,,,57,M,SAINT PAUL,551173696,,,Suspected Minor Injury,Yes,656,Unknown
+-93.056,44.982,Bike,2020/12/02 21:33:00+00,JOHN IRELAND BLVD,44.95,-93.106,30,Municipal State Aid Street,,,,,63,M,SAINT PAUL,55102,,,Possible Injury,Yes,657,Unknown
+-93.104,44.943,Pedestrian,2020/12/02 23:11:00+00,N RICE ST,44.96,-93.106,30,County State Aid Highway,47,M,SAINT PAUL,551065733,,,,,Suspected Serious Injury,Yes,,,658,Unknown
+-93.109,44.977,Pedestrian,2020/12/02 02:00:00+00,W MILFORD ST,44.968,-93.106,30,Local or City Street,57,F,SAINT PAUL,55117,,,,,Suspected Serious Injury,Yes,,,659,Unknown
+-93.106,44.956,Pedestrian,2020/12/02 00:34:00+00,N MARION ST,44.952,-93.11,25,County State Aid Highway,46,F,FRIDLEY,554323451,,,,,Suspected Minor Injury,Yes,,,660,Unknown
+-93.048,44.965,Pedestrian,2020/11/19 21:00:00+00,N SNELLING AVE,44.942,-93.167,30,State Trunk Highway,21,99,SAINT PAUL,551047472,,,,,,No,,,661,Unknown
+-93.066,44.978,Pedestrian,2020/11/21 00:14:00+00,N WHITE BEAR AVE,44.951,-93.025,30,County State Aid Highway,44,M,LITTLE CANADA,551171612,,,,,Suspected Minor Injury,Yes,,,662,Unknown
+-93.136,44.956,Pedestrian,2020/11/17 23:59:00+00,S STRYKER AVE,44.93,-93.088,30,Municipal State Aid Street,35,F,SAINT PAUL,551304215,,,,,Fatal,Yes,,,663,Unknown
+-93.104,44.943,Bike,2020/11/16 21:25:00+00,N ROBERT ST,44.947,-93.09,15,State Trunk Highway,,,,,40,M,ROSEVILLE,551135832,,,Possible Injury,No,664,Unknown
+-93.172,44.96,Pedestrian,2020/11/15 23:36:00+00,W MARYLAND AVE,44.977,-93.119,10,County State Aid Highway,37,M,ST. PAUL,55101,,,,,Suspected Minor Injury,No,,,665,Unknown
+-93.121,44.941,Pedestrian,2020/11/11 04:59:00+00,N BARCLAY ST,44.984,-93.038,30,Local or City Street,40,M,SAINT PAUL,551062104,,,,,Possible Injury,No,,,666,Unknown
+-93.18,44.957,Pedestrian,2020/11/02 20:49:00+00,W SELBY AVE,44.947,-93.126,,County State Aid Highway,73,F,SAINT PAUL,551022146,,,,,Suspected Minor Injury,Yes,,,667,Unknown
+-93.048,44.967,Pedestrian,2020/11/02 06:30:00+00,N JACKSON ST,44.991,-93.096,35,County State Aid Highway,39,M,SAINT PAUL,551304305,,,,,Possible Injury,Yes,,,668,Unknown
+-93.187,44.918,Pedestrian,2020/11/01 07:01:00+00,N RICE ST,44.99,-93.106,25,County State Aid Highway,40,M,SAINT PAUL,551194042,,,,,Suspected Serious Injury,Yes,,,669,Unknown
+-93.025,44.967,Pedestrian,2020/10/20 17:18:00+00,N WALL ST,44.951,-93.088,30,Local or City Street,65,F,SAINT PAUL,55101,,,,,Suspected Minor Injury,Yes,,,670,Unknown
+-93.17,44.92,Pedestrian,2020/10/20 16:25:00+00,143,44.958,-93.11,10,All other roads,10,F,ST. PAUL,55117,,,,,,No,,,671,Unknown
+-93.116,44.956,Pedestrian,2020/10/18 08:31:00+00,S HOWELL ST,44.918,-93.181,30,Local or City Street,32,F,SAINT PAUL,551161955,,,,,Possible Injury,No,,,672,Unknown
+-93.177,44.956,Pedestrian,2020/10/16 18:37:00+00,W EXCHANGE ST,44.948,-93.1,25,Municipal State Aid Street,36,M,ST. PAUL,55102,,,,,Possible Injury,Yes,,,673,Unknown
+-93.039,44.974,Pedestrian,2020/10/15 03:00:00+00,N HAZELWOOD ST,44.978,-93.035,25,Local or City Street,23,F,SAINT PAUL,551174608,,,,,Suspected Serious Injury,Yes,,,674,Unknown
+-93.103,44.944,Pedestrian,2020/10/12 23:58:00+00,E 7TH ST,44.967,-93.04,30,Municipal State Aid Street,33,F,ST. PAUL,55106,,,,,Suspected Minor Injury,No,,,675,Unknown
+-93.125,44.953,Pedestrian,2020/10/12 11:57:00+00,N SAINT ALBANS ST,44.978,-93.129,30,Local or City Street,55,F,SAINT PAUL,551046891,,,,,Possible Injury,No,,,676,Unknown
+-93.187,44.96,Bike,2020/10/10 03:14:00+00,EAGLE PKWY,44.94,-93.1,30,Local or City Street,,,,,59,M,SAINT PAUL,551021026,,,Possible Injury,No,677,Unknown
+-93.146,44.953,Bike,2020/10/09 17:22:00+00,N PELHAM BLVD,44.96,-93.2,5,Municipal State Aid Street,,,,,17,M,SAINT PAUL,55116,,,Possible Injury,No,678,Unknown
+-93.134,44.929,Pedestrian,2020/10/07 18:35:00+00,W UNIVERSITY AVE,44.956,-93.167,30,County State Aid Highway,39,M,SAINT PAUL,551021026,,,,,Suspected Minor Injury,Yes,,,679,Unknown
+-93.08,44.972,Pedestrian,2020/10/06 00:03:00+00,320,44.977,-93.164,25,All other roads,32,M,MINNEAPOLIS,554033157,,,,,Suspected Minor Injury,No,,,680,Unknown
+-93.106,44.977,Pedestrian,2020/10/01 20:13:00+00,W UNIVERSITY AVE,44.957,-93.18,30,County State Aid Highway,38,M,,,,,,,Suspected Minor Injury,Yes,,,681,Unknown
+-93.117,44.922,Bike,2020/10/01 14:55:00+00,N WOODBRIDGE ST,44.991,-93.108,30,Local or City Street,,,,,17,M,ST PAUL,55117,,,Suspected Serious Injury,Yes,682,Unknown
+-93.08,44.972,Bike,2020/09/30 05:50:00+00,W HOYT ST,44.988,-93.106,30,Local or City Street,,,,,34,M,ST PAUL,55103,,,Possible Injury,No,683,Unknown
+-93.076,44.97,Pedestrian,2020/09/29 16:51:00+00,E 7TH ST,44.951,-93.09,30,State Trunk Highway,35,F,SAINT PAUL,551013266,,,,,,No,,,684,Unknown
+-93.106,44.981,Bike,2020/09/25 23:22:00+00,E 6TH ST,44.951,-93.087,20,Municipal State Aid Street,,,,,19,M,ST PAUL,55101,,,Suspected Minor Injury,Yes,685,Unknown
+-93.147,44.952,Pedestrian,2020/09/22 19:30:00+00,S DAVERN ST,44.899,-93.172,,Municipal State Aid Street,53,F,SAINT PAUL,551163281,,,,,Suspected Minor Injury,Yes,,,686,Unknown
+-93.078,44.956,Pedestrian,2020/09/12 01:56:00+00,E MORTON ST,44.926,-93.073,20,Local or City Street,23,F,SAINT PAUL,551073014,,,,,Suspected Minor Injury,No,,,687,Unknown
+-93.033,44.979,Pedestrian,2020/09/10 22:41:00+00,W CONCORDIA AVE,44.951,-93.151,30,Municipal State Aid Street,16,M,SAINT PAUL,55103,,,,,Possible Injury,Yes,,,688,Unknown
+-93.142,44.955,Pedestrian,2020/09/09 04:08:00+00,N SNELLING AVE,44.956,-93.167,,State Trunk Highway,36,M,ST PAUL,55104,,,,,Suspected Minor Injury,Yes,,,689,Unknown
+-93.111,44.977,Bike,2020/09/07 22:18:00+00,W WHEELOCK PKWY,44.99,-93.106,30,Local or City Street,,,,,15,M,ST. PAUL,55117,,,,No,690,Unknown
+-93.084,44.978,Pedestrian,2020/09/05 22:18:00+00,N RICE ST,44.97,-93.106,30,County State Aid Highway,66,F,SAINT PAUL,551175353,,,,,Suspected Minor Injury,Yes,,,691,Unknown
+-93.131,44.956,Bike,2020/09/03 19:29:00+00,W FORD PKWY,44.918,-93.167,30,County State Aid Highway,,,,,13,M,ST. PAUL,55116,,,,No,692,Unknown
+-93.037,44.974,Pedestrian,2020/09/02 21:04:00+00,E SHERWOOD AVE,44.984,-93.025,25,Local or City Street,11,M,SAINT PAUL,55106,,,,,Suspected Minor Injury,Yes,,,693,Unknown
+-93.089,44.954,Bike,2020/09/01 22:04:00+00,S OHIO ST,44.936,-93.094,,Municipal State Aid Street,,,,,23,M,BURNSVILLE,553373842,,,,No,694,Unknown
+-93.087,44.949,Pedestrian,2020/08/29 21:30:00+00,N EARL ST,44.947,-93.056,25,Municipal State Aid Street,32,F,SAINT PAUL,551067257,,,,,,No,,,695,Unknown
+-93.147,44.968,Bike,2020/08/29 21:30:00+00,E BUSH AVE,44.965,-93.077,25,Local or City Street,,,,,7,F,MINNEAPOLIS,55407,,,Suspected Minor Injury,No,696,Unknown
+-93.162,44.948,Pedestrian,2020/08/29 18:00:00+00,W GRAND AVE,44.94,-93.118,30,Municipal State Aid Street,39,F,SAINT PAUL,55104,,,,,Suspected Minor Injury,Yes,,,697,Unknown
+-93.198,44.967,Pedestrian,2020/08/28 21:00:00+00,W SHEPARD RD,44.92,-93.13,45,Municipal State Aid Street,50,M,SAINT PAUL,551022802,,,,,Fatal,Yes,,,698,Unknown
+-93.109,44.939,Bike,2020/08/21 20:58:00+00,W SHERBURNE AVE,44.957,-93.106,30,Local or City Street,,,,,48,F,SAINT PAUL,551021026,,,Possible Injury,Yes,699,Unknown
+-93.126,44.928,Pedestrian,2020/08/28 11:30:00+00,BROADWAY ST,44.949,-93.084,15,Municipal State Aid Street,60,M,MAPLEWOOD,551196775,,,,,Suspected Minor Injury,No,,,700,Unknown
+-93.069,44.964,Bike,2020/08/27 19:50:00+00,N ALBEMARLE ST,44.988,-93.107,30,Local or City Street,,,,,14,M,ST. PAUL,55117,,,,No,701,Unknown
+-93.167,44.952,Bike,2020/08/21 14:20:00+00,E 9TH PL,44.952,-93.091,30,Municipal State Aid Street,,,,,30,M,,,,,,No,702,Unknown
+-93.049,44.97,Bike,2020/08/17 00:02:00+00,W 7TH ST,44.945,-93.102,30,State Trunk Highway,,,,,18,M,SAINT PAUL,55101,,,,No,703,Unknown
+-93.186,44.932,Bike,2020/08/16 23:50:00+00,N HAZELWOOD ST,44.978,-93.036,25,Local or City Street,,,,,20,F,SAINT PAUL,551062827,,,Possible Injury,Yes,704,Unknown
+-93.185,44.912,Bike,2020/08/06 23:06:00+00,N FOREST ST,44.974,-93.061,30,Municipal State Aid Street,,,,,14,M,ST. PAUL,55106,,,,No,705,Unknown
+-93.157,44.959,Bike,2020/07/31 19:19:00+00,-- NOT ON ROADWAY --,44.918,-93.193,,All other roads,,,,,14,M,ST. PAUL,55102,,,,No,706,Unknown
+-93.199,44.964,Bike,2020/08/01 01:00:00+00,E WHEELOCK PKWY,44.986,-93.074,25,Local or City Street,,,,,59,,SAINT PAUL,551303169,,,Possible Injury,Yes,707,Unknown
+-93.027,44.945,Bike,2020/07/30 23:15:00+00,S SMITH AVE,44.927,-93.102,35,State Trunk Highway,,,,,22,,SAINT PAUL,551161441,,,Suspected Minor Injury,No,708,Unknown
+-93.09,44.958,Pedestrian,2020/07/30 20:40:00+00,371,44.971,-93.063,10,All other roads,53,F,SAINT PAUL,55130,,,,,Suspected Minor Injury,No,,,709,Unknown
+,,Bike,2020/07/29 20:50:00+00,N LEXINGTON AVE,44.949,-93.146,30,County State Aid Highway,,,,,63,M,SAINT PAUL,551047003,,,Possible Injury,No,710,Unknown
+-93.066,44.966,Pedestrian,2021/12/28 21:51:00+00,-- NOT ON ROADWAY --,44.976,-93.034,,All other roads,73,F,SAINT PAUL,551067244,,,,,,No,,,711,Unknown
+-93.044,44.977,Pedestrian,2021/12/24 00:00:00+00,E 7TH ST,44.967,-93.039,20,Municipal State Aid Street,19,M,SAINT PAUL,55106,,,,,Possible Injury,Yes,,,712,Unknown
+-93.146,44.956,Pedestrian,2021/12/21 02:30:00+00,E WILSON AVE,44.954,-93.023,20,All other roads,34,F,SAINT PAUL,551064613,,,,,Fatal,Yes,,,713,Unknown
+-93.139,44.931,Pedestrian,2021/12/15 22:44:00+00,N LEXINGTON AVE,44.941,-93.147,30,County State Aid Highway,74,M,SAINT PAUL,551162214,,,,,Suspected Minor Injury,Yes,,,714,Unknown
+-93.046,44.957,Pedestrian,2021/12/06 00:57:00+00,E 7TH ST,44.956,-93.079,20,State Trunk Highway,47,M,WOODBURY,551252401,,,,,Suspected Serious Injury,Yes,,,715,Unknown
+-93.149,44.912,Pedestrian,2021/12/04 01:36:00+00,N WALNUT ST,44.943,-93.105,20,Local or City Street,27,M,,55107,,,,,Possible Injury,No,,,716,Unknown
+-93.061,44.971,Pedestrian,2021/12/02 22:52:00+00,N MACKUBIN ST,44.956,-93.121,,Local or City Street,69,F,SAINT PAUL,551065909,,,,,Suspected Minor Injury,No,,,717,Unknown
+-93.061,44.976,Pedestrian,2021/12/01 23:17:00+00,W UNIVERSITY AVE,44.956,-93.118,30,County State Aid Highway,24,M,SAINT PAUL,551042842,,,,,Suspected Serious Injury,Yes,,,718,Unknown
+-93.147,44.953,Pedestrian,2021/12/01 02:07:00+00,E 4TH ST,44.945,-93.093,20,Municipal State Aid Street,31,F,SAINT PAUL,551031784,,,,,,No,,,719,Unknown
+-93.133,44.92,Pedestrian,2021/11/29 23:05:00+00,N FOREST ST,44.961,-93.061,25,Municipal State Aid Street,33,F,SAINT PAUL,55106,,,,,Possible Injury,Yes,,,720,Unknown
+-93.126,44.956,Pedestrian,2021/11/29 23:05:00+00,N FOREST ST,44.961,-93.061,25,Municipal State Aid Street,4,F,SAINT PAUL,55106,,,,,Possible Injury,Yes,,,721,Unknown
+-93.045,44.977,Pedestrian,2021/11/29 23:26:00+00,N RICE ST,44.968,-93.106,30,All other roads,73,F,MINNEAPOLIS,554184566,,,,,Suspected Minor Injury,Yes,,,722,Unknown
+-93.183,44.947,Pedestrian,2021/11/27 21:01:00+00,N ARCADE ST,44.977,-93.066,30,U.S. Trunk Highway,62,F,SAINT PAUL,551173569,,,,,Possible Injury,Yes,,,723,Unknown
+-93.074,44.985,Pedestrian,2021/11/24 21:18:00+00,N ARCADE ST,44.981,-93.066,10,U.S. Trunk Highway,16,F,ST. PAUL,55117,,,,,,No,,,724,Unknown
+-93.032,44.978,Pedestrian,2021/11/20 20:30:00+00,E WAKEFIELD AVE,44.953,-93.06,20,Local or City Street,4,F,ST PAUL,55106,,,,,Possible Injury,No,,,725,Unknown
+-93.057,44.973,Pedestrian,2021/11/16 13:32:00+00,W UNIVERSITY AVE,44.956,-93.157,30,County State Aid Highway,16,F,ST. PAUL,55104,,,,,,No,,,726,Unknown
+-93.084,44.973,Pedestrian,2021/11/15 03:20:00+00,E/B ISTH 94 AT PRIOR AVE,44.954,-93.185,55,Interstate Trunk Highway,31,M,SAINT PAUL,551175340,,,,,Fatal,No,,,727,Unknown
+-93.133,44.954,Pedestrian,2021/11/10 19:22:00+00,W KELLOGG BLVD,44.944,-93.101,30,Municipal State Aid Street,44,M,WOODBURY,55129,,,,,Suspected Minor Injury,No,,,728,Unknown
+-93.01,44.93,Pedestrian,2021/11/11 03:35:00+00,501,44.95,-93.089,10,All other roads,38,F,SAINT PAUL,55101,,,,,,No,,,729,Unknown
+-93.126,44.977,Pedestrian,2021/11/05 12:54:00+00,W 5TH ST,44.945,-93.095,25,Municipal State Aid Street,15,F,ST PAUL,55106,,,,,Possible Injury,No,,,730,Unknown
+-93.104,44.943,Pedestrian,2021/11/04 23:26:00+00,W MARSHALL AVE,44.949,-93.144,30,Municipal State Aid Street,5,M,ST. PAUL,55103,,,,,Suspected Serious Injury,Yes,,,731,Unknown
+-93.134,44.956,Pedestrian,2021/11/02 18:50:00+00,W CONCORDIA AVE,44.951,-93.147,25,Municipal State Aid Street,26,M,DAYTON AVENUE,55104,,,,,Suspected Minor Injury,No,,,732,Unknown
+-93.126,44.987,Bike,2021/11/01 02:35:00+00,W MARSHALL AVE,44.948,-93.184,20,County State Aid Highway,,,,,31,M,MINNEAPOLIS,554066600,,,Suspected Minor Injury,Yes,733,Unknown
+-93.088,44.937,Pedestrian,2021/10/30 17:02:00+00,N ENGLISH ST,44.992,-93.046,30,Municipal State Aid Street,34,M,ST PAUL,55106,,,,,Possible Injury,No,,,734,Unknown
+-93.025,44.989,Pedestrian,2021/10/29 23:04:00+00,N CYPRESS ST,44.977,-93.058,30,Local or City Street,28,M,SAINT PAUL,55130,,,,,Possible Injury,No,,,735,Unknown
+-93.025,44.977,Pedestrian,2021/10/29 18:42:00+00,N WHITE BEAR AVE,44.987,-93.025,30,County State Aid Highway,77,M,,,,,,,Possible Injury,No,,,736,Unknown
+-93.084,44.975,Pedestrian,2021/10/27 23:24:00+00,S SMITH AVE,44.929,-93.102,20,State Trunk Highway,48,M,WEST SAINT PAUL,551072669,,,,,,No,,,737,Unknown
+-93.119,44.977,Pedestrian,2021/10/26 20:31:00+00,E JESSAMINE AVE,44.975,-93.071,20,Local or City Street,14,M,SAINT PAUL,55106,,,,,Suspected Minor Injury,No,,,738,Unknown
+-93.149,44.913,Pedestrian,2021/10/26 23:54:00+00,N RUTH ST,44.956,-93.015,30,Municipal State Aid Street,11,M,ST PAUL,55119,,,,,Possible Injury,Yes,,,739,Unknown
+-93.107,44.986,Pedestrian,2021/10/24 18:36:00+00,W HARTFORD AVE,44.923,-93.157,25,Local or City Street,18,M,SAINT PAUL,551161634,,,,,Possible Injury,No,,,740,Unknown
+-93.146,44.952,Bike,2021/10/21 17:45:00+00,W SUMMIT AVE,44.942,-93.162,20,Municipal State Aid Street,,,,,51,F,SAINT PAUL,551053344,,,Suspected Minor Injury,No,741,Unknown
+-93.076,44.98,Bike,2021/10/21 16:05:00+00,N ARCADE ST,44.977,-93.066,,U.S. Trunk Highway,,,,,,,ST PAUL,55106,,,Suspected Minor Injury,Yes,742,Unknown
+-93.094,44.947,Bike,2021/10/20 22:45:00+00,W UNIVERSITY AVE,44.956,-93.149,30,County State Aid Highway,,,,,27,F,ST. PAUL,55104,,,Possible Injury,No,743,Unknown
+-93.061,44.977,Pedestrian,2021/10/20 18:37:00+00,N FRANK ST,44.964,-93.053,25,Local or City Street,13,M,ST. PAUL,55106,,,,,Suspected Minor Injury,Yes,,,744,Unknown
+-93.066,44.97,Bike,2021/10/20 13:58:00+00,W UNIVERSITY AVE,44.956,-93.152,10,County State Aid Highway,,,,,57,,SAINT PAUL,551042620,,,,No,745,Unknown
+-93.146,44.956,Pedestrian,2021/10/19 21:58:00+00,N WHITE BEAR AVE,44.988,-93.025,30,County State Aid Highway,52,M,SAINT PAUL,551021002,,,,,Possible Injury,No,,,746,Unknown
+-93.114,44.963,Pedestrian,2021/10/19 11:20:00+00,N FARRINGTON ST,44.983,-93.114,20,All other roads,8,M,SAINT PAUL,55117,,,,,,No,,,747,Unknown
+-93.106,44.977,Pedestrian,2021/10/18 23:17:00+00,72,44.967,-93.044,5,All other roads,81,M,SAINT PAUL,551067024,,,,,Possible Injury,Yes,,,748,Unknown
+-93.008,44.951,Bike,2021/10/18 16:20:00+00,W SAINT CLAIR AVE,44.934,-93.192,,Municipal State Aid Street,,,,,,F,ST PAUL,55105,,,Suspected Minor Injury,Yes,749,Unknown
+-93.124,44.956,Bike,2021/10/18 15:30:00+00,W UNIVERSITY AVE,44.956,-93.136,,County State Aid Highway,,,,,48,M,SAINT PAUL,551031634,,,Suspected Serious Injury,Yes,750,Unknown
+-93.027,44.977,Pedestrian,2021/10/09 11:30:00+00,-- NOT ON ROADWAY --,44.943,-93.104,,All other roads,41,M,MINNEAPOLIS,554113653,,,,,Suspected Minor Injury,No,,,751,Unknown
+-93.157,44.931,Bike,2021/10/11 12:49:00+00,N ALDINE ST,44.96,-93.172,25,All other roads,,,,,28,M,DELLWOOD,551106178,,,Suspected Minor Injury,No,752,Unknown
+-93.064,44.963,Bike,2021/10/10 22:56:00+00,W SUMMIT AVE,44.941,-93.121,30,All other roads,,,,,33,F,SAINT PAUL,551023063,,,Suspected Minor Injury,Yes,753,Unknown
+-93.087,44.948,Pedestrian,2021/10/06 18:08:00+00,E LYNNHURST AVE,44.957,-93.18,30,Local or City Street,19,F,SAINT PAUL,55104,,,,,Suspected Minor Injury,No,,,754,Unknown
+-93.109,44.977,Pedestrian,2021/10/08 12:30:00+00,E 7TH ST,44.967,-93.048,25,Municipal State Aid Street,37,F,SAINT PAUL,551065583,,,,,,No,,,755,Unknown
+-93.106,44.985,Pedestrian,2021/10/05 18:05:00+00,W FORD PKWY,44.918,-93.187,25,County State Aid Highway,27,F,SAINT PAUL PARK,550711115,,,,,Possible Injury,No,,,756,Unknown
+-93.045,44.975,Bike,2021/10/04 20:05:00+00,S MACALESTER AVE,44.92,-93.17,25,Local or City Street,,,,,12,M,ST PAUL,55105,,,Suspected Minor Injury,No,757,Unknown
+-93.125,44.978,Pedestrian,2021/10/02 22:44:00+00,W UNIVERSITY AVE,44.956,-93.116,30,County State Aid Highway,13,F,SAINT PAUL,55117,,,,,Possible Injury,Yes,,,758,Unknown
+-93.093,44.945,Pedestrian,2022/12/26 16:05:00+00,W KELLOGG BLVD,44.944,-93.1027,30,Municipal State Aid Street,34,M,,,,,,,,No,,,759,Southbound
+-93.121,44.952,Pedestrian,2022/12/20 17:52:00+00,N LEXINGTON AVE,44.953,-93.1463,,County State Aid Highway,12,F,BLOOMINGTON,55425,,,,,Possible Injury,Yes,,,760,Eastbound
+-93.167,44.948,Pedestrian,2022/12/17 09:40:00+00,N RICE ST,44.977,-93.1059,30,County State Aid Highway,36,M,SAINT PAUL,55117,,,,,Possible Injury,Yes,,,761,Westbound
+-93.06,44.977,Pedestrian,2022/12/16 17:55:00+00,N ROBERT ST,44.951,-93.0947,30,All other roads,70,F,MINNEAPOLIS,554083727,,,,,Suspected Serious Injury,Yes,,,762,Southbound
+-93.157,44.956,Pedestrian,2022/12/14 16:56:00+00,S VICTORIA ST,44.94,-93.1364,25,Municipal State Aid Street,38,F,SAINT PAUL,551013396,,,,,Possible Injury,No,,,763,Southbound
+-93.096,44.991,Bike,2022/08/26 11:30:00+00,N WESTERN AVE,44.952,-93.1162,,Municipal State Aid Street,,,,,51,M,SAINT PAUL,551041051,,,,No,764,Northbound
+-93.176,44.956,Pedestrian,2022/12/07 06:28:00+00,W UNIVERSITY AVE,44.956,-93.1467,30,County State Aid Highway,20,M,SAINT PAUL,55104,,,,,,No,,,765,Southbound
+-93.023,44.974,Pedestrian,2022/11/27 18:51:00+00,W MARYLAND AVE,44.977,-93.1057,20,County State Aid Highway,55,M,ROSEVILLE,551136666,,,,,Possible Injury,Yes,,,766,Unknown
+-93.192,44.941,Pedestrian,2022/11/13 19:31:00+00,W LINCOLN AVE,44.939,-93.1365,25,Local or City Street,55,F,SAINT PAUL,551053205,,,,,,No,,,767,Eastbound
+-93.118,44.941,Pedestrian,2022/11/10 17:25:00+00,S ROBERT ST,44.926,-93.0808,35,State Trunk Highway,12,M,SAINT PAUL,55107,,,,,Possible Injury,Yes,,,768,Northbound
+-93.109,44.941,Bike,2022/11/10 11:02:00+00,S MISSISSIPPI RIVER BLVD,44.917,-93.1989,25,Local or City Street,,,,,35,,ST PAUL,55105,,,Suspected Minor Injury,No,769,Southbound
+-93.05,44.963,Pedestrian,2022/11/09 21:17:00+00,W SUMMIT AVE,44.941,-93.1466,25,Municipal State Aid Street,49,M,SAINT PAUL,551053519,,,,,Suspected Minor Injury,Yes,,,770,Southbound
+-93.126,44.977,Pedestrian,2022/11/09 18:11:00+00,S WABASHA ST,44.949,-93.0977,20,Municipal State Aid Street,24,F,ST. PAUL,55101,,,,,Possible Injury,Yes,,,771,Eastbound
+-93.079,44.928,Pedestrian,2022/11/09 17:26:00+00,N RICE ST,44.99,-93.1059,30,County State Aid Highway,52,M,SAINT PAUL,551173748,,,,,Suspected Serious Injury,Yes,,,772,Northbound
+-93.165,44.956,Pedestrian,2022/11/09 08:20:00+00,N WHITE BEAR AVE,44.953,-93.0253,25,County State Aid Highway,18,F,SAINT PAUL,551065720,,,,,,No,,,773,Northbound
+-93.095,44.951,Pedestrian,2022/11/08 18:05:00+00,-- NOT ON ROADWAY --,44.938,-93.0122,,All other roads,45,F,SAINT PAUL,551194954,,,,,Possible Injury,Yes,,,774,Unknown
+-93.136,44.94,Pedestrian,2022/11/07 17:34:00+00,W 7TH ST,44.915,-93.1457,30,State Trunk Highway,58,F,FRIDLEY,554325230,,,,,Suspected Serious Injury,Yes,,,775,Eastbound
+-93.116,44.952,Pedestrian,2022/11/07 15:38:00+00,N RICE ST,44.956,-93.106,30,County State Aid Highway,14,M,SAINT PAUL,55104,,,,,Suspected Minor Injury,Yes,,,776,Westbound
+-93.147,44.956,Pedestrian,2022/11/02 11:50:00+00,N RICE ST,44.976,-93.1059,30,County State Aid Highway,23,M,PULLMAN,99163,,,,,Suspected Serious Injury,Yes,,,777,Southbound
+-93.106,44.977,Pedestrian,2022/11/01 06:30:00+00,N DALE ST,44.953,-93.1264,20,County State Aid Highway,17,F,MINNEAPOLIS,554062127,,,,,Suspected Minor Injury,No,,,778,Southbound
+-93.136,44.939,Pedestrian,2022/10/30 18:25:00+00,KLAINERT ST,44.987,-93.0919,20,Local or City Street,3,,ST PAUL,55117,,,,,Possible Injury,No,,,779,Eastbound
+-93.081,44.926,Pedestrian,2022/10/28 08:06:00+00,HERBERT ST,44.978,-93.0316,30,Local or City Street,13,F,SAINT PAUL,55130,,,,,Possible Injury,Yes,,,780,Northbound
+-93.199,44.917,Pedestrian,2022/10/27 20:45:00+00,JOHN ST,44.953,-93.0845,15,Local or City Street,30,M,MINNEAPOLIS,554111878,,,,,Possible Injury,No,,,781,Northbound
+-93.147,44.941,Bike,2022/10/26 16:45:00+00,N PAYNE AVE,44.956,-93.0783,30,County State Aid Highway,,,,,18,M,839 BRENNER AVENUE,55113,,,Possible Injury,Yes,782,Southbound
+-93.098,44.949,Pedestrian,2022/10/25 06:45:00+00,W JESSAMINE AVE,44.975,-93.1059,30,Local or City Street,63,M,SAINT PAUL,551066413,,,,,,No,,,783,Unknown
+-93.106,44.99,Pedestrian,2022/10/24 20:00:00+00,W CONCORDIA AVE,44.951,-93.1569,,Local or City Street,29,M,SAINT PAUL,551303860,,,,,Possible Injury,Yes,,,784,Northbound
+-93.025,44.953,Pedestrian,2022/10/24 19:34:00+00,,44.96,-93.106,,All other roads,43,F,SAINT PAUL,551041180,,,,,Suspected Minor Injury,Yes,,,785,Unknown
+-93.012,44.938,Bike,2022/10/22 19:40:00+00,EARL ST,44.967,-93.056,30,Local or City Street,,,,,11,M,SAINT PAUL,55106,,,Suspected Minor Injury,Yes,786,Eastbound
+-93.146,44.915,Pedestrian,2022/10/20 18:52:00+00,N SNELLING AVE,44.956,-93.1669,30,State Trunk Highway,66,M,SAINT PAUL,551195034,,,,,Suspected Minor Injury,Yes,,,787,Northbound
+-93.106,44.956,Bike,2022/10/20 12:50:00+00,W UNIVERSITY AVE,44.961,-93.1894,30,County State Aid Highway,,,,,33,M,SAINT PAUL,551041822,,,,No,788,Unknown
+-93.106,44.976,Bike,2022/10/19 16:10:00+00,E STILLWATER AVE,44.968,-93.0202,25,Municipal State Aid Street,,,,,22,M,,,,,,No,789,Westbound
+-93.126,44.953,Pedestrian,2022/10/19 10:30:00+00,N ARCADE ST,44.978,-93.066,30,U.S. Trunk Highway,25,M,ST. PAUL,55106,,,,,Possible Injury,Yes,,,790,Eastbound
+-93.092,44.987,Pedestrian,2022/10/18 18:30:00+00,N SNELLING AVE,44.958,-93.167,30,State Trunk Highway,27,M,,,,,,,Suspected Serious Injury,Yes,,,791,Northbound
+-93.032,44.978,Pedestrian,2022/10/15 10:45:00+00,-- NOT ON ROADWAY --,44.952,-93.0057,,All other roads,3,M,HASTINGS,55033,,,,,,No,,,792,Unknown
+-93.084,44.953,Bike,2022/10/14 16:17:00+00,W COMO AVE,44.963,-93.1135,5,County State Aid Highway,,,,,22,,SAINT PAUL,551061326,,,,No,793,Southbound
+-93.078,44.956,Pedestrian,2022/10/13 18:05:00+00,N SNELLING AVE,44.956,-93.1673,,State Trunk Highway,43,M,ST PAUL,55101,,,,,Possible Injury,Yes,,,794,Southbound
+-93.106,44.975,Bike,2022/10/12 08:30:00+00,W FRONT AVE,44.97,-93.1364,30,County State Aid Highway,,,,,16,M,ST PAUL,55104,,,Suspected Minor Injury,Yes,795,Eastbound
+-93.157,44.951,Bike,2022/10/11 15:07:00+00,N WESTERN AVE,44.962,-93.1162,,Municipal State Aid Street,,,,,12,M,ST PAUL,55103,,,Suspected Serious Injury,Yes,796,Southbound
+-93.106,44.96,Pedestrian,2022/10/10 11:07:00+00,W SUMMIT AVE,44.941,-93.1772,25,Municipal State Aid Street,61,F,SAINT PAUL,551046059,,,,,Possible Injury,No,,,797,Southbound
+-93.056,44.967,Pedestrian,2022/10/03 06:50:00+00,W UNIVERSITY AVE,44.956,-93.126,30,County State Aid Highway,29,F,MINNEAPOLIS,554141737,,,,,,No,,,798,Westbound
+-93.167,44.956,Pedestrian,2022/10/03 13:20:00+00,W GRAND AVE,44.94,-93.1313,30,Municipal State Aid Street,68,F,SAINT PAUL,551047120,,,,,Possible Injury,Yes,,,799,Southbound
+-93.189,44.961,Pedestrian,2022/09/28 15:29:00+00,S WABASHA ST,44.948,-93.0967,30,Municipal State Aid Street,61,M,STILLWATER,550829351,,,,,Killed,No,,,800,Southbound
+-93.02,44.968,Bike,2022/09/27 18:00:00+00,W SUMMIT AVE,44.941,-93.1671,30,Municipal State Aid Street,,,,,59,F,ST. PAUL,55105,,,Possible Injury,Yes,801,Westbound
+-93.066,44.978,Bike,2022/09/20 15:15:00+00,W SAINT ANTHONY AVE,44.952,-93.1517,,Municipal State Aid Street,,,,,,,,,,,,No,802,Unknown
+-93.167,44.958,Bike,2022/09/22 06:50:00+00,W COMO AVE,44.974,-93.1331,30,Municipal State Aid Street,,,,,19,M,SAINT PAUL,551081416,,,Suspected Minor Injury,No,803,Westbound
+-93.006,44.952,Bike,2022/09/20 17:52:00+00,E KELLOGG BLVD,44.948,-93.0856,25,All other roads,,,,,22,M,SAINT PAUL,551067254,,,Suspected Minor Injury,Yes,804,Westbound
+-93.113,44.963,Bike,2022/09/20 16:55:00+00,W MINNEHAHA AVE,44.963,-93.1619,30,Municipal State Aid Street,,,,,52,M,SAINT PAUL,551032023,,,Suspected Minor Injury,No,805,Unknown
+-93.167,44.956,Pedestrian,2022/09/19 17:46:00+00,N HAMLINE AVE,44.954,-93.157,30,Municipal State Aid Street,,99,,,,,,,,No,,,806,Southbound
+-93.136,44.97,Pedestrian,2022/09/16 22:08:00+00,W LARPENTEUR AVE,44.992,-93.1076,30,County State Aid Highway,24,M,SAINT PAUL,551031941,,,,,Suspected Minor Injury,Yes,,,807,Eastbound
+-93.116,44.962,Pedestrian,2022/09/15 19:30:00+00,N ROBERT ST,44.95,-93.0931,30,State Trunk Highway,63,M,SAINT PAUL,551022726,,,,,,No,,,808,Unknown
+-93.177,44.941,Pedestrian,2022/09/13 06:43:00+00,W 7TH ST,44.9,-93.1734,25,State Trunk Highway,33,F,SAINT PAUL,55116,,,,,Suspected Minor Injury,No,,,809,Westbound
+-93.126,44.956,Pedestrian,2022/09/13 15:00:00+00,W SAINT ANTHONY AVE,44.952,-93.1467,25,Municipal State Aid Street,57,F,SAINT PAUL,551044116,,,,,Possible Injury,Yes,,,810,Eastbound
+-93.131,44.94,Pedestrian,2022/09/08 20:30:00+00,E MCLEAN ST,44.95,-93.0595,30,Local or City Street,70,M,ST. PAUL,55106,,,,,Suspected Minor Injury,Yes,,,811,Unknown
+-93.097,44.948,Bike,2022/09/08 06:15:00+00,N KENT ST,44.981,-93.1238,20,Local or City Street,,,,,49,M,SAINT PAUL,55117,,,Suspected Minor Injury,Yes,812,Unknown
+-93.167,44.941,Bike,2022/09/07 19:20:00+00,N FLANDRAU ST,44.959,-93.0279,20,Local or City Street,,,,,30,M,SAINT PAUL,551065433,,,,No,813,Southbound
+-93.152,44.952,Bike,2022/09/07 17:55:00+00,N HAMLINE AVE,44.944,-93.1569,25,Municipal State Aid Street,,,,,62,,SAINT PAUL,551046404,,,Suspected Minor Injury,No,814,Westbound
+-93.133,44.974,Bike,2022/08/29 17:07:00+00,ENERGY PARK DR,44.978,-93.2041,20,Municipal State Aid Street,,,,,27,F,ST. PAUL,55104,,,Suspected Minor Injury,No,815,Southbound
+-93.086,44.948,Pedestrian,2022/09/06 20:30:00+00,N PAYNE AVE,44.974,-93.0735,30,Municipal State Aid Street,74,M,SAINT PAUL,551303836,,,,,Suspected Serious Injury,Yes,,,816,Southbound
+-93.162,44.963,Bike,2022/09/06 15:40:00+00,N ARKWRIGHT ST,44.966,-93.0841,30,Local or City Street,,,,,59,M,SAINT PAUL,551174839,,,,No,817,Unknown
+-93.157,44.954,Pedestrian,2022/09/06 15:27:00+00,N ARCADE ST,44.977,-93.066,30,U.S. Trunk Highway,22,M,UNKNOWN,55106,,,,,Suspected Minor Injury,No,,,818,Northbound
+-93.108,44.992,Pedestrian,2022/09/06 15:31:00+00,W GRAND AVE,44.94,-93.1663,25,Municipal State Aid Street,29,M,MINNEAPOLIS,554183852,,,,,Possible Injury,Yes,,,819,Unknown
+-93.093,44.95,Pedestrian,2022/09/04 19:52:00+00,E 7TH ST,44.955,-93.0796,20,State Trunk Highway,23,M,SAINT PAUL,551044738,,,,,Suspected Minor Injury,No,,,820,Westbound
+-93.173,44.9,Pedestrian,2022/09/01 17:15:00+00,N WHITE BEAR AVE,44.956,-93.0253,30,County State Aid Highway,17,M,ST. PAUL,55106,,,,,,No,,,821,Southbound
+-93.147,44.952,Bike,2022/08/29 08:28:00+00,W PINEHURST AVE,44.919,-93.1873,25,Local or City Street,,,,,24,,SAINT PAUL,551051318,,,Possible Injury,No,822,Westbound
+-93.059,44.95,Pedestrian,2022/08/27 23:55:00+00,E 12TH ST,44.954,-93.0942,25,Local or City Street,67,M,HAM LAKE,553047334,,,,,Suspected Minor Injury,No,,,823,Westbound
+-93.124,44.981,Pedestrian,2022/08/26 16:31:00+00,W SELBY AVE,44.947,-93.1161,25,Municipal State Aid Street,29,F,SAINT PAUL,551024668,,,,,Suspected Minor Injury,No,,,824,Eastbound
+-93.028,44.959,Bike,2022/08/26 11:27:00+00,W WATER ST,44.92,-93.1214,25,Local or City Street,,,,,36,M,COON RAPIDS,554482523,,,Suspected Minor Injury,No,825,Westbound
+-93.157,44.944,Pedestrian,2022/08/25 09:42:00+00,N ARCADE ST,44.977,-93.0659,10,U.S. Trunk Highway,34,F,MAPLEWOOD,55119,,,,,Possible Injury,Yes,,,826,Eastbound
+-93.204,44.978,Pedestrian,2022/08/24 13:05:00+00,W CONCORDIA AVE,44.951,-93.1313,20,Municipal State Aid Street,,M,,,,,,,Suspected Serious Injury,Yes,,,827,Westbound
+-93.073,44.974,Bike,2022/08/21 13:45:00+00,HIDDEN FALLS DR,44.908,-93.1918,15,Local or City Street,,,,,41,M,MINNEAPOLIS,554064512,,,Possible Injury,Yes,828,Northbound
+-93.084,44.966,Pedestrian,2022/08/23 15:00:00+00,839,44.947,-93.1281,10,All other roads,44,M,SAINT PAUL,551046632,,,,,Possible Injury,Yes,,,829,Unknown
+-93.066,44.977,Pedestrian,2022/08/23 16:27:00+00,W 7TH ST,44.943,-93.1041,30,State Trunk Highway,40,F,SAINT PAUL,551031371,,,,,Possible Injury,No,,,830,Westbound
+-93.166,44.94,Bike,2022/08/23 13:01:00+00,E LARPENTEUR AVE,44.992,-93.0453,30,County State Aid Highway,,,,,13,M,ST PAUL,55106,,,Suspected Serious Injury,Yes,831,Eastbound
+-93.08,44.955,Pedestrian,2022/08/22 19:00:00+00,S FINN ST,44.942,-93.1899,,Local or City Street,22,F,MINNEAPOLIS,554072637,,,,,Suspected Serious Injury,Yes,,,832,Westbound
+-93.025,44.956,Pedestrian,2022/08/21 18:59:00+00,W LARPENTEUR AVE,44.992,-93.1059,30,County State Aid Highway,57,M,SAINT PAUL,55117,,,,,Suspected Minor Injury,No,,,833,Unknown
+-93.187,44.919,Pedestrian,2022/08/20 22:23:00+00,E KELLOGG BLVD,44.95,-93.0812,30,Municipal State Aid Street,34,M,HAM LAKE,553045106,,,,,Suspected Minor Injury,Yes,,,834,Eastbound
+-93.094,44.954,Pedestrian,2022/08/17 15:17:00+00,ESTABROOK DR,44.98,-93.1528,15,Local or City Street,3,M,,,,,,,Suspected Minor Injury,Yes,,,835,Eastbound
+-93.116,44.947,Pedestrian,2022/08/13 10:30:00+00,E MARYLAND AVE,44.977,-93.0253,,County State Aid Highway,41,F,SAINT PAUL,551303440,,,,,Possible Injury,Yes,,,836,Northbound
+-93.121,44.92,Pedestrian,2022/08/17 21:45:00+00,N ARCADE ST,44.976,-93.066,30,U.S. Trunk Highway,20,F,SAINT PAUL,551193902,,,,,Suspected Minor Injury,Yes,,,837,Unknown
+-93.066,44.977,Pedestrian,2022/08/11 13:07:00+00,W 7TH ST,44.943,-93.1041,30,State Trunk Highway,49,F,WACONIA,553874557,,,,,Possible Injury,Yes,,,838,Southbound
+-93.131,44.951,Bike,2022/08/11 10:45:00+00,N PROSPERITY AVE,44.977,-93.0405,30,County State Aid Highway,,,,,55,M,SAINT PAUL,551062731,,,Suspected Minor Injury,No,839,Northbound
+-93.192,44.908,Pedestrian,2022/08/10 09:29:00+00,W THOMAS AVE,44.959,-93.1265,,Municipal State Aid Street,36,F,SAINT PAUL,551031619,,,,,Suspected Minor Injury,No,,,840,Unknown
+-93.128,44.947,Pedestrian,2022/08/09 22:04:00+00,N BATES AVE,44.959,-93.0723,30,Local or City Street,,F,,,,,,,Possible Injury,No,,,841,Unknown
+-93.104,44.943,Pedestrian,2022/08/09 17:23:00+00,E 7TH ST,44.949,-93.0936,30,State Trunk Highway,28,M,INVER GROVE HEIGHTS,550764488,,,,,Suspected Minor Injury,No,,,842,Unknown
+-93.045,44.992,Pedestrian,2022/08/08 16:48:00+00,N CHESTNUT ST,44.944,-93.1053,,Local or City Street,30,F,BLOOMINGTON,554373333,,,,,Possible Injury,Yes,,,843,Unknown
+-93.19,44.942,Bike,2022/08/01 19:03:00+00,165,44.961,-93.0254,30,All other roads,,,,,77,M,SAINT PAUL,55106,,,Suspected Minor Injury,No,844,Southbound
+-93.106,44.992,Bike,2022/07/31 16:40:00+00,W UNIVERSITY AVE,44.956,-93.1594,,County State Aid Highway,,,,,10,M,MINNEAPOLIS,55405,,,Suspected Minor Injury,Yes,845,Eastbound
+-93.081,44.95,Pedestrian,2022/07/28 19:30:00+00,W UNIVERSITY AVE,44.956,-93.1469,,County State Aid Highway,,,,,,,,,Suspected Minor Injury,No,,,846,Unknown
+-93.153,44.98,Pedestrian,2022/07/28 19:30:00+00,W UNIVERSITY AVE,44.956,-93.1469,,County State Aid Highway,,,,,,,,,Suspected Minor Injury,No,,,847,Eastbound
+-93.025,44.977,Bike,2022/07/26 16:30:00+00,W UNIVERSITY AVE,44.956,-93.1263,30,County State Aid Highway,,,,,35,M,MINNEAPOLIS,554041601,,,Suspected Minor Injury,No,848,Southbound
+-93.066,44.976,Pedestrian,2022/07/24 01:20:00+00,RAMP450,44.951,-93.0154,30,All other roads,30,M,SAINT PAUL,551065337,,,,,Suspected Minor Injury,Yes,,,849,Eastbound
+-93.104,44.943,Bike,2022/07/22 07:50:00+00,RAMP479,44.969,-93.1638,30,All other roads,,,,,30,M,MINNEAPOLIS,554061717,,,,No,850,Eastbound
+-93.04,44.977,Pedestrian,2022/07/21 04:45:00+00,-- NOT ON ROADWAY --,44.946,-93.1653,,All other roads,47,M,MINNEAPOLIS,554033466,,,,,Possible Injury,Yes,,,851,Unknown
+-93.127,44.959,Pedestrian,2022/07/21 04:45:00+00,-- NOT ON ROADWAY --,44.946,-93.1653,,All other roads,37,F,SAINT PAUL,551021895,,,,,Suspected Minor Injury,Yes,,,852,Unknown
+-93.166,44.951,Bike,2022/07/15 18:45:00+00,N RICE ST,44.979,-93.106,30,County State Aid Highway,,,,,60,M,SAINT PAUL,551061001,,,Suspected Minor Injury,No,853,Eastbound
+-93.156,44.954,Bike,2022/07/11 13:23:00+00,W MARYLAND AVE,44.977,-93.1162,30,County State Aid Highway,,,,,34,M,SAINT PAUL,55117,,,,No,854,Unknown
+-93.177,44.944,Bike,2022/07/11 13:23:00+00,W MARYLAND AVE,44.977,-93.1162,30,County State Aid Highway,,,,,13,M,SAINT PAUL,55117,,,,No,855,Unknown
+-93.053,44.968,Pedestrian,2022/07/11 17:58:00+00,N RICE ST,44.978,-93.1059,30,County State Aid Highway,72,M,,,,,,,Suspected Serious Injury,Yes,,,856,Northbound
+-93.147,44.977,Pedestrian,2022/07/09 23:30:00+00,N JACKSON ST,44.98,-93.0964,25,County State Aid Highway,51,F,ST PAUL,55104,,,,,Suspected Minor Injury,Yes,,,857,Unknown
+,,Bike,2022/07/09 11:59:00+00,N SIBLEY ST,44.948,-93.0879,25,Municipal State Aid Street,,,,,52,M,ST. PAUL,55101,,,Possible Injury,Yes,858,Westbound
+-93.125,44.973,Bike,2022/07/06 07:30:00+00,S EVA ST,44.939,-93.0806,,Municipal State Aid Street,,,,,69,M,MINNEAPOLIS,554064472,,,Suspected Minor Injury,No,859,Southbound
+-93.086,44.946,Bike,2022/07/08 07:50:00+00,E CASE AVE,44.97,-93.0254,30,Local or City Street,,,,,60,M,MAPLEWOOD,551197177,,,Suspected Serious Injury,Yes,860,Unknown
+-93.01,44.935,Pedestrian,2022/07/07 11:23:00+00,S ROBERT ST,44.941,-93.0851,30,State Trunk Highway,54,F,LAKEVILLE,550445640,,,,,Suspected Minor Injury,Yes,,,861,Northbound
+-93.057,44.961,Pedestrian,2022/07/05 19:32:00+00,E MARYLAND AVE,44.978,-93.0431,30,County State Aid Highway,40,M,SAINT PAUL,551063452,,,,,Suspected Minor Injury,Yes,,,862,Eastbound
+-93.019,44.95,Pedestrian,2022/07/04 23:18:00+00,SHEPARD RD,44.945,-93.0866,40,County State Aid Highway,28,M,SAINT PAUL,551045415,,,,,Suspected Serious Injury,Yes,,,863,Eastbound
+-93.036,44.963,Bike,2022/07/02 20:06:00+00,PHALEN DR,44.982,-93.0558,20,Local or City Street,,,,,21,F,SAINT PAUL,551062665,,,Suspected Minor Injury,No,864,Unknown
+-93.01,44.951,Bike,2022/07/02 20:04:00+00,W 7TH ST,44.943,-93.1044,5,State Trunk Highway,,,,,54,M,SAINT PAUL,551072348,,,Suspected Minor Injury,No,865,Unknown
+-93.131,44.956,Pedestrian,2022/07/01 20:55:00+00,W MARYLAND AVE,44.977,-93.1094,30,County State Aid Highway,8,M,SAINT PAUL,55106,,,,,Suspected Minor Injury,Yes,,,866,Unknown
+-93.18,44.954,Pedestrian,2022/06/29 15:00:00+00,N RICE ST,44.956,-93.106,30,County State Aid Highway,16,F,,,,,,,Suspected Minor Injury,Yes,,,867,Southbound
+-93.045,44.975,Bike,2022/06/26 22:25:00+00,N ATLANTIC ST,44.965,-93.0483,25,Local or City Street,,,,,48,M,MAHTOMEDI,55115,,,Possible Injury,Yes,868,Southbound
+-93.133,44.953,Pedestrian,2022/06/24 23:37:00+00,E MARYLAND AVE,44.978,-93.066,30,County State Aid Highway,39,M,ROSEVILLE,551136731,,,,,Suspected Minor Injury,Yes,,,869,Eastbound
+-93.126,44.956,Pedestrian,2022/06/24 19:49:00+00,MOUNDS BLVD,44.956,-93.0744,,U.S. Trunk Highway,18,M,SAINT PAUL,551064024,,,,,Suspected Minor Injury,No,,,870,Unknown
+-93.187,44.931,Pedestrian,2022/06/23 20:32:00+00,E WHEELOCK PKWY,44.991,-93.085,25,Local or City Street,18,M,SAINT PAUL,551193925,,,,,Suspected Minor Injury,Yes,,,871,Unknown
+-93.116,44.956,Pedestrian,2022/06/23 08:33:00+00,S WABASHA ST,44.948,-93.097,30,Municipal State Aid Street,61,F,SAINT PAUL,551023075,,,,,,No,,,872,Eastbound
+-93.102,44.921,Bike,2022/06/21 17:40:00+00,N WALL ST,44.949,-93.0852,5,Municipal State Aid Street,,,,,18,M,ST PAUL,55106,,,,No,873,Unknown
+-93.081,44.967,Pedestrian,2022/06/21 08:52:00+00,MINNESOTA ST,44.948,-93.0928,25,Local or City Street,69,M,SAINT PAUL,551174538,,,,,Suspected Minor Injury,No,,,874,Northbound
+-93.055,44.982,Pedestrian,2022/06/20 23:11:00+00,W HIGHLAND PKWY,44.92,-93.167,,Municipal State Aid Street,45,M,SAINT PAUL,551021025,,,,,Suspected Serious Injury,Yes,,,875,Southbound
+-93.091,44.967,Bike,2022/06/18 18:30:00+00,N CLARENCE ST,44.992,-93.0431,30,Local or City Street,,,,,26,M,SAINT PAUL,551062946,,,Suspected Serious Injury,No,876,Unknown
+-93.066,44.978,Bike,2022/06/17 20:25:00+00,W FORD PKWY,44.918,-93.1899,10,County State Aid Highway,,,,,15,M,MINNEAPOLIS,55406,,,Suspected Minor Injury,No,877,Northbound
+-93.19,44.962,Bike,2022/06/17 18:22:00+00,N FARINGTON ST,44.963,-93.1135,,Local or City Street,,,,,33,M,MINNEAPOLIS,554183022,,,Suspected Serious Injury,Yes,878,Westbound
+-93.119,44.977,Bike,2022/06/17 14:27:00+00,W RANDOLPH AVE,44.927,-93.1389,25,County State Aid Highway,,,,,64,,SAINT PAUL,551024016,,,Possible Injury,No,879,Eastbound
+-93.127,44.955,Pedestrian,2022/06/15 22:12:00+00,WARNER RD,44.948,-93.0694,60,All other roads,44,M,SAINT PAUL,551072624,,,,,Killed,No,,,880,Westbound
+-93.025,44.981,Pedestrian,2022/06/11 12:02:00+00,W THOMAS AVE,44.959,-93.1162,25,Municipal State Aid Street,6,M,STPAUL,55103,,,,,Suspected Minor Injury,Yes,,,881,Southbound
+-93.025,44.981,Bike,2022/06/10 22:10:00+00,E MINNEHAHA AVE,44.963,-93.0254,20,All other roads,,,,,36,M,SAINT PAUL,551064209,,,Possible Injury,No,882,Unknown
+-93.077,44.992,Bike,2022/06/10 16:25:00+00,N EUSTIS ST,44.965,-93.2027,30,Local or City Street,,,,,47,F,MINNEAPOLIS,554171619,,,Suspected Minor Injury,No,883,Eastbound
+-93.04,44.978,Pedestrian,2022/06/10 10:38:00+00,W UNIVERSITY AVE,44.956,-93.1671,30,County State Aid Highway,100,M,,,,,,,Suspected Minor Injury,No,,,884,Southbound
+-93.102,44.948,Bike,2022/06/09 08:15:00+00,E HYACINTH AVE,44.98,-93.0662,25,Local or City Street,,,,,15,M,ST. PAUL,55101,,,Possible Injury,No,885,Eastbound
+-93.166,44.904,Pedestrian,2022/06/08 20:10:00+00,-- NOT ON ROADWAY --,44.984,-93.0657,,All other roads,65,F,SAINT PAUL,551063330,,,,,,No,,,886,Unknown
+-93.167,44.958,Pedestrian,2022/06/03 13:00:00+00,N RICE ST,44.965,-93.1059,10,County State Aid Highway,83,M,MAHTOMEDI,551156833,,,,,Suspected Minor Injury,No,,,887,Unknown
+-93.154,44.909,Bike,2022/06/02 17:40:00+00,W ARLINGTON AVE,44.985,-93.1058,25,All other roads,,,,,14,M,SAINT PAUL,55107,,,Possible Injury,Yes,888,Southbound
+-93.147,44.947,Bike,2022/05/31 19:34:00+00,JOHNSON PKWY,44.975,-93.0451,25,All other roads,,,,,18,M,ST PAUL,55106,,,Suspected Minor Injury,Yes,889,Unknown
+-93.104,44.965,Pedestrian,2022/05/28 02:21:00+00,W MARSHALL AVE,44.948,-93.2003,,County State Aid Highway,46,M,MINNEAPOLIS,554121959,,,,,Killed,Yes,,,890,Westbound
+-93.025,44.963,Pedestrian,2022/05/27 16:55:00+00,E SUBURBAN AVE,44.95,-93.0247,30,All other roads,31,M,SAINT PAUL,551065710,,,,,Suspected Minor Injury,Yes,,,891,Westbound
+-93.167,44.92,Bike,2022/05/25 17:50:00+00,RAMP957,44.977,-93.0873,,All other roads,,,,,13,M,ST PAUL,55102,,,Possible Injury,No,892,Westbound
+-93.167,44.953,Bike,2022/05/24 08:20:00+00,E MARYLAND AVE,44.977,-93.0889,,County State Aid Highway,,,,,14,M,ST PAUL,55130,,,,No,893,Unknown
+-93.177,44.934,Pedestrian,2022/05/23 17:00:00+00,W JEFFERSON AVE,44.931,-93.1671,30,Municipal State Aid Street,29,F,SAINT PAUL,551052050,,,,,Suspected Minor Injury,No,,,894,Unknown
+-93.081,44.936,Pedestrian,2022/05/20 00:32:00+00,E 7TH ST,44.955,-93.08,,All other roads,38,M,BLOOMINGTON,55420,,,,,Suspected Minor Injury,No,,,895,Unknown
+-93.084,44.985,Bike,2022/05/17 13:20:00+00,E KELLOGG BLVD,44.946,-93.0891,30,Municipal State Aid Street,,,,,39,F,SAINT PAUL,551011681,,,Suspected Minor Injury,Yes,896,Northbound
+-93.183,44.951,Bike,2022/05/15 04:40:00+00,N RICE ST,44.985,-93.1059,,County State Aid Highway,,,,,39,,SAINT PAUL,551174242,,,Possible Injury,No,897,Southbound
+-93.172,44.901,Pedestrian,2022/05/13 20:46:00+00,E WILSON AVE,44.954,-93.0471,,Municipal State Aid Street,26,F,SAINT PAUL,551303583,,,,,Suspected Serious Injury,Yes,,,898,Unknown
+-93.172,44.901,Pedestrian,2022/05/10 20:21:00+00,S ROBERT ST,44.929,-93.0807,30,Local or City Street,35,F,BURNSVILLE,553064679,,,,,Suspected Minor Injury,Yes,,,899,Unknown
+-93.148,44.955,Pedestrian,2022/05/10 20:21:00+00,S ROBERT ST,44.929,-93.0807,30,Local or City Street,8,F,BURNSVILLE,55306,,,,,Suspected Minor Injury,Yes,,,900,Unknown
+-93.146,44.953,Bike,2022/05/10 09:01:00+00,N FAIRVIEW AVE,44.942,-93.1772,25,Municipal State Aid Street,,,,,,,STPAUL,55104,,,Suspected Minor Injury,No,901,Southbound
+-93.066,44.98,Bike,2022/05/07 21:08:00+00,N WEIDE ST,44.972,-93.0676,20,Local or City Street,,,,,12,F,SAINT PAUL,55106,,,Possible Injury,Yes,902,Unknown
+-93.167,44.939,Pedestrian,2022/04/30 19:15:00+00,N MILTON ST,44.951,-93.1389,25,Local or City Street,52,M,SAINT PAUL,551175121,,,,,,No,,,903,Unknown
+-93.153,44.955,Pedestrian,2022/04/28 16:30:00+00,NORTONIA AVE,44.967,-93.0112,20,Local or City Street,13,M,MINNETONKA,55345,,,,,Possible Injury,Yes,,,904,Unknown
+-93.192,44.948,Pedestrian,2022/04/22 00:27:00+00,N DALE ST,44.958,-93.1264,25,County State Aid Highway,24,M,SAINT PAUL,551042729,,,,,Suspected Serious Injury,Yes,,,905,Unknown
+-93.156,44.909,Pedestrian,2022/04/20 19:37:00+00,E NEBRASKA AVE,44.987,-93.0226,20,Local or City Street,36,M,SAINT PAUL,551194222,,,,,Suspected Minor Injury,Yes,,,906,Unknown
+-93.025,44.988,Pedestrian,2022/04/20 19:37:00+00,E NEBRASKA AVE,44.987,-93.0226,20,Local or City Street,26,F,APPLE VALLEY,551248388,,,,,Suspected Minor Injury,Yes,,,907,Unknown
+-93.064,44.963,Pedestrian,2022/04/20 19:37:00+00,E NEBRASKA AVE,44.987,-93.0226,20,Local or City Street,52,M,SAINT PAUL,551194222,,,,,Possible Injury,No,,,908,Eastbound
+-93.025,44.963,Pedestrian,2022/04/19 07:38:00+00,N CLEVELAND AVE,44.951,-93.1874,,County State Aid Highway,27,F,MINNEAPOLIS,554083720,,,,,Possible Injury,No,,,909,Southbound
+-93.084,44.949,Pedestrian,2022/04/09 17:09:00+00,W UNIVERSITY AVE,44.956,-93.1352,35,All other roads,40,M,SAINT PAUL,551042696,,,,,Suspected Serious Injury,Yes,,,910,Westbound
+-93.106,44.956,Pedestrian,2022/04/07 20:59:00+00,E MARYLAND AVE,44.978,-93.066,35,County State Aid Highway,50,F,SAINT PAUL,551042311,,,,,Suspected Minor Injury,Yes,,,911,Eastbound
+-93.093,44.944,Bike,2022/04/05 00:25:00+00,N ARCADE ST,44.963,-93.066,30,U.S. Trunk Highway,,,,,25,F,ST. PAUL,55106,,,Suspected Minor Injury,No,912,Unknown
+-93.189,44.927,Pedestrian,2022/03/30 11:58:00+00,E 14TH ST,44.955,-93.0979,25,Local or City Street,19,F,ST. PAUL,55117,,,,,,No,,,913,Unknown
+-93.136,44.922,Pedestrian,2022/03/23 06:42:00+00,COMO AVE,44.977,-93.1665,35,County State Aid Highway,66,F,SAINT PAUL,551082644,,,,,Suspected Minor Injury,Yes,,,914,Eastbound
+-93.066,44.977,Pedestrian,2022/03/22 16:10:00+00,RAMPEDGECUMBE RD,44.904,-93.1773,30,All other roads,24,F,SAINT PAUL,551065109,,,,,Possible Injury,Yes,,,915,Unknown
+-93.126,44.941,Pedestrian,2022/03/22 16:10:00+00,RAMPEDGECUMBE RD,44.904,-93.1773,30,All other roads,25,99,COON RAPIDS,554333052,,,,,Possible Injury,No,,,916,Unknown
+-93.104,44.979,Pedestrian,2022/03/21 15:30:00+00,S LEXINGTON ST,44.913,-93.1492,25,County State Aid Highway,69,F,ST. PAUL,55101,,,,,Suspected Minor Injury,Yes,,,917,Westbound
+-93.025,44.952,Pedestrian,2022/03/18 14:30:00+00,W NEBRASKA ST,44.986,-93.1073,20,Local or City Street,14,F,ST. PAUL,55117,,,,,Possible Injury,Yes,,,918,Eastbound
+-93.129,44.949,Pedestrian,2022/03/17 22:24:00+00,E 6TH ST,44.947,-93.094,20,Municipal State Aid Street,59,M,SAINT PAUL,551064001,,,,,Suspected Serious Injury,Yes,,,919,Unknown
+-93.061,44.957,Pedestrian,2022/03/17 15:07:00+00,W UNIVERSITY AVE,44.956,-93.1465,30,County State Aid Highway,16,M,SAINT PAUL,55117,,,,,Suspected Serious Injury,Yes,,,920,Eastbound
+-93.025,44.963,Pedestrian,2022/03/17 09:08:00+00,OLD HUDSON RD,44.951,-93.0081,,Municipal State Aid Street,33,F,SAINT PAUL,551065503,,,,,,No,,,921,Unknown
+-93.063,44.958,Bike,2022/03/12 12:15:00+00,W KELLOGG BLVD,44.944,-93.0929,25,Municipal State Aid Street,,,,,34,M,SAINT PAUL,55107,,,Suspected Minor Injury,Yes,922,Unknown
+-93.025,44.984,Pedestrian,2022/03/10 14:12:00+00,N WESTERN AVE,44.955,-93.1162,20,Municipal State Aid Street,53,F,ST PAUL,55103,,,,,Suspected Minor Injury,Yes,,,923,Southbound
+-93.153,44.91,Pedestrian,2022/03/09 16:00:00+00,N PAYNE AVE,44.968,-93.0735,,Municipal State Aid Street,65,F,PAYNE,55106,,,,,Suspected Minor Injury,No,,,924,Westbound
+-93.16,44.907,Pedestrian,2022/03/08 18:22:00+00,W STEVENS ST,44.929,-93.1022,,Local or City Street,73,F,SAINT PAUL,551072615,,,,,Suspected Serious Injury,Yes,,,925,Unknown
+-93.193,44.962,Pedestrian,2022/03/09 01:10:00+00,W CENTRAL AVE,44.953,-93.147,30,Local or City Street,34,M,MINNEAPOLIS,554041601,,,,,Suspected Minor Injury,No,,,926,Unknown
+,,Pedestrian,2022/03/08 15:55:00+00,JACKSON ST,44.955,-93.0963,25,Municipal State Aid Street,17,M,SAINT PAUL,551173828,,,,,,No,,,927,Unknown
+-93.043,44.978,Pedestrian,2022/03/06 20:46:00+00,W GRAND AVE,44.94,-93.1577,25,All other roads,34,F,MINNEAPOLIS,554171363,,,,,Suspected Serious Injury,Yes,,,928,Westbound
+-93.195,44.974,Pedestrian,2022/03/01 19:50:00+00,W DAYTON AVE,44.947,-93.1263,25,Local or City Street,24,M,ST.PAUL,55104,,,,,Suspected Minor Injury,Yes,,,929,Southbound
+-93.162,44.95,Bike,2022/03/01 13:00:00+00,S WABASHA ST,44.948,-93.0969,25,Municipal State Aid Street,,,,,58,M,SAINT PAUL,55104,,,Suspected Minor Injury,Yes,930,Westbound
+-93.066,44.962,Pedestrian,2022/02/20 18:20:00+00,N CLEVELAND AVE,44.954,-93.1875,30,All other roads,76,M,SAINT PAUL,551045034,,,,,Killed,Yes,,,931,Southbound
+-93.061,44.978,Pedestrian,2022/02/12 17:56:00+00,W ENGLEWOOD AVE,44.964,-93.1672,,Local or City Street,20,99,SAINT PAUL,551041171,,,,,,No,,,932,Southbound
+-93.025,44.982,Pedestrian,2022/02/11 04:55:00+00,-- NOT ON ROADWAY --,44.955,-93.0213,,All other roads,44,F,MINNEAPOLIS,55407,,,,,,No,,,933,Unknown
+-93.1,44.947,Pedestrian,2022/01/28 20:37:00+00,N RICE ST,44.981,-93.1059,,County State Aid Highway,64,M,SAINT PAUL,551043719,,,,,Suspected Serious Injury,Yes,,,934,Unknown
+-93.039,44.992,Pedestrian,2022/01/27 11:25:00+00,W 7TH ST,44.913,-93.1491,30,State Trunk Highway,54,M,ST PAUL,55101,,,,,Suspected Serious Injury,Yes,,,935,Southbound
+-93.074,44.97,Pedestrian,2022/01/21 13:20:00+00,W 7TH ST,44.943,-93.1041,20,State Trunk Highway,67,M,MENDOTA HEIGHTS,551201918,,,,,Possible Injury,No,,,936,Unknown
+-93.167,44.956,Pedestrian,2022/01/19 16:00:00+00,E MARYLAND AVE,44.978,-93.0433,30,County State Aid Highway,11,M,SAINT PAUL,55106,,,,,Suspected Minor Injury,Yes,,,937,Unknown
+-93.167,44.956,Pedestrian,2022/01/12 11:00:00+00,W UNIVERSITY AVE,44.956,-93.1265,25,County State Aid Highway,19,F,SAINT PAUL,551031515,,,,,,No,,,938,Unknown
+-93.078,44.96,Pedestrian,2022/01/11 16:35:00+00,N RICE ST,44.976,-93.1059,30,County State Aid Highway,,M,UNKNOWN,55117,,,,,,No,,,939,Northbound
+-93.025,44.957,Pedestrian,2022/01/10 15:45:00+00,S DUNLAP ST,44.939,-93.1492,25,Local or City Street,59,M,ST. PAUL,55102,,,,,Possible Injury,No,,,940,Southbound
+-93.106,44.958,Pedestrian,2022/01/05 16:30:00+00,W UNIVERSITY AVE,44.956,-93.1262,30,County State Aid Highway,29,M,SAINT PAUL,551251842,,,,,Possible Injury,Yes,,,941,Unknown
+-93.088,44.95,Pedestrian,2022/01/02 14:42:00+00,934,44.94,-93.1704,30,All other roads,71,F,MENDOTA HEIGHTS,55120,,,,,Suspected Minor Injury,No,,,942,Westbound

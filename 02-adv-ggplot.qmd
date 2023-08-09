@@ -2,7 +2,7 @@
 title: "Topic 2: Advanced Data Visualization in ggplot2"
 ---
 
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE}
 library(tidyverse)
 ```
 
@@ -19,7 +19,9 @@ After this lesson, you should be able to:
 
 # Case study: recreating a NYT visualization
 
-We are going to recreate [this NYT visualization](https://www.nytimes.com/interactive/2016/02/19/us/2015-year-in-weather-temperature-precipitation.html) on record setting temperatures by expanding our `ggplot2` toolbox.
+We are going to recreate [this NYT visualization](https://www.nytimes.com/interactive/2016/02/19/us/2015-year-in-weather-temperature-precipitation.html) on record setting temperatures by expanding our `ggplot2` toolbox using data from SFO in 2011.
+
+![Screenshot of NYTimes visualization from 2015](images/sfo_nytimes.jpg)
 
 **Class exercise 1:** Examine the temperature visualization. What variables underlie the visualization, and how do they map to visual elements (e.g., position, size, shape, and color of the glyphs)?
 
@@ -33,7 +35,7 @@ Insert solution here.
 
 We can explore the "Geoms" section of the [ggplot2 reference page](https://ggplot2.tidyverse.org/reference/) to find a `geom` that corresponds to the visual elements in the temperature plot.
 
-**Class exercise 2:** Using both the small example visuals on the right and the names of the `geom`s, brainstorm some possibilities for `geoms` we might use to recreate the temperature visualization.
+**Class exercise 2:** Using both the small example visuals on the right and the names of the `geom`'s, brainstorm some possibilities for `geom`'s we might use to recreate the temperature visualization.
 
 ------------------------------------------------------------------------
 
@@ -43,7 +45,11 @@ We need to explore further by opening up the `geom` reference pages to understan
 - [`geom_linerange()`](https://ggplot2.tidyverse.org/reference/geom_linerange.html)
 - [`geom_rect()`](https://ggplot2.tidyverse.org/reference/geom_tile.html)
 
-When looking at a help page, it is useful to first look at the **Usage** and **Arguments** sections. The **Usage** section shows all of the possible inputs (arguments) to the geom--these are all of the ways that a `geom` can be customized. The **Arguments** section explains what each of these arguments does and the possible values they can take.
+When looking at a help page, it is useful to first look at the **Usage** and **Arguments** sections. 
+
+The **Usage** section shows all of the possible inputs (arguments) to the geom--these are all of the ways that a `geom` can be customized. 
+
+The **Arguments** section explains what each of these arguments does and the possible values they can take.
 
 ```{r eval=FALSE}
 data(diamonds)
@@ -57,6 +63,8 @@ ggplot() +
 ggplot() +
     geom_bar(aes(cut), diamonds)
 ```
+
+TODO: THE FOLLOWING INSTRUCTIONS ARE NOT CLEAR; I'M NOT SURE WHAT YOU WANT THEM TO DO. AND WHAT THE CLASS QMD DOCUMENT IS.
 
 Go through the full thought process for this part in the class QMD document, recording all intermediate plots and the decision making leading to the next iteration. Also discuss alt text in code chunk options.
 
@@ -72,8 +80,80 @@ ggplot(weather, aes(x = dateInYear)) +
 
 # Practice
 
-In pairs, you will go through the same steps as above for the precipitation data. Throughout this course, we will be using the **pair programming** technique. Pair programming is [used effectively in industry](https://hackernoon.com/the-ultimate-guide-to-pair-programming-b606625bc784) to speed up individual employee's learning of a company's codebase and reduce time wasted on fixing bugs.
+In pairs, you will go through the same steps as above for the precipitation data. 
 
-Include information on driver and navigator responsibilities--link to video to watch in class?
+Throughout this course, we will be using the **pair programming** technique. Using one computer, work together to solve the problem at hand with each individual taking turns in one of the two roles:
 
-Remember to run into a new error!
+- **Driver**: Think outloud and implement the agreed upon idea by writing code.
+- **Navigator**: Review ideas and code by asking good questions about the driver’s thought process and reasoning behind the code.
+
+TODO: Include information on driver and navigator responsibilities--link to video to watch in class?
+
+Pair programming is [used effectively in industry](https://hackernoon.com/the-ultimate-guide-to-pair-programming-b606625bc784) to speed up individual employee's learning of a company's codebase and reduce time wasted on fixing bugs.
+
+::: {.callout-tip collapse="false"}
+## Stop to Reflect
+
+As you pair program, be aware of your comforts and discomforts in the roles of driver and navigator. Pay attention to the comforts and discomforts of your partner. What could you do to support them in becoming more comfortable and confident in both roles?
+:::
+
+
+
+TODO: This is not clear: Remember to run into a new error!
+
+# Homework
+
+Using `ggplot2` and other functions in R, recreate the original NY Times graphic to the greatest extent possible for you (which may be different for each of you). You will need to use reference pages and documentation to discover necessary tools. For example, you may want to Google search "ggplot multiple plots". Look at dates and use newer references. There will many tools that you could use.
+
+At a minimum, attempt to create a graphic close to this:
+
+```{r echo=FALSE, message=FALSE}
+legenddata <- tibble(xmin = 190 - 1:3, xmax = 190 + 1:3, ymin = 0 - seq(5,10,length=3) , ymax = 0 + seq(5,10,length=3), type = c("Today",'Normal','Record')) 
+
+
+xlabs <- weather %>% group_by(Month) %>% filter(Day == 15) %>% pull(dateInYear)
+
+tempGraph <- weather %>%
+  ggplot() +
+  geom_rect(aes(xmin = dateInYear-0.5,xmax = dateInYear+0.5, ymin = RecordLow,ymax = RecordHigh), fill = '#ecebe3') + 
+  geom_rect(aes(xmin = dateInYear-0.5,xmax = dateInYear+0.5, ymin = NormalLow,ymax = NormalHigh), fill = "#c7b8b9") + 
+  geom_vline(data = weather %>%filter(Month != 12) %>% group_by(Month) %>% filter(Day == max(Day)) , mapping = aes(xintercept = dateInYear), color = '#cdcdcd',linetype = 'dotted',linewidth = 0.2) +
+  geom_rect(aes(xmin = dateInYear-0.5,xmax = dateInYear+0.5, ymin = Low,ymax = High),  fill = '#a90048') + 
+  geom_point(data = weather %>% filter(Record), mapping = aes(x = dateInYear,y = High + 1),shape=25, fill = 'black') + 
+  geom_text(data = weather %>% filter(Record), mapping = aes(x = dateInYear,y = High + 5,label=RecordText),size=1.5, nudge_y = 5) +
+  #geom_rect(data = legenddata%>% filter(type == 'Record'),mapping = aes(xmin=xmin,xmax=xmax,ymin=ymin, ymax =ymax), fill = '#ecebe3')+
+  #geom_rect(data = legenddata%>% filter(type == 'Normal'),mapping = aes(xmin=xmin,xmax=xmax,ymin=ymin, ymax =ymax), fill = "#c7b8b9")+
+  #geom_rect(data = legenddata%>% filter(type == 'Today'),mapping = aes(xmin=xmin,xmax=xmax,ymin=ymin, ymax =ymax),  fill = '#a90048')+
+  #geom_text(data = legenddata %>% filter(type == 'Today'), mapping = aes(x = xmax + 1, y = ymin), label = 'Actual Low',hjust=0) + 
+  #geom_text(data = legenddata %>% filter(type == 'Today'), mapping = aes(x = xmax + 1, y = ymax), label = 'Actual High',hjust=0) + 
+  #geom_text(data = legenddata %>% filter(type == 'Record'), mapping = aes(x = xmin - 1, y = ymin), label = 'Record Low',hjust=1) + 
+  #geom_text(data = legenddata %>% filter(type == 'Record'), mapping = aes(x = xmin - 1, y = ymax), label = 'Record High',hjust=1) + 
+  #geom_text(x = 190-2,y = 0,label = 'Normal Range',hjust = 1,fontface=1)+
+  #geom_text(x = 190,y = 20,label = 'Bars represent range between\n the daily high and low.',fontface=1)+
+  ylim(c(-20,120)) +
+  labs(y = '', x = '',title=' Temperature')+
+  scale_x_continuous(name = '',breaks = xlabs, labels = month.abb,expand=c(0,0)) +
+  theme_classic() +  
+  theme(axis.title.x=element_blank(),axis.line.x=element_blank(),axis.ticks.x=element_blank(),plot.title=element_text(face = "bold",margin=margin(t=20,b=-5)))
+
+
+actualrain <- weather %>% mutate(DaysinMonth = days_in_month(date)) %>% filter(Day == DaysinMonth)
+
+rainGraph <- weather %>%
+  ggplot() +
+  geom_vline(data = weather %>%filter(Month != 12) %>% group_by(Month) %>% filter(Day == max(Day)) , mapping = aes(xintercept = dateInYear), color = '#cdcdcd') +
+  geom_line(mapping = aes(x = dateInYear,y = CulmPrec, group = Month), color = '#32a3d8') +
+    geom_area(mapping = aes(x = dateInYear,y = CulmPrec, group = Month), fill = '#ebeae2') +
+    geom_point(data = weather %>% filter(RecordP), mapping = aes(x = dateInYear,y = CulmPrec + .2),shape=25, fill = 'black') + 
+    geom_text(data = actualrain,mapping = aes(x = dateInYear,y = CulmPrec, label = CulmPrec),vjust=0,hjust=1,size = 1.5) +
+    labs(title = ' Precipitation') +
+    scale_y_continuous("",breaks=c(4,8),labels=paste0('. ',c(4,8)),limits=c(0,8))+
+    scale_x_continuous(expand=c(0,0))+
+    theme_classic() +  
+    theme(axis.title.x=element_blank(),axis.line.x=element_blank(),axis.text.x=element_blank(),axis.ticks.x=element_blank(),plot.title=element_text(face = "bold",margin=margin(t=20,b=-10)))
+
+  
+library(gridExtra)
+grid.arrange(tempGraph, rainGraph, nrow = 2,heights=c(5,2),top="SFO Weather in 2011")  
+```
+
