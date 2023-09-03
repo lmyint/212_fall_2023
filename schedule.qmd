@@ -3,6 +3,15 @@ title: "Schedule"
 sidebar: false
 ---
 
+# Course Calendar
+
+Readings in the schedule below refer to the following two textbooks (freely available online):
+
+- [Modern Data Science with R (3e)](https://mdsr-book.github.io/mdsr3e/) by Baumer, Kaplan, and Horton (Abbreviated as **MDSR**)
+- [R for Data Science (2e)](https://r4ds.hadley.nz/) by Wickham, Cetinkaya-Rundel, and Grolemund (Abbreviated as **R4DS**)
+
+Guiding questions for the readings are available at the bottom of this page.
+
 ```{=html}
 <table class="tg" data-quarto-disable-processing="true">
 <thead>
@@ -17,17 +26,19 @@ sidebar: false
 <tbody>
   <tr>
     <td class="topleft">1</td>
+    
     <td class="topleft">
-      <b>Welcome! Designing our learning community</b> <br>
-      Before class: Review syllabus and respond to questions posed therein. <br>
-      After class: x
+      <b>9/5: Welcome! Meeting each other and designing our learning community</b> <br>
+      Before class: Review the <a href="https://lmyint.github.io/212_fall_2023/syllabus.html">syllabus</a> and think about the questions posed in the green "Reflect" blocks.
     </td>
     <td class="topleft">
-      <b>Advanced visualization in ggplot</b> <br>
+      <b>9/7: Advanced visualization in ggplot</b> <br>
       Before class: Review the construction of plots from STAT 112 and STAT 155. Complete Moodle checkpoint. <br>
-      After class: x
     </td>
-    <td class="topleft">Look ahead to HW1</td>
+    
+    <td class="topleft">
+      Work on <a href="https://lmyint.github.io/212_fall_2023/homework0.html">HW0</a> (your 10-year vision, doesn't need to be turned in).<br>Look ahead to <a href="https://lmyint.github.io/212_fall_2023/homework1.html">HW1</a>
+    </td>
   </tr>
   <!----------------------------------------------------------->
   
@@ -35,15 +46,15 @@ sidebar: false
   <tr>
     <td class="topleft">2</td>
     <td class="topleft">
-      <b>Advanced map visualization</b> <br>
+      <b>9/12: Advanced map visualization</b> <br>
       Before class: Review map material from <a href="https://bcheggeseth.github.io/112_spring_2023/spatial-visualization.html">STAT/COMP 112</a> <br>
-      After class: x
     </td>
+    
     <td class="topleft">
-      <b>Interactive visualization (Part 1) & podcast discussion</b> <br>
-      Before class: Listen to <a href="https://datastori.es/135-the-dashboard-conspiracy-with-lyn-bartram-and-alper-sarikaya/">The "dashboard conspiracy"</a> podcast <br>
-      After class: x
+      <b>9/14: Interactive visualization (Part 1)</b> <br>
+      Before class: TBD
     </td>
+    
     <td class="topleft">Turn in HW1. Look ahead to HW2.</td>
   </tr>
   <!----------------------------------------------------------->
@@ -52,15 +63,15 @@ sidebar: false
   <tr>
     <td class="topleft">3</td>
     <td class="topleft">
-      <b>Interactive visualization (Part 2)</b> <br>
+      <b>9/19: Interactive visualization (Part 2)</b> <br>
       Before class: Read up through the "Streamline computation" section in <a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson6/">this tutorial on reactive expressions</a> <br>
-      After class: x
     </td>
+    
     <td class="topleft">
-      <b>Topic</b> <br>
+      <b>9/21: Classroom Community and Connectedness Survey</b> <br>
       Before class: Find a <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday dataset</a> that you would be interested in exploring for a mini-project. <br>
-      After class: x
     </td>
+    
     <td class="topleft">Turn in HW2. Look ahead to HW3.</td>
   </tr>
   <!----------------------------------------------------------->
@@ -69,15 +80,15 @@ sidebar: false
   <tr>
     <td class="topleft">4</td>
     <td class="topleft">
-      <b>Working with different data classes (Part 1)</b> <br>
+      <b>9/26: Working with different data classes (Part 1)</b> <br>
       Before class: Group 1 reads <a href="https://r4ds.hadley.nz/logicals.html">Chapter 13 (Logicals)</a> of R4DS. Group 2 reads <a href="https://r4ds.hadley.nz/numbers.html">Chapter 14 (Numbers)</a>. Group 3 reads <a href="https://r4ds.hadley.nz/datetimes.html">Chapter 18 (Dates/Times)</a>. <br>
-      After class: x
     </td>
+    
     <td class="topleft">
-      <b>Working with different data classes (Part 2)</b> <br>
+      <b>9/28: Working with different data classes (Part 2)</b> <br>
       Before class: Read <a href="https://r4ds.hadley.nz/strings.html">Chapter 15 (Strings)</a>, <a href="https://r4ds.hadley.nz/regexps.html">Chapter 16 (Regular Expressions)</a>, and <a href="https://r4ds.hadley.nz/factors.html">Chapter 17 (Factors)</a> of R4DS. <br>
-      After class: x
     </td>
+    
     <td class="topleft">Turn in HW3. Look ahead to HW4.</td>
   </tr>
   <!----------------------------------------------------------->
@@ -86,15 +97,15 @@ sidebar: false
   <tr>
     <td class="topleft">5</td>
     <td class="topleft">
-      <b>Writing functions</b> <br>
+      <b>10/3: Writing functions</b> <br>
       Before class: Read <a href="https://r4ds.hadley.nz/functions.html">Chapter 26 (Functions)</a> and <a href="https://bookdown.org/rdpeng/rprogdatascience/control-structures.html#if-else">Section 13.1 (if-else)</a>. <br>
-      After class: x
     </td>
+    
     <td class="topleft">
-      <b>Loops and iteration</b> <br>
+      <b>10/5: Loops and iteration</b> <br>
       Before class: Read <a href="https://r4ds.hadley.nz/iteration.html">Chapter 27 (Iteration)</a> and the following parts of <a href="https://www.rebeccabarter.com/blog/2019-08-19_purrr">this tutorial</a>: Up through (and including) "Simplest usage: repeated looping with map" <br>
-      After class: x
     </td>
+    
     <td class="topleft">Turn in HW4. Look ahead to HW5.</td>
   </tr>
   <!----------------------------------------------------------->
@@ -103,15 +114,15 @@ sidebar: false
   <tr>
     <td class="topleft">6</td>
     <td class="topleft">
-      <b>Iteration with purrr</b> <br>
+      <b>10/10: Iteration with purrr</b> <br>
       Before class: Read the remainder of this <a href="https://www.rebeccabarter.com/blog/2019-08-19_purrr">purrr tutorial</a>. <br>
-      After class: x
     </td>
+    
     <td class="topleft">
-      <b>Data acquisition: databases</b> <br>
+      <b>10/12: Data acquisition: databases</b> <br>
       Before class: Read <a href="https://r4ds.hadley.nz/databases.html">Chapter 22 (Databases)</a>. <br>
-      After class: x
     </td>
+    
     <td class="topleft">Turn in HW5. Look ahead to HW6.</td>
   </tr>
   <!----------------------------------------------------------->
@@ -120,17 +131,56 @@ sidebar: false
   <tr>
     <td class="topleft">7</td>
     <td class="topleft">
-      <b>Data acquisition: APIs</b> <br>
+      <b>10:17: Data acquisition: APIs</b> <br>
       Before class: Read <a href="https://httr.r-lib.org/articles/quickstart.html">Getting started with httr</a> <br>
-      After class: x
     </td>
+    
     <td class="topleft">
-      <b>Data acquisition: Scraping</b> <br>
+      <b>10/19: Data acquisition: Scraping</b> <br>
       Before class: Read the <a href="https://cran.r-project.org/web/packages/rvest/vignettes/rvest.html">rvest vignette</a> <br>
-      After class: x
     </td>
+    
     <td class="topleft">Turn in HW6. Look ahead to HW7.</td>
   </tr>
 </tbody>
 </table>
 ```
+
+
+# Guiding Questions
+
+Do your best to answer guiding questions before the indicated class period. Responses don't need to be turned in, but answering helps you prepare effectively for class.
+
+## 9/7: Advanced visualization in ggplot
+
+To review plot creation skills from STAT/COMP 112 and STAT 155, use the `diamonds` dataset in the `ggplot2` package to recreate the following visualizations:
+
+```{r message=FALSE}
+library(ggplot2)
+data(diamonds)
+```
+
+```{r echo=FALSE, message=FALSE, fig.align="center", fig.width=12}
+library(gridExtra)
+p1 <- ggplot(diamonds, aes(x = cut)) + geom_bar() + theme_classic()
+p2 <- ggplot(diamonds, aes(x = price)) + geom_histogram() + theme_classic()
+p3 <- ggplot(diamonds, aes(x = price)) + geom_density() + theme_classic()
+grid.arrange(p1, p2, p3, nrow = 1)
+
+p4 <- ggplot(diamonds, aes(x = cut, y = price)) + geom_boxplot() + theme_classic()
+p5 <- ggplot(diamonds, aes(x = price, color = cut)) + geom_density() + theme_classic()
+grid.arrange(p4, p5, nrow = 1)
+
+p6 <- ggplot(diamonds, aes(x = cut, fill = color)) + geom_bar() + theme_classic()
+p7 <- ggplot(diamonds, aes(x = cut, fill = color)) + geom_bar(position = "dodge") + theme_classic()
+p8 <- ggplot(diamonds, aes(x = cut, fill = color)) + geom_bar(position = "fill") + theme_classic()
+grid.arrange(p6, p7, p8, nrow = 1)
+
+p9 <- ggplot(diamonds, aes(x = carat, y = price)) + geom_point() + theme_classic()
+p10 <- ggplot(diamonds, aes(x = carat, y = price, color = cut)) + geom_point() + geom_smooth(method = "lm") + theme_classic()
+grid.arrange(p9, p10, nrow = 1)
+```
+
+
+
+

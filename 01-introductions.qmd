@@ -1,13 +1,16 @@
 ---
-title: "Topic 1: Introductions"
+title: "Welcome to the course!"
+sidebar: false
 ---
 
-# Goals for today
+Welcome to Intermediate Data Science! I'm thrilled to be your partners in journeying this **brand new (!)** course in MSCS.
 
-- Reflect on your goals for taking the course and what has worked and not worked for you as a learner in the past
-- Move the syllabus from a preliminary closer to a final stage: What should change about the syllabus? What needs to be clarified? What should stay the same?
+Our goals for today are as follows:
 
-Keyboard shortcuts as a fun way to feel more like a data scientist
+- What is this course about?
+- Get to know your classmates
+- Shaping our syllabus together
+- Create your personal website!
+    - Website content building + connecting with classmates
 
-- Cursor navigation, deleting words, selecting words
-- RStudio shortcuts
+We'll primarily be using slides today--following along [here](slides/day1.qmd).

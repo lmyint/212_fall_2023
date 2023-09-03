@@ -9,7 +9,7 @@ The goal of the project is to **build something awesome** that you can showcase 
 
 # Project details
 
-You will be working on this project over the course of the semester. 
+You will be working on this project over the course of the semester in teams of 2 or 3.
 
 Your project may align with work/projects from other classes--this is encouraged! Combining multiple course perspectives can significantly increase the quality of your work. There is a hard requirement that your project be able to be hosted digitally as part of your portfolio.
 
@@ -19,33 +19,33 @@ Your project may align with work/projects from other classes--this is encouraged
 
 Identify a data context that interests you. Identify 3 different data sources that relate to that context. Think beyond a spreadsheet; the most interesting projects may involve collecting and aggregating data from multiple sources and formats. We might not have covered all of the tools needed to acquire that data at this point, so check in with the instructor about the sources that you've found to make sure that they're workable.
 
-- Note to self: Provide general guidance on what sources of data would be appropriate
-- Brianna comment: I might include the questions and data in the same milestone 1.
-- Due date:
-
-## Milestone 2
+- Example non-spreadsheet data sources: search results on a webpage, text of an article, Tweets, other social media posts.
 
 Brainstorm 3 questions about your data context and sources that pique your curiosity.
 
-- Shortly after milestone 1 because question-asking and iteration on that question-asking is key.
+Due date: Wednesday, 9/20 as part of HW2.
 
-- Brianna comment: If milestone 1 is done individually (?), structure milestone 2 to be group wise. Perhaps finalize data and questions. Each person create 1 "ugly" visualization to demonstrate viability (like a prototype).
+## Milestone 2
+
+Finalize one initial data source and questions related to that source. Form project teams. Each team member should create 1 "ugly" (not fully polished) visualization to demonstrate viability of the research questions. (Think of this as visualization "prototyping".)
+
+Due date: Wednesday, 9/27 as part of HW3.
 
 ## Milestone 3
 
-Perform the data acquisition, wrangling, visualization, and modeling needed to answer Research Question 1. Note that your question might not be amenable to modeling (or to modeling that you've learned about so far). In that case, I'm not requiring you to use modeling. Visualization is required though.
+Perform the data acquisition, wrangling, visualization, and modeling needed to answer **one** of your research questions. Note that your question might not be amenable to modeling (or to modeling that you've learned about so far). For that reason, modeling is not required, but visualization is.
 
-- Brianna comment: Perform the data acquisition, wrangling, visualization, and modeling needed to answer one of Research Question. Present to class and get feedback. 
-
+Due date: Present your visualization to the class for feedback on Thursday, 10/12.
 
 ## Milestone 4
 
-Same as Milestone 3 but for Research Question 2.
+Adjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to answer another one of your research questions. Submit "Rough Draft" to instructor for feedback.
 
-- Brianna comment: Adjust data, research question, as needed. Perform the data acquisition, wrangling, visualization, and modeling needed to answer one of Research Question. Submit "Rough Draft" to Instructor and get feedback. 
+Due date: TBD
 
 ## Milestone 5
 
-Same as Milestone 3 but for Research Question 3.
+Adjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to answer another one of your research questions. Submit "Final Draft".
 
-- Brianna comment: Adjust data, research question, as needed. Perform the data acquisition, wrangling, visualization, and modeling needed to answer one of Research Question. Submit Final Draft.
+Due date: TBD
+

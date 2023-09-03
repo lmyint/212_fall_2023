@@ -1,11 +1,7 @@
 ---
-title: "Preliminary Syllabus"
+title: "Syllabus"
 sidebar: false
 ---
-
-<span style="color: red;">
-**Note to self:** Consult CUE syllabus review guide to make sure the tone of this syllabus is on target
-</span>
 
 # What is this course about?
 
@@ -14,15 +10,13 @@ sidebar: false
 
 Nor do data.
 
-But that is what can make data science so thrilling!
+But that is exactly what can make data science so thrilling!
 
 This course is about empowering you with the **wisdom** to ask the best questions of data--ones that are meaningful, adaptive, and equity-minded--and the **technical savvy** to answer them. 
 
-While we will cover many important skills, they won't cover everything there is to know in a data science career. My other primary goal is for you to refine your **learning process** so that you feel confident learning new skills on your own in the future.
+Because your careers (whether in data science or not), will all involve further learning and working with others, my other primary goal is for you to cultivate **self-reflection skills** with regards to your own learning and your collaboration with others. In this way, I hope that you feel confident learning new skills on your own in the future and contributing to a welcoming work community.
 
-::: {.callout-note collapse="true"}
-## Course catalog description
-
+::: {.callout-note collapse="true" title="Course catalog description"}
 This second course in the data science curriculum emphasizes advanced data wrangling and manipulation, interactive visualization, writing functions, working with data in databases, version control, and data ethics. Through open-ended and interdisciplinary projects, students practice the constant feedback loop of asking questions of the data, manipulating the data to help answer the question, and then returning to more questions. Prerequisite(s): COMP 112 and COMP 123 and STAT 155; STAT 253 recommended but not required.
 :::
 
@@ -43,50 +37,77 @@ By the end of this course you should be able to:
 - Use appropriate methods when working with missing data
 - Translate code between R and Python
 - Articulate the role of machine learning and causal inference in data science work
-- Craft compelling data stories with attention to ethical considerations
+- Iterate on the question-explore-question cycle to craft compelling data stories with attention to ethical considerations
 - Maintain a digital portfolio of your data science projects
 
+::: {.callout-tip title="Reflect"}
+- Which of the learning goals above do you disagree with or want more clarity on?
+- Do you have any goals that you'd like to include on this list?
+:::
 
 
-# How to contact me
+<br><br><br><br>
 
-I love getting to talk to students outside of class time--whether class-related or not. Come chat with me!
 
-I'll be setting times for drop-in hours based on feedback on what times are best for you. ***(Rename to AMA hours???)*** I'll update my drop-in hours here when they're finalized.
+# Course communication
+
+## How to contact me
+
+::: {.callout-note title="Call me \"Leslie\""}
+Students sometimes wonder what to call their professors. I prefer to be called Leslie (lez-lee), but if you prefer to be more formal, I am also ok with Professor Myint (pronounced "mee-int"). My preferred gender pronouns are she/her/hers.
+
+Please help me make sure that I call you by your preferred name and pronouns too!
+:::
+
+I love getting to talk to students outside of class time---whether about class-related topics or anything else. Come chat with me!
+
+I'll be setting times for drop-in hours based on feedback from the pre-course survey. I'll update my drop-in hours here when they're finalized.
 
 **Where:** Olin-Rice 232<br>
 **When:** TBD
 
-I'm also happy to meet one-on-one with you if my normal drop-in hours don't work. You can schedule a time to meet with me via [Calendly](https://calendly.com/lmyint).
+I'm also happy to meet one-on-one if my normal drop-in hours don't work. You can schedule a time to meet with me via [Calendly](https://calendly.com/lmyint).
 
-I'll also often be at the Leonard Center from about 4:30-5:10 some weekdays. Feel free to stop by and chat!
+I'll also often be in the Leonard Center weight room from about 4:30-5:10 some weekdays. Feel free to say hello!
 
+## Discussion board (Slack)
+
+Slack is a commonly used communication tool in industry and is useful to be familiar with, so we'll be using it as our discussion board.
+
+- If you're new to Slack, [this video](https://youtu.be/6wjmH5qL3Ms?si=tIg_gAAxbDh6qQ3-) provides a quick overview.
+- First join our STAT/COMP 212: Fall 2023 workspace [here](https://join.slack.com/t/statcomp212fall2023/shared_invite/zt-22hwq73vn-IOFifr_VpO_4AAN4vYVDgA).
+- After joining, you can access our workspace [here](https://statcomp212fall2023.slack.com). (You might want to bookmark this if view)
+
+
+<br><br><br><br>
 
 
 # Guiding values
 
 ## Community is key
 
-There's something sacred about going on a journey in tandem with others. Triumphs feel more spirited and challenges feel less daunting when we can share them with others facing the same things. As a parent, it has been my lifeline to have friends with young children about the same age as my daughter for exactly this reason.
+A sense of [community](https://www.educause.edu/research-and-publications/books/learning-spaces/chapter-4-community-hidden-context-learning) and connectedness can provide a powerful environment for learning: Research shows that learning is maximized when students feel a sense of belonging in the educational environment (e.g., Booker, 2016). A negative climate may create barriers to learning, while a positive climate can energize students’ learning (e.g., Pascarella & Terenzini, cited in How Learning Works, 2012).
 
-Cultivating a good classroom community is one of my top priorities for us this semester. I'm not expecting everyone in the course to become best friends, but I do hope that in the process of learning together, you will come to value the insights that you gain from and give to your peers.
+Our class is participating in the **Classroom Community & Connectedness Project** this semester. On **Thursday, September 21** our class sessions will be a facilitated class activity (peers and facilitators only; I will not be present) to collectively reflect on strengthening our classroom community, with the intent of improving the learning environment for all of us.
+
+Your participation is voluntary, but very much appreciated. The project is co-sponsored by Macalester’s Serie Center for Scholarship and Teaching and our Office of Institutional Research & Assessment.
 
 ## Reflection is paramount
 
 The *content* you learn will be cool (unbiased opinion!), but it is a **guarantee** that as technology evolves, some part of it will become out of date during your careers. What you will need to rely on when you leave Macalester is what I want to ensure you cultivate now: a good learning process. And the cornerstone of a good learning process is **reflection**.
 
-Reflection is not just fundamental to learning content--it's fundamental to learning any sort of intellectual, emotional, or physical skill. For this reason, I will be prioritizing reflection as a goal for our course in both content learning and collaborative learning (groupwork). (Note that these reflection goals are the first two course learning goals.)
+Reflection is not just fundamental to learning content--it's fundamental to learning any sort of intellectual, emotional, or physical skill. For this reason, I will be prioritizing reflection as a goal for our course in both content learning and collaborative activities. (Note that these reflection goals are the first two course learning goals.)
 
-## Mistakes are valuable
+## Mistakes are essential
 
 > An expert is a person who has made all the mistakes which can be made in a narrow field.<br>
 > - *Niels Bohr, Nobel Prize-winning physicist*
 
 I don't feel comfortable working with a new R package until I've seen the same errors over and over again. Seeing new errors helps me understand the constraints of the code and the assumptions that I was making about my data.
 
-We're going to be seeking out mistakes like my cats hunt for leftover meat scraps.
+We're going to be seeking out mistakes like my cats hunt for leftover food scraps.
 
-(Insert picture of my cats)
+![My cat Potato attempting to eat my daughter's dinner](images/cat.jpg){fig-align="center" width=50%}
 
 ## Communication is a superpower
 
@@ -101,50 +122,73 @@ Every time you communicate ideas--whether through writing, visuals, or oral pres
 </center>
 
 
+<br><br><br><br>
+
 
 # How to thrive and what to expect
 
-When taking a new course, figuring out the right workflow/cadence of effort throughout the week can be a big adjustment. And most of you have to do this for 4 different courses! Below are some suggestions for what to expect in the course and how to focus your time and attention before, during, and after class:
+When taking a new course, figuring out the right workflow/cadence of effort throughout the week can be a big adjustment. And most of you are doing this for 4 different courses! Below are some suggestions for what to expect in the course and how to focus your time and attention during and outside of class.
 
-## Before class
+## Outside of class
 
-Most class periods will have a required reading and associated Moodle checkpoint. My goal for the readings is for you to be familiarize yourself with concepts so that you're not seeing them for the first time in class. The checkpoint questions highlight key ideas from the reading and follow the same order as ideas from the reading.
+**Pre-class reading:** Most class periods will have a required reading to review ideas from previous courses or to familiarize yourself with new concepts before seeing them again in class. My goal for these readings is for you to get the most out of class time by being able to more easily follow explanations in class and to engage most fully in class activities. I will provide [Guiding Questions](schedule.qmd#guiding-questions) for each reading to focus your attention.
 
-**Suggestion:** Scan the checkpoint questions before the reading to preview what the main ideas are. Keep these main points in mind as you read to guide your attention, and fill in answers to checkpoint questions as you read. Record or upvote questions in our Course Questions Google Doc ***(CREATE A GDOC AND LINK)***
-
-About every other week, we will discuss a podcast for the first ~20 minutes of class. These podcasts are meant to expose you aspects of data science in industry. Record anything that you're curious about, and come prepared to discuss.
-
-::: {.callout-tip collapse="false"}
-## Your own media contributions
-
-Throughout the semester, if you come across any media that is relevant to the course, feel free to suggest it as a discussion piece by emailing the instructor or posting it on our Slack channel. (ADD LINK)
+::: {.callout-tip title="Suggestion"}
+Scan the [Guiding Questions](schedule.qmd#guiding-questions) before reading to preview the main ideas. Fill in answers to these questions as you read. Ask (and answer!) questions in the `#questions` channel in our [Slack workspace](https://statcomp212fall2023.slack.com).
 :::
+
+**Podcast discussions:** About every other week, we will discuss a podcast for the first ~20 minutes of class. These podcasts are meant to expose you aspects of data science in industry. Record anything that you're curious about, and come prepared to discuss.
+
+::: {.callout-note title="Your own media contributions"}
+Throughout the semester, if you come across any media that is relevant to the course, feel free to suggest it as a discussion piece by emailing the instructor or posting it in the `#general` channel in our [Slack workspace](https://statcomp212fall2023.slack.com).
+:::
+
+::: {.callout-tip title="Other suggestions for out-of-class time"}
+- Record any reflections from in-class time about your learning process or interactions with peers while they are still fresh.
+- After learning a new topic in class, it is helpful to immediately attempt the related exercises on the weekly homework.
+- Come to instructor drop-in hours to chat about the course or anything else 😃
+:::
+
 
 ## During class
 
 Class time will be a mix of interactive lecture and longer stretches of group work. During the lecture portion, I will pause explanation frequently to prompt a short exercise or ask questions that you'll reflect on individually or together.
 
-**Suggestion:** Review your learning process and groupwork reflections at the start of class to frame how you want to engage in class. (Perhaps you've noted a struggle and want to try a new strategy.) I'll always leave a few minutes at the end of class for synthesis. Use this time to update your reflections and summarize the key takeaways from class.
-
-## After class
-
-**Suggestion:** After learning a new topic in class, it is helpful to immediately attempt the related exercises on the weekly homework.
+::: {.callout-tip title="Suggestion"}
+Review your learning process and group work reflections just before class to frame how you want to engage in class. (Perhaps you've noted a struggle and want to try a new strategy.) I'll always leave a few minutes at the end of class for synthesis. Use this time to update your reflections and summarize the key takeaways from class.
+:::
 
 
+<br><br><br><br>
 
-# Grading
 
-For a long time, I have been uncomfortable with the outsized role that letter grades play in education. The article *Teaching More by Grading Less (Or Differently)* by Schinske and Tanner ([source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4041495/)) was instrumental in shaping my viewpoints and may be an interesting read for you.
+# Grading and feedback
 
-In short, the letter grading system has a troubling history, and providing intermediate grades as feedback (e.g., letter or point grades on homework and exams) does not help students in the ways that teachers want: in general, it blocks students' understanding of the gaps in their knowledge and stifles a growth mindset.
+For a long time, I have been uncomfortable with the outsized role that letter grades play in education. The article *Teaching More by Grading Less (Or Differently)* by Schinske and Tanner ([source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4041495/)) shaped many of my viewpoints and may be an interesting read for you.
 
-Unfortunately, I am required to submit a letter grade at the end of the course. I would like to propose the following ***preliminary*** grading system.
+In short, grades tend to distract from learning (due to a greater focus on the grade than on qualitative feedback), create anxiety that hinders risk-taking and exploration, and create a power dynamic between the instructor and students that I am uncomfortable with.
 
-::: {.callout-tip collapse="false"}
+If I had my way, I would never assign letter grades and only give qualitative comments all semester. Unfortunately, I am required to submit a letter grade at the end of the course.
+
+> **I need your input: which of the following two grading systems should we use for the semester?**
+
+::: {.callout-tip title="Reflect"}
 As you read the following, make note of what uncertainties or worries you have and what you agree with.
 
-Come prepared to discuss with your classmates on the first day of class. We'll use the first day to collaboratively update this syllabus to be as beneficial to everyone as possible.
+Come prepared to discuss with your classmates on the first day of class. We'll use the first day to collaboratively decide on one grading system for both sections of the course. Our goal is for this grading system to be aligned with my values as an instructor and your needs as learners.
 :::
+
+## Option 1: evaluation of learning is done by instructor
+
+The table below describes the qualities of A, B, and C grades in terms of the 3 core course components: reflections, homework, and the final project. 
+
+In order to earn a given letter grade, **ALL** of the requirements in the column must be met. (e.g., In order to earn an A, *everything* in the first column must be true.)
+
+There is a possibility that by the end of the semester, work for the different course components falls under different letter grades. (e.g., A-level for reflections and homework, but B-level for project).
+
+- If this happens, towards the end of the semester I will ask you to submit a written justification for the grade that you think you deserve. We will have a conference in which we discuss your justification.
+- If we agree, your proposed grade will be your final grade.
+- If we disagree, we will discuss what needs to be done next to come to an agreement. (This may involve being doing extra work or revisions.)
 
 ```{=html}
 <style type="text/css">
@@ -159,12 +203,12 @@ Come prepared to discuss with your classmates on the first day of class. We'll u
     overflow: hidden;
     padding: 10px 5px;
     word-break: normal;
+    font-size: 14px;
 }
 .tab-grading th {
     border-color: black;
     border-style: solid;
     border-width: 1px;
-    font-size: 14px;
     font-weight: normal;
     overflow: hidden;
     padding: 10px 5px;
@@ -173,17 +217,37 @@ Come prepared to discuss with your classmates on the first day of class. We'll u
 .tab-grading .tab-grading-9wq8 {
     border-color: inherit;
     text-align: center;
-    vertical-align: middle
+    vertical-align: middle;
 }
-.tab-grading .tab-grading-xwmr{background-color:#34ff34;border-color:inherit;text-align:left;vertical-align:top}
-.tab-grading .tab-grading-zk7v{background-color:#34ff34;border-color:inherit;text-align:center;vertical-align:middle}
-.tab-grading .tab-grading-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tab-grading .tab-grading-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tab-grading .tab-grading-xwmr {
+    background-color: #34ff34;
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top;
+}
+.tab-grading .tab-grading-zk7v {
+    background-color: #34ff34;
+    border-color: inherit;
+    text-align: center;
+    vertical-align: middle;
+}
+.tab-grading .tab-grading-0pky {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top;
+}
+.tab-grading .tab-grading-7btt {
+    border-color: inherit;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: top;
+}
 </style>
+
 <table class="tab-grading">
 <thead>
   <tr>
-    <th class="tab-grading-0pky"></th>
+    <th class="tab-grading-7btt">Course component</th>
     <th class="tab-grading-7btt">Letter grade: A</th>
     <th class="tab-grading-7btt">Letter grade: B</th>
     <th class="tab-grading-7btt">Letter grade: C</th>
@@ -191,13 +255,13 @@ Come prepared to discuss with your classmates on the first day of class. We'll u
 </thead>
 <tbody>
   <tr>
-    <td class="tab-grading-xwmr">Self-reflection in learning process</td>
-    <td class="tab-grading-zk7v" rowspan="2">Show <b>substantial growth</b> and <b>consistent thoughtfulness</b> throughout the semester</td>
-    <td class="tab-grading-zk7v" rowspan="2">Show <b>moderate</b> growth and thoughtfulness throughout the semester</td>
-    <td class="tab-grading-zk7v" rowspan="2">Show <b>some</b> growth and thoughtfulness throughout the semester</td>
+    <td class="tab-grading-0pky">Self-reflection in learning process</td>
+    <td class="tab-grading-9wq8" rowspan="2">Show <b>clear growth</b> and <b>consistent thoughtfulness</b> throughout the semester</td>
+    <td class="tab-grading-9wq8" rowspan="2">Show <b>some growth</b> and <b>some thoughtfulness</b> throughout the semester</td>
+    <td class="tab-grading-9wq8" rowspan="2">Show <b>little to no growth</b> and <b>minimal thoughtfulness</b> throughout the semester</td>
   </tr>
   <tr>
-    <td class="tab-grading-xwmr">Self-reflection in collaborative learning (groupwork)</td>
+    <td class="tab-grading-0pky">Self-reflection in collaborative learning (groupwork)</td>
   </tr>
   <tr>
     <td class="tab-grading-0pky">Weekly homework</td>
@@ -206,51 +270,165 @@ Come prepared to discuss with your classmates on the first day of class. We'll u
     <td class="tab-grading-9wq8">Pass <b>all but 2</b> homework assignments</td>
   </tr>
   <tr>
-    <td class="tab-grading-0pky">Team teaching experience (around Week 5)</td>
-    <td class="tab-grading-9wq8" colspan="3">Design and teach a mini-lesson that meets specifications</td>
-  </tr>
-  <tr>
     <td class="tab-grading-0pky">Final project</td>
     <td class="tab-grading-0pky">Complete a project that is <b>high quality</span> in all of the following aspects:
     <ul>
       <li>Data wrangling, visualization, analysis, and interpretation</li>
-      <li>Workflow and organization<br>Addressing peer and instructor feedback</li>
+      <li>Workflow and organization</li>
+      <li>Addressing peer and instructor feedback</li>
       <li>Giving feedback to peers</li>
       <li>Ethical consideration and communication of results</li>
+    </ul>
     </td>
-    <td class="tab-grading-0pky">Complete a project that is <b>at least ok quality</b> in the aforementioned aspects and <b>high quality</b>in <b>some</b> aspects</td>
+    <td class="tab-grading-0pky">Complete a project that is <b>at least ok quality</b> in the aforementioned aspects and <b>high quality</b> in <b>some</b> aspects</td>
     <td class="tab-grading-0pky">Complete a project that is <b>ok quality</b> in the aforementioned aspects</td>
   </tr>
 </tbody>
 </table>
 ```
 
+Details about the course components are given below:
+
+- **Self-reflection:**
+    - I will look at the **growth** in your reflection process over the course of 3 substantive reflections. These will roughly come a month into the course, mid-course, and the end of the semester.
+        - My expectation is that your mid-course and end-of-course reflections show that your are using feedback from previous reflections.
+    - I will look at the **consistency** in your reflection process by monitoring your [Process and Reflection Google Doc](https://docs.google.com/document/d/1tyyuYNXpzqMxw2osGnM_9I5ivBj3a0iSZ_LVZusDqY8/edit?usp=sharing).
+        - My expectation is that you are filling this in regularly throughout class activities and through work outside of class.
+
+- **Homework:** We will have weekly homework in which you will complete activities that we start in class. The requirements for passing the assignment will be clearly stated in the homework directions.
+    - If you do not pass an assignment and wish to revise your work, you may resubmit the assignment the **following week**. This revision needs to be submitted by 2 weeks after the original homework due date. (See my [policy on late work](syllabus.qmd#late-work).)
+
+- **Final project:** For this semester-long project, you will receive regular feedback on the quality of the different project aspects and will have the opportunity to improve the quality of the different aspects as you continue working.
+
+## Option 2: evaluation of learning is done by students in conversation with instructor
+
+What constitutes A, B, and C-level work is essentially identical in Options 1 and 2 (see table below). That is, my *standards* for high quality work are the same between the two. 
+
+What's different is how (who) participates in the evaluation process. In Option 1, **I** am making the final judgment on the quality of your work for all course components. In Option 2, **you** will start the assessment of quality by **evaluating yourselves** *using qualitative feedback on all of your work*.
+
+In Option 2, the qualitative comments that you receive on all your work (reflections, homework, project) will form the basis of your **self-evaluation**. That is, you will review all comments from me and use this to gauge the degree to which you are meeting the course learning goals. (On homework, you will not receive a pass/not passing designation---you'll just receive comments.) You will write a self-evaluation in the middle of the semester (before midterm grades are due) and another at the end of the semester. In both self-evaluations you will propose the grade that you think deserve. I will also evaluate your work, and if we disagree on the grade, we will meet to discuss what needs to be done next to come to an agreement. (This may involve being doing extra work or revisions.)
+
+Note: Your self-evaluations need to be **based on demonstrated evidence** in the work that you submit. For example, if you have struggled with the data wrangling homework assignments and say in your self-evaluation that your understanding is now strong after reviewing feedback, **this is not sufficient evidence**. You would need to **demonstrate** your stronger understanding of data wrangling by submitting a revision of the data wrangling homework. (See [policy on late work](syllabus.qmd#late-work).)
+
+```{=html}
+<table class="tab-grading">
+<thead>
+  <tr>
+    <th class="tab-grading-7btt">Course component</th>
+    <th class="tab-grading-7btt">Letter grade: A</th>
+    <th class="tab-grading-7btt">Letter grade: B</th>
+    <th class="tab-grading-7btt">Letter grade: C</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tab-grading-0pky">Self-reflection in learning process</td>
+    <td class="tab-grading-9wq8" rowspan="2">Show <b>clear growth</b> and <b>consistent thoughtfulness</b> throughout the semester</td>
+    <td class="tab-grading-9wq8" rowspan="2">Show <b>some growth</b> and <b>some thoughtfulness</b> throughout the semester</td>
+    <td class="tab-grading-9wq8" rowspan="2">Show <b>little to no growth</b> and <b>minimal thoughtfulness</b> throughout the semester</td>
+  </tr>
+  <tr>
+    <td class="tab-grading-0pky">Self-reflection in collaborative learning (groupwork)</td>
+  </tr>
+  <tr>
+    <td class="tab-grading-0pky">Weekly homework</td>
+    <td class="tab-grading-9wq8">Show <b>strong</b> understanding of concepts across <b>all</b> homework assignments</td>
+    <td class="tab-grading-9wq8">Show <b>strong</b> understanding of concepts across <b>most</b> homework assignments</td>
+    <td class="tab-grading-9wq8">Show <b>adequate</b> understanding of concepts across <b>most</b> homework assignments</td>
+  </tr>
+  <tr>
+    <td class="tab-grading-0pky">Final project</td>
+    <td class="tab-grading-0pky">Complete a project that is <b>high quality</span> in all of the following aspects:
+    <ul>
+      <li>Data wrangling, visualization, analysis, and interpretation</li>
+      <li>Workflow and organization</li>
+      <li>Addressing peer and instructor feedback</li>
+      <li>Giving feedback to peers</li>
+      <li>Ethical consideration and communication of results</li>
+    </ul>
+    </td>
+    <td class="tab-grading-0pky">Complete a project that is <b>at least ok quality</b> in the aforementioned aspects and <b>high quality</b> in <b>some</b> aspects</td>
+    <td class="tab-grading-0pky">Complete a project that is <b>ok quality</b> in the aforementioned aspects</td>
+  </tr>
+</tbody>
+</table>
+```
+
+::: {.callout-note title="Comparing Options 1 and 2"}
+Both options satisfy my goal to have **high standards** for your learning that are **achievable through thoughtful revision**. No matter what option we use, you'll have a personal Google Sheet for tracking your progress over time. 
+
+My other goals for our grading system are for it to **motivate** you to learn as much as possible and to **reduce stress**. For these goals, your input during our Day 1 discussion will be very valuable.
+:::
+
+
+<br><br><br><br>
 
 
 # Textbooks
 
-All textbooks are freely available online:
+We will primarily use the following two textbooks (freely available online):
 
 - [Modern Data Science with R (3e)](https://mdsr-book.github.io/mdsr3e/) by Baumer, Kaplan, and Horton (Abbreviated as **MDSR**)
-- [R for Data Science (2e)](https://r4ds.hadley.nz/) by Wickham, Cetinkaya-Rundel, and Grolemund ((Abbreviated as **R4DS**))
-- [Introduction to Data Science: Data Analysis and Prediction Algorithms with R](http://rafalab.dfci.harvard.edu/dsbook/) by Irizarry (Abbreviated as **IDS**)
-- [Tidyverse Skills for Data Science](https://jhudatascience.org/tidyversecourse/) by Wright, Ellis, Hicks, and Peng (Abbreviated as **TSDS**)
+- [R for Data Science (2e)](https://r4ds.hadley.nz/) by Wickham, Cetinkaya-Rundel, and Grolemund (Abbreviated as **R4DS**)
+
+The following textbooks are also good resources (also freely available online):
+
+- [Introduction to Data Science: Data Wrangling and Visualization with R](http://rafalab.dfci.harvard.edu/dsbook-part-1/) and [Advanced Data Science: Statistics and Prediction Algorithms Through Case Studies](http://rafalab.dfci.harvard.edu/dsbook-part-2/) by Irizarry
+- [Tidyverse Skills for Data Science](https://jhudatascience.org/tidyversecourse/) by Wright, Ellis, Hicks, and Peng
 - [R Programming for Data Science](https://bookdown.org/rdpeng/rprogdatascience/) by Peng
 
+
+<br><br><br><br>
 
 
 # Other policies
 
 ## Late work
 
-x
+Homework assignments will be due **weekly on Wednesdays at midnight**. If you anticipate needing more time to complete an assignment, please email me ahead of time to discuss. **Limited** extensions will always be granted:
 
+- **My ideal extension:** Turn in the homework by the following Monday morning at 9am. (A 4 day, 9 hour extension)
+    - **Why is this ideal for me?** I want to return feedback on homework to everyone before the following Tuesday's class because we will be briefly reviewing homework feedback in small groups.
+
+- **Firm limit on extensions:** You must turn in the homework by 2 weeks after the due date (Wednesdays at 9am).
+    - **Why is this my firm limit?** I post solutions to the homework at this point.
+    - **What if it's past the 2-week limit and you still want to turn in the homework in some form?** If this is the case, you need to **create your own equivalent homework**. This involves mapping the original homework's exercises to a new dataset and completing those exercises. Note that I can't make any guarantees about when I can get you feedback on this late submission. (Only guarantee = by the end of the semester)
+
+## Academic integrity
+
+Academic integrity is the cornerstone of our learning community. Students are expected to be familiar with the [college's standards](http://www.macalester.edu/academicprograms/academicpolicies/academicintegrity/) on academic integrity.
+
+I encourage you to work with your classmates to discuss material and ideas for assignments, but in order for you to receive individualized feedback on your own learning, you must submit your own work. This involves writing your own code and putting explanations into your own words. Always cite any sources you use, including AI (see section below).
+
+## Artificial intelligence (AI) use
+
+Learning to use AI tools is an emerging skill that we will explore together in this course. I expect you to use AI (ChatGPT, Google Bard)---in fact, some assignments may require it.
+
+However, you should be aware of the limits of AI:
+
+- AI is a tool, but one that you need to acknowledge using. Any ideas, language, or code that is produced by AI must be cited, just like any other resource. [sample suggestion: Please include a paragraph at the end of any assignment that uses AI explaining what you used the AI for and what prompts you used to get the results.] Failure to do so is in violation of the academic integrity policy at Macalester College.
+- Don’t trust anything AI says. If it gives you a number, fact, or code, assume it is wrong unless you either know the answer or can check in with another source. AI works best for topics you understand.
+- If you provide minimum effort prompts, you will get low quality results. You will need to refine your prompts in order to get good outcomes. This will take work.
+- Be thoughtful about when this tool is useful. Don’t use it if it isn’t appropriate for the case or circumstance.
+- The environmental impact of AI should not be ignored. The building and usage of AI tools consumes a lot of energy (see [here](https://www.nature.com/articles/s42256-020-0219-9) and [here](https://www.cfr.org/blog/artificial-intelligences-environmental-costs-and-promise)). For this reason, we will be very thoughtful about when we use AI and will discuss other sustainability behaviors that we can incorporate into our lives to offset this usage.
+
+**How to cite usage of AI:** Please copy and paste all prompts and output into an Appendix section accompanying each problem of an assignment.
+
+If you have any questions about your use of AI tools, please contact me to discuss them.
+
+
+
+<br><br><br><br>
 
 
 # Course project
 
-The best way to learn data science and feel like a data scientist is to work on meaningful data-driven projects. The course project will be a space for you to do just that! My goal is for you to complete a project that you would be excited to showcase on your digital portfolio (your personal website).
+The best way to learn data science and feel like a data scientist is to work on meaningful data-driven projects. The course project will be a semester-long, collaborative experience in which you investigate a series of meaningful questions through one or more datasets. Through collaboration, you will be able to build something way cooler than you could do alone.
 
+My hope is for everyone to build something that you would be proud to showcase to an employer on your digital portfolio (your personal website). More details about the project can be found on the [Project page](project.qmd).
+
+
+<br><br><br><br>
 
 
 # The environment you deserve
@@ -265,7 +443,7 @@ I want you to succeed. Both here at Macalester and beyond. To help make this hap
 
 **Title IX:** You deserve a community free from discrimination, sexual harassment, hostility, sexual assault, domestic violence, dating violence, and stalking. If you or anyone you know has experienced harassment or discrimination, know that you are not alone. Macalester provides staff and resources to help you find support. More information is available on the [Title IX website](https://www.macalester.edu/titleix/).
 
-**General Health and Well-being:** (REVISE THE OVERLY ACADEMIC WORDING HERE) I care that you make your well-being a priority throughout this semester and your career here. Investing time into taking care of yourself will have profound impacts on all aspects of your life. Remember that beyond being a student, you are a human being carrying your own experiences, thoughts, emotions, and identities with you. It is important to acknowledge any stressors you may be facing, which can be mental, emotional, physical, cultural, financial, etc., and how they can have an impact on you. I encourage you to remember that you have a body with needs. In the classroom, eat when you are hungry, drink water, use the restroom, and step out if you are upset and need some air. Please do what is necessary so long as it does not impede your or others’ ability to be mentally and emotionally present in the course. Outside of the classroom, sleeping, moving your body, and connecting with others can be strategies to help you be resilient. If you are having difficulties maintaining your well-being, please don’t hesitate to contact me and/or find support from physical and mental health resources [here](https://docs.google.com/document/d/1lz-ii5yze_OSkQJqz_7pap7fRjG81LJh0_saBniP-zg/edit) and [here](https://docs.google.com/document/d/1iC-ykD8QJ-w2BVO1Gb0AobD-00Zq_8mznWR5C2mNiF0/edit?usp=sharing).
+**General Health and Well-being:** I care that you prioritize your well-being in this semester and beyond. Investing time into taking care of yourself will have profound impacts on all aspects of your life. Remember that beyond being a student, you are a human being carrying your own experiences, thoughts, emotions, and identities. It is important to acknowledge any stressors you may be facing, which can be mental, emotional, physical, cultural, financial, etc., and how they can have an impact on you. I encourage you to remember that you have a body with needs. In the classroom, eat when you are hungry, drink water, use the restroom, and step out if you are upset and need some air. Please do what is necessary so long as it does not impede your or others' ability to be mentally and emotionally present in the course. Outside of the classroom, sleeping well, moving your body, and connecting with others can be strategies can help nourish you. If you are having difficulties maintaining your well-being, please don't hesitate to contact me and/or find support from physical and mental health resources [here](https://docs.google.com/document/d/1lz-ii5yze_OSkQJqz_7pap7fRjG81LJh0_saBniP-zg/edit) and [here](https://docs.google.com/document/d/1iC-ykD8QJ-w2BVO1Gb0AobD-00Zq_8mznWR5C2mNiF0/edit?usp=sharing).
 
 
 

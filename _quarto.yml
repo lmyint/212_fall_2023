@@ -1,10 +1,15 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!activity_templates/"
 
 website:
   title: "STAT/COMP 212"
   navbar:
+    background: primary
+    search: true
     left:
       - file: index.qmd
         text: "Home"
@@ -12,24 +17,32 @@ website:
         text: "Schedule"
       - file: syllabus.qmd
         text: "Syllabus"
-      - file: activities.qmd
-        text: "Activities"
-      - file: homework.qmd
-        text: "Homework"
+      - sidebar:activities
+      - sidebar:homework
       - file: project.qmd
         text: "Project"
+      - file: tech_setup.qmd
+        text: "Tech Setup"
 
   sidebar:
-    - title: "Activities"
+    - id: activities
+      title: "Activities"
       style: "docked"
       background: light
+      collapse-level: 2
       contents:
         - 01-introductions.qmd
         - 02-adv-ggplot.qmd
         - 03-adv-maps.qmd
-        - 04-interactive-viz.qmd
-        - 05-data-types.qmd
-        - 06-functions-control-structs.qmd
+        # - 04-interactive-viz.qmd
+        # - 05-data-types.qmd
+        # - 06-functions-control-structs.qmd
+
+    - id: homework
+      title: "Homework"
+      contents:
+        - homework0.qmd
+        - homework1.qmd
 
 format:
   html:

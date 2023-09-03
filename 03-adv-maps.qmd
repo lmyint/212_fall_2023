@@ -1,6 +1,7 @@
 ---
-title: "Topic 3: Advanced Spatial Visualizations"
+title: "Advanced Spatial Visualizations"
 author: "Brianna Heggeseth (with contributions from Erin Franke and Vivian Powell)"
+sidebar: false
 ---
 
 ```{r setup, include=FALSE}

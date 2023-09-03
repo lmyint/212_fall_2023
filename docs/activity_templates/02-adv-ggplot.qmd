@@ -1,0 +1,123 @@
+---
+title: "Topic 2: Advanced Data Visualization in ggplot2"
+---
+
+# Learning goals
+
+After this lesson, you should be able to:
+
+- Navigate the [ggplot2 reference page](https://ggplot2.tidyverse.org/reference/) to find the functions needed to create a desired visualization
+- Use the information on a function help page to construct desired plot features
+    - Scan the information in the **Usage** section to identify function arguments that must be set
+    - Understand how the function arguments work by using information in the **Arguments** section
+    - Use the information in the the **Aesthetics** and **Examples** sections to control plot appearance
+- Identify when it would be necessary to use different `data` arguments within the `ggplot()` and `geom_()` layers
+
+
+
+
+
+# Case study: recreating a NYT visualization
+
+We are going to recreate [this NYT visualization](https://www.nytimes.com/interactive/2016/02/19/us/2015-year-in-weather-temperature-precipitation.html) on record setting temperatures by expanding our `ggplot2` toolbox using data from San Francisco (SFO) in 2011.
+
+First load the `tidyverse` package, and read in the data.
+
+```{r}
+library(tidyverse)
+weather <- read_csv("https://lmyint.github.io/212_fall_2023/data/sfo_weather.csv")
+```
+
+**Class exercise 1:** Examine the temperature visualization. What variables underlie the visualization, and how do they map to visual elements (e.g., position, size, shape, and color of the glyphs)?
+
+------------------------------------------------------------------------
+
+We can explore the "Geoms" section of the [ggplot2 reference page](https://ggplot2.tidyverse.org/reference/) to find a `geom` that corresponds to the visual elements in the temperature plot.
+
+**Class exercise 2:** Using both the small example visuals on the right and the names of the `geom`'s, brainstorm some possibilities for `geom`'s we might use to recreate the temperature visualization.
+
+------------------------------------------------------------------------
+
+We need to explore further by opening up the `geom` reference pages to understand if a particular `geom` is suitable for our task. We'll look at the `geom_point` [documentation page](https://ggplot2.tidyverse.org/reference/geom_point.html) to learn the process for reading a documentation page.
+
+Using the process that we just learned, let's use the `geom_linerange` [documentation page](https://ggplot2.tidyverse.org/reference/geom_linerange.html) to start off our temperature visualization with the record lows and highs:
+
+```{r}
+ggplot(weather) +
+    geom_linerange(aes(x = dateInYear, ymin = RecordLow, ymax = RecordHigh), color = "#ECEBE3", linewidth = 1.5) +
+    theme_classic()
+```
+
+**Class exercise 3:** Add to your temperature visualization to also display the usual temperatures (`NormalLow` and `NormalHigh`), and actual 2011 temperatures (`Low` and `High`). The tan color for the usual temperatures is `"#C8B8BA"`, and the red color for the actual temperatures is `"#A90248"`.
+
+```{r}
+# Code for updated plot
+```
+
+------------------------------------------------------------------------
+
+Let's now try to recreate the visual demarcations of the months by adding vertical lines separating the months.
+
+**Class exercise 4:** Brainstorm with your groups how we might draw those vertical lines. What `geom` might we use? What subset of the data might we use in that `geom` layer to draw lines only at the month divisions? One person from your group should write your ideas on the board.
+
+Once ideas are up on the board, we'll work through this together as a class.
+
+```{r}
+# Code for updated plot
+```
+
+------------------------------------------------------------------------
+
+Now let's change the x-axis labels so that the month names display in the center of each month's slice of the plot. (Note that R has built-in variables called `month.abb` and `month.name` that contain abbreviated and full month names.)
+
+**Class exercise 5:** We will split into 3 groups to explore different approaches to this problem. After finding tentative solutions, each group should try out the solution in the temperature plot. Elect one speaker to summarize the group's process and results.
+
+- **AI group:** This group will use [ChatGPT](https://chat.openai.com/) and/or [Google Bard](https://bard.google.com/). Record the chat prompts used and output given. 
+
+- **Google group:** This group will just use Google search. Record search queries and your thought process in selecting which search results to look at first.
+
+- **Documentation group:** This group will only use the [ggplot2 documentation page](https://ggplot2.tidyverse.org/reference/index.html). You might use Ctrl-F or Command-F to search for relevant text on the main function reference page or use the "Search for" box in the top right.
+
+After each group reports out, we will finalize this part of the plot together.
+
+```{r}
+# Code for updated plot
+```
+
+
+# Practice
+
+In pairs, you will go through the same steps as above for the precipitation data. Here, and throughout the course, we will be using the **pair programming** technique.
+
+## Your task
+
+Work together until your precipitation plot looks as below.
+
+- The `culmPrec` variable contains cumulative precipitation for the month up to the given day.
+- The `recordP` variable is a TRUE/FALSE indicator of whether a day was a precipitation record. These are marked by the downward pointing triangles.
+- The numbers on the plot indicate the total precipitation for the month. Do some searching about the `hjust` and `vjust` options to adjust the alignment of the numbers.
+- The blue and tan colors are `"#32a3d8"` and `"#ebeae2"`.
+
+```{r}
+# Code for updated plot
+```
+
+**When should the Driver and Navigator switch roles?** For this exercise, you will switch roles once a particular plot layer (one `geom`) has been implemented correctly. You can physically trade places (coding on one computer for the whole exercise), or you can email code back and forth.
+
+## Reflecting on pair programming
+
+As you pair program, be aware of your comforts and discomforts in the roles of driver and navigator. Pay attention to the comforts and discomforts of your partner. What could you do to support them in becoming more comfortable and confident in both roles?
+
+> WRITE YOUR REFLECTIONS HERE
+
+
+## Making note of new errors
+
+Every time you run into a new error, record the error message and your process for fixing the error in the "Error Log" section of the Quarto file for these exercises.
+
+```
+PASTE ERROR MESSAGE HERE
+```
+
+ADD NOTES ON HOW YOU FIGURED OUT HOW TO FIX THE ERROR.
+

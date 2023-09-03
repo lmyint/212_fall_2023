@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.353">
 
-  <title>STAT/COMP 212 - Interactive visualization (Part 1)</title>
+  <title>STAT/COMP 212 - Welcome to Intermediate Data Science!</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,71 +28,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -390,50 +325,364 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Interactive visualization (Part 1)</h1>
+  <h1 class="title">Welcome to Intermediate Data Science!</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
-<section id="why-use-interactive-visualization" class="slide level2">
-<h2>Why use interactive visualization?</h2>
-<p>Examples:</p>
+<section id="plan-for-today" class="slide level2">
+<h2>Plan for today</h2>
 <ul>
-<li><a href="https://pudding.cool/2020/07/song-decay/">How Music is Remembered</a>
+<li>What is this course about?</li>
+<li>Get to know your classmates</li>
+<li>Shaping our syllabus together</li>
+<li>Create your personal website!
 <ul>
-<li>Finding corresponding information in multiple views</li>
+<li>Website content building + connecting with classmates</li>
 </ul></li>
-<li><a href="https://pudding.cool/2018/11/dearabby/">30 Years of American Anxieties</a></li>
-<li><a href="https://pudding.cool/2022/02/women-in-headlines/">When Women Make Headlines</a></li>
 </ul>
 </section>
-<section id="use-cases-for-interactivity" class="slide level2">
-<h2>Use cases for interactivity</h2>
+<section id="what-is-this-course-about" class="slide level2">
+<h2>What is this course about?</h2>
 <ul>
-<li>Changing data representation: This is about changing the way that certain variables are displayed in a visualization. Often times, this is about changing the plot type.</li>
-<li>Focusing and getting details: Mousing over a plot element to see an exact data value. Zooming and panning. <strong>Common use case</strong></li>
-<li>Data transformation</li>
-<li>Data selection and filtering: Highlighting and brushing. Also reordering for tables and matrices. <strong>Common use case</strong></li>
-<li>Finding corresponding information in multiple views: Seeing a given case highlighted within multiple plots. <strong>Common use case</strong></li>
+<li>Expanding your abilities for self-reflection in service of:
+<ul>
+<li>Your lifelong independent learning</li>
+<li>Our course community</li>
+</ul></li>
+<li>Expanding your data science toolbox:
+<ul>
+<li>Visualization</li>
+<li>Wrangling</li>
+<li>Data acquisition</li>
+<li>Data storytelling</li>
+</ul></li>
+</ul>
+<p>I’ve intentionally put reflection first and data science skills second not necessarily in order of importance but because cultivating data science skills will come automatically—reflection and community-building won’t.</p>
+</section>
+<section id="get-to-know-your-classmates" class="slide level2">
+<h2>Get to know your classmates</h2>
+<p>In groups, introduce yourselves with the following prompts: (~2 minutes/person)</p>
+<ul>
+<li>Name, preferred pronouns</li>
+<li>Macalester connections (e.g., majors/minors/concentrations, clubs, teams, events regularly attended)</li>
+<li>How are you feeling about starting the academic year?</li>
+<li>What is one thing you wish came up more in conversation?</li>
+<li>If you could use data to investigate anything, what would it be?</li>
+</ul>
+<p>When we come back together, you will introduce <strong>someone else</strong> from your group briefly with:</p>
+<ul>
+<li>Their name and preferred pronouns</li>
+<li>1 memorable thing you learned about them from your conversation</li>
 </ul>
 </section>
-<section id="the-plotly-package" class="slide level2">
-<h2>The <code>plotly</code> package</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(plotly)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(babynames)</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a>bnames <span class="ot">&lt;-</span> babynames <span class="sc">%&gt;%</span> <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Leslie"</span>, <span class="st">"Margaux"</span>))</span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(bnames, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> prop, <span class="at">color =</span> sex, <span class="at">linetype =</span> name)) <span class="sc">+</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a>    <span class="fu">geom_line</span>()</span>
-<span id="cb1-8"><a href="#cb1-8"></a>p</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="syllabus-shaping-learning-goals" class="slide level2">
+<h2>Syllabus shaping: learning goals</h2>
+<p>Navigate to the <a href="https://lmyint.github.io/212_fall_2023/syllabus.html#course-learning-goals">Course learning goals</a> section of our syllabus.</p>
+<p><strong>Part 1: Reflect</strong> (~3 min)</p>
+<p>Write a few sentences responding to the following questions:</p>
+<ul>
+<li>What are your goals in taking this class?</li>
+<li>Do you see your goals reflected in the course learning goals? If not, how would you like to see the course goals amended to see your goals reflected in them?</li>
+</ul>
+<p><strong>Part 2: Share</strong> (~5 min)</p>
+<p>At your tables, take turns sharing your responses to the above questions. As a group, summarize your discussion in <a href="https://docs.google.com/document/d/1Jc0sdp5--2Dy9xXiwhMRdlWba2heOSjEbNMWUI58Y2I/edit?usp=sharing">this Google Doc</a>. Elect 1 person to present this summary when we come together as a class to share.</p>
+</section>
+<section id="my-qualms-with-grades" class="slide level2">
+<h2>My qualms with grades</h2>
+<p>Grades (final and intermediate letter grades/points) make me uncomfortable because they:</p>
+<ul>
+<li>Tend to distract from learning (due to a greater focus on the grade than on qualitative feedback)</li>
+<li>Create anxiety that hinders risk-taking and exploration</li>
+<li>Create a power dynamic between me and you that I am uncomfortable with. (I feel like a gatekeeper.)</li>
+</ul>
+<p>If I had my way, I would never assign letter grades and only give qualitative comments all semester. Unfortunately, I am required to submit a letter grade at the end of the course.</p>
+<blockquote>
+<p><strong>I need your input: which of the following two grading systems should we use for the semester?</strong></p>
+</blockquote>
+</section>
+<section id="option-1" class="slide level2">
+<h2>Option 1</h2>
+<p>Summary: evaluation of learning is done by instructor</p>
+<style type="text/css">
+.tab-grading {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.tab-grading td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+    font-size: 14px;
+}
+.tab-grading th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+.tab-grading .tab-grading-9wq8 {
+    border-color: inherit;
+    text-align: center;
+    vertical-align: middle;
+}
+.tab-grading .tab-grading-xwmr {
+    background-color: #34ff34;
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top;
+}
+.tab-grading .tab-grading-zk7v {
+    background-color: #34ff34;
+    border-color: inherit;
+    text-align: center;
+    vertical-align: middle;
+}
+.tab-grading .tab-grading-0pky {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top;
+}
+.tab-grading .tab-grading-7btt {
+    border-color: inherit;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: top;
+}
+</style>
 
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># ggplotly(p)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<table class="tab-grading" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="tab-grading-7btt" data-quarto-table-cell-role="th">Course component</th>
+<th class="tab-grading-7btt" data-quarto-table-cell-role="th">Letter grade: A</th>
+<th class="tab-grading-7btt" data-quarto-table-cell-role="th">Letter grade: B</th>
+<th class="tab-grading-7btt" data-quarto-table-cell-role="th">Letter grade: C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="tab-grading-0pky">Self-reflection in learning process</td>
+<td rowspan="2" class="tab-grading-9wq8">Show <strong>clear growth</strong> and <strong>consistent thoughtfulness</strong> throughout the semester</td>
+<td rowspan="2" class="tab-grading-9wq8">Show <strong>some growth</strong> and <strong>some thoughtfulness</strong> throughout the semester</td>
+<td rowspan="2" class="tab-grading-9wq8">Show <strong>little to no growth</strong> and <strong>minimal thoughtfulness</strong> throughout the semester</td>
+</tr>
+<tr class="even">
+<td class="tab-grading-0pky">Self-reflection in collaborative learning (groupwork)</td>
+</tr>
+<tr class="odd">
+<td class="tab-grading-0pky">Weekly homework</td>
+<td class="tab-grading-9wq8">Pass <strong>all</strong> homework assignments</td>
+<td class="tab-grading-9wq8">Pass <strong>all but 1</strong> homework assignment</td>
+<td class="tab-grading-9wq8">Pass <strong>all but 2</strong> homework assignments</td>
+</tr>
+<tr class="even">
+<td class="tab-grading-0pky">Final project</td>
+<td class="tab-grading-0pky">Complete a project that is <strong>high quality in all of the following aspects:</strong>
+<ul>
+<li>Data wrangling, visualization, analysis, and interpretation</li>
+<li>Workflow and organization</li>
+<li>Addressing peer and instructor feedback</li>
+<li>Giving feedback to peers</li>
+<li>Ethical consideration and communication of results</li>
+</ul></td>
+<td class="tab-grading-0pky">Complete a project that is <strong>at least ok quality</strong> in the aforementioned aspects and <strong>high quality</strong> in <strong>some</strong> aspects</td>
+<td class="tab-grading-0pky">Complete a project that is <strong>ok quality</strong> in the aforementioned aspects</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="option-2" class="slide level2">
+<h2>Option 2</h2>
+<p>Summary: evaluation of learning is done by students in conversation with instructor</p>
+<p>Main difference: The standards below are the basis for your <strong>self-evaluation</strong>. I will join in on the conversation after reviewing your work and your self-evaluation. We will assign grades through conversation.</p>
+<table class="tab-grading" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="tab-grading-7btt" data-quarto-table-cell-role="th">Course component</th>
+<th class="tab-grading-7btt" data-quarto-table-cell-role="th">Letter grade: A</th>
+<th class="tab-grading-7btt" data-quarto-table-cell-role="th">Letter grade: B</th>
+<th class="tab-grading-7btt" data-quarto-table-cell-role="th">Letter grade: C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="tab-grading-0pky">Self-reflection in learning process</td>
+<td rowspan="2" class="tab-grading-9wq8">Show <strong>clear growth</strong> and <strong>consistent thoughtfulness</strong> throughout the semester</td>
+<td rowspan="2" class="tab-grading-9wq8">Show <strong>some growth</strong> and <strong>some thoughtfulness</strong> throughout the semester</td>
+<td rowspan="2" class="tab-grading-9wq8">Show <strong>little to no growth</strong> and <strong>minimal thoughtfulness</strong> throughout the semester</td>
+</tr>
+<tr class="even">
+<td class="tab-grading-0pky">Self-reflection in collaborative learning (groupwork)</td>
+</tr>
+<tr class="odd">
+<td class="tab-grading-0pky">Weekly homework</td>
+<td class="tab-grading-9wq8">Show <strong>strong</strong> understanding of concepts across <strong>all</strong> homework assignments</td>
+<td class="tab-grading-9wq8">Show <strong>strong</strong> understanding of concepts across <strong>most</strong> homework assignments</td>
+<td class="tab-grading-9wq8">Show <strong>adequate</strong> understanding of concepts across <strong>most</strong> homework assignments</td>
+</tr>
+<tr class="even">
+<td class="tab-grading-0pky">Final project</td>
+<td class="tab-grading-0pky">Complete a project that is <strong>high quality in all of the following aspects:</strong>
+<ul>
+<li>Data wrangling, visualization, analysis, and interpretation</li>
+<li>Workflow and organization</li>
+<li>Addressing peer and instructor feedback</li>
+<li>Giving feedback to peers</li>
+<li>Ethical consideration and communication of results</li>
+</ul></td>
+<td class="tab-grading-0pky">Complete a project that is <strong>at least ok quality</strong> in the aforementioned aspects and <strong>high quality</strong> in <strong>some</strong> aspects</td>
+<td class="tab-grading-0pky">Complete a project that is <strong>ok quality</strong> in the aforementioned aspects</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="syllabus-shaping-grading-system" class="slide level2">
+<h2>Syllabus shaping: grading system</h2>
+<p>Navigate to the <a href="https://lmyint.github.io/212_fall_2023/syllabus.html#grading-and-feedback">Grading and feedback</a> section of our syllabus to refer to details of the two grading options as needed.</p>
+<p><strong>Part 1: Reflect</strong> (~5 min)</p>
+<p>Write a few sentences responding to the following questions:</p>
+<ul>
+<li>Which of the two options would be better for motivating you to learn as much as possible, and why? For reducing stress?</li>
+<li>With regards to motivation and stress, are there any other parts of the course (not directly related to the grading system) that you think would benefit from changing?</li>
+</ul>
+<p><strong>Part 2: Share</strong> (~10-15 min)</p>
+<p>At your tables, take turns sharing your responses to the above questions. As a group, summarize your discussion in <a href="https://docs.google.com/document/d/1Jc0sdp5--2Dy9xXiwhMRdlWba2heOSjEbNMWUI58Y2I/edit?usp=sharing">this Google Doc</a>. Elect 1 person to present this summary when we come together as a class to share.</p>
+</section>
+<section class="slide level2">
+
+<div style="font-size: 4em">
+<p>Let’s build your personal website!</p>
 </div>
+</section>
+<section id="start-your-personal-website-quarto" class="slide level2">
+<h2>Start your personal website: Quarto</h2>
+<p>File &gt; New Project &gt; New Directory &gt; Quarto Website</p>
+<ul>
+<li>Name the directory <code>personal_website</code>.</li>
+<li>Put this directory in a place you’ll access beyond this course (and beyond Mac)</li>
+</ul>
+<p>Some files will get created in the directory, and your newly created website will open in your browser.</p>
+</section>
+<section id="your-quarto-site-what-are-these-files" class="slide level2">
+<h2>Your Quarto site: what are these files?</h2>
+<p>Quarto markdown files: The formatting in these files is almost identical to RMarkdown files (e.g., * for italics, ** for bold, # for headers).</p>
+<ul>
+<li><code>index.qmd</code>: This generates the content on the Home page.</li>
+<li><code>about.qmd</code>: This generates the content on the About page.</li>
+</ul>
+<p>Other files:</p>
+<ul>
+<li><code>_quarto.yml</code>: Controls metadata about the website and how it should be built</li>
+<li><code>styles.css</code>: Controls the visual appearance of the site (e.g., color themes, fonts, spacing)
+<ul>
+<li>WARNING: The more you know about CSS, the more addicting it is! It is very easy to unintentionally spend hours playing with colors and site appearance. 😆</li>
+</ul></li>
+</ul>
+</section>
+<section id="todays-goal-the-about-page" class="slide level2">
+<h2>Today’s goal: the “About” page</h2>
+<p>One of the first questions that comes up in every job interview is a question about yourself: “Tell me about yourself. How did you get to this point? What type of work do you want to do?”</p>
+<p>Crafting your homepage and About page can help you prepare for this question and have benefits even before the interview.</p>
+<p>Let’s take a look at an approach for crafting a thoughtful about page.</p>
+</section>
+<section id="some-context" class="slide level2">
+<h2>Some context</h2>
+<p>Richard Feynman was a Nobel prize-winning physicist whose contributions fundamentally reshaped our understanding of the physical world.</p>
+<p>A major part of his success was a <em>method</em> for viewing the world: a mindset of viewing the world through the lens of several open-ended questions. Feynman called these his “favorite problems.” He said of these problems:</p>
+<blockquote>
+<p>You have to keep a dozen of your favorite problems constantly present in your mind, although by and large they will lay in a dormant state. Every time you hear or read a new trick or a new result, test it against each of your twelve problems to see whether it helps. Every once in a while there will be a hit, and people will say, “How did [they] do it? [They] must be a genius!”</p>
+<p>Quote source: <a href="https://fortelabs.com/blog/12-favorite-problems-how-to-spark-genius-with-the-power-of-open-questions/">Forte Labs</a></p>
+</blockquote>
+</section>
+<section id="the-12-favorite-problems-framework" class="slide level2">
+<h2>The 12 Favorite Problems framework</h2>
+<p>Everyone can generate a list of their own 12 favorite problems - a set of meaningful open-ended questions that allow you to learn, explore, and act with intention on your biggest interests in life. Their benefits:</p>
+<blockquote>
+<ul>
+<li>Dedicate your time and attention to ideas that truly spark your curiosity</li>
+<li>See how a piece of information might be useful and why it’s worth keeping</li>
+<li>See insightful patterns across multiple subjects that seem unrelated, but might share a common thread</li>
+<li>Focus the impact of your work on problems where you can make a real difference</li>
+<li>Prime your subconscious to notice helpful solutions to your biggest challenges in the world around you</li>
+<li>Attract like-minded people who have the same interests and goals as you</li>
+</ul>
+<p>Source: <a href="https://fortelabs.com/blog/12-favorite-problems-how-to-spark-genius-with-the-power-of-open-questions/">Forte Labs</a></p>
+</blockquote>
+</section>
+<section id="brainstorming-our-12-favorite-problems-fps" class="slide level2">
+<h2>Brainstorming our 12 favorite problems (FPs)</h2>
+<p>Navigate to <a href="https://fortelabs.com/blog/how-to-generate-your-own-favorite-problems-a-4-step-guide/">this article</a> by Tiago Forte, and scroll down to the first step “Get started with these prompts.”</p>
+<p><strong>We’ll take 15-20 minutes to brainstorm our 12 FPs in the <code>about.qmd</code> file of your new website project.</strong></p>
+<p>Tiago Forte provides examples of his 12 FPs in his post. Feel free to also look at <a href="https://www.lesliemyint.org/12-favorite-problems">my own</a> for more examples. (I’m working on updating my 12 FPs today alongside you!)</p>
+<p><strong>What does this have to do with data science??</strong> The 12 FP framework is a way of filtering the deluge of information thrown at us to the precious subset that matter most to our deepest questions. In other words, using data of all forms most effectively in our day-to-day lives. I truly believe that adopting this approach will help you become the kinds of data scientists who will be invaluable wherever you go.</p>
+</section>
+<section id="sharing-our-12-fps" class="slide level2">
+<h2>Sharing our 12 FPs</h2>
+<p>In groups, each person will have ~2 minutes to share their top 2 FPs and get some feedback from the group. The group should give feedback to help make the FPs more specific, counterintuitive, and interdiscipinary:</p>
+<ul>
+<li><strong>Specific:</strong>
+<ul>
+<li>Original: “How can I be a better leader?” is a little broad.</li>
+<li>Possible improvement: “How can I be a better leader <em>as an introvert</em>?”</li>
+</ul></li>
+<li><strong>Counterintuitive:</strong>
+<ul>
+<li>Original: “How can I improve the standard of living in the global south?”</li>
+<li>Possible improvement: “How can I improve the standard of living in the global south <em>without further contributing to the climate change that threatens those regions the most</em>?”</li>
+</ul></li>
+<li><strong>Interdisciplinary:</strong>
+<ul>
+<li>Original: How can I improve education?”</li>
+<li>Possible improvement: “How can I improve education <em>by borrowing ideas from video games</em>?”</li>
+</ul></li>
+</ul>
+<p>(Examples from <a href="https://fortelabs.com/blog/how-to-generate-your-own-favorite-problems-a-4-step-guide/">Forte Labs</a>)</p>
+</section>
+<section id="free-time" class="slide level2">
+<h2>Free time</h2>
+<p>The remainder of the class period is free time. Some suggestions for spending the time:</p>
+<ul>
+<li>Get up and sit with new people. Share your 12 FPs with each other and get further feedback.</li>
+<li>Keep working on your website. Google to learn more about CSS and play with the appearance of your page.</li>
+<li>Clarify anything about the course with me.</li>
+</ul>
+</section>
+<section id="announcements" class="slide level2">
+<h2>Announcements</h2>
+<p>To do before class on Thursday:</p>
+<ul>
+<li>Set up R and RStudio using <a href="tech_setup.qmd">these instructions</a>.</li>
+<li><a href="https://join.slack.com/t/statcomp212fall2023/shared_invite/zt-22hwq73vn-IOFifr_VpO_4AAN4vYVDgA">Join</a> our Slack workspace.
+<ul>
+<li>Update your Slack profile with preferred name, pronouns, name pronunciation. (To find your profile, click on your name under Direct Messages on the left menu, and click “Edit Profile”.)</li>
+<li>Introduce yourself in the <code>#general</code> channel.</li>
+</ul></li>
+<li>Familiarize yourself with the layout of our <a href="https://lmyint.github.io/212_fall_2023/">course website</a>.</li>
+<li>Look at the <a href="schedule.qmd#guiding-questions">Guiding Questions</a> for Thursday’s class on advanced ggplot2.</li>
+</ul>
 
-<img data-src="interactive-viz_files/figure-revealjs/unnamed-chunk-1-1.png" width="960" class="r-stretch"><div class="footer footer-default">
+<div class="footer footer-default">
 
 </div>
 </section>
@@ -463,13 +712,13 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
+'smaller': true,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
@@ -648,44 +897,6 @@
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

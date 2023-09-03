@@ -1,0 +1,344 @@
+---
+title: "Welcome to Intermediate Data Science!"
+format:
+  revealjs:
+    scrollable: true
+    smaller: true
+---
+
+## Plan for today
+
+- What is this course about?
+- Get to know your classmates
+- Shaping our syllabus together
+- Create your personal website!
+    - Website content building + connecting with classmates
+    
+## What is this course about?
+
+- Expanding your abilities for self-reflection in service of:
+    - Your lifelong independent learning
+    - Our course community
+- Expanding your data science toolbox:
+    - Visualization
+    - Wrangling
+    - Data acquisition
+    - Data storytelling
+
+I've intentionally put reflection first and data science skills second not necessarily in order of importance but because cultivating data science skills will come automatically---reflection and community-building won't.
+
+## Get to know your classmates
+
+In groups, introduce yourselves with the following prompts: (~2 minutes/person)
+
+- Name, preferred pronouns
+- Macalester connections (e.g., majors/minors/concentrations, clubs, teams, events regularly attended)
+- How are you feeling about starting the academic year?
+- What is one thing you wish came up more in conversation?
+- If you could use data to investigate anything, what would it be?
+
+When we come back together, you will introduce **someone else** from your group briefly with:
+
+- Their name and preferred pronouns
+- 1 memorable thing you learned about them from your conversation
+
+## Syllabus shaping: learning goals
+
+Navigate to the [Course learning goals](https://lmyint.github.io/212_fall_2023/syllabus.html#course-learning-goals) section of our syllabus.
+
+**Part 1: Reflect** (~3 min)
+
+Write a few sentences responding to the following questions:
+
+- What are your goals in taking this class?
+- Do you see your goals reflected in the course learning goals? If not, how would you like to see the course goals amended to see your goals reflected in them?
+
+**Part 2: Share** (~5 min)
+
+At your tables, take turns sharing your responses to the above questions. As a group, summarize your discussion in [this Google Doc](https://docs.google.com/document/d/1Jc0sdp5--2Dy9xXiwhMRdlWba2heOSjEbNMWUI58Y2I/edit?usp=sharing). Elect 1 person to present this summary when we come together as a class to share.
+
+## My qualms with grades
+
+Grades (final and intermediate letter grades/points) make me uncomfortable because they:
+
+- Tend to distract from learning (due to a greater focus on the grade than on qualitative feedback)
+- Create anxiety that hinders risk-taking and exploration
+- Create a power dynamic between me and you that I am uncomfortable with. (I feel like a gatekeeper.)
+
+If I had my way, I would never assign letter grades and only give qualitative comments all semester. Unfortunately, I am required to submit a letter grade at the end of the course.
+
+> **I need your input: which of the following two grading systems should we use for the semester?**
+
+## Option 1
+
+Summary: evaluation of learning is done by instructor
+
+```{=html}
+<style type="text/css">
+.tab-grading {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.tab-grading td {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+    font-size: 14px;
+}
+.tab-grading th {
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-weight: normal;
+    overflow: hidden;
+    padding: 10px 5px;
+    word-break: normal;
+}
+.tab-grading .tab-grading-9wq8 {
+    border-color: inherit;
+    text-align: center;
+    vertical-align: middle;
+}
+.tab-grading .tab-grading-xwmr {
+    background-color: #34ff34;
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top;
+}
+.tab-grading .tab-grading-zk7v {
+    background-color: #34ff34;
+    border-color: inherit;
+    text-align: center;
+    vertical-align: middle;
+}
+.tab-grading .tab-grading-0pky {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top;
+}
+.tab-grading .tab-grading-7btt {
+    border-color: inherit;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: top;
+}
+</style>
+
+<table class="tab-grading">
+<thead>
+  <tr>
+    <th class="tab-grading-7btt">Course component</th>
+    <th class="tab-grading-7btt">Letter grade: A</th>
+    <th class="tab-grading-7btt">Letter grade: B</th>
+    <th class="tab-grading-7btt">Letter grade: C</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tab-grading-0pky">Self-reflection in learning process</td>
+    <td class="tab-grading-9wq8" rowspan="2">Show <b>clear growth</b> and <b>consistent thoughtfulness</b> throughout the semester</td>
+    <td class="tab-grading-9wq8" rowspan="2">Show <b>some growth</b> and <b>some thoughtfulness</b> throughout the semester</td>
+    <td class="tab-grading-9wq8" rowspan="2">Show <b>little to no growth</b> and <b>minimal thoughtfulness</b> throughout the semester</td>
+  </tr>
+  <tr>
+    <td class="tab-grading-0pky">Self-reflection in collaborative learning (groupwork)</td>
+  </tr>
+  <tr>
+    <td class="tab-grading-0pky">Weekly homework</td>
+    <td class="tab-grading-9wq8">Pass <b>all</b> homework assignments</td>
+    <td class="tab-grading-9wq8">Pass <b>all but 1</b> homework assignment</td>
+    <td class="tab-grading-9wq8">Pass <b>all but 2</b> homework assignments</td>
+  </tr>
+  <tr>
+    <td class="tab-grading-0pky">Final project</td>
+    <td class="tab-grading-0pky">Complete a project that is <b>high quality</span> in all of the following aspects:
+    <ul>
+      <li>Data wrangling, visualization, analysis, and interpretation</li>
+      <li>Workflow and organization</li>
+      <li>Addressing peer and instructor feedback</li>
+      <li>Giving feedback to peers</li>
+      <li>Ethical consideration and communication of results</li>
+    </ul>
+    </td>
+    <td class="tab-grading-0pky">Complete a project that is <b>at least ok quality</b> in the aforementioned aspects and <b>high quality</b> in <b>some</b> aspects</td>
+    <td class="tab-grading-0pky">Complete a project that is <b>ok quality</b> in the aforementioned aspects</td>
+  </tr>
+</tbody>
+</table>
+```
+
+## Option 2
+
+Summary: evaluation of learning is done by students in conversation with instructor
+
+Main difference: The standards below are the basis for your **self-evaluation**. I will join in on the conversation after reviewing your work and your self-evaluation. We will assign grades through conversation.
+
+```{=html}
+<table class="tab-grading">
+<thead>
+  <tr>
+    <th class="tab-grading-7btt">Course component</th>
+    <th class="tab-grading-7btt">Letter grade: A</th>
+    <th class="tab-grading-7btt">Letter grade: B</th>
+    <th class="tab-grading-7btt">Letter grade: C</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tab-grading-0pky">Self-reflection in learning process</td>
+    <td class="tab-grading-9wq8" rowspan="2">Show <b>clear growth</b> and <b>consistent thoughtfulness</b> throughout the semester</td>
+    <td class="tab-grading-9wq8" rowspan="2">Show <b>some growth</b> and <b>some thoughtfulness</b> throughout the semester</td>
+    <td class="tab-grading-9wq8" rowspan="2">Show <b>little to no growth</b> and <b>minimal thoughtfulness</b> throughout the semester</td>
+  </tr>
+  <tr>
+    <td class="tab-grading-0pky">Self-reflection in collaborative learning (groupwork)</td>
+  </tr>
+  <tr>
+    <td class="tab-grading-0pky">Weekly homework</td>
+    <td class="tab-grading-9wq8">Show <b>strong</b> understanding of concepts across <b>all</b> homework assignments</td>
+    <td class="tab-grading-9wq8">Show <b>strong</b> understanding of concepts across <b>most</b> homework assignments</td>
+    <td class="tab-grading-9wq8">Show <b>adequate</b> understanding of concepts across <b>most</b> homework assignments</td>
+  </tr>
+  <tr>
+    <td class="tab-grading-0pky">Final project</td>
+    <td class="tab-grading-0pky">Complete a project that is <b>high quality</span> in all of the following aspects:
+    <ul>
+      <li>Data wrangling, visualization, analysis, and interpretation</li>
+      <li>Workflow and organization</li>
+      <li>Addressing peer and instructor feedback</li>
+      <li>Giving feedback to peers</li>
+      <li>Ethical consideration and communication of results</li>
+    </ul>
+    </td>
+    <td class="tab-grading-0pky">Complete a project that is <b>at least ok quality</b> in the aforementioned aspects and <b>high quality</b> in <b>some</b> aspects</td>
+    <td class="tab-grading-0pky">Complete a project that is <b>ok quality</b> in the aforementioned aspects</td>
+  </tr>
+</tbody>
+</table>
+```
+
+## Syllabus shaping: grading system
+
+Navigate to the [Grading and feedback](https://lmyint.github.io/212_fall_2023/syllabus.html#grading-and-feedback) section of our syllabus to refer to details of the two grading options as needed.
+
+**Part 1: Reflect** (~5 min)
+
+Write a few sentences responding to the following questions:
+
+- Which of the two options would be better for motivating you to learn as much as possible, and why? For reducing stress?
+- With regards to motivation and stress, are there any other parts of the course (not directly related to the grading system) that you think would benefit from changing?
+
+**Part 2: Share** (~10-15 min)
+
+At your tables, take turns sharing your responses to the above questions. As a group, summarize your discussion in [this Google Doc](https://docs.google.com/document/d/1Jc0sdp5--2Dy9xXiwhMRdlWba2heOSjEbNMWUI58Y2I/edit?usp=sharing). Elect 1 person to present this summary when we come together as a class to share.
+
+---------
+
+<div style="font-size: 4em">
+Let's build your personal website!
+</div>
+
+## Start your personal website: Quarto
+
+File > New Project > New Directory > Quarto Website
+
+- Name the directory `personal_website`.
+- Put this directory in a place you'll access beyond this course (and beyond Mac)
+
+Some files will get created in the directory, and your newly created website will open in your browser.
+
+## Your Quarto site: what are these files?
+
+Quarto markdown files: The formatting in these files is almost identical to RMarkdown files (e.g., * for italics, ** for bold, # for headers).
+
+- `index.qmd`: This generates the content on the Home page.
+- `about.qmd`: This generates the content on the About page.
+
+Other files:
+
+- `_quarto.yml`: Controls metadata about the website and how it should be built
+- `styles.css`: Controls the visual appearance of the site (e.g., color themes, fonts, spacing)
+    - WARNING: The more you know about CSS, the more addicting it is! It is very easy to unintentionally spend hours playing with colors and site appearance. 😆
+    
+## Today's goal: the "About" page
+
+One of the first questions that comes up in every job interview is a question about yourself: "Tell me about yourself. How did you get to this point? What type of work do you want to do?"
+
+Crafting your homepage and About page can help you prepare for this question and have benefits even before the interview.
+
+Let's take a look at an approach for crafting a thoughtful about page.
+
+## Some context
+
+Richard Feynman was a Nobel prize-winning physicist whose contributions fundamentally reshaped our understanding of the physical world.
+
+A major part of his success was a *method* for viewing the world: a mindset of viewing the world through the lens of several open-ended questions. Feynman called these his "favorite problems." He said of these problems:
+
+> You have to keep a dozen of your favorite problems constantly present in your mind, although by and large they will lay in a dormant state. Every time you hear or read a new trick or a new result, test it against each of your twelve problems to see whether it helps. Every once in a while there will be a hit, and people will say, "How did [they] do it? [They] must be a genius!"
+> 
+> Quote source: [Forte Labs](https://fortelabs.com/blog/12-favorite-problems-how-to-spark-genius-with-the-power-of-open-questions/)
+
+## The 12 Favorite Problems framework
+
+Everyone can generate a list of their own 12 favorite problems - a set of meaningful open-ended questions that allow you to learn, explore, and act with intention on your biggest interests in life. Their benefits:
+
+> 
+> - Dedicate your time and attention to ideas that truly spark your curiosity
+> - See how a piece of information might be useful and why it’s worth keeping
+> - See insightful patterns across multiple subjects that seem unrelated, but might share a common thread
+> - Focus the impact of your work on problems where you can make a real difference
+> - Prime your subconscious to notice helpful solutions to your biggest challenges in the world around you
+> - Attract like-minded people who have the same interests and goals as you
+> 
+> Source: [Forte Labs](https://fortelabs.com/blog/12-favorite-problems-how-to-spark-genius-with-the-power-of-open-questions/)
+
+## Brainstorming our 12 favorite problems (FPs)
+
+Navigate to [this article](https://fortelabs.com/blog/how-to-generate-your-own-favorite-problems-a-4-step-guide/) by Tiago Forte, and scroll down to the first step "Get started with these prompts."
+
+**We'll take 15-20 minutes to brainstorm our 12 FPs in the `about.qmd` file of your new website project.**
+
+Tiago Forte provides examples of his 12 FPs in his post. Feel free to also look at [my own](https://www.lesliemyint.org/12-favorite-problems) for more examples. (I'm working on updating my 12 FPs today alongside you!)
+
+**What does this have to do with data science??** The 12 FP framework is a way of filtering the deluge of information thrown at us to the precious subset that matter most to our deepest questions. In other words, using data of all forms most effectively in our day-to-day lives. I truly believe that adopting this approach will help you become the kinds of data scientists who will be invaluable wherever you go.
+
+## Sharing our 12 FPs
+
+In groups, each person will have ~2 minutes to share their top 2 FPs and get some feedback from the group. The group should give feedback to help make the FPs more specific, counterintuitive, and interdiscipinary:
+
+- **Specific:**
+    - Original: "How can I be a better leader?" is a little broad.
+    - Possible improvement: "How can I be a better leader *as an introvert*?"
+- **Counterintuitive:**
+    - Original: "How can I improve the standard of living in the global south?"
+    - Possible improvement: "How can I improve the standard of living in the global south *without further contributing to the climate change that threatens those regions the most*?"
+- **Interdisciplinary:**
+    - Original: How can I improve education?"
+    - Possible improvement: "How can I improve education *by borrowing ideas from video games*?"
+
+(Examples from [Forte Labs](https://fortelabs.com/blog/how-to-generate-your-own-favorite-problems-a-4-step-guide/))
+
+## Free time
+
+The remainder of the class period is free time. Some suggestions for spending the time: 
+
+- Get up and sit with new people. Share your 12 FPs with each other and get further feedback.
+- Keep working on your website. Google to learn more about CSS and play with the appearance of your page.
+- Clarify anything about the course with me.
+
+
+## Announcements
+
+To do before class on Thursday:
+
+- Set up R and RStudio using [these instructions](tech_setup.qmd).
+- [Join](https://join.slack.com/t/statcomp212fall2023/shared_invite/zt-22hwq73vn-IOFifr_VpO_4AAN4vYVDgA) our Slack workspace.
+    - Update your Slack profile with preferred name, pronouns, name pronunciation. (To find your profile, click on your name under Direct Messages on the left menu, and click "Edit Profile".)
+    - Introduce yourself in the `#general` channel.
+- Familiarize yourself with the layout of our [course website](https://lmyint.github.io/212_fall_2023/).
+- Look at the [Guiding Questions](schedule.qmd#guiding-questions) for Thursday's class on advanced ggplot2.
+
+

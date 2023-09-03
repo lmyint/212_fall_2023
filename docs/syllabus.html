@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT/COMP 212 - Preliminary Syllabus</title>
+<title>STAT/COMP 212 - Syllabus</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,8 +55,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -93,17 +92,47 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./syllabus.html" rel="" target="" aria-current="page">
  <span class="menu-text">Syllabus</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./activities.html" rel="" target="">
- <span class="menu-text">Activities</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-activities" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Activities</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-activities">    
+        <li>
+    <a class="dropdown-item" href="./01-introductions.html" rel="" target="">
+ <span class="dropdown-text">Welcome to the course!</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./homework.html" rel="" target="">
- <span class="menu-text">Homework</span></a>
+        <li>
+    <a class="dropdown-item" href="./02-adv-ggplot.html" rel="" target="">
+ <span class="dropdown-text">Advanced Data Visualization in ggplot2</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./03-adv-maps.html" rel="" target="">
+ <span class="dropdown-text">Advanced Spatial Visualizations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-homework" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Homework</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-homework">    
+        <li>
+    <a class="dropdown-item" href="./homework0.html" rel="" target="">
+ <span class="dropdown-text">Homework 0</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework1.html" rel="" target="">
+ <span class="dropdown-text">Homework 1</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./project.html" rel="" target="">
  <span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tech_setup.html" rel="" target="">
+ <span class="menu-text">Tech Setup</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -125,25 +154,34 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#course-learning-goals" id="toc-course-learning-goals" class="nav-link" data-scroll-target="#course-learning-goals">Course learning goals</a></li>
   </ul></li>
+  <li><a href="#course-communication" id="toc-course-communication" class="nav-link" data-scroll-target="#course-communication">Course communication</a>
+  <ul class="collapse">
   <li><a href="#how-to-contact-me" id="toc-how-to-contact-me" class="nav-link" data-scroll-target="#how-to-contact-me">How to contact me</a></li>
+  <li><a href="#discussion-board-slack" id="toc-discussion-board-slack" class="nav-link" data-scroll-target="#discussion-board-slack">Discussion board (Slack)</a></li>
+  </ul></li>
   <li><a href="#guiding-values" id="toc-guiding-values" class="nav-link" data-scroll-target="#guiding-values">Guiding values</a>
   <ul class="collapse">
   <li><a href="#community-is-key" id="toc-community-is-key" class="nav-link" data-scroll-target="#community-is-key">Community is key</a></li>
   <li><a href="#reflection-is-paramount" id="toc-reflection-is-paramount" class="nav-link" data-scroll-target="#reflection-is-paramount">Reflection is paramount</a></li>
-  <li><a href="#mistakes-are-valuable" id="toc-mistakes-are-valuable" class="nav-link" data-scroll-target="#mistakes-are-valuable">Mistakes are valuable</a></li>
+  <li><a href="#mistakes-are-essential" id="toc-mistakes-are-essential" class="nav-link" data-scroll-target="#mistakes-are-essential">Mistakes are essential</a></li>
   <li><a href="#communication-is-a-superpower" id="toc-communication-is-a-superpower" class="nav-link" data-scroll-target="#communication-is-a-superpower">Communication is a superpower</a></li>
   </ul></li>
   <li><a href="#how-to-thrive-and-what-to-expect" id="toc-how-to-thrive-and-what-to-expect" class="nav-link" data-scroll-target="#how-to-thrive-and-what-to-expect">How to thrive and what to expect</a>
   <ul class="collapse">
-  <li><a href="#before-class" id="toc-before-class" class="nav-link" data-scroll-target="#before-class">Before class</a></li>
+  <li><a href="#outside-of-class" id="toc-outside-of-class" class="nav-link" data-scroll-target="#outside-of-class">Outside of class</a></li>
   <li><a href="#during-class" id="toc-during-class" class="nav-link" data-scroll-target="#during-class">During class</a></li>
-  <li><a href="#after-class" id="toc-after-class" class="nav-link" data-scroll-target="#after-class">After class</a></li>
   </ul></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#grading-and-feedback" id="toc-grading-and-feedback" class="nav-link" data-scroll-target="#grading-and-feedback">Grading and feedback</a>
+  <ul class="collapse">
+  <li><a href="#option-1-evaluation-of-learning-is-done-by-instructor" id="toc-option-1-evaluation-of-learning-is-done-by-instructor" class="nav-link" data-scroll-target="#option-1-evaluation-of-learning-is-done-by-instructor">Option 1: evaluation of learning is done by instructor</a></li>
+  <li><a href="#option-2-evaluation-of-learning-is-done-by-students-in-conversation-with-instructor" id="toc-option-2-evaluation-of-learning-is-done-by-students-in-conversation-with-instructor" class="nav-link" data-scroll-target="#option-2-evaluation-of-learning-is-done-by-students-in-conversation-with-instructor">Option 2: evaluation of learning is done by students in conversation with instructor</a></li>
+  </ul></li>
   <li><a href="#textbooks" id="toc-textbooks" class="nav-link" data-scroll-target="#textbooks">Textbooks</a></li>
   <li><a href="#other-policies" id="toc-other-policies" class="nav-link" data-scroll-target="#other-policies">Other policies</a>
   <ul class="collapse">
   <li><a href="#late-work" id="toc-late-work" class="nav-link" data-scroll-target="#late-work">Late work</a></li>
+  <li><a href="#academic-integrity" id="toc-academic-integrity" class="nav-link" data-scroll-target="#academic-integrity">Academic integrity</a></li>
+  <li><a href="#artificial-intelligence-ai-use" id="toc-artificial-intelligence-ai-use" class="nav-link" data-scroll-target="#artificial-intelligence-ai-use">Artificial intelligence (AI) use</a></li>
   </ul></li>
   <li><a href="#course-project" id="toc-course-project" class="nav-link" data-scroll-target="#course-project">Course project</a></li>
   <li><a href="#the-environment-you-deserve" id="toc-the-environment-you-deserve" class="nav-link" data-scroll-target="#the-environment-you-deserve">The environment you deserve</a></li>
@@ -155,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Preliminary Syllabus</h1>
+<h1 class="title">Syllabus</h1>
 </div>
 
 
@@ -170,17 +208,16 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><span style="color: red;"> <strong>Note to self:</strong> Consult CUE syllabus review guide to make sure the tone of this syllabus is on target </span></p>
 <section id="what-is-this-course-about" class="level1">
 <h1>What is this course about?</h1>
 <blockquote class="blockquote">
 <p>Nature doesn’t reveal its secrets easily.<br> - <em>Thomas Kempa</em></p>
 </blockquote>
 <p>Nor do data.</p>
-<p>But that is what can make data science so thrilling!</p>
+<p>But that is exactly what can make data science so thrilling!</p>
 <p>This course is about empowering you with the <strong>wisdom</strong> to ask the best questions of data–ones that are meaningful, adaptive, and equity-minded–and the <strong>technical savvy</strong> to answer them.</p>
-<p>While we will cover many important skills, they won’t cover everything there is to know in a data science career. My other primary goal is for you to refine your <strong>learning process</strong> so that you feel confident learning new skills on your own in the future.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>Because your careers (whether in data science or not), will all involve further learning and working with others, my other primary goal is for you to cultivate <strong>self-reflection skills</strong> with regards to your own learning and your collaboration with others. In this way, I hope that you feel confident learning new skills on your own in the future and contributing to a welcoming work community.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Course catalog description">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -215,39 +252,89 @@ Course catalog description
 <li>Use appropriate methods when working with missing data</li>
 <li>Translate code between R and Python</li>
 <li>Articulate the role of machine learning and causal inference in data science work</li>
-<li>Craft compelling data stories with attention to ethical considerations</li>
+<li>Iterate on the question-explore-question cycle to craft compelling data stories with attention to ethical considerations</li>
 <li>Maintain a digital portfolio of your data science projects</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Reflect">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reflect
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Which of the learning goals above do you disagree with or want more clarity on?</li>
+<li>Do you have any goals that you’d like to include on this list?</li>
+</ul>
+</div>
+</div>
+<p><br><br><br><br></p>
 </section>
 </section>
-<section id="how-to-contact-me" class="level1">
-<h1>How to contact me</h1>
-<p>I love getting to talk to students outside of class time–whether class-related or not. Come chat with me!</p>
-<p>I’ll be setting times for drop-in hours based on feedback on what times are best for you. <strong><em>(Rename to AMA hours???)</em></strong> I’ll update my drop-in hours here when they’re finalized.</p>
+<section id="course-communication" class="level1">
+<h1>Course communication</h1>
+<section id="how-to-contact-me" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-contact-me">How to contact me</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Call me &quot;Leslie&quot;">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Call me “Leslie”
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Students sometimes wonder what to call their professors. I prefer to be called Leslie (lez-lee), but if you prefer to be more formal, I am also ok with Professor Myint (pronounced “mee-int”). My preferred gender pronouns are she/her/hers.</p>
+<p>Please help me make sure that I call you by your preferred name and pronouns too!</p>
+</div>
+</div>
+<p>I love getting to talk to students outside of class time—whether about class-related topics or anything else. Come chat with me!</p>
+<p>I’ll be setting times for drop-in hours based on feedback from the pre-course survey. I’ll update my drop-in hours here when they’re finalized.</p>
 <p><strong>Where:</strong> Olin-Rice 232<br> <strong>When:</strong> TBD</p>
-<p>I’m also happy to meet one-on-one with you if my normal drop-in hours don’t work. You can schedule a time to meet with me via <a href="https://calendly.com/lmyint">Calendly</a>.</p>
-<p>I’ll also often be at the Leonard Center from about 4:30-5:10 some weekdays. Feel free to stop by and chat!</p>
+<p>I’m also happy to meet one-on-one if my normal drop-in hours don’t work. You can schedule a time to meet with me via <a href="https://calendly.com/lmyint">Calendly</a>.</p>
+<p>I’ll also often be in the Leonard Center weight room from about 4:30-5:10 some weekdays. Feel free to say hello!</p>
+</section>
+<section id="discussion-board-slack" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-board-slack">Discussion board (Slack)</h2>
+<p>Slack is a commonly used communication tool in industry and is useful to be familiar with, so we’ll be using it as our discussion board.</p>
+<ul>
+<li>If you’re new to Slack, <a href="https://youtu.be/6wjmH5qL3Ms?si=tIg_gAAxbDh6qQ3-">this video</a> provides a quick overview.</li>
+<li>First join our STAT/COMP 212: Fall 2023 workspace <a href="https://join.slack.com/t/statcomp212fall2023/shared_invite/zt-22hwq73vn-IOFifr_VpO_4AAN4vYVDgA">here</a>.</li>
+<li>After joining, you can access our workspace <a href="https://statcomp212fall2023.slack.com">here</a>. (You might want to bookmark this if view)</li>
+</ul>
+<p><br><br><br><br></p>
+</section>
 </section>
 <section id="guiding-values" class="level1">
 <h1>Guiding values</h1>
 <section id="community-is-key" class="level2">
 <h2 class="anchored" data-anchor-id="community-is-key">Community is key</h2>
-<p>There’s something sacred about going on a journey in tandem with others. Triumphs feel more spirited and challenges feel less daunting when we can share them with others facing the same things. As a parent, it has been my lifeline to have friends with young children about the same age as my daughter for exactly this reason.</p>
-<p>Cultivating a good classroom community is one of my top priorities for us this semester. I’m not expecting everyone in the course to become best friends, but I do hope that in the process of learning together, you will come to value the insights that you gain from and give to your peers.</p>
+<p>A sense of <a href="https://www.educause.edu/research-and-publications/books/learning-spaces/chapter-4-community-hidden-context-learning">community</a> and connectedness can provide a powerful environment for learning: Research shows that learning is maximized when students feel a sense of belonging in the educational environment (e.g., Booker, 2016). A negative climate may create barriers to learning, while a positive climate can energize students’ learning (e.g., Pascarella &amp; Terenzini, cited in How Learning Works, 2012).</p>
+<p>Our class is participating in the <strong>Classroom Community &amp; Connectedness Project</strong> this semester. On <strong>Thursday, September 21</strong> our class sessions will be a facilitated class activity (peers and facilitators only; I will not be present) to collectively reflect on strengthening our classroom community, with the intent of improving the learning environment for all of us.</p>
+<p>Your participation is voluntary, but very much appreciated. The project is co-sponsored by Macalester’s Serie Center for Scholarship and Teaching and our Office of Institutional Research &amp; Assessment.</p>
 </section>
 <section id="reflection-is-paramount" class="level2">
 <h2 class="anchored" data-anchor-id="reflection-is-paramount">Reflection is paramount</h2>
 <p>The <em>content</em> you learn will be cool (unbiased opinion!), but it is a <strong>guarantee</strong> that as technology evolves, some part of it will become out of date during your careers. What you will need to rely on when you leave Macalester is what I want to ensure you cultivate now: a good learning process. And the cornerstone of a good learning process is <strong>reflection</strong>.</p>
-<p>Reflection is not just fundamental to learning content–it’s fundamental to learning any sort of intellectual, emotional, or physical skill. For this reason, I will be prioritizing reflection as a goal for our course in both content learning and collaborative learning (groupwork). (Note that these reflection goals are the first two course learning goals.)</p>
+<p>Reflection is not just fundamental to learning content–it’s fundamental to learning any sort of intellectual, emotional, or physical skill. For this reason, I will be prioritizing reflection as a goal for our course in both content learning and collaborative activities. (Note that these reflection goals are the first two course learning goals.)</p>
 </section>
-<section id="mistakes-are-valuable" class="level2">
-<h2 class="anchored" data-anchor-id="mistakes-are-valuable">Mistakes are valuable</h2>
+<section id="mistakes-are-essential" class="level2">
+<h2 class="anchored" data-anchor-id="mistakes-are-essential">Mistakes are essential</h2>
 <blockquote class="blockquote">
 <p>An expert is a person who has made all the mistakes which can be made in a narrow field.<br> - <em>Niels Bohr, Nobel Prize-winning physicist</em></p>
 </blockquote>
 <p>I don’t feel comfortable working with a new R package until I’ve seen the same errors over and over again. Seeing new errors helps me understand the constraints of the code and the assumptions that I was making about my data.</p>
-<p>We’re going to be seeking out mistakes like my cats hunt for leftover meat scraps.</p>
-<p>(Insert picture of my cats)</p>
+<p>We’re going to be seeking out mistakes like my cats hunt for leftover food scraps.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/cat.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">My cat Potato attempting to eat my daughter’s dinner</figcaption>
+</figure>
+</div>
 </section>
 <section id="communication-is-a-superpower" class="level2">
 <h2 class="anchored" data-anchor-id="communication-is-a-superpower">Communication is a superpower</h2>
@@ -263,65 +350,111 @@ Read to collect the dots, write to connect them <a href="https://t.co/YbgnKKFUNn
 </blockquote>
 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </center>
+<p><br><br><br><br></p>
 </section>
 </section>
 <section id="how-to-thrive-and-what-to-expect" class="level1">
 <h1>How to thrive and what to expect</h1>
-<p>When taking a new course, figuring out the right workflow/cadence of effort throughout the week can be a big adjustment. And most of you have to do this for 4 different courses! Below are some suggestions for what to expect in the course and how to focus your time and attention before, during, and after class:</p>
-<section id="before-class" class="level2">
-<h2 class="anchored" data-anchor-id="before-class">Before class</h2>
-<p>Most class periods will have a required reading and associated Moodle checkpoint. My goal for the readings is for you to be familiarize yourself with concepts so that you’re not seeing them for the first time in class. The checkpoint questions highlight key ideas from the reading and follow the same order as ideas from the reading.</p>
-<p><strong>Suggestion:</strong> Scan the checkpoint questions before the reading to preview what the main ideas are. Keep these main points in mind as you read to guide your attention, and fill in answers to checkpoint questions as you read. Record or upvote questions in our Course Questions Google Doc <strong><em>(CREATE A GDOC AND LINK)</em></strong></p>
-<p>About every other week, we will discuss a podcast for the first ~20 minutes of class. These podcasts are meant to expose you aspects of data science in industry. Record anything that you’re curious about, and come prepared to discuss.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<p>When taking a new course, figuring out the right workflow/cadence of effort throughout the week can be a big adjustment. And most of you are doing this for 4 different courses! Below are some suggestions for what to expect in the course and how to focus your time and attention during and outside of class.</p>
+<section id="outside-of-class" class="level2">
+<h2 class="anchored" data-anchor-id="outside-of-class">Outside of class</h2>
+<p><strong>Pre-class reading:</strong> Most class periods will have a required reading to review ideas from previous courses or to familiarize yourself with new concepts before seeing them again in class. My goal for these readings is for you to get the most out of class time by being able to more easily follow explanations in class and to engage most fully in class activities. I will provide <a href="./schedule.html#guiding-questions">Guiding Questions</a> for each reading to focus your attention.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Suggestion">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Suggestion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Scan the <a href="./schedule.html#guiding-questions">Guiding Questions</a> before reading to preview the main ideas. Fill in answers to these questions as you read. Ask (and answer!) questions in the <code>#questions</code> channel in our <a href="https://statcomp212fall2023.slack.com">Slack workspace</a>.</p>
+</div>
+</div>
+<p><strong>Podcast discussions:</strong> About every other week, we will discuss a podcast for the first ~20 minutes of class. These podcasts are meant to expose you aspects of data science in industry. Record anything that you’re curious about, and come prepared to discuss.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Your own media contributions">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Your own media contributions
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>Throughout the semester, if you come across any media that is relevant to the course, feel free to suggest it as a discussion piece by emailing the instructor or posting it on our Slack channel. (ADD LINK)</p>
+<p>Throughout the semester, if you come across any media that is relevant to the course, feel free to suggest it as a discussion piece by emailing the instructor or posting it in the <code>#general</code> channel in our <a href="https://statcomp212fall2023.slack.com">Slack workspace</a>.</p>
 </div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Other suggestions for out-of-class time">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Other suggestions for out-of-class time
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Record any reflections from in-class time about your learning process or interactions with peers while they are still fresh.</li>
+<li>After learning a new topic in class, it is helpful to immediately attempt the related exercises on the weekly homework.</li>
+<li>Come to instructor drop-in hours to chat about the course or anything else 😃</li>
+</ul>
 </div>
 </div>
 </section>
 <section id="during-class" class="level2">
 <h2 class="anchored" data-anchor-id="during-class">During class</h2>
 <p>Class time will be a mix of interactive lecture and longer stretches of group work. During the lecture portion, I will pause explanation frequently to prompt a short exercise or ask questions that you’ll reflect on individually or together.</p>
-<p><strong>Suggestion:</strong> Review your learning process and groupwork reflections at the start of class to frame how you want to engage in class. (Perhaps you’ve noted a struggle and want to try a new strategy.) I’ll always leave a few minutes at the end of class for synthesis. Use this time to update your reflections and summarize the key takeaways from class.</p>
-</section>
-<section id="after-class" class="level2">
-<h2 class="anchored" data-anchor-id="after-class">After class</h2>
-<p><strong>Suggestion:</strong> After learning a new topic in class, it is helpful to immediately attempt the related exercises on the weekly homework.</p>
-</section>
-</section>
-<section id="grading" class="level1">
-<h1>Grading</h1>
-<p>For a long time, I have been uncomfortable with the outsized role that letter grades play in education. The article <em>Teaching More by Grading Less (Or Differently)</em> by Schinske and Tanner (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4041495/">source</a>) was instrumental in shaping my viewpoints and may be an interesting read for you.</p>
-<p>In short, the letter grading system has a troubling history, and providing intermediate grades as feedback (e.g., letter or point grades on homework and exams) does not help students in the ways that teachers want: in general, it blocks students’ understanding of the gaps in their knowledge and stifles a growth mindset.</p>
-<p>Unfortunately, I am required to submit a letter grade at the end of the course. I would like to propose the following <strong><em>preliminary</em></strong> grading system.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip callout-titled" title="Suggestion">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+Suggestion
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Review your learning process and group work reflections just before class to frame how you want to engage in class. (Perhaps you’ve noted a struggle and want to try a new strategy.) I’ll always leave a few minutes at the end of class for synthesis. Use this time to update your reflections and summarize the key takeaways from class.</p>
+</div>
+</div>
+<p><br><br><br><br></p>
+</section>
+</section>
+<section id="grading-and-feedback" class="level1">
+<h1>Grading and feedback</h1>
+<p>For a long time, I have been uncomfortable with the outsized role that letter grades play in education. The article <em>Teaching More by Grading Less (Or Differently)</em> by Schinske and Tanner (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4041495/">source</a>) shaped many of my viewpoints and may be an interesting read for you.</p>
+<p>In short, grades tend to distract from learning (due to a greater focus on the grade than on qualitative feedback), create anxiety that hinders risk-taking and exploration, and create a power dynamic between the instructor and students that I am uncomfortable with.</p>
+<p>If I had my way, I would never assign letter grades and only give qualitative comments all semester. Unfortunately, I am required to submit a letter grade at the end of the course.</p>
+<blockquote class="blockquote">
+<p><strong>I need your input: which of the following two grading systems should we use for the semester?</strong></p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled" title="Reflect">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reflect
+</div>
+</div>
 <div class="callout-body-container callout-body">
 <p>As you read the following, make note of what uncertainties or worries you have and what you agree with.</p>
-<p>Come prepared to discuss with your classmates on the first day of class. We’ll use the first day to collaboratively update this syllabus to be as beneficial to everyone as possible.</p>
+<p>Come prepared to discuss with your classmates on the first day of class. We’ll use the first day to collaboratively decide on one grading system for both sections of the course. Our goal is for this grading system to be aligned with my values as an instructor and your needs as learners.</p>
 </div>
 </div>
-</div>
+<section id="option-1-evaluation-of-learning-is-done-by-instructor" class="level2">
+<h2 class="anchored" data-anchor-id="option-1-evaluation-of-learning-is-done-by-instructor">Option 1: evaluation of learning is done by instructor</h2>
+<p>The table below describes the qualities of A, B, and C grades in terms of the 3 core course components: reflections, homework, and the final project.</p>
+<p>In order to earn a given letter grade, <strong>ALL</strong> of the requirements in the column must be met. (e.g., In order to earn an A, <em>everything</em> in the first column must be true.)</p>
+<p>There is a possibility that by the end of the semester, work for the different course components falls under different letter grades. (e.g., A-level for reflections and homework, but B-level for project).</p>
+<ul>
+<li>If this happens, towards the end of the semester I will ask you to submit a written justification for the grade that you think you deserve. We will have a conference in which we discuss your justification.</li>
+<li>If we agree, your proposed grade will be your final grade.</li>
+<li>If we disagree, we will discuss what needs to be done next to come to an agreement. (This may involve being doing extra work or revisions.)</li>
+</ul>
 <style type="text/css">
 .tab-grading {
     border-collapse: collapse;
@@ -334,12 +467,12 @@ Tip
     overflow: hidden;
     padding: 10px 5px;
     word-break: normal;
+    font-size: 14px;
 }
 .tab-grading th {
     border-color: black;
     border-style: solid;
     border-width: 1px;
-    font-size: 14px;
     font-weight: normal;
     overflow: hidden;
     padding: 10px 5px;
@@ -348,13 +481,33 @@ Tip
 .tab-grading .tab-grading-9wq8 {
     border-color: inherit;
     text-align: center;
-    vertical-align: middle
+    vertical-align: middle;
 }
-.tab-grading .tab-grading-xwmr{background-color:#34ff34;border-color:inherit;text-align:left;vertical-align:top}
-.tab-grading .tab-grading-zk7v{background-color:#34ff34;border-color:inherit;text-align:center;vertical-align:middle}
-.tab-grading .tab-grading-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tab-grading .tab-grading-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tab-grading .tab-grading-xwmr {
+    background-color: #34ff34;
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top;
+}
+.tab-grading .tab-grading-zk7v {
+    background-color: #34ff34;
+    border-color: inherit;
+    text-align: center;
+    vertical-align: middle;
+}
+.tab-grading .tab-grading-0pky {
+    border-color: inherit;
+    text-align: left;
+    vertical-align: top;
+}
+.tab-grading .tab-grading-7btt {
+    border-color: inherit;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: top;
+}
 </style>
+
 
 <table class="tab-grading table" data-quarto-postprocess="true">
 <colgroup>
@@ -365,7 +518,7 @@ Tip
 </colgroup>
 <thead>
 <tr class="header">
-<th class="tab-grading-0pky" data-quarto-table-cell-role="th"></th>
+<th class="tab-grading-7btt" data-quarto-table-cell-role="th">Course component</th>
 <th class="tab-grading-7btt" data-quarto-table-cell-role="th">Letter grade: A</th>
 <th class="tab-grading-7btt" data-quarto-table-cell-role="th">Letter grade: B</th>
 <th class="tab-grading-7btt" data-quarto-table-cell-role="th">Letter grade: C</th>
@@ -373,13 +526,13 @@ Tip
 </thead>
 <tbody>
 <tr class="odd">
-<td class="tab-grading-xwmr">Self-reflection in learning process</td>
-<td rowspan="2" class="tab-grading-zk7v">Show <strong>substantial growth</strong> and <strong>consistent thoughtfulness</strong> throughout the semester</td>
-<td rowspan="2" class="tab-grading-zk7v">Show <strong>moderate</strong> growth and thoughtfulness throughout the semester</td>
-<td rowspan="2" class="tab-grading-zk7v">Show <strong>some</strong> growth and thoughtfulness throughout the semester</td>
+<td class="tab-grading-0pky">Self-reflection in learning process</td>
+<td rowspan="2" class="tab-grading-9wq8">Show <strong>clear growth</strong> and <strong>consistent thoughtfulness</strong> throughout the semester</td>
+<td rowspan="2" class="tab-grading-9wq8">Show <strong>some growth</strong> and <strong>some thoughtfulness</strong> throughout the semester</td>
+<td rowspan="2" class="tab-grading-9wq8">Show <strong>little to no growth</strong> and <strong>minimal thoughtfulness</strong> throughout the semester</td>
 </tr>
 <tr class="even">
-<td class="tab-grading-xwmr">Self-reflection in collaborative learning (groupwork)</td>
+<td class="tab-grading-0pky">Self-reflection in collaborative learning (groupwork)</td>
 </tr>
 <tr class="odd">
 <td class="tab-grading-0pky">Weekly homework</td>
@@ -388,44 +541,167 @@ Tip
 <td class="tab-grading-9wq8">Pass <strong>all but 2</strong> homework assignments</td>
 </tr>
 <tr class="even">
-<td class="tab-grading-0pky">Team teaching experience (around Week 5)</td>
-<td colspan="3" class="tab-grading-9wq8">Design and teach a mini-lesson that meets specifications</td>
-</tr>
-<tr class="odd">
 <td class="tab-grading-0pky">Final project</td>
 <td class="tab-grading-0pky">Complete a project that is <strong>high quality in all of the following aspects:</strong>
-Data wrangling, visualization, analysis, and interpretation
-Workflow and organization<br>
-Addressing peer and instructor feedback
-Giving feedback to peers
-Ethical consideration and communication of results</td>
-<td class="tab-grading-0pky">Complete a project that is <strong>at least ok quality</strong> in the aforementioned aspects and <strong>high quality</strong>in <strong>some</strong> aspects</td>
+<ul>
+<li>Data wrangling, visualization, analysis, and interpretation</li>
+<li>Workflow and organization</li>
+<li>Addressing peer and instructor feedback</li>
+<li>Giving feedback to peers</li>
+<li>Ethical consideration and communication of results</li>
+</ul></td>
+<td class="tab-grading-0pky">Complete a project that is <strong>at least ok quality</strong> in the aforementioned aspects and <strong>high quality</strong> in <strong>some</strong> aspects</td>
 <td class="tab-grading-0pky">Complete a project that is <strong>ok quality</strong> in the aforementioned aspects</td>
 </tr>
 </tbody>
 </table>
+<p>Details about the course components are given below:</p>
+<ul>
+<li><strong>Self-reflection:</strong>
+<ul>
+<li>I will look at the <strong>growth</strong> in your reflection process over the course of 3 substantive reflections. These will roughly come a month into the course, mid-course, and the end of the semester.
+<ul>
+<li>My expectation is that your mid-course and end-of-course reflections show that your are using feedback from previous reflections.</li>
+</ul></li>
+<li>I will look at the <strong>consistency</strong> in your reflection process by monitoring your <a href="https://docs.google.com/document/d/1tyyuYNXpzqMxw2osGnM_9I5ivBj3a0iSZ_LVZusDqY8/edit?usp=sharing">Process and Reflection Google Doc</a>.
+<ul>
+<li>My expectation is that you are filling this in regularly throughout class activities and through work outside of class.</li>
+</ul></li>
+</ul></li>
+<li><strong>Homework:</strong> We will have weekly homework in which you will complete activities that we start in class. The requirements for passing the assignment will be clearly stated in the homework directions.
+<ul>
+<li>If you do not pass an assignment and wish to revise your work, you may resubmit the assignment the <strong>following week</strong>. This revision needs to be submitted by 2 weeks after the original homework due date. (See my <a href="./syllabus.html#late-work">policy on late work</a>.)</li>
+</ul></li>
+<li><strong>Final project:</strong> For this semester-long project, you will receive regular feedback on the quality of the different project aspects and will have the opportunity to improve the quality of the different aspects as you continue working.</li>
+</ul>
+</section>
+<section id="option-2-evaluation-of-learning-is-done-by-students-in-conversation-with-instructor" class="level2">
+<h2 class="anchored" data-anchor-id="option-2-evaluation-of-learning-is-done-by-students-in-conversation-with-instructor">Option 2: evaluation of learning is done by students in conversation with instructor</h2>
+<p>What constitutes A, B, and C-level work is essentially identical in Options 1 and 2 (see table below). That is, my <em>standards</em> for high quality work are the same between the two.</p>
+<p>What’s different is how (who) participates in the evaluation process. In Option 1, <strong>I</strong> am making the final judgment on the quality of your work for all course components. In Option 2, <strong>you</strong> will start the assessment of quality by <strong>evaluating yourselves</strong> <em>using qualitative feedback on all of your work</em>.</p>
+<p>In Option 2, the qualitative comments that you receive on all your work (reflections, homework, project) will form the basis of your <strong>self-evaluation</strong>. That is, you will review all comments from me and use this to gauge the degree to which you are meeting the course learning goals. (On homework, you will not receive a pass/not passing designation—you’ll just receive comments.) You will write a self-evaluation in the middle of the semester (before midterm grades are due) and another at the end of the semester. In both self-evaluations you will propose the grade that you think deserve. I will also evaluate your work, and if we disagree on the grade, we will meet to discuss what needs to be done next to come to an agreement. (This may involve being doing extra work or revisions.)</p>
+<p>Note: Your self-evaluations need to be <strong>based on demonstrated evidence</strong> in the work that you submit. For example, if you have struggled with the data wrangling homework assignments and say in your self-evaluation that your understanding is now strong after reviewing feedback, <strong>this is not sufficient evidence</strong>. You would need to <strong>demonstrate</strong> your stronger understanding of data wrangling by submitting a revision of the data wrangling homework. (See <a href="./syllabus.html#late-work">policy on late work</a>.)</p>
+<table class="tab-grading table" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="tab-grading-7btt" data-quarto-table-cell-role="th">Course component</th>
+<th class="tab-grading-7btt" data-quarto-table-cell-role="th">Letter grade: A</th>
+<th class="tab-grading-7btt" data-quarto-table-cell-role="th">Letter grade: B</th>
+<th class="tab-grading-7btt" data-quarto-table-cell-role="th">Letter grade: C</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="tab-grading-0pky">Self-reflection in learning process</td>
+<td rowspan="2" class="tab-grading-9wq8">Show <strong>clear growth</strong> and <strong>consistent thoughtfulness</strong> throughout the semester</td>
+<td rowspan="2" class="tab-grading-9wq8">Show <strong>some growth</strong> and <strong>some thoughtfulness</strong> throughout the semester</td>
+<td rowspan="2" class="tab-grading-9wq8">Show <strong>little to no growth</strong> and <strong>minimal thoughtfulness</strong> throughout the semester</td>
+</tr>
+<tr class="even">
+<td class="tab-grading-0pky">Self-reflection in collaborative learning (groupwork)</td>
+</tr>
+<tr class="odd">
+<td class="tab-grading-0pky">Weekly homework</td>
+<td class="tab-grading-9wq8">Show <strong>strong</strong> understanding of concepts across <strong>all</strong> homework assignments</td>
+<td class="tab-grading-9wq8">Show <strong>strong</strong> understanding of concepts across <strong>most</strong> homework assignments</td>
+<td class="tab-grading-9wq8">Show <strong>adequate</strong> understanding of concepts across <strong>most</strong> homework assignments</td>
+</tr>
+<tr class="even">
+<td class="tab-grading-0pky">Final project</td>
+<td class="tab-grading-0pky">Complete a project that is <strong>high quality in all of the following aspects:</strong>
+<ul>
+<li>Data wrangling, visualization, analysis, and interpretation</li>
+<li>Workflow and organization</li>
+<li>Addressing peer and instructor feedback</li>
+<li>Giving feedback to peers</li>
+<li>Ethical consideration and communication of results</li>
+</ul></td>
+<td class="tab-grading-0pky">Complete a project that is <strong>at least ok quality</strong> in the aforementioned aspects and <strong>high quality</strong> in <strong>some</strong> aspects</td>
+<td class="tab-grading-0pky">Complete a project that is <strong>ok quality</strong> in the aforementioned aspects</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled" title="Comparing Options 1 and 2">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comparing Options 1 and 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Both options satisfy my goal to have <strong>high standards</strong> for your learning that are <strong>achievable through thoughtful revision</strong>. No matter what option we use, you’ll have a personal Google Sheet for tracking your progress over time.</p>
+<p>My other goals for our grading system are for it to <strong>motivate</strong> you to learn as much as possible and to <strong>reduce stress</strong>. For these goals, your input during our Day 1 discussion will be very valuable.</p>
+</div>
+</div>
+<p><br><br><br><br></p>
+</section>
 </section>
 <section id="textbooks" class="level1">
 <h1>Textbooks</h1>
-<p>All textbooks are freely available online:</p>
+<p>We will primarily use the following two textbooks (freely available online):</p>
 <ul>
 <li><a href="https://mdsr-book.github.io/mdsr3e/">Modern Data Science with R (3e)</a> by Baumer, Kaplan, and Horton (Abbreviated as <strong>MDSR</strong>)</li>
-<li><a href="https://r4ds.hadley.nz/">R for Data Science (2e)</a> by Wickham, Cetinkaya-Rundel, and Grolemund ((Abbreviated as <strong>R4DS</strong>))</li>
-<li><a href="http://rafalab.dfci.harvard.edu/dsbook/">Introduction to Data Science: Data Analysis and Prediction Algorithms with R</a> by Irizarry (Abbreviated as <strong>IDS</strong>)</li>
-<li><a href="https://jhudatascience.org/tidyversecourse/">Tidyverse Skills for Data Science</a> by Wright, Ellis, Hicks, and Peng (Abbreviated as <strong>TSDS</strong>)</li>
+<li><a href="https://r4ds.hadley.nz/">R for Data Science (2e)</a> by Wickham, Cetinkaya-Rundel, and Grolemund (Abbreviated as <strong>R4DS</strong>)</li>
+</ul>
+<p>The following textbooks are also good resources (also freely available online):</p>
+<ul>
+<li><a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/">Introduction to Data Science: Data Wrangling and Visualization with R</a> and <a href="http://rafalab.dfci.harvard.edu/dsbook-part-2/">Advanced Data Science: Statistics and Prediction Algorithms Through Case Studies</a> by Irizarry</li>
+<li><a href="https://jhudatascience.org/tidyversecourse/">Tidyverse Skills for Data Science</a> by Wright, Ellis, Hicks, and Peng</li>
 <li><a href="https://bookdown.org/rdpeng/rprogdatascience/">R Programming for Data Science</a> by Peng</li>
 </ul>
+<p><br><br><br><br></p>
 </section>
 <section id="other-policies" class="level1">
 <h1>Other policies</h1>
 <section id="late-work" class="level2">
 <h2 class="anchored" data-anchor-id="late-work">Late work</h2>
-<p>x</p>
+<p>Homework assignments will be due <strong>weekly on Wednesdays at midnight</strong>. If you anticipate needing more time to complete an assignment, please email me ahead of time to discuss. <strong>Limited</strong> extensions will always be granted:</p>
+<ul>
+<li><strong>My ideal extension:</strong> Turn in the homework by the following Monday morning at 9am. (A 4 day, 9 hour extension)
+<ul>
+<li><strong>Why is this ideal for me?</strong> I want to return feedback on homework to everyone before the following Tuesday’s class because we will be briefly reviewing homework feedback in small groups.</li>
+</ul></li>
+<li><strong>Firm limit on extensions:</strong> You must turn in the homework by 2 weeks after the due date (Wednesdays at 9am).
+<ul>
+<li><strong>Why is this my firm limit?</strong> I post solutions to the homework at this point.</li>
+<li><strong>What if it’s past the 2-week limit and you still want to turn in the homework in some form?</strong> If this is the case, you need to <strong>create your own equivalent homework</strong>. This involves mapping the original homework’s exercises to a new dataset and completing those exercises. Note that I can’t make any guarantees about when I can get you feedback on this late submission. (Only guarantee = by the end of the semester)</li>
+</ul></li>
+</ul>
+</section>
+<section id="academic-integrity" class="level2">
+<h2 class="anchored" data-anchor-id="academic-integrity">Academic integrity</h2>
+<p>Academic integrity is the cornerstone of our learning community. Students are expected to be familiar with the <a href="http://www.macalester.edu/academicprograms/academicpolicies/academicintegrity/">college’s standards</a> on academic integrity.</p>
+<p>I encourage you to work with your classmates to discuss material and ideas for assignments, but in order for you to receive individualized feedback on your own learning, you must submit your own work. This involves writing your own code and putting explanations into your own words. Always cite any sources you use, including AI (see section below).</p>
+</section>
+<section id="artificial-intelligence-ai-use" class="level2">
+<h2 class="anchored" data-anchor-id="artificial-intelligence-ai-use">Artificial intelligence (AI) use</h2>
+<p>Learning to use AI tools is an emerging skill that we will explore together in this course. I expect you to use AI (ChatGPT, Google Bard)—in fact, some assignments may require it.</p>
+<p>However, you should be aware of the limits of AI:</p>
+<ul>
+<li>AI is a tool, but one that you need to acknowledge using. Any ideas, language, or code that is produced by AI must be cited, just like any other resource. [sample suggestion: Please include a paragraph at the end of any assignment that uses AI explaining what you used the AI for and what prompts you used to get the results.] Failure to do so is in violation of the academic integrity policy at Macalester College.</li>
+<li>Don’t trust anything AI says. If it gives you a number, fact, or code, assume it is wrong unless you either know the answer or can check in with another source. AI works best for topics you understand.</li>
+<li>If you provide minimum effort prompts, you will get low quality results. You will need to refine your prompts in order to get good outcomes. This will take work.</li>
+<li>Be thoughtful about when this tool is useful. Don’t use it if it isn’t appropriate for the case or circumstance.</li>
+<li>The environmental impact of AI should not be ignored. The building and usage of AI tools consumes a lot of energy (see <a href="https://www.nature.com/articles/s42256-020-0219-9">here</a> and <a href="https://www.cfr.org/blog/artificial-intelligences-environmental-costs-and-promise">here</a>). For this reason, we will be very thoughtful about when we use AI and will discuss other sustainability behaviors that we can incorporate into our lives to offset this usage.</li>
+</ul>
+<p><strong>How to cite usage of AI:</strong> Please copy and paste all prompts and output into an Appendix section accompanying each problem of an assignment.</p>
+<p>If you have any questions about your use of AI tools, please contact me to discuss them.</p>
+<p><br><br><br><br></p>
 </section>
 </section>
 <section id="course-project" class="level1">
 <h1>Course project</h1>
-<p>The best way to learn data science and feel like a data scientist is to work on meaningful data-driven projects. The course project will be a space for you to do just that! My goal is for you to complete a project that you would be excited to showcase on your digital portfolio (your personal website).</p>
+<p>The best way to learn data science and feel like a data scientist is to work on meaningful data-driven projects. The course project will be a semester-long, collaborative experience in which you investigate a series of meaningful questions through one or more datasets. Through collaboration, you will be able to build something way cooler than you could do alone.</p>
+<p>My hope is for everyone to build something that you would be proud to showcase to an employer on your digital portfolio (your personal website). More details about the project can be found on the <a href="./project.html">Project page</a>.</p>
+<p><br><br><br><br></p>
 </section>
 <section id="the-environment-you-deserve" class="level1">
 <h1>The environment you deserve</h1>
@@ -434,7 +710,7 @@ Ethical consideration and communication of results</td>
 <p><strong>Sensitive Topics:</strong> Data science applications span issues in science, policy, and society. As such, we may sometimes address topics that are sensitive for you. I will try to announce in class if an assignment or activity involves a potentially sensitive topic. If you have reservations about a particular topic, please come talk to me to discuss possible options.</p>
 <p><strong>Accommodations:</strong> If you need accommodations for any reason, please contact <a href="https://www.macalester.edu/studentaffairs/disabilityservices/accommodations/">Disability Services</a> to discuss your needs, and speak with me as soon as possible afterwards so that we can discuss your accommodation plan. If you already have official accommodations, please discuss these with me within the first week of class so that you get off to a great start. Contact me if you have other special circumstances. I will find resources for you.</p>
 <p><strong>Title IX:</strong> You deserve a community free from discrimination, sexual harassment, hostility, sexual assault, domestic violence, dating violence, and stalking. If you or anyone you know has experienced harassment or discrimination, know that you are not alone. Macalester provides staff and resources to help you find support. More information is available on the <a href="https://www.macalester.edu/titleix/">Title IX website</a>.</p>
-<p><strong>General Health and Well-being:</strong> (REVISE THE OVERLY ACADEMIC WORDING HERE) I care that you make your well-being a priority throughout this semester and your career here. Investing time into taking care of yourself will have profound impacts on all aspects of your life. Remember that beyond being a student, you are a human being carrying your own experiences, thoughts, emotions, and identities with you. It is important to acknowledge any stressors you may be facing, which can be mental, emotional, physical, cultural, financial, etc., and how they can have an impact on you. I encourage you to remember that you have a body with needs. In the classroom, eat when you are hungry, drink water, use the restroom, and step out if you are upset and need some air. Please do what is necessary so long as it does not impede your or others’ ability to be mentally and emotionally present in the course. Outside of the classroom, sleeping, moving your body, and connecting with others can be strategies to help you be resilient. If you are having difficulties maintaining your well-being, please don’t hesitate to contact me and/or find support from physical and mental health resources <a href="https://docs.google.com/document/d/1lz-ii5yze_OSkQJqz_7pap7fRjG81LJh0_saBniP-zg/edit">here</a> and <a href="https://docs.google.com/document/d/1iC-ykD8QJ-w2BVO1Gb0AobD-00Zq_8mznWR5C2mNiF0/edit?usp=sharing">here</a>.</p>
+<p><strong>General Health and Well-being:</strong> I care that you prioritize your well-being in this semester and beyond. Investing time into taking care of yourself will have profound impacts on all aspects of your life. Remember that beyond being a student, you are a human being carrying your own experiences, thoughts, emotions, and identities. It is important to acknowledge any stressors you may be facing, which can be mental, emotional, physical, cultural, financial, etc., and how they can have an impact on you. I encourage you to remember that you have a body with needs. In the classroom, eat when you are hungry, drink water, use the restroom, and step out if you are upset and need some air. Please do what is necessary so long as it does not impede your or others’ ability to be mentally and emotionally present in the course. Outside of the classroom, sleeping well, moving your body, and connecting with others can be strategies can help nourish you. If you are having difficulties maintaining your well-being, please don’t hesitate to contact me and/or find support from physical and mental health resources <a href="https://docs.google.com/document/d/1lz-ii5yze_OSkQJqz_7pap7fRjG81LJh0_saBniP-zg/edit">here</a> and <a href="https://docs.google.com/document/d/1iC-ykD8QJ-w2BVO1Gb0AobD-00Zq_8mznWR5C2mNiF0/edit?usp=sharing">here</a>.</p>
 
 
 </section>

@@ -1,0 +1,48 @@
+---
+title: "R and RStudio Setup"
+sidebar: false
+---
+
+Ideally before class on Tuesday, September 5 and definitely before class on Thursday, September 7, you should follow these instructions to set up the software that we'll be using throughout the semester. **Even if you've already downloaded both R and RStudio, you'll want to re-download to make sure that you have the most current versions.**
+
+<br>
+
+*Highly* recommended: Change the default file download location for your internet browser.
+
+- Generally by default, internet browsers automatically save all files to the `Downloads` folder on your computer. This does not encourage good file organization practices. It is highly recommended that you change this option so that your browser asks you where to save each file before downloading it.
+- This [page](https://www.online-tech-tips.com/computer-tips/change-default-download-folder-location-on-any-web-browser/) has information on how to do this for the most common browsers.
+
+<br>
+
+**Required:** (Re)Download R and RStudio
+
+- **FIRST:** Download R [here](https://cran.rstudio.com/).
+    - In the top section, tou will see three links "Download R for ..."
+    - Choose the link that corresponds to your computer.
+    - As of September 1, 2023, the latest version of R is 4.3.1 ("Beagle Scouts").
+- **SECOND:** Download RStudio [here](https://posit.co/download/rstudio-desktop/#download).
+    - Click the button under step 2 to install the version of RStudio recommended for your computer.
+    - As of September 1, 2023, the latest version of RStudio is 2023.06.2+561.
+- **THIRD:** Check that when you go to File > New Project > New Directory, you see "Quarto Website" as an option.
+
+<br>
+
+Suggested: Watch this [video](https://www.youtube.com/watch?v=LJiRSPoe8r0) describing key configuration options for RStudio.
+
+<br>
+
+**Required:** Install required **packages**.
+
+- An R **package** is an extra bit of functionality that will help us in our data analysis efforts in a variety of ways.
+- Open RStudio and click inside the Console pane (by default, the bottom left pane). Copy and paste the following command into the Console. You should see the text below appear to the right of the `> `, which is called the **R prompt**. After you paste, hit Enter.
+
+```{r eval=FALSE}
+install.packages(c("tidyverse"))
+```
+
+- You will see a lot of text from status messages appearing in the Console as the packages are being installed. Wait until you see the `> ` again.
+- Enter the command `library(tidyverse)` and hit Enter.    
+    If you see an error message, then there was a problem installing the package. Post the full error message in the `#questions` channel in our [Slack workspace](https://statcomp212fall2023.slack.com) and 
+- Quit RStudio. You're done setting up!
+
+Optional: For a refresher on RStudio features, watch this [video](https://www.youtube.com/watch?v=HWnanydsBCs). It also shows you how to customize the layout and color scheme of RStudio.

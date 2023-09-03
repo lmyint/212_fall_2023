@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT/COMP 212 - Topic 2: Advanced Data Visualization in ggplot2</title>
+<title>STAT/COMP 212 - Advanced Data Visualization in ggplot2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,8 +89,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -98,7 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -127,17 +126,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./syllabus.html" rel="" target="">
  <span class="menu-text">Syllabus</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./activities.html" rel="" target="">
- <span class="menu-text">Activities</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-activities" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Activities</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-activities">    
+        <li>
+    <a class="dropdown-item" href="./01-introductions.html" rel="" target="">
+ <span class="dropdown-text">Welcome to the course!</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./homework.html" rel="" target="">
- <span class="menu-text">Homework</span></a>
+        <li>
+    <a class="dropdown-item" href="./02-adv-ggplot.html" rel="" target="">
+ <span class="dropdown-text">Advanced Data Visualization in ggplot2</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./03-adv-maps.html" rel="" target="">
+ <span class="dropdown-text">Advanced Spatial Visualizations</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-homework" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Homework</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-homework">    
+        <li>
+    <a class="dropdown-item" href="./homework0.html" rel="" target="">
+ <span class="dropdown-text">Homework 0</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework1.html" rel="" target="">
+ <span class="dropdown-text">Homework 1</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
     <a class="nav-link" href="./project.html" rel="" target="">
  <span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tech_setup.html" rel="" target="">
+ <span class="menu-text">Tech Setup</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -145,63 +174,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-adv-ggplot.html">Topic 2: Advanced Data Visualization in ggplot2</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./01-introductions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Topic 1: Introductions</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./02-adv-ggplot.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Topic 2: Advanced Data Visualization in ggplot2</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03-adv-maps.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Topic 3: Advanced Spatial Visualizations</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./04-interactive-viz.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Topic 4: Interactive visualization</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./05-data-types.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Topic 5: Wrangling numerics, logicals, factors, and dates</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./06-functions-control-structs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Topic 6: Functions and control structures</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -210,7 +186,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals">Learning goals</a></li>
   <li><a href="#case-study-recreating-a-nyt-visualization" id="toc-case-study-recreating-a-nyt-visualization" class="nav-link" data-scroll-target="#case-study-recreating-a-nyt-visualization">Case study: recreating a NYT visualization</a></li>
-  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a>
+  <ul class="collapse">
+  <li><a href="#pair-programming-background" id="toc-pair-programming-background" class="nav-link" data-scroll-target="#pair-programming-background">Pair programming background</a></li>
+  <li><a href="#your-task" id="toc-your-task" class="nav-link" data-scroll-target="#your-task">Your task</a></li>
+  </ul></li>
   <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework">Homework</a></li>
   </ul>
 </nav>
@@ -220,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Topic 2: Advanced Data Visualization in ggplot2</h1>
+<h1 class="title">Advanced Data Visualization in ggplot2</h1>
 </div>
 
 
@@ -244,88 +224,169 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Scan the information in the <strong>Usage</strong> section to identify function arguments that must be set</li>
 <li>Understand how the function arguments work by using information in the <strong>Arguments</strong> section</li>
-<li>Annotate visual features of plots in the <strong>Examples</strong> section with their corresponding <strong>Aesthetics</strong></li>
+<li>Use the information in the the <strong>Aesthetics</strong> and <strong>Examples</strong> sections to control plot appearance</li>
 </ul></li>
 <li>Identify when it would be necessary to use different <code>data</code> arguments within the <code>ggplot()</code> and <code>geom_()</code> layers</li>
 </ul>
 </section>
 <section id="case-study-recreating-a-nyt-visualization" class="level1">
 <h1>Case study: recreating a NYT visualization</h1>
-<p>We are going to recreate <a href="https://www.nytimes.com/interactive/2016/02/19/us/2015-year-in-weather-temperature-precipitation.html">this NYT visualization</a> on record setting temperatures by expanding our <code>ggplot2</code> toolbox using data from SFO in 2011.</p>
+<p>You can download a template Quarto file to start from <a href="activity_templates/02-adv-ggplot.qmd">here</a>.</p>
+<p>We are going to recreate <a href="https://www.nytimes.com/interactive/2016/02/19/us/2015-year-in-weather-temperature-precipitation.html">this NYT visualization</a> on record setting temperatures by expanding our <code>ggplot2</code> toolbox using data from San Francisco (SFO) in 2011.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/sfo_nytimes.jpg" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Screenshot of NYTimes visualization from 2015</figcaption>
 </figure>
 </div>
-<p><strong>Class exercise 1:</strong> Examine the temperature visualization. What variables underlie the visualization, and how do they map to visual elements (e.g., position, size, shape, and color of the glyphs)?</p>
-<div class="cell">
-<details>
-<summary>Response</summary>
-<pre class="text cell-code"><code>Insert solution here.</code></pre>
-</details>
+<p>First load the <code>tidyverse</code> package, and read in the data.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>weather <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://lmyint.github.io/212_fall_2023/data/sfo_weather.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><strong>Class exercise 1:</strong> Examine the temperature visualization. What variables underlie the visualization, and how do they map to visual elements (e.g., position, size, shape, and color of the glyphs)?</p>
 <hr>
 <p>We can explore the “Geoms” section of the <a href="https://ggplot2.tidyverse.org/reference/">ggplot2 reference page</a> to find a <code>geom</code> that corresponds to the visual elements in the temperature plot.</p>
 <p><strong>Class exercise 2:</strong> Using both the small example visuals on the right and the names of the <code>geom</code>’s, brainstorm some possibilities for <code>geom</code>’s we might use to recreate the temperature visualization.</p>
 <hr>
-<p>We need to explore further by opening up the <code>geom</code> reference pages to understand if a particular <code>geom</code> is suitable for our task. We’ll look at the following:</p>
-<ul>
-<li><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html"><code>geom_bar()</code></a></li>
-<li><a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html"><code>geom_linerange()</code></a></li>
-<li><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html"><code>geom_rect()</code></a></li>
-</ul>
+<p>We need to explore further by opening up the <code>geom</code> reference pages to understand if a particular <code>geom</code> is suitable for our task. We’ll look at the <code>geom_point</code> <a href="https://ggplot2.tidyverse.org/reference/geom_point.html">documentation page</a> to learn the process for reading a documentation page.</p>
 <p>When looking at a help page, it is useful to first look at the <strong>Usage</strong> and <strong>Arguments</strong> sections.</p>
-<p>The <strong>Usage</strong> section shows all of the possible inputs (arguments) to the geom–these are all of the ways that a <code>geom</code> can be customized.</p>
-<p>The <strong>Arguments</strong> section explains what each of these arguments does and the possible values they can take.</p>
-<div class="cell">
+<p>The <strong>Usage</strong> section shows all of the possible inputs (arguments) to the geom–these are all of the ways that a <code>geom</code> can be customized. Just looking at the argument names can help give a hint as to what arguments might fit our needs.</p>
+<p>The <strong>Arguments</strong> section explains in detail what each argument does and the possible values the argument can take. The <code>mapping</code>, <code>data</code>, and <code>...</code> arguments will be the most commonly used by far.</p>
+<ul>
+<li><code>mapping</code>: This is the argument that is being used when you specify a plots <code>aes</code>thetics (the code inside <code>aes()</code>).</li>
+<li><code>data</code>: This is where you specify the dataset containing the variables that the <code>geom</code> is using.</li>
+<li><code>...</code>: You will tend to use this for fixed aesthetics (ones that don’t correspond to a variable). For example, this is where you can set the color of all points (e.g., with <code>color = "red"</code>) or the size of all points (e.g., with <code>size = 3</code>).</li>
+</ul>
+<p><strong>A note about the <code>data</code> argument:</strong> Previously you have used one dataset per plot by specifying that as the first argument of <code>ggplot()</code>. For example, the code below makes a scatterplot of price vs.&nbsp;carat in the <code>diamonds</code> dataset, and the only <code>data</code> argument is in <code>ggplot()</code> (none in <code>geom_point()</code>).</p>
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(diamonds)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(cut)) <span class="sc">+</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>()</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(cut), <span class="at">data =</span> diamonds)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_bar</span>(<span class="fu">aes</span>(cut), diamonds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(diamonds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 10
+  carat cut       color clarity depth table price     x     y     z
+  &lt;dbl&gt; &lt;ord&gt;     &lt;ord&gt; &lt;ord&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
+2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
+3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31
+4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
+5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75
+6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48</code></pre>
 </div>
-<p>TODO: THE FOLLOWING INSTRUCTIONS ARE NOT CLEAR; I’M NOT SURE WHAT YOU WANT THEM TO DO. AND WHAT THE CLASS QMD DOCUMENT IS.</p>
-<p>Go through the full thought process for this part in the class QMD document, recording all intermediate plots and the decision making leading to the next iteration. Also discuss alt text in code chunk options.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>weather <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"sfo_weather.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 365 Columns: 19
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr   (1): RecordText
-dbl  (15): Month, Day, Low, High, NormalLow, NormalHigh, RecordLow, LowYr, R...
-lgl   (2): Record, RecordP
-date  (1): date
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(weather, <span class="fu">aes</span>(<span class="at">x =</span> dateInYear)) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> RecordLow, <span class="at">ymax =</span> RecordHigh), <span class="at">color =</span> <span class="st">"#ECEBE3"</span>) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> NormalLow, <span class="at">ymax =</span> NormalHigh), <span class="at">color =</span> <span class="st">"#C8B8BA"</span>) <span class="sc">+</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> Low, <span class="at">ymax =</span> High), <span class="at">color =</span> <span class="st">"#A90248"</span>) <span class="sc">+</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="02-adv-ggplot_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-adv-ggplot_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
+</div>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that we can make the same plot by specifying the argument names explicitly:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Sometimes we may want to use more than one dataset in a plot. For example, we have a separate dataset that contains average prices of diamonds by carat:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(diamonds_avg_price)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  carat avg_price
+  &lt;dbl&gt;     &lt;dbl&gt;
+1  0.2       365.
+2  0.23      486.
+3  0.26      551.
+4  0.29      601.
+5  0.32      720.
+6  0.35      801.</code></pre>
+</div>
+</div>
+<p>We can use this separate <code>diamonds_avg_price</code> dataset in the <code>geom_point()</code> layer to add average price information to our scatterplot:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">data =</span> diamonds_avg_price, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> avg_price), <span class="at">color =</span> <span class="st">"deepskyblue"</span>, <span class="at">size =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-adv-ggplot_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The <strong>Aesthetics</strong> section of a <code>geom</code> documentation page gives information on how the visual elements of the <code>geom</code> correspond to data. For example, the <code>geom_point</code> <a href="https://ggplot2.tidyverse.org/reference/geom_point.html">documentation page</a> shows that the familiar <code>x</code> and <code>y</code> aesthetics are available. It also shows some new aesthetics like <code>stroke</code>.</p>
+<p>We can use the same process to look at the <code>geom_linerange</code> <a href="https://ggplot2.tidyverse.org/reference/geom_linerange.html">documentation page</a> and start off our temperature visualization with the record lows and highs:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(weather) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_linerange</span>(<span class="fu">aes</span>(<span class="at">x =</span> dateInYear, <span class="at">ymin =</span> RecordLow, <span class="at">ymax =</span> RecordHigh), <span class="at">color =</span> <span class="st">"#ECEBE3"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-adv-ggplot_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Class exercise 3:</strong> Add to your temperature visualization to also display the usual temperatures (<code>NormalLow</code> and <code>NormalHigh</code>), and actual 2011 temperatures (<code>Low</code> and <code>High</code>). Your plot should look like the one below. The tan color for the usual temperatures is <code>"#C8B8BA"</code>, and the red color for the actual temperatures is <code>"#A90248"</code>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-adv-ggplot_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+<p>Let’s now try to recreate the visual demarcations of the months by adding vertical lines separating the months.</p>
+<p><strong>Class exercise 4:</strong> Brainstorm with your groups how we might draw those vertical lines. What <code>geom</code> might we use? What subset of the data might we use in that <code>geom</code> layer to draw lines only at the month divisions? One person from your group should write your ideas on the board.</p>
+<p>Once ideas are up on the board, we’ll work through this together as a class.</p>
+<hr>
+<p>Now let’s change the x-axis labels so that the month names display in the center of each month’s slice of the plot. (Note that R has built-in variables called <code>month.abb</code> and <code>month.name</code> that contain abbreviated and full month names.)</p>
+<p><strong>Class exercise 5:</strong> We will split into 3 groups to explore different approaches to this problem. After finding tentative solutions, each group should try out the solution in the temperature plot. Elect one speaker to summarize the group’s process and results.</p>
+<ul>
+<li><p><strong>AI group:</strong> This group will use <a href="https://chat.openai.com/">ChatGPT</a> and/or <a href="https://bard.google.com/">Google Bard</a>. Record the chat prompts used and output given.</p></li>
+<li><p><strong>Google group:</strong> This group will just use Google search. Record search queries and your thought process in selecting which search results to look at first.</p></li>
+<li><p><strong>Documentation group:</strong> This group will only use the <a href="https://ggplot2.tidyverse.org/reference/index.html">ggplot2 documentation page</a>. You might use Ctrl-F or Command-F to search for relevant text on the main function reference page or use the “Search for” box in the top right.</p></li>
+</ul>
+<p>After each group reports out, we will finalize this part of the plot together.</p>
 </section>
 <section id="practice" class="level1">
 <h1>Practice</h1>
-<p>In pairs, you will go through the same steps as above for the precipitation data.</p>
-<p>Throughout this course, we will be using the <strong>pair programming</strong> technique. Using one computer, work together to solve the problem at hand with each individual taking turns in one of the two roles:</p>
+<p>In pairs, you will go through the same steps as above for the precipitation data. Here, and throughout the course, we will be using the <strong>pair programming</strong> technique.</p>
+<section id="pair-programming-background" class="level2">
+<h2 class="anchored" data-anchor-id="pair-programming-background">Pair programming background</h2>
+<p>In <strong>pair programming</strong>, two individuals use one computer and work together to solve the problem at hand. Each individual takes turns in one of two roles:</p>
 <ul>
-<li><strong>Driver</strong>: Think outloud and implement the agreed upon idea by writing code.</li>
-<li><strong>Navigator</strong>: Review ideas and code by asking good questions about the driver’s thought process and reasoning behind the code.</li>
+<li><strong>Driver</strong>: The Driver is at the computer typing and speaking their thought process out loud.</li>
+<li><strong>Navigator</strong>: The Navigator reviews all code that the Driver writes as it’s typed, guides the overall direction of the code (keeps the instructions in mind), and pulls up references.</li>
 </ul>
-<p>TODO: Include information on driver and navigator responsibilities–link to video to watch in class?</p>
-<p>Pair programming is <a href="https://hackernoon.com/the-ultimate-guide-to-pair-programming-b606625bc784">used effectively in industry</a> to speed up individual employee’s learning of a company’s codebase and reduce time wasted on fixing bugs.</p>
+<p><strong>Why are we using pair programming?</strong> Pair programming is <a href="https://hackernoon.com/the-ultimate-guide-to-pair-programming-b606625bc784">used effectively in industry</a> to speed up individual employee’s learning of a company’s codebase and reduce time wasted on fixing bugs.</p>
+</section>
+<section id="your-task" class="level2">
+<h2 class="anchored" data-anchor-id="your-task">Your task</h2>
+<p>Work together until your precipitation plot looks as below.</p>
+<ul>
+<li>The <code>culmPrec</code> variable contains cumulative precipitation for the month up to the given day.</li>
+<li>The <code>recordP</code> variable is a TRUE/FALSE indicator of whether a day was a precipitation record. These are marked by the downward pointing triangles.</li>
+<li>The numbers on the plot indicate the total precipitation for the month. Do some searching about the <code>hjust</code> and <code>vjust</code> options to adjust the alignment of the numbers.</li>
+<li>The blue and tan colors are <code>"#32a3d8"</code> and <code>"#ebeae2"</code>.</li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-adv-ggplot_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>When should the Driver and Navigator switch roles?</strong> For this exercise, you will switch roles once a particular plot layer (one <code>geom</code>) has been implemented correctly. You can physically trade places (coding on one computer for the whole exercise), or you can email code back and forth.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -342,17 +403,43 @@ Stop to Reflect
 </div>
 </div>
 </div>
-<p>TODO: This is not clear: Remember to run into a new error!</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Record Errors
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Every time you run into a new error, record the error message and your process for fixing the error in the “Error Log” section of the Quarto file for these exercises.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="homework" class="level1">
 <h1>Homework</h1>
-<p>Using <code>ggplot2</code> and other functions in R, recreate the original NY Times graphic to the greatest extent possible for you (which may be different for each of you). You will need to use reference pages and documentation to discover necessary tools. For example, you may want to Google search “ggplot multiple plots”. Look at dates and use newer references. There will many tools that you could use.</p>
+<p>Using <code>ggplot2</code> and other functions in R, recreate the original NY Times graphic to the greatest extent possible for you (which may be different for each of you). You will need to use reference pages and documentation to discover necessary tools. For example, you may want to Google search “ggplot multiple plots”. When looking through results, check publication dates and use newer references.</p>
 <p>At a minimum, attempt to create a graphic close to this:</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<p><img src="02-adv-ggplot_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-adv-ggplot_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
+</div>
+<p>The following variables will be needed:</p>
+<ul>
+<li><code>Record</code>: A TRUE/FALSE indicator of whether a day was a temperature record</li>
+<li><code>RecordText</code>: A text description of the record temperature, if there was one (e.g., “Record High: 84”)</li>
+<li><code>RecordP</code>: A TRUE/FALSE indicator of whether a day was a precipitation record</li>
+</ul>
 
 
 </section>
