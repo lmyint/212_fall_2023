@@ -403,14 +403,14 @@
     "href": "slides/day1.html#free-time",
     "title": "Welcome to Intermediate Data Science!",
     "section": "Free time",
-    "text": "Free time\nThe remainder of the class period is free time. Some suggestions for spending the time:\n\nGet up and sit with new people. Share your 12 FPs with each other and get further feedback.\nKeep working on your website. Google to learn more about CSS and play with the appearance of your page.\nClarify anything about the course with me."
+    "text": "Free time\nThe remainder of the class period is free time. Some suggestions for spending the time:\n\nGet up and sit with new people. Share your 12 FPs with each other and get further feedback.\nKeep working on your website. Google to learn more about CSS and play with the appearance of your page in the styles.css file.\nClarify anything about the course with me."
   },
   {
     "objectID": "slides/day1.html#announcements",
     "href": "slides/day1.html#announcements",
     "title": "Welcome to Intermediate Data Science!",
     "section": "Announcements",
-    "text": "Announcements\nTo do before class on Thursday:\n\nSet up R and RStudio using these instructions.\nJoin our Slack workspace.\n\nUpdate your Slack profile with preferred name, pronouns, name pronunciation. (To find your profile, click on your name under Direct Messages on the left menu, and click “Edit Profile”.)\nIntroduce yourself in the #general channel.\n\nFamiliarize yourself with the layout of our course website.\nLook at the Guiding Questions for Thursday’s class on advanced ggplot2."
+    "text": "Announcements\nTo do before class on Thursday:\n\nSet up R and RStudio using these instructions.\nJoin our Slack workspace.\n\nUpdate your Slack profile with preferred name, pronouns, name pronunciation. (To find your profile, click on your name under Direct Messages on the left menu, and click “Edit Profile”.)\nIntroduce yourself in the #general channel.\n\nLook at the Guiding Questions for Thursday’s class on advanced ggplot2.\nTake a look at Homework 0.\n\nThis is a personal essay that doesn’t need to be turned in.\nTopic: Your 10-year vision\nMy hope is that writing this allows gives you more clarity on how to align what you do this semester (and beyond) with who/what/how you want to be.\n\nFinish writing your 12 favorite problems and post them in the #12-favorite-problems channel on Slack.\n\nWhen you connect with peers from Thursday onward, you’ll be using your 12FPs to get to know each other a bit first before working on activities together."
   },
   {
     "objectID": "slides/interactive-viz.html#why-use-interactive-visualization",
