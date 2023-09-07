@@ -3,4 +3,10 @@ title: "Homework 1"
 sidebar: false
 ---
 
+# Required parts
 
+Finish the plot that we started in our [Advanced Data Visualization in ggplot2](02-adv-ggplot.qmd#homework) class activity up to the minimum requirements.
+
+# Optional
+
+Participate in the most recent [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-09-05/readme.md) challenge.

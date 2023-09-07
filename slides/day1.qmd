@@ -338,6 +338,7 @@ To do before class on Thursday:
 - [Join](https://join.slack.com/t/statcomp212fall2023/shared_invite/zt-22hwq73vn-IOFifr_VpO_4AAN4vYVDgA) our Slack workspace.
     - Update your Slack profile with preferred name, pronouns, name pronunciation. (To find your profile, click on your name under Direct Messages on the left menu, and click "Edit Profile".)
     - Introduce yourself in the `#general` channel.
+- Complete the [pre-course survey](https://docs.google.com/forms/d/e/1FAIpQLSc1_48NE_5LxRJ5R5EDPoEWcX4d1-Kyicclbn9EjoFiv8ZW5w/viewform?usp=sf_link).
 - Look at the [Guiding Questions](schedule.qmd#guiding-questions) for Thursday's class on advanced ggplot2.
 - Take a look at [Homework 0](homework0.qmd).
     - This is a personal essay that doesn't need to be turned in.

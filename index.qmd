@@ -4,3 +4,24 @@ sidebar: false
 ---
 
 This is the course website for STAT/COMP 212: Intermediate Data Science at Macalester College for the Fall 2023 semester taught by Professor [Leslie Myint](https://www.lesliemyint.org). Materials were developed by Leslie Myint and [Brianna Heggeseth](https://bcheggeseth.github.io/).
+
+# Announcements
+
+## 9/7
+
+## 9/5
+
+To do before class on Thursday:
+
+- Set up R and RStudio using [these instructions](tech_setup.qmd).
+- [Join](https://join.slack.com/t/statcomp212fall2023/shared_invite/zt-22hwq73vn-IOFifr_VpO_4AAN4vYVDgA) our Slack workspace.
+    - Update your Slack profile with preferred name, pronouns, name pronunciation. (To find your profile, click on your name under Direct Messages on the left menu, and click "Edit Profile".)
+    - Introduce yourself in the `#general` channel.
+- Complete the [pre-course survey](https://docs.google.com/forms/d/e/1FAIpQLSc1_48NE_5LxRJ5R5EDPoEWcX4d1-Kyicclbn9EjoFiv8ZW5w/viewform?usp=sf_link).
+- Look at the [Guiding Questions](schedule.qmd#guiding-questions) for Thursday's class on advanced ggplot2.
+- Take a look at [Homework 0](homework0.qmd).
+    - This is a personal essay that doesn't need to be turned in.
+    - Topic: Your 10-year vision
+    - My hope is that writing this allows gives you more clarity on how to align what you do this semester (and beyond) with who/what/how you want to be.
+- Finish writing your 12 favorite problems and post them in the `#12-favorite-problems` channel on Slack.
+    - When you connect with peers from Thursday onward, you'll be using your 12FPs to get to know each other a bit first before working on activities together.

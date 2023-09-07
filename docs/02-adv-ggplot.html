@@ -185,6 +185,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#setting-up-our-reflection-practice" id="toc-setting-up-our-reflection-practice" class="nav-link" data-scroll-target="#setting-up-our-reflection-practice">Setting up our reflection practice</a></li>
   <li><a href="#case-study-recreating-a-nyt-visualization" id="toc-case-study-recreating-a-nyt-visualization" class="nav-link" data-scroll-target="#case-study-recreating-a-nyt-visualization">Case study: recreating a NYT visualization</a></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a>
   <ul class="collapse">
@@ -228,6 +229,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>Identify when it would be necessary to use different <code>data</code> arguments within the <code>ggplot()</code> and <code>geom_()</code> layers</li>
 </ul>
+<p><br><br><br></p>
+</section>
+<section id="setting-up-our-reflection-practice" class="level1">
+<h1>Setting up our reflection practice</h1>
+<p>Today is our start to cultivating a greater awareness about our habits with regards to:</p>
+<ol type="1">
+<li>Figuring code stuff out without hand-holding from an instructor</li>
+<li>Creating a good environment in a work partnership</li>
+</ol>
+<p>You will be keeping a Process and Reflection log to record your in-the-moment observations about your learning process and collaborative work. <strong>This log will give you a wealth of observations to draw from when writing your 3 major reflections at ~1 month in, mid-semester, and the end of the semester.</strong></p>
+<p>Directions:</p>
+<ul>
+<li>Navigate to this Process and Reflection log <a href="https://docs.google.com/document/d/1tyyuYNXpzqMxw2osGnM_9I5ivBj3a0iSZ_LVZusDqY8/edit?usp=sharing">template</a>.</li>
+<li>Follow the directions in the document to make your own copy and share it with me.</li>
+<li>Leave this document open during class. There will be moments to pause and reflect during class and at the end of class.</li>
+</ul>
+<p><br><br><br></p>
 </section>
 <section id="case-study-recreating-a-nyt-visualization" class="level1">
 <h1>Case study: recreating a NYT visualization</h1>
@@ -358,7 +376,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="practice" class="level1">
 <h1>Practice</h1>
-<p>In pairs, you will go through the same steps as above for the precipitation data. Here, and throughout the course, we will be using the <strong>pair programming</strong> technique.</p>
+<p>In pairs (randomly formed), you will go through the same steps as above for the precipitation data. Here, and throughout the course, we will be using the <strong>pair programming</strong> technique.</p>
 <section id="pair-programming-background" class="level2">
 <h2 class="anchored" data-anchor-id="pair-programming-background">Pair programming background</h2>
 <p>In <strong>pair programming</strong>, two individuals use one computer and work together to solve the problem at hand. Each individual takes turns in one of two roles:</p>
@@ -370,6 +388,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="your-task" class="level2">
 <h2 class="anchored" data-anchor-id="your-task">Your task</h2>
+<p><strong>Before diving in to plot creation,</strong> get to know your partner by telling each other about the general themes in your 12 favorite problems (FPs). Try to find some overlap in your themes and share one of your FPs that relates to that overlapping theme.</p>
 <p>Work together until your precipitation plot looks as below.</p>
 <ul>
 <li>The <code>culmPrec</code> variable contains cumulative precipitation for the month up to the given day.</li>
@@ -386,7 +405,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><strong>When should the Driver and Navigator switch roles?</strong> For this exercise, you will switch roles once a particular plot layer (one <code>geom</code>) has been implemented correctly. You can physically trade places (coding on one computer for the whole exercise), or you can email code back and forth.</p>
+<p><strong>When should the Driver and Navigator switch roles?</strong> For this exercise, you will switch roles once a particular plot layer (one <code>geom</code>) has been implemented correctly. You can send code back and forth via email or a direct message on Slack.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -423,23 +442,29 @@ Record Errors
 </section>
 <section id="homework" class="level1">
 <h1>Homework</h1>
-<p>Using <code>ggplot2</code> and other functions in R, recreate the original NY Times graphic to the greatest extent possible for you (which may be different for each of you). You will need to use reference pages and documentation to discover necessary tools. For example, you may want to Google search “ggplot multiple plots”. When looking through results, check publication dates and use newer references.</p>
-<p>At a minimum, attempt to create a graphic close to this:</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="02-adv-ggplot_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<p><strong>Task:</strong> Using <code>ggplot</code> and other functions in R, recreate the original NY Times graphic to the greatest extent possible for you (which may be different for each of you).</p>
+<ul>
+<li>You will need to use reference pages and documentation to discover necessary tools. For example, you may want to Google search “ggplot multiple plots”. When looking through results, check publication dates and use newer references.</li>
+</ul>
 <p>The following variables will be needed:</p>
 <ul>
 <li><code>Record</code>: A TRUE/FALSE indicator of whether a day was a temperature record</li>
 <li><code>RecordText</code>: A text description of the record temperature, if there was one (e.g., “Record High: 84”)</li>
 <li><code>RecordP</code>: A TRUE/FALSE indicator of whether a day was a precipitation record</li>
 </ul>
+<p><strong>Minimum requirements for your graph:</strong> Create a graphic close to the one below. In your knitted HTML, the figure size should be big enough to see details, and the figure should have alt text.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02-adv-ggplot_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" alt="SFO weather in 2011 (minimum requirements for homework submission)" width="1344"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Submission details:</strong> Submit the knitted HTML of the <code>02-adv-ggplot.qmd</code> template from class on <a href="https://moodle.macalester.edu/mod/assign/view.php?id=35697">Moodle</a> by midnight on Wednesday, 9/13.</p>
+<p><strong>How to cite AI and other resources:</strong> If you use AI tools like ChatGPT or Google Bard, please copy and paste all prompts and output into an “Appendix” section of this assignment. Also list any websites used in this Appendix.</p>
+<p><strong>Extra:</strong> If you’d like further practice, recreate the legend in the temperature graph that shows how the tan and red lines relate to record, normal, and actual highs and lows. (Note: I do not have a hidden expectation that you do this when I give feedback on your work.)</p>
 
 
 </section>

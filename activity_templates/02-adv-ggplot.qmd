@@ -1,5 +1,6 @@
 ---
 title: "Topic 2: Advanced Data Visualization in ggplot2"
+author: "YOUR NAME"
 ---
 
 # Learning goals
@@ -87,9 +88,11 @@ After each group reports out, we will finalize this part of the plot together.
 
 # Practice
 
-In pairs, you will go through the same steps as above for the precipitation data. Here, and throughout the course, we will be using the **pair programming** technique.
+In pairs (randomly formed), you will go through the same steps as above for the precipitation data. Here, and throughout the course, we will be using the **pair programming** technique.
 
 ## Your task
+
+**Before diving in to plot creation,** get to know your partner by telling each other about the general themes in your 12 favorite problems (FPs). Try to find some overlap in your themes and share one of your FPs that relates to that overlapping theme.
 
 Work together until your precipitation plot looks as below.
 
@@ -102,22 +105,51 @@ Work together until your precipitation plot looks as below.
 # Code for updated plot
 ```
 
-**When should the Driver and Navigator switch roles?** For this exercise, you will switch roles once a particular plot layer (one `geom`) has been implemented correctly. You can physically trade places (coding on one computer for the whole exercise), or you can email code back and forth.
+**When should the Driver and Navigator switch roles?** For this exercise, you will switch roles once a particular plot layer (one `geom`) has been implemented correctly. You can send code back and forth via email or a direct message on Slack.
 
 ## Reflecting on pair programming
 
 As you pair program, be aware of your comforts and discomforts in the roles of driver and navigator. Pay attention to the comforts and discomforts of your partner. What could you do to support them in becoming more comfortable and confident in both roles?
 
-> WRITE YOUR REFLECTIONS HERE
+**Write your reflections in your "Process and Reflection Log" Google Doc.**
 
 
 ## Making note of new errors
 
-Every time you run into a new error, record the error message and your process for fixing the error in the "Error Log" section of the Quarto file for these exercises.
+Every time you run into a new error, record the error message and your process for fixing the error in the "Error Log" section here:
 
 ```
 PASTE ERROR MESSAGE HERE
 ```
 
-ADD NOTES ON HOW YOU FIGURED OUT HOW TO FIX THE ERROR.
+> **Add notes on how you figured out how to address the error.**
+
+# Homework 1
+
+**Task:** Using `ggplot` and other functions in R, recreate the original NY Times graphic to the greatest extent possible for you (which may be different for each of you).
+
+- You will need to use reference pages and documentation to discover necessary tools. For example, you may want to Google search "ggplot multiple plots". When looking through results, check publication dates and use newer references.
+
+The following variables will be needed:
+
+- `Record`: A TRUE/FALSE indicator of whether a day was a temperature record
+- `RecordText`: A text description of the record temperature, if there was one (e.g., "Record High: 84")
+- `RecordP`: A TRUE/FALSE indicator of whether a day was a precipitation record
+
+**Minimum requirements for your graph:** Create a graphic close to the one shown [here](https://lmyint.github.io/212_fall_2023/02-adv-ggplot.html#homework). In your knitted HTML, the figure size should be big enough to see details, and the figure should have alt text.
+
+
+```{r fig.width=12, fig.height=8, fig.alt="ALT TEXT FOR YOUR PLOT"}
+# Put the code for your final plot here
+# Adjust the fig.width, fig.height chunk options above to make sure that your plot displays nicely in the knitted HTML (Check your knitted HTML before submitting)
+# Also enter alt text for your plot by modifying the fig.alt chunk option.
+# Delete these comments in your homework submission
+```
+
+**Submission details:** Submit the knitted HTML of the `02-adv-ggplot.qmd` template from class on [Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=35697) by midnight on Wednesday, 9/13.
+
+**How to cite AI and other resources:** If you use AI tools like ChatGPT or Google Bard, please copy and paste all prompts and output into an "Appendix" section of this assignment. Also list any websites used in this Appendix.
+
+**Extra:** If you'd like further practice, recreate the legend in the temperature graph that shows how the tan and red lines relate to record, normal, and actual highs and lows. (Note: I do not have a hidden expectation that you do this when I give feedback on your work.)
+
 

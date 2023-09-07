@@ -19,6 +19,29 @@ After this lesson, you should be able to:
     - Use the information in the the **Aesthetics** and **Examples** sections to control plot appearance
 - Identify when it would be necessary to use different `data` arguments within the `ggplot()` and `geom_()` layers
 
+
+<br><br><br>
+
+
+# Setting up our reflection practice
+
+Today is our start to cultivating a greater awareness about our habits with regards to:
+
+1. Figuring code stuff out without hand-holding from an instructor
+2. Creating a good environment in a work partnership
+
+You will be keeping a Process and Reflection log to record your in-the-moment observations about your learning process and collaborative work. **This log will give you a wealth of observations to draw from when writing your 3 major reflections at ~1 month in, mid-semester, and the end of the semester.**
+
+Directions:
+
+- Navigate to this Process and Reflection log [template](https://docs.google.com/document/d/1tyyuYNXpzqMxw2osGnM_9I5ivBj3a0iSZ_LVZusDqY8/edit?usp=sharing).
+- Follow the directions in the document to make your own copy and share it with me.
+- Leave this document open during class. There will be moments to pause and reflect during class and at the end of class.
+
+
+<br><br><br>
+
+
 # Case study: recreating a NYT visualization
 
 You can download a template Quarto file to start from [here](activity_templates/02-adv-ggplot.qmd).
@@ -145,7 +168,7 @@ After each group reports out, we will finalize this part of the plot together.
 
 # Practice
 
-In pairs, you will go through the same steps as above for the precipitation data. Here, and throughout the course, we will be using the **pair programming** technique.
+In pairs (randomly formed), you will go through the same steps as above for the precipitation data. Here, and throughout the course, we will be using the **pair programming** technique.
 
 ## Pair programming background
 
@@ -157,6 +180,8 @@ In **pair programming**, two individuals use one computer and work together to s
 **Why are we using pair programming?** Pair programming is [used effectively in industry](https://hackernoon.com/the-ultimate-guide-to-pair-programming-b606625bc784) to speed up individual employee's learning of a company's codebase and reduce time wasted on fixing bugs.
 
 ## Your task
+
+**Before diving in to plot creation,** get to know your partner by telling each other about the general themes in your 12 favorite problems (FPs). Try to find some overlap in your themes and share one of your FPs that relates to that overlapping theme.
 
 Work together until your precipitation plot looks as below.
 
@@ -176,7 +201,7 @@ ggplot(weather) +
     theme_classic()
 ```
 
-**When should the Driver and Navigator switch roles?** For this exercise, you will switch roles once a particular plot layer (one `geom`) has been implemented correctly. You can physically trade places (coding on one computer for the whole exercise), or you can email code back and forth.
+**When should the Driver and Navigator switch roles?** For this exercise, you will switch roles once a particular plot layer (one `geom`) has been implemented correctly. You can send code back and forth via email or a direct message on Slack.
 
 ::: {.callout-tip collapse="false"}
 ## Stop to Reflect
@@ -191,12 +216,20 @@ Every time you run into a new error, record the error message and your process f
 
 # Homework
 
-Using `ggplot2` and other functions in R, recreate the original NY Times graphic to the greatest extent possible for you (which may be different for each of you). You will need to use reference pages and documentation to discover necessary tools. For example, you may want to Google search "ggplot multiple plots". When looking through results, check publication dates and use newer references.
+**Task:** Using `ggplot` and other functions in R, recreate the original NY Times graphic to the greatest extent possible for you (which may be different for each of you).
 
-At a minimum, attempt to create a graphic close to this:
+- You will need to use reference pages and documentation to discover necessary tools. For example, you may want to Google search "ggplot multiple plots". When looking through results, check publication dates and use newer references.
 
-```{r echo=FALSE, message=FALSE}
-legenddata <- tibble(xmin = 190 - 1:3, xmax = 190 + 1:3, ymin = 0 - seq(5,10,length=3) , ymax = 0 + seq(5,10,length=3), type = c("Today",'Normal','Record')) 
+The following variables will be needed:
+
+- `Record`: A TRUE/FALSE indicator of whether a day was a temperature record
+- `RecordText`: A text description of the record temperature, if there was one (e.g., "Record High: 84")
+- `RecordP`: A TRUE/FALSE indicator of whether a day was a precipitation record
+
+**Minimum requirements for your graph:** Create a graphic close to the one below. In your knitted HTML, the figure size should be big enough to see details, and the figure should have alt text.
+
+```{r echo=FALSE, message=FALSE, fig.width=14, fig.height=10, fig.alt="SFO weather in 2011 (minimum requirements for homework submission)"}
+legenddata <- tibble(xmin = 190 - 1:3, xmax = 190 + 1:3, ymin = 0 - seq(5,10,length=3) , ymax = 0 + seq(5,10,length=3), type = c("Today", "Normal", "Record")) 
 
 
 xlabs <- weather %>% group_by(Month) %>% filter(Day == 15) %>% pull(dateInYear)
@@ -245,8 +278,10 @@ library(gridExtra)
 grid.arrange(tempGraph, rainGraph, nrow = 2, heights = c(5,2), top = "SFO Weather in 2011")  
 ```
 
-The following variables will be needed:
+**Submission details:** Submit the knitted HTML of the `02-adv-ggplot.qmd` template from class on [Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=35697) by midnight on Wednesday, 9/13.
 
-- `Record`: A TRUE/FALSE indicator of whether a day was a temperature record
-- `RecordText`: A text description of the record temperature, if there was one (e.g., "Record High: 84")
-- `RecordP`: A TRUE/FALSE indicator of whether a day was a precipitation record
+**How to cite AI and other resources:** If you use AI tools like ChatGPT or Google Bard, please copy and paste all prompts and output into an "Appendix" section of this assignment. Also list any websites used in this Appendix.
+
+**Extra:** If you'd like further practice, recreate the legend in the temperature graph that shows how the tan and red lines relate to record, normal, and actual highs and lows. (Note: I do not have a hidden expectation that you do this when I give feedback on your work.)
+
+
