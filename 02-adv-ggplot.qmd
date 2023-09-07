@@ -19,6 +19,10 @@ After this lesson, you should be able to:
     - Use the information in the the **Aesthetics** and **Examples** sections to control plot appearance
 - Identify when it would be necessary to use different `data` arguments within the `ggplot()` and `geom_()` layers
 
+<br>
+
+Slides for today are available [here](slides/02-adv-ggplot.qmd). (For our main activity, we will be using the rest of the webpage below.)
+
 
 <br><br><br>
 
@@ -44,7 +48,7 @@ Directions:
 
 # Case study: recreating a NYT visualization
 
-You can download a template Quarto file to start from [here](activity_templates/02-adv-ggplot.qmd).
+You can download a template Quarto file to start from [here](activity_templates/02-adv-ggplot.qmd). Put this file in an `activities` folder within a folder for this course.
 
 We are going to recreate [this NYT visualization](https://www.nytimes.com/interactive/2016/02/19/us/2015-year-in-weather-temperature-precipitation.html) on record setting temperatures by expanding our `ggplot2` toolbox using data from San Francisco (SFO) in 2011.
 
@@ -166,6 +170,9 @@ Now let's change the x-axis labels so that the month names display in the center
 After each group reports out, we will finalize this part of the plot together.
 
 
+<br><br><br>
+
+
 # Practice
 
 In pairs (randomly formed), you will go through the same steps as above for the precipitation data. Here, and throughout the course, we will be using the **pair programming** technique.
@@ -213,6 +220,10 @@ As you pair program, be aware of your comforts and discomforts in the roles of d
 ## Record Errors
 Every time you run into a new error, record the error message and your process for fixing the error in the "Error Log" section of the Quarto file for these exercises.
 :::
+
+
+<br><br><br>
+
 
 # Homework
 
@@ -280,7 +291,7 @@ grid.arrange(tempGraph, rainGraph, nrow = 2, heights = c(5,2), top = "SFO Weathe
 
 **Submission details:** Submit the knitted HTML of the `02-adv-ggplot.qmd` template from class on [Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=35697) by midnight on Wednesday, 9/13.
 
-**How to cite AI and other resources:** If you use AI tools like ChatGPT or Google Bard, please copy and paste all prompts and output into an "Appendix" section of this assignment. Also list any websites used in this Appendix.
+**How to cite AI and other resources:** If you use AI tools like ChatGPT or Google Bard, please copy and paste all prompts and output into an "Appendix" section of this assignment. If you use an AI tool, also list one environmentally-friendly action you could adopt (that you don't already do) to offset the energy usage. Also list any websites used in this Appendix.
 
 **Extra:** If you'd like further practice, recreate the legend in the temperature graph that shows how the tan and red lines relate to record, normal, and actual highs and lows. (Note: I do not have a hidden expectation that you do this when I give feedback on your work.)
 

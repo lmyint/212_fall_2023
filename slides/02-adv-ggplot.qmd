@@ -1,0 +1,23 @@
+---
+title: "Day 2"
+format:
+  revealjs:
+    scrollable: true
+    smaller: true
+---
+
+## Welcome back!
+
+As we prepare to gather as a class, think about the following:
+
+- What themes emerge in your 12 favorite problems? (You'll be sharing with partner(s) today.)
+
+Random
+
+- How do you pronounce the name Sean Bean? 😆
+
+Quote of the day
+
+> You don't rise to the level of your goals. You fall to the level of your systems.
+>
+> - James Clear, *Atomic Habits*

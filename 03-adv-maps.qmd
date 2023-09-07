@@ -33,6 +33,15 @@ After this lesson, you should be able to:
 - Implement some of the basic plotting with the `sf` package
 - Understand foundational ideas in working with spatial data (aggregating spatial point data to a spatial region, joining spatial data sets)
 
+
+<br><br><br>
+
+***TODO: Add mini-lesson on file organization and RStudio projects***
+
+
+<br><br><br>
+
+
 # Spatial Visualization Review
 
 In STAT/COMP 112, you learned about basic spatial visualizations. To review,
@@ -813,7 +822,7 @@ The following exercises will use census tract `tidycensus` data for Ramsey and H
 
 Load the data with the following code:
 
-```{r, message=FALSE, warning=FALSE, echo=FALSE, results='hide'}
+```{r, message=FALSE, warning=FALSE, results="hide"}
 census2020 <- tidycensus::get_acs(year = 2020, state = "MN", geography = "tract", variables = c(	
 "B01003_001", "B19013_001", "B23006_023", "B25058_001", "B25107_001", "B25003_001", "B25003_002", "B25003_003", "B25077_001"), output = 'wide', geometry = TRUE) %>%
   filter(word(NAME, 4) %in% c("Ramsey","Hennepin"))%>%
@@ -831,7 +840,7 @@ census2020 <- tidycensus::get_acs(year = 2020, state = "MN", geography = "tract"
                       "medianHomeValue"= "B25077_001E") %>%
   select(-contains("_"))
 
-crashes <- read_csv("data/Crash.csv") %>%
+crashes <- read_csv("https://lmyint.github.io/212_fall_2023/data/Crash.csv") %>%
   filter(!is.na(Latitude), !is.na(Longitude))
 ```
 
@@ -855,7 +864,7 @@ Check the CRS are the same for `census2020` and `crashes` using `st_crs()` and t
 
 Join the crashes and census dataset together and count the number of crashes per census tract. The function `st_join` can join to spatial data sets according to whether the spatial geometries of the right table intersect with the spatial geometries of the left table. 
 
-```{r}
+```{r eval=FALSE}
 crashes_per_tract <- st_join(??,??) %>%
   st_drop_geometry() %>% #removes geometry - makes the following calculation more efficient 
   filter(!is.na(Accident_Datetime)) %>%
@@ -864,7 +873,7 @@ crashes_per_tract <- st_join(??,??) %>%
 
 Join the census data with `crashes_per_tract` and then use a filter of `n > 0` to only keep the census tracts where crashes were recorded instead of all of Ramsey and Hennepin County. 
 
-```{r}
+```{r eval=FALSE}
 crashes_per_tract_geo <- ??? %>% # sf object with census geometry goes first
   left_join(??, by = ??) %>%
   filter(n > 0)

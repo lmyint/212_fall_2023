@@ -148,7 +148,7 @@ The following variables will be needed:
 
 **Submission details:** Submit the knitted HTML of the `02-adv-ggplot.qmd` template from class on [Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=35697) by midnight on Wednesday, 9/13.
 
-**How to cite AI and other resources:** If you use AI tools like ChatGPT or Google Bard, please copy and paste all prompts and output into an "Appendix" section of this assignment. Also list any websites used in this Appendix.
+**How to cite AI and other resources:** If you use AI tools like ChatGPT or Google Bard, please copy and paste all prompts and output into an "Appendix" section of this assignment. If you use an AI tool, also list one environmentally-friendly action you could adopt (that you don't already do) to offset the energy usage. Also list any websites used in this Appendix.
 
 **Extra:** If you'd like further practice, recreate the legend in the temperature graph that shows how the tan and red lines relate to record, normal, and actual highs and lows. (Note: I do not have a hidden expectation that you do this when I give feedback on your work.)
 

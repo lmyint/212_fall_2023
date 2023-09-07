@@ -283,6 +283,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Implement some of the basic plotting with the <code>sf</code> package</li>
 <li>Understand foundational ideas in working with spatial data (aggregating spatial point data to a spatial region, joining spatial data sets)</li>
 </ul>
+<p><br><br><br></p>
+<p><strong><em>TODO: Add mini-lesson on file organization and RStudio projects</em></strong></p>
+<p><br><br><br></p>
 </section>
 <section id="spatial-visualization-review" class="level1">
 <h1>Spatial Visualization Review</h1>
@@ -416,56 +419,52 @@ Solution
 </div>
 <p>Below you can see four different world projections. Take note of what is lost in terms of angle, area, or distance in these projections.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"medium"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in value[[3L]](cond): Failed to install the rnaturalearthdata package.
- Please try installing the package for yourself using the following command: 
- install.packages("rnaturalearthdata")</code></pre>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>world <span class="ot">&lt;-</span> <span class="fu">ne_countries</span>(<span class="at">scale =</span> <span class="st">"medium"</span>, <span class="at">returnclass =</span> <span class="st">"sf"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic Map w/ labels</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world) <span class="sc">+</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"#bada55"</span>) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Longitude"</span>, <span class="at">y =</span> <span class="st">"Latitude"</span>, <span class="at">title =</span> <span class="st">"World Map - Mercator Projection"</span>, <span class="at">subtitle =</span> <span class="fu">paste0</span>(<span class="st">"("</span>, <span class="fu">length</span>(<span class="fu">unique</span>(world<span class="sc">$</span>name)), <span class="st">" countries)"</span>)) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="03-adv-maps_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic Map w/ labels</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world) <span class="sc">+</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"#bada55"</span>) <span class="sc">+</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Longitude"</span>, <span class="at">y =</span> <span class="st">"Latitude"</span>, <span class="at">title =</span> <span class="st">"World Map - Mercator Projection"</span>, <span class="at">subtitle =</span> <span class="fu">paste0</span>(<span class="st">"("</span>, <span class="fu">length</span>(<span class="fu">unique</span>(world<span class="sc">$</span>name)), <span class="st">" countries)"</span>)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"#bada55"</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs"</span>)  <span class="sc">+</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Lambert Azimuthal Equal-Area Projection"</span>, <span class="at">subtitle =</span> <span class="st">"Correctly represents area but not angles"</span>) <span class="sc">+</span> </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="03-adv-maps_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"#bada55"</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=fouc"</span>) <span class="sc">+</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Foucaut Projection"</span>, <span class="at">subtitle =</span> <span class="st">"Correctly represents area, lots of distortion in high latitudes"</span>) <span class="sc">+</span> </span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'world' not found</code></pre>
+<div class="cell-output-display">
+<p><img src="03-adv-maps_files/figure-html/unnamed-chunk-1-3.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"#bada55"</span>) <span class="sc">+</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=laea +lat_0=52 +lon_0=10 +x_0=4321000 +y_0=3210000 +ellps=GRS80 +units=m +no_defs"</span>)  <span class="sc">+</span> </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Lambert Azimuthal Equal-Area Projection"</span>, <span class="at">subtitle =</span> <span class="st">"Correctly represents area but not angles"</span>) <span class="sc">+</span> </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'world' not found</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"#bada55"</span>) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=fouc"</span>) <span class="sc">+</span> </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Foucaut Projection"</span>, <span class="at">subtitle =</span> <span class="st">"Correctly represents area, lots of distortion in high latitudes"</span>) <span class="sc">+</span> </span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'world' not found</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"#bada55"</span>) <span class="sc">+</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=natearth2"</span>) <span class="sc">+</span> </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Natural Earth II Projection"</span>, <span class="at">subtitle =</span> <span class="st">"Represents globe shape, distorted at high latitudes"</span>) <span class="sc">+</span> </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'world' not found</code></pre>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"#bada55"</span>) <span class="sc">+</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=natearth2"</span>) <span class="sc">+</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Natural Earth II Projection"</span>, <span class="at">subtitle =</span> <span class="st">"Represents globe shape, distorted at high latitudes"</span>) <span class="sc">+</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="03-adv-maps_files/figure-html/unnamed-chunk-1-4.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <section id="exercise-2" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-2">Exercise</h3>
 <p>Create a world map with a different projection (beyond the four above). Go to <a href="https://proj.org/en/9.2/operations/projections/index.html" class="uri">https://proj.org/en/9.2/operations/projections/index.html</a> and find another projection. Look for the <code>proj-string</code> and copy that to the <code>crs =</code> argument in <code>coord_sf()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"#bada55"</span>) <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=natearth2"</span>) <span class="sc">+</span> </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"?? Projection"</span>, <span class="at">subtitle =</span> <span class="st">"??"</span>) <span class="sc">+</span> </span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in eval(expr, envir, enclos): object 'world' not found</code></pre>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> world) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_sf</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"#bada55"</span>) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">coord_sf</span>(<span class="at">crs =</span> <span class="st">"+proj=natearth2"</span>) <span class="sc">+</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"?? Projection"</span>, <span class="at">subtitle =</span> <span class="st">"??"</span>) <span class="sc">+</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="03-adv-maps_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>What is interesting, surprising, or different to you about the map of the Earth based on this projection?</p>
@@ -574,36 +573,36 @@ Stop to Reflect
 <h3 class="anchored" data-anchor-id="read-in-data-to-r">Read in data to R</h3>
 <p>For each file format, we need use a different function to read in the data. See the examples below for reading in GeoJSON, csv, and shapefiles.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in GeoJSON file</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>hex_spatial <span class="ot">&lt;-</span> geojsonio<span class="sc">::</span><span class="fu">geojson_read</span>(<span class="st">"data/us_states_hexgrid.geojson"</span>, <span class="at">what =</span> <span class="st">'sp'</span>) </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in CSV File</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>pop_growth <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'data/apportionment.csv'</span>) <span class="sc">%&gt;%</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in Shapefiles</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>mn_cities <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">read_sf</span>(<span class="st">'data/shp_loc_pop_centers'</span>) <span class="co">#shp file/folder</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>mn_water <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">read_sf</span>(<span class="st">'data/shp_water_lakes_rivers'</span>) <span class="co">#shp file/folder</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in GeoJSON file</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>hex_spatial <span class="ot">&lt;-</span> geojsonio<span class="sc">::</span><span class="fu">geojson_read</span>(<span class="st">"data/us_states_hexgrid.geojson"</span>, <span class="at">what =</span> <span class="st">'sp'</span>) </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in CSV File</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>pop_growth <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'data/apportionment.csv'</span>) <span class="sc">%&gt;%</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>()</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in Shapefiles</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>mn_cities <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">read_sf</span>(<span class="st">'data/shp_loc_pop_centers'</span>) <span class="co">#shp file/folder</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>mn_water <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">read_sf</span>(<span class="st">'data/shp_water_lakes_rivers'</span>) <span class="co">#shp file/folder</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="data-classes-in-r" class="level3">
 <h3 class="anchored" data-anchor-id="data-classes-in-r">Data classes in R</h3>
 <p>When data is read it, an R data object is created of a default class. Notice the classes of the R objects we read in. Also, notice that an object may have multiple classes, which indicate the type of structure it has and how functions may interact with the object.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(hex_spatial)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(hex_spatial)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "SpatialPolygonsDataFrame"
 attr(,"package")
 [1] "sp"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(pop_growth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(pop_growth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "spec_tbl_df" "tbl_df"      "tbl"         "data.frame" </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(mn_cities)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(mn_cities)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "sf"         "tbl_df"     "tbl"        "data.frame"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(mn_water)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(mn_water)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "sf"         "tbl_df"     "tbl"        "data.frame"</code></pre>
 </div>
@@ -615,7 +614,7 @@ attr(,"package")
 <li><code>Spatial*DataFrame</code> extends the geometry classes to a data.frame-like object with non-spatial attribute data.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_spatial,<span class="dv">1</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_spatial,<span class="dv">1</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>An object of class "SpatialPolygonsDataFrame"
 Slot "data":
@@ -722,7 +721,7 @@ Solution
 <li><code>sf</code> objects are data.frame-like objects with a geometry column of class <code>sfc</code></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>mn_cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>mn_cities</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 1081 features and 8 fields
 Geometry type: POINT
@@ -769,9 +768,9 @@ Solution
 <p>Data.frames or tbl (tibbles) are standard data formats that are not specific to spatial data. Our <code>pop_growth</code> data doesn’t include any coordinate information, so it can be stored simply as a <code>data.frame</code> (<code>tbl</code>, <code>tbl_df</code>, and <code>spec_tbl_df</code> are all sub classes of <code>data.frame</code>).</p>
 <p>You may come across <code>data.frames</code> that contain spatial coordinate information, so let’s see what that might look like. We can <code>fortify</code> our <code>sp</code> object to make it a data frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert Spatial*DataFrame to Data Frame</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>hex_spatial_df <span class="ot">&lt;-</span> <span class="fu">fortify</span>(hex_spatial)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(hex_spatial_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert Spatial*DataFrame to Data Frame</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>hex_spatial_df <span class="ot">&lt;-</span> <span class="fu">fortify</span>(hex_spatial)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(hex_spatial_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "data.frame"</code></pre>
 </div>
@@ -781,7 +780,7 @@ Solution
 <h3 class="anchored" data-anchor-id="exercise-7">Exercise</h3>
 <p>What are the variables in <code>hex_spatial_df</code>? Compare the first seven rows with the first spatial polygon of <code>hex_spatial</code>. Now describe the meaning of the variables in <code>hex_spatial_df</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_spatial_df,<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_spatial_df,<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       long      lat order  hole piece id group
 1 -72.62574 55.31320     1 FALSE     1  1   1.1
@@ -792,7 +791,7 @@ Solution
 6 -75.34861 54.40843     6 FALSE     1  1   1.1
 7 -72.62574 55.31320     7 FALSE     1  1   1.1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>hex_spatial<span class="sc">@</span>polygons[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>hex_spatial<span class="sc">@</span>polygons[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>An object of class "Polygons"
 Slot "Polygons":
@@ -882,11 +881,11 @@ group_by(group) %&gt;%
 <li><code>hex_spatial_df</code> to <code>hex_spatial_sf</code>.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to SF from hex_spatial_df  </span></span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>hex_spatial_sf <span class="ot">&lt;-</span> hex_spatial_df <span class="sc">%&gt;%</span> ???  </span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to SF from hex_spatial</span></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>hex_spatial_sf <span class="ot">&lt;-</span> hex_spatial <span class="sc">%&gt;%</span> ???</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to SF from hex_spatial_df  </span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>hex_spatial_sf <span class="ot">&lt;-</span> hex_spatial_df <span class="sc">%&gt;%</span> ???  </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to SF from hex_spatial</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>hex_spatial_sf <span class="ot">&lt;-</span> hex_spatial <span class="sc">%&gt;%</span> ???</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error: &lt;text&gt;:6:0: unexpected end of input
 4: # Convert to SF from hex_spatial
@@ -899,14 +898,14 @@ group_by(group) %&gt;%
 Solution
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Convert to SF from hex_spatial_df  </span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>hex_spatial_sf <span class="ot">&lt;-</span> hex_spatial_df <span class="sc">%&gt;%</span> <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">geometry =</span> <span class="fu">st_combine</span>(geometry)) <span class="sc">%&gt;%</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_cast</span>(<span class="st">"POLYGON"</span>) </span>
-<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Convert to SF from hex_spatial</span></span>
-<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>hex_spatial_sf <span class="ot">&lt;-</span> hex_spatial <span class="sc">%&gt;%</span> <span class="fu">st_as_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Convert to SF from hex_spatial_df  </span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>hex_spatial_sf <span class="ot">&lt;-</span> hex_spatial_df <span class="sc">%&gt;%</span> <span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"long"</span>, <span class="st">"lat"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(group) <span class="sc">%&gt;%</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">geometry =</span> <span class="fu">st_combine</span>(geometry)) <span class="sc">%&gt;%</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_cast</span>(<span class="st">"POLYGON"</span>) </span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Convert to SF from hex_spatial</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>hex_spatial_sf <span class="ot">&lt;-</span> hex_spatial <span class="sc">%&gt;%</span> <span class="fu">st_as_sf</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </details>
 </section>
@@ -922,12 +921,12 @@ Solution
 <h3 class="anchored" data-anchor-id="exercise-9">Exercise</h3>
 <p>Describe what the following code chunks are doing. Be sure to consider the class of the data object, what the data object looks like to start, and what it looks like at the end of the chunk.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chunk A</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>hex_spatial_df  <span class="ot">&lt;-</span> hex_spatial_df <span class="sc">%&gt;%</span> </span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">as.character</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(hex_spatial)) , </span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">name =</span> <span class="fu">str_replace</span>(hex_spatial<span class="sc">$</span>google_name,<span class="st">' </span><span class="sc">\\</span><span class="st">(United States</span><span class="sc">\\</span><span class="st">)'</span>,<span class="st">''</span>), </span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">abbr =</span> hex_spatial<span class="sc">$</span>iso3166_2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chunk A</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>hex_spatial_df  <span class="ot">&lt;-</span> hex_spatial_df <span class="sc">%&gt;%</span> </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">as.character</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(hex_spatial)) , </span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">name =</span> <span class="fu">str_replace</span>(hex_spatial<span class="sc">$</span>google_name,<span class="st">' </span><span class="sc">\\</span><span class="st">(United States</span><span class="sc">\\</span><span class="st">)'</span>,<span class="st">''</span>), </span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">abbr =</span> hex_spatial<span class="sc">$</span>iso3166_2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
 <p>ANSWER (Chunk A):</p>
@@ -937,8 +936,8 @@ Solution
 Solution
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Chunk A</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_spatial_df) <span class="co">#start with data frame of 357 rows and 7 columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Chunk A</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_spatial_df) <span class="co">#start with data frame of 357 rows and 7 columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       long      lat order  hole piece id group
 1 -72.62574 55.31320     1 FALSE     1  1   1.1
@@ -948,13 +947,13 @@ Solution
 5 -75.34861 52.53744     5 FALSE     1  1   1.1
 6 -75.34861 54.40843     6 FALSE     1  1   1.1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>hex_spatial_df  <span class="ot">&lt;-</span> hex_spatial_df <span class="sc">%&gt;%</span> </span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>( <span class="co">#left join, a mutating join, a dataset with information from hex_spatial</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">as.character</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(hex_spatial)) , <span class="co">#Create a data frame with variables id (1,2,3...), name (defined as the google_name from hex_spatial after removing "(United States)"), and abbr (the state abbreviation in hex_spatial as variable iso3166_2)</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">name =</span> <span class="fu">str_replace</span>(hex_spatial<span class="sc">$</span>google_name,<span class="st">' </span><span class="sc">\\</span><span class="st">(United States</span><span class="sc">\\</span><span class="st">)'</span>,<span class="st">''</span>), </span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">abbr =</span> hex_spatial<span class="sc">$</span>iso3166_2))</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_spatial_df) <span class="co">#end with data frame of 357 rows and 9 columns (new: name and abbr)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>hex_spatial_df  <span class="ot">&lt;-</span> hex_spatial_df <span class="sc">%&gt;%</span> </span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>( <span class="co">#left join, a mutating join, a dataset with information from hex_spatial</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">as.character</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(hex_spatial)) , <span class="co">#Create a data frame with variables id (1,2,3...), name (defined as the google_name from hex_spatial after removing "(United States)"), and abbr (the state abbreviation in hex_spatial as variable iso3166_2)</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">name =</span> <span class="fu">str_replace</span>(hex_spatial<span class="sc">$</span>google_name,<span class="st">' </span><span class="sc">\\</span><span class="st">(United States</span><span class="sc">\\</span><span class="st">)'</span>,<span class="st">''</span>), </span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">abbr =</span> hex_spatial<span class="sc">$</span>iso3166_2))</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_spatial_df) <span class="co">#end with data frame of 357 rows and 9 columns (new: name and abbr)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       long      lat order  hole piece id group  name abbr
 1 -72.62574 55.31320     1 FALSE     1  1   1.1 Maine   ME
@@ -967,10 +966,10 @@ Solution
 </div>
 </details>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Chunk B</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>hex_spatial_sf <span class="ot">&lt;-</span> hex_spatial_sf <span class="sc">%&gt;%</span> </span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">str_replace</span>(google_name,<span class="st">' </span><span class="sc">\\</span><span class="st">(United States</span><span class="sc">\\</span><span class="st">)'</span>,<span class="st">''</span>),</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">abbr =</span> iso3166_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Chunk B</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>hex_spatial_sf <span class="ot">&lt;-</span> hex_spatial_sf <span class="sc">%&gt;%</span> </span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">str_replace</span>(google_name,<span class="st">' </span><span class="sc">\\</span><span class="st">(United States</span><span class="sc">\\</span><span class="st">)'</span>,<span class="st">''</span>),</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">abbr =</span> iso3166_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
 <p>ANSWER (Chunk B):</p>
@@ -980,9 +979,9 @@ Solution
 Solution
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Chunk B</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_spatial_sf) <span class="co">#start with sf object with 51 regions and 7 variables/features</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Chunk B</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_spatial_sf) <span class="co">#start with sf object with 51 regions and 7 variables/features</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 6 features and 7 fields
 Geometry type: POLYGON
@@ -1004,11 +1003,11 @@ Geodetic CRS:  WGS 84
 5 North Carolina (United States) POLYGON ((-91.68585 39.5301...
 6       Virginia (United States) POLYGON ((-88.96298 43.0717...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>hex_spatial_sf <span class="ot">&lt;-</span> hex_spatial_sf <span class="sc">%&gt;%</span> <span class="co">#Create new variables: name (defined as the google_name after removing "(United States)"), and abbr (the state abbreviation from variable iso3166_2)</span></span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">str_replace</span>(google_name,<span class="st">' </span><span class="sc">\\</span><span class="st">(United States</span><span class="sc">\\</span><span class="st">)'</span>,<span class="st">''</span>),</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">abbr =</span> iso3166_2)</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_spatial_sf) <span class="co">#ends with sf object with 51 regions and 9 variables/features</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>hex_spatial_sf <span class="ot">&lt;-</span> hex_spatial_sf <span class="sc">%&gt;%</span> <span class="co">#Create new variables: name (defined as the google_name after removing "(United States)"), and abbr (the state abbreviation from variable iso3166_2)</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">name =</span> <span class="fu">str_replace</span>(google_name,<span class="st">' </span><span class="sc">\\</span><span class="st">(United States</span><span class="sc">\\</span><span class="st">)'</span>,<span class="st">''</span>),</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">abbr =</span> iso3166_2)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_spatial_sf) <span class="co">#ends with sf object with 51 regions and 9 variables/features</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 6 features and 9 fields
 Geometry type: POLYGON
@@ -1040,9 +1039,9 @@ Geodetic CRS:  WGS 84
 </div>
 </details>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Chunk C</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>hex_growth_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(hex_spatial_df, pop_growth, <span class="at">by =</span> <span class="st">'name'</span>)</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>hex_growth_sf <span class="ot">&lt;-</span> <span class="fu">left_join</span>(hex_spatial_sf, pop_growth, <span class="at">by =</span> <span class="st">'name'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Chunk C</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>hex_growth_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(hex_spatial_df, pop_growth, <span class="at">by =</span> <span class="st">'name'</span>)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>hex_growth_sf <span class="ot">&lt;-</span> <span class="fu">left_join</span>(hex_spatial_sf, pop_growth, <span class="at">by =</span> <span class="st">'name'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
 <p>ANSWER (Chunk C):</p>
@@ -1052,10 +1051,10 @@ Geodetic CRS:  WGS 84
 Solution
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Chunk C</span></span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>hex_growth_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(hex_spatial_df, pop_growth, <span class="at">by =</span> <span class="st">'name'</span>) <span class="co"># add in pop_growth variables to data frame using left join; in the process duplicate the geometry for each region for each year</span></span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_growth_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Chunk C</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>hex_growth_df <span class="ot">&lt;-</span> <span class="fu">left_join</span>(hex_spatial_df, pop_growth, <span class="at">by =</span> <span class="st">'name'</span>) <span class="co"># add in pop_growth variables to data frame using left join; in the process duplicate the geometry for each region for each year</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_growth_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       long     lat order  hole piece id group  name abbr geography_type year
 1 -72.62574 55.3132     1 FALSE     1  1   1.1 Maine   ME          State 1910
@@ -1093,12 +1092,12 @@ Solution
 5                                              304591
 6                                              484633</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(hex_growth_df) <span class="co">#end with data frame of 4284 rows and 18 variables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(hex_growth_df) <span class="co">#end with data frame of 4284 rows and 18 variables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4284   18</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>hex_growth_sf <span class="ot">&lt;-</span> <span class="fu">left_join</span>(hex_spatial_sf, pop_growth, <span class="at">by =</span> <span class="st">'name'</span>) <span class="co"># add in pop_growth variables to sf object using left join; in the process duplicate the geometry for each region for each year </span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_growth_sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>hex_growth_sf <span class="ot">&lt;-</span> <span class="fu">left_join</span>(hex_spatial_sf, pop_growth, <span class="at">by =</span> <span class="st">'name'</span>) <span class="co"># add in pop_growth variables to sf object using left join; in the process duplicate the geometry for each region for each year </span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(hex_growth_sf)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Simple feature collection with 6 features and 18 fields
 Geometry type: POLYGON
@@ -1155,24 +1154,24 @@ Geodetic CRS:  WGS 84
 5 POLYGON ((-72.62574 55.3132...
 6 POLYGON ((-72.62574 55.3132...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(hex_growth_sf) <span class="co">#end with sf object of 612 region/year combinations and 19 variables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(hex_growth_sf) <span class="co">#end with sf object of 612 region/year combinations and 19 variables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 612  19</code></pre>
 </div>
 </div>
 </details>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chunk D</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>centers <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(rgeos<span class="sc">::</span><span class="fu">gCentroid</span>(hex_spatial,<span class="at">byid =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">abbr =</span> hex_spatial<span class="sc">$</span>iso3166_2)</span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>hex_growth_df <span class="sc">%&gt;%</span> </span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat)) <span class="sc">+</span></span>
-<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">group =</span> group, <span class="at">fill =</span> percent_change_in_resident_population)) <span class="sc">+</span> </span>
-<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> centers, <span class="fu">aes</span>( <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">label =</span> abbr), <span class="at">color =</span> <span class="st">'white'</span>) <span class="sc">+</span></span>
-<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">'Population Change (%)'</span>) <span class="sc">+</span> </span>
-<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>, <span class="at">legend.justification =</span> <span class="st">'right'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chunk D</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>centers <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(rgeos<span class="sc">::</span><span class="fu">gCentroid</span>(hex_spatial,<span class="at">byid =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">abbr =</span> hex_spatial<span class="sc">$</span>iso3166_2)</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>hex_growth_df <span class="sc">%&gt;%</span> </span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat)) <span class="sc">+</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">group =</span> group, <span class="at">fill =</span> percent_change_in_resident_population)) <span class="sc">+</span> </span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> centers, <span class="fu">aes</span>( <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">label =</span> abbr), <span class="at">color =</span> <span class="st">'white'</span>) <span class="sc">+</span></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">'Population Change (%)'</span>) <span class="sc">+</span> </span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>, <span class="at">legend.justification =</span> <span class="st">'right'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
 <p>ANSWER (Chunk D):</p>
@@ -1182,31 +1181,33 @@ Geodetic CRS:  WGS 84
 Solution
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chunk D</span></span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>centers <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(rgeos<span class="sc">::</span><span class="fu">gCentroid</span>(hex_spatial,<span class="at">byid =</span> <span class="cn">TRUE</span>), <span class="co"># Create data frame of the center of each region and the state abbreviation</span></span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">abbr =</span> hex_spatial<span class="sc">$</span>iso3166_2)</span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>hex_growth_df <span class="sc">%&gt;%</span> </span>
-<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span> <span class="co"># focus only on the data from 2020</span></span>
-<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat)) <span class="sc">+</span> <span class="co"># create frame of longitude and latitude</span></span>
-<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">group =</span> group, <span class="at">fill =</span> percent_change_in_resident_population)) <span class="sc">+</span>  <span class="co"># add hex polygons defined by x and y but grouped according to group and color filled by the percent_change in resident population</span></span>
-<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> centers, <span class="fu">aes</span>( <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">label =</span> abbr), <span class="at">color =</span> <span class="st">'white'</span>) <span class="sc">+</span> <span class="co"># add text at the centers of the polygons and add text labels from the abbr variable in the centers data we created</span></span>
-<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">'Population Change (%)'</span>) <span class="sc">+</span>  <span class="co"># change legend label</span></span>
-<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>, <span class="at">legend.justification =</span> <span class="st">'right'</span>) <span class="co"># remove the background theme and move the legend to the bottom right</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="03-adv-maps_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chunk D</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>centers <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(rgeos<span class="sc">::</span><span class="fu">gCentroid</span>(hex_spatial,<span class="at">byid =</span> <span class="cn">TRUE</span>), <span class="co"># Create data frame of the center of each region and the state abbreviation</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">abbr =</span> hex_spatial<span class="sc">$</span>iso3166_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in loadNamespace(x): there is no package called 'rgeos'</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>hex_growth_df <span class="sc">%&gt;%</span> </span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span> <span class="co"># focus only on the data from 2020</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> long, <span class="at">y =</span> lat)) <span class="sc">+</span> <span class="co"># create frame of longitude and latitude</span></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_polygon</span>(<span class="fu">aes</span>(<span class="at">group =</span> group, <span class="at">fill =</span> percent_change_in_resident_population)) <span class="sc">+</span>  <span class="co"># add hex polygons defined by x and y but grouped according to group and color filled by the percent_change in resident population</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> centers, <span class="fu">aes</span>( <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">label =</span> abbr), <span class="at">color =</span> <span class="st">'white'</span>) <span class="sc">+</span> <span class="co"># add text at the centers of the polygons and add text labels from the abbr variable in the centers data we created</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">'Population Change (%)'</span>) <span class="sc">+</span>  <span class="co"># change legend label</span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>, <span class="at">legend.justification =</span> <span class="st">'right'</span>) <span class="co"># remove the background theme and move the legend to the bottom right</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): object 'centers' not found</code></pre>
 </div>
 </div>
 </details>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chunk E</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>hex_growth_sf <span class="sc">%&gt;%</span> </span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> percent_change_in_resident_population)) <span class="sc">+</span> </span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf_text</span>( <span class="fu">aes</span>(<span class="at">label =</span> abbr), <span class="at">color =</span> <span class="st">'white'</span>) <span class="sc">+</span></span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">'Population Change (%)'</span>) <span class="sc">+</span> </span>
-<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>, <span class="at">legend.justification =</span> <span class="st">'right'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chunk E</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>hex_growth_sf <span class="sc">%&gt;%</span> </span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> percent_change_in_resident_population)) <span class="sc">+</span> </span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf_text</span>( <span class="fu">aes</span>(<span class="at">label =</span> abbr), <span class="at">color =</span> <span class="st">'white'</span>) <span class="sc">+</span></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">'Population Change (%)'</span>) <span class="sc">+</span> </span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>, <span class="at">legend.justification =</span> <span class="st">'right'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
 <p>ANSWER (Chunk E):</p>
@@ -1216,16 +1217,16 @@ Solution
 Solution
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chunk E</span></span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>hex_growth_sf <span class="sc">%&gt;%</span>  <span class="co"># start with sf object</span></span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span> <span class="co">#filter to focus on data from 2020</span></span>
-<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> percent_change_in_resident_population)) <span class="sc">+</span> <span class="co"># plot the sf geometry (polygons) and fill color according to percent change in population</span></span>
-<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf_text</span>( <span class="fu">aes</span>(<span class="at">label =</span> abbr), <span class="at">color =</span> <span class="st">'white'</span>) <span class="sc">+</span> <span class="co"># add text labels to the sf geometry regions using abbr for the text</span></span>
-<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">'Population Change (%)'</span>) <span class="sc">+</span> <span class="co"># Change legend label</span></span>
-<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>, <span class="at">legend.justification =</span> <span class="st">'right'</span>) <span class="co"># remove the background theme and move the legend to the bottom right </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="03-adv-maps_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="672"></p>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Chunk E</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>hex_growth_sf <span class="sc">%&gt;%</span>  <span class="co"># start with sf object</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2020</span>) <span class="sc">%&gt;%</span> <span class="co">#filter to focus on data from 2020</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> percent_change_in_resident_population)) <span class="sc">+</span> <span class="co"># plot the sf geometry (polygons) and fill color according to percent change in population</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf_text</span>( <span class="fu">aes</span>(<span class="at">label =</span> abbr), <span class="at">color =</span> <span class="st">'white'</span>) <span class="sc">+</span> <span class="co"># add text labels to the sf geometry regions using abbr for the text</span></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">'Population Change (%)'</span>) <span class="sc">+</span> <span class="co"># Change legend label</span></span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>, <span class="at">legend.justification =</span> <span class="st">'right'</span>) <span class="co"># remove the background theme and move the legend to the bottom right </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in loadNamespace(x): there is no package called 'ggthemes'</code></pre>
 </div>
 </div>
 </details>
@@ -1267,8 +1268,8 @@ Stop to Reflect
 <h3 class="anchored" data-anchor-id="unify-crs">Unify CRS</h3>
 <p>To demonstrate other spatial geometries beyond polygons (the hexagons in the last example were spatial polygons), we’ll walk through create a map of MN with different layers of information (city point locations, county polygon boundaries, rivers as lines and polygons, and a raster elevation map). To add all of this information on one map, we need to ensure that the CRS is the same for all spatial datasets.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check CRS</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(mn_cities)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check CRS</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(mn_cities)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Coordinate Reference System:
   User input: NAD83 / UTM zone 15N 
@@ -1308,8 +1309,8 @@ PROJCRS["NAD83 / UTM zone 15N",
             LENGTHUNIT["metre",1]],
     ID["EPSG",26915]]</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check CRS</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(mn_water)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co">#check CRS</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(mn_water)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Coordinate Reference System:
   User input: NAD83 / UTM zone 15N 
@@ -1349,20 +1350,20 @@ PROJCRS["NAD83 / UTM zone 15N",
             LENGTHUNIT["metre",1]],
     ID["EPSG",26915]]</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co">#transform CRS of water to the same of the cities</span></span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>mn_water <span class="ot">&lt;-</span> mn_water <span class="sc">%&gt;%</span></span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_transform</span>(<span class="at">crs =</span> <span class="fu">st_crs</span>(mn_cities))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co">#transform CRS of water to the same of the cities</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>mn_water <span class="ot">&lt;-</span> mn_water <span class="sc">%&gt;%</span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_transform</span>(<span class="at">crs =</span> <span class="fu">st_crs</span>(mn_cities))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co">#load country boundaries data as sf object</span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>mn_counties <span class="ot">&lt;-</span> <span class="fu">us_counties</span>(<span class="at">resolution =</span> <span class="st">"high"</span>, <span class="at">states =</span> <span class="st">"Minnesota"</span>)</span>
-<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="co">#remove duplicate column names</span></span>
-<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>names_counties <span class="ot">&lt;-</span> <span class="fu">names</span>(mn_counties)</span>
-<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(mn_counties)[names_counties <span class="sc">==</span> <span class="st">'state_name'</span>] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"state_name1"</span>, <span class="st">"state_name2"</span>)</span>
-<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="co">#check CRS</span></span>
-<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(mn_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co">#load country boundaries data as sf object</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>mn_counties <span class="ot">&lt;-</span> <span class="fu">us_counties</span>(<span class="at">resolution =</span> <span class="st">"high"</span>, <span class="at">states =</span> <span class="st">"Minnesota"</span>)</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="co">#remove duplicate column names</span></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>names_counties <span class="ot">&lt;-</span> <span class="fu">names</span>(mn_counties)</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(mn_counties)[names_counties <span class="sc">==</span> <span class="st">'state_name'</span>] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"state_name1"</span>, <span class="st">"state_name2"</span>)</span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="co">#check CRS</span></span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(mn_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Coordinate Reference System:
   User input: EPSG:4326 
@@ -1386,11 +1387,11 @@ GEOGCRS["WGS 84",
         BBOX[-90,-180,90,180]],
     ID["EPSG",4326]]</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform the CRS of county data to the more local CRS of the cities</span></span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>mn_counties <span class="ot">&lt;-</span> mn_counties <span class="sc">%&gt;%</span></span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_transform</span>(<span class="at">crs =</span> <span class="fu">st_crs</span>(mn_cities))</span>
-<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(mn_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Transform the CRS of county data to the more local CRS of the cities</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>mn_counties <span class="ot">&lt;-</span> mn_counties <span class="sc">%&gt;%</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_transform</span>(<span class="at">crs =</span> <span class="fu">st_crs</span>(mn_cities))</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="fu">st_crs</span>(mn_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Coordinate Reference System:
   User input: NAD83 / UTM zone 15N 
@@ -1435,54 +1436,54 @@ PROJCRS["NAD83 / UTM zone 15N",
 <section id="initial-map-counties-and-cities" class="level3">
 <h3 class="anchored" data-anchor-id="initial-map-counties-and-cities">Initial Map: Counties and Cities</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="co">#plot frame</span></span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_counties, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span> <span class="co">#county boundary layer</span></span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_cities, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="co">#city point layer</span></span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="03-adv-maps_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid" width="672"></p>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="co">#plot frame</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_counties, <span class="at">fill =</span> <span class="cn">NA</span>) <span class="sc">+</span> <span class="co">#county boundary layer</span></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_cities, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="co">#city point layer</span></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in loadNamespace(x): there is no package called 'ggthemes'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_counties, <span class="at">fill =</span> <span class="st">'wheat'</span>, <span class="at">color =</span> <span class="st">"tan"</span>) <span class="sc">+</span> </span>
-<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_cities <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Population <span class="sc">&gt;=</span> <span class="dv">10000</span>), <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> Population,<span class="at">size =</span> Population), <span class="at">alpha =</span> <span class="fl">0.8</span>)<span class="sc">+</span> <span class="co">#cities layer</span></span>
-<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span> <span class="co">#continuous (gradient) color scale</span></span>
-<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Minnesota Cities with Population &gt;= 10,000"</span>) <span class="sc">+</span> </span>
-<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)  <span class="co">#move legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="03-adv-maps_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid" width="672"></p>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_counties, <span class="at">fill =</span> <span class="st">'wheat'</span>, <span class="at">color =</span> <span class="st">"tan"</span>) <span class="sc">+</span> </span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_cities <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Population <span class="sc">&gt;=</span> <span class="dv">10000</span>), <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> Population,<span class="at">size =</span> Population), <span class="at">alpha =</span> <span class="fl">0.8</span>)<span class="sc">+</span> <span class="co">#cities layer</span></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span> <span class="co">#continuous (gradient) color scale</span></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Minnesota Cities with Population &gt;= 10,000"</span>) <span class="sc">+</span> </span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)  <span class="co">#move legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in loadNamespace(x): there is no package called 'ggthemes'</code></pre>
 </div>
 </div>
 </section>
 <section id="updated-map-counties-and-cities-plus-elevation" class="level3">
 <h3 class="anchored" data-anchor-id="updated-map-counties-and-cities-plus-elevation">Updated Map: Counties and Cities plus Elevation</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>elevation <span class="ot">&lt;-</span> elevatr<span class="sc">::</span><span class="fu">get_elev_raster</span>(mn_counties, <span class="at">z =</span> <span class="dv">5</span>, <span class="at">clip =</span> <span class="st">'bbox'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>elevation <span class="ot">&lt;-</span> elevatr<span class="sc">::</span><span class="fu">get_elev_raster</span>(mn_counties, <span class="at">z =</span> <span class="dv">5</span>, <span class="at">clip =</span> <span class="st">'bbox'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in loadNamespace(x): there is no package called 'rgdal'</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">crs</span>(elevation) <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_crs</span>(mn_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">crs</span>(elevation) <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_crs</span>(mn_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error: object 'elevation' not found</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Convert to Data Frame for plotting</span></span>
-<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>elev_df <span class="ot">&lt;-</span> elevation <span class="sc">%&gt;%</span> terra<span class="sc">::</span><span class="fu">as.data.frame</span>(<span class="at">xy =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Convert to Data Frame for plotting</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>elev_df <span class="ot">&lt;-</span> elevation <span class="sc">%&gt;%</span> terra<span class="sc">::</span><span class="fu">as.data.frame</span>(<span class="at">xy =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'as.data.frame': object 'elevation' not found</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(elev_df) <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">'x'</span>,<span class="st">'y'</span>,<span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(elev_df) <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">'x'</span>,<span class="st">'y'</span>,<span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error: object 'elev_df' not found</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>(<span class="at">data =</span> elev_df, <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> y,<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="co"># adding the elevation as first (bottom) layer</span></span>
-<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_counties, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span> </span>
-<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_cities <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Population <span class="sc">&gt;=</span> <span class="dv">10000</span>), <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> Population,<span class="at">size =</span> Population), <span class="at">alpha =</span> <span class="fl">0.8</span>)<span class="sc">+</span> <span class="co">#cities layer</span></span>
-<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span> <span class="co">#continuous (gradient) color scale</span></span>
-<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">'darkgreen'</span>,<span class="at">high =</span> <span class="st">'white'</span>, <span class="at">guide =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
-<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Minnesota Cities with Population &gt;= 10,000"</span>) <span class="sc">+</span> </span>
-<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)  <span class="co">#move legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>(<span class="at">data =</span> elev_df, <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> y,<span class="at">fill =</span> value)) <span class="sc">+</span> <span class="co"># adding the elevation as first (bottom) layer</span></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_counties, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span> </span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_cities <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Population <span class="sc">&gt;=</span> <span class="dv">10000</span>), <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> Population,<span class="at">size =</span> Population), <span class="at">alpha =</span> <span class="fl">0.8</span>)<span class="sc">+</span> <span class="co">#cities layer</span></span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>() <span class="sc">+</span> <span class="co">#continuous (gradient) color scale</span></span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">'darkgreen'</span>,<span class="at">high =</span> <span class="st">'white'</span>, <span class="at">guide =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Minnesota Cities with Population &gt;= 10,000"</span>) <span class="sc">+</span> </span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)  <span class="co">#move legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in eval(expr, envir, enclos): object 'elev_df' not found</code></pre>
 </div>
@@ -1491,36 +1492,36 @@ PROJCRS["NAD83 / UTM zone 15N",
 <section id="zoom-to-twin-cities-map" class="level3">
 <h3 class="anchored" data-anchor-id="zoom-to-twin-cities-map">Zoom to Twin Cities Map</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>Seven_countyarea <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(mn_counties <span class="sc">%&gt;%</span> <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Anoka"</span>, <span class="st">"Hennepin"</span>, <span class="st">"Ramsey"</span>, <span class="st">"Dakota"</span>, <span class="st">"Carver"</span>, <span class="st">"Washington"</span>, <span class="st">"Scott"</span>)))</span>
-<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>elevation <span class="ot">&lt;-</span> elevatr<span class="sc">::</span><span class="fu">get_elev_raster</span>(mn_counties <span class="sc">%&gt;%</span> <span class="fu">st_crop</span>(Seven_countyarea), <span class="at">z =</span> <span class="dv">9</span>, <span class="at">clip =</span> <span class="st">'bbox'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>Seven_countyarea <span class="ot">&lt;-</span> <span class="fu">st_bbox</span>(mn_counties <span class="sc">%&gt;%</span> <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Anoka"</span>, <span class="st">"Hennepin"</span>, <span class="st">"Ramsey"</span>, <span class="st">"Dakota"</span>, <span class="st">"Carver"</span>, <span class="st">"Washington"</span>, <span class="st">"Scott"</span>)))</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>elevation <span class="ot">&lt;-</span> elevatr<span class="sc">::</span><span class="fu">get_elev_raster</span>(mn_counties <span class="sc">%&gt;%</span> <span class="fu">st_crop</span>(Seven_countyarea), <span class="at">z =</span> <span class="dv">9</span>, <span class="at">clip =</span> <span class="st">'bbox'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in loadNamespace(x): there is no package called 'rgdal'</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">crs</span>(elevation) <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_crs</span>(mn_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>raster<span class="sc">::</span><span class="fu">crs</span>(elevation) <span class="ot">&lt;-</span> sf<span class="sc">::</span><span class="fu">st_crs</span>(mn_counties)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error: object 'elevation' not found</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Convert to Data Frame for plotting</span></span>
-<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>elev_df <span class="ot">&lt;-</span> elevation <span class="sc">%&gt;%</span> terra<span class="sc">::</span><span class="fu">as.data.frame</span>(<span class="at">xy =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Convert to Data Frame for plotting</span></span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>elev_df <span class="ot">&lt;-</span> elevation <span class="sc">%&gt;%</span> terra<span class="sc">::</span><span class="fu">as.data.frame</span>(<span class="at">xy =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'as.data.frame': object 'elevation' not found</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(elev_df) <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">'x'</span>,<span class="st">'y'</span>,<span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(elev_df) <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">'x'</span>,<span class="st">'y'</span>,<span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error: object 'elev_df' not found</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>(<span class="at">data =</span> elev_df, <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> y,<span class="at">fill =</span> value)) <span class="sc">+</span> </span>
-<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_counties, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span> <span class="co"># county boundary layer</span></span>
-<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_water, <span class="at">fill =</span> <span class="st">'lightsteelblue1'</span>,<span class="at">color =</span> <span class="st">'lightsteelblue1'</span>) <span class="sc">+</span> <span class="co"># added a river/lake layer</span></span>
-<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_cities <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Population <span class="sc">&gt;=</span> <span class="dv">10000</span>), <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> Population,<span class="at">size =</span> Population)) <span class="sc">+</span> <span class="co">#cities layer</span></span>
-<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> Seven_countyarea[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)],<span class="at">ylim =</span> Seven_countyarea[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)]) <span class="sc">+</span> <span class="co"># crop map to coordinates of seven county area</span></span>
-<span id="cb89-7"><a href="#cb89-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">'magma'</span>) <span class="sc">+</span> <span class="co">#continuous (gradient) color scale</span></span>
-<span id="cb89-8"><a href="#cb89-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">'darkgreen'</span>,<span class="at">high =</span> <span class="st">'white'</span>) <span class="sc">+</span> <span class="co">#continuous (gradient) fill scale</span></span>
-<span id="cb89-9"><a href="#cb89-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Twin Cities with Population &gt;= 10,000"</span>) <span class="sc">+</span> </span>
-<span id="cb89-10"><a href="#cb89-10" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)  <span class="co">#remove legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>(<span class="at">data =</span> elev_df, <span class="fu">aes</span>(<span class="at">x =</span> x,<span class="at">y =</span> y,<span class="at">fill =</span> value)) <span class="sc">+</span> </span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_counties, <span class="at">fill =</span> <span class="cn">NA</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span> <span class="co"># county boundary layer</span></span>
+<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_water, <span class="at">fill =</span> <span class="st">'lightsteelblue1'</span>,<span class="at">color =</span> <span class="st">'lightsteelblue1'</span>) <span class="sc">+</span> <span class="co"># added a river/lake layer</span></span>
+<span id="cb88-5"><a href="#cb88-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>(<span class="at">data =</span> mn_cities <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Population <span class="sc">&gt;=</span> <span class="dv">10000</span>), <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">color =</span> Population,<span class="at">size =</span> Population)) <span class="sc">+</span> <span class="co">#cities layer</span></span>
+<span id="cb88-6"><a href="#cb88-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_sf</span>(<span class="at">xlim =</span> Seven_countyarea[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)],<span class="at">ylim =</span> Seven_countyarea[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)]) <span class="sc">+</span> <span class="co"># crop map to coordinates of seven county area</span></span>
+<span id="cb88-7"><a href="#cb88-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_viridis_c</span>(<span class="at">option =</span> <span class="st">'magma'</span>) <span class="sc">+</span> <span class="co">#continuous (gradient) color scale</span></span>
+<span id="cb88-8"><a href="#cb88-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">'darkgreen'</span>,<span class="at">high =</span> <span class="st">'white'</span>) <span class="sc">+</span> <span class="co">#continuous (gradient) fill scale</span></span>
+<span id="cb88-9"><a href="#cb88-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Twin Cities with Population &gt;= 10,000"</span>) <span class="sc">+</span> </span>
+<span id="cb88-10"><a href="#cb88-10" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)  <span class="co">#remove legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in eval(expr, envir, enclos): object 'elev_df' not found</code></pre>
 </div>
@@ -1529,26 +1530,26 @@ PROJCRS["NAD83 / UTM zone 15N",
 <section id="twin-cities-leaflet" class="level3">
 <h3 class="anchored" data-anchor-id="twin-cities-leaflet">Twin Cities Leaflet</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in library(leaflet): there is no package called 'leaflet'</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>mn_counties_leaf <span class="ot">&lt;-</span> mn_counties <span class="sc">%&gt;%</span> <span class="fu">st_transform</span>(<span class="dv">4326</span>) <span class="co">#Leaflet expects this CRS for vectors</span></span>
-<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>mn_cities_leaf <span class="ot">&lt;-</span> mn_cities <span class="sc">%&gt;%</span> <span class="fu">st_transform</span>(<span class="dv">4326</span>) <span class="co">#Leaflet expects this CRS for vectors</span></span>
-<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a>Cities_per_County <span class="ot">&lt;-</span> <span class="fu">st_join</span>(mn_cities_leaf, mn_counties_leaf) <span class="sc">%&gt;%</span></span>
-<span id="cb93-5"><a href="#cb93-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span> <span class="co">#removes geometry - makes the following calculation more efficient </span></span>
-<span id="cb93-6"><a href="#cb93-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(name) </span>
-<span id="cb93-7"><a href="#cb93-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb93-8"><a href="#cb93-8" aria-hidden="true" tabindex="-1"></a>mn_counties_leaf <span class="sc">%&gt;%</span> </span>
-<span id="cb93-9"><a href="#cb93-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Anoka"</span>, <span class="st">"Hennepin"</span>, <span class="st">"Ramsey"</span>, <span class="st">"Dakota"</span>, <span class="st">"Carver"</span>, <span class="st">"Washington"</span>, <span class="st">"Scott"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb93-10"><a href="#cb93-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(Cities_per_County) <span class="sc">%&gt;%</span></span>
-<span id="cb93-11"><a href="#cb93-11" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb93-12"><a href="#cb93-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>(<span class="st">"CartoDB.Positron"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb93-13"><a href="#cb93-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPolygons</span>(<span class="at">color =</span> <span class="st">"#444444"</span>, <span class="at">weight =</span> <span class="dv">1</span>, <span class="at">smoothFactor =</span> <span class="fl">0.5</span>,</span>
-<span id="cb93-14"><a href="#cb93-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">opacity =</span> <span class="fl">1.0</span>, <span class="at">fillOpacity =</span> <span class="fl">0.5</span>, <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">colorQuantile</span>(<span class="st">"YlOrRd"</span>, n)(n), <span class="at">highlightOptions =</span> <span class="fu">highlightOptions</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">weight =</span> <span class="dv">2</span>,</span>
-<span id="cb93-15"><a href="#cb93-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">bringToFront =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb93-16"><a href="#cb93-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircles</span>(<span class="at">data =</span> mn_cities_leaf <span class="sc">%&gt;%</span> <span class="fu">filter</span>(County <span class="sc">%in%</span> <span class="fu">paste</span>(<span class="fu">c</span>(<span class="st">"Anoka"</span>, <span class="st">"Hennepin"</span>, <span class="st">"Ramsey"</span>, <span class="st">"Dakota"</span>, <span class="st">"Carver"</span>, <span class="st">"Washington"</span>, <span class="st">"Scott"</span>),<span class="st">'County'</span>)), <span class="at">color =</span> <span class="st">"#444444"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>mn_counties_leaf <span class="ot">&lt;-</span> mn_counties <span class="sc">%&gt;%</span> <span class="fu">st_transform</span>(<span class="dv">4326</span>) <span class="co">#Leaflet expects this CRS for vectors</span></span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>mn_cities_leaf <span class="ot">&lt;-</span> mn_cities <span class="sc">%&gt;%</span> <span class="fu">st_transform</span>(<span class="dv">4326</span>) <span class="co">#Leaflet expects this CRS for vectors</span></span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-4"><a href="#cb92-4" aria-hidden="true" tabindex="-1"></a>Cities_per_County <span class="ot">&lt;-</span> <span class="fu">st_join</span>(mn_cities_leaf, mn_counties_leaf) <span class="sc">%&gt;%</span></span>
+<span id="cb92-5"><a href="#cb92-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_drop_geometry</span>() <span class="sc">%&gt;%</span> <span class="co">#removes geometry - makes the following calculation more efficient </span></span>
+<span id="cb92-6"><a href="#cb92-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(name) </span>
+<span id="cb92-7"><a href="#cb92-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-8"><a href="#cb92-8" aria-hidden="true" tabindex="-1"></a>mn_counties_leaf <span class="sc">%&gt;%</span> </span>
+<span id="cb92-9"><a href="#cb92-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Anoka"</span>, <span class="st">"Hennepin"</span>, <span class="st">"Ramsey"</span>, <span class="st">"Dakota"</span>, <span class="st">"Carver"</span>, <span class="st">"Washington"</span>, <span class="st">"Scott"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb92-10"><a href="#cb92-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(Cities_per_County) <span class="sc">%&gt;%</span></span>
+<span id="cb92-11"><a href="#cb92-11" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb92-12"><a href="#cb92-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addProviderTiles</span>(<span class="st">"CartoDB.Positron"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb92-13"><a href="#cb92-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addPolygons</span>(<span class="at">color =</span> <span class="st">"#444444"</span>, <span class="at">weight =</span> <span class="dv">1</span>, <span class="at">smoothFactor =</span> <span class="fl">0.5</span>,</span>
+<span id="cb92-14"><a href="#cb92-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">opacity =</span> <span class="fl">1.0</span>, <span class="at">fillOpacity =</span> <span class="fl">0.5</span>, <span class="at">fillColor =</span> <span class="sc">~</span><span class="fu">colorQuantile</span>(<span class="st">"YlOrRd"</span>, n)(n), <span class="at">highlightOptions =</span> <span class="fu">highlightOptions</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">weight =</span> <span class="dv">2</span>,</span>
+<span id="cb92-15"><a href="#cb92-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">bringToFront =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb92-16"><a href="#cb92-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircles</span>(<span class="at">data =</span> mn_cities_leaf <span class="sc">%&gt;%</span> <span class="fu">filter</span>(County <span class="sc">%in%</span> <span class="fu">paste</span>(<span class="fu">c</span>(<span class="st">"Anoka"</span>, <span class="st">"Hennepin"</span>, <span class="st">"Ramsey"</span>, <span class="st">"Dakota"</span>, <span class="st">"Carver"</span>, <span class="st">"Washington"</span>, <span class="st">"Scott"</span>),<span class="st">'County'</span>)), <span class="at">color =</span> <span class="st">"#444444"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in addCircles(., data = mn_cities_leaf %&gt;% filter(County %in% paste(c("Anoka", : could not find function "addCircles"</code></pre>
 </div>
@@ -1559,6 +1560,27 @@ PROJCRS["NAD83 / UTM zone 15N",
 <h2 class="anchored" data-anchor-id="open-ended-exercise">Open-ended Exercise</h2>
 <p>The following exercises will use census tract <code>tidycensus</code> data for Ramsey and Hennepin county and <a href="data/Crash.csv">Crash.csv</a> (2019-2022) from the <a href="https://information.stpaul.gov/datasets/stpaul::pedestrian-and-bike-crash-dataset-/about">pedestrian/bike crash database</a> for St.&nbsp;Paul within Ramsey county in the Twin Cities. We provide several variables you can choose from in order to create maps that best fit your interest.</p>
 <p>Load the data with the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>census2020 <span class="ot">&lt;-</span> tidycensus<span class="sc">::</span><span class="fu">get_acs</span>(<span class="at">year =</span> <span class="dv">2020</span>, <span class="at">state =</span> <span class="st">"MN"</span>, <span class="at">geography =</span> <span class="st">"tract"</span>, <span class="at">variables =</span> <span class="fu">c</span>(    </span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="st">"B01003_001"</span>, <span class="st">"B19013_001"</span>, <span class="st">"B23006_023"</span>, <span class="st">"B25058_001"</span>, <span class="st">"B25107_001"</span>, <span class="st">"B25003_001"</span>, <span class="st">"B25003_002"</span>, <span class="st">"B25003_003"</span>, <span class="st">"B25077_001"</span>), <span class="at">output =</span> <span class="st">'wide'</span>, <span class="at">geometry =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">word</span>(NAME, <span class="dv">4</span>) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Ramsey"</span>,<span class="st">"Hennepin"</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a>               <span class="fu">mutate</span>(<span class="at">tract =</span> <span class="fu">word</span>(NAME, <span class="dv">3</span>),</span>
+<span id="cb94-5"><a href="#cb94-5" aria-hidden="true" tabindex="-1"></a>                      <span class="at">tract =</span> <span class="fu">str_remove</span>(tract, <span class="st">","</span>),</span>
+<span id="cb94-6"><a href="#cb94-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">county =</span> <span class="fu">word</span>(NAME, <span class="dv">4</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb94-7"><a href="#cb94-7" aria-hidden="true" tabindex="-1"></a>               <span class="fu">select</span>(<span class="sc">-</span>NAME) <span class="sc">%&gt;%</span></span>
+<span id="cb94-8"><a href="#cb94-8" aria-hidden="true" tabindex="-1"></a>               <span class="fu">rename</span>(<span class="st">"population"</span> <span class="ot">=</span> <span class="st">"B01003_001E"</span>, </span>
+<span id="cb94-9"><a href="#cb94-9" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"medianIncome"</span> <span class="ot">=</span> <span class="st">"B19013_001E"</span>, </span>
+<span id="cb94-10"><a href="#cb94-10" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"bachelors"</span> <span class="ot">=</span> <span class="st">"B23006_023E"</span>,</span>
+<span id="cb94-11"><a href="#cb94-11" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"medContractRent"</span> <span class="ot">=</span> <span class="st">"B25058_001E"</span>, </span>
+<span id="cb94-12"><a href="#cb94-12" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"tenureTotal"</span> <span class="ot">=</span> <span class="st">"B25003_001E"</span>, </span>
+<span id="cb94-13"><a href="#cb94-13" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"tenureOwned"</span> <span class="ot">=</span> <span class="st">"B25003_002E"</span>, </span>
+<span id="cb94-14"><a href="#cb94-14" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"tenureRented"</span> <span class="ot">=</span> <span class="st">"B25003_003E"</span>,</span>
+<span id="cb94-15"><a href="#cb94-15" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"medianHomeValue"</span><span class="ot">=</span> <span class="st">"B25077_001E"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb94-16"><a href="#cb94-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">contains</span>(<span class="st">"_"</span>))</span>
+<span id="cb94-17"><a href="#cb94-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb94-18"><a href="#cb94-18" aria-hidden="true" tabindex="-1"></a>crashes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://lmyint.github.io/212_fall_2023/data/Crash.csv"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb94-19"><a href="#cb94-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Latitude), <span class="sc">!</span><span class="fu">is.na</span>(Longitude))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <section id="exercise-joining-and-aggregation" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-joining-and-aggregation">Exercise: Joining and aggregation</h3>
 <p><strong>Create a map of crashes per census tract in Ramsey county.</strong></p>
