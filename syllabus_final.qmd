@@ -1,6 +1,6 @@
 ---
-title: "Syllabus"
-sidebar: false
+title: "Final Syllabus"
+subtitle: "(Version AFTER student input on learning goals and grading system)"
 ---
 
 # What is this course about?
@@ -25,24 +25,25 @@ This second course in the data science curriculum emphasizes advanced data wrang
 By the end of this course you should be able to:
 
 - Sustain a habit of self-reflection in your learning process so that you are equipped for independent learning
+    - **(+)** Skills to be more self sufficient and resourceful when learning new code
 - Sustain a habit of self-reflection in your collaborative work so that you can form community no matter where you go
 - Create a variety of visualizations in ggplot2 that go beyond the plot types that you learned in STAT/COMP 112
 - Wrangle and visualize spatial data
 - Create interactive web applications and visualizations that adapt to user input
 - Wrangle arbitrarily messy data using functional programming tools in R
 - Acquire data from a variety of sources
-    - Write statements in structured query language (SQL) to access data from databases
+    - Write statements in structured query language (SQL) to access data from databases (*)
     - Write code to access data from application programming interfaces (APIs)
     - Write code to scrape data from websites and evaluate the ethics of collecting such data
 - Use appropriate methods when working with missing data
-- Translate code between R and Python
+- Translate code between R and Python (*)
 - Articulate the role of machine learning and causal inference in data science work
 - Iterate on the question-explore-question cycle to craft compelling data stories with attention to ethical considerations
+    - **(+)** Collect data ethically in a way that doesn’t undermine communities and people
 - Maintain a digital portfolio of your data science projects
 
-::: {.callout-tip title="Reflect"}
-- Which of the learning goals above do you disagree with or want more clarity on?
-- Do you have any goals that you'd like to include on this list?
+::: {.callout-tip title="Your feedback"}
+Based on our first day of class discussions, I've indicated with a (+) clarifications/details that you added to our existing learning goals and put a (*) next to existing goals that were underscored as desired ones.
 :::
 
 
@@ -61,10 +62,7 @@ Please help me make sure that I call you by your preferred name and pronouns too
 
 I love getting to talk to students outside of class time---whether about class-related topics or anything else. Come chat with me!
 
-I'll be setting times for drop-in hours based on feedback from the pre-course survey. I'll update my drop-in hours here when they're finalized.
-
-**Where:** Olin-Rice 232<br>
-**When:** TBD
+I'll be setting times for drop-in hours based on feedback from the pre-course survey. I'll update my drop-in hours on our [course homepage](index.qmd) and Moodle when they're finalized.
 
 I'm also happy to meet one-on-one if my normal drop-in hours don't work. You can schedule a time to meet with me via [Calendly](https://calendly.com/lmyint).
 
@@ -164,31 +162,27 @@ Review your learning process and group work reflections just before class to fra
 
 # Grading and feedback
 
+## Instructor's philosophy
+
 For a long time, I have been uncomfortable with the outsized role that letter grades play in education. The article *Teaching More by Grading Less (Or Differently)* by Schinske and Tanner ([source](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4041495/)) shaped many of my viewpoints and may be an interesting read for you.
 
 In short, grades tend to distract from learning (due to a greater focus on the grade than on qualitative feedback), create anxiety that hinders risk-taking and exploration, and create a power dynamic between the instructor and students that I am uncomfortable with.
 
 If I had my way, I would never assign letter grades and only give qualitative comments all semester. Unfortunately, I am required to submit a letter grade at the end of the course.
 
-> **I need your input: which of the following two grading systems should we use for the semester?**
+> There were two grading options presented in the [preliminary syllabus](syllabus_prelim.qmd). **The consensus of both course sections was Option 2, which is detailed below.**
 
-::: {.callout-tip title="Reflect"}
-As you read the following, make note of what uncertainties or worries you have and what you agree with.
+## Grading system
 
-Come prepared to discuss with your classmates on the first day of class. We'll use the first day to collaboratively decide on one grading system for both sections of the course. Our goal is for this grading system to be aligned with my values as an instructor and your needs as learners.
-:::
+### Overview
 
-## Option 1: evaluation of learning is done by instructor
+In the grading system chosen, evaluation (assigning of letter grades) occurs as a **conversation between you and me**--a conversation that **you start**. Using the qualities of A, B, and C letter grades (section below), you will self-assess your work using more detailed evaluation guidelines provided in reflection prompts and comments on your work. As part of this assessment you will propose your letter grade. I will also do this evaluation on my own and read your self-assessment afterwards. We will use all of this information to have a conversation about your progress. If we agree on the letter grade, that will be the grade you receive. If we disagree, we will use our conversation to come to a consensus. As part of consensus-building, we may discuss reframing both of our perspectives or additional work/revisions.
 
-The table below describes the qualities of A, B, and C grades in terms of the 3 core course components: reflections, homework, and the final project. 
+I recognize that no single grading system can be ideal for everyone, but I do hope that the reflection, honesty, and conversation that are central to this system support your learning. Please reach out to me if something could be going better for you. I am *always* willing to talk. It's your education--I want you to have a voice in it.
 
-In order to earn a given letter grade, **ALL** of the requirements in the column must be met. (e.g., In order to earn an A, *everything* in the first column must be true.)
+### What kind of work characterizes A, B, and C grades?
 
-There is a possibility that by the end of the semester, work for the different course components falls under different letter grades. (e.g., A-level for reflections and homework, but B-level for project).
-
-- If this happens, towards the end of the semester I will ask you to submit a written justification for the grade that you think you deserve. We will have a conference in which we discuss your justification.
-- If we agree, your proposed grade will be your final grade.
-- If we disagree, we will discuss what needs to be done next to come to an agreement. (This may involve being doing extra work or revisions.)
+The table below describes the qualities of A, B, and C grades in terms of the 3 core course components: reflections, homework, and the final project.
 
 ```{=html}
 <style type="text/css">
@@ -265,73 +259,6 @@ There is a possibility that by the end of the semester, work for the different c
   </tr>
   <tr>
     <td class="tab-grading-0pky">Weekly homework</td>
-    <td class="tab-grading-9wq8">Pass <b>all</b> homework assignments</td>
-    <td class="tab-grading-9wq8">Pass <b>all but 1</b> homework assignment</td>
-    <td class="tab-grading-9wq8">Pass <b>all but 2</b> homework assignments</td>
-  </tr>
-  <tr>
-    <td class="tab-grading-0pky">Final project</td>
-    <td class="tab-grading-0pky">Complete a project that is <b>high quality</span> in all of the following aspects:
-    <ul>
-      <li>Data wrangling, visualization, analysis, and interpretation</li>
-      <li>Workflow and organization</li>
-      <li>Addressing peer and instructor feedback</li>
-      <li>Giving feedback to peers</li>
-      <li>Ethical consideration and communication of results</li>
-    </ul>
-    </td>
-    <td class="tab-grading-0pky">Complete a project that is <b>at least ok quality</b> in the aforementioned aspects and <b>high quality</b> in <b>some</b> aspects</td>
-    <td class="tab-grading-0pky">Complete a project that is <b>ok quality</b> in the aforementioned aspects</td>
-  </tr>
-</tbody>
-</table>
-```
-
-Details about the course components are given below:
-
-- **Self-reflection:**
-    - I will look at the **growth** in your reflection process over the course of 3 substantive reflections. These will roughly come a month into the course, mid-course, and the end of the semester.
-        - My expectation is that your mid-course and end-of-course reflections show that your are using feedback from previous reflections.
-    - I will look at the **consistency** in your reflection process by monitoring your [Process and Reflection Google Doc](https://docs.google.com/document/d/1tyyuYNXpzqMxw2osGnM_9I5ivBj3a0iSZ_LVZusDqY8/edit?usp=sharing).
-        - My expectation is that you are filling this in regularly throughout class activities and through work outside of class.
-
-- **Homework:** We will have weekly homework in which you will complete activities that we start in class. The requirements for passing the assignment will be clearly stated in the homework directions.
-    - If you do not pass an assignment and wish to revise your work, you may resubmit the assignment the **following week**. This revision needs to be submitted by 2 weeks after the original homework due date. (See my [policy on late work](syllabus.qmd#late-work).)
-
-- **Final project:** For this semester-long project, you will receive regular feedback on the quality of the different project aspects and will have the opportunity to improve the quality of the different aspects as you continue working.
-
-## Option 2: evaluation of learning is done by students in conversation with instructor
-
-What constitutes A, B, and C-level work is essentially identical in Options 1 and 2 (see table below). That is, my *standards* for high quality work are the same between the two. 
-
-What's different is how (who) participates in the evaluation process. In Option 1, **I** am making the final judgment on the quality of your work for all course components. In Option 2, **you** will start the assessment of quality by **evaluating yourselves** *using qualitative feedback on all of your work*.
-
-In Option 2, the qualitative comments that you receive on all your work (reflections, homework, project) will form the basis of your **self-evaluation**. That is, you will review all comments from me and use this to gauge the degree to which you are meeting the course learning goals. (On homework, you will not receive a pass/not passing designation---you'll just receive comments.) You will write self-evaluations ~1 month into the semester, in the middle of the semester (before midterm grades are due), and a final one at the end of the semester. In all of these self-evaluations, you will propose the grade that you think deserve. I will also evaluate your work, and if we disagree on the grade, we will meet to discuss what needs to be done next to come to an agreement. (This may involve being doing extra work or revisions.)
-
-Note: Your self-evaluations need to be **based on demonstrated evidence** in the work that you submit. For example, if you have struggled with the data wrangling homework assignments and say in your self-evaluation that your understanding is now strong after reviewing feedback, **this is not sufficient evidence**. You would need to **demonstrate** your stronger understanding of data wrangling by submitting a revision of the data wrangling homework. (See [policy on late work](syllabus.qmd#late-work).)
-
-```{=html}
-<table class="tab-grading">
-<thead>
-  <tr>
-    <th class="tab-grading-7btt">Course component</th>
-    <th class="tab-grading-7btt">Letter grade: A</th>
-    <th class="tab-grading-7btt">Letter grade: B</th>
-    <th class="tab-grading-7btt">Letter grade: C</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td class="tab-grading-0pky">Self-reflection in learning process</td>
-    <td class="tab-grading-9wq8" rowspan="2">Show <b>clear growth</b> and <b>consistent thoughtfulness</b> throughout the semester</td>
-    <td class="tab-grading-9wq8" rowspan="2">Show <b>some growth</b> and <b>some thoughtfulness</b> throughout the semester</td>
-    <td class="tab-grading-9wq8" rowspan="2">Show <b>little to no growth</b> and <b>minimal thoughtfulness</b> throughout the semester</td>
-  </tr>
-  <tr>
-    <td class="tab-grading-0pky">Self-reflection in collaborative learning (groupwork)</td>
-  </tr>
-  <tr>
-    <td class="tab-grading-0pky">Weekly homework</td>
     <td class="tab-grading-9wq8">Show <b>strong</b> understanding of concepts across <b>all</b> homework assignments</td>
     <td class="tab-grading-9wq8">Show <b>strong</b> understanding of concepts across <b>most</b> homework assignments</td>
     <td class="tab-grading-9wq8">Show <b>adequate</b> understanding of concepts across <b>most</b> homework assignments</td>
@@ -354,11 +281,26 @@ Note: Your self-evaluations need to be **based on demonstrated evidence** in the
 </table>
 ```
 
-::: {.callout-note title="Comparing Options 1 and 2"}
-Both options satisfy my goal to have **high standards** for your learning that are **achievable through thoughtful revision**. No matter what option we use, you'll have a personal Google Sheet for tracking your progress over time. 
+Details about the course components are given below:
 
-My other goals for our grading system are for it to **motivate** you to learn as much as possible and to **reduce stress**. For these goals, your input during our Day 1 discussion will be very valuable.
-:::
+- **Self-reflection:**
+    - We will look at the **growth** in your reflection process over the course of 3 substantive reflections. These will roughly come a month into the course, mid-course, and the end of the semester.
+        - My expectation is that your mid-course and end-of-course reflections show that your are using feedback from previous reflections.
+    - We will look at the **consistency** in your reflection process by monitoring your [Process and Reflection Google Doc](https://docs.google.com/document/d/1tyyuYNXpzqMxw2osGnM_9I5ivBj3a0iSZ_LVZusDqY8/edit?usp=sharing).
+        - My expectation is that you are filling this in regularly throughout class activities and through work outside of class.
+
+- **Homework:** We will have weekly homework in which you will complete activities that we start in class. The requirements for passing the assignment will be clearly stated in the homework directions.
+    - If you do not pass an assignment and wish to revise your work, you may resubmit the assignment the **following week**. This revision needs to be submitted by 2 weeks after the original homework due date. (See my [policy on late work](syllabus.qmd#late-work).)
+
+- **Final project:** For this semester-long project, you will receive regular feedback on the quality of the different project aspects and will have the opportunity to improve the quality of the different aspects as you continue working.
+
+### How will course components be evaluated?
+
+In each of the 3 substantive reflections (month, mid-semester, end-of-semester), you will **evaluate yourselves** using self-assessment prompts and qualitative feedback from me on your reflections, homework, and project work.
+
+For each of the 3 substantive reflections, you will receive a prompt that guides you through how to look at your work, my comments, solutions, and prior reflections to craft your self-assessment on your reflection process, homework, and project work. I will use the same prompts/process to assess your work before we come together for conversation.
+
+**Note:** Your self-assessments need to be **based on demonstrated evidence** in the work that you submit. For example, if you have struggled with the data wrangling homework assignments and say in your self-evaluation that your understanding is now strong after reviewing feedback, **this is not sufficient evidence**. You would need to **demonstrate** your stronger understanding of data wrangling by submitting a revision of the data wrangling homework. (See [policy on late work](syllabus.qmd#late-work).)
 
 
 <br><br><br><br>

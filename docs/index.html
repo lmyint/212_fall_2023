@@ -88,10 +88,21 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./schedule.html" rel="" target="">
  <span class="menu-text">Schedule</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html" rel="" target="">
- <span class="menu-text">Syllabus</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-syallbus" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Syallbus</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-syallbus">    
+        <li>
+    <a class="dropdown-item" href="./syllabus_final.html" rel="" target="">
+ <span class="dropdown-text">Preliminary Syllabus</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./syllabus_prelim.html" rel="" target="">
+ <span class="dropdown-text">Preliminary Syllabus</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-activities" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Activities</span>
@@ -124,6 +135,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./homework1.html" rel="" target="">
  <span class="dropdown-text">Homework 1</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./homework2.html" rel="" target="">
+ <span class="dropdown-text">Homework 2</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -150,10 +165,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#announcements" id="toc-announcements" class="nav-link active" data-scroll-target="#announcements">Announcements</a>
+  <li><a href="#drop-in-office-hours" id="toc-drop-in-office-hours" class="nav-link active" data-scroll-target="#drop-in-office-hours">Drop-in (office) hours</a></li>
+  <li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">9/7</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">9/5</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">9/12</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">9/7</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">9/5</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -179,10 +196,38 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>This is the course website for STAT/COMP 212: Intermediate Data Science at Macalester College for the Fall 2023 semester taught by Professor <a href="https://www.lesliemyint.org">Leslie Myint</a>. Materials were developed by Leslie Myint and <a href="https://bcheggeseth.github.io/">Brianna Heggeseth</a>.</p>
+<section id="drop-in-office-hours" class="level1">
+<h1>Drop-in (office) hours</h1>
+<ul>
+<li><strong>Where?</strong> OLRI 232</li>
+<li><strong>When?</strong>
+<ul>
+<li>Mondays: 11-noon and 3:30-4:30</li>
+<li>Fridays: 3:30-4:30</li>
+</ul></li>
+</ul>
+<p>I’m also happy to meet one-on-one if my normal drop-in hours don’t work. You can schedule a time to meet with me via <a href="https://calendly.com/lmyint">Calendly</a>.</p>
+</section>
 <section id="announcements" class="level1">
 <h1>Announcements</h1>
 <section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section">9/7</h2>
+<h2 class="anchored" data-anchor-id="section">9/12</h2>
+<ul>
+<li>Check the Schedule page. There is a short podcast segment (~7 min) to listen to and a short intro article to the Shiny framework. Answer the Guiding Questions for Thursday’s class: interactive visualization (Part 1).</li>
+<li>Homework 1 due Wednesday at midnight (Finishing up the temperature + precipitation plots from last Tuesday)
+<ul>
+<li>Updated submission instructions can be found <a href="./02-adv-ggplot.html#homework">here</a>. (Also in the most recent Moodle announcement.)</li>
+</ul></li>
+<li>Homework 2 due next Wednesday, 9/20 has two parts:
+<ul>
+<li>Finish Open-ended Exercise from today’s <a href="./03-adv-maps.html#open-ended-exercise-homework">Advanced Map Visualization</a> activity.</li>
+<li>Complete Milestone 1 of the <a href="./project.html">course project</a></li>
+</ul></li>
+<li>There is a <a href="./syllabus_final.html">final version of our syllabus</a> that incorporates the learning goals and grading option that we discussed on our first day.</li>
+</ul>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">9/7</h2>
 <ul>
 <li>I’ll be adding a new version of the syllabus to our course website that incorporates our final choice for grading system and the learning goals that you contributed.</li>
 <li>Complete the <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1_48NE_5LxRJ5R5EDPoEWcX4d1-Kyicclbn9EjoFiv8ZW5w/viewform?usp=sf_link">pre-course survey</a> by 3pm today to shape when I hold drop-in hours (office hours).</li>
@@ -192,8 +237,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="section-1" class="level2">
-<h2 class="anchored" data-anchor-id="section-1">9/5</h2>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2">9/5</h2>
 <p>To do before class on Thursday:</p>
 <ul>
 <li>Set up R and RStudio using <a href="./tech_setup.html">these instructions</a>.</li>

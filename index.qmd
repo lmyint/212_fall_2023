@@ -5,7 +5,26 @@ sidebar: false
 
 This is the course website for STAT/COMP 212: Intermediate Data Science at Macalester College for the Fall 2023 semester taught by Professor [Leslie Myint](https://www.lesliemyint.org). Materials were developed by Leslie Myint and [Brianna Heggeseth](https://bcheggeseth.github.io/).
 
+# Drop-in (office) hours
+
+- **Where?** OLRI 232
+- **When?**
+    - Mondays: 11-noon and 3:30-4:30
+    - Fridays: 3:30-4:30
+
+I'm also happy to meet one-on-one if my normal drop-in hours don't work. You can schedule a time to meet with me via [Calendly](https://calendly.com/lmyint).
+
 # Announcements
+
+## 9/12
+
+- Check the Schedule page. There is a short podcast segment (~7 min) to listen to and a short intro article to the Shiny framework. Answer the Guiding Questions for Thursday's class: interactive visualization (Part 1).
+- Homework 1 due Wednesday at midnight (Finishing up the temperature + precipitation plots from last Tuesday)
+    - Updated submission instructions can be found [here](02-adv-ggplot.qmd#homework). (Also in the most recent Moodle announcement.)
+- Homework 2 due next Wednesday, 9/20 has two parts:
+    - Finish Open-ended Exercise from today's [Advanced Map Visualization](03-adv-maps.qmd#open-ended-exercise-homework) activity.
+    - Complete Milestone 1 of the [course project](project.qmd)
+- There is a [final version of our syllabus](syllabus_final.qmd) that incorporates the learning goals and grading option that we discussed on our first day.
 
 ## 9/7
 

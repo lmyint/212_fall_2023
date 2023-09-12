@@ -146,7 +146,7 @@ The following variables will be needed:
 # Delete these comments in your homework submission
 ```
 
-**Submission details:** Submit the knitted HTML of the `02-adv-ggplot.qmd` template from class on [Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=35697) by midnight on Wednesday, 9/13.
+**Submission details:** Click the "Render" button to create an HTML report from this Quarto file. Open the HTML in your web browser and save the webpage as a PDF (Ctrl-P/Command P, choose "Save as PDF" as the Destination). Submit the PDF of the `02-adv-ggplot.qmd` template from class on [Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=35697) by midnight on Wednesday, 9/13.
 
 **How to cite AI and other resources:** If you use AI tools like ChatGPT or Google Bard, please copy and paste all prompts and output into an "Appendix" section of this assignment. If you use an AI tool, also list one environmentally-friendly action you could adopt (that you don't already do) to offset the energy usage. Also list any websites used in this Appendix.
 

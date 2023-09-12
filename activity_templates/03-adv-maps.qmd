@@ -1,7 +1,6 @@
 ---
 title: "Advanced Spatial Visualizations"
-author: "Brianna Heggeseth and Leslie Myint (with contributions from Erin Franke and Vivian Powell)"
-sidebar: false
+author: "YOUR NAME"
 ---
 
 ```{r setup, include=FALSE}
@@ -32,14 +31,6 @@ After this lesson, you should be able to:
 - Understand and recognize different spatial file types and data types in R
 - Implement some of the basic plotting with the `sf` package
 - Understand foundational ideas in working with spatial data (aggregating spatial point data to a spatial region, joining spatial data sets)
-
-<br>
-
-Slides for today are available [here](slides/03-adv-maps.qmd). (For our main activity, we will be using the rest of the webpage below.)
-
-<br>
-
-You can download a template Quarto file to start from [here](activity_templates/03-adv-maps.qmd). Put this file in an `activities` folder within a folder for this course.
 
 
 <br><br><br>
@@ -107,16 +98,6 @@ Provide the region of interest (e.g. United States), the full datum name (e.g. N
 
 > Location:
 
-<details>
-  <summary>Example Solution</summary>
-
-> Location 1: South Africa, Cape, EPSG:6222, Ellipsoid: Clarke 1880 (Arc)
-
-> Location 2: Thailand, Indian 1975, EPSG:6240, Ellipsoid: Everest 1830 (1937 Adjustment)
-
-> Location 3: Colombia, Marco Geocentrico Nacional de Referencia, EPSG:6686,  Ellipsoid: GRS 1980
-  
-</details>
 
 ### Exercise 2
 
@@ -138,15 +119,6 @@ Click the "Transform" button at the top to find the location of OLRI in northing
 > 
 > Northing:
 
-
-<details>
-  <summary>Solution</summary>
-
-> Easting: 865601.0163401571
-> 
-> Northing: 315516.10931633075
-
-</details>
 
 ## Projection
 
@@ -323,15 +295,6 @@ Based on this information, fill in the following:
 - BBOX (extent):
 - Geometry type: 
 
-<details>
-  <summary>Solution</summary>
-
-- CRS: EPSG:4326 (+proj=longlat +datum=WGS84 +no_defs) (From `Slot "proj4string": Coordinate Reference System:`)
-- BBOX:  x -75.34861 -69.90; y 51.57  55.31 (From `Slot "bbox"`)
-- Geometry type: Polygons (Inferred from `An object of class "SpatialPolygonsDataFrame"` and `class "Polygon"`)
-
-</details>
-
 
 **Newer R Spatial classes**
 
@@ -352,14 +315,6 @@ Based on the summary of `mn_cities`, what are the following:
 - BBOX:
 - Geometry type: 
 
-<details>
-  <summary>Solution</summary>
-
-- CRS: NAD83 / UTM zone 15N
-- BBOX: xmin: 190832.6 ymin: 4816672 xmax: 747463.4 ymax: 5468045
-- Geometry type: Points
-
-</details>
 
 
 **Putting spatial data into a `data.frame` with `fortify()`**
@@ -390,24 +345,6 @@ hex_spatial@polygons[[1]]
 
 > ANSWER:
 
-<details>
-  <summary>Solution</summary>
-
-> Variables: long, lat, order, hole, piece, id, group
-
-> `long` and `lat` provide the x and y coordinates of the polygon for a particlar region or area `id`. 
-
-> The `order` is the order in which you connect the coordinate points to make a polygon. 
-
-> `hole` indicates whether or not it should be included or excluded in the region as a hole.
-
-> `piece` indicates the number of the polygon for an individual area
-
-> `id` is a unique identifier for each polygon and allows linking to the original spatial object (`hex_spatial`). (There is a `Slot "ID"` part of the object.)
-
-> `group` indicates which pieces belong to the same group or should be plotted together as a single entity. This can be useful when you want to apply different aesthetics (e.g., colors, linetypes) to different groups of polygons within your spatial object. It helps in specifying how to group and style the different pieces when creating plots.
-
-</details>
 
 
 ### Converting between data classes
@@ -437,7 +374,7 @@ Convert the `hex_spatial` data to an `sf` object called `hex_spatial_sf`. Comple
 1. `hex_spatial` directly to `hex_spatial_sf` AND 
 2. `hex_spatial_df` to `hex_spatial_sf`.
 
-```{r eval=FALSE}
+```{r}
 # Convert to SF from hex_spatial_df  
 hex_spatial_sf <- hex_spatial_df %>% ???  
   
@@ -445,22 +382,6 @@ hex_spatial_sf <- hex_spatial_df %>% ???
 hex_spatial_sf <- hex_spatial %>% ???
 ```
 
-<details>
-  <summary>Solution</summary>
-  
-```{r}
-# Convert to SF from hex_spatial_df  
-hex_spatial_sf <- hex_spatial_df %>%
-    st_as_sf(coords = c("long", "lat")) %>%
-    group_by(group) %>%
-    summarise(geometry = st_combine(geometry)) %>%
-    st_cast("POLYGON") 
-  
-# Convert to SF from hex_spatial
-hex_spatial_sf <- hex_spatial %>% st_as_sf()
-```  
-  
-</details>
 
 ::: {.callout-tip collapse="false"}
 ## Stop to Reflect
@@ -494,7 +415,7 @@ In this example, we'll create an alternative choropleth map. Instead of using th
 
 Describe what the following code chunks are doing. Be sure to consider the class of the data object, what the data object looks like to start, and what it looks like at the end of the chunk.
 
-```{r eval=FALSE}
+```{r}
 # Chunk A
 hex_spatial_df  <- hex_spatial_df %>% 
   left_join(
@@ -505,25 +426,8 @@ hex_spatial_df  <- hex_spatial_df %>%
 
 > ANSWER (Chunk A):
 
-<details>
-  <summary>Solution</summary>
 
 ```{r}
-# Chunk A
-head(hex_spatial_df) # Start with data frame of 357 rows and 7 columns
-
-hex_spatial_df  <- hex_spatial_df %>% 
-  left_join( # Left join, a mutating join, a dataset with information from hex_spatial
-        data.frame(id = as.character(1:nrow(hex_spatial)) , # Create a data frame with variables id (1,2,3...), name (defined as the google_name from hex_spatial after removing "(United States)"), and abbr (the state abbreviation in hex_spatial as variable iso3166_2)
-        name = str_replace(hex_spatial$google_name,' \\(United States\\)',''), 
-        abbr = hex_spatial$iso3166_2))
-
-head(hex_spatial_df) # End with data frame of 357 rows and 9 columns (new: name and abbr)
-```
-  
-</details>
-
-```{r eval=FALSE}
 # Chunk B
 hex_spatial_sf <- hex_spatial_sf %>% 
     mutate(
@@ -535,26 +439,7 @@ hex_spatial_sf <- hex_spatial_sf %>%
 > ANSWER (Chunk B):
 
 
-<details>
-  <summary>Solution</summary>
-
 ```{r}
-# Chunk B
-
-head(hex_spatial_sf) # Start with sf object with 51 regions and 7 variables/features
-
-hex_spatial_sf <- hex_spatial_sf %>% # Create new variables: name (defined as the google_name after removing "(United States)"), and abbr (the state abbreviation from variable iso3166_2)
-    mutate(
-        name = str_replace(google_name,' \\(United States\\)',''),
-        abbr = iso3166_2
-    )
-
-head(hex_spatial_sf) # Ends with sf object with 51 regions and 9 variables/features
-```
-
-</details>
-
-```{r eval=FALSE}
 # Chunk C
 hex_growth_df <- left_join(hex_spatial_df, pop_growth, by = 'name')
 hex_growth_sf <- left_join(hex_spatial_sf, pop_growth, by = 'name')
@@ -562,26 +447,8 @@ hex_growth_sf <- left_join(hex_spatial_sf, pop_growth, by = 'name')
 
 > ANSWER (Chunk C):
 
-<details>
-  <summary>Solution</summary>
 
-
-```{r }
-# Chunk C
-
-hex_growth_df <- left_join(hex_spatial_df, pop_growth, by = 'name') # Add in pop_growth variables to data frame using left_join; in the process duplicate the geometry for each region for each year
-head(hex_growth_df)
-dim(hex_growth_df) # end with data frame of 4284 rows and 18 variables
-
-hex_growth_sf <- left_join(hex_spatial_sf, pop_growth, by = 'name') # add in pop_growth variables to sf object using left join; in the process duplicate the geometry for each region for each year 
-head(hex_growth_sf)
-dim(hex_growth_sf) #end with sf object of 612 region/year combinations and 19 variables
-```
-
-</details>
-
-
-```{r eval=FALSE}
+```{r}
 # Chunk D
 centers <- data.frame(
     rgeos::gCentroid(hex_spatial,byid = TRUE), 
@@ -600,28 +467,8 @@ hex_growth_df %>%
 > ANSWER (Chunk D):
 
 
-<details>
-  <summary>Solution</summary>
 
 ```{r}
-# Chunk D
-centers <- data.frame(
-    rgeos::gCentroid(hex_spatial,byid = TRUE), # Create data frame of the center of each region and the state abbreviation
-    abbr = hex_spatial$iso3166_2
-)
-  
-hex_growth_df %>% 
-    filter(year == 2020) %>% # focus only on the data from 2020
-    ggplot(aes(x = long, y = lat)) + # create frame of longitude and latitude
-        geom_polygon(aes(group = group, fill = percent_change_in_resident_population)) +  # add hex polygons defined by x and y but grouped according to group and color filled by the percent_change in resident population
-        geom_text(data = centers, aes( x = x, y = y, label = abbr), color = 'white') + # add text at the centers of the polygons and add text labels from the abbr variable in the centers data we created
-        labs(fill = 'Population Change (%)') +  # change legend label
-        ggthemes::theme_map() + theme(legend.position = 'bottom', legend.justification = 'right') # remove the background theme and move the legend to the bottom right
-```
-
-</details>
-
-```{r eval=FALSE}
 # Chunk E
 hex_growth_sf %>% 
     filter(year == 2020) %>%
@@ -633,22 +480,6 @@ hex_growth_sf %>%
 ```
 
 > ANSWER (Chunk E):
-
-<details>
-  <summary>Solution</summary>
-
-```{r}
-# Chunk E
-hex_growth_sf %>%  # start with sf object
-    filter(year == 2020) %>% #filter to focus on data from 2020
-    ggplot() +
-        geom_sf(aes(fill = percent_change_in_resident_population)) + # plot the sf geometry (polygons) and fill color according to percent change in population
-        geom_sf_text( aes(label = abbr), color = 'white') + # add text labels to the sf geometry regions using abbr for the text
-        labs(fill = 'Population Change (%)') + # Change legend label
-        ggthemes::theme_map() + theme(legend.position = 'bottom', legend.justification = 'right') # remove the background theme and move the legend to the bottom right 
-```
-
-</details>
 
 
 
@@ -662,29 +493,6 @@ Using the hexbin spatial boundaries and the `pop_growth` data, make the followin
 
 Make the graphic twice, once with `geom_polygon()` and once
 with `geom_sf()`.
-
-<details>
-  <summary>Example Solution</summary>
-  
-```{r}
-hex_growth_df %>% 
-    ggplot(aes(x = long, y = lat)) + # create frame of longitude and latitude
-        geom_polygon(aes(group = group, fill = change_in_number_of_representatives)) +  # add hex polygons defined by x and y but grouped according to group and color by change in number of representatives
-        # geom_text(data = centers, aes( x = x, y = y, label = abbr), color = 'white') + # add text at the centers of the polygons and add text labels from the abbr variable in the centers data we created
-        facet_wrap(~ year, ncol = 3) +
-        labs(fill = 'Population Change (%)') +  # change legend label
-        ggthemes::theme_map() + theme(legend.position = 'bottom', legend.justification = 'right') # remove the background theme and move the legend to the bottom right
-
-hex_growth_sf %>%  # start with sf object
-    ggplot() +
-        geom_sf(aes(fill = change_in_number_of_representatives)) + # plot the sf geometry (polygons) and fill color according to change in number of representatives
-        # geom_sf_text( aes(label = abbr), color = 'white') + # add text labels to the sf geometry regions using abbr for the text
-        facet_wrap(~ year, ncol = 3) +
-        labs(fill = 'Population Change (%)') + # Change legend label
-        ggthemes::theme_map() + theme(legend.position = 'bottom', legend.justification = 'right') # remove the background theme and move the legend to the bottom right
-```
-
-</details>
 
 ### Bonus Challenge 
 
@@ -875,7 +683,7 @@ Check the CRS are the same for `census2020` and `crashes` using `st_crs()` and t
 
 Join the crashes and census dataset together and count the number of crashes per census tract. The function `st_join` can join to spatial data sets according to whether the spatial geometries of the right table intersect with the spatial geometries of the left table. 
 
-```{r eval=FALSE}
+```{r}
 crashes_per_tract <- st_join(??,??) %>%
     st_drop_geometry() %>% # removes geometry - makes the following calculation more efficient 
     filter(!is.na(Accident_Datetime)) %>%
@@ -884,7 +692,7 @@ crashes_per_tract <- st_join(??,??) %>%
 
 Join the census data with `crashes_per_tract` and then use a filter of `n > 0` to only keep the census tracts where crashes were recorded instead of all of Ramsey and Hennepin County. 
 
-```{r eval=FALSE}
+```{r}
 crashes_per_tract_geo <- ??? %>% # sf object with census geometry goes first
     left_join(??, by = ??) %>%
     filter(n > 0)
@@ -892,7 +700,7 @@ crashes_per_tract_geo <- ??? %>% # sf object with census geometry goes first
 
 Create the plot!! 
 
-```{r eval=FALSE}
+```{r}
 ggplot() +
     geom_sf(???) +
     scale_fill_gradientn(colours = c("lightcyan", "lightcyan2", "lightskyblue3", "lightskyblue4"))+
@@ -918,13 +726,13 @@ roads <- sf::st_read("tl_2019_27_prisecroads")
 
 Start by using `st_crop()` to crop the roads map to the area we are interested in (Hennepin and Ramsey County).
 
-```{r eval=FALSE}
+```{r}
 roads_sub <- st_crop(roads,st_bbox(census2020))
 ```
 
 Create the map!!
 
-```{r eval=FALSE}
+```{r}
 ggplot() +
     geom_sf(??)+ #put census tracts on map and fill by your variable of interest
     geom_sf(?? ,fill = "gray", color = "gray", lwd = 0.2)+ #roads data here

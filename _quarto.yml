@@ -4,6 +4,8 @@ project:
   render:
     - "*.qmd"
     - "!activity_templates/"
+  resources:
+    - "data/*.csv"
 
 website:
   title: "STAT/COMP 212"
@@ -15,8 +17,7 @@ website:
         text: "Home"
       - file: schedule.qmd
         text: "Schedule"
-      - file: syllabus.qmd
-        text: "Syllabus"
+      - sidebar:syllabus
       - sidebar:activities
       - sidebar:homework
       - file: project.qmd
@@ -25,11 +26,17 @@ website:
         text: "Tech Setup"
 
   sidebar:
-    - id: activities
-      title: "Activities"
+    - id: syllabus
+      title: "Syallbus"
       style: "docked"
       background: light
       collapse-level: 2
+      contents:
+        - syllabus_final.qmd
+        - syllabus_prelim.qmd
+      
+    - id: activities
+      title: "Activities"
       contents:
         - 01-introductions.qmd
         - 02-adv-ggplot.qmd
@@ -43,6 +50,7 @@ website:
       contents:
         - homework0.qmd
         - homework1.qmd
+        - homework2.qmd
 
 format:
   html:
@@ -53,3 +61,6 @@ format:
 
 editor: source
 
+body-footer: | 
+  © Leslie Myint, 2023<br>
+  All content licensed under ![](https://static.thenounproject.com/png/70967-200.png){height=20px} ([CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/))

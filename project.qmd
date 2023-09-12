@@ -17,7 +17,7 @@ Your project may align with work/projects from other classes--this is encouraged
 
 ## Milestone 1
 
-Identify a data context that interests you. Identify 3 different data sources that relate to that context. Think beyond a spreadsheet; the most interesting projects may involve collecting and aggregating data from multiple sources and formats. We might not have covered all of the tools needed to acquire that data at this point, so check in with the instructor about the sources that you've found to make sure that they're workable.
+Identify a data context that interests you. (Your 12 favorite problems might serve as a good source of inspiration.) Identify 3 different data sources that relate to that context. Think beyond a spreadsheet; the most interesting projects may involve collecting and aggregating data from multiple sources and formats. We might not have covered all of the tools needed to acquire that data at this point, so check in with the instructor about the sources that you've found to make sure that they're workable.
 
 - Example non-spreadsheet data sources: search results on a webpage, text of an article, Tweets, other social media posts.
 
@@ -33,17 +33,23 @@ Due date: Wednesday, 9/27 as part of HW3.
 
 ## Milestone 3
 
+***(NOT FINALIZED YET)***
+
 Perform the data acquisition, wrangling, visualization, and modeling needed to answer **one** of your research questions. Note that your question might not be amenable to modeling (or to modeling that you've learned about so far). For that reason, modeling is not required, but visualization is.
 
 Due date: Present your visualization to the class for feedback on Thursday, 10/12.
 
 ## Milestone 4
 
+***(NOT FINALIZED YET)***
+
 Adjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to answer another one of your research questions. Submit "Rough Draft" to instructor for feedback.
 
 Due date: TBD
 
 ## Milestone 5
+
+***(NOT FINALIZED YET)***
 
 Adjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to answer another one of your research questions. Submit "Final Draft".
 

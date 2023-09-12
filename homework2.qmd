@@ -1,0 +1,15 @@
+---
+title: "Homework 2"
+sidebar: false
+---
+
+# Required parts
+
+- Finish the Open-ended Exercise in our [Advanced Map Visualization](03-adv-maps.qmd#open-ended-exercise-homework) class activity.
+    - Submission details: Click the "Render" button to create an HTML report from your Quarto file. Open the HTML in your web browser and save the webpage as a PDF (Ctrl-P/Command P, choose "Save as PDF" as the Destination). Submit this PDF on [Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=37543) AND the `.qmd` file by midnight on Wednesday, 9/20.
+
+- Complete [Milestone 1](project.qmd#milestone-1) of the [course project](project.qmd). (Brainstorming ideas and data sources). Put this information in a `# Project` section that you add to the end of your `03-adv-maps.qmd`.
+
+# Optional
+
+Participate in the most recent [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-09-12/readme.md) challenge.

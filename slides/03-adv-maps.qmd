@@ -1,0 +1,22 @@
+---
+title: "Advanced Spatial Visualizations"
+format:
+  revealjs:
+    scrollable: true
+    smaller: true
+---
+
+## As we gather...
+
+Sit next to someone new. Share a favorite problem that helps you feel curious this week. In talking with your partner, what connections do you see to your own FPs?
+
+Quote of the day:
+
+> The more stuff you love the happier you will be.
+> 
+> ― Ross Gay, The Book of Delights
+
+Open up your Process and Reflection Log (Google Doc).
+
+- Reshare it with me so that I can be a Commenter, and check the "Notify people" box.
+- Leave it open. We are going to stop and reflect a few times today.

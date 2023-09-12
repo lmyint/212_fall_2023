@@ -122,10 +122,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="./schedule.html" rel="" target="">
  <span class="menu-text">Schedule</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./syllabus.html" rel="" target="">
- <span class="menu-text">Syllabus</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-syallbus" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Syallbus</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-syallbus">    
+        <li>
+    <a class="dropdown-item" href="./syllabus_final.html" rel="" target="">
+ <span class="dropdown-text">Preliminary Syllabus</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./syllabus_prelim.html" rel="" target="">
+ <span class="dropdown-text">Preliminary Syllabus</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-activities" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
  <span class="menu-text">Activities</span>
@@ -157,6 +168,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="./homework1.html" rel="" target="">
  <span class="dropdown-text">Homework 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework2.html" rel="" target="">
+ <span class="dropdown-text">Homework 2</span></a>
   </li>  
     </ul>
   </li>
@@ -259,7 +274,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <figcaption class="figure-caption">Screenshot of NYTimes visualization from 2015</figcaption>
 </figure>
 </div>
-<p>First load the <code>tidyverse</code> package, and read in the data.</p>
+<p>First load the <code>tidyverse</code> package, and read in the San Francisco weather <a href="data/sfo_weather.csv">data</a>.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>weather <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://lmyint.github.io/212_fall_2023/data/sfo_weather.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -466,7 +481,7 @@ Record Errors
 </div>
 </div>
 </div>
-<p><strong>Submission details:</strong> Submit the knitted HTML of the <code>02-adv-ggplot.qmd</code> template from class on <a href="https://moodle.macalester.edu/mod/assign/view.php?id=35697">Moodle</a> by midnight on Wednesday, 9/13.</p>
+<p><strong>Submission details:</strong> Click the “Render” button to create an HTML report from this Quarto file. Open the HTML in your web browser and save the webpage as a PDF (Ctrl-P/Command P, choose “Save as PDF” as the Destination). Submit the PDF of the <code>02-adv-ggplot.qmd</code> template from class on <a href="https://moodle.macalester.edu/mod/assign/view.php?id=35697">Moodle</a> by midnight on Wednesday, 9/13.</p>
 <p><strong>How to cite AI and other resources:</strong> If you use AI tools like ChatGPT or Google Bard, please copy and paste all prompts and output into an “Appendix” section of this assignment. If you use an AI tool, also list one environmentally-friendly action you could adopt (that you don’t already do) to offset the energy usage. Also list any websites used in this Appendix.</p>
 <p><strong>Extra:</strong> If you’d like further practice, recreate the legend in the temperature graph that shows how the tan and red lines relate to record, normal, and actual highs and lows. (Note: I do not have a hidden expectation that you do this when I give feedback on your work.)</p>
 

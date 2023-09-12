@@ -54,7 +54,7 @@ We are going to recreate [this NYT visualization](https://www.nytimes.com/intera
 
 ![Screenshot of NYTimes visualization from 2015](images/sfo_nytimes.jpg)
 
-First load the `tidyverse` package, and read in the data.
+First load the `tidyverse` package, and read in the San Francisco weather [data](data/sfo_weather.csv).
 
 ```{r eval=FALSE}
 library(tidyverse)
@@ -264,7 +264,7 @@ tempGraph <- weather %>%
     # geom_text(x = 190, y = 20, label = "Bars represent range between\n the daily high and low.", fontface = 1)+
     ylim(c(-20,120)) +
     labs(x = "", y = "", title = "Temperature")+
-    scale_x_continuous(name = "", breaks = xlabs, labels = month.abb, expand = c(0,0)) +
+    scale_x_continuous(name = "", breaks = xlabs, labels = month.abb, expand = expansion(add = 0)) +
     theme_classic() +  
     theme(axis.title.x = element_blank(), axis.line.x = element_blank(), axis.ticks.x = element_blank(), plot.title = element_text(face = "bold", margin = margin(t=20, b=-5)))
 
@@ -280,7 +280,7 @@ rainGraph <- weather %>%
     geom_text(data = month_end_rain, mapping = aes(x = dateInYear, y = CulmPrec, label = CulmPrec), vjust = 0, hjust = 1, size = 2.5) +
     labs(title = "Precipitation") +
     scale_y_continuous("",breaks=c(4,8),labels=paste0(". ",c(4,8)),limits=c(0,8))+
-    scale_x_continuous(expand=c(0,0))+
+    scale_x_continuous(expand = expansion(add = 0))+
     theme_classic() +  
     theme(axis.title.x=element_blank(),axis.line.x=element_blank(),axis.text.x=element_blank(),axis.ticks.x=element_blank(),plot.title=element_text(face = "bold",margin=margin(t=20,b=-10)))
 
@@ -289,7 +289,7 @@ library(gridExtra)
 grid.arrange(tempGraph, rainGraph, nrow = 2, heights = c(5,2), top = "SFO Weather in 2011")  
 ```
 
-**Submission details:** Submit the knitted HTML of the `02-adv-ggplot.qmd` template from class on [Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=35697) by midnight on Wednesday, 9/13.
+**Submission details:** Click the "Render" button to create an HTML report from this Quarto file. Open the HTML in your web browser and save the webpage as a PDF (Ctrl-P/Command P, choose "Save as PDF" as the Destination). Submit the PDF of the `02-adv-ggplot.qmd` template from class on [Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=35697) by midnight on Wednesday, 9/13.
 
 **How to cite AI and other resources:** If you use AI tools like ChatGPT or Google Bard, please copy and paste all prompts and output into an "Appendix" section of this assignment. If you use an AI tool, also list one environmentally-friendly action you could adopt (that you don't already do) to offset the energy usage. Also list any websites used in this Appendix.
 

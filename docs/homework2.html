@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT/COMP 212 - R and RStudio Setup</title>
+<title>STAT/COMP 212 - Homework 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -180,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./tech_setup.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./tech_setup.html" rel="" target="">
  <span class="menu-text">Tech Setup</span></a>
   </li>  
 </ul>
@@ -195,14 +161,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#required-parts" id="toc-required-parts" class="nav-link active" data-scroll-target="#required-parts">Required parts</a></li>
+  <li><a href="#optional" id="toc-optional" class="nav-link" data-scroll-target="#optional">Optional</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">R and RStudio Setup</h1>
+<h1 class="title">Homework 2</h1>
 </div>
 
 
@@ -217,49 +190,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Ideally before class on Tuesday, September 5 and definitely before class on Thursday, September 7, you should follow these instructions to set up the software that we’ll be using throughout the semester. <strong>Even if you’ve already downloaded both R and RStudio, you’ll want to re-download to make sure that you have the most current versions.</strong></p>
-<p><br></p>
-<p><em>Highly</em> recommended: Change the default file download location for your internet browser.</p>
+<section id="required-parts" class="level1">
+<h1>Required parts</h1>
 <ul>
-<li>Generally by default, internet browsers automatically save all files to the <code>Downloads</code> folder on your computer. This does not encourage good file organization practices. It is highly recommended that you change this option so that your browser asks you where to save each file before downloading it.</li>
-<li>This <a href="https://www.online-tech-tips.com/computer-tips/change-default-download-folder-location-on-any-web-browser/">page</a> has information on how to do this for the most common browsers.</li>
-</ul>
-<p><br></p>
-<p><strong>Required:</strong> (Re)Download R and RStudio</p>
+<li>Finish the Open-ended Exercise in our <a href="./03-adv-maps.html#open-ended-exercise-homework">Advanced Map Visualization</a> class activity.
 <ul>
-<li><strong>FIRST:</strong> Download R <a href="https://cran.rstudio.com/">here</a>.
-<ul>
-<li>In the top section, tou will see three links “Download R for …”</li>
-<li>Choose the link that corresponds to your computer.</li>
-<li>As of September 1, 2023, the latest version of R is 4.3.1 (“Beagle Scouts”).</li>
+<li>Submission details: Click the “Render” button to create an HTML report from your Quarto file. Open the HTML in your web browser and save the webpage as a PDF (Ctrl-P/Command P, choose “Save as PDF” as the Destination). Submit this PDF on <a href="https://moodle.macalester.edu/mod/assign/view.php?id=37543">Moodle</a> AND the <code>.qmd</code> file by midnight on Wednesday, 9/20.</li>
 </ul></li>
-<li><strong>SECOND:</strong> Download RStudio <a href="https://posit.co/download/rstudio-desktop/#download">here</a>.
-<ul>
-<li>Click the button under step 2 to install the version of RStudio recommended for your computer.</li>
-<li>As of September 1, 2023, the latest version of RStudio is 2023.06.2+561.</li>
-</ul></li>
-<li><strong>THIRD:</strong> Check that when you go to File &gt; New Project &gt; New Directory, you see “Quarto Website” as an option.</li>
+<li>Complete <a href="./project.html#milestone-1">Milestone 1</a> of the <a href="./project.html">course project</a>. (Brainstorming ideas and data sources). Put this information in a <code># Project</code> section that you add to the end of your <code>03-adv-maps.qmd</code>.</li>
 </ul>
-<p><br></p>
-<p>Suggested: Watch this <a href="https://www.youtube.com/watch?v=LJiRSPoe8r0">video</a> describing key configuration options for RStudio.</p>
-<p><br></p>
-<p><strong>Required:</strong> Install required <strong>packages</strong>.</p>
-<ul>
-<li>An R <strong>package</strong> is an extra bit of functionality that will help us in our data analysis efforts in a variety of ways.</li>
-<li>Open RStudio and click inside the Console pane (by default, the bottom left pane). Copy and paste the following command into the Console. You should see the text below appear to the right of the <code>&gt;</code>, which is called the <strong>R prompt</strong>. After you paste, hit Enter.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>You will see a lot of text from status messages appearing in the Console as the packages are being installed. Wait until you see the <code>&gt;</code> again.</li>
-<li>Enter the command <code>library(tidyverse)</code> and hit Enter.<br>
-If you see an error message, then there was a problem installing the package. Post the full error message in the <code>#questions</code> channel in our <a href="https://statcomp212fall2023.slack.com">Slack workspace</a> and</li>
-<li>Quit RStudio. You’re done setting up!</li>
-</ul>
-<p>Optional: For a refresher on RStudio features, watch this <a href="https://www.youtube.com/watch?v=HWnanydsBCs">video</a>. It also shows you how to customize the layout and color scheme of RStudio.</p>
+</section>
+<section id="optional" class="level1">
+<h1>Optional</h1>
+<p>Participate in the most recent <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-09-12/readme.md">Tidy Tuesday</a> challenge.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
