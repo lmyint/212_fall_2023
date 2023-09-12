@@ -290,7 +290,7 @@ Details about the course components are given below:
         - My expectation is that you are filling this in regularly throughout class activities and through work outside of class.
 
 - **Homework:** We will have weekly homework in which you will complete activities that we start in class. The requirements for passing the assignment will be clearly stated in the homework directions.
-    - If you do not pass an assignment and wish to revise your work, you may resubmit the assignment the **following week**. This revision needs to be submitted by 2 weeks after the original homework due date. (See my [policy on late work](syllabus.qmd#late-work).)
+    - If you do not pass an assignment and wish to revise your work, you may resubmit the assignment the **following week**. This revision needs to be submitted by 2 weeks after the original homework due date. (See my [policy on late work](syllabus_final.qmd#late-work).)
 
 - **Final project:** For this semester-long project, you will receive regular feedback on the quality of the different project aspects and will have the opportunity to improve the quality of the different aspects as you continue working.
 
@@ -300,7 +300,7 @@ In each of the 3 substantive reflections (month, mid-semester, end-of-semester),
 
 For each of the 3 substantive reflections, you will receive a prompt that guides you through how to look at your work, my comments, solutions, and prior reflections to craft your self-assessment on your reflection process, homework, and project work. I will use the same prompts/process to assess your work before we come together for conversation.
 
-**Note:** Your self-assessments need to be **based on demonstrated evidence** in the work that you submit. For example, if you have struggled with the data wrangling homework assignments and say in your self-evaluation that your understanding is now strong after reviewing feedback, **this is not sufficient evidence**. You would need to **demonstrate** your stronger understanding of data wrangling by submitting a revision of the data wrangling homework. (See [policy on late work](syllabus.qmd#late-work).)
+**Note:** Your self-assessments need to be **based on demonstrated evidence** in the work that you submit. For example, if you have struggled with the data wrangling homework assignments and say in your self-evaluation that your understanding is now strong after reviewing feedback, **this is not sufficient evidence**. You would need to **demonstrate** your stronger understanding of data wrangling by submitting a revision of the data wrangling homework. (See [policy on late work](syllabus_final.qmd#late-work).)
 
 
 <br><br><br><br>

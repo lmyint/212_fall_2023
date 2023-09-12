@@ -178,7 +178,7 @@ ggplot(data = world) +
 ggplot(data = world) +
     geom_sf(color = "black", fill = "#bada55") +
     coord_sf(crs = "+proj=fouc") + 
-    labs(title = "Foucaut Projection", subtitle = "Correctly represents area, lots of distortion in high latitudes") + 
+    labs(title = "Foucaut Projection", subtitle = "Correctly represents area, lots of shape distortion in high latitudes") + 
     theme_bw() 
 
 ggplot(data = world) +
@@ -909,7 +909,7 @@ Start by downloading a shape file. For example, you could search for "Minnesota 
 
 Load in the shapefile using `st_read()` and transform `roads` to have the same CRS as `census2020` if necessary.
 
-```{r}
+```{r eval=FALSE}
 roads <- sf::st_read("tl_2019_27_prisecroads")
 
 # Check CRS of roads and transform if necessary

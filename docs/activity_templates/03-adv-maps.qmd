@@ -250,14 +250,14 @@ For each file format, we need to use a different function to read in the data. S
 
 ```{r}
 # Read in GeoJSON file
-hex_spatial <- geojsonio::geojson_read("data/us_states_hexgrid.geojson", what = "sp") 
+hex_spatial <- geojsonio::geojson_read("us_states_hexgrid.geojson", what = "sp") 
 
 # Read in CSV File
-pop_growth <- readr::read_csv("data/apportionment.csv") %>% janitor::clean_names()
+pop_growth <- readr::read_csv("apportionment.csv") %>% janitor::clean_names()
 
 # Read in Shapefiles
-mn_cities <- sf::read_sf("data/shp_loc_pop_centers") #shp file/folder
-mn_water <- sf::read_sf("data/shp_water_lakes_rivers") #shp file/folder
+mn_cities <- sf::read_sf("shp_loc_pop_centers") #shp file/folder
+mn_water <- sf::read_sf("shp_water_lakes_rivers") #shp file/folder
 ```
 
 ### Data classes in R

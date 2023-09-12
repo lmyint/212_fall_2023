@@ -1,6 +1,6 @@
 ---
 title: "Preliminary Syllabus"
-subtitle: "(Version before student input on learning goals and grading system)"
+subtitle: "(Version BEFORE student input on learning goals and grading system)"
 ---
 
 # What is this course about?
@@ -293,7 +293,7 @@ Details about the course components are given below:
         - My expectation is that you are filling this in regularly throughout class activities and through work outside of class.
 
 - **Homework:** We will have weekly homework in which you will complete activities that we start in class. The requirements for passing the assignment will be clearly stated in the homework directions.
-    - If you do not pass an assignment and wish to revise your work, you may resubmit the assignment the **following week**. This revision needs to be submitted by 2 weeks after the original homework due date. (See my [policy on late work](syllabus.qmd#late-work).)
+    - If you do not pass an assignment and wish to revise your work, you may resubmit the assignment the **following week**. This revision needs to be submitted by 2 weeks after the original homework due date. (See my [policy on late work](syllabus_prelim.qmd#late-work).)
 
 - **Final project:** For this semester-long project, you will receive regular feedback on the quality of the different project aspects and will have the opportunity to improve the quality of the different aspects as you continue working.
 
@@ -305,7 +305,7 @@ What's different is how (who) participates in the evaluation process. In Option 
 
 In Option 2, the qualitative comments that you receive on all your work (reflections, homework, project) will form the basis of your **self-evaluation**. That is, you will review all comments from me and use this to gauge the degree to which you are meeting the course learning goals. (On homework, you will not receive a pass/not passing designation---you'll just receive comments.) You will write self-evaluations ~1 month into the semester, in the middle of the semester (before midterm grades are due), and a final one at the end of the semester. In all of these self-evaluations, you will propose the grade that you think deserve. I will also evaluate your work, and if we disagree on the grade, we will meet to discuss what needs to be done next to come to an agreement. (This may involve being doing extra work or revisions.)
 
-Note: Your self-evaluations need to be **based on demonstrated evidence** in the work that you submit. For example, if you have struggled with the data wrangling homework assignments and say in your self-evaluation that your understanding is now strong after reviewing feedback, **this is not sufficient evidence**. You would need to **demonstrate** your stronger understanding of data wrangling by submitting a revision of the data wrangling homework. (See [policy on late work](syllabus.qmd#late-work).)
+Note: Your self-evaluations need to be **based on demonstrated evidence** in the work that you submit. For example, if you have struggled with the data wrangling homework assignments and say in your self-evaluation that your understanding is now strong after reviewing feedback, **this is not sufficient evidence**. You would need to **demonstrate** your stronger understanding of data wrangling by submitting a revision of the data wrangling homework. (See [policy on late work](syllabus_prelim.qmd#late-work).)
 
 ```{=html}
 <table class="tab-grading">
