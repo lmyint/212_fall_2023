@@ -1,5 +1,6 @@
 ---
-title: "Topic 4: Interactive visualization"
+title: "Interactive visualization"
+sidebar: false
 ---
 
 # Learning goals

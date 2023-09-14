@@ -51,11 +51,10 @@ Guiding questions for the readings are available at the bottom of this page.
     </td>
     
     <td class="topleft">
-      <b>9/14: Interactive visualization (Part 1)</b> <br>
-      Before class: Listen to <a href="https://datastori.es/127-storytelling-with-data-with-cole-nussbaumer-knaflic/">this podcast</a> from Chapter 7 (timestamp 18:09) through Chapter 8 (ending at timestamp 25:27), and read the <a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html">Welcome to Shiny</a> article. Answer the Guiding Questions at the bottom of this page.
+      <b>9/14: Advanced map visualization (continued)</b> <br>
     </td>
     
-    <td class="topleft">Turn in <a href="https://lmyint.github.io/212_fall_2023/homework1.html">HW1</a> by midnight on Wed 9/13. Look ahead to HW2 due Wednesday 9/20 at midnight.</td>
+    <td class="topleft">Turn in <a href="https://lmyint.github.io/212_fall_2023/homework1.html">HW1</a> by midnight on Wed 9/13. Look ahead to <a href="https://lmyint.github.io/212_fall_2023/homework2.html">HW2</a> due Wednesday 9/20 at midnight.</td>
   </tr>
   <!----------------------------------------------------------->
   
@@ -63,17 +62,17 @@ Guiding questions for the readings are available at the bottom of this page.
   <tr>
     <td class="topleft">3</td>
     <td class="topleft">
-      <b>9/19: Interactive visualization (Part 2)</b> <br>
-      Before class: TBD (NOT FINAL YET)
-      <!-- Read up through the "Streamline computation" section in <a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson6/">this tutorial on reactive expressions</a> -->
+      <b>9/19: Interactive visualization</b> <br>
+      Before class: Listen to <a href="https://datastori.es/127-storytelling-with-data-with-cole-nussbaumer-knaflic/">this podcast</a> from Chapter 7 (timestamp 18:09) through Chapter 8 (ending at timestamp 25:27). Answer the Guiding Question at the bottom of this page. Install the "shiny" and "plotly" R packages.
     </td>
     
     <td class="topleft">
-      <b>9/21: Classroom Community and Connectedness Survey</b> <br>
-      Before class: (NOT FINAL YET) Find a <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday dataset</a> that you would be interested in exploring for a mini-project. <br>
+      <b>9/21: Classroom Community and Connectedness (CC&C) Survey</b> <br>
+      For the first 30 minutes, we will work towards forming project teams. In the last hour of class, CC&C facilitators will come in to run an activity on how community-building is going in our course. <br>
+      Before class: Find a <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday dataset</a> that you would be interested in exploring for a mini-project. <br>
     </td>
     
-    <td class="topleft">Turn in HW2 by midnight on Wednesday 9/20. Look ahead to HW3.</td>
+    <td class="topleft">Turn in <a href="https://lmyint.github.io/212_fall_2023/homework2.html">HW2</a> by midnight on Wednesday 9/20. Look ahead to HW3.</td>
   </tr>
   <!----------------------------------------------------------->
   
@@ -193,17 +192,11 @@ After/while watching [this video](https://youtu.be/xJyJlKbZFlc?si=pc7ThQPO-v8ur-
 - Why is it insufficient to identify a location by its latitude and longitude?
 - Why do we need to be mindful about CRSs when working with different spatial datasets?
 
-## 9/14: Interactive visualization (Part 1)
+## 9/19: Interactive visualization
 
 After listening to [this podcast](https://datastori.es/127-storytelling-with-data-with-cole-nussbaumer-knaflic/) from Chapter 7 (timestamp 18:09) through Chapter 8 (ending at timestamp 25:27), reflect on the following question:
 
 - What was new, unexpected, or interesting in the discussion about animations, interactivity, and dashboards?
-
-After/while reading the [Welcome to Shiny]() article, answer the following questions:
-
-- What is Shiny?
-- What are the 3 components of the `app.R` file in a Shiny app?
-- How would you run a Shiny app that is within a folder called `map_app`?
 
 <!-- Consider this post for another week: https://www.storytellingwithdata.com/blog/2014/04/exploratory-vs-explanatory-analysis -->
 

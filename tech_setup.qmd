@@ -1,5 +1,5 @@
 ---
-title: "R and RStudio Setup"
+title: "Tech Setup"
 sidebar: false
 ---
 
@@ -7,9 +7,9 @@ Ideally before class on Tuesday, September 5 and definitely before class on Thur
 
 <br>
 
-*Highly* recommended: Change the default file download location for your internet browser.
+**Required:** Change the default file download location for your internet browser.
 
-- Generally by default, internet browsers automatically save all files to the `Downloads` folder on your computer. This does not encourage good file organization practices. It is highly recommended that you change this option so that your browser asks you where to save each file before downloading it.
+- Generally by default, internet browsers automatically save all files to the `Downloads` folder on your computer. This does not encourage good file organization practices. You need to change this option so that your browser asks you where to save each file before downloading it.
 - This [page](https://www.online-tech-tips.com/computer-tips/change-default-download-folder-location-on-any-web-browser/) has information on how to do this for the most common browsers.
 
 <br>

@@ -41,6 +41,7 @@ website:
         - 01-introductions.qmd
         - 02-adv-ggplot.qmd
         - 03-adv-maps.qmd
+        - workflow_files_rstudio.qmd
         # - 04-interactive-viz.qmd
         # - 05-data-types.qmd
         # - 06-functions-control-structs.qmd
@@ -61,6 +62,9 @@ format:
 
 editor: source
 
-body-footer: | 
-  © Leslie Myint, 2023<br>
-  All content licensed under ![](https://static.thenounproject.com/png/70967-200.png){height=20px} ([CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/))
+page-footer:
+  left: |
+    &copy; Leslie Myint, 2023<br>
+    All content licensed under ![](https://static.thenounproject.com/png/70967-200.png){height=20px} ([CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/))
+  right: |
+    Site built with [Quarto](https://quarto.org/)

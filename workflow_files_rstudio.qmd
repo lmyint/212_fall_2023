@@ -1,0 +1,147 @@
+---
+title: "Workflow: Files and RStudio setup"
+sidebar: false
+---
+
+# File organization and navigation
+
+## Change the default file download location for your internet browser
+
+- Generally by default, internet browsers automatically save all files to the `Downloads` folder on your computer. This does not encourage good file organization practices. You need to change this option so that your browser asks you where to save each file before downloading it.
+- This [page](https://www.online-tech-tips.com/computer-tips/change-default-download-folder-location-on-any-web-browser/) has information on how to do this for the most common browsers.
+
+## Folder/directory structure
+
+When working on any data science project, I recommend setting up the directory (folder) structure below. Sub-bullets indicate folders that are inside other folders.
+
+- `Documents` (This should be some place you can find *easily* through your Finder (Mac) or File Explorer (Windows).)
+    - `descriptive_project_name`
+        - `code`
+            - `raw`: For messy code that you're actively working on
+            - `clean`: For code that you have cleaned up, documented, organized, and tested to run as expected
+        - `data`
+            - `raw`: Original data that hasn't been cleaned
+            - `clean`: Any non-original data that has been processed in some way
+        - `results`
+            - `figures`: Plots that will be used in communicating your project should go here. (Using screenshots of output in RStudio is not a good practice.)
+            - `tables`: Any sort of plain text file results (e.g., CSVs)
+
+From this point onward, we will use a simplified version of this directory structure for all of our class activities.
+
+### Activity: Clean up your files and folders for class
+
+Create a folder for this course in a place you can find *easily* through your Finder (Mac) or File Explorer (Windows). The name of this folder should not have spaces (use underscores `_` instead). Suggestion: `STAT212` or `COMP212`
+
+Organize your files from class using the following directory structure:
+    
+- `STAT212` (or `COMP212`)
+    - `advanced_ggplot` (For our [Advanced visualization in ggplot2](02-adv-ggplot.qmd) activity)
+        - `code`
+            - `02-adv-ggplot.qmd`
+        - `data`
+    - `advanced_maps` (For our [Advanced map visualization](03-adv-maps.qmd) activity)
+        - `code`
+            - `03-adv-maps.qmd`
+        - `data`
+            - `apportionment.csv`
+            - `shp_loc_pop_centers` (From `shp_loc_pop_centers.zip`)
+            - `shp_water_lakes_rivers` (From `shp_water_lakes_rivers.zip`)
+            - `us_states_hexgrid.geojson`
+    
+### File paths
+
+In a code file, when you read in data from a source on your computer, you need to specify the **file path** correctly. The file path is a text string that tells you how to get from your code file to the data. There are two types of paths: absolute and relative.
+
+**Absolute file paths** start at the "root" directory in a computer system. Examples:
+
+- Mac: `/Users/lesliemyint/Desktop/teaching/STAT212/2023_fall/class_activities/advanced_maps/us_states_hexgrid.geojson`
+    - On a Mac the tilde `~` in a file path refers to the "Home" directory, which is `/Users/lesliemyint`. In this case, the path becomes `~/Desktop/teaching/STAT212/2023_fall/class_activities/advanced_maps/us_states_hexgrid.geojson`
+- Windows: `C:/Users/lesliemyint/Documents/teaching/STAT212/2023_fall/class_activities/advanced_maps/us_states_hexgrid.geojson`
+    - Note: Windows uses both `/` (forward slash) and `\` (backward slash) to separate folders in a file path.
+
+<br>
+
+**Relative file paths** start wherever you are right now (the **working directory (WD)**). The WD when you're working in a code file may be different from the working directory in the Console.
+
+*Directory setup 1: Data is in same folder as code file*
+
+- `some_folder`
+    - `your_code_file.qmd`
+    - `data.csv`
+    
+There are two options for the relative path:
+
+- `./data.csv` (The `./` refers to the current working directory.)
+- `data.csv`
+
+*Directory setup 2: Data is within a subfolder called `data`*
+
+- `some_folder`
+    - `your_code_file.qmd`
+    - `data`
+        - `data.csv`
+
+The relative path would be `data/data.csv`. (Note: `./data/data.csv` would also work.)
+
+*Directory setup 3: Need to go to a "parent" folder first to get to the data*
+
+- `some_folder`
+    - `data.csv`
+    - `code`
+        - `your_code_file.qmd`
+
+To go "up" a folder in a relative path we use `../`.
+
+The relative path here would be `../data.csv`.
+
+### Activity: Update file paths in maps activity
+
+In `03-adv-maps.qmd`, navigate to the code chunk where you read in `us_states_hexgrid.geojson`, `apportionment.csv`, `shp_loc_pop_centers`, and `shp_water_lakes_rivers`.
+
+Update the file paths to correctly find the data in the new directory structure.
+
+
+<br><br><br>
+
+
+# RStudio options
+
+Go to Edit > Preferences > General
+
+- Workspace
+    - Restore `.RData` into workspace at startup: **Leave this unchecked**
+    - Save workspace to `.RData` on exit: **Select "Never"**
+
+Without doing this RStudio will save all of the objects in your Environment. In practice, this leads to all of the objects, datasets, etc that you have ever worked with at Macalester being loaded in when you start RStudio.
+
+- This can make startup slow.
+- It clutters the Environment. (e.g., You're working on something and referring to `diamonds` not knowing that a `diamonds` that was used in class last year is already in the Environment.)
+
+
+<br><br><br>
+
+
+# Keyboard shortcuts
+
+## In RStudio
+
+- When you're in the Console, hitting the up and down arrow keys allows you to cycle through previous commands
+- Tab completion
+    - Type part of a function or object name (in the Editor or Console) and then hit Tab. A menu of autocomplete options will popup. Select your choice with arrow keys and hit Tab or Enter. (e.g., Type `ggp` and hit Tab.)
+    - Type part of a function argument and then hit Tab for a menu of autocomplete options.
+
+## In general for typing
+
+- Moving your cursor to the beginning/end of a word
+    - Mac: Option + Left/Right
+    - Windows: Ctrl + Left/Right
+- Deleting one word at a time
+    - Mac: Option + Backspace
+    - Windows: Ctrl + Backspace
+
+- Moving your cursor to the beginning/end of a line
+    - Mac: Command + Left/Right
+    - Windows: Alt + Left/Right
+- Deleting a whole line at a time
+    - Mac: Command + Backspace
+    - Windows: Alt + Backspace

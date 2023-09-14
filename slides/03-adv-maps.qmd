@@ -3,8 +3,13 @@ title: "Advanced Spatial Visualizations"
 format:
   revealjs:
     scrollable: true
-    smaller: true
 ---
+
+## As we gather...
+
+Check in with those around you--how is the semester going so far?
+
+Open up your Process and Reflection Log (Google Doc).
 
 ## As we gather...
 

@@ -16,9 +16,17 @@ I'm also happy to meet one-on-one if my normal drop-in hours don't work. You can
 
 # Announcements
 
+## 9/14
+
+- Before next Tuesday's class
+    - Check the Schedule page. There is a short podcast segment (~7 min) to listen to and one guiding question to answer. This podcast segment shares a bit of wisdom about when it is/isn't useful to make fancy visualizations.
+    - Install the `shiny` and `plotly` packages. Post on the `#questions` channel on Slack if you run into problems. (Share your commands and error messages.)
+
+- Next Thursday we will be having facilitators come in for the last hour of class for the Classroom Community and Connectedness Survey. (I will be leaving.)
+    - We will use the first 30 to get our course projects moving forward.
+
 ## 9/12
 
-- Check the Schedule page. There is a short podcast segment (~7 min) to listen to and a short intro article to the Shiny framework. Answer the Guiding Questions for Thursday's class: interactive visualization (Part 1).
 - Homework 1 due Wednesday at midnight (Finishing up the temperature + precipitation plots from last Tuesday)
     - Updated submission instructions can be found [here](02-adv-ggplot.qmd#homework). (Also in the most recent Moodle announcement.)
 - Homework 2 due next Wednesday, 9/20 has two parts:

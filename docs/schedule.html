@@ -154,6 +154,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./03-adv-maps.html" rel="" target="">
  <span class="dropdown-text">Advanced Spatial Visualizations</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./workflow_files_rstudio.html" rel="" target="">
+ <span class="dropdown-text">Workflow: Files and RStudio setup</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -204,7 +208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#advanced-visualization-in-ggplot" id="toc-advanced-visualization-in-ggplot" class="nav-link" data-scroll-target="#advanced-visualization-in-ggplot">9/7: Advanced visualization in ggplot</a></li>
   <li><a href="#advanced-map-visualization" id="toc-advanced-map-visualization" class="nav-link" data-scroll-target="#advanced-map-visualization">9/12: Advanced map visualization</a></li>
-  <li><a href="#interactive-visualization-part-1" id="toc-interactive-visualization-part-1" class="nav-link" data-scroll-target="#interactive-visualization-part-1">9/14: Interactive visualization (Part 1)</a></li>
+  <li><a href="#interactive-visualization" id="toc-interactive-visualization" class="nav-link" data-scroll-target="#interactive-visualization">9/19: Interactive visualization</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -276,11 +280,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </td>
     
     <td class="topleft">
-      <b>9/14: Interactive visualization (Part 1)</b> <br>
-      Before class: Listen to <a href="https://datastori.es/127-storytelling-with-data-with-cole-nussbaumer-knaflic/">this podcast</a> from Chapter 7 (timestamp 18:09) through Chapter 8 (ending at timestamp 25:27), and read the <a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html">Welcome to Shiny</a> article. Answer the Guiding Questions at the bottom of this page.
+      <b>9/14: Advanced map visualization (continued)</b> <br>
     </td>
     
-    <td class="topleft">Turn in <a href="https://lmyint.github.io/212_fall_2023/homework1.html">HW1</a> by midnight on Wed 9/13. Look ahead to HW2 due Wednesday 9/20 at midnight.</td>
+    <td class="topleft">Turn in <a href="https://lmyint.github.io/212_fall_2023/homework1.html">HW1</a> by midnight on Wed 9/13. Look ahead to <a href="https://lmyint.github.io/212_fall_2023/homework2.html">HW2</a> due Wednesday 9/20 at midnight.</td>
   </tr>
   <!----------------------------------------------------------->
   
@@ -288,17 +291,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <tr>
     <td class="topleft">3</td>
     <td class="topleft">
-      <b>9/19: Interactive visualization (Part 2)</b> <br>
-      Before class: TBD (NOT FINAL YET)
-      <!-- Read up through the "Streamline computation" section in <a href="https://shiny.posit.co/r/getstarted/shiny-basics/lesson6/">this tutorial on reactive expressions</a> -->
+      <b>9/19: Interactive visualization</b> <br>
+      Before class: Listen to <a href="https://datastori.es/127-storytelling-with-data-with-cole-nussbaumer-knaflic/">this podcast</a> from Chapter 7 (timestamp 18:09) through Chapter 8 (ending at timestamp 25:27). Answer the Guiding Question at the bottom of this page. Install the "shiny" and "plotly" R packages.
     </td>
     
     <td class="topleft">
-      <b>9/21: Classroom Community and Connectedness Survey</b> <br>
-      Before class: (NOT FINAL YET) Find a <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday dataset</a> that you would be interested in exploring for a mini-project. <br>
+      <b>9/21: Classroom Community and Connectedness (CC&amp;C) Survey</b> <br>
+      For the first 30 minutes, we will work towards forming project teams. In the last hour of class, CC&amp;C facilitators will come in to run an activity on how community-building is going in our course. <br>
+      Before class: Find a <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday dataset</a> that you would be interested in exploring for a mini-project. <br>
     </td>
     
-    <td class="topleft">Turn in HW2 by midnight on Wednesday 9/20. Look ahead to HW3.</td>
+    <td class="topleft">Turn in <a href="https://lmyint.github.io/212_fall_2023/homework2.html">HW2</a> by midnight on Wednesday 9/20. Look ahead to HW3.</td>
   </tr>
   <!----------------------------------------------------------->
   
@@ -424,17 +427,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Why do we need to be mindful about CRSs when working with different spatial datasets?</li>
 </ul>
 </section>
-<section id="interactive-visualization-part-1" class="level2">
-<h2 class="anchored" data-anchor-id="interactive-visualization-part-1">9/14: Interactive visualization (Part 1)</h2>
+<section id="interactive-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-visualization">9/19: Interactive visualization</h2>
 <p>After listening to <a href="https://datastori.es/127-storytelling-with-data-with-cole-nussbaumer-knaflic/">this podcast</a> from Chapter 7 (timestamp 18:09) through Chapter 8 (ending at timestamp 25:27), reflect on the following question:</p>
 <ul>
 <li>What was new, unexpected, or interesting in the discussion about animations, interactivity, and dashboards?</li>
-</ul>
-<p>After/while reading the <a href="">Welcome to Shiny</a> article, answer the following questions:</p>
-<ul>
-<li>What is Shiny?</li>
-<li>What are the 3 components of the <code>app.R</code> file in a Shiny app?</li>
-<li>How would you run a Shiny app that is within a folder called <code>map_app</code>?</li>
 </ul>
 <!-- Consider this post for another week: https://www.storytellingwithdata.com/blog/2014/04/exploratory-vs-explanatory-analysis -->
 
