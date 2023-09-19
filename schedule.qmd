@@ -68,8 +68,7 @@ Guiding questions for the readings are available at the bottom of this page.
     
     <td class="topleft">
       <b>9/21: Classroom Community and Connectedness (CC&C) Survey</b> <br>
-      For the first 30 minutes, we will work towards forming project teams. In the last hour of class, CC&C facilitators will come in to run an activity on how community-building is going in our course. <br>
-      Before class: Find a <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday dataset</a> that you would be interested in exploring for a mini-project. <br>
+      For the first 30 minutes, we will move our course projects forward. In the last hour of class, CC&C facilitators will come in to run an activity on how community-building is going in our course.
     </td>
     
     <td class="topleft">Turn in <a href="https://lmyint.github.io/212_fall_2023/homework2.html">HW2</a> by midnight on Wednesday 9/20. Look ahead to HW3.</td>
@@ -89,7 +88,7 @@ Guiding questions for the readings are available at the bottom of this page.
       Before class: (NOT FINAL YET) Read <a href="https://r4ds.hadley.nz/strings.html">Chapter 15 (Strings)</a>, <a href="https://r4ds.hadley.nz/regexps.html">Chapter 16 (Regular Expressions)</a>, and <a href="https://r4ds.hadley.nz/factors.html">Chapter 17 (Factors)</a> of R4DS. <br>
     </td>
     
-    <td class="topleft">Turn in HW3. Look ahead to HW4.</td>
+    <td class="topleft">Turn in <a href="https://lmyint.github.io/212_fall_2023/homework3.html">HW3</a> Look ahead to HW4.</td>
   </tr>
   <!----------------------------------------------------------->
   

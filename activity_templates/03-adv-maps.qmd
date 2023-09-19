@@ -13,8 +13,9 @@ library(geojsonio) # tools for importing/working with GeoJSON files in R
 library(sf) # tools for working with spatial vector data (GIS functionality, mapping)
 
 # install.packages("remotes")
-#remotes::install_github("ropensci/USAboundariesData")
-#remotes::install_github("ropensci/USAboundaries")
+# remotes::install_github("ropensci/USAboundariesData")
+# install.packages("USAboundariesData", repos = "http://packages.ropensci.org", type = "source")
+# remotes::install_github("ropensci/USAboundaries")
 
 library(rnaturalearth) # access to map data from Natural Earth
 library(rnaturalearthdata)

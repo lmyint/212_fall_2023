@@ -102,21 +102,14 @@
     "href": "04-interactive-viz.html",
     "title": "Interactive visualization",
     "section": "",
-    "text": "After this lesson, you should be able to:\n\nEvaluate when it would be useful to use an interactive visualization or an animation and when it might not be necessary\nConstruct interactive visualizations and animations with plotly\nBuild a Shiny app that enables user to adjust visualization choices and explore linked visualizations"
-  },
-  {
-    "objectID": "04-interactive-viz.html#pair-programming-exercise",
-    "href": "04-interactive-viz.html#pair-programming-exercise",
-    "title": "Interactive visualization",
-    "section": "Pair “programming” exercise",
-    "text": "Pair “programming” exercise\nCatalog the app’s layout and interactivity features as part of the app planning phase.\n\nNavigator: Open up the neighborhood diversity app for reference. The Navigator should explore the interactive features of the app and help the Driver sketch out a schematic of the app.\nDriver: On a sheet of paper, sketch the layout and general features of the app as the Navigator navigates. Draw arrows to indicate what parts of the app update in response to user input. Your sketch might start off looking like this:\n\n\n\n\n\n\n\n\nStop to Reflect\n\n\n\n\n\nHow has pair programming become easier and harder?\nWhat do you need from your partner and what does your partner need from you?"
+    "text": "After this lesson, you should be able to:\n\nEvaluate when it would be useful to use an interactive visualization or an animation and when it might not be necessary\nConstruct interactive visualizations and animations with plotly\nBuild a Shiny app that enables user to adjust visualization choices and explore linked visualizations\n\n\nSlides for today are available here. (For our main activity, we will be using the rest of the webpage below.)"
   },
   {
     "objectID": "04-interactive-viz.html#why-use-interactivity",
     "href": "04-interactive-viz.html#why-use-interactivity",
     "title": "Interactive visualization",
     "section": "Why use interactivity?",
-    "text": "Why use interactivity?\nPros\n\nCan explore peculiarities more quickly with linked representations\nAllows guided exploration of results without needing to share data\n\nCons\n\nTakes longer to design\nAnalyst might spend longer exploring an interactive visualization than a series of static visualizations\nPoor design could result in information overload"
+    "text": "Why use interactivity?\nPros\n\nUsers can click, hover, zoom, and pan to get more detailed information\nUsers can get quickly and deeply explore the data via linked data representations\nAllows guided exploration of results without needing to share data\n\nCons\n\nTakes longer to design\nAnalyst might spend longer exploring an interactive visualization than a series of static visualizations\nPoor design could result in information overload"
   },
   {
     "objectID": "04-interactive-viz.html#common-features-of-interactive-visualizations",
@@ -126,32 +119,46 @@
     "text": "Common features of interactive visualizations\nCommon features of interactive visualizations include (reference):\n\nChanging data representation: providing options to change the type of plot displayed (e.g., allowing users to visualize temperature patterns over a month vs. over years)\nFocusing and getting details: mousing over part of a visualization to see an exact data value, zooming and panning\nData transformation: e.g., changing color scale, switching to/from log scale\nData selection and filtering: highlighting and brushing regions of a plot to focus the selected points; reordering and filtering data show in tables\nFinding corresponding information in multiple views: linked views that update dynamically based on interaction in another plot (often by zooming, panning, or selecting certain points)"
   },
   {
-    "objectID": "04-interactive-viz.html#shiny",
-    "href": "04-interactive-viz.html#shiny",
+    "objectID": "04-interactive-viz.html#exercise-0-app-planning",
+    "href": "04-interactive-viz.html#exercise-0-app-planning",
     "title": "Interactive visualization",
-    "section": "Shiny",
-    "text": "Shiny\nThe neighborhood diversity app was made with the Shiny toolkit available in the shiny R package. Shiny facilitates building interactive web applications using R code without needing extensive knowledge of web coding technologies (e.g., HTML, CSS, and Javascript).\nLet’s look at an example app together. RStudio will create a template app when you go to File &gt; New File &gt; Shiny Web App. The application name can be neighborhood_diversity, and the application type can stay as the default “Single file (app.R)”. This creates a folder in your current directory called neighborhood_diversity with a single R code file called app.R.\nClick the Run App button to view the app in action.\nThe app.R has three components:\n\na user interface object (ui): this sets up the layout of the app\na server function (server): this defines how the app will react to user input\na call to the shinyApp() function: this launches the app\n\n\nBuilding the user interface (UI)\nThe first step in building a Shiny application is to set up the layout, or the User Interface (UI).\nOpen up the Shiny cheatsheet, and look at the Layouts section on the right side of the second page. Which layout pieces can we use to recreate the neighborhood diversity app?\n\n\n\n\n\n\nStop to Reflect\n\n\n\n\n\nHow do you learn best, without getting overwhelmed? Consider approaches that have worked for you and discuss with your partner. Notice similarities and differences in how you learn best."
+    "section": "Exercise 0: App planning",
+    "text": "Exercise 0: App planning\nCatalog the app’s layout and interactivity features as part of the app planning phase.\n\nNavigator: Open up the neighborhood diversity app for reference. The Navigator should explore the interactive features of the app and help the Driver sketch out a schematic of the app.\nDriver: Sketch the layout and general features of the app as the Navigator navigates. Draw arrows to indicate what parts of the app update in response to user input.\n\n\n\n\n\n\n\nReflect: App design\n\n\n\n\n\nIs the interactivity in this app needed? Does the interactivity actually help you gain more insight (and perhaps more efficiently) than a series of static visualizations? What static visualizations might be more useful?"
   },
   {
-    "objectID": "04-interactive-viz.html#the-plotly-package",
-    "href": "04-interactive-viz.html#the-plotly-package",
+    "objectID": "04-interactive-viz.html#exercise-1-setup-and-getting-acquainted",
+    "href": "04-interactive-viz.html#exercise-1-setup-and-getting-acquainted",
     "title": "Interactive visualization",
-    "section": "The plotly package",
-    "text": "The plotly package\n\nlibrary(plotly)\n\nLoading required package: ggplot2\n\n\n\nAttaching package: 'plotly'\n\n\nThe following object is masked from 'package:ggplot2':\n\n    last_plot\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\n\nThe following object is masked from 'package:graphics':\n\n    layout\n\n\nOne use case:\n\ndata(babynames, package = \"babynames\")\nbnames &lt;- babynames %&gt;% filter(name %in% c(\"Leslie\", \"Margaux\"))\np &lt;- ggplot(bnames, aes(x = year, y = prop, color = sex, linetype = name)) +\n    geom_line()\n# ggplotly(p)\n\nAnother use case: animate\n\ndata(gapminder, package = \"gapminder\")\np &lt;- ggplot(gapminder, aes(gdpPercap, lifeExp, color = continent)) +\n    geom_point(aes(size = pop, frame = year, ids = country)) +\n    scale_x_log10() +\n    theme_classic()\n\nWarning in geom_point(aes(size = pop, frame = year, ids = country)): Ignoring\nunknown aesthetics: frame and ids\n\n# ggplotly(p)"
+    "section": "Exercise 1: Setup and getting acquainted",
+    "text": "Exercise 1: Setup and getting acquainted\nSetup part 1: Load required packages at the top of app.R: shiny, tidyverse, sf, and plotly.\nSetup part 2: Data download and folder setup\nNavigate to the “Data for interactive viz activity” folder on Moodle and save the two files with the folder setup below: - 📂 YOUR_CLASS_FOLDER - 📂 interactive_viz - 📂 neighborhood_diversity - app.R - 📂 data - data_by_dist.rds - data_by_year.csv\nSetup part 3: Below your library() calls, add the following commands to read in the data:\n\ndata_by_dist &lt;- read_rds(\"Enter the correct relative path to data_by_dist.rds\")\ndata_by_year &lt;- read_csv(\"Enter the correct relative path to data_by_year.csv\")\n\nGetting acquainted with the app and underlying code: Open this PDF or have the code printout distributed at the start of class in front of you. Also have the app running in your browser.\n\nDraw lines on the printout/PDF of what visual parts of the app correspond to which parts of code.\nWhat names/labels in the User Interface (ui) part of the app seem to be shared with the server part of the app? (Draw lines between the ui and server parts of the code.)\n\n\n\n\n\n\n\nStop to Share\n\n\n\n\n\nAs you work on the “Getting acquainted” part of this exercise, share with your partner some struggles you have with code and some strategies that you have tried."
   },
   {
-    "objectID": "04-interactive-viz.html#ideas",
-    "href": "04-interactive-viz.html#ideas",
+    "objectID": "04-interactive-viz.html#input-functions",
+    "href": "04-interactive-viz.html#input-functions",
     "title": "Interactive visualization",
-    "section": "Ideas",
-    "text": "Ideas\nTeach students about the flexdashboard package (https://pkgs.rstudio.com/flexdashboard/index.html). (Maybe put this as homework?)\n\nhttps://epirhandbook.com/en/dashboards-with-r-markdown.html\nPaper on dashboard design patterns and https://dashboarddesignpatterns.github.io/\nhttps://www.datapine.com/blog/dashboard-design-principles-and-best-practices/#dashboard-design-best-practices (Googled “theory of dashboard design”)\n\nTeach students about plotly and shiny–does flexdashboard intersect with plotly and/or shiny?\nThe Novel Coronavirus Research Compendium (NCRC): triage system was built with Shiny. (Slides on the process: https://jscholarship.library.jhu.edu/bitstream/handle/1774.2/62834/2020%20JHAllLibrariesLobner.pdf?sequence=1). I can’t seem to find the actual Shiny app."
+    "section": "*Input() functions",
+    "text": "*Input() functions\n\nBackground\nThe *Input() functions collect inputs from the user. The various types are listed on the right-hand side of the first page of the cheatsheet. You will list all the *Input() functions you want to use with their accompanying arguments inside the fluidPage() function in the ui portion. Separate the *Input() functions with commas.\nIn all the *Input() functions, the first two arguments are the same:\n\ninputId is how you will refer to this input in the server portion later\nlabel is how this will actually be labeled in your UI (what text shows up in the app)\n\nEach function has some additional arguments depending what you want to do.\n\n\nExercise 2: Add *Input()s\nAdd the following two user inputs to your app:\n\nDropdown to select the city name\nSlider to choose the span parameter for the scatterplot smooth\n\nUse the Shiny cheatsheet to find the *Input() functions that correspond to the two inputs above. Add them to the appropriate place within the ui object. Use commas to separate the inputs. You will have to look at the documentation for the *Input() functions to know how to use arguments beyond inputId and label. To view this documentation, type ?function_name in the Console.\nTo get the collection of city names from the data_by_dist dataset, you can use the pull() and unique() functions. Save the city names in an object called metro_names—this code can go just beneath where you read in the data.\nOnce you finish, run your app. Make sure you can select and move things around as expected. You won’t see any plots yet–we’ll work on those in the next exercises."
   },
   {
-    "objectID": "04-interactive-viz.html#theory-of-dashboard-design",
-    "href": "04-interactive-viz.html#theory-of-dashboard-design",
+    "objectID": "04-interactive-viz.html#output-functions",
+    "href": "04-interactive-viz.html#output-functions",
     "title": "Interactive visualization",
-    "section": "Theory of dashboard design",
-    "text": "Theory of dashboard design\nLead-in activity\n\nShow an example of two dashboards (or more) and have them compare the dashboards\nOr maybe a single interface that is familiar to them\n\nSchool-related possibilities: Moodle, DegreeWorks, 1600Grand\nMobile app\nXcel energy\n\nSplit students into groups where some groups look at a multipage PDF of visualizations–arising from the same plot on different subsets of data. The other group gets to look at an interactive visualization.\n\n\n\nConsider your audience\n\nWho will be using the dashboard and what information do they need?\n\nDetermine your goals\nChoose relevant metrics to display\nTell a story with your data\nProvide context"
+    "section": "*Output() functions",
+    "text": "*Output() functions\n\nBackground\n*Output() functions in the ui portion work with the render*() functions in the server portion to to add R output to the UI. The *Output() functions are listed in the bottom center part of the first page of the cheatsheet.\nAll the *Output() functions have the same first argument, outputId, which is used how you will refer to this output in the server portion later (like the inputId in the *Input() functions).\n\n\nExercise 3: Add *Output()s\nAdd 3 plotOutput()s to the ui that will eventually be:\n\nA scatterplot of diversity score (entropy) versus distance to city hall (distmiles) with a smoothing line (smoothness controlled by the span parameter on your slider input)\nA map of diversity scores across the counties in the selected city\nA bar chart of the overall race distribution in the selected city (i.e., the total number of people in each race category in the city)\n\nFor now, don’t worry that the layout of the plots exactly matches the original neighborhood diversity app. (You will update this in your homework.)\nRun the app with the output. Notice that nothing really changes. Think of the outputs you just placed as placeholders—the app knows there will be a plot in the UI, but the details of what the plots will look like and the R code to create them will be in the server portion. Let’s talk about that now!"
+  },
+  {
+    "objectID": "04-interactive-viz.html#render-functions",
+    "href": "04-interactive-viz.html#render-functions",
+    "title": "Interactive visualization",
+    "section": "render*() functions",
+    "text": "render*() functions\nThe render*() functions go in the server function of the app. The render*() functions use R code (i.e., standard ggplot code) to communicate with (“listen to”) the user inputs to create the desired output.\nThe render*() function you use will depend on the desired output. The bottom center of the cheatsheet shows how *Output() and render*() functions connect.\nIn general, the server section of code will look something like this:\n\nserver &lt;- function(input, output) {\n    output$outputId_of_interest &lt;- render*({ # Note the curly braces that enclose the R code below\n        # R code that creates the output and calls various input$InputId's\n    })\n}\n\nExample: Suppose that inside ui, we used plotOutput(outputId = \"timeplot\"):\n\nIn the server function, we would use output$timeplot &lt;- renderPlot({...}).\n\nThe ... would be replaced by detailed R plotting code.\nTo reference the inputs we create in the ui, we use input$inputID_name. e.g., if we had an *Input() with inputId = \"years\", we would use input$years in the server function.\n\n\n\nExercise 4: Add renderPlot()\nWhile our main goals is to make 3 plots, you will just make one of them in this exercise.\nAdd a renderPlot() functions inside the server portion of the code to make the scatterplot of diversity score (entropy) versus distance to city hall (distmiles) with a smoothing line. Reference the inputs you’ve already created in previous exercises by using filter() and ggplot() to render the desired interactive plot.\nNote: the geom_??? used to create the smoothing line has a span parameter. (Check out the documentation for that geom by entering ?geom_??? in the Console.)\nRun the app and check that the scatterplot displays and reacts to the chosen city and span parameter.\n\n\n\n\n\n\nStop to Reflect\n\n\n\n\n\nWhat challenges are you encountering as we go through this new material? What parts of your interactions with your partner have been helpful or less helpful for your learning today?"
+  },
+  {
+    "objectID": "04-interactive-viz.html#exercise-5-turn-plots-into-plotlys",
+    "href": "04-interactive-viz.html#exercise-5-turn-plots-into-plotlys",
+    "title": "Interactive visualization",
+    "section": "Exercise 5: Turn plots into plotlys",
+    "text": "Exercise 5: Turn plots into plotlys\nIn a web application, having plots be plotly objects is just nice by default because of the great mouseover, zoom, and pan features.\nInside app.R, change all instances of plotOutput to plotlyOutput and all instances of renderPlot to renderPlotly. Make sure to add calls to ggplotly() too."
   },
   {
     "objectID": "05-data-types.html",
@@ -245,6 +252,13 @@
     "text": "Required parts\n\nFinish the Open-ended Exercise in our Advanced Map Visualization class activity.\n\nSubmission details: Click the “Render” button to create an HTML report from your Quarto file. Open the HTML in your web browser and save the webpage as a PDF (Ctrl-P/Command P, choose “Save as PDF” as the Destination). Submit this PDF on Moodle AND the .qmd file by midnight on Wednesday, 9/20.\n\nComplete Milestone 1 of the course project. (Brainstorming ideas and data sources). Put this information in a # Project section that you add to the end of your 03-adv-maps.qmd.\n\n\n\nOptional\nParticipate in the most recent Tidy Tuesday challenge."
   },
   {
+    "objectID": "homework3.html",
+    "href": "homework3.html",
+    "title": "Homework 3",
+    "section": "",
+    "text": "Required parts\n\nFinish the Shiny app from the interactive viz class activity up to the minimum requirements.\n\nSubmission details: Submit the app.R file on Moodle by midnight on Wednesday, 9/27.\n\nWork towards Milestone 2 of the course project. (Nothing to turn in for Homework 3, but you should be making progress.)\n\n\n\nOptional\nParticipate in the most recent Tidy Tuesday challenge."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "STAT/COMP 212: Intermediate Data Science (Fall 2023)",
@@ -255,26 +269,33 @@
     "objectID": "index.html#section",
     "href": "index.html#section",
     "title": "STAT/COMP 212: Intermediate Data Science (Fall 2023)",
-    "section": "9/14",
-    "text": "9/14\n\nBefore next Tuesday’s class\n\nCheck the Schedule page. There is a short podcast segment (~7 min) to listen to and one guiding question to answer. This podcast segment shares a bit of wisdom about when it is/isn’t useful to make fancy visualizations.\nInstall the shiny and plotly packages. Post on the #questions channel on Slack if you run into problems. (Share your commands and error messages.)\n\nNext Thursday we will be having facilitators come in for the last hour of class for the Classroom Community and Connectedness Survey. (I will be leaving.)\n\nWe will use the first 30 to get our course projects moving forward."
+    "section": "9/19",
+    "text": "9/19\n\nOn Thursday:\n\nWe will spend the first 30 moving our course projects moving forward.\nIn the last hour of class, facilitators will come in to run an activity for the Classroom Community and Connectedness Survey. (I will be leaving.) A reminder of why this activity is important to me from our syllabus:\n“A sense of community and connectedness can provide a powerful environment for learning: Research shows that learning is maximized when students feel a sense of belonging in the educational environment (e.g., Booker, 2016). A negative climate may create barriers to learning, while a positive climate can energize students’ learning (e.g., Pascarella & Terenzini, cited in How Learning Works, 2012).”"
   },
   {
     "objectID": "index.html#section-1",
     "href": "index.html#section-1",
     "title": "STAT/COMP 212: Intermediate Data Science (Fall 2023)",
-    "section": "9/12",
-    "text": "9/12\n\nHomework 1 due Wednesday at midnight (Finishing up the temperature + precipitation plots from last Tuesday)\n\nUpdated submission instructions can be found here. (Also in the most recent Moodle announcement.)\n\nHomework 2 due next Wednesday, 9/20 has two parts:\n\nFinish Open-ended Exercise from today’s Advanced Map Visualization activity.\nComplete Milestone 1 of the course project\n\nThere is a final version of our syllabus that incorporates the learning goals and grading option that we discussed on our first day."
+    "section": "9/14",
+    "text": "9/14\n\nBefore next Tuesday’s class\n\nCheck the Schedule page. There is a short podcast segment (~7 min) to listen to and one guiding question to answer. This podcast segment shares a bit of wisdom about when it is/isn’t useful to make fancy visualizations.\nInstall the shiny and plotly packages. Post on the #questions channel on Slack if you run into problems. (Share your commands and error messages.)\n\nNext Thursday we will be having facilitators come in for the last hour of class for the Classroom Community and Connectedness Survey. (I will be leaving.)\n\nWe will use the first 30 to get our course projects moving forward."
   },
   {
     "objectID": "index.html#section-2",
     "href": "index.html#section-2",
     "title": "STAT/COMP 212: Intermediate Data Science (Fall 2023)",
-    "section": "9/7",
-    "text": "9/7\n\nI’ll be adding a new version of the syllabus to our course website that incorporates our final choice for grading system and the learning goals that you contributed.\nComplete the pre-course survey by 3pm today to shape when I hold drop-in hours (office hours).\nLook at the updated Schedule page. We have Guiding Questions for next Tuesday’s class: advanced map visualization.\n\nNote that Guiding Questions never have to be turned in. Do answer them to the best of your ability before class. We’ll spend time at the start of class checking in on these."
+    "section": "9/12",
+    "text": "9/12\n\nHomework 1 due Wednesday at midnight (Finishing up the temperature + precipitation plots from last Tuesday)\n\nUpdated submission instructions can be found here. (Also in the most recent Moodle announcement.)\n\nHomework 2 due next Wednesday, 9/20 has two parts:\n\nFinish Open-ended Exercise from today’s Advanced Map Visualization activity.\nComplete Milestone 1 of the course project\n\nThere is a final version of our syllabus that incorporates the learning goals and grading option that we discussed on our first day."
   },
   {
     "objectID": "index.html#section-3",
     "href": "index.html#section-3",
+    "title": "STAT/COMP 212: Intermediate Data Science (Fall 2023)",
+    "section": "9/7",
+    "text": "9/7\n\nI’ll be adding a new version of the syllabus to our course website that incorporates our final choice for grading system and the learning goals that you contributed.\nComplete the pre-course survey by 3pm today to shape when I hold drop-in hours (office hours).\nLook at the updated Schedule page. We have Guiding Questions for next Tuesday’s class: advanced map visualization.\n\nNote that Guiding Questions never have to be turned in. Do answer them to the best of your ability before class. We’ll spend time at the start of class checking in on these."
+  },
+  {
+    "objectID": "index.html#section-4",
+    "href": "index.html#section-4",
     "title": "STAT/COMP 212: Intermediate Data Science (Fall 2023)",
     "section": "9/5",
     "text": "9/5\nTo do before class on Thursday:\n\nSet up R and RStudio using these instructions.\nJoin our Slack workspace.\n\nUpdate your Slack profile with preferred name, pronouns, name pronunciation. (To find your profile, click on your name under Direct Messages on the left menu, and click “Edit Profile”.)\nIntroduce yourself in the #general channel.\n\nComplete the pre-course survey.\nLook at the Guiding Questions for Thursday’s class on advanced ggplot2.\nTake a look at Homework 0.\n\nThis is a personal essay that doesn’t need to be turned in.\nTopic: Your 10-year vision\nMy hope is that writing this allows gives you more clarity on how to align what you do this semester (and beyond) with who/what/how you want to be.\n\nFinish writing your 12 favorite problems and post them in the #12-favorite-problems channel on Slack.\n\nWhen you connect with peers from Thursday onward, you’ll be using your 12FPs to get to know each other a bit first before working on activities together."
@@ -298,7 +319,7 @@
     "href": "project.html#milestone-2",
     "title": "Project",
     "section": "Milestone 2",
-    "text": "Milestone 2\nFinalize one initial data source and questions related to that source. Form project teams. Each team member should create 1 “ugly” (not fully polished) visualization to demonstrate viability of the research questions. (Think of this as visualization “prototyping”.)\nDue date: Wednesday, 9/27 as part of HW3."
+    "text": "Milestone 2\nForm project teams. Finalize one initial data source and questions related to that source. Each team member should create 1 “ugly” (not fully polished) visualization to demonstrate viability of the research questions. (Think of this as visualization “prototyping”.)\nDue date: Wednesday, 10/4 as part of HW4."
   },
   {
     "objectID": "project.html#milestone-3",
@@ -326,7 +347,7 @@
     "href": "schedule.html",
     "title": "Schedule",
     "section": "",
-    "text": "Readings in the schedule below refer to the following two textbooks (freely available online):\n\nModern Data Science with R (3e) by Baumer, Kaplan, and Horton (Abbreviated as MDSR)\nR for Data Science (2e) by Wickham, Cetinkaya-Rundel, and Grolemund (Abbreviated as R4DS)\n\nGuiding questions for the readings are available at the bottom of this page.\n\n\n\n  \n    Week\n    Tuesday\n    Thursday\n    Announcements\n  \n\n\n\n  \n    1\n    \n    \n      9/5: Welcome! Meeting each other and designing our learning community \n      Before class: Review the syllabus and think about the questions posed in the green \"Reflect\" blocks.\n    \n    \n      9/7: Advanced visualization in ggplot \n      Before class: Review the construction of plots from STAT 112 and STAT 155. Answer the Guiding Questions at the bottom of this page. \n    \n    \n    \n      Work on HW0 (your 10-year vision, doesn't need to be turned in).Look ahead to HW1\n    \n  \n  \n  \n  \n  \n    2\n    \n      9/12: Advanced map visualization \n      Before class: Watch this video on Coordinate Reference Systems, and answer the Guiding Questions at the bottom of this page.\n    \n    \n    \n      9/14: Advanced map visualization (continued) \n    \n    \n    Turn in HW1 by midnight on Wed 9/13. Look ahead to HW2 due Wednesday 9/20 at midnight.\n  \n  \n  \n  \n  \n    3\n    \n      9/19: Interactive visualization \n      Before class: Listen to this podcast from Chapter 7 (timestamp 18:09) through Chapter 8 (ending at timestamp 25:27). Answer the Guiding Question at the bottom of this page. Install the \"shiny\" and \"plotly\" R packages.\n    \n    \n    \n      9/21: Classroom Community and Connectedness (CC&C) Survey \n      For the first 30 minutes, we will work towards forming project teams. In the last hour of class, CC&C facilitators will come in to run an activity on how community-building is going in our course. \n      Before class: Find a TidyTuesday dataset that you would be interested in exploring for a mini-project. \n    \n    \n    Turn in HW2 by midnight on Wednesday 9/20. Look ahead to HW3.\n  \n  \n  \n  \n  \n    4\n    \n      9/26: Working with different data classes (Part 1) \n      Before class: (NOT FINAL YET) Group 1 reads Chapter 13 (Logicals) of R4DS. Group 2 reads Chapter 14 (Numbers). Group 3 reads Chapter 18 (Dates/Times). \n    \n    \n    \n      9/28: Working with different data classes (Part 2) \n      Before class: (NOT FINAL YET) Read Chapter 15 (Strings), Chapter 16 (Regular Expressions), and Chapter 17 (Factors) of R4DS. \n    \n    \n    Turn in HW3. Look ahead to HW4.\n  \n  \n  \n  \n  \n    5\n    \n      10/3: Writing functions \n      Before class: (NOT FINAL YET) Read Chapter 26 (Functions) and Section 13.1 (if-else). \n    \n    \n    \n      10/5: Loops and iteration \n      Before class: (NOT FINAL YET) Read Chapter 27 (Iteration) and the following parts of this tutorial: Up through (and including) \"Simplest usage: repeated looping with map\" \n    \n    \n    Turn in HW4. Look ahead to HW5.\n  \n  \n  \n  \n  \n    6\n    \n      10/10: Iteration with purrr \n      Before class: (NOT FINAL YET) Read the remainder of this purrr tutorial. \n    \n    \n    \n      10/12: Data acquisition: databases \n      Before class: (NOT FINAL YET) Read Chapter 22 (Databases). \n    \n    \n    Turn in HW5. Look ahead to HW6.\n  \n  \n  \n  \n  \n    7\n    \n      10:17: Data acquisition: APIs \n      Before class: (NOT FINAL YET) Read Getting started with httr \n    \n    \n    \n      10/19: Data acquisition: Scraping \n      Before class: (NOT FINAL YET) Read the rvest vignette \n    \n    \n    Turn in HW6. Look ahead to HW7."
+    "text": "Readings in the schedule below refer to the following two textbooks (freely available online):\n\nModern Data Science with R (3e) by Baumer, Kaplan, and Horton (Abbreviated as MDSR)\nR for Data Science (2e) by Wickham, Cetinkaya-Rundel, and Grolemund (Abbreviated as R4DS)\n\nGuiding questions for the readings are available at the bottom of this page.\n\n\n\n  \n    Week\n    Tuesday\n    Thursday\n    Announcements\n  \n\n\n\n  \n    1\n    \n    \n      9/5: Welcome! Meeting each other and designing our learning community \n      Before class: Review the syllabus and think about the questions posed in the green \"Reflect\" blocks.\n    \n    \n      9/7: Advanced visualization in ggplot \n      Before class: Review the construction of plots from STAT 112 and STAT 155. Answer the Guiding Questions at the bottom of this page. \n    \n    \n    \n      Work on HW0 (your 10-year vision, doesn't need to be turned in).Look ahead to HW1\n    \n  \n  \n  \n  \n  \n    2\n    \n      9/12: Advanced map visualization \n      Before class: Watch this video on Coordinate Reference Systems, and answer the Guiding Questions at the bottom of this page.\n    \n    \n    \n      9/14: Advanced map visualization (continued) \n    \n    \n    Turn in HW1 by midnight on Wed 9/13. Look ahead to HW2 due Wednesday 9/20 at midnight.\n  \n  \n  \n  \n  \n    3\n    \n      9/19: Interactive visualization \n      Before class: Listen to this podcast from Chapter 7 (timestamp 18:09) through Chapter 8 (ending at timestamp 25:27). Answer the Guiding Question at the bottom of this page. Install the \"shiny\" and \"plotly\" R packages.\n    \n    \n    \n      9/21: Classroom Community and Connectedness (CC&C) Survey \n      For the first 30 minutes, we will move our course projects forward. In the last hour of class, CC&C facilitators will come in to run an activity on how community-building is going in our course.\n    \n    \n    Turn in HW2 by midnight on Wednesday 9/20. Look ahead to HW3.\n  \n  \n  \n  \n  \n    4\n    \n      9/26: Working with different data classes (Part 1) \n      Before class: (NOT FINAL YET) Group 1 reads Chapter 13 (Logicals) of R4DS. Group 2 reads Chapter 14 (Numbers). Group 3 reads Chapter 18 (Dates/Times). \n    \n    \n    \n      9/28: Working with different data classes (Part 2) \n      Before class: (NOT FINAL YET) Read Chapter 15 (Strings), Chapter 16 (Regular Expressions), and Chapter 17 (Factors) of R4DS. \n    \n    \n    Turn in HW3 Look ahead to HW4.\n  \n  \n  \n  \n  \n    5\n    \n      10/3: Writing functions \n      Before class: (NOT FINAL YET) Read Chapter 26 (Functions) and Section 13.1 (if-else). \n    \n    \n    \n      10/5: Loops and iteration \n      Before class: (NOT FINAL YET) Read Chapter 27 (Iteration) and the following parts of this tutorial: Up through (and including) \"Simplest usage: repeated looping with map\" \n    \n    \n    Turn in HW4. Look ahead to HW5.\n  \n  \n  \n  \n  \n    6\n    \n      10/10: Iteration with purrr \n      Before class: (NOT FINAL YET) Read the remainder of this purrr tutorial. \n    \n    \n    \n      10/12: Data acquisition: databases \n      Before class: (NOT FINAL YET) Read Chapter 22 (Databases). \n    \n    \n    Turn in HW5. Look ahead to HW6.\n  \n  \n  \n  \n  \n    7\n    \n      10:17: Data acquisition: APIs \n      Before class: (NOT FINAL YET) Read Getting started with httr \n    \n    \n    \n      10/19: Data acquisition: Scraping \n      Before class: (NOT FINAL YET) Read the rvest vignette \n    \n    \n    Turn in HW6. Look ahead to HW7."
   },
   {
     "objectID": "schedule.html#advanced-visualization-in-ggplot",
@@ -371,25 +392,11 @@
     "text": "As we gather…\nSit next to someone new. Share a favorite problem that helps you feel curious this week. In talking with your partner, what connections do you see to your own FPs?\nQuote of the day:\n\nThe more stuff you love the happier you will be.\n― Ross Gay, The Book of Delights\n\nOpen up your Process and Reflection Log (Google Doc).\n\nReshare it with me so that I can be a Commenter, and check the “Notify people” box.\nLeave it open. We are going to stop and reflect a few times today."
   },
   {
-    "objectID": "slides/04-interactive-viz.html#why-use-interactive-visualization",
-    "href": "slides/04-interactive-viz.html#why-use-interactive-visualization",
+    "objectID": "slides/04-interactive-viz.html#as-we-gather",
+    "href": "slides/04-interactive-viz.html#as-we-gather",
     "title": "Interactive visualization (Part 1)",
-    "section": "Why use interactive visualization?",
-    "text": "Why use interactive visualization?\nExamples:\n\nHow Music is Remembered\n\nFinding corresponding information in multiple views\n\n30 Years of American Anxieties\nWhen Women Make Headlines"
-  },
-  {
-    "objectID": "slides/04-interactive-viz.html#use-cases-for-interactivity",
-    "href": "slides/04-interactive-viz.html#use-cases-for-interactivity",
-    "title": "Interactive visualization (Part 1)",
-    "section": "Use cases for interactivity",
-    "text": "Use cases for interactivity\n\nChanging data representation: This is about changing the way that certain variables are displayed in a visualization. Often times, this is about changing the plot type.\nFocusing and getting details: Mousing over a plot element to see an exact data value. Zooming and panning. Common use case\nData transformation\nData selection and filtering: Highlighting and brushing. Also reordering for tables and matrices. Common use case\nFinding corresponding information in multiple views: Seeing a given case highlighted within multiple plots. Common use case"
-  },
-  {
-    "objectID": "slides/04-interactive-viz.html#the-plotly-package",
-    "href": "slides/04-interactive-viz.html#the-plotly-package",
-    "title": "Interactive visualization (Part 1)",
-    "section": "The plotly package",
-    "text": "The plotly package\n\nlibrary(plotly)\nlibrary(babynames)\n\nbnames &lt;- babynames %&gt;% filter(name %in% c(\"Leslie\", \"Margaux\"))\n\np &lt;- ggplot(bnames, aes(x = year, y = prop, color = sex, linetype = name)) +\n    geom_line()\np\n\n# ggplotly(p)"
+    "section": "As we gather…",
+    "text": "As we gather…\nThink about what makes learning new code challenging for you and what strategies tend to work well or less well. You will work with someone random (and possibly new)–how can you best support your own and their learning?\nQuote of the day:\n\nIn fact, in addition to the fact that we all die, the most salient or unifying feature of we the living is that we cannot survive without help.\n― Ross Gay, Inciting Joy\n\nOpen up your Process and Reflection Log (Google Doc).\n\nLeave it open. We are going to stop and reflect a few times today."
   },
   {
     "objectID": "slides/day1.html#plan-for-today",

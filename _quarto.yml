@@ -42,7 +42,7 @@ website:
         - 02-adv-ggplot.qmd
         - 03-adv-maps.qmd
         - workflow_files_rstudio.qmd
-        # - 04-interactive-viz.qmd
+        - 04-interactive-viz.qmd
         # - 05-data-types.qmd
         # - 06-functions-control-structs.qmd
 
@@ -52,6 +52,7 @@ website:
         - homework0.qmd
         - homework1.qmd
         - homework2.qmd
+        - homework3.qmd
 
 format:
   html:

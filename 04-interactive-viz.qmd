@@ -11,30 +11,13 @@ After this lesson, you should be able to:
 - Construct interactive visualizations and animations with `plotly`
 - Build a Shiny app that enables user to adjust visualization choices and explore linked visualizations
 
+<br>
+
+Slides for today are available [here](slides/04-interactive-viz.qmd). (For our main activity, we will be using the rest of the webpage below.)
 
 
-# Motivation: recreating an interactive visualization app
+<br><br><br>
 
-[This interactive application](https://walkerke.shinyapps.io/neighborhood_diversity/) made by Kyle Walker allows exploration of neighborhood diversity across time and space. It showcases major packages and features of interactive visualization. Our goal is to recreate this app from scratch.
-
-## Pair "programming" exercise
-
-Catalog the app's **layout** and **interactivity features** as part of the app planning phase.
-
-- **Navigator**: Open up the [neighborhood diversity app](https://walkerke.shinyapps.io/neighborhood_diversity/) for reference. The Navigator should explore the interactive features of the app and help the Driver sketch out a schematic of the app.
-
-- **Driver:** On a sheet of paper, sketch the layout and general features of the app as the Navigator navigates. Draw arrows to indicate what parts of the app update in response to user input. Your sketch might start off looking like this:
-
-![](images/04_example_schematic.png)
-
-::: {.callout-tip collapse="false"}
-## Stop to Reflect
-
-How has pair programming become easier and harder? 
-
-What do you need from your partner and what does your partner need from you?
-
-:::
 
 # Background
 
@@ -42,7 +25,8 @@ What do you need from your partner and what does your partner need from you?
 
 Pros
 
-- Can explore peculiarities more quickly with linked representations
+- Users can click, hover, zoom, and pan to get more detailed information
+- Users can get quickly and deeply explore the data via linked data representations
 - Allows guided exploration of results without needing to share data
 
 Cons
@@ -61,112 +45,261 @@ Common features of interactive visualizations include ([reference](https://link.
 - Data selection and filtering: highlighting and brushing regions of a plot to focus the selected points; reordering and filtering data show in tables
 - Finding corresponding information in multiple views: linked views that update dynamically based on interaction in another plot (often by zooming, panning, or selecting certain points)
 
-## Shiny
+
+<br><br><br>
+
+
+# Motivation: recreating an interactive visualization app
+
+[This interactive application](https://walkerke.shinyapps.io/neighborhood_diversity/) made by Kyle Walker allows exploration of neighborhood diversity across time and space. It showcases major packages and features of interactive visualization. Our goal is to recreate the core parts of this app from scratch!
+
+::: {.callout-tip collapse="false"}
+## Stop to Reflect
+
+Think about what makes learning new code challenging for you and what strategies tend to work well or less well. You will work with someone random (and possibly new)--how can you best support your own and their learning? Write a few sentences in your Process and Reflection Log.
+:::
+
+## Exercise 0: App planning
+
+Catalog the app's **layout** and **interactivity features** as part of the app planning phase.
+
+- **Navigator**: Open up the [neighborhood diversity app](https://walkerke.shinyapps.io/neighborhood_diversity/) for reference. The Navigator should explore the interactive features of the app and help the Driver sketch out a schematic of the app.
+
+- **Driver:** Sketch the layout and general features of the app as the Navigator navigates. Draw arrows to indicate what parts of the app update in response to user input.
+
+::: {.callout-tip collapse="false"}
+## Reflect: App design
+
+Is the interactivity in this app needed? Does the interactivity actually help you gain more insight (and perhaps more efficiently) than a series of static visualizations? What static visualizations *might* be more useful?
+:::
+
+
+<br><br><br>
+
+
+# Shiny
 
 The neighborhood diversity app was made with the Shiny toolkit available in the `shiny` R package. Shiny facilitates building interactive web applications using R code without needing extensive knowledge of web coding technologies (e.g., HTML, CSS, and Javascript).
 
 Let's look at an example app together. RStudio will create a template app when you go to File \> New File \> Shiny Web App. The **application name** can be `neighborhood_diversity`, and the **application type** can stay as the default "Single file (app.R)". This creates a folder in your current directory called `neighborhood_diversity` with a single R code file called `app.R`.
 
-Click the Run App button to view the app in action.
+Click the Run App button in the top right of the source code editor to view the app in action.
 
 The `app.R` has three components:
 
 - a user interface object (`ui`): this sets up the layout of the app
 - a server function (`server`): this defines how the app will react to user input
-- a call to the `shinyApp()` function: this launches the app
+- a call to the `shinyApp()` function: this launches the app using the UI object (`ui`) and server function (`server`) created above
 
-### Building the user interface (UI)
+**Download and leave open the [Shiny cheatsheet](https://rstudio.github.io/cheatsheets/shiny.pdf).**
 
-The first step in building a Shiny application is to set up the layout, or the User Interface (UI).
+## Exercise 1: Setup and getting acquainted 
 
-Open up the [Shiny cheatsheet](https://rstudio.github.io/cheatsheets/shiny.pdf), and look at the Layouts section on the right side of the second page. Which layout pieces can we use to recreate the [neighborhood diversity app](https://walkerke.shinyapps.io/neighborhood_diversity/)?
+**Setup part 1:** Load required packages at the top of `app.R`: `shiny`, `tidyverse`, `sf`, and `plotly`.
+
+**Setup part 2:** Data download and folder setup
+
+Navigate to the "Data for interactive viz activity" [folder](https://moodle.macalester.edu/mod/folder/view.php?id=38829) on Moodle and save the two files with the folder setup below:
+- 📂 `YOUR_CLASS_FOLDER`
+    - 📂 `interactive_viz`
+        - 📂 `neighborhood_diversity`
+            - `app.R`
+            - 📂 `data`
+                - `data_by_dist.rds`
+                - `data_by_year.csv`
+
+**Setup part 3:** Below your `library()` calls, add the following commands to read in the data:
+
+```{r eval=FALSE}
+data_by_dist <- read_rds("Enter the correct relative path to data_by_dist.rds")
+data_by_year <- read_csv("Enter the correct relative path to data_by_year.csv")
+```
+
+**Getting acquainted with the app and underlying code:** Open [this PDF](images/shiny_code_diagram.pdf) or have the code printout distributed at the start of class in front of you. Also have the app running in your browser.
+
+- Draw lines on the printout/PDF of what visual parts of the app correspond to which parts of code.
+- What names/labels in the User Interface (`ui`) part of the app seem to be shared with the `server` part of the app? (Draw lines between the `ui` and `server` parts of the code.)
+
+::: {.callout-tip collapse="false"}
+## Stop to Share
+
+As you work on the "Getting acquainted" part of this exercise, share with your partner some struggles you have with code and some strategies that you have tried.
+:::
+
+## `*Input()` functions
+
+### Background
+
+The `*Input()` functions collect inputs from the user. The various types are listed on the right-hand side of the first page of the cheatsheet. You will list all the `*Input()` functions you want to use with their accompanying arguments inside the `fluidPage()` function in the `ui` portion. Separate the `*Input()` functions with commas.
+
+In all the `*Input()` functions, the first two arguments are the same:
+
+- `inputId` is how you will refer to this input in the `server` portion later
+- `label` is how this will actually be labeled in your UI (what text shows up in the app)
+
+Each function has some additional arguments depending what you want to do.
+
+### Exercise 2: Add `*Input()`s
+
+Add the following two user inputs to your app:
+
+- Dropdown to select the city name
+- Slider to choose the span parameter for the scatterplot smooth
+
+Use the Shiny cheatsheet to find the `*Input()` functions that correspond to the two inputs above. Add them to the appropriate place within the `ui` object. Use commas to separate the inputs. You will have to look at the **documentation** for the `*Input()` functions to know how to use arguments beyond `inputId` and `label`. To view this documentation, type `?function_name` in the Console.
+
+To get the collection of city names from the `data_by_dist` dataset, you can use the `pull()` and `unique()` functions. Save the city names in an object called `metro_names`---this code can go just beneath where you read in the data.
+
+Once you finish, run your app. Make sure you can select and move things around as expected. You won't see any plots yet--we'll work on those in the next exercises.
 
 
+## `*Output()` functions
+
+### Background
+
+`*Output()` functions in the `ui` portion work with the `render*()` functions in the server portion to to add R output to the UI. The `*Output()` functions are listed in the bottom center part of the first page of the cheatsheet.
+
+All the `*Output()` functions have the same first argument, `outputId`, which is used how you will refer to this output in the server portion later (like the `inputId` in the `*Input()` functions).
+
+### Exercise 3: Add `*Output()`s
+
+Add 3 `plotOutput()`s to the `ui` that will eventually be:
+
+- A scatterplot of diversity score (`entropy`) versus distance to city hall (`distmiles`) with a smoothing line (smoothness controlled by the span parameter on your slider input)
+- A map of diversity scores across the counties in the selected city
+- A bar chart of the overall race distribution in the selected city (i.e., the total number of people in each race category in the city)
+
+For now, don't worry that the layout of the plots exactly matches the original neighborhood diversity app. (You will update this in your homework.)
+
+Run the app with the output. Notice that nothing really changes. Think of the outputs you just placed as placeholders---the app knows there will be a plot in the UI, but the details of what the plots will look like and the R code to create them will be in the `server` portion. Let’s talk about that now!
 
 
+## `render*()` functions
 
+The `render*()` functions go in the `server` function of the app. The `render*()` functions use R code (i.e., standard `ggplot` code) to communicate with ("listen to") the user inputs to create the desired output.
 
+The `render*()` function you use will depend on the desired output. The bottom center of the cheatsheet shows how `*Output()` and `render*()` functions connect.
+
+In general, the server section of code will look something like this:
+
+```{r eval=FALSE}
+server <- function(input, output) {
+    output$outputId_of_interest <- render*({ # Note the curly braces that enclose the R code below
+        # R code that creates the output and calls various input$InputId's
+    })
+}
+```
+
+Example: Suppose that inside `ui`, we used `plotOutput(outputId = "timeplot")`:
+
+- In the `server` function, we would use `output$timeplot <- renderPlot({...})`.
+    - The `...` would be replaced by detailed R plotting code.
+    - To reference the inputs we create in the `ui`, we use `input$inputID_name`. e.g., if we had an `*Input()` with `inputId = "years"`, we would use `input$years` in the `server` function.
+    
+### Exercise 4: Add `renderPlot()`
+
+While our main goals is to make 3 plots, you will just make one of them in this exercise.
+
+Add a `renderPlot()` functions inside the `server` portion of the code to make the scatterplot of diversity score (`entropy`) versus distance to city hall (`distmiles`) with a smoothing line. Reference the inputs you’ve already created in previous exercises by using `filter()` and `ggplot()` to render the desired interactive plot.
+
+*Note:* the `geom_???` used to create the smoothing line has a `span` parameter. (Check out the documentation for that geom by entering `?geom_???` in the Console.)
+
+Run the app and check that the scatterplot displays and reacts to the chosen city and span parameter.
 
 ::: {.callout-tip collapse="false"}
 ## Stop to Reflect
 
-How do you learn best, without getting overwhelmed? Consider approaches that have worked for you and discuss with your partner. Notice similarities and differences in how you learn best.  
-
+What challenges are you encountering as we go through this new material? What parts of your interactions with your partner have been helpful or less helpful for your learning today?
 :::
 
 
+<br><br><br>
 
-# Various notes
 
-Examples of Shiny apps
+# The `plotly` package
 
-- https://walkerke.shinyapps.io/neighborhood_diversity/
-- Might also be fun to look at Macalester data for the dashboard
-- https://github.com/grabear/awesome-rshiny
-
-Reading resources on Shiny and Plotly
-
-- https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html
-- https://github.com/rstudio/shiny-examples
-- https://plotly-r.com/index.html
-
-## The `plotly` package
+The `plotly` package provides tools for creating interactive web graphics and is a nice complement to Shiny. 
 
 ```{r}
 library(plotly)
 ```
 
-One use case:
+A wonderful feature of `plotly` is that an interactive graphic can be constructed by taking a regular `ggplot` graph and putting it inside the `ggplotly()` function:
 
-```{r}
+```{r eval=FALSE}
 data(babynames, package = "babynames")
-bnames <- babynames %>% filter(name %in% c("Leslie", "Margaux"))
+bnames <- babynames %>% filter(name %in% c("Leslie", "Lesley"))
 p <- ggplot(bnames, aes(x = year, y = prop, color = sex, linetype = name)) +
-    geom_line()
-# ggplotly(p)
+    geom_line() +
+    theme_classic() +
+    labs(x = "Year", y = "Proportion of names", color = "Gender", linetype = "Name")
+ggplotly(p)
 ```
 
-Another use case: animate
+The `plotly` package can also create animations by incorporating `frame` and `ids` aesthetics.
 
-```{r}
+- `frame = year`: This makes the frame of the animation correspond to year--so the animation shows changes across time (years).
+- `ids = country`: This ensures smooth transitions between objects with the same `id` (which helps facilitate object constancy throughout the animation). Here, each point is a country, so this makes the animation transition smoothly from year to year for a given country. (For more information, see [here](https://plotly-r.com/animating-views).)
+
+```{r eval=FALSE}
 data(gapminder, package = "gapminder")
-p <- ggplot(gapminder, aes(gdpPercap, lifeExp, color = continent)) +
-    geom_point(aes(size = pop, frame = year, ids = country)) +
+p <- ggplot(gapminder, aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +
+    geom_point(aes(frame = year, ids = country)) +
     scale_x_log10() +
+    labs(x = "GDP per capita", y = "Life expectancy (years)", color = "Continent", size = "Population") +
     theme_classic()
-# ggplotly(p)
+ggplotly(p)
 ```
 
-## Ideas
+## Exercise 5: Turn `plot`s into `plotly`s
 
-Teach students about the `flexdashboard` package (https://pkgs.rstudio.com/flexdashboard/index.html). (Maybe put this as homework?)
+In a web application, having plots be `plotly` objects is just nice by default because of the great mouseover, zoom, and pan features. 
 
--   https://epirhandbook.com/en/dashboards-with-r-markdown.html
--   [Paper on dashboard design patterns](https://arxiv.org/pdf/2205.00757.pdf) and https://dashboarddesignpatterns.github.io/
--   https://www.datapine.com/blog/dashboard-design-principles-and-best-practices/#dashboard-design-best-practices (Googled "theory of dashboard design")
-
-Teach students about plotly and shiny--does flexdashboard intersect with plotly and/or shiny?
-
-The [Novel Coronavirus Research Compendium (NCRC)](https://ncrc.jhsph.edu/): triage system was built with Shiny. (Slides on the process: https://jscholarship.library.jhu.edu/bitstream/handle/1774.2/62834/2020%20JHAllLibrariesLobner.pdf?sequence=1). I can't seem to find the actual Shiny app.
+Inside `app.R`, change all instances of `plotOutput` to `plotlyOutput` and all instances of `renderPlot` to `renderPlotly`. Make sure to add calls to `ggplotly()` too.
 
 
+<br><br><br>
 
-## Theory of dashboard design
 
-Lead-in activity
+# Homework 
 
--   Show an example of two dashboards (or more) and have them compare the dashboards
--   Or maybe a single interface that is familiar to them
-    -   School-related possibilities: Moodle, DegreeWorks, 1600Grand
-    -   Mobile app
-    -   Xcel energy
--   Split students into groups where some groups look at a multipage PDF of visualizations--arising from the same plot on different subsets of data. The other group gets to look at an interactive visualization.
+**Minimum requirements for your app:**
 
-![](https://www.datapine.com/blog/wp-content/uploads/2023/04/25-dashboard-design-tips.png)
+- Have a dropdown of available cities
+- Have a sliding input to control the span parameter for scatterplot smoothing lines
+- The following plots should update in response to changing the selected city in the dropdown:
+    - A scatterplot of diversity score (`entropy`) versus distance to city hall (`distmiles`) with a smoothing line (smoothness controlled by the span parameter on your slider input)
+    - A map of diversity scores across the counties in the selected city
+    - A bar chart of the overall race distribution in the selected city (i.e., the total number of people in each race category in the city)
+- Add a tab layout to your app to match the original app (3 tabs: "Explore metros", "Compare over time", and "About")
+    - Have the layout in the "Explore metros" tab match that of the original app
+    
+**Submission details:** Submit the `app.R` file on [Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=38956) by midnight on Wednesday, 9/27.
 
-1.  Consider your audience
-    -   Who will be using the dashboard and what information do they need?
-2.  Determine your goals
-3.  Choose relevant metrics to display
-4.  Tell a story with your data
-5.  Provide context
+**Extra:** If you want to keep practicing and learning more features, add the following layout updates and functionality to your app:
+
+- In the "Compare over time" tab (still using the same selected city from the original dropdown):
+    - Add a line graph of diversity score versus distance to city hall with different color lines corresponding to 1990, 2000, 2010, and 2020
+    - Add 4 maps that show diversity scores across counties in 1990, 2000, 2010, and 2020
+- Recreate the text giving directions for using the app that appears in the left sidebar of the original app. Try to get exactly the same formatting.
+
+
+<br><br><br>
+
+
+# Further Resources
+
+- The `flexdashboard` [package](https://pkgs.rstudio.com/flexdashboard/index.html) provides another way to create the user interface of an interactive application.
+    - [A nice tutorial on `flexdashboard`](https://epirhandbook.com/en/dashboards-with-r-markdown.html)
+- Theory of dashboard design
+    - [Paper on dashboard design patterns](https://arxiv.org/pdf/2205.00757.pdf)
+    - [Dashboard Design Patterns](https://dashboarddesignpatterns.github.io/)
+    - [Dashboard design principles and best practice](https://www.datapine.com/blog/dashboard-design-principles-and-best-practices/#dashboard-design-best-practices)
+- [Curated set of Shiny resources](https://github.com/grabear/awesome-rshiny)
+- [Getting started with Shiny](https://shiny.posit.co/r/getstarted/)
+- [Examples of Shiny apps](https://github.com/rstudio/shiny-examples)
+    - [Metropolitan Council's COVID wastewater monitor Shiny app](https://metrotransitmn.shinyapps.io/metc-wastewater-covid-monitor/)
+- [Online book about `plotly`](https://plotly-r.com/)
+
+<!-- The [Novel Coronavirus Research Compendium (NCRC)](https://ncrc.jhsph.edu/): triage system was built with Shiny. (Slides on the process: https://jscholarship.library.jhu.edu/bitstream/handle/1774.2/62834/2020%20JHAllLibrariesLobner.pdf?sequence=1). I can't seem to find the actual Shiny app. -->
+

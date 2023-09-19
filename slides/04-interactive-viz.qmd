@@ -5,35 +5,16 @@ format:
     scrollable: true
 ---
 
-## Why use interactive visualization?
+## As we gather...
 
-Examples:
+Think about what makes learning new code challenging for you and what strategies tend to work well or less well. You will work with someone random (and possibly new)--how can you best support your own and their learning?
 
-- [How Music is Remembered](https://pudding.cool/2020/07/song-decay/)
-    - Finding corresponding information in multiple views
-- [30 Years of American Anxieties](https://pudding.cool/2018/11/dearabby/)
-- [When Women Make Headlines](https://pudding.cool/2022/02/women-in-headlines/)
+Quote of the day:
 
-## Use cases for interactivity
+> In fact, in addition to the fact that we all die, the most salient or unifying feature of we the living is that we cannot survive without help.
+> 
+> ― Ross Gay, Inciting Joy
 
-- Changing data representation: This is about changing the way that certain variables are displayed in a visualization. Often times, this is about changing the plot type.
-- Focusing and getting details: Mousing over a plot element to see an exact data value. Zooming and panning. **Common use case**
-- Data transformation
-- Data selection and filtering: Highlighting and brushing. Also reordering for tables and matrices. **Common use case**
-- Finding corresponding information in multiple views: Seeing a given case highlighted within multiple plots. **Common use case**
+Open up your Process and Reflection Log (Google Doc).
 
-## The `plotly` package
-
-```{r echo=TRUE}
-library(plotly)
-library(babynames)
-
-bnames <- babynames %>% filter(name %in% c("Leslie", "Margaux"))
-
-p <- ggplot(bnames, aes(x = year, y = prop, color = sex, linetype = name)) +
-    geom_line()
-p
-
-# ggplotly(p)
-```
-
+- Leave it open. We are going to stop and reflect a few times today.

@@ -1,0 +1,15 @@
+---
+title: "Homework 3"
+sidebar: false
+---
+
+# Required parts
+
+- Finish the Shiny app from the [interactive viz class activity](04-interactive-viz.qmd#homework) up to the minimum requirements.
+    - Submission details: Submit the `app.R` file on [Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=38956) by midnight on Wednesday, 9/27.
+
+- Work towards [Milestone 2](project.qmd#milestone-2) of the [course project](project.qmd). (Nothing to turn in for Homework 3, but you should be making progress.)
+
+# Optional
+
+Participate in the most recent [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-09-19/readme.md) challenge.

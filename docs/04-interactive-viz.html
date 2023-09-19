@@ -158,6 +158,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./workflow_files_rstudio.html" rel="" target="">
  <span class="dropdown-text">Workflow: Files and RStudio setup</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./04-interactive-viz.html" rel="" target="">
+ <span class="dropdown-text">Interactive visualization</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -176,6 +180,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="./homework2.html" rel="" target="">
  <span class="dropdown-text">Homework 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework3.html" rel="" target="">
+ <span class="dropdown-text">Homework 3</span></a>
   </li>  
     </ul>
   </li>
@@ -204,25 +212,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals">Learning goals</a></li>
-  <li><a href="#motivation-recreating-an-interactive-visualization-app" id="toc-motivation-recreating-an-interactive-visualization-app" class="nav-link" data-scroll-target="#motivation-recreating-an-interactive-visualization-app">Motivation: recreating an interactive visualization app</a>
-  <ul class="collapse">
-  <li><a href="#pair-programming-exercise" id="toc-pair-programming-exercise" class="nav-link" data-scroll-target="#pair-programming-exercise">Pair “programming” exercise</a></li>
-  </ul></li>
   <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a>
   <ul class="collapse">
   <li><a href="#why-use-interactivity" id="toc-why-use-interactivity" class="nav-link" data-scroll-target="#why-use-interactivity">Why use interactivity?</a></li>
   <li><a href="#common-features-of-interactive-visualizations" id="toc-common-features-of-interactive-visualizations" class="nav-link" data-scroll-target="#common-features-of-interactive-visualizations">Common features of interactive visualizations</a></li>
+  </ul></li>
+  <li><a href="#motivation-recreating-an-interactive-visualization-app" id="toc-motivation-recreating-an-interactive-visualization-app" class="nav-link" data-scroll-target="#motivation-recreating-an-interactive-visualization-app">Motivation: recreating an interactive visualization app</a>
+  <ul class="collapse">
+  <li><a href="#exercise-0-app-planning" id="toc-exercise-0-app-planning" class="nav-link" data-scroll-target="#exercise-0-app-planning">Exercise 0: App planning</a></li>
+  </ul></li>
   <li><a href="#shiny" id="toc-shiny" class="nav-link" data-scroll-target="#shiny">Shiny</a>
   <ul class="collapse">
-  <li><a href="#building-the-user-interface-ui" id="toc-building-the-user-interface-ui" class="nav-link" data-scroll-target="#building-the-user-interface-ui">Building the user interface (UI)</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#various-notes" id="toc-various-notes" class="nav-link" data-scroll-target="#various-notes">Various notes</a>
+  <li><a href="#exercise-1-setup-and-getting-acquainted" id="toc-exercise-1-setup-and-getting-acquainted" class="nav-link" data-scroll-target="#exercise-1-setup-and-getting-acquainted">Exercise 1: Setup and getting acquainted</a></li>
+  <li><a href="#input-functions" id="toc-input-functions" class="nav-link" data-scroll-target="#input-functions"><code>*Input()</code> functions</a>
   <ul class="collapse">
-  <li><a href="#the-plotly-package" id="toc-the-plotly-package" class="nav-link" data-scroll-target="#the-plotly-package">The <code>plotly</code> package</a></li>
-  <li><a href="#ideas" id="toc-ideas" class="nav-link" data-scroll-target="#ideas">Ideas</a></li>
-  <li><a href="#theory-of-dashboard-design" id="toc-theory-of-dashboard-design" class="nav-link" data-scroll-target="#theory-of-dashboard-design">Theory of dashboard design</a></li>
+  <li><a href="#background-1" id="toc-background-1" class="nav-link" data-scroll-target="#background-1">Background</a></li>
+  <li><a href="#exercise-2-add-inputs" id="toc-exercise-2-add-inputs" class="nav-link" data-scroll-target="#exercise-2-add-inputs">Exercise 2: Add <code>*Input()</code>s</a></li>
   </ul></li>
+  <li><a href="#output-functions" id="toc-output-functions" class="nav-link" data-scroll-target="#output-functions"><code>*Output()</code> functions</a>
+  <ul class="collapse">
+  <li><a href="#background-2" id="toc-background-2" class="nav-link" data-scroll-target="#background-2">Background</a></li>
+  <li><a href="#exercise-3-add-outputs" id="toc-exercise-3-add-outputs" class="nav-link" data-scroll-target="#exercise-3-add-outputs">Exercise 3: Add <code>*Output()</code>s</a></li>
+  </ul></li>
+  <li><a href="#render-functions" id="toc-render-functions" class="nav-link" data-scroll-target="#render-functions"><code>render*()</code> functions</a>
+  <ul class="collapse">
+  <li><a href="#exercise-4-add-renderplot" id="toc-exercise-4-add-renderplot" class="nav-link" data-scroll-target="#exercise-4-add-renderplot">Exercise 4: Add <code>renderPlot()</code></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#the-plotly-package" id="toc-the-plotly-package" class="nav-link" data-scroll-target="#the-plotly-package">The <code>plotly</code> package</a>
+  <ul class="collapse">
+  <li><a href="#exercise-5-turn-plots-into-plotlys" id="toc-exercise-5-turn-plots-into-plotlys" class="nav-link" data-scroll-target="#exercise-5-turn-plots-into-plotlys">Exercise 5: Turn <code>plot</code>s into <code>plotly</code>s</a></li>
+  </ul></li>
+  <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework">Homework</a></li>
+  <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -254,36 +276,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Construct interactive visualizations and animations with <code>plotly</code></li>
 <li>Build a Shiny app that enables user to adjust visualization choices and explore linked visualizations</li>
 </ul>
-</section>
-<section id="motivation-recreating-an-interactive-visualization-app" class="level1">
-<h1>Motivation: recreating an interactive visualization app</h1>
-<p><a href="https://walkerke.shinyapps.io/neighborhood_diversity/">This interactive application</a> made by Kyle Walker allows exploration of neighborhood diversity across time and space. It showcases major packages and features of interactive visualization. Our goal is to recreate this app from scratch.</p>
-<section id="pair-programming-exercise" class="level2">
-<h2 class="anchored" data-anchor-id="pair-programming-exercise">Pair “programming” exercise</h2>
-<p>Catalog the app’s <strong>layout</strong> and <strong>interactivity features</strong> as part of the app planning phase.</p>
-<ul>
-<li><p><strong>Navigator</strong>: Open up the <a href="https://walkerke.shinyapps.io/neighborhood_diversity/">neighborhood diversity app</a> for reference. The Navigator should explore the interactive features of the app and help the Driver sketch out a schematic of the app.</p></li>
-<li><p><strong>Driver:</strong> On a sheet of paper, sketch the layout and general features of the app as the Navigator navigates. Draw arrows to indicate what parts of the app update in response to user input. Your sketch might start off looking like this:</p></li>
-</ul>
-<p><img src="images/04_example_schematic.png" class="img-fluid"></p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Stop to Reflect
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<p>How has pair programming become easier and harder?</p>
-<p>What do you need from your partner and what does your partner need from you?</p>
-</div>
-</div>
-</div>
-</section>
+<p><br></p>
+<p>Slides for today are available <a href="./slides/04-interactive-viz.html">here</a>. (For our main activity, we will be using the rest of the webpage below.)</p>
+<p><br><br><br></p>
 </section>
 <section id="background" class="level1">
 <h1>Background</h1>
@@ -291,7 +286,8 @@ Stop to Reflect
 <h2 class="anchored" data-anchor-id="why-use-interactivity">Why use interactivity?</h2>
 <p>Pros</p>
 <ul>
-<li>Can explore peculiarities more quickly with linked representations</li>
+<li>Users can click, hover, zoom, and pan to get more detailed information</li>
+<li>Users can get quickly and deeply explore the data via linked data representations</li>
 <li>Allows guided exploration of results without needing to share data</li>
 </ul>
 <p>Cons</p>
@@ -311,24 +307,14 @@ Stop to Reflect
 <li>Data selection and filtering: highlighting and brushing regions of a plot to focus the selected points; reordering and filtering data show in tables</li>
 <li>Finding corresponding information in multiple views: linked views that update dynamically based on interaction in another plot (often by zooming, panning, or selecting certain points)</li>
 </ul>
+<p><br><br><br></p>
 </section>
-<section id="shiny" class="level2">
-<h2 class="anchored" data-anchor-id="shiny">Shiny</h2>
-<p>The neighborhood diversity app was made with the Shiny toolkit available in the <code>shiny</code> R package. Shiny facilitates building interactive web applications using R code without needing extensive knowledge of web coding technologies (e.g., HTML, CSS, and Javascript).</p>
-<p>Let’s look at an example app together. RStudio will create a template app when you go to File &gt; New File &gt; Shiny Web App. The <strong>application name</strong> can be <code>neighborhood_diversity</code>, and the <strong>application type</strong> can stay as the default “Single file (app.R)”. This creates a folder in your current directory called <code>neighborhood_diversity</code> with a single R code file called <code>app.R</code>.</p>
-<p>Click the Run App button to view the app in action.</p>
-<p>The <code>app.R</code> has three components:</p>
-<ul>
-<li>a user interface object (<code>ui</code>): this sets up the layout of the app</li>
-<li>a server function (<code>server</code>): this defines how the app will react to user input</li>
-<li>a call to the <code>shinyApp()</code> function: this launches the app</li>
-</ul>
-<section id="building-the-user-interface-ui" class="level3">
-<h3 class="anchored" data-anchor-id="building-the-user-interface-ui">Building the user interface (UI)</h3>
-<p>The first step in building a Shiny application is to set up the layout, or the User Interface (UI).</p>
-<p>Open up the <a href="https://rstudio.github.io/cheatsheets/shiny.pdf">Shiny cheatsheet</a>, and look at the Layouts section on the right side of the second page. Which layout pieces can we use to recreate the <a href="https://walkerke.shinyapps.io/neighborhood_diversity/">neighborhood diversity app</a>?</p>
+</section>
+<section id="motivation-recreating-an-interactive-visualization-app" class="level1">
+<h1>Motivation: recreating an interactive visualization app</h1>
+<p><a href="https://walkerke.shinyapps.io/neighborhood_diversity/">This interactive application</a> made by Kyle Walker allows exploration of neighborhood diversity across time and space. It showcases major packages and features of interactive visualization. Our goal is to recreate the core parts of this app from scratch!</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -337,33 +323,176 @@ Stop to Reflect
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Think about what makes learning new code challenging for you and what strategies tend to work well or less well. You will work with someone random (and possibly new)–how can you best support your own and their learning? Write a few sentences in your Process and Reflection Log.</p>
+</div>
+</div>
+</div>
+<section id="exercise-0-app-planning" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-0-app-planning">Exercise 0: App planning</h2>
+<p>Catalog the app’s <strong>layout</strong> and <strong>interactivity features</strong> as part of the app planning phase.</p>
+<ul>
+<li><p><strong>Navigator</strong>: Open up the <a href="https://walkerke.shinyapps.io/neighborhood_diversity/">neighborhood diversity app</a> for reference. The Navigator should explore the interactive features of the app and help the Driver sketch out a schematic of the app.</p></li>
+<li><p><strong>Driver:</strong> Sketch the layout and general features of the app as the Navigator navigates. Draw arrows to indicate what parts of the app update in response to user input.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reflect: App design
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>How do you learn best, without getting overwhelmed? Consider approaches that have worked for you and discuss with your partner. Notice similarities and differences in how you learn best.</p>
+<p>Is the interactivity in this app needed? Does the interactivity actually help you gain more insight (and perhaps more efficiently) than a series of static visualizations? What static visualizations <em>might</em> be more useful?</p>
 </div>
 </div>
 </div>
+<p><br><br><br></p>
 </section>
 </section>
-</section>
-<section id="various-notes" class="level1">
-<h1>Various notes</h1>
-<p>Examples of Shiny apps</p>
+<section id="shiny" class="level1">
+<h1>Shiny</h1>
+<p>The neighborhood diversity app was made with the Shiny toolkit available in the <code>shiny</code> R package. Shiny facilitates building interactive web applications using R code without needing extensive knowledge of web coding technologies (e.g., HTML, CSS, and Javascript).</p>
+<p>Let’s look at an example app together. RStudio will create a template app when you go to File &gt; New File &gt; Shiny Web App. The <strong>application name</strong> can be <code>neighborhood_diversity</code>, and the <strong>application type</strong> can stay as the default “Single file (app.R)”. This creates a folder in your current directory called <code>neighborhood_diversity</code> with a single R code file called <code>app.R</code>.</p>
+<p>Click the Run App button in the top right of the source code editor to view the app in action.</p>
+<p>The <code>app.R</code> has three components:</p>
 <ul>
-<li>https://walkerke.shinyapps.io/neighborhood_diversity/</li>
-<li>Might also be fun to look at Macalester data for the dashboard</li>
-<li>https://github.com/grabear/awesome-rshiny</li>
+<li>a user interface object (<code>ui</code>): this sets up the layout of the app</li>
+<li>a server function (<code>server</code>): this defines how the app will react to user input</li>
+<li>a call to the <code>shinyApp()</code> function: this launches the app using the UI object (<code>ui</code>) and server function (<code>server</code>) created above</li>
 </ul>
-<p>Reading resources on Shiny and Plotly</p>
-<ul>
-<li>https://shiny.posit.co/r/getstarted/shiny-basics/lesson1/index.html</li>
-<li>https://github.com/rstudio/shiny-examples</li>
-<li>https://plotly-r.com/index.html</li>
-</ul>
-<section id="the-plotly-package" class="level2">
-<h2 class="anchored" data-anchor-id="the-plotly-package">The <code>plotly</code> package</h2>
+<p><strong>Download and leave open the <a href="https://rstudio.github.io/cheatsheets/shiny.pdf">Shiny cheatsheet</a>.</strong></p>
+<section id="exercise-1-setup-and-getting-acquainted" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-setup-and-getting-acquainted">Exercise 1: Setup and getting acquainted</h2>
+<p><strong>Setup part 1:</strong> Load required packages at the top of <code>app.R</code>: <code>shiny</code>, <code>tidyverse</code>, <code>sf</code>, and <code>plotly</code>.</p>
+<p><strong>Setup part 2:</strong> Data download and folder setup</p>
+<p>Navigate to the “Data for interactive viz activity” <a href="https://moodle.macalester.edu/mod/folder/view.php?id=38829">folder</a> on Moodle and save the two files with the folder setup below: - 📂 <code>YOUR_CLASS_FOLDER</code> - 📂 <code>interactive_viz</code> - 📂 <code>neighborhood_diversity</code> - <code>app.R</code> - 📂 <code>data</code> - <code>data_by_dist.rds</code> - <code>data_by_year.csv</code></p>
+<p><strong>Setup part 3:</strong> Below your <code>library()</code> calls, add the following commands to read in the data:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data_by_dist <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">"Enter the correct relative path to data_by_dist.rds"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data_by_year <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Enter the correct relative path to data_by_year.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Getting acquainted with the app and underlying code:</strong> Open <a href="images/shiny_code_diagram.pdf">this PDF</a> or have the code printout distributed at the start of class in front of you. Also have the app running in your browser.</p>
+<ul>
+<li>Draw lines on the printout/PDF of what visual parts of the app correspond to which parts of code.</li>
+<li>What names/labels in the User Interface (<code>ui</code>) part of the app seem to be shared with the <code>server</code> part of the app? (Draw lines between the <code>ui</code> and <code>server</code> parts of the code.)</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Stop to Share
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>As you work on the “Getting acquainted” part of this exercise, share with your partner some struggles you have with code and some strategies that you have tried.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="input-functions" class="level2">
+<h2 class="anchored" data-anchor-id="input-functions"><code>*Input()</code> functions</h2>
+<section id="background-1" class="level3">
+<h3 class="anchored" data-anchor-id="background-1">Background</h3>
+<p>The <code>*Input()</code> functions collect inputs from the user. The various types are listed on the right-hand side of the first page of the cheatsheet. You will list all the <code>*Input()</code> functions you want to use with their accompanying arguments inside the <code>fluidPage()</code> function in the <code>ui</code> portion. Separate the <code>*Input()</code> functions with commas.</p>
+<p>In all the <code>*Input()</code> functions, the first two arguments are the same:</p>
+<ul>
+<li><code>inputId</code> is how you will refer to this input in the <code>server</code> portion later</li>
+<li><code>label</code> is how this will actually be labeled in your UI (what text shows up in the app)</li>
+</ul>
+<p>Each function has some additional arguments depending what you want to do.</p>
+</section>
+<section id="exercise-2-add-inputs" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-2-add-inputs">Exercise 2: Add <code>*Input()</code>s</h3>
+<p>Add the following two user inputs to your app:</p>
+<ul>
+<li>Dropdown to select the city name</li>
+<li>Slider to choose the span parameter for the scatterplot smooth</li>
+</ul>
+<p>Use the Shiny cheatsheet to find the <code>*Input()</code> functions that correspond to the two inputs above. Add them to the appropriate place within the <code>ui</code> object. Use commas to separate the inputs. You will have to look at the <strong>documentation</strong> for the <code>*Input()</code> functions to know how to use arguments beyond <code>inputId</code> and <code>label</code>. To view this documentation, type <code>?function_name</code> in the Console.</p>
+<p>To get the collection of city names from the <code>data_by_dist</code> dataset, you can use the <code>pull()</code> and <code>unique()</code> functions. Save the city names in an object called <code>metro_names</code>—this code can go just beneath where you read in the data.</p>
+<p>Once you finish, run your app. Make sure you can select and move things around as expected. You won’t see any plots yet–we’ll work on those in the next exercises.</p>
+</section>
+</section>
+<section id="output-functions" class="level2">
+<h2 class="anchored" data-anchor-id="output-functions"><code>*Output()</code> functions</h2>
+<section id="background-2" class="level3">
+<h3 class="anchored" data-anchor-id="background-2">Background</h3>
+<p><code>*Output()</code> functions in the <code>ui</code> portion work with the <code>render*()</code> functions in the server portion to to add R output to the UI. The <code>*Output()</code> functions are listed in the bottom center part of the first page of the cheatsheet.</p>
+<p>All the <code>*Output()</code> functions have the same first argument, <code>outputId</code>, which is used how you will refer to this output in the server portion later (like the <code>inputId</code> in the <code>*Input()</code> functions).</p>
+</section>
+<section id="exercise-3-add-outputs" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-3-add-outputs">Exercise 3: Add <code>*Output()</code>s</h3>
+<p>Add 3 <code>plotOutput()</code>s to the <code>ui</code> that will eventually be:</p>
+<ul>
+<li>A scatterplot of diversity score (<code>entropy</code>) versus distance to city hall (<code>distmiles</code>) with a smoothing line (smoothness controlled by the span parameter on your slider input)</li>
+<li>A map of diversity scores across the counties in the selected city</li>
+<li>A bar chart of the overall race distribution in the selected city (i.e., the total number of people in each race category in the city)</li>
+</ul>
+<p>For now, don’t worry that the layout of the plots exactly matches the original neighborhood diversity app. (You will update this in your homework.)</p>
+<p>Run the app with the output. Notice that nothing really changes. Think of the outputs you just placed as placeholders—the app knows there will be a plot in the UI, but the details of what the plots will look like and the R code to create them will be in the <code>server</code> portion. Let’s talk about that now!</p>
+</section>
+</section>
+<section id="render-functions" class="level2">
+<h2 class="anchored" data-anchor-id="render-functions"><code>render*()</code> functions</h2>
+<p>The <code>render*()</code> functions go in the <code>server</code> function of the app. The <code>render*()</code> functions use R code (i.e., standard <code>ggplot</code> code) to communicate with (“listen to”) the user inputs to create the desired output.</p>
+<p>The <code>render*()</code> function you use will depend on the desired output. The bottom center of the cheatsheet shows how <code>*Output()</code> and <code>render*()</code> functions connect.</p>
+<p>In general, the server section of code will look something like this:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    output<span class="sc">$</span>outputId_of_interest <span class="ot">&lt;-</span> render<span class="sc">*</span>({ <span class="co"># Note the curly braces that enclose the R code below</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="co"># R code that creates the output and calls various input$InputId's</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Example: Suppose that inside <code>ui</code>, we used <code>plotOutput(outputId = "timeplot")</code>:</p>
+<ul>
+<li>In the <code>server</code> function, we would use <code>output$timeplot &lt;- renderPlot({...})</code>.
+<ul>
+<li>The <code>...</code> would be replaced by detailed R plotting code.</li>
+<li>To reference the inputs we create in the <code>ui</code>, we use <code>input$inputID_name</code>. e.g., if we had an <code>*Input()</code> with <code>inputId = "years"</code>, we would use <code>input$years</code> in the <code>server</code> function.</li>
+</ul></li>
+</ul>
+<section id="exercise-4-add-renderplot" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4-add-renderplot">Exercise 4: Add <code>renderPlot()</code></h3>
+<p>While our main goals is to make 3 plots, you will just make one of them in this exercise.</p>
+<p>Add a <code>renderPlot()</code> functions inside the <code>server</code> portion of the code to make the scatterplot of diversity score (<code>entropy</code>) versus distance to city hall (<code>distmiles</code>) with a smoothing line. Reference the inputs you’ve already created in previous exercises by using <code>filter()</code> and <code>ggplot()</code> to render the desired interactive plot.</p>
+<p><em>Note:</em> the <code>geom_???</code> used to create the smoothing line has a <code>span</code> parameter. (Check out the documentation for that geom by entering <code>?geom_???</code> in the Console.)</p>
+<p>Run the app and check that the scatterplot displays and reacts to the chosen city and span parameter.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Stop to Reflect
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>What challenges are you encountering as we go through this new material? What parts of your interactions with your partner have been helpful or less helpful for your learning today?</p>
+</div>
+</div>
+</div>
+<p><br><br><br></p>
+</section>
+</section>
+</section>
+<section id="the-plotly-package" class="level1">
+<h1>The <code>plotly</code> package</h1>
+<p>The <code>plotly</code> package provides tools for creating interactive web graphics and is a nice complement to Shiny.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: ggplot2</code></pre>
 </div>
@@ -387,66 +516,90 @@ Attaching package: 'plotly'</code></pre>
     layout</code></pre>
 </div>
 </div>
-<p>One use case:</p>
+<p>A wonderful feature of <code>plotly</code> is that an interactive graphic can be constructed by taking a regular <code>ggplot</code> graph and putting it inside the <code>ggplotly()</code> function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(babynames, <span class="at">package =</span> <span class="st">"babynames"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>bnames <span class="ot">&lt;-</span> babynames <span class="sc">%&gt;%</span> <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Leslie"</span>, <span class="st">"Margaux"</span>))</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(bnames, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> prop, <span class="at">color =</span> sex, <span class="at">linetype =</span> name)) <span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>()</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplotly(p)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(babynames, <span class="at">package =</span> <span class="st">"babynames"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>bnames <span class="ot">&lt;-</span> babynames <span class="sc">%&gt;%</span> <span class="fu">filter</span>(name <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Leslie"</span>, <span class="st">"Lesley"</span>))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(bnames, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> prop, <span class="at">color =</span> sex, <span class="at">linetype =</span> name)) <span class="sc">+</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Proportion of names"</span>, <span class="at">color =</span> <span class="st">"Gender"</span>, <span class="at">linetype =</span> <span class="st">"Name"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Another use case: animate</p>
+<p>The <code>plotly</code> package can also create animations by incorporating <code>frame</code> and <code>ids</code> aesthetics.</p>
+<ul>
+<li><code>frame = year</code>: This makes the frame of the animation correspond to year–so the animation shows changes across time (years).</li>
+<li><code>ids = country</code>: This ensures smooth transitions between objects with the same <code>id</code> (which helps facilitate object constancy throughout the animation). Here, each point is a country, so this makes the animation transition smoothly from year to year for a given country. (For more information, see <a href="https://plotly-r.com/animating-views">here</a>.)</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(gapminder, <span class="at">package =</span> <span class="st">"gapminder"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(gdpPercap, lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> pop, <span class="at">frame =</span> year, <span class="at">ids =</span> country)) <span class="sc">+</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in geom_point(aes(size = pop, frame = year, ids = country)): Ignoring
-unknown aesthetics: frame and ids</code></pre>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(gapminder, <span class="at">package =</span> <span class="st">"gapminder"</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent, <span class="at">size =</span> pop)) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">frame =</span> year, <span class="at">ids =</span> country)) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_log10</span>() <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"GDP per capita"</span>, <span class="at">y =</span> <span class="st">"Life expectancy (years)"</span>, <span class="at">color =</span> <span class="st">"Continent"</span>, <span class="at">size =</span> <span class="st">"Population"</span>) <span class="sc">+</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>()</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(p)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplotly(p)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="exercise-5-turn-plots-into-plotlys" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5-turn-plots-into-plotlys">Exercise 5: Turn <code>plot</code>s into <code>plotly</code>s</h2>
+<p>In a web application, having plots be <code>plotly</code> objects is just nice by default because of the great mouseover, zoom, and pan features.</p>
+<p>Inside <code>app.R</code>, change all instances of <code>plotOutput</code> to <code>plotlyOutput</code> and all instances of <code>renderPlot</code> to <code>renderPlotly</code>. Make sure to add calls to <code>ggplotly()</code> too.</p>
+<p><br><br><br></p>
 </section>
-<section id="ideas" class="level2">
-<h2 class="anchored" data-anchor-id="ideas">Ideas</h2>
-<p>Teach students about the <code>flexdashboard</code> package (https://pkgs.rstudio.com/flexdashboard/index.html). (Maybe put this as homework?)</p>
-<ul>
-<li>https://epirhandbook.com/en/dashboards-with-r-markdown.html</li>
-<li><a href="https://arxiv.org/pdf/2205.00757.pdf">Paper on dashboard design patterns</a> and https://dashboarddesignpatterns.github.io/</li>
-<li>https://www.datapine.com/blog/dashboard-design-principles-and-best-practices/#dashboard-design-best-practices (Googled “theory of dashboard design”)</li>
-</ul>
-<p>Teach students about plotly and shiny–does flexdashboard intersect with plotly and/or shiny?</p>
-<p>The <a href="https://ncrc.jhsph.edu/">Novel Coronavirus Research Compendium (NCRC)</a>: triage system was built with Shiny. (Slides on the process: https://jscholarship.library.jhu.edu/bitstream/handle/1774.2/62834/2020%20JHAllLibrariesLobner.pdf?sequence=1). I can’t seem to find the actual Shiny app.</p>
 </section>
-<section id="theory-of-dashboard-design" class="level2">
-<h2 class="anchored" data-anchor-id="theory-of-dashboard-design">Theory of dashboard design</h2>
-<p>Lead-in activity</p>
+<section id="homework" class="level1">
+<h1>Homework</h1>
+<p><strong>Minimum requirements for your app:</strong></p>
 <ul>
-<li>Show an example of two dashboards (or more) and have them compare the dashboards</li>
-<li>Or maybe a single interface that is familiar to them
+<li>Have a dropdown of available cities</li>
+<li>Have a sliding input to control the span parameter for scatterplot smoothing lines</li>
+<li>The following plots should update in response to changing the selected city in the dropdown:
 <ul>
-<li>School-related possibilities: Moodle, DegreeWorks, 1600Grand</li>
-<li>Mobile app</li>
-<li>Xcel energy</li>
+<li>A scatterplot of diversity score (<code>entropy</code>) versus distance to city hall (<code>distmiles</code>) with a smoothing line (smoothness controlled by the span parameter on your slider input)</li>
+<li>A map of diversity scores across the counties in the selected city</li>
+<li>A bar chart of the overall race distribution in the selected city (i.e., the total number of people in each race category in the city)</li>
 </ul></li>
-<li>Split students into groups where some groups look at a multipage PDF of visualizations–arising from the same plot on different subsets of data. The other group gets to look at an interactive visualization.</li>
+<li>Add a tab layout to your app to match the original app (3 tabs: “Explore metros”, “Compare over time”, and “About”)
+<ul>
+<li>Have the layout in the “Explore metros” tab match that of the original app</li>
+</ul></li>
 </ul>
-<p><img src="https://www.datapine.com/blog/wp-content/uploads/2023/04/25-dashboard-design-tips.png" class="img-fluid"></p>
-<ol type="1">
-<li>Consider your audience
+<p><strong>Submission details:</strong> Submit the <code>app.R</code> file on <a href="https://moodle.macalester.edu/mod/assign/view.php?id=38956">Moodle</a> by midnight on Wednesday, 9/27.</p>
+<p><strong>Extra:</strong> If you want to keep practicing and learning more features, add the following layout updates and functionality to your app:</p>
 <ul>
-<li>Who will be using the dashboard and what information do they need?</li>
+<li>In the “Compare over time” tab (still using the same selected city from the original dropdown):
+<ul>
+<li>Add a line graph of diversity score versus distance to city hall with different color lines corresponding to 1990, 2000, 2010, and 2020</li>
+<li>Add 4 maps that show diversity scores across counties in 1990, 2000, 2010, and 2020</li>
 </ul></li>
-<li>Determine your goals</li>
-<li>Choose relevant metrics to display</li>
-<li>Tell a story with your data</li>
-<li>Provide context</li>
-</ol>
+<li>Recreate the text giving directions for using the app that appears in the left sidebar of the original app. Try to get exactly the same formatting.</li>
+</ul>
+<p><br><br><br></p>
+</section>
+<section id="further-resources" class="level1">
+<h1>Further Resources</h1>
+<ul>
+<li>The <code>flexdashboard</code> <a href="https://pkgs.rstudio.com/flexdashboard/index.html">package</a> provides another way to create the user interface of an interactive application.
+<ul>
+<li><a href="https://epirhandbook.com/en/dashboards-with-r-markdown.html">A nice tutorial on <code>flexdashboard</code></a></li>
+</ul></li>
+<li>Theory of dashboard design
+<ul>
+<li><a href="https://arxiv.org/pdf/2205.00757.pdf">Paper on dashboard design patterns</a></li>
+<li><a href="https://dashboarddesignpatterns.github.io/">Dashboard Design Patterns</a></li>
+<li><a href="https://www.datapine.com/blog/dashboard-design-principles-and-best-practices/#dashboard-design-best-practices">Dashboard design principles and best practice</a></li>
+</ul></li>
+<li><a href="https://github.com/grabear/awesome-rshiny">Curated set of Shiny resources</a></li>
+<li><a href="https://shiny.posit.co/r/getstarted/">Getting started with Shiny</a></li>
+<li><a href="https://github.com/rstudio/shiny-examples">Examples of Shiny apps</a>
+<ul>
+<li><a href="https://metrotransitmn.shinyapps.io/metc-wastewater-covid-monitor/">Metropolitan Council’s COVID wastewater monitor Shiny app</a></li>
+</ul></li>
+<li><a href="https://plotly-r.com/">Online book about <code>plotly</code></a></li>
+</ul>
+<!-- The [Novel Coronavirus Research Compendium (NCRC)](https://ncrc.jhsph.edu/): triage system was built with Shiny. (Slides on the process: https://jscholarship.library.jhu.edu/bitstream/handle/1774.2/62834/2020%20JHAllLibrariesLobner.pdf?sequence=1). I can't seem to find the actual Shiny app. -->
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
