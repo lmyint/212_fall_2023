@@ -88,6 +88,16 @@ class(points)
 
 # Logical data
 
+HW1 observations. I saw a lot of:
+
+```{r eval=FALSE}
+weather %>% filter(RecordP == "TRUE")
+weather %>% filter(RecordP == TRUE)
+```
+
+
+Tell students about `%in%`
+
 Logical data result from comparisons:
 
 - Comparing numeric data uses the following operators

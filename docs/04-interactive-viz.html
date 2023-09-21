@@ -243,6 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#exercise-5-turn-plots-into-plotlys" id="toc-exercise-5-turn-plots-into-plotlys" class="nav-link" data-scroll-target="#exercise-5-turn-plots-into-plotlys">Exercise 5: Turn <code>plot</code>s into <code>plotly</code>s</a></li>
   </ul></li>
+  <li><a href="#codebook" id="toc-codebook" class="nav-link" data-scroll-target="#codebook">Codebook</a></li>
   <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework">Homework</a></li>
   <li><a href="#further-resources" id="toc-further-resources" class="nav-link" data-scroll-target="#further-resources">Further Resources</a></li>
   </ul>
@@ -371,7 +372,24 @@ Reflect: App design
 <h2 class="anchored" data-anchor-id="exercise-1-setup-and-getting-acquainted">Exercise 1: Setup and getting acquainted</h2>
 <p><strong>Setup part 1:</strong> Load required packages at the top of <code>app.R</code>: <code>shiny</code>, <code>tidyverse</code>, <code>sf</code>, and <code>plotly</code>.</p>
 <p><strong>Setup part 2:</strong> Data download and folder setup</p>
-<p>Navigate to the “Data for interactive viz activity” <a href="https://moodle.macalester.edu/mod/folder/view.php?id=38829">folder</a> on Moodle and save the two files with the folder setup below: - 📂 <code>YOUR_CLASS_FOLDER</code> - 📂 <code>interactive_viz</code> - 📂 <code>neighborhood_diversity</code> - <code>app.R</code> - 📂 <code>data</code> - <code>data_by_dist.rds</code> - <code>data_by_year.csv</code></p>
+<p>Navigate to the “Data for interactive viz activity” <a href="https://moodle.macalester.edu/mod/folder/view.php?id=38829">folder</a> on Moodle and save the two files with the folder setup below:</p>
+<ul>
+<li>📂 <code>YOUR_CLASS_FOLDER</code>
+<ul>
+<li>📂 <code>interactive_viz</code>
+<ul>
+<li>📂 <code>neighborhood_diversity</code>
+<ul>
+<li><code>app.R</code></li>
+<li>📂 <code>data</code>
+<ul>
+<li><code>data_by_dist.rds</code></li>
+<li><code>data_by_year.csv</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
 <p><strong>Setup part 3:</strong> Below your <code>library()</code> calls, add the following commands to read in the data:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data_by_dist <span class="ot">&lt;-</span> <span class="fu">read_rds</span>(<span class="st">"Enter the correct relative path to data_by_dist.rds"</span>)</span>
@@ -546,6 +564,29 @@ Attaching package: 'plotly'</code></pre>
 <p>Inside <code>app.R</code>, change all instances of <code>plotOutput</code> to <code>plotlyOutput</code> and all instances of <code>renderPlot</code> to <code>renderPlotly</code>. Make sure to add calls to <code>ggplotly()</code> too.</p>
 <p><br><br><br></p>
 </section>
+</section>
+<section id="codebook" class="level1">
+<h1>Codebook</h1>
+<p>The <code>data_by_dist</code> dataset is an <code>sf</code> object (cases = census tracts) with the following variables:</p>
+<ul>
+<li><code>metro_id</code>: numeric ID for the city</li>
+<li><code>metro_name</code>: city name</li>
+<li><code>geometry</code>: information about the spatial geometry for the tract</li>
+<li><code>tract_id</code>: numeric census tract ID</li>
+<li><code>distmiles</code>: distance in miles from this tract to city hall</li>
+<li><code>entropy</code>: a measure of the diversity of a census tract (a diversity “score”)</li>
+<li>Race variables (each of these is the number of people)
+<ul>
+<li><code>aian</code>: American Indian</li>
+<li><code>asian</code></li>
+<li><code>black</code></li>
+<li><code>hispanic</code></li>
+<li><code>two_or_more</code></li>
+<li><code>white</code></li>
+</ul></li>
+</ul>
+<p>The <code>data_by_year</code> dataset has a subset of the above variables as well as a <code>year</code> variable.</p>
+<p><br><br><br></p>
 </section>
 <section id="homework" class="level1">
 <h1>Homework</h1>

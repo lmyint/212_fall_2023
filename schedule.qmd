@@ -79,13 +79,13 @@ Guiding questions for the readings are available at the bottom of this page.
   <tr>
     <td class="topleft">4</td>
     <td class="topleft">
-      <b>9/26: Working with different data classes (Part 1)</b> <br>
-      Before class: (NOT FINAL YET) Group 1 reads <a href="https://r4ds.hadley.nz/logicals.html">Chapter 13 (Logicals)</a> of R4DS. Group 2 reads <a href="https://r4ds.hadley.nz/numbers.html">Chapter 14 (Numbers)</a>. Group 3 reads <a href="https://r4ds.hadley.nz/datetimes.html">Chapter 18 (Dates/Times)</a>. <br>
+      <b>9/26: Working with different data classes (Part 1)</b>
+      <!-- Before class: (NOT FINAL YET) Group 1 reads <a href="https://r4ds.hadley.nz/logicals.html">Chapter 13 (Logicals)</a> of R4DS. Group 2 reads <a href="https://r4ds.hadley.nz/numbers.html">Chapter 14 (Numbers)</a>. Group 3 reads <a href="https://r4ds.hadley.nz/datetimes.html">Chapter 18 (Dates/Times)</a>. <br> -->
     </td>
     
     <td class="topleft">
       <b>9/28: Working with different data classes (Part 2)</b> <br>
-      Before class: (NOT FINAL YET) Read <a href="https://r4ds.hadley.nz/strings.html">Chapter 15 (Strings)</a>, <a href="https://r4ds.hadley.nz/regexps.html">Chapter 16 (Regular Expressions)</a>, and <a href="https://r4ds.hadley.nz/factors.html">Chapter 17 (Factors)</a> of R4DS. <br>
+      <!-- Before class: (NOT FINAL YET) Read <a href="https://r4ds.hadley.nz/strings.html">Chapter 15 (Strings)</a>, <a href="https://r4ds.hadley.nz/regexps.html">Chapter 16 (Regular Expressions)</a>, and <a href="https://r4ds.hadley.nz/factors.html">Chapter 17 (Factors)</a> of R4DS. <br> -->
     </td>
     
     <td class="topleft">Turn in <a href="https://lmyint.github.io/212_fall_2023/homework3.html">HW3</a> Look ahead to HW4.</td>

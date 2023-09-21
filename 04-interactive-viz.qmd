@@ -100,6 +100,7 @@ The `app.R` has three components:
 **Setup part 2:** Data download and folder setup
 
 Navigate to the "Data for interactive viz activity" [folder](https://moodle.macalester.edu/mod/folder/view.php?id=38829) on Moodle and save the two files with the folder setup below:
+
 - 📂 `YOUR_CLASS_FOLDER`
     - 📂 `interactive_viz`
         - 📂 `neighborhood_diversity`
@@ -256,6 +257,30 @@ ggplotly(p)
 In a web application, having plots be `plotly` objects is just nice by default because of the great mouseover, zoom, and pan features. 
 
 Inside `app.R`, change all instances of `plotOutput` to `plotlyOutput` and all instances of `renderPlot` to `renderPlotly`. Make sure to add calls to `ggplotly()` too.
+
+
+<br><br><br>
+
+
+# Codebook
+
+The `data_by_dist` dataset is an `sf` object (cases = census tracts) with the following variables:
+
+- `metro_id`: numeric ID for the city
+- `metro_name`: city name
+- `geometry`: information about the spatial geometry for the tract
+- `tract_id`: numeric census tract ID
+- `distmiles`: distance in miles from this tract to city hall
+- `entropy`: a measure of the diversity of a census tract (a diversity "score")
+- Race variables (each of these is the number of people)
+    - `aian`: American Indian
+    - `asian`
+    - `black`
+    - `hispanic`
+    - `two_or_more`
+    - `white`
+
+The `data_by_year` dataset has a subset of the above variables as well as a `year` variable.
 
 
 <br><br><br>

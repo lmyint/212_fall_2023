@@ -1,5 +1,5 @@
 ---
-title: "Interactive visualization (Part 1)"
+title: "Interactive visualization"
 format:
   revealjs:
     scrollable: true
@@ -18,3 +18,15 @@ Quote of the day:
 Open up your Process and Reflection Log (Google Doc).
 
 - Leave it open. We are going to stop and reflect a few times today.
+
+## Reflecting on our Shiny activity
+
+Comment/uncomment the selected lines---***super useful for debugging!!***
+
+- Mac: Command-Shift-C
+- Windows: Ctrl-Shift-C
+
+Write a few observations in your Process and Reflection Log (Google Doc):
+
+- What was challenging about learning Shiny? (When) did things start to click?
+- We've worked with a few different partners now--in general what has been helpful/less helpful about working with others? What would you like to change in the future?
