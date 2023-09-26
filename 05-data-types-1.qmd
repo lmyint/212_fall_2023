@@ -276,10 +276,10 @@ lakers_clean <- lakers %>%
         month = month(date),
         day = day(date),
         day_of_week = wday(date, label = TRUE),
-        hour = hour(time),
-        minute = minute(time)
+        minute = minute(time),
+        second = second(time)
     )
-lakers_clean %>% select(year:minute)
+lakers_clean %>% select(year:second)
 
 lakers_clean <- lakers_clean %>%
     group_by(date, opponent, period) %>%
@@ -297,6 +297,14 @@ Inspired by [this viral post](https://hilaryparker.com/2013/01/30/hilary-the-mos
 **Data:** Download the baby names data from [Moodle](https://moodle.macalester.edu/mod/resource/view.php?id=40467) and save this in the `data` folder for today.
 
 **Your goal:** Using whatever data wrangling tools necessary, try to answer this question with a combination of visualizations and numerical results.
+
+Codebook:
+
+- `year`
+- `sex`
+- `name`
+- `n`: Number of babies with the given name and sex that year
+- `prop`: Proportion of all US babies with the given name and sex that year
 
 ::: {.callout-tip collapse="false"}
 ## Stop to Reflect

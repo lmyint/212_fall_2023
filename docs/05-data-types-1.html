@@ -765,24 +765,24 @@ Caused by warning in `points + point_update`:
 <span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">month =</span> <span class="fu">month</span>(date),</span>
 <span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">day =</span> <span class="fu">day</span>(date),</span>
 <span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">day_of_week =</span> <span class="fu">wday</span>(date, <span class="at">label =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">hour =</span> <span class="fu">hour</span>(time),</span>
-<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">minute =</span> <span class="fu">minute</span>(time)</span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">minute =</span> <span class="fu">minute</span>(time),</span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">second =</span> <span class="fu">second</span>(time)</span>
 <span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>lakers_clean <span class="sc">%&gt;%</span> <span class="fu">select</span>(year<span class="sc">:</span>minute)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a>lakers_clean <span class="sc">%&gt;%</span> <span class="fu">select</span>(year<span class="sc">:</span>second)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 34,624 × 6
-    year month   day day_of_week  hour minute
-   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;ord&gt;       &lt;dbl&gt;  &lt;dbl&gt;
- 1  2008    10    28 Tue            12      0
- 2  2008    10    28 Tue            11     39
- 3  2008    10    28 Tue            11     37
- 4  2008    10    28 Tue            11     25
- 5  2008    10    28 Tue            11     23
- 6  2008    10    28 Tue            11     22
- 7  2008    10    28 Tue            11     22
- 8  2008    10    28 Tue            11     22
- 9  2008    10    28 Tue            11      0
-10  2008    10    28 Tue            10     53
+    year month   day day_of_week minute second
+   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt; &lt;ord&gt;        &lt;dbl&gt;  &lt;dbl&gt;
+ 1  2008    10    28 Tue              0      0
+ 2  2008    10    28 Tue             39      0
+ 3  2008    10    28 Tue             37      0
+ 4  2008    10    28 Tue             25      0
+ 5  2008    10    28 Tue             23      0
+ 6  2008    10    28 Tue             22      0
+ 7  2008    10    28 Tue             22      0
+ 8  2008    10    28 Tue             22      0
+ 9  2008    10    28 Tue              0      0
+10  2008    10    28 Tue             53      0
 # ℹ 34,614 more rows</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>lakers_clean <span class="ot">&lt;-</span> lakers_clean <span class="sc">%&gt;%</span></span>
@@ -816,6 +816,14 @@ Caused by warning in `points + point_update`:
 <p>Inspired by <a href="https://hilaryparker.com/2013/01/30/hilary-the-most-poisoned-baby-name-in-us-history/">this viral post</a> by an alumna of my PhD program, Hilary Parker, we will use baby name data from the Social Security Administration to investigate whether “Hilary” (or “Hillary”) is the most poisoned. Hilary defines “poisoning” as a sudden, rapid, and large decrease in the popularity of a name.</p>
 <p><strong>Data:</strong> Download the baby names data from <a href="https://moodle.macalester.edu/mod/resource/view.php?id=40467">Moodle</a> and save this in the <code>data</code> folder for today.</p>
 <p><strong>Your goal:</strong> Using whatever data wrangling tools necessary, try to answer this question with a combination of visualizations and numerical results.</p>
+<p>Codebook:</p>
+<ul>
+<li><code>year</code></li>
+<li><code>sex</code></li>
+<li><code>name</code></li>
+<li><code>n</code>: Number of babies with the given name and sex that year</li>
+<li><code>prop</code>: Proportion of all US babies with the given name and sex that year</li>
+</ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">

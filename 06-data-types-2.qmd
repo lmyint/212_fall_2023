@@ -1,63 +1,19 @@
 ---
 title: "Wrangling: strings and factors"
+sidebar: false
 ---
 
+# Learning goals
 
-- Recode and manage factors using the `forcats` package
+After this lesson, you should be able to:
+
 - Manipulate and explore strings using the `stringr` package
-
-# Factors
-
-In R, factors are comprised of two components: the actual values of the data and the possible levels within the factor. Thus, to create a factor, you need to supply both these pieces of information.
-
-For example, if we were to create a character vector of the twelve months, we could certainly do that:
-
-
-```{r}
-## Update this after doing ymd() processing on lakers
-## all 12 months
-all_months <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
-
-## our data
-some_months <- c("Mar", "Dec", "Jan",  "Apr", "Jul")
-```
-
-However, if we were to sort this vector, R would sort this vector alphabetically.
-
-```{r}
-# alphabetical sort
-sort(some_months)
-```
-
-While you and I know that this is not how months should be ordered, we haven’t yet told R that. To do so, we need to let R know that it’s a factor variable and what the levels of that factor variable should be.
-
-```{r}
-mon <- factor(some_months, levels = all_months)
-mon
-```
-
-Here, we specify all the possible values that the factor could take in the levels = all_months argument. So, even though not all twelve months are included in the some_months object, we’ve stated that all of the months are possible values. Further, when you sort this variable, it now sorts in the sensical way!
-
-**Update to use chickwts dataset?**
-
-```{r eval=FALSE}
-library(forcats)
-fct_relevel()
-fct_inorder() # skip this one?
-fct_infreq()
-fct_rev()
-fct_reorder()
-fct_recode()
-ifelse() + factor()
-```
-
-
-
-# Setup
+- Recode and manage factors using the `forcats` package
 
 ```{r}
 library(tidyverse)
 library(stringr)
+library(forcats)
 ```
 
 # Strings
@@ -130,7 +86,50 @@ Most commonly comes up as a correlation matrix. row and colnames of matrices. Su
 
 
 
+# Factors
 
+In R, factors are comprised of two components: the actual values of the data and the possible levels within the factor. Thus, to create a factor, you need to supply both these pieces of information.
+
+For example, if we were to create a character vector of the twelve months, we could certainly do that:
+
+
+```{r}
+## Update this after doing ymd() processing on lakers
+## all 12 months
+all_months <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+
+## our data
+some_months <- c("Mar", "Dec", "Jan",  "Apr", "Jul")
+```
+
+However, if we were to sort this vector, R would sort this vector alphabetically.
+
+```{r}
+# alphabetical sort
+sort(some_months)
+```
+
+While you and I know that this is not how months should be ordered, we haven’t yet told R that. To do so, we need to let R know that it’s a factor variable and what the levels of that factor variable should be.
+
+```{r}
+mon <- factor(some_months, levels = all_months)
+mon
+```
+
+Here, we specify all the possible values that the factor could take in the levels = all_months argument. So, even though not all twelve months are included in the some_months object, we’ve stated that all of the months are possible values. Further, when you sort this variable, it now sorts in the sensical way!
+
+**Update to use chickwts dataset?**
+
+```{r eval=FALSE}
+library(forcats)
+fct_relevel()
+fct_inorder() # skip this one?
+fct_infreq()
+fct_rev()
+fct_reorder()
+fct_recode()
+ifelse() + factor()
+```
 
 
 
