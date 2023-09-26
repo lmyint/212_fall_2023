@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT/COMP 212 - Welcome to the course!</title>
+<title>STAT/COMP 212 - Wrangling: strings and factors</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -181,14 +215,30 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#factors" id="toc-factors" class="nav-link active" data-scroll-target="#factors">Factors</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings">Strings</a>
+  <ul class="collapse">
+  <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions">Regular expressions</a></li>
+  <li><a href="#glue-package" id="toc-glue-package" class="nav-link" data-scroll-target="#glue-package"><code>glue</code> package</a></li>
+  <li><a href="#tidytext-package" id="toc-tidytext-package" class="nav-link" data-scroll-target="#tidytext-package"><code>tidytext</code> package</a></li>
+  </ul></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">Lists</a></li>
+  <li><a href="#data-framestibbles" id="toc-data-framestibbles" class="nav-link" data-scroll-target="#data-framestibbles">Data frames/tibbles</a></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices">Matrices</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Welcome to the course!</h1>
+<h1 class="title">Wrangling: strings and factors</h1>
 </div>
 
 
@@ -203,20 +253,156 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Welcome to Intermediate Data Science! I’m thrilled to be your partners in journeying this <strong>brand new (!)</strong> course in MSCS.</p>
-<p>Our goals for today are as follows:</p>
 <ul>
-<li>What is this course about?</li>
-<li>Get to know your classmates</li>
-<li>Shaping our syllabus together</li>
-<li>Create your personal website!
-<ul>
-<li>Website content building + connecting with classmates</li>
-</ul></li>
+<li>Recode and manage factors using the <code>forcats</code> package</li>
+<li>Manipulate and explore strings using the <code>stringr</code> package</li>
 </ul>
-<p>We’ll primarily be using slides today–following along <a href="./slides/day1.html">here</a>.</p>
+<section id="factors" class="level1">
+<h1>Factors</h1>
+<p>In R, factors are comprised of two components: the actual values of the data and the possible levels within the factor. Thus, to create a factor, you need to supply both these pieces of information.</p>
+<p>For example, if we were to create a character vector of the twelve months, we could certainly do that:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Update this after doing ymd() processing on lakers</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## all 12 months</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>all_months <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Jan"</span>, <span class="st">"Feb"</span>, <span class="st">"Mar"</span>, <span class="st">"Apr"</span>, <span class="st">"May"</span>, <span class="st">"Jun"</span>, <span class="st">"Jul"</span>, <span class="st">"Aug"</span>, <span class="st">"Sep"</span>, <span class="st">"Oct"</span>, <span class="st">"Nov"</span>, <span class="st">"Dec"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">## our data</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>some_months <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mar"</span>, <span class="st">"Dec"</span>, <span class="st">"Jan"</span>,  <span class="st">"Apr"</span>, <span class="st">"Jul"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>However, if we were to sort this vector, R would sort this vector alphabetically.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># alphabetical sort</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(some_months)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Apr" "Dec" "Jan" "Jul" "Mar"</code></pre>
+</div>
+</div>
+<p>While you and I know that this is not how months should be ordered, we haven’t yet told R that. To do so, we need to let R know that it’s a factor variable and what the levels of that factor variable should be.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mon <span class="ot">&lt;-</span> <span class="fu">factor</span>(some_months, <span class="at">levels =</span> all_months)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>mon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] Mar Dec Jan Apr Jul
+Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</code></pre>
+</div>
+</div>
+<p>Here, we specify all the possible values that the factor could take in the levels = all_months argument. So, even though not all twelve months are included in the some_months object, we’ve stated that all of the months are possible values. Further, when you sort this variable, it now sorts in the sensical way!</p>
+<p><strong>Update to use chickwts dataset?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_relevel</span>()</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_inorder</span>() <span class="co"># skip this one?</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_infreq</span>()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_rev</span>()</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_reorder</span>()</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_recode</span>()</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>() <span class="sc">+</span> <span class="fu">factor</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="setup" class="level1">
+<h1>Setup</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ ggplot2   3.4.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+✔ purrr     1.0.1     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="strings" class="level1">
+<h1>Strings</h1>
+<p>Dataset: <code>babynames</code></p>
+<p>R4DS topics</p>
+<ul>
+<li>Creating a string with “” or ’’. Creating a string with single quotes or double quotes inside it.</li>
+<li>Escaping special characters with a<br>
+</li>
+<li><code>str_flatten</code> df |&gt; separate_longer_delim(col, delim) df |&gt; separate_longer_position(col, width) df |&gt; separate_wider_delim(col, delim, names) df |&gt; separate_wider_position(col, widths)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_length</span>(<span class="st">"hello"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(<span class="st">"..."</span>, <span class="st">"hi"</span>, <span class="at">sep =</span> <span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "... hi"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_sub</span>(<span class="fu">c</span>(<span class="st">"Good"</span>, <span class="st">"Morning"</span>), <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) <span class="co"># Also negative start and end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "G"  "Mo"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_sort</span>(<span class="fu">c</span>(<span class="st">"banana"</span>, <span class="st">"apple"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "apple"  "banana"</code></pre>
+</div>
+</div>
+<section id="regular-expressions" class="level2">
+<h2 class="anchored" data-anchor-id="regular-expressions">Regular expressions</h2>
+<ul>
+<li><code>str_view()</code> - View the first occurrence in a string that matches the regex</li>
+<li><code>str_view_all()</code> - View all occurrences in a string that match the regex</li>
+<li><code>str_count()</code> - count the number of times a regex matches within a string</li>
+<li><code>str_detect()</code> - determine if regex is found within string</li>
+<li><code>str_subset()</code> - return subset of strings that match the regex</li>
+<li><code>str_extract()</code> - return portion of each string that matches the regex</li>
+<li><code>str_replace_{all}()</code> - replace portion of string that matches the regex with something else</li>
+<li><code>str_remove_{all}()</code> - like `str_replace(x, the_pattern, ““)</li>
+</ul>
+</section>
+<section id="glue-package" class="level2">
+<h2 class="anchored" data-anchor-id="glue-package"><code>glue</code> package</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">description =</span> <span class="fu">glue</span>(<span class="st">"The {name} typically sleeps for {sleep_total * 60} minutes and is awake for {awake * 60} minutes each day."</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_total, awake, description)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 83 × 4
+   name                       sleep_total awake description                     
+   &lt;chr&gt;                            &lt;dbl&gt; &lt;dbl&gt; &lt;glue&gt;                          
+ 1 Cheetah                           12.1  11.9 The Cheetah typically sleeps fo…
+ 2 Owl monkey                        17     7   The Owl monkey typically sleeps…
+ 3 Mountain beaver                   14.4   9.6 The Mountain beaver typically s…
+ 4 Greater short-tailed shrew        14.9   9.1 The Greater short-tailed shrew …
+ 5 Cow                                4    20   The Cow typically sleeps for 24…
+ 6 Three-toed sloth                  14.4   9.6 The Three-toed sloth typically …
+ 7 Northern fur seal                  8.7  15.3 The Northern fur seal typically…
+ 8 Vesper mouse                       7    17   The Vesper mouse typically slee…
+ 9 Dog                               10.1  13.9 The Dog typically sleeps for 60…
+10 Roe deer                           3    21   The Roe deer typically sleeps f…
+# ℹ 73 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="tidytext-package" class="level2">
+<h2 class="anchored" data-anchor-id="tidytext-package"><code>tidytext</code> package</h2>
+</section>
+</section>
+<section id="lists" class="level1">
+<h1>Lists</h1>
+<p>Creating a named list</p>
+<p>Subsetting by numerical index, by name. Single and double bracket subsetting</p>
+</section>
+<section id="data-framestibbles" class="level1">
+<h1>Data frames/tibbles</h1>
+<p>as.data.frame() and View() for viewing a long data frame</p>
+</section>
+<section id="matrices" class="level1">
+<h1>Matrices</h1>
+<p>Most commonly comes up as a correlation matrix. row and colnames of matrices. Subsetting by numerical index or name</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

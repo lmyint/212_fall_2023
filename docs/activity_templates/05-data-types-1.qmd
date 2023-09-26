@@ -1,0 +1,298 @@
+---
+title: "Wrangling: numerics, logicals, dates"
+---
+
+```{r echo=FALSE, message=FALSE}
+library(tidyverse)
+library(lubridate)
+data(lakers)
+```
+
+# Learning goals
+
+After this lesson, you should be able to:
+
+- Determine the class of a given object and identify concerns to be wary of when manipulating an object of that class (numerics, logicals, factors, dates, strings, data.frames)
+- Explain what vector recycling is, when it is used, when it can be a problem, and how to avoid those problems
+- Explain the difference between implicit and explicit coercion
+- Extract date-time information using the `lubridate` package
+- Write R code to wrangle data from these different types
+- Recognize several new R errors and warnings related to data types
+
+<br>
+
+Slides for today are available [here](slides/05-data-types-1.qmd). (For our main activity, we will be using the rest of the webpage below.)
+
+<br>
+
+You can download a template Quarto file to start from [here](activity_templates/05-data-types-1.qmd). Save this template within the following directory structure:
+
+- `your_course_folder`
+    - `wrangling_data_types`
+        - `code`
+            - `05-data-types-1.qmd`
+        - `data`
+            - You'll download data from Moodle later today.
+
+
+<br><br><br>
+
+
+# Object classes
+
+We got a taste of object **classes** when we worked with maps. Reading in spatial data from different data sources created objects of different classes.
+
+For example, the `data_by_dist` object from our Shiny app is an `sf` object, which means that we can use the convenient `geom_sf()` within `ggplot`s to make maps.
+
+```{r eval=FALSE}
+class(data_by_dist)
+```
+
+```
+[1] "sf"         "data.frame"
+```
+
+An important object class in R is the **vector**. Each column of a data frame is actually a vector. In data science, the most common vector classes are `numeric`, `integer`, `logical`, `character`, `factor` and `Date`.
+
+```{r}
+class(lakers)
+class(bnames %>% select(opponent))
+class(bnames %>% pull(opponent))
+```
+
+Why is this important? When looking at the documentation for a function, you will see that arguments are expected to be of a specific type (class). Examples:
+
+- `ggplot::scale_x_continuous()`: One option for the `breaks` argument is "A *numeric vector* of positions"
+- `shiny::sliderInput()`: The `value` argument. "The initial value of the slider, either a number, a date (class Date), or a date-time (class POSIXt). A *length one vector* will create a regular slider; a *length two vector* will create a double-ended range slider. Must lie between min and max."
+
+
+<br><br><br>
+
+
+# Numeric data
+
+## Numeric and integer classes
+
+Numbers that we see in R are generally of the `numeric` class, which are numbers with decimals. The `c()` function below is a way to create a vector of multiple numbers.
+
+```{r}
+numbers <- c(1, 2, 3)
+class(numbers)
+```
+
+R also has an `integer` class which will most often be formed when using the `:` operator to form regularly spaced sequences. 
+
+```{r}
+integers <- 1:3
+class(integers)
+```
+
+It will be important to know how to check whether a number is a `numeric` or `integer` because we'll be using the `purrr` package very shortly which checks types very strictly (e.g., `1` as an integer cannot be combined with `1` as a numeric)
+
+## Vector recycling
+
+```{r}
+head(lakers %>% select(date, opponent, team, points))
+```
+
+Suppose that we wanted to update just the first two `points` values (e.g., we learned of a typo).
+
+```{r}
+point_update <- c(2,3)
+lakers2 <- lakers %>%
+    mutate(points = points + point_update)
+head(lakers$points)
+head(lakers2$points)
+```
+
+Uh oh! It looks like the `2,3` point update vector got repeated multiple times. This is called **vector recycling**. If you are trying to combine or compare vectors of different lengths, R will repeat (recycle) the shorter one as many times as it takes to make them the same length. When the longer vector's length isn't a multiple of the smaller one, we'll get a warning.
+
+```{r}
+point_update <- c(2,3,2)
+lakers2 <- lakers %>%
+    mutate(points = points + point_update)
+```
+
+In this case, the safest way to do the points update is to make sure that `point_update` has the same length as `points`:
+
+```{r}
+lakers2 <- lakers %>%
+    mutate(
+        play_id = 1:nrow(lakers),
+        point_update = case_when(
+            play_id==1 ~ 2,
+            play_id==2 ~ 3,
+            .default = 0
+        ),
+        points = points + point_update
+    )
+
+head(lakers2 %>% select(date, opponent, team, points))
+```
+
+Recycling will very often come up when working with logical objects (Booleans):
+
+```{r}
+class(diamonds)=="data.frame"
+class(diamonds)
+
+"data.frame" %in% class(diamonds)
+any(class(diamonds)=="data.frame")
+```
+
+## Explicit coercion
+
+In R there is a family of **coercion** functions that force a variable to be represented as a particular type. We have `as.numeric()` and `as.integer()` for numbers.
+
+Most commonly we will use these when numbers have accidentally been read in as a `character` or a `factor`. (More on factors later.)
+
+In the example below we have a set of 4 points values, but the last entry was mistakenly typed as a space in the spreadsheet (instead of as an empty cell). We can see when we display `points` that all of the values have quotes around them and that the class of the `points` object is a `character` vector. (More on working with `character` objects next time.)
+
+```{r}
+points <- c(2, 3, 0, " ")
+points
+class(points)
+```
+
+Most commonly we will have numeric data that happens to be read in as a character. After cleaning up the strings, we can use `as.numeric` to coerce the vector to a numeric vector. (More on strings and regular expressions later.) Example:
+
+```{r}
+x <- c("2.3", "3.4", "4.5", "5.6.")
+as.numeric(x)
+x <- str_remove(x, "\\.$")
+as.numeric(x)
+```
+
+## Other topics
+
+The [Numbers](https://r4ds.hadley.nz/numbers) chapter in R4DS covers a lot of useful functions and ideas related to wrangling numbers. It would be very usefl to read this chapter. A glossary of the 
+
+- `n()`, `n_distinct()`
+- `sum(is.na())`
+- `pmin(), pmax()` vs `min(), max()`
+- Integer division: `%/%`. Remainder: `%%`
+- `round(), floor(), ceiling()`
+- `cut()`
+- `cumsum(), dplyr::cummean(), cummin(), cummax()`
+- `dplyr::min_rank()`
+- `lead(), lag()`: shift a vector by padding with NAs
+- Numerical summaries: `mean`, `median`, `min`, `max`, `quantile`, `sd`, `IQR`
+
+
+<br><br><br>
+
+
+# Logical data
+
+(The [Logical vectors](https://r4ds.hadley.nz/logicals) chapter in R4DS is a good supplemental reference.)
+
+Logical data result from comparisons:
+
+- Comparing numeric data uses the following operators
+    - `>`, `<`: greater and less than
+    - `>=`, `<`: greater and less than or equal to
+    - `==` exactly equal
+- Characters
+    - `variable=="specific choice"`
+    - `variable %in% c("choice1", "choice2", "choice3")`
+- Combining logical statements
+    - `&`: and
+    - `|`: or
+    
+Example: filter to 3-pointers against the Minnesota Timberwolves (`MIN` team).
+
+```{r}
+lakers_subs <- lakers %>%
+    filter(points==3 & team=="MIN")
+lakers_subs
+
+# These give the same results
+lakers %>%
+    filter(points==3, team=="MIN")
+lakers %>%
+    filter(points==3) %>%
+    filter(team=="MIN")
+```
+
+In HW1, I saw a lot of the following code:
+
+```{r eval=FALSE}
+weather %>% filter(RecordP == "TRUE")
+weather %>% filter(RecordP == TRUE)
+```
+
+Because `RecordP` was already of the `logical` class, the most concise way to perform the filtering is:
+
+```{r eval=FALSE}
+weather %>% filter(RecordP)
+```
+
+A caution about using `==` for numeric data:
+
+```{r}
+x <- c(1 / 49 * 49, sqrt(2) ^ 2)
+x
+x == c(1, 2)
+print(x, digits = 16)
+dplyr::near(x, c(1,2))
+```
+
+A caution about using `==` for `NA`s (use `is.na()` instead):
+
+```{r}
+x <- NA
+x == NA
+is.na(x)
+```
+
+
+<br><br><br>
+
+
+# Dates
+
+(The [Dates and times](https://r4ds.hadley.nz/datetimes) chapter in R4DS is a good supplemental reference.)
+
+The `lubridate` package contains useful functions for working with dates and times. The `lubridate` [function reference](https://lubridate.tidyverse.org/reference/index.html) is a useful resource for finding the functions you need.
+
+```{r}
+lakers <- as_tibble(lakers)
+head(lakers)
+```
+
+```{r}
+lakers <- lakers %>%
+    mutate(
+        date = ymd(date),
+        time = hm(time)
+    )
+```
+
+```{r}
+lakers_clean <- lakers %>%
+    mutate(
+        year = year(date),
+        month = month(date),
+        day = day(date),
+        day_of_week = wday(date, label = TRUE),
+        hour = hour(time),
+        minute = minute(time)
+    )
+lakers_clean %>% select(year:minute)
+
+lakers_clean <- lakers_clean %>%
+    group_by(date, opponent, period) %>%
+    arrange(date, opponent, period, desc(time)) %>%
+    mutate(
+        diff_btw_plays_sec = as.numeric(time - lag(time, 1))
+    )
+lakers_clean %>% select(date, opponent, time, period, diff_btw_plays_sec)
+```
+
+# Open-ended challenge: Is Hillary the most-poisoned baby name in US history?
+
+Inspired by [this viral post](https://hilaryparker.com/2013/01/30/hilary-the-most-poisoned-baby-name-in-us-history/) by an alumna of my PhD program, Hilary Parker, we will use baby name data from the Social Security Administration to investigate whether "Hilary" (or "Hillary") is the most poisoned. Hilary defines "poisoning" as a sudden, rapid, and large decrease in the popularity of a name.
+
+**Data:** Download the baby names data from [Moodle](https://moodle.macalester.edu/mod/resource/view.php?id=40467) and save this in the `data` folder for today.
+
+**Your goal:** Using whatever data wrangling tools necessary, try to answer this question with a combination of visualizations and numerical results.

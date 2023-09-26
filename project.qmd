@@ -27,7 +27,9 @@ Due date: Wednesday, 9/20 as part of HW2.
 
 ## Milestone 2
 
-Form project teams. Finalize one initial data source and questions related to that source. Each team member should create 1 "ugly" (not fully polished) visualization to demonstrate viability of the research questions. (Think of this as visualization "prototyping".)
+- Form project teams.
+- Finalize one initial data source and questions related to that source.
+- Each team member should create 1 "ugly" (not fully polished) visualization to demonstrate viability of the research questions. (Think of this as visualization "prototyping".)
 
 Due date: Wednesday, 10/4 as part of HW4.
 
@@ -35,7 +37,7 @@ Due date: Wednesday, 10/4 as part of HW4.
 
 ***(NOT FINALIZED YET)***
 
-Perform the data acquisition, wrangling, visualization, and modeling needed to answer **one** of your research questions. Note that your question might not be amenable to modeling (or to modeling that you've learned about so far). For that reason, modeling is not required, but visualization is.
+Perform the data acquisition, wrangling, visualization, and modeling needed to address **one** of your research questions. Note that your question might not be amenable to modeling (or to modeling that you've learned about so far). For that reason, modeling is not required, but visualization is.
 
 Due date: Present your visualization to the class for feedback on Thursday, 10/12.
 
@@ -43,7 +45,7 @@ Due date: Present your visualization to the class for feedback on Thursday, 10/1
 
 ***(NOT FINALIZED YET)***
 
-Adjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to answer another one of your research questions. Submit "Rough Draft" to instructor for feedback.
+Adjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to address another one of your research questions. Submit "Rough Draft" to instructor for feedback.
 
 Due date: TBD
 
@@ -51,7 +53,7 @@ Due date: TBD
 
 ***(NOT FINALIZED YET)***
 
-Adjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to answer another one of your research questions. Submit "Final Draft".
+Adjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to address another one of your research questions. Submit "Final Draft".
 
 Due date: TBD
 

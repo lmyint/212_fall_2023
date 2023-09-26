@@ -161,51 +161,65 @@
     "text": "Exercise 5: Turn plots into plotlys\nIn a web application, having plots be plotly objects is just nice by default because of the great mouseover, zoom, and pan features.\nInside app.R, change all instances of plotOutput to plotlyOutput and all instances of renderPlot to renderPlotly. Make sure to add calls to ggplotly() too."
   },
   {
-    "objectID": "05-data-types.html",
-    "href": "05-data-types.html",
-    "title": "Topic 5: Wrangling numerics, logicals, factors, and dates",
+    "objectID": "05-data-types-1.html",
+    "href": "05-data-types-1.html",
+    "title": "Wrangling: numerics, logicals, dates",
     "section": "",
-    "text": "After this lesson, you should be able to:\n\nDetermine the class of a given object and identify concerns to be wary of when manipulating that class of object (classes: numerics, logicals, factors, dates, strings, lists, data.frames/tibbles, matrices)\nExplain what vector recycling is, when it is used, when it can be a problem, and how to avoid those problems\nExplain the difference between implicit and explicit coercion\nExtract date-time information using the lubridate package\nRecode and manage factors using the forcats package\nManipulate and explore strings using the stringr package\nLists:\n\nSee how many objects (like the result of lm()) are lists\nSubset lists by index and name\nExplore the structure of nested lists with str()\n\nData frames/tibbles\n\nExplain the difference between a data.frame and a tibble (list columns)\n\nMatrices\n\nSubset matrices\n\nWrite R code to wrangle data from these different types\nRecognize several new R errors and warnings related to data types"
+    "text": "After this lesson, you should be able to:\n\nDetermine the class of a given object and identify concerns to be wary of when manipulating an object of that class (numerics, logicals, factors, dates, strings, data.frames)\nExplain what vector recycling is, when it is used, when it can be a problem, and how to avoid those problems\nExplain the difference between implicit and explicit coercion\nExtract date-time information using the lubridate package\nWrite R code to wrangle data from these different types\nRecognize several new R errors and warnings related to data types\n\n\nSlides for today are available here. (For our main activity, we will be using the rest of the webpage below.)\n\nYou can download a template Quarto file to start from here. Save this template within the following directory structure:\n\nyour_course_folder\n\nwrangling_data_types\n\ncode\n\n05-data-types-1.qmd\n\ndata\n\nYou’ll download data from Moodle later today."
   },
   {
-    "objectID": "05-data-types.html#numeric-and-integer-classes",
-    "href": "05-data-types.html#numeric-and-integer-classes",
-    "title": "Topic 5: Wrangling numerics, logicals, factors, and dates",
+    "objectID": "05-data-types-1.html#numeric-and-integer-classes",
+    "href": "05-data-types-1.html#numeric-and-integer-classes",
+    "title": "Wrangling: numerics, logicals, dates",
     "section": "Numeric and integer classes",
     "text": "Numeric and integer classes\nNumbers that we see in R are generally of the numeric class, which are numbers with decimals. The c() function below is a way to create a vector of multiple numbers.\n\nnumbers &lt;- c(1, 2, 3)\nclass(numbers)\n\n[1] \"numeric\"\n\n\nR also has an integer class which will most often be formed when using the : operator to form regularly spaced sequences.\n\nintegers &lt;- 1:3\nclass(integers)\n\n[1] \"integer\"\n\n\nIt will be important to know how to check whether a number is a numeric or integer because we’ll be using the purrr package very shortly which checks types very strictly (e.g., 1 as an integer cannot be combined with 1 as a numeric)"
   },
   {
-    "objectID": "05-data-types.html#vector-recycling",
-    "href": "05-data-types.html#vector-recycling",
-    "title": "Topic 5: Wrangling numerics, logicals, factors, and dates",
+    "objectID": "05-data-types-1.html#vector-recycling",
+    "href": "05-data-types-1.html#vector-recycling",
+    "title": "Wrangling: numerics, logicals, dates",
     "section": "Vector recycling",
-    "text": "Vector recycling\nSuppose that we wanted to update just the first two points values (e.g., we learned of a typo).\n\npoint_update &lt;- c(2,3)\nlakers2 &lt;- lakers %&gt;%\n    mutate(points = points + point_update)\nhead(lakers$points)\n\n[1] 0 0 0 0 0 2\n\nhead(lakers2$points)\n\n[1] 2 3 2 3 2 5\n\n\nUh oh! It looks like the 2,3 point update vector got repeated multiple times. This is called vector recycling. If you are trying to combine or compare vectors of different lengths, R will repeat (recycle) the shorter one as many times as it takes to make them the same length. When the longer vector’s length isn’t a multiple of the smaller one, we’ll get a warning.\n\npoint_update &lt;- c(2,3,2)\nlakers2 &lt;- lakers %&gt;%\n    mutate(points = points + point_update)\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `points = points + point_update`.\nCaused by warning in `points + point_update`:\n! longer object length is not a multiple of shorter object length"
+    "text": "Vector recycling\n\nhead(lakers %&gt;% select(date, opponent, team, points))\n\n      date opponent team points\n1 20081028      POR  OFF      0\n2 20081028      POR  LAL      0\n3 20081028      POR  LAL      0\n4 20081028      POR  LAL      0\n5 20081028      POR  LAL      0\n6 20081028      POR  LAL      2\n\n\nSuppose that we wanted to update just the first two points values (e.g., we learned of a typo).\n\npoint_update &lt;- c(2,3)\nlakers2 &lt;- lakers %&gt;%\n    mutate(points = points + point_update)\nhead(lakers$points)\n\n[1] 0 0 0 0 0 2\n\nhead(lakers2$points)\n\n[1] 2 3 2 3 2 5\n\n\nUh oh! It looks like the 2,3 point update vector got repeated multiple times. This is called vector recycling. If you are trying to combine or compare vectors of different lengths, R will repeat (recycle) the shorter one as many times as it takes to make them the same length. When the longer vector’s length isn’t a multiple of the smaller one, we’ll get a warning.\n\npoint_update &lt;- c(2,3,2)\nlakers2 &lt;- lakers %&gt;%\n    mutate(points = points + point_update)\n\nWarning: There was 1 warning in `mutate()`.\nℹ In argument: `points = points + point_update`.\nCaused by warning in `points + point_update`:\n! longer object length is not a multiple of shorter object length\n\n\nIn this case, the safest way to do the points update is to make sure that point_update has the same length as points:\n\nlakers2 &lt;- lakers %&gt;%\n    mutate(\n        play_id = 1:nrow(lakers),\n        point_update = case_when(\n            play_id==1 ~ 2,\n            play_id==2 ~ 3,\n            .default = 0\n        ),\n        points = points + point_update\n    )\n\nhead(lakers2 %&gt;% select(date, opponent, team, points))\n\n      date opponent team points\n1 20081028      POR  OFF      2\n2 20081028      POR  LAL      3\n3 20081028      POR  LAL      0\n4 20081028      POR  LAL      0\n5 20081028      POR  LAL      0\n6 20081028      POR  LAL      2\n\n\nRecycling will very often come up when working with logical objects (Booleans):\n\nclass(diamonds)==\"data.frame\"\n\n[1] FALSE FALSE  TRUE\n\nclass(diamonds)\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\"\n\n\"data.frame\" %in% class(diamonds)\n\n[1] TRUE\n\nany(class(diamonds)==\"data.frame\")\n\n[1] TRUE"
   },
   {
-    "objectID": "05-data-types.html#explicit-coercion",
-    "href": "05-data-types.html#explicit-coercion",
-    "title": "Topic 5: Wrangling numerics, logicals, factors, and dates",
+    "objectID": "05-data-types-1.html#explicit-coercion",
+    "href": "05-data-types-1.html#explicit-coercion",
+    "title": "Wrangling: numerics, logicals, dates",
     "section": "Explicit coercion",
-    "text": "Explicit coercion\nIn R there is a family of coercion functions that force a variable to be represented as a particular type. We have as.numeric() and as.integer() for numbers.\nMost commonly we will use these when numbers have accidentally been read in as a character or a factor. (More on factors later.)\nIn the example below we have a set of 4 points values, but the last entry was mistakenly typed as a space in the spreadsheet (instead of as an empty cell). We can see when we display points that all of the values have quotes around them and that the class of the points object is a character vector. (More on working with character objects next time.)\n\npoints &lt;- c(2, 3, 0, \" \")\npoints\n\n[1] \"2\" \"3\" \"0\" \" \"\n\nclass(points)\n\n[1] \"character\""
+    "text": "Explicit coercion\nIn R there is a family of coercion functions that force a variable to be represented as a particular type. We have as.numeric() and as.integer() for numbers.\nMost commonly we will use these when numbers have accidentally been read in as a character or a factor. (More on factors later.)\nIn the example below we have a set of 4 points values, but the last entry was mistakenly typed as a space in the spreadsheet (instead of as an empty cell). We can see when we display points that all of the values have quotes around them and that the class of the points object is a character vector. (More on working with character objects next time.)\n\npoints &lt;- c(2, 3, 0, \" \")\npoints\n\n[1] \"2\" \"3\" \"0\" \" \"\n\nclass(points)\n\n[1] \"character\"\n\n\nMost commonly we will have numeric data that happens to be read in as a character. After cleaning up the strings, we can use as.numeric to coerce the vector to a numeric vector. (More on strings and regular expressions later.) Example:\n\nx &lt;- c(\"2.3\", \"3.4\", \"4.5\", \"5.6.\")\nas.numeric(x)\n\nWarning: NAs introduced by coercion\n\n\n[1] 2.3 3.4 4.5  NA\n\nx &lt;- str_remove(x, \"\\\\.$\")\nas.numeric(x)\n\n[1] 2.3 3.4 4.5 5.6"
   },
   {
-    "objectID": "05-data-types.html#regular-expressions",
-    "href": "05-data-types.html#regular-expressions",
-    "title": "Topic 5: Wrangling numerics, logicals, factors, and dates",
+    "objectID": "05-data-types-1.html#other-topics",
+    "href": "05-data-types-1.html#other-topics",
+    "title": "Wrangling: numerics, logicals, dates",
+    "section": "Other topics",
+    "text": "Other topics\nThe Numbers chapter in R4DS covers a lot of useful functions and ideas related to wrangling numbers. It would be very usefl to read this chapter. A glossary of the\n\nn(), n_distinct()\nsum(is.na())\npmin(), pmax() vs min(), max()\nInteger division: %/%. Remainder: %%\nround(), floor(), ceiling()\ncut()\ncumsum(), dplyr::cummean(), cummin(), cummax()\ndplyr::min_rank()\nlead(), lag(): shift a vector by padding with NAs\nNumerical summaries: mean, median, min, max, quantile, sd, IQR"
+  },
+  {
+    "objectID": "06-data-types-2.html",
+    "href": "06-data-types-2.html",
+    "title": "Wrangling: strings and factors",
+    "section": "",
+    "text": "Recode and manage factors using the forcats package\nManipulate and explore strings using the stringr package"
+  },
+  {
+    "objectID": "06-data-types-2.html#regular-expressions",
+    "href": "06-data-types-2.html#regular-expressions",
+    "title": "Wrangling: strings and factors",
     "section": "Regular expressions",
     "text": "Regular expressions\n\nstr_view() - View the first occurrence in a string that matches the regex\nstr_view_all() - View all occurrences in a string that match the regex\nstr_count() - count the number of times a regex matches within a string\nstr_detect() - determine if regex is found within string\nstr_subset() - return subset of strings that match the regex\nstr_extract() - return portion of each string that matches the regex\nstr_replace_{all}() - replace portion of string that matches the regex with something else\nstr_remove_{all}() - like `str_replace(x, the_pattern, ““)"
   },
   {
-    "objectID": "05-data-types.html#glue-package",
-    "href": "05-data-types.html#glue-package",
-    "title": "Topic 5: Wrangling numerics, logicals, factors, and dates",
+    "objectID": "06-data-types-2.html#glue-package",
+    "href": "06-data-types-2.html#glue-package",
+    "title": "Wrangling: strings and factors",
     "section": "glue package",
     "text": "glue package\n\nlibrary(glue)\nmsleep %&gt;%\n  mutate(description = glue(\"The {name} typically sleeps for {sleep_total * 60} minutes and is awake for {awake * 60} minutes each day.\")) %&gt;% \n  select(name, sleep_total, awake, description)\n\n# A tibble: 83 × 4\n   name                       sleep_total awake description                     \n   &lt;chr&gt;                            &lt;dbl&gt; &lt;dbl&gt; &lt;glue&gt;                          \n 1 Cheetah                           12.1  11.9 The Cheetah typically sleeps fo…\n 2 Owl monkey                        17     7   The Owl monkey typically sleeps…\n 3 Mountain beaver                   14.4   9.6 The Mountain beaver typically s…\n 4 Greater short-tailed shrew        14.9   9.1 The Greater short-tailed shrew …\n 5 Cow                                4    20   The Cow typically sleeps for 24…\n 6 Three-toed sloth                  14.4   9.6 The Three-toed sloth typically …\n 7 Northern fur seal                  8.7  15.3 The Northern fur seal typically…\n 8 Vesper mouse                       7    17   The Vesper mouse typically slee…\n 9 Dog                               10.1  13.9 The Dog typically sleeps for 60…\n10 Roe deer                           3    21   The Roe deer typically sleeps f…\n# ℹ 73 more rows"
   },
   {
-    "objectID": "05-data-types.html#tidytext-package",
-    "href": "05-data-types.html#tidytext-package",
-    "title": "Topic 5: Wrangling numerics, logicals, factors, and dates",
+    "objectID": "06-data-types-2.html#tidytext-package",
+    "href": "06-data-types-2.html#tidytext-package",
+    "title": "Wrangling: strings and factors",
     "section": "tidytext package",
     "text": "tidytext package"
   },
@@ -259,6 +273,13 @@
     "text": "Required parts\n\nFinish the Shiny app from the interactive viz class activity up to the minimum requirements.\n\nSubmission details: Submit the app.R file on Moodle by midnight on Wednesday, 9/27.\n\nWork towards Milestone 2 of the course project. (Nothing to turn in for Homework 3, but you should be making progress.)\n\n\n\nOptional\nParticipate in the most recent Tidy Tuesday challenge."
   },
   {
+    "objectID": "homework4.html",
+    "href": "homework4.html",
+    "title": "Homework 4",
+    "section": "",
+    "text": "Required parts\nDue Wednesday, October 4 by midnight on Moodle.\nComplete Milestone 2 of the course project.\n\nEach team member will submit their own .Rmd file and knitted HTML containing their own “rough draft” visualization to answer the team’s initial research question.\n\n\n\nOptional\nParticipate in the most recent Tidy Tuesday challenge."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "STAT/COMP 212: Intermediate Data Science (Fall 2023)",
@@ -269,33 +290,40 @@
     "objectID": "index.html#section",
     "href": "index.html#section",
     "title": "STAT/COMP 212: Intermediate Data Science (Fall 2023)",
-    "section": "9/19",
-    "text": "9/19\n\nOn Thursday:\n\nWe will spend the first 30 moving our course projects moving forward.\nIn the last hour of class, facilitators will come in to run an activity for the Classroom Community and Connectedness Survey. (I will be leaving.) A reminder of why this activity is important to me from our syllabus:\n“A sense of community and connectedness can provide a powerful environment for learning: Research shows that learning is maximized when students feel a sense of belonging in the educational environment (e.g., Booker, 2016). A negative climate may create barriers to learning, while a positive climate can energize students’ learning (e.g., Pascarella & Terenzini, cited in How Learning Works, 2012).”"
+    "section": "9/26",
+    "text": "9/26\n\nIf you haven’t already found an initial dataset, peruse the Tidy Tuesday repository for ideas.\n\nHomework 4 (due next Wednesday 10/4) is to complete Project Milestone 2.\n\nThursday topics: wrangling strings (with regular expressions) and factors\nIn place of a standard Homework 5, we will have the first of 3 substantive reflections."
   },
   {
     "objectID": "index.html#section-1",
     "href": "index.html#section-1",
     "title": "STAT/COMP 212: Intermediate Data Science (Fall 2023)",
-    "section": "9/14",
-    "text": "9/14\n\nBefore next Tuesday’s class\n\nCheck the Schedule page. There is a short podcast segment (~7 min) to listen to and one guiding question to answer. This podcast segment shares a bit of wisdom about when it is/isn’t useful to make fancy visualizations.\nInstall the shiny and plotly packages. Post on the #questions channel on Slack if you run into problems. (Share your commands and error messages.)\n\nNext Thursday we will be having facilitators come in for the last hour of class for the Classroom Community and Connectedness Survey. (I will be leaving.)\n\nWe will use the first 30 to get our course projects moving forward."
+    "section": "9/19",
+    "text": "9/19\n\nOn Thursday:\n\nWe will spend the first 30 moving our course projects moving forward.\nIn the last hour of class, facilitators will come in to run an activity for the Classroom Community and Connectedness Survey. (I will be leaving.) A reminder of why this activity is important to me from our syllabus:\n“A sense of community and connectedness can provide a powerful environment for learning: Research shows that learning is maximized when students feel a sense of belonging in the educational environment (e.g., Booker, 2016). A negative climate may create barriers to learning, while a positive climate can energize students’ learning (e.g., Pascarella & Terenzini, cited in How Learning Works, 2012).”"
   },
   {
     "objectID": "index.html#section-2",
     "href": "index.html#section-2",
     "title": "STAT/COMP 212: Intermediate Data Science (Fall 2023)",
-    "section": "9/12",
-    "text": "9/12\n\nHomework 1 due Wednesday at midnight (Finishing up the temperature + precipitation plots from last Tuesday)\n\nUpdated submission instructions can be found here. (Also in the most recent Moodle announcement.)\n\nHomework 2 due next Wednesday, 9/20 has two parts:\n\nFinish Open-ended Exercise from today’s Advanced Map Visualization activity.\nComplete Milestone 1 of the course project\n\nThere is a final version of our syllabus that incorporates the learning goals and grading option that we discussed on our first day."
+    "section": "9/14",
+    "text": "9/14\n\nBefore next Tuesday’s class\n\nCheck the Schedule page. There is a short podcast segment (~7 min) to listen to and one guiding question to answer. This podcast segment shares a bit of wisdom about when it is/isn’t useful to make fancy visualizations.\nInstall the shiny and plotly packages. Post on the #questions channel on Slack if you run into problems. (Share your commands and error messages.)\n\nNext Thursday we will be having facilitators come in for the last hour of class for the Classroom Community and Connectedness Survey. (I will be leaving.)\n\nWe will use the first 30 to get our course projects moving forward."
   },
   {
     "objectID": "index.html#section-3",
     "href": "index.html#section-3",
     "title": "STAT/COMP 212: Intermediate Data Science (Fall 2023)",
-    "section": "9/7",
-    "text": "9/7\n\nI’ll be adding a new version of the syllabus to our course website that incorporates our final choice for grading system and the learning goals that you contributed.\nComplete the pre-course survey by 3pm today to shape when I hold drop-in hours (office hours).\nLook at the updated Schedule page. We have Guiding Questions for next Tuesday’s class: advanced map visualization.\n\nNote that Guiding Questions never have to be turned in. Do answer them to the best of your ability before class. We’ll spend time at the start of class checking in on these."
+    "section": "9/12",
+    "text": "9/12\n\nHomework 1 due Wednesday at midnight (Finishing up the temperature + precipitation plots from last Tuesday)\n\nUpdated submission instructions can be found here. (Also in the most recent Moodle announcement.)\n\nHomework 2 due next Wednesday, 9/20 has two parts:\n\nFinish Open-ended Exercise from today’s Advanced Map Visualization activity.\nComplete Milestone 1 of the course project\n\nThere is a final version of our syllabus that incorporates the learning goals and grading option that we discussed on our first day."
   },
   {
     "objectID": "index.html#section-4",
     "href": "index.html#section-4",
+    "title": "STAT/COMP 212: Intermediate Data Science (Fall 2023)",
+    "section": "9/7",
+    "text": "9/7\n\nI’ll be adding a new version of the syllabus to our course website that incorporates our final choice for grading system and the learning goals that you contributed.\nComplete the pre-course survey by 3pm today to shape when I hold drop-in hours (office hours).\nLook at the updated Schedule page. We have Guiding Questions for next Tuesday’s class: advanced map visualization.\n\nNote that Guiding Questions never have to be turned in. Do answer them to the best of your ability before class. We’ll spend time at the start of class checking in on these."
+  },
+  {
+    "objectID": "index.html#section-5",
+    "href": "index.html#section-5",
     "title": "STAT/COMP 212: Intermediate Data Science (Fall 2023)",
     "section": "9/5",
     "text": "9/5\nTo do before class on Thursday:\n\nSet up R and RStudio using these instructions.\nJoin our Slack workspace.\n\nUpdate your Slack profile with preferred name, pronouns, name pronunciation. (To find your profile, click on your name under Direct Messages on the left menu, and click “Edit Profile”.)\nIntroduce yourself in the #general channel.\n\nComplete the pre-course survey.\nLook at the Guiding Questions for Thursday’s class on advanced ggplot2.\nTake a look at Homework 0.\n\nThis is a personal essay that doesn’t need to be turned in.\nTopic: Your 10-year vision\nMy hope is that writing this allows gives you more clarity on how to align what you do this semester (and beyond) with who/what/how you want to be.\n\nFinish writing your 12 favorite problems and post them in the #12-favorite-problems channel on Slack.\n\nWhen you connect with peers from Thursday onward, you’ll be using your 12FPs to get to know each other a bit first before working on activities together."
@@ -319,28 +347,28 @@
     "href": "project.html#milestone-2",
     "title": "Project",
     "section": "Milestone 2",
-    "text": "Milestone 2\nForm project teams. Finalize one initial data source and questions related to that source. Each team member should create 1 “ugly” (not fully polished) visualization to demonstrate viability of the research questions. (Think of this as visualization “prototyping”.)\nDue date: Wednesday, 10/4 as part of HW4."
+    "text": "Milestone 2\n\nForm project teams.\nFinalize one initial data source and questions related to that source.\nEach team member should create 1 “ugly” (not fully polished) visualization to demonstrate viability of the research questions. (Think of this as visualization “prototyping”.)\n\nDue date: Wednesday, 10/4 as part of HW4."
   },
   {
     "objectID": "project.html#milestone-3",
     "href": "project.html#milestone-3",
     "title": "Project",
     "section": "Milestone 3",
-    "text": "Milestone 3\n(NOT FINALIZED YET)\nPerform the data acquisition, wrangling, visualization, and modeling needed to answer one of your research questions. Note that your question might not be amenable to modeling (or to modeling that you’ve learned about so far). For that reason, modeling is not required, but visualization is.\nDue date: Present your visualization to the class for feedback on Thursday, 10/12."
+    "text": "Milestone 3\n(NOT FINALIZED YET)\nPerform the data acquisition, wrangling, visualization, and modeling needed to address one of your research questions. Note that your question might not be amenable to modeling (or to modeling that you’ve learned about so far). For that reason, modeling is not required, but visualization is.\nDue date: Present your visualization to the class for feedback on Thursday, 10/12."
   },
   {
     "objectID": "project.html#milestone-4",
     "href": "project.html#milestone-4",
     "title": "Project",
     "section": "Milestone 4",
-    "text": "Milestone 4\n(NOT FINALIZED YET)\nAdjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to answer another one of your research questions. Submit “Rough Draft” to instructor for feedback.\nDue date: TBD"
+    "text": "Milestone 4\n(NOT FINALIZED YET)\nAdjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to address another one of your research questions. Submit “Rough Draft” to instructor for feedback.\nDue date: TBD"
   },
   {
     "objectID": "project.html#milestone-5",
     "href": "project.html#milestone-5",
     "title": "Project",
     "section": "Milestone 5",
-    "text": "Milestone 5\n(NOT FINALIZED YET)\nAdjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to answer another one of your research questions. Submit “Final Draft”.\nDue date: TBD"
+    "text": "Milestone 5\n(NOT FINALIZED YET)\nAdjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to address another one of your research questions. Submit “Final Draft”.\nDue date: TBD"
   },
   {
     "objectID": "schedule.html",
@@ -404,6 +432,48 @@
     "title": "Interactive visualization",
     "section": "Reflecting on our Shiny activity",
     "text": "Reflecting on our Shiny activity\nComment/uncomment the selected lines—super useful for debugging!!\n\nMac: Command-Shift-C\nWindows: Ctrl-Shift-C\n\nWrite a few observations in your Process and Reflection Log (Google Doc):\n\nWhat was challenging about learning Shiny? (When) did things start to click?\nWe’ve worked with a few different partners now–in general what has been helpful/less helpful about working with others? What would you like to change in the future?"
+  },
+  {
+    "objectID": "slides/05-data-types-1.html#as-we-gather",
+    "href": "slides/05-data-types-1.html#as-we-gather",
+    "title": "Wrangling: numerics, logicals, dates",
+    "section": "As we gather…",
+    "text": "As we gather…\nNavigate to our course page and activity: “Wrangling: numerics, logicals, dates”. Open the slides linked under the Learning Goals\nImage of the day:\n\nElderly woman, drinking in the momentOpen up your Process and Reflection Log (Google Doc)."
+  },
+  {
+    "objectID": "slides/05-data-types-1.html#classroom-community-and-connectedness-debrief",
+    "href": "slides/05-data-types-1.html#classroom-community-and-connectedness-debrief",
+    "title": "Wrangling: numerics, logicals, dates",
+    "section": "Classroom Community and Connectedness debrief",
+    "text": "Classroom Community and Connectedness debrief\nSection 1\n\nWhile working in groups on activities was seen as a strength, it was also something that has challenges\n\nMeeting and getting to know new people is hard–especially in a classroom environment\n\nThings that I can do\n\nChange groups regularly\nCreate spaces for more authentic and collaborative group work\nOut-of class opportunities for hanging out (with food!?)\n\nThings that you can do\n\nA number of you mentioned that you yourselves wanted to better at fostering community\n\n\nNote: reflection regarding group work is one of my top learning goals not because I want to judge/evaluate you on it but because I value it. Across your 3 substantive reflections, I just want to give feedback. I won’t give mandates that you have to follow “or else”."
+  },
+  {
+    "objectID": "slides/05-data-types-1.html#classroom-community-and-connectedness-debrief-1",
+    "href": "slides/05-data-types-1.html#classroom-community-and-connectedness-debrief-1",
+    "title": "Wrangling: numerics, logicals, dates",
+    "section": "Classroom Community and Connectedness debrief",
+    "text": "Classroom Community and Connectedness debrief\nSection 2\n\nWhile working in groups on activities was seen as a strength, it was also something that has challenges\n\n“Clicking” with others is not always easy\n\nThings that I can do\n\nBe mindful of class dynamics and energy\nCreate spaces for more authentic and collaborative group work\nOut-of class opportunities for hanging out (with food!?)\n\nThings that you can do\n\nA number of you mentioned trying to be more compassionate and collaborative\n\n\nNote: reflection regarding group work is one of my top learning goals not because I want to judge/evaluate you on it but because I value it. Across your 3 substantive reflections, I just want to give feedback. I won’t give mandates that you have to follow “or else”."
+  },
+  {
+    "objectID": "slides/05-data-types-1.html#project-team-formation-activity",
+    "href": "slides/05-data-types-1.html#project-team-formation-activity",
+    "title": "Wrangling: numerics, logicals, dates",
+    "section": "Project team formation activity",
+    "text": "Project team formation activity\nOpen up this Google Jamboard.\n\nOn a sticky note (left menu), write down the general domain of your ideal project (e.g., environmental/climate issues) and your name.\nOnce everyone is done, work together to group the sticky notes into clusters such that an even number is in each group.\nWithin these groups, re-introduce yourselves and share more specific details about your desired project (e.g., specific research ?s and possible data sources).\nForm teams (pairs) for your project and decide on a contact/communication strategy outside of class."
+  },
+  {
+    "objectID": "slides/05-data-types-1.html#about-project-teams-and-pods",
+    "href": "slides/05-data-types-1.html#about-project-teams-and-pods",
+    "title": "Wrangling: numerics, logicals, dates",
+    "section": "About project teams and “pods”",
+    "text": "About project teams and “pods”\nWe’ll try out sitting in project pairs to better facilitate community and connection. We’ll do a little bit of project work each class period.\nOn feedback days, pairs will sit with other pairs with similar project domains and different domains. Having this variety of feedback will be important for the quality of your project."
+  },
+  {
+    "objectID": "slides/05-data-types-1.html#thursday-project-work",
+    "href": "slides/05-data-types-1.html#thursday-project-work",
+    "title": "Wrangling: numerics, logicals, dates",
+    "section": "Thursday: project work",
+    "text": "Thursday: project work\nMilestone 2 is about finding an initial dataset and each team member creating one “rough draft” visualization to answer one of your research questions.\nI highly recommend using the Tidy Tuesday repository to locate an initial dataset if you don’t already have one. (The dataset doesn’t have to be a perfect match for your questions.)"
   },
   {
     "objectID": "slides/day1.html#plan-for-today",

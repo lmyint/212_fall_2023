@@ -16,6 +16,13 @@ I'm also happy to meet one-on-one if my normal drop-in hours don't work. You can
 
 # Announcements
 
+## 9/26
+
+- If you haven't already found an initial dataset, peruse the [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday) repository for ideas.
+    - [Homework 4](homework4.qmd) (due next Wednesday 10/4) is to complete [Project Milestone 2](project.qmd#milestone-2).
+- Thursday topics: wrangling strings (with regular expressions) and factors
+- In place of a standard Homework 5, we will have the first of 3 substantive reflections.
+
 ## 9/19
 
 - On Thursday:

@@ -1,0 +1,142 @@
+---
+title: "Wrangling: strings and factors"
+---
+
+
+- Recode and manage factors using the `forcats` package
+- Manipulate and explore strings using the `stringr` package
+
+# Factors
+
+In R, factors are comprised of two components: the actual values of the data and the possible levels within the factor. Thus, to create a factor, you need to supply both these pieces of information.
+
+For example, if we were to create a character vector of the twelve months, we could certainly do that:
+
+
+```{r}
+## Update this after doing ymd() processing on lakers
+## all 12 months
+all_months <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+
+## our data
+some_months <- c("Mar", "Dec", "Jan",  "Apr", "Jul")
+```
+
+However, if we were to sort this vector, R would sort this vector alphabetically.
+
+```{r}
+# alphabetical sort
+sort(some_months)
+```
+
+While you and I know that this is not how months should be ordered, we haven’t yet told R that. To do so, we need to let R know that it’s a factor variable and what the levels of that factor variable should be.
+
+```{r}
+mon <- factor(some_months, levels = all_months)
+mon
+```
+
+Here, we specify all the possible values that the factor could take in the levels = all_months argument. So, even though not all twelve months are included in the some_months object, we’ve stated that all of the months are possible values. Further, when you sort this variable, it now sorts in the sensical way!
+
+**Update to use chickwts dataset?**
+
+```{r eval=FALSE}
+library(forcats)
+fct_relevel()
+fct_inorder() # skip this one?
+fct_infreq()
+fct_rev()
+fct_reorder()
+fct_recode()
+ifelse() + factor()
+```
+
+
+
+# Setup
+
+```{r}
+library(tidyverse)
+library(stringr)
+```
+
+# Strings
+
+Dataset: `babynames`
+
+R4DS topics
+
+- Creating a string with "" or ''. Creating a string with single quotes or double quotes inside it.
+- Escaping special characters with a \
+- `str_flatten`
+df |> separate_longer_delim(col, delim)
+df |> separate_longer_position(col, width)
+df |> separate_wider_delim(col, delim, names)
+df |> separate_wider_position(col, widths)
+
+```{r}
+str_length("hello")
+str_c("...", "hi", sep = " ")
+str_sub(c("Good", "Morning"), start = c(1,1), end = c(1,2)) # Also negative start and end
+str_sort(c("banana", "apple"))
+```
+
+## Regular expressions
+
+- `str_view()` - View the first occurrence in a string that matches the regex
+- `str_view_all()` - View all occurrences in a string that match the regex
+- `str_count()` - count the number of times a regex matches within a string
+- `str_detect()` - determine if regex is found within string
+- `str_subset()` - return subset of strings that match the regex
+- `str_extract()` - return portion of each string that matches the regex
+- `str_replace_{all}()` - replace portion of string that matches the regex with something else
+- `str_remove_{all}()` - like `str_replace(x, the_pattern, "")
+
+```{r}
+
+```
+
+
+## `glue` package
+
+```{r}
+library(glue)
+msleep %>%
+  mutate(description = glue("The {name} typically sleeps for {sleep_total * 60} minutes and is awake for {awake * 60} minutes each day.")) %>% 
+  select(name, sleep_total, awake, description)
+```
+
+## `tidytext` package
+
+
+# Lists
+
+Creating a named list
+
+Subsetting by numerical index, by name. Single and double bracket subsetting
+
+
+
+# Data frames/tibbles
+
+as.data.frame() and View() for viewing a long data frame
+
+
+
+
+# Matrices
+
+Most commonly comes up as a correlation matrix. row and colnames of matrices. Subsetting by numerical index or name
+
+
+
+
+
+
+
+
+
+
+
+
+

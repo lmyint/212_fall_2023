@@ -43,7 +43,7 @@ website:
         - 03-adv-maps.qmd
         - workflow_files_rstudio.qmd
         - 04-interactive-viz.qmd
-        # - 05-data-types.qmd
+        - 05-data-types-1.qmd
         # - 06-functions-control-structs.qmd
 
     - id: homework
@@ -53,6 +53,14 @@ website:
         - homework1.qmd
         - homework2.qmd
         - homework3.qmd
+        - homework4.qmd
+  
+  page-footer:
+    left: |
+      &copy; Leslie Myint, 2023<br>
+      All content licensed under ![](https://static.thenounproject.com/png/70967-200.png){height=20px} ([CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/))
+    right: |
+      Site built with [Quarto](https://quarto.org/)
 
 format:
   html:
@@ -62,10 +70,3 @@ format:
     code-overflow: wrap
 
 editor: source
-
-page-footer:
-  left: |
-    &copy; Leslie Myint, 2023<br>
-    All content licensed under ![](https://static.thenounproject.com/png/70967-200.png){height=20px} ([CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/))
-  right: |
-    Site built with [Quarto](https://quarto.org/)

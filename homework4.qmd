@@ -1,0 +1,16 @@
+---
+title: "Homework 4"
+sidebar: false
+---
+
+# Required parts
+
+Due Wednesday, October 4 by midnight [on Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=40474).
+
+Complete [Milestone 2](project.qmd#milestone-2) of the [course project](project.qmd).
+
+- Each team member will submit their own `.Rmd` file and knitted HTML containing their own "rough draft" visualization to answer the team's initial research question.
+
+# Optional
+
+Participate in the most recent [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-09-26/readme.md) challenge.

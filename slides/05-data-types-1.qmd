@@ -1,0 +1,78 @@
+---
+title: "Wrangling: numerics, logicals, dates"
+format:
+  revealjs:
+    scrollable: true
+    smaller: true
+---
+
+## As we gather...
+
+Navigate to our course page and activity: "Wrangling: numerics, logicals, dates". Open the slides linked under the Learning Goals
+
+Image of the day:
+
+![Elderly woman, drinking in the moment](https://assets.vogue.com/photos/5891d79bf1b0e7f31c92b27b/master/w_1600,c_limit/front-row-woman.jpg){fig-alt="Woman without a phone, enjoying the moment, amidst a crowd of people with their phones out"}
+
+Open up your Process and Reflection Log (Google Doc).
+
+
+## Classroom Community and Connectedness debrief
+
+Section 1
+
+- While working in groups on activities was seen as a strength, it was also something that has challenges
+    - Meeting and getting to know new people is hard--especially in a classroom environment
+- Things that I can do
+    - Change groups regularly
+    - Create spaces for more *authentic* and *collaborative* group work
+    - Out-of class opportunities for hanging out (with food!?)
+- Things that you can do
+    -  A number of you mentioned that you yourselves wanted to better at fostering community
+
+Note: reflection regarding group work is one of my top learning goals not because I want to judge/evaluate you on it but because I value it. Across your 3 substantive reflections, I just want to give feedback. I won't give mandates that you have to follow "or else".
+
+
+## Classroom Community and Connectedness debrief
+
+Section 2
+
+- While working in groups on activities was seen as a strength, it was also something that has challenges
+    - "Clicking" with others is not always easy
+- Things that I can do
+    - Be mindful of class dynamics and energy
+    - Create spaces for more *authentic* and *collaborative* group work
+    - Out-of class opportunities for hanging out (with food!?)
+- Things that you can do
+    -  A number of you mentioned trying to be more compassionate and collaborative
+
+Note: reflection regarding group work is one of my top learning goals not because I want to judge/evaluate you on it but because I value it. Across your 3 substantive reflections, I just want to give feedback. I won't give mandates that you have to follow "or else".
+
+
+## Project team formation activity
+
+Open up [this Google Jamboard](https://jamboard.google.com/d/1rohV7ZvesrnSQufZoKAFP1kVfjU8-F96qVauH7N0jBE/edit?usp=sharing).
+
+1. On a sticky note (left menu), write down the general domain of your ideal project (e.g., environmental/climate issues) and your name.
+2. Once everyone is done, work together to group the sticky notes into clusters such that an even number is in each group.
+3. Within these groups, re-introduce yourselves and share more specific details about your desired project (e.g., specific research ?s and possible data sources).
+4. Form teams (pairs) for your project and decide on a contact/communication strategy outside of class.
+
+
+## About project teams and "pods"
+
+We'll try out sitting in project pairs to better facilitate community and connection. We'll do a little bit of project work each class period.
+
+On feedback days, pairs will sit with other pairs with similar project domains and different domains. Having this variety of feedback will be important for the quality of your project.
+
+
+## Thursday: project work
+
+Milestone 2 is about finding an initial dataset and each team member creating one "rough draft" visualization to answer one of your research questions.
+
+I highly recommend using the [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday) repository to locate an initial dataset if you don't already have one. (The dataset doesn't have to be a perfect match for your questions.)
+
+
+
+
+
