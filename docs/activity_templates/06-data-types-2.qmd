@@ -1,9 +1,8 @@
 ---
 title: "Wrangling: strings"
-sidebar: false
 ---
 
-```{r message=FALSE, echo=FALSE}
+```{r}
 library(tidyverse) # The stringr and forcats packages are part of tidyverse
 ```
 
@@ -13,20 +12,6 @@ After this lesson, you should be able to:
 
 - Manipulate and explore strings using the `stringr` package
 - Construct regular expressions to find patterns in strings
-
-<br>
-
-To shape how we hold class today, go to my [PollEverywhere page](https://pollev.com/lesliemyint417) for some survey questions.
-
-<br>
-
-You can download a template Quarto file to start from [here](activity_templates/06-data-types-2.qmd). Save this template within the following directory structure:
-
-- `your_course_folder`
-    - `wrangling_data_types`
-        - `code`
-            - `05-data-types-1.qmd`
-            - `06-data-types-2.qmd`
 
 
 <br><br><br>

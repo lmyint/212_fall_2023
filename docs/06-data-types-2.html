@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT/COMP 212 - Wrangling: strings and factors</title>
+<title>STAT/COMP 212 - Wrangling: strings</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -166,6 +166,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./05-data-types-1.html" rel="" target="">
  <span class="dropdown-text">Wrangling: numerics, logicals, dates</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./06-data-types-2.html" rel="" target="">
+ <span class="dropdown-text">Wrangling: strings</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -219,17 +223,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#factors" id="toc-factors" class="nav-link active" data-scroll-target="#factors">Factors</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#motivation-30-years-of-american-anxieties" id="toc-motivation-30-years-of-american-anxieties" class="nav-link" data-scroll-target="#motivation-30-years-of-american-anxieties">Motivation: 30 Years of American Anxieties</a></li>
   <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings">Strings</a>
   <ul class="collapse">
-  <li><a href="#regular-expressions" id="toc-regular-expressions" class="nav-link" data-scroll-target="#regular-expressions">Regular expressions</a></li>
-  <li><a href="#glue-package" id="toc-glue-package" class="nav-link" data-scroll-target="#glue-package"><code>glue</code> package</a></li>
-  <li><a href="#tidytext-package" id="toc-tidytext-package" class="nav-link" data-scroll-target="#tidytext-package"><code>tidytext</code> package</a></li>
+  <li><a href="#creating-strings" id="toc-creating-strings" class="nav-link" data-scroll-target="#creating-strings">Creating strings</a></li>
+  <li><a href="#extracting-information-from-strings" id="toc-extracting-information-from-strings" class="nav-link" data-scroll-target="#extracting-information-from-strings">Extracting information from strings</a></li>
+  <li><a href="#finding-patterns-in-strings-with-regular-expressions" id="toc-finding-patterns-in-strings-with-regular-expressions" class="nav-link" data-scroll-target="#finding-patterns-in-strings-with-regular-expressions">Finding patterns in strings with regular expressions</a></li>
   </ul></li>
-  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists">Lists</a></li>
-  <li><a href="#data-framestibbles" id="toc-data-framestibbles" class="nav-link" data-scroll-target="#data-framestibbles">Data frames/tibbles</a></li>
-  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices">Matrices</a></li>
+  <li><a href="#open-ended-exploration-dear-abby-data" id="toc-open-ended-exploration-dear-abby-data" class="nav-link" data-scroll-target="#open-ended-exploration-dear-abby-data">Open-ended exploration: “Dear Abby” data</a></li>
+  <li><a href="#project-work-time" id="toc-project-work-time" class="nav-link" data-scroll-target="#project-work-time">Project work time</a></li>
   </ul>
 </nav>
     </div>
@@ -238,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Wrangling: strings and factors</h1>
+<h1 class="title">Wrangling: strings</h1>
 </div>
 
 
@@ -253,153 +256,375 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="learning-goals" class="level1">
+<h1>Learning goals</h1>
+<p>After this lesson, you should be able to:</p>
 <ul>
-<li>Recode and manage factors using the <code>forcats</code> package</li>
 <li>Manipulate and explore strings using the <code>stringr</code> package</li>
+<li>Construct regular expressions to find patterns in strings</li>
 </ul>
-<section id="factors" class="level1">
-<h1>Factors</h1>
-<p>In R, factors are comprised of two components: the actual values of the data and the possible levels within the factor. Thus, to create a factor, you need to supply both these pieces of information.</p>
-<p>For example, if we were to create a character vector of the twelve months, we could certainly do that:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Update this after doing ymd() processing on lakers</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="do">## all 12 months</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>all_months <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Jan"</span>, <span class="st">"Feb"</span>, <span class="st">"Mar"</span>, <span class="st">"Apr"</span>, <span class="st">"May"</span>, <span class="st">"Jun"</span>, <span class="st">"Jul"</span>, <span class="st">"Aug"</span>, <span class="st">"Sep"</span>, <span class="st">"Oct"</span>, <span class="st">"Nov"</span>, <span class="st">"Dec"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">## our data</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>some_months <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Mar"</span>, <span class="st">"Dec"</span>, <span class="st">"Jan"</span>,  <span class="st">"Apr"</span>, <span class="st">"Jul"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>However, if we were to sort this vector, R would sort this vector alphabetically.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># alphabetical sort</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(some_months)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Apr" "Dec" "Jan" "Jul" "Mar"</code></pre>
-</div>
-</div>
-<p>While you and I know that this is not how months should be ordered, we haven’t yet told R that. To do so, we need to let R know that it’s a factor variable and what the levels of that factor variable should be.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mon <span class="ot">&lt;-</span> <span class="fu">factor</span>(some_months, <span class="at">levels =</span> all_months)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>mon</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] Mar Dec Jan Apr Jul
-Levels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec</code></pre>
-</div>
-</div>
-<p>Here, we specify all the possible values that the factor could take in the levels = all_months argument. So, even though not all twelve months are included in the some_months object, we’ve stated that all of the months are possible values. Further, when you sort this variable, it now sorts in the sensical way!</p>
-<p><strong>Update to use chickwts dataset?</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_relevel</span>()</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_inorder</span>() <span class="co"># skip this one?</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_infreq</span>()</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_rev</span>()</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_reorder</span>()</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_recode</span>()</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>() <span class="sc">+</span> <span class="fu">factor</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p><br></p>
+<p>To shape how we hold class today, go to my <a href="https://pollev.com/lesliemyint417">PollEverywhere page</a> for some survey questions.</p>
+<p><br></p>
+<p>You can download a template Quarto file to start from <a href="activity_templates/06-data-types-2.qmd">here</a>. Save this template within the following directory structure:</p>
+<ul>
+<li><code>your_course_folder</code>
+<ul>
+<li><code>wrangling_data_types</code>
+<ul>
+<li><code>code</code>
+<ul>
+<li><code>05-data-types-1.qmd</code></li>
+<li><code>06-data-types-2.qmd</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br><br><br></p>
 </section>
-<section id="setup" class="level1">
-<h1>Setup</h1>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.2     ✔ readr     2.1.4
-✔ forcats   1.0.0     ✔ stringr   1.5.0
-✔ ggplot2   3.4.2     ✔ tibble    3.2.1
-✔ lubridate 1.9.2     ✔ tidyr     1.3.0
-✔ purrr     1.0.1     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="motivation-30-years-of-american-anxieties" class="level1">
+<h1>Motivation: 30 Years of American Anxieties</h1>
+<p>In 2018 the data journalism organization <a href="https://pudding.cool/">The Pudding</a> featured a story called <a href="https://pudding.cool/2018/11/dearabby/">30 Years of American Anxieties</a> about themes in 30 years of posts to the Dear Abby column (an American advice column).</p>
+<p>One way to understand themes in text data is to conduct a <strong>qualitative analysis</strong>, a methodology in which multiple readers read through instances of text several times to reach a consensus about themes.</p>
+<p>Another way to understand themes in text data is to explore the text computationally with data science tools. This is what we will explore today. Both qualitative analysis and computational tools can be used in tandem. Often, using computational tools can help focus a close reading of select texts, which parallels the spirit of a qualitative analysis.</p>
+<p>To prepare ourselves for a computational analysis, let’s learn about strings.</p>
 </section>
 <section id="strings" class="level1">
 <h1>Strings</h1>
-<p>Dataset: <code>babynames</code></p>
-<p>R4DS topics</p>
+<p>Strings are objects of the <code>character</code> class (abbreviated as <code>&lt;chr&gt;</code> in tibbles). When you print out strings, they display with double quotes:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>some_string <span class="ot">&lt;-</span> <span class="st">"banana"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>some_string</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "banana"</code></pre>
+</div>
+</div>
+<p>Working with strings generally will involve the use of <strong>regular expressions</strong>, a tool for finding patterns in strings. Regular expressions (regex, for short) look like the following:</p>
+<pre><code>"^the" (Strings that start with "the")
+"end$" (Strings that end with "end")</code></pre>
+<p>Before getting to regular expressions, let’s go over some fundamentals about working with strings. The <code>stringr</code> package (available within <code>tidyverse</code>) is great for working with strings.</p>
+<section id="creating-strings" class="level2">
+<h2 class="anchored" data-anchor-id="creating-strings">Creating strings</h2>
+<p>Creating strings by hand is useful for testing out regular expressions.</p>
+<p>To create a string, type any text in either double quotes (<code>"</code>) or single quotes <code>'</code>. Using double or single quotes doesn’t matter unless your string itself has single or double quotes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>string1 <span class="ot">&lt;-</span> <span class="st">"This is a string"</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>string2 <span class="ot">&lt;-</span> <span class="st">'If I want to include a "quote" inside a string, I use single quotes'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can view these strings “naturally” (without the opening and closing quotes) with <code>str_view()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(string1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] │ This is a string</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(string2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] │ If I want to include a "quote" inside a string, I use single quotes</code></pre>
+</div>
+</div>
+<p><strong>Exercise:</strong> Create the string <code>It's Thursday</code>. What happens if you put the string inside single quotes? Double quotes?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Because <code>"</code> and <code>'</code> are special characters in the creation of strings, R offers another way to put them inside a string. We can <strong>escape</strong> these special characters by putting a <code>\</code> in front of them:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>string1 <span class="ot">&lt;-</span> <span class="st">"This is a string with </span><span class="sc">\"</span><span class="st">double quotes</span><span class="sc">\"</span><span class="st">"</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>string2 <span class="ot">&lt;-</span> <span class="st">"This is a string with </span><span class="sc">\'</span><span class="st">single quotes</span><span class="sc">\'</span><span class="st">"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(string1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] │ This is a string with "double quotes"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(string2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] │ This is a string with 'single quotes'</code></pre>
+</div>
+</div>
+<p>Given that <code>\</code> is a special character, how can we put the <code>\</code> character in strings? We have to escape it with <code>\\</code>.</p>
+<p><strong>Exercise:</strong> Create the string <code>C:\Users</code>. What happens when you don’t escape the <code>\</code>?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Other special characters include:</p>
 <ul>
-<li>Creating a string with “” or ’’. Creating a string with single quotes or double quotes inside it.</li>
-<li>Escaping special characters with a<br>
-</li>
-<li><code>str_flatten</code> df |&gt; separate_longer_delim(col, delim) df |&gt; separate_longer_position(col, width) df |&gt; separate_wider_delim(col, delim, names) df |&gt; separate_wider_position(col, widths)</li>
+<li><code>\t</code> (Creates a tab)</li>
+<li><code>\n</code> (Creates a newline)</li>
+</ul>
+<p>Both can be useful in plots to more neatly arrange text.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>string1 <span class="ot">&lt;-</span> <span class="st">"Record temp:</span><span class="sc">\t</span><span class="st">102"</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>string2 <span class="ot">&lt;-</span> <span class="st">"Record temp:</span><span class="sc">\n</span><span class="st">102"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(string1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] │ Record temp:{\t}102</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(string2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] │ Record temp:
+    │ 102</code></pre>
+</div>
+</div>
+<p><strong>Exercise (Exploring function documentation):</strong> Can we get <code>str_view()</code> to show the tab instead of <code>{\t}</code>? Enter <code>?str_view</code> in the Console to pull up the documentation for this function. Look through the arguments to see how we might do this.</p>
+<p><strong>Reflection:</strong> In your Process and Reflection Log, record any strategies that you learned about reading function documentation.</p>
+<hr>
+<p>Often we will want to create new strings within data frames. We can use <code>str_c()</code> or <code>str_glue()</code>:</p>
+<ul>
+<li>With <code>str_c()</code> the strings to be combined are all separate arguments separated by commas.</li>
+<li>With <code>str_glue()</code> the desired string is written as a template with variable names inside curly braces <code>{}</code>.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_length</span>(<span class="st">"hello"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">first_name =</span> <span class="fu">c</span>(<span class="st">"Arya"</span>, <span class="st">"Olenna"</span>, <span class="st">"Tyrion"</span>, <span class="st">"Melisandre"</span>),</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">last_name =</span> <span class="fu">c</span>(<span class="st">"Stark"</span>, <span class="st">"Tyrell"</span>, <span class="st">"Lannister"</span>, <span class="cn">NA</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
+<pre><code># A tibble: 4 × 2
+  first_name last_name
+  &lt;chr&gt;      &lt;chr&gt;    
+1 Arya       Stark    
+2 Olenna     Tyrell   
+3 Tyrion     Lannister
+4 Melisandre &lt;NA&gt;     </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_c</span>(<span class="st">"..."</span>, <span class="st">"hi"</span>, <span class="at">sep =</span> <span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">full_name1 =</span> <span class="fu">str_c</span>(first_name, <span class="st">" "</span>, last_name),</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">full_name2 =</span> <span class="fu">str_glue</span>(<span class="st">"{first_name} {last_name}"</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "... hi"</code></pre>
+<pre><code># A tibble: 4 × 4
+  first_name last_name full_name1       full_name2      
+  &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;            &lt;glue&gt;          
+1 Arya       Stark     Arya Stark       Arya Stark      
+2 Olenna     Tyrell    Olenna Tyrell    Olenna Tyrell   
+3 Tyrion     Lannister Tyrion Lannister Tyrion Lannister
+4 Melisandre &lt;NA&gt;      &lt;NA&gt;             Melisandre NA   </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_sub</span>(<span class="fu">c</span>(<span class="st">"Good"</span>, <span class="st">"Morning"</span>), <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>), <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) <span class="co"># Also negative start and end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Exercise:</strong> In the following data frame, create a full date string in month-day-year format using both <code>str_c()</code> and <code>str_glue()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>df_dates <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> <span class="fu">c</span>(<span class="dv">2000</span>, <span class="dv">2001</span>, <span class="dv">2002</span>),</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">month =</span> <span class="fu">c</span>(<span class="st">"Jan"</span>, <span class="st">"Feb"</span>, <span class="st">"Mar"</span>),</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">day =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="extracting-information-from-strings" class="level2">
+<h2 class="anchored" data-anchor-id="extracting-information-from-strings">Extracting information from strings</h2>
+<p>The <code>str_length()</code> counts the number of characters in a string.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>comments <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>),</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">comment =</span> <span class="fu">c</span>(<span class="st">"The essay was well organized around the core message and had good transitions."</span>, <span class="st">"Good job!"</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>comments <span class="sc">%&gt;%</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">comment_length =</span> <span class="fu">str_length</span>(comment)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "G"  "Mo"</code></pre>
+<pre><code># A tibble: 2 × 3
+  name  comment                                                   comment_length
+  &lt;chr&gt; &lt;chr&gt;                                                              &lt;int&gt;
+1 Alice The essay was well organized around the core message and…             78
+2 Bob   Good job!                                                              9</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_sort</span>(<span class="fu">c</span>(<span class="st">"banana"</span>, <span class="st">"apple"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>str_sub()</code> function gets a substring of a string. The 2nd and 3rd arguments indicate the beginning and ending position to extract.</p>
+<ul>
+<li>Negative positions indicate the position from the end of the word. (e.g., -3 indicates “3rd letter from the end”)</li>
+<li>Specifying a position that goes beyond the word won’t result in an error. <code>str_sub()</code> will just go as far as possible.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Apple"</span>, <span class="st">"Banana"</span>, <span class="st">"Pear"</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_sub</span>(x, <span class="dv">1</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "apple"  "banana"</code></pre>
+<pre><code>[1] "App" "Ban" "Pea"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_sub</span>(x, <span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "ple" "ana" "ear"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_sub</span>(<span class="st">"a"</span>, <span class="dv">1</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a"</code></pre>
 </div>
 </div>
-<section id="regular-expressions" class="level2">
-<h2 class="anchored" data-anchor-id="regular-expressions">Regular expressions</h2>
+<p><strong>Exercise:</strong> Find the middle letter of each word in the data frame below. (Challenge: How would you handle words with an even number of letters?)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">word_id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">word =</span> <span class="fu">c</span>(<span class="st">"replace"</span>, <span class="st">"match"</span>, <span class="st">"pattern"</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="finding-patterns-in-strings-with-regular-expressions" class="level2">
+<h2 class="anchored" data-anchor-id="finding-patterns-in-strings-with-regular-expressions">Finding patterns in strings with regular expressions</h2>
+<p>Suppose that you’re exploring text data looking for places where people describe happiness. There are many ways to search. We could search for the word “happy” but that excludes “happiness” so we might search for “happi”.</p>
+<p><strong>Regular expressions</strong> (regex) are a powerful language for describing patterns within strings.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(fruit)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(words)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(sentences)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can use <code>str_view()</code> with the <code>pattern</code> argument to see what parts of a string match the regex supplied in the <code>pattern</code> argument. (Matches are enclosed in <code>&lt;&gt;</code>.)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(fruit, <span class="st">"berry"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [6] │ bil&lt;berry&gt;
+ [7] │ black&lt;berry&gt;
+[10] │ blue&lt;berry&gt;
+[11] │ boysen&lt;berry&gt;
+[19] │ cloud&lt;berry&gt;
+[21] │ cran&lt;berry&gt;
+[29] │ elder&lt;berry&gt;
+[32] │ goji &lt;berry&gt;
+[33] │ goose&lt;berry&gt;
+[38] │ huckle&lt;berry&gt;
+[50] │ mul&lt;berry&gt;
+[70] │ rasp&lt;berry&gt;
+[73] │ salal &lt;berry&gt;
+[76] │ straw&lt;berry&gt;</code></pre>
+</div>
+</div>
+<p><strong>Essentials of forming a regex</strong></p>
+<ul>
+<li>Letters and numbers in a regex are matched exactly and are called <strong>literal characters</strong>.</li>
+<li>Most punctuation characters, like <code>.</code>, <code>+</code>, <code>*</code>, <code>[</code>, <code>]</code>, and <code>?</code>, have special meanings and are called <strong>metacharacters</strong>.</li>
+<li><strong>Quantifiers</strong> come after a regex and control how many times a pattern can match:
+<ul>
+<li><code>?</code>: match the preceding pattern 0 or 1 times</li>
+<li><code>+</code>: match the preceding pattern at least once</li>
+<li><code>*</code>: match the preceding pattern at least 0 times (any number of times)</li>
+</ul></li>
+</ul>
+<p><strong>Exercise:</strong> Before running the code below, predict what matches will be made. Run the code to check your guesses. Note that in all regex’s below the <code>?, +, *</code> applies to the <code>b</code> only (not the <code>a</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"ab"</span>, <span class="st">"abb"</span>), <span class="st">"ab?"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] │ &lt;a&gt;
+[2] │ &lt;ab&gt;
+[3] │ &lt;ab&gt;b</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"ab"</span>, <span class="st">"abb"</span>), <span class="st">"ab+"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[2] │ &lt;ab&gt;
+[3] │ &lt;abb&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(<span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"ab"</span>, <span class="st">"abb"</span>), <span class="st">"ab*"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] │ &lt;a&gt;
+[2] │ &lt;ab&gt;
+[3] │ &lt;abb&gt;</code></pre>
+</div>
+</div>
+<ul>
+<li>We can match any of a set of characters with <code>[]</code> (called a <strong>character class</strong>), e.g., <code>[abcd]</code> matches “a”, “b”, “c”, or “d”.
+<ul>
+<li>We can invert the match by starting with <code>^</code>: <code>[^abcd]</code> matches anything except “a”, “b”, “c”, or “d”.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Match words that have vowel-x-vowel</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(words, <span class="st">"[aeiou]x[aeiou]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[284] │ &lt;exa&gt;ct
+[285] │ &lt;exa&gt;mple
+[288] │ &lt;exe&gt;rcise
+[289] │ &lt;exi&gt;st</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Match words that have not_vowel-y-not_vowel</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(words, <span class="st">"[^aeiou]y[^aeiou]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[836] │ &lt;sys&gt;tem
+[901] │ &lt;typ&gt;e</code></pre>
+</div>
+</div>
+<p><strong>Exercise</strong> Using the <code>words</code> data, find words that have two vowels in a row followed by an “m”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>The <strong>alternation</strong> operator <code>|</code> can be read just like the logical operator <code>|</code> (“OR”) to pick between one or more alternative patterns. e.g., <code>apple|banana</code> searches for “apple” or “banana”.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str_view</span>(fruit, <span class="st">"apple|melon|nut"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] │ &lt;apple&gt;
+[13] │ canary &lt;melon&gt;
+[20] │ coco&lt;nut&gt;
+[52] │ &lt;nut&gt;
+[62] │ pine&lt;apple&gt;
+[72] │ rock &lt;melon&gt;
+[80] │ water&lt;melon&gt;</code></pre>
+</div>
+</div>
+<p><strong>Exercise:</strong> Using the <code>fruit</code> data, find fruits that have a repeated vowel (“aa”, “ee”, “ii”, “oo”, or “uu”.)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>The <code>^</code> operator indicates the beginning of a string, and the <code>$</code> operator indicates the end of a string. e.g., <code>^a</code> matches strings that start with “a”, and <code>a$</code> matches words that end with “a”.</li>
+<li>Parentheses group together parts of a regular expression that should be taken as a bundle. (Much like parentheses in arithmetic statements.)
+<ul>
+<li>e.g., <code>ab+</code> is a little confusing. Does it match “ab” one or more times? Or does it match “a” first, then just “b” one or more times? (The latter, as we saw in an earlier example.) We can be very explicit and use <code>a(b)+</code>.</li>
+</ul></li>
+</ul>
+<p><strong>Exercise:</strong> Using the <code>words</code> data, find (1) words that start with “y” and (2) words that don’t start with “y”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<p>The following are core <code>stringr</code> functions that use regular expressions:</p>
 <ul>
 <li><code>str_view()</code> - View the first occurrence in a string that matches the regex</li>
-<li><code>str_view_all()</code> - View all occurrences in a string that match the regex</li>
-<li><code>str_count()</code> - count the number of times a regex matches within a string</li>
-<li><code>str_detect()</code> - determine if regex is found within string</li>
-<li><code>str_subset()</code> - return subset of strings that match the regex</li>
-<li><code>str_extract()</code> - return portion of each string that matches the regex</li>
-<li><code>str_replace_{all}()</code> - replace portion of string that matches the regex with something else</li>
-<li><code>str_remove_{all}()</code> - like `str_replace(x, the_pattern, ““)</li>
+<li><code>str_count()</code> - Count the number of times a regex matches within a string</li>
+<li><code>str_detect()</code> - Determine if (TRUE/FALSE) the regex is found within string</li>
+<li><code>str_subset()</code> - Return subset of strings that match the regex</li>
+<li><code>str_extract(), str_extract_all()</code> - Return portion of each string that matches the regex. <code>str_extract()</code> extracts the first instance of the match. <code>str_extract_all()</code> extracts all matches.</li>
+<li><code>str_replace(), str_replace_all()</code> - Replace portion of string that matches the regex with something else. <code>str_replace()</code> replaces the first instance of the match. <code>str_replace_all()</code> replaces all instances of the match.</li>
+<li><code>str_remove(), str_remove_all()</code> - Removes the portion of the string that matches the pattern. Equivalent to <code>str_replace(x, "THE REGEX PATTERN", "")</code></li>
 </ul>
+<p><strong>Exercise:</strong> Each person at your table should explore a different one of the functions (other than <code>str_view()</code>). Pull up the documentation page using <code>?function_name</code>. Explore the arguments and create a small example that demonstrates its usage. Share with your group members.</p>
+<p><br><br><br></p>
 </section>
-<section id="glue-package" class="level2">
-<h2 class="anchored" data-anchor-id="glue-package"><code>glue</code> package</h2>
+</section>
+<section id="open-ended-exploration-dear-abby-data" class="level1">
+<h1>Open-ended exploration: “Dear Abby” data</h1>
+<p>Read in the “Dear Abby” data underlying The Pudding’s <a href="https://pudding.cool/2018/11/dearabby/">30 Years of American Anxieties</a> article.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(glue)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">description =</span> <span class="fu">glue</span>(<span class="st">"The {name} typically sleeps for {sleep_total * 60} minutes and is awake for {awake * 60} minutes each day."</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_total, awake, description)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 83 × 4
-   name                       sleep_total awake description                     
-   &lt;chr&gt;                            &lt;dbl&gt; &lt;dbl&gt; &lt;glue&gt;                          
- 1 Cheetah                           12.1  11.9 The Cheetah typically sleeps fo…
- 2 Owl monkey                        17     7   The Owl monkey typically sleeps…
- 3 Mountain beaver                   14.4   9.6 The Mountain beaver typically s…
- 4 Greater short-tailed shrew        14.9   9.1 The Greater short-tailed shrew …
- 5 Cow                                4    20   The Cow typically sleeps for 24…
- 6 Three-toed sloth                  14.4   9.6 The Three-toed sloth typically …
- 7 Northern fur seal                  8.7  15.3 The Northern fur seal typically…
- 8 Vesper mouse                       7    17   The Vesper mouse typically slee…
- 9 Dog                               10.1  13.9 The Dog typically sleeps for 60…
-10 Roe deer                           3    21   The Roe deer typically sleeps f…
-# ℹ 73 more rows</code></pre>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>posts <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://raw.githubusercontent.com/the-pudding/data/master/dearabby/raw_da_qs.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 20034 Columns: 7
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (4): day, url, title, question_only
+dbl (3): year, month, letterId
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
+<p>Take a couple minutes to scroll throgh the <a href="https://pudding.cool/2018/11/dearabby/">30 Years of American Anxieties</a> article to get ideas for themes that you might want to search for using regular expressions.</p>
+<p>Using the <code>stringr</code> and regular expression tools that we talked about today, explore a theme of interest to you in the Dear Abby data.</p>
+<p><strong>Reflection:</strong> Make note of your exploration process. When do you tend to get stuck? How do you get unstuck? How do you notice “mistakes” or a need to change direction in the analysis? Record observations in your Process and Reflection Log.</p>
+<p><br><br><br></p>
 </section>
-<section id="tidytext-package" class="level2">
-<h2 class="anchored" data-anchor-id="tidytext-package"><code>tidytext</code> package</h2>
-</section>
-</section>
-<section id="lists" class="level1">
-<h1>Lists</h1>
-<p>Creating a named list</p>
-<p>Subsetting by numerical index, by name. Single and double bracket subsetting</p>
-</section>
-<section id="data-framestibbles" class="level1">
-<h1>Data frames/tibbles</h1>
-<p>as.data.frame() and View() for viewing a long data frame</p>
-</section>
-<section id="matrices" class="level1">
-<h1>Matrices</h1>
-<p>Most commonly comes up as a correlation matrix. row and colnames of matrices. Subsetting by numerical index or name</p>
+<section id="project-work-time" class="level1">
+<h1>Project work time</h1>
+<p>I have one more poll question–navigate to my <a href="https://pollev.com/lesliemyint417">PollEverywhere page</a>.</p>
+<p>Get together with your tentative project teammates from Tuesday.</p>
+<ol type="1">
+<li>If you are satisfied with your team composition, fill in your team details on this <a href="https://docs.google.com/document/d/1BwgKdFXdWeaOiaDB-OGRcBhXM36qTIo79BmYZ9hvxko/edit?usp=sharing">Google Doc</a>.</li>
+<li>If you would like to continue searching for a team, you can do so today. Look through the Google Doc linked above as it’s being filled out to get a sense for what team you’d like to join.</li>
+</ol>
+<p>If you have already located a dataset relevant to one or more of your research questions and can read it into R, start to explore that data in working towards <a href="./project.html#milestone-2">Project Milestone 2</a>.</p>
+<p>Otherwise, peruse the <a href="https://github.com/rfordatascience/tidytuesday">Tidy Tuesday</a> GitHub repository to find a dataset that is roughly (perhaps very roughly) related to your project domain. Start exploring this data in working towards <a href="./project.html#milestone-2">Project Milestone 2</a>.</p>
+<ul>
+<li><strong>Why am I suggesting this?</strong> Sometimes data that aren’t perfectly aligned with our interests can still give useful context. Being able to provide meaning from “imperfect” data is a very useful skill because imperfect data are so common.</li>
+</ul>
 
 
 </section>

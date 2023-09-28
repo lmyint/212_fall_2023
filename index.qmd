@@ -16,6 +16,11 @@ I'm also happy to meet one-on-one if my normal drop-in hours don't work. You can
 
 # Announcements
 
+## 9/28
+
+- I thought we might be able to cover wrangling factors today, but we'll save that for next Tuesday.
+- Look at the updated [Schedule page](schedule.qmd). The readings there are excellent references and can be read before or after class on Tuesday.
+
 ## 9/26
 
 - If you haven't already found an initial dataset, peruse the [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday) repository for ideas.

@@ -44,6 +44,7 @@ website:
         - workflow_files_rstudio.qmd
         - 04-interactive-viz.qmd
         - 05-data-types-1.qmd
+        - 06-data-types-2.qmd
         # - 06-functions-control-structs.qmd
 
     - id: homework
