@@ -7,11 +7,28 @@ sidebar: false
 
 The goal of the project is to **build something awesome** that you can showcase on your digital portfolio (your personal website).
 
-# Project details
 
-You will be working on this project over the course of the semester in teams of 2 or 3.
+<br><br>
 
-Your project may align with work/projects from other classes--this is encouraged! Combining multiple course perspectives can significantly increase the quality of your work. There is a hard requirement that your project be able to be hosted digitally as part of your portfolio.
+
+# Project requirements
+
+**Team size:** You will be working on this project over the course of the semester in teams of 2 or 3.
+
+**Aligning with other classes:** You may choose a project topic that is the same or similar to a topic that you're exploring in another course. This is encouraged! Combining multiple course perspectives can significantly increase the quality of your work.
+
+**Other requirements:** The only requirement for your project is that it addresses your research questions. I do *not* have requirements that, for example, your project uses Shiny, maps, or a particular source of data.
+
+As detailed in the Milestones below, your project *does* need to address 3 research questions. These questions may not be the ones you outlined in Milestone 1. Through iterating on your initial investigations, you may find that your questions change. That's fine.
+
+**Deliverables:**
+
+- A final project presentation
+- You will create a Quarto webpage to showcase your project that could be hosted on your personal website if you wish
+
+
+<br><br>
+
 
 # Project milestones
 
@@ -31,23 +48,48 @@ Due date: Wednesday, 9/20 as part of HW2.
 - Finalize one initial data source and questions related to that source.
 - Each team member should create 1 "ugly" (not fully polished) visualization to demonstrate viability of the research questions. (Think of this as visualization "prototyping".)
 
-Due date: Wednesday, 10/4 as part of HW4.
+Due date: Wednesday, 10/11 as part of HW4. (You can submit early on 10/4 if you'd like.)
 
 ## Milestone 3
 
-***(NOT FINALIZED YET)***
-
 Perform the data acquisition, wrangling, visualization, and modeling needed to address **one** of your research questions. Note that your question might not be amenable to modeling (or to modeling that you've learned about so far). For that reason, modeling is not required, but visualization is.
 
-Due date: Present your visualization to the class for feedback on Thursday, 10/12.
+**Deliverable:** Project progress presentation #1--to be presented in class on Tuesday 10/24.
+
+- **How long?** Prepare a 5-7 minute presentation.
+
+- **What should be in your presentation?**
+    - An introduction to your project domain/focus: What questions are you hoping to answer? What question are you focusing on right now? Why is this important to you?
+    - An introduction to your data sources
+    - Who is impacted (whether positive or negatively) by your analysis? How are you addressing this?
+    - Present a few polished visualizations and interpretations that address your current research question
+
+- **Why am I asking you to do this?**
+    - Organizing your work for a short presentation is a good way to stay on track and guarantee some useful intermediate work
+    - Based on the Classroom Community and Connectedness survey results, there was a desire for more authentic collaboration. I feel that this type of class activity is fertile ground for true collaboration.
+
+- **What feedback will you receive?**
+    - Based on the context you present, the instructor and your classmates will give feedback on any suggestions for ethical considerations in your analysis.
+    - We will also give feedback on the clarity of your visualizations and your interpretations of them.
 
 ## Milestone 4
 
 ***(NOT FINALIZED YET)***
 
-Adjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to address another one of your research questions. Submit "Rough Draft" to instructor for feedback.
+Adjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to address another one of your research questions.
 
-Due date: TBD
+**Deliverable:** Project progress presentation #2--to be presented in class on Thursday 11/16.
+
+- **How long?** Prepare a 7 minute presentation.
+
+- **What should be in your presentation?**
+    - 
+
+- **Why am I asking you to do this?**
+    - 
+
+- **What feedback will you receive?**
+    - 
 
 ## Milestone 5
 

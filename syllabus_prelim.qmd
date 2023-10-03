@@ -73,7 +73,7 @@ Slack is a commonly used communication tool in industry and is useful to be fami
 
 - If you're new to Slack, [this video](https://youtu.be/6wjmH5qL3Ms?si=tIg_gAAxbDh6qQ3-) provides a quick overview.
 - First join our STAT/COMP 212: Fall 2023 workspace [here](https://join.slack.com/t/statcomp212fall2023/shared_invite/zt-22hwq73vn-IOFifr_VpO_4AAN4vYVDgA).
-- After joining, you can access our workspace [here](https://statcomp212fall2023.slack.com). (You might want to bookmark this if view)
+- After joining, you can access our workspace [here](https://statcomp212fall2023.slack.com). (You might want to bookmark this if you have Slack open in your web broswer.)
 
 
 <br><br><br><br>

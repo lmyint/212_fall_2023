@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT/COMP 212 - Tech Setup</title>
+<title>STAT/COMP 212 - Reflection 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -212,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./tech_setup.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./tech_setup.html" rel="" target="">
  <span class="menu-text">Tech Setup</span></a>
   </li>  
 </ul>
@@ -227,14 +193,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#task" id="toc-task" class="nav-link" data-scroll-target="#task">Task</a>
+  <ul class="collapse">
+  <li><a href="#advanced-data-visualization-in-ggplot2" id="toc-advanced-data-visualization-in-ggplot2" class="nav-link" data-scroll-target="#advanced-data-visualization-in-ggplot2">Advanced data visualization in <code>ggplot2</code></a></li>
+  <li><a href="#map-visualization" id="toc-map-visualization" class="nav-link" data-scroll-target="#map-visualization">Map visualization</a></li>
+  <li><a href="#creating-interactive-apps" id="toc-creating-interactive-apps" class="nav-link" data-scroll-target="#creating-interactive-apps">Creating interactive apps</a></li>
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">Data wrangling</a></li>
+  <li><a href="#reflection-skills" id="toc-reflection-skills" class="nav-link" data-scroll-target="#reflection-skills">Reflection skills</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tech Setup</h1>
+<h1 class="title">Reflection 1</h1>
 </div>
 
 
@@ -249,49 +229,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Ideally before class on Tuesday, September 5 and definitely before class on Thursday, September 7, you should follow these instructions to set up the software that we’ll be using throughout the semester. <strong>Even if you’ve already downloaded both R and RStudio, you’ll want to re-download to make sure that you have the most current versions.</strong></p>
-<p><br></p>
-<p><strong>Required:</strong> Change the default file download location for your internet browser.</p>
-<ul>
-<li>Generally by default, internet browsers automatically save all files to the <code>Downloads</code> folder on your computer. This does not encourage good file organization practices. You need to change this option so that your browser asks you where to save each file before downloading it.</li>
-<li>This <a href="https://www.online-tech-tips.com/computer-tips/change-default-download-folder-location-on-any-web-browser/">page</a> has information on how to do this for the most common browsers.</li>
-</ul>
-<p><br></p>
-<p><strong>Required:</strong> (Re)Download R and RStudio</p>
-<ul>
-<li><strong>FIRST:</strong> Download R <a href="https://cran.rstudio.com/">here</a>.
-<ul>
-<li>In the top section, tou will see three links “Download R for …”</li>
-<li>Choose the link that corresponds to your computer.</li>
-<li>As of September 1, 2023, the latest version of R is 4.3.1 (“Beagle Scouts”).</li>
-</ul></li>
-<li><strong>SECOND:</strong> Download RStudio <a href="https://posit.co/download/rstudio-desktop/#download">here</a>.
-<ul>
-<li>Click the button under step 2 to install the version of RStudio recommended for your computer.</li>
-<li>As of September 1, 2023, the latest version of RStudio is 2023.06.2+561.</li>
-</ul></li>
-<li><strong>THIRD:</strong> Check that when you go to File &gt; New Project &gt; New Directory, you see “Quarto Website” as an option.</li>
-</ul>
-<p><br></p>
-<p>Suggested: Watch this <a href="https://www.youtube.com/watch?v=LJiRSPoe8r0">video</a> describing key configuration options for RStudio.</p>
-<p><br></p>
-<p><strong>Required:</strong> Install required <strong>packages</strong>.</p>
-<ul>
-<li>An R <strong>package</strong> is an extra bit of functionality that will help us in our data analysis efforts in a variety of ways.</li>
-<li>Open RStudio and click inside the Console pane (by default, the bottom left pane). Copy and paste the following command into the Console. You should see the text below appear to the right of the <code>&gt;</code>, which is called the <strong>R prompt</strong>. After you paste, hit Enter.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="purpose" class="level1">
+<h1>Purpose</h1>
+<p>The goal of this reflection is to check in on your learning as related to the learning goals that we have addressed so far. Most importantly, it is a space for <strong>honest conversation between you and me</strong>.</p>
+<p><br><br><br></p>
+</section>
+<section id="task" class="level1">
+<h1>Task</h1>
+<p>Make your own copy of <a href="https://www.google.com">this Google Doc</a>, and follow the reflection prompts in that document. (The content of that Google Doc is repeated below.)</p>
+<p>For each of the following learning goals, you will start with a short exercise. The purpose of the exercise is to try out the skills associated with the learning goal in a new context. As you work through the exercise, make note of your process: where are you confident, and where are you unsure?</p>
+<p>After each of these exercises, each learning goal will have a reflection prompt. You will use the following sources of feedback and reflection in these reflections:</p>
+<ol type="1">
+<li>Process notes from working on the exercise</li>
+<li>Reflections from your Process and Reflection Log (the Google Doc that I ask you to write in each class)</li>
+<li>Homework feedback from me in your personal Google Sheet (titled “[YOUR NAME]: STAT212 Feedback”)</li>
+</ol>
+<section id="advanced-data-visualization-in-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-data-visualization-in-ggplot2">Advanced data visualization in <code>ggplot2</code></h2>
+<p><strong>Learning goal:</strong> Create a variety of visualizations in <code>ggplot2</code> that go beyond the plot types that you learned in STAT/COMP 112</p>
+<p><strong>Exercise:</strong> Look at the graph below from the NYT article <a href="https://www.nytimes.com/interactive/2023/09/03/business/economy/strikes-union-sag-uaw.html">A Summer of Strikes</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/reflection1_nyt.png" class="img-fluid figure-img" alt="NYT caption: Union membership has fallen sharply over the past four decades. Share of the work force in a union, by industry."></p>
+</figure>
 </div>
+<ol type="1">
+<li>Draft a codebook of what variables would be needed to create the graph. Example codebook entry:
 <ul>
-<li>You will see a lot of text from status messages appearing in the Console as the packages are being installed. Wait until you see the <code>&gt;</code> again.</li>
-<li>Enter the command <code>library(tidyverse)</code> and hit Enter.<br>
-If you see an error message, then there was a problem installing the package. Post the full error message in the <code>#questions</code> channel in our <a href="https://statcomp212fall2023.slack.com">Slack workspace</a> and</li>
-<li>Quit RStudio. You’re done setting up!</li>
+<li><code>sector</code>: private sector or public sector job</li>
+</ul></li>
+<li>Write <code>ggplot2</code> code to “recreate” as much of this plot as possible. (You don’t have the data, but pretend that you had a dataset with exactly the variables in the codebook you created in step 1.)</li>
+</ol>
+<p><strong>Reflection:</strong> Using the 3 sources of feedback and reflection described above, reflect on your progress towards this learning goal. What patterns do you notice in your reflections and feedback? What is one part about this goal that you’re doing well? What is one part about this goal that you’d like to improve on? What can you do to continue making progress? What can the instructor do?</p>
+</section>
+<section id="map-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="map-visualization">Map visualization</h2>
+<p><strong>Learning goal:</strong> Wrangle and visualize spatial data</p>
+<p><strong>Exercise:</strong> Consider the making of maps with spatial datasets of the <code>sf</code> class. In what ways does making a plot with <code>geom_sf</code> parallel the making of “ordinary” plots in ggplot?</p>
+<p><strong>Reflection:</strong> Using the 3 sources of feedback and reflection described above, reflect on your progress towards this learning goal. What patterns do you notice in your reflections and feedback? What is one part about this goal that you’re doing well? What is one part about this goal that you’d like to improve on? What can you do to continue making progress? What can the instructor do?</p>
+</section>
+<section id="creating-interactive-apps" class="level2">
+<h2 class="anchored" data-anchor-id="creating-interactive-apps">Creating interactive apps</h2>
+<p><strong>Learning goal:</strong> Create interactive web applications and visualizations that adapt to user input</p>
+<p><strong>Exercise:</strong> TODO</p>
+<p><strong>Reflection:</strong> Using the 3 sources of feedback and reflection described above, reflect on your progress towards this learning goal. What patterns do you notice in your reflections and feedback? What is one part about this goal that you’re doing well? What is one part about this goal that you’d like to improve on? What can you do to continue making progress? What can the instructor do?</p>
+</section>
+<section id="data-wrangling" class="level2">
+<h2 class="anchored" data-anchor-id="data-wrangling">Data wrangling</h2>
+<p><strong>Learning goal:</strong> Wrangle arbitrarily messy data using functional programming tools in R</p>
+<p><strong>Exercise:</strong> TODO</p>
+<p><strong>Reflection:</strong> Using the 3 sources of feedback and reflection described above, reflect on your progress towards this learning goal. What patterns do you notice in your reflections and feedback? What is one part about this goal that you’re doing well? What is one part about this goal that you’d like to improve on? What can you do to continue making progress? What can the instructor do?</p>
+</section>
+<section id="reflection-skills" class="level2">
+<h2 class="anchored" data-anchor-id="reflection-skills">Reflection skills</h2>
+<p><strong>Learning goals:</strong></p>
+<ul>
+<li>Sustain a habit of self-reflection in your learning process so that you are equipped for independent learning
+<ul>
+<li>(Class-contributed goal) Skills to be more self sufficient and resourceful when learning new code</li>
+</ul></li>
+<li>Sustain a habit of self-reflection in your collaborative work so that you can form community no matter where you go</li>
 </ul>
-<p>Optional: For a refresher on RStudio features, watch this <a href="https://www.youtube.com/watch?v=HWnanydsBCs">video</a>. It also shows you how to customize the layout and color scheme of RStudio.</p>
+<p><strong>Exercise:</strong> TODO</p>
+<p><strong>Reflection:</strong> Using the 3 sources of feedback and reflection described above, reflect on your progress towards this learning goal. What patterns do you notice in your reflections and feedback? What is one part about this goal that you’re doing well? What is one part about this goal that you’d like to improve on? What can you do to continue making progress? What can the instructor do?</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

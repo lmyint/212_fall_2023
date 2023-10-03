@@ -45,6 +45,7 @@ website:
         - 04-interactive-viz.qmd
         - 05-data-types-1.qmd
         - 06-data-types-2.qmd
+        - 07-data-types-3.qmd
         # - 06-functions-control-structs.qmd
 
     - id: homework
@@ -55,6 +56,7 @@ website:
         - homework2.qmd
         - homework3.qmd
         - homework4.qmd
+        - reflection1.qmd
   
   page-footer:
     left: |
