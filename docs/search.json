@@ -417,7 +417,7 @@
     "href": "reflection1.html",
     "title": "Reflection 1",
     "section": "",
-    "text": "The goal of this reflection is to check in on your learning as related to the learning goals that we have addressed so far. Most importantly, it is a space for honest conversation between you and me."
+    "text": "Purpose\nThe goal of this reflection is to check in on your learning as related to the learning goals that we have addressed so far. Most importantly, it is a space for honest conversation between you and me.\n\n\n\nTask\nMake your own copy of this Google Doc, and follow the reflection prompts in that document."
   },
   {
     "objectID": "reflection1.html#advanced-data-visualization-in-ggplot2",
@@ -438,21 +438,21 @@
     "href": "reflection1.html#creating-interactive-apps",
     "title": "Reflection 1",
     "section": "Creating interactive apps",
-    "text": "Creating interactive apps\nLearning goal: Create interactive web applications and visualizations that adapt to user input\nExercise: TODO\nReflection: Using the 3 sources of feedback and reflection described above, reflect on your progress towards this learning goal. What patterns do you notice in your reflections and feedback? What is one part about this goal that you’re doing well? What is one part about this goal that you’d like to improve on? What can you do to continue making progress? What can the instructor do?"
+    "text": "Creating interactive apps\nLearning goal: Create interactive web applications and visualizations that adapt to user input\nExercise: Write the code for an app that allows the user to type in a number (call it num) and that displays the first num rows of a dataset called example_data.\nReflection: Using the 3 sources of feedback and reflection described above, reflect on your progress towards this learning goal. What patterns do you notice in your reflections and feedback? What is one part about this goal that you’re doing well? What is one part about this goal that you’d like to improve on? What can you do to continue making progress? What can the instructor do?"
   },
   {
     "objectID": "reflection1.html#data-wrangling",
     "href": "reflection1.html#data-wrangling",
     "title": "Reflection 1",
     "section": "Data wrangling",
-    "text": "Data wrangling\nLearning goal: Wrangle arbitrarily messy data using functional programming tools in R\nExercise: TODO\nReflection: Using the 3 sources of feedback and reflection described above, reflect on your progress towards this learning goal. What patterns do you notice in your reflections and feedback? What is one part about this goal that you’re doing well? What is one part about this goal that you’d like to improve on? What can you do to continue making progress? What can the instructor do?"
+    "text": "Data wrangling\nLearning goal: Wrangle arbitrarily messy data using functional programming tools in R\nExercise: Look back at our data wrangling activities (numbers, logicals, and dates, strings, and factors). For each type of data (5 total), write down 1 idea/tip/strategy that you want to keep in mind when wrangling that type of data.\nReflection: Using the 3 sources of feedback and reflection described above, reflect on your progress towards this learning goal. What patterns do you notice in your reflections and feedback? What is one part about this goal that you’re doing well? What is one part about this goal that you’d like to improve on? What can you do to continue making progress? What can the instructor do?"
   },
   {
     "objectID": "reflection1.html#reflection-skills",
     "href": "reflection1.html#reflection-skills",
     "title": "Reflection 1",
     "section": "Reflection skills",
-    "text": "Reflection skills\nLearning goals:\n\nSustain a habit of self-reflection in your learning process so that you are equipped for independent learning\n\n(Class-contributed goal) Skills to be more self sufficient and resourceful when learning new code\n\nSustain a habit of self-reflection in your collaborative work so that you can form community no matter where you go\n\nExercise: TODO\nReflection: Using the 3 sources of feedback and reflection described above, reflect on your progress towards this learning goal. What patterns do you notice in your reflections and feedback? What is one part about this goal that you’re doing well? What is one part about this goal that you’d like to improve on? What can you do to continue making progress? What can the instructor do?"
+    "text": "Reflection skills\nGoals:\n\nSustain a habit of self-reflection in your learning process so that you are equipped for independent learning\n\n(Class-contributed goal) Skills to be more self sufficient and resourceful when learning new code\n\nSustain a habit of self-reflection in your collaborative work so that you can form community no matter where you go\n\nReflection: For this reflection, focus on what you’ve written in your Process and Reflection Log and your general impressions of how learning is going in class. What patterns do you notice in when you tend to reflect and what you tend to reflect on? What do you feel is going well regarding reflection? What would you like to improve on? What can you do to continue making progress? What can the instructor do?"
   },
   {
     "objectID": "schedule.html",
