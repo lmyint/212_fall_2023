@@ -8,9 +8,8 @@ sidebar: false
 The goal of this reflection is to check in on your learning as related to the learning goals that we have addressed so far. Most importantly, it is a space for **honest conversation between you and me**.
 
 
-<br><br><br>
-
-
 # Task
 
 Make your own copy of [this Google Doc](https://docs.google.com/document/d/1gbXDf54AEwWFtz0-8QO1m4IgyzdWtSl5X_JRV40CiYU/edit?usp=sharing), and follow the reflection prompts in that document.
+
+You will submit a link to this Google Doc [on Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=42166) by Wednesday 10/11 at midnight. Make sure that Leslie is an Editor or Commenter on this document.
