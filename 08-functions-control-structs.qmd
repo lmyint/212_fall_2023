@@ -1,0 +1,288 @@
+---
+title: "Functions and control structures"
+sidebar: false
+---
+
+```{r echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+# Learning goals
+
+After this lesson, you should be able to:
+
+- Recognize when it would be useful to write a function
+- Identify the core components of a function definition and explain their role (the `function()` directive, arguments, argument defaults, function body, return value)
+- Describe the difference between argument matching by position and by name
+- Write `if`-`else`, `if`-`else if`-`else` statements to conditionally execute code
+- Write your own function to carry out a repeated task
+- Provide feedback on functions written by others
+
+<br>
+
+You can download a template Quarto file to start from [here](activity_templates/08-functions-control-structs.qmd). Save this template within the following directory structure:
+
+- `your_course_folder`
+    - `functions`
+        - `code`
+            - `08-functions-control-structs.qmd`
+
+
+<br><br><br>
+
+
+# Functions and control structures
+
+## Why functions?
+
+Getting really good at writing useful and reusable functions is one of the best ways to increase your expertise in data science. It requires a lot of practice.
+
+If you've copied and pasted code 3 or more times, it's time to write a function.
+
+1. **Reducing errors:** Copy+paste+modify is prone to errors (e.g., forgetting to change a variable name)
+2. **Efficiency:** If you need to update code, you only need to do it one place. This allows reuse of code within and across projects.
+3. **Readability:** Encapsulating code within a function with a descriptive name makes code more readable.
+
+## Core parts of a function
+
+What does a function look like?
+
+```{r}
+average <- function(x, remove_nas) {
+    sum(x, na.rm = remove_nas)/length(x)
+}
+
+average2 <- function(x, remove_nas) {
+    return(sum(x, na.rm = remove_nas)/length(x))
+}
+
+average3 <- function(x, remove_nas = TRUE) {
+    sum(x, na.rm = remove_nas)/length(x)
+}
+```
+
+The core parts of a function include:
+
+- The `function()` directive
+    - This is what allows tells R to create a function.
+- Arguments: the `x` and `remove_nas` -- these are function inputs
+    - In `average3`, the `remove_nas` argument has a **default** value of `TRUE`.
+- Function body
+    - The code inside the curly braces `{}` is where all the work happens. This code uses the function arguments to perform computations.
+- Return value
+    - The first value that gets computed and isn't stored as an object is what the function returns. (This is generally the first line without an assignment operator `<-`.)
+    - As in `average3()`, we can also explicitly return an object by putting it inside `return()`.
+    
+When a function has default values for arguments, they don't have to be explicitly named if you want to use the default value:
+
+```{r}
+# Both give the same result
+average3(c(1, 2, 3, NA))
+average3(c(1, 2, 3, NA), remove_nas = TRUE)
+```
+
+**Pair programming exercise:** Pair up with the person next to you. There are two function writing exercises coming up. You'll swap driver and navigator roles between exercises. (The driver writes the code. The navigator oversees and provides guidance.) For the first exercise, the person whose birthday is coming up sooner will be the driver first. Swap for the second exercise.
+
+**Exercise:** Write a function that rescales a numeric vector to be between 0 and 1. Test out your function on the following inputs:
+
+- `x = 2:4`
+- `x = c(-1, 0, 5)`
+- `x = -3:-1`
+
+<details>
+  <summary>Solution</summary>
+
+```{r}
+rescale01 <- function(x) {
+    range_x <- range(x, na.rm = TRUE)
+    # The [2] and [1] below extract the second and first element of a vector
+    (x - min(x, na.rm = TRUE)) / (range_x[2]-range_x[1])
+}
+```
+
+</details>
+
+**Exercise** Write a function that replaces `NA`s in a character vector with a user-specified string (e.g., "missing"). Provide a default value for the user-specified string. Come up with some test inputs for your function. (Hint: the `str_replace_na()` function in `stringr` may be useful.)
+
+<details>
+  <summary>Solution</summary>
+
+```{r}
+replace_na <- function(x, na_replacement = "Missing") {
+    x_na <- str_replace_na(x)
+    str_replace(x_na, "NA", na_replacement)
+}
+```
+
+</details>
+
+
+## Argument matching
+
+When you supply arguments to a function, they can be matched **by position** and/or **by name**.
+
+When you call a function without `argument = value` inside the parentheses, you are using **positional matching**.
+
+```{r eval=FALSE}
+ggplot(diamonds, aes(x = carat, y = price)) + geom_point()
+```
+
+The above works because the first argument of `ggplot` is `data` and the second is `mapping`. (Pull up the documentation on `ggplot` with `?ggplot` in the Console.) So the following doesn't work:
+
+```{r error=TRUE}
+ggplot(aes(x = carat, y = price), diamonds) + geom_point()
+```
+
+But if we named the arguments (**name matching**), we would be fine:
+
+```{r eval=FALSE}
+ggplot(mapping = aes(x = carat, y = price), data = diamonds) + geom_point()
+```
+
+Somewhat confusingly, we can name some arguments and not others. Below, `mapping` is named, but `data` isn't. This works because when an argument is matched by name, it is "removed" from the argument list, and the remaining unnamed arguments are matched in the order that they are listed in the function definition.
+
+```{r eval=FALSE}
+ggplot(mapping = aes(x = carat, y = price), diamonds) + geom_point()
+```
+
+::: {.callout-tip title="Argument matching"}
+In general, it is safest to match arguments by name and position for your peace of mind. For functions that you are very familiar with (and know the argument order), it's ok to just use positional matching.
+:::
+
+**Exercise:** Diagnose the error message in the example below:
+
+```
+ggplot() %>%
+    geom_sf(census_data, aes(fill = population))
+    
+Error in `layer_sf()`:
+! `mapping` must be created by `aes()`
+```
+
+<details>
+  <summary>Solution</summary>
+
+Use `?geom_sf` to look up the function documentation. We see that the order of the arguments is first `mapping` and second `data`. The error is due to R thinking that `census_data` is supplying aesthetics. This is an example of positional matching gone wrong.
+
+</details>
+
+
+## The `if-else if-else` control structure
+
+Often in functions, you will want to execute code conditionally. In a programming language, **control structures** are parts of the language that allow you to control what code is executed. By far the most common is the ``if-else if-else` structure.
+
+```{r eval=FALSE}
+if (logical_condition) {
+    # some code
+} else if (other_logical_condition) {
+    # some code
+} else {
+    # some code
+}
+
+middle <- function(x) {
+    mean_x <- mean(x, na.rm = TRUE)
+    median_x <- median(x, na.rm = TRUE)
+    seems_skewed <- (mean_x > 1.5*median_x) | (mean_x < (1/1.5)*median_x)
+    if (seems_skewed) {
+        median_x
+    } else {
+        mean_x
+    }
+}
+```
+
+**Pair programming exercise:** Partner with the person next to you again. Whoever was driver most recently should start as navigator. Switch for the second exercise.
+
+**Exercise:** Write a function for converting temperatures that takes as input a numeric value and a unit (either "C" for Celsius or "F" for Fahrenheit). The function should convert the temperature from one unit to the other based on the following formulas:
+
+- To convert Celsius to Fahrenheit: `(Celsius * 9/5) + 32`
+- To convert Fahrenheit to Celsius: `(Fahrenheit - 32) * 5/9`
+
+**Exercise:** Write a function that extracts the domain name of a supplied email address. The function should return the domain name (e.g., "gmail.com"). If the input is not a valid email address, return "Invalid Email".
+
+
+
+## Writing functions with `tidyverse` verbs
+
+Perhaps we are using `group_by()` and `summarize()` a lot to compute group means. We might write this function:
+
+```{r}
+group_means <- function(df, group_var, mean_var) {
+    df %>%
+        group_by(group_var) %>%
+        summarize(mean = mean(mean_var))
+}
+```
+
+Let's use it on the `diamonds` dataset to compute the mean size (`carat`) by diamond `cut`:
+
+```{r error=TRUE}
+group_means(diamonds, group_var = cut, mean_var = carat)
+```
+
+What if the problem is that the variable names need to be in quotes?
+
+```{r error=TRUE}
+group_means(diamonds, group_var = "cut", mean_var = "carat")
+```
+
+What's going on??? The `tidyverse` uses something called **tidy evaluation**: this allows you to refer to a variable by typing it directly (e.g., no need to put it in quotes). So `group_by(group_var)` is expecting a variable that is actually called `group_var`, and `mean(mean_var)` is expecting a variable that is actually called `mean_var`.
+
+To fix this we need to **embrace** the variables inside the function with `{{ var }}`:
+
+```{r}
+group_means <- function(df, group_var, mean_var) {
+    df %>%
+        group_by({{ group_var }}) %>%
+        summarize(mean = mean({{ mean_var }}))
+}
+```
+
+The `{{ var }}` tells R to look at what the value of the variable `var` rather than look for `var` literally.
+
+```{r}
+group_means(diamonds, group_var = cut, mean_var = carat)
+```
+
+Let's group by both `cut` and `color`:
+
+```{r error=TRUE}
+group_means(diamonds, group_var = c(cut, color), mean_var = carat)
+```
+
+Oh no! What now?! When `c(cut, color)` is put inside `{{ c(cut, color) }}` within the function, R is actually running the code inside `{{ }}`. This combines the columns for those 2 variables into one long vector. What we really meant by `c(cut, color)` is "group by both cut and color".
+
+To fix this, we need the `pick()` function to get R to see `{{ group_var }}` as a list of separate variables (like the way `select()` works).
+
+```{r}
+group_means <- function(df, group_var, mean_var) {
+    df %>%
+        group_by(pick({{ group_var }})) %>%
+        summarize(mean = mean({{ mean_var }}))
+}
+```
+
+**Pair programming exercise:** Partner with the person next to you again. Whoever was driver most recently should start as navigator. Switch for the second exercise.
+
+**Exercise:** Create a new version of `dplyr::count()` that also shows proportions instead of just sample sizes. The function should be able to handle counting by multiple variables. Test your function with two different sets of arguments using the `diamonds` dataset.
+
+**Exercise:** Create a function that creates a scatterplot from a user-supplied dataset with user-supplied x and y variables. The plot should also show a curvy smoothing line in blue, and a linear smoothing line in red. Test your function using the `diamonds` dataset.
+
+::: {.callout-tip title="Stop to reflect"}
+In your Process and Reflection Log write a few observations about pair programming today. In terms of learning and the community aspects of the paired work, what went well, and what could go better? Why?
+:::
+
+
+<br><br><br>
+
+
+# Homework
+
+This will be part of Homework 5 due Wed 10/18 (the week after Reflection 1 is due).
+
+Complete the first exercise in [Section 26.3.5](https://r4ds.hadley.nz/functions#exercises-1) of *R for Data Science*. (The exercise that begins with "Using the datasets from nycflights13..." This first exercise has 5 functions to write.)
+
+For each function, test your function two times by running it with two different sets of arguments. Show this output.
+
+Put this work in a new `homework5.qmd` document.

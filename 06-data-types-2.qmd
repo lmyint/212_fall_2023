@@ -85,6 +85,17 @@ str_view(string2)
 # Your code
 ```
 
+<details>
+  <summary>Solution</summary>
+
+```{r error=TRUE}
+x <- "It's Thursday" # We need double quotes because of the apostrophe
+x
+x <- 'It's Thursday'
+```
+
+</details>
+
 Because `"` and `'` are special characters in the creation of strings, R offers another way to put them inside a string. We can **escape** these special characters by putting a `\` in front of them:
 
 ```{r}
@@ -102,6 +113,20 @@ Given that `\` is a special character, how can we put the `\` character in strin
 # Your code
 ```
 
+<details>
+  <summary>Solution</summary>
+
+```{r error=TRUE}
+x <- "C:\\Users"
+str_view(x)
+
+# \U is the start of special escape characters for Unicode characters
+# The \U is expected to be followed by certain types of letters and numbers--like \U0928
+x <- "C:\Users"
+```
+
+</details>
+
 Other special characters include:
 
 - `\t` (Creates a tab)
@@ -118,6 +143,15 @@ str_view(string2)
 ```
 
 **Exercise (Exploring function documentation):** Can we get `str_view()` to show the tab instead of `{\t}`? Enter `?str_view` in the Console to pull up the documentation for this function. Look through the arguments to see how we might do this.
+
+<details>
+  <summary>Solution</summary>
+
+```{r eval=FALSE}
+str_view(string1, html = TRUE)
+```
+
+</details>
 
 **Reflection:** In your Process and Reflection Log, record any strategies that you learned about reading function documentation.
 
@@ -151,6 +185,19 @@ df_dates <- tibble(
     day = c(3, 4, 5)
 )
 ```
+
+<details>
+  <summary>Solution</summary>
+
+```{r}
+df_dates %>%
+    mutate(
+        date1 = str_c(month, "-", day, "-", year),
+        date2 = str_glue("{month}-{day}-{year}")
+    )
+```
+
+</details>
 
 ## Extracting information from strings
 
@@ -189,6 +236,20 @@ df <- tibble(
 )
 ```
 
+<details>
+  <summary>Solution</summary>
+
+```{r}
+df %>%
+    mutate(
+        word_length = str_length(word),
+        middle_pos = ceiling(word_length/2),
+        middle_letter = str_sub(word, middle_pos, middle_pos)
+    )
+```
+
+</details>
+
 
 ## Finding patterns in strings with regular expressions
 
@@ -225,6 +286,27 @@ str_view(c("a", "ab", "abb"), "ab+")
 str_view(c("a", "ab", "abb"), "ab*")
 ```
 
+<details>
+  <summary>Solution</summary>
+
+```{r}
+# This regex finds "a" then "b" at most once (can't have 2 or more b's in a row)
+str_view(c("a", "ab", "abb"), "ab?")
+```
+
+```{r}
+# There has to be an "a" followed by at least one b
+# This is why the first string "a" isn't matched
+str_view(c("a", "ab", "abb"), "ab+")
+```
+
+```{r}
+# There must be an "a" and then any number of b's (including zero)
+str_view(c("a", "ab", "abb"), "ab*")
+```
+
+</details>
+
 - We can match any of a set of characters with `[]` (called a **character class**), e.g., `[abcd]` matches "a", "b", "c", or "d".
     - We can invert the match by starting with `^`: `[^abcd]` matches anything except "a", "b", "c", or "d".
 
@@ -242,6 +324,15 @@ str_view(words, "[^aeiou]y[^aeiou]")
 # Your code
 ```
 
+<details>
+  <summary>Solution</summary>
+
+```{r}
+str_view(words, "[aeiou][aeiou]m")
+```
+
+</details>
+
 - The **alternation** operator `|` can be read just like the logical operator `|` ("OR") to pick between one or more alternative patterns. e.g., `apple|banana` searches for "apple" or "banana".
 
 ```{r}
@@ -254,6 +345,15 @@ str_view(fruit, "apple|melon|nut")
 # Your code
 ```
 
+<details>
+  <summary>Solution</summary>
+
+```{r}
+str_view(fruit, "aa|ee|ii|oo|uu")
+```
+
+</details>
+
 - The `^` operator indicates the beginning of a string, and the `$` operator indicates the end of a string. e.g., `^a` matches strings that start with "a", and `a$` matches words that end with "a".
 - Parentheses group together parts of a regular expression that should be taken as a bundle. (Much like parentheses in arithmetic statements.)
     - e.g., `ab+` is a little confusing. Does it match "ab" one or more times? Or does it match "a" first, then just "b" one or more times? (The latter, as we saw in an earlier example.) We can be very explicit and use `a(b)+`.
@@ -263,6 +363,19 @@ str_view(fruit, "apple|melon|nut")
 ```{r}
 # Your code
 ```
+
+<details>
+  <summary>Solution</summary>
+
+```{r}
+# Words that start with y
+str_view(words, "^y")
+
+# Words that don't start with y
+str_view(words, "^[^y]")
+```
+
+</details>
 
 ------------------
 

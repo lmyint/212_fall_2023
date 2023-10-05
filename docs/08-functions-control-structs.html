@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STAT/COMP 212 - Functions and control structures</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">STAT/COMP 212</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./schedule.html" rel="" target="">
+ <span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-syallbus" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Syallbus</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-syallbus">    
+        <li>
+    <a class="dropdown-item" href="./syllabus_final.html" rel="" target="">
+ <span class="dropdown-text">Final Syllabus</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./syllabus_prelim.html" rel="" target="">
+ <span class="dropdown-text">Preliminary Syllabus</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-activities" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Activities</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-activities">    
+        <li>
+    <a class="dropdown-item" href="./01-introductions.html" rel="" target="">
+ <span class="dropdown-text">Welcome to the course!</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./02-adv-ggplot.html" rel="" target="">
+ <span class="dropdown-text">Advanced Data Visualization in ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./03-adv-maps.html" rel="" target="">
+ <span class="dropdown-text">Advanced Spatial Visualizations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./workflow_files_rstudio.html" rel="" target="">
+ <span class="dropdown-text">Workflow: Files and RStudio setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./04-interactive-viz.html" rel="" target="">
+ <span class="dropdown-text">Interactive visualization</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./05-data-types-1.html" rel="" target="">
+ <span class="dropdown-text">Wrangling: numerics, logicals, dates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./06-data-types-2.html" rel="" target="">
+ <span class="dropdown-text">Wrangling: strings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./07-data-types-3.html" rel="" target="">
+ <span class="dropdown-text">Wrangling: factors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./08-functions-control-structs.html" rel="" target="">
+ <span class="dropdown-text">Functions and control structures</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-homework" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Homework</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-homework">    
+        <li>
+    <a class="dropdown-item" href="./homework0.html" rel="" target="">
+ <span class="dropdown-text">Homework 0</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework1.html" rel="" target="">
+ <span class="dropdown-text">Homework 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework2.html" rel="" target="">
+ <span class="dropdown-text">Homework 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework3.html" rel="" target="">
+ <span class="dropdown-text">Homework 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework4.html" rel="" target="">
+ <span class="dropdown-text">Homework 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./reflection1.html" rel="" target="">
+ <span class="dropdown-text">Reflection 1</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./project.html" rel="" target="">
+ <span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tech_setup.html" rel="" target="">
+ <span class="menu-text">Tech Setup</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#functions-and-control-structures" id="toc-functions-and-control-structures" class="nav-link" data-scroll-target="#functions-and-control-structures">Functions and control structures</a>
+  <ul class="collapse">
+  <li><a href="#why-functions" id="toc-why-functions" class="nav-link" data-scroll-target="#why-functions">Why functions?</a></li>
+  <li><a href="#core-parts-of-a-function" id="toc-core-parts-of-a-function" class="nav-link" data-scroll-target="#core-parts-of-a-function">Core parts of a function</a></li>
+  <li><a href="#argument-matching" id="toc-argument-matching" class="nav-link" data-scroll-target="#argument-matching">Argument matching</a></li>
+  <li><a href="#the-if-else-if-else-control-structure" id="toc-the-if-else-if-else-control-structure" class="nav-link" data-scroll-target="#the-if-else-if-else-control-structure">The <code>if-else if-else</code> control structure</a></li>
+  <li><a href="#writing-functions-with-tidyverse-verbs" id="toc-writing-functions-with-tidyverse-verbs" class="nav-link" data-scroll-target="#writing-functions-with-tidyverse-verbs">Writing functions with <code>tidyverse</code> verbs</a></li>
+  </ul></li>
+  <li><a href="#homework" id="toc-homework" class="nav-link" data-scroll-target="#homework">Homework</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Functions and control structures</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="learning-goals" class="level1">
+<h1>Learning goals</h1>
+<p>After this lesson, you should be able to:</p>
+<ul>
+<li>Recognize when it would be useful to write a function</li>
+<li>Identify the core components of a function definition and explain their role (the <code>function()</code> directive, arguments, argument defaults, function body, return value)</li>
+<li>Describe the difference between argument matching by position and by name</li>
+<li>Write <code>if</code>-<code>else</code>, <code>if</code>-<code>else if</code>-<code>else</code> statements to conditionally execute code</li>
+<li>Write your own function to carry out a repeated task</li>
+<li>Provide feedback on functions written by others</li>
+</ul>
+<p><br></p>
+<p>You can download a template Quarto file to start from <a href="activity_templates/08-functions-control-structs.qmd">here</a>. Save this template within the following directory structure:</p>
+<ul>
+<li><code>your_course_folder</code>
+<ul>
+<li><code>functions</code>
+<ul>
+<li><code>code</code>
+<ul>
+<li><code>08-functions-control-structs.qmd</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br><br><br></p>
+</section>
+<section id="functions-and-control-structures" class="level1">
+<h1>Functions and control structures</h1>
+<section id="why-functions" class="level2">
+<h2 class="anchored" data-anchor-id="why-functions">Why functions?</h2>
+<p>Getting really good at writing useful and reusable functions is one of the best ways to increase your expertise in data science. It requires a lot of practice.</p>
+<p>If you’ve copied and pasted code 3 or more times, it’s time to write a function.</p>
+<ol type="1">
+<li><strong>Reducing errors:</strong> Copy+paste+modify is prone to errors (e.g., forgetting to change a variable name)</li>
+<li><strong>Efficiency:</strong> If you need to update code, you only need to do it one place. This allows reuse of code within and across projects.</li>
+<li><strong>Readability:</strong> Encapsulating code within a function with a descriptive name makes code more readable.</li>
+</ol>
+</section>
+<section id="core-parts-of-a-function" class="level2">
+<h2 class="anchored" data-anchor-id="core-parts-of-a-function">Core parts of a function</h2>
+<p>What does a function look like?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>average <span class="ot">&lt;-</span> <span class="cf">function</span>(x, remove_nas) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(x, <span class="at">na.rm =</span> remove_nas)<span class="sc">/</span><span class="fu">length</span>(x)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>average2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, remove_nas) {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">sum</span>(x, <span class="at">na.rm =</span> remove_nas)<span class="sc">/</span><span class="fu">length</span>(x))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>average3 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">remove_nas =</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(x, <span class="at">na.rm =</span> remove_nas)<span class="sc">/</span><span class="fu">length</span>(x)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The core parts of a function include:</p>
+<ul>
+<li>The <code>function()</code> directive
+<ul>
+<li>This is what allows tells R to create a function.</li>
+</ul></li>
+<li>Arguments: the <code>x</code> and <code>remove_nas</code> – these are function inputs
+<ul>
+<li>In <code>average3</code>, the <code>remove_nas</code> argument has a <strong>default</strong> value of <code>TRUE</code>.</li>
+</ul></li>
+<li>Function body
+<ul>
+<li>The code inside the curly braces <code>{}</code> is where all the work happens. This code uses the function arguments to perform computations.</li>
+</ul></li>
+<li>Return value
+<ul>
+<li>The first value that gets computed and isn’t stored as an object is what the function returns. (This is generally the first line without an assignment operator <code>&lt;-</code>.)</li>
+<li>As in <code>average3()</code>, we can also explicitly return an object by putting it inside <code>return()</code>.</li>
+</ul></li>
+</ul>
+<p>When a function has default values for arguments, they don’t have to be explicitly named if you want to use the default value:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Both give the same result</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">average3</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="cn">NA</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">average3</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="cn">NA</span>), <span class="at">remove_nas =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.5</code></pre>
+</div>
+</div>
+<p><strong>Pair programming exercise:</strong> Pair up with the person next to you. There are two function writing exercises coming up. You’ll swap driver and navigator roles between exercises. (The driver writes the code. The navigator oversees and provides guidance.) For the first exercise, the person whose birthday is coming up sooner will be the driver first. Swap for the second exercise.</p>
+<p><strong>Exercise:</strong> Write a function that rescales a numeric vector to be between 0 and 1. Test out your function on the following inputs:</p>
+<ul>
+<li><code>x = 2:4</code></li>
+<li><code>x = c(-1, 0, 5)</code></li>
+<li><code>x = -3:-1</code></li>
+</ul>
+<details>
+<summary>
+Solution
+</summary>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rescale01 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    range_x <span class="ot">&lt;-</span> <span class="fu">range</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># The [2] and [1] below extract the second and first element of a vector</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    (x <span class="sc">-</span> <span class="fu">min</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">/</span> (range_x[<span class="dv">2</span>]<span class="sc">-</span>range_x[<span class="dv">1</span>])</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</details>
+<p><strong>Exercise</strong> Write a function that replaces <code>NA</code>s in a character vector with a user-specified string (e.g., “missing”). Provide a default value for the user-specified string. Come up with some test inputs for your function. (Hint: the <code>str_replace_na()</code> function in <code>stringr</code> may be useful.)</p>
+<details>
+<summary>
+Solution
+</summary>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>replace_na <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">na_replacement =</span> <span class="st">"Missing"</span>) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    x_na <span class="ot">&lt;-</span> <span class="fu">str_replace_na</span>(x)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_replace</span>(x_na, <span class="st">"NA"</span>, na_replacement)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</details>
+</section>
+<section id="argument-matching" class="level2">
+<h2 class="anchored" data-anchor-id="argument-matching">Argument matching</h2>
+<p>When you supply arguments to a function, they can be matched <strong>by position</strong> and/or <strong>by name</strong>.</p>
+<p>When you call a function without <code>argument = value</code> inside the parentheses, you are using <strong>positional matching</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(diamonds, <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The above works because the first argument of <code>ggplot</code> is <code>data</code> and the second is <code>mapping</code>. (Pull up the documentation on <code>ggplot</code> with <code>?ggplot</code> in the Console.) So the following doesn’t work:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price), diamonds) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `ggplot()`:
+! `mapping` should be created with `aes()`.
+✖ You've supplied a &lt;tbl_df&gt; object</code></pre>
+</div>
+</div>
+<p>But if we named the arguments (<strong>name matching</strong>), we would be fine:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price), <span class="at">data =</span> diamonds) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Somewhat confusingly, we can name some arguments and not others. Below, <code>mapping</code> is named, but <code>data</code> isn’t. This works because when an argument is matched by name, it is “removed” from the argument list, and the remaining unnamed arguments are matched in the order that they are listed in the function definition.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> carat, <span class="at">y =</span> price), diamonds) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Argument matching">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Argument matching
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In general, it is safest to match arguments by name and position for your peace of mind. For functions that you are very familiar with (and know the argument order), it’s ok to just use positional matching.</p>
+</div>
+</div>
+<p><strong>Exercise:</strong> Diagnose the error message in the example below:</p>
+<pre><code>ggplot() %&gt;%
+    geom_sf(census_data, aes(fill = population))
+    
+Error in `layer_sf()`:
+! `mapping` must be created by `aes()`</code></pre>
+<details>
+<summary>
+Solution
+</summary>
+<p>Use <code>?geom_sf</code> to look up the function documentation. We see that the order of the arguments is first <code>mapping</code> and second <code>data</code>. The error is due to R thinking that <code>census_data</code> is supplying aesthetics. This is an example of positional matching gone wrong.</p>
+</details>
+</section>
+<section id="the-if-else-if-else-control-structure" class="level2">
+<h2 class="anchored" data-anchor-id="the-if-else-if-else-control-structure">The <code>if-else if-else</code> control structure</h2>
+<p>Often in functions, you will want to execute code conditionally. In a programming language, <strong>control structures</strong> are parts of the language that allow you to control what code is executed. By far the most common is the `<code>if-else if-else</code> structure.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (logical_condition) {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># some code</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (other_logical_condition) {</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># some code</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># some code</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>middle <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    mean_x <span class="ot">&lt;-</span> <span class="fu">mean</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    median_x <span class="ot">&lt;-</span> <span class="fu">median</span>(x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    seems_skewed <span class="ot">&lt;-</span> (mean_x <span class="sc">&gt;</span> <span class="fl">1.5</span><span class="sc">*</span>median_x) <span class="sc">|</span> (mean_x <span class="sc">&lt;</span> (<span class="dv">1</span><span class="sc">/</span><span class="fl">1.5</span>)<span class="sc">*</span>median_x)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (seems_skewed) {</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>        median_x</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>        mean_x</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Pair programming exercise:</strong> Partner with the person next to you again. Whoever was driver most recently should start as navigator. Switch for the second exercise.</p>
+<p><strong>Exercise:</strong> Write a function for converting temperatures that takes as input a numeric value and a unit (either “C” for Celsius or “F” for Fahrenheit). The function should convert the temperature from one unit to the other based on the following formulas:</p>
+<ul>
+<li>To convert Celsius to Fahrenheit: <code>(Celsius * 9/5) + 32</code></li>
+<li>To convert Fahrenheit to Celsius: <code>(Fahrenheit - 32) * 5/9</code></li>
+</ul>
+<p><strong>Exercise:</strong> Write a function that extracts the domain name of a supplied email address. The function should return the domain name (e.g., “gmail.com”). If the input is not a valid email address, return “Invalid Email”.</p>
+</section>
+<section id="writing-functions-with-tidyverse-verbs" class="level2">
+<h2 class="anchored" data-anchor-id="writing-functions-with-tidyverse-verbs">Writing functions with <code>tidyverse</code> verbs</h2>
+<p>Perhaps we are using <code>group_by()</code> and <code>summarize()</code> a lot to compute group means. We might write this function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>group_means <span class="ot">&lt;-</span> <span class="cf">function</span>(df, group_var, mean_var) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    df <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">group_by</span>(group_var) <span class="sc">%&gt;%</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(mean_var))</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s use it on the <code>diamonds</code> dataset to compute the mean size (<code>carat</code>) by diamond <code>cut</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">group_means</span>(diamonds, <span class="at">group_var =</span> cut, <span class="at">mean_var =</span> carat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `group_by()`:
+! Must group by variables found in `.data`.
+✖ Column `group_var` is not found.</code></pre>
+</div>
+</div>
+<p>What if the problem is that the variable names need to be in quotes?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">group_means</span>(diamonds, <span class="at">group_var =</span> <span class="st">"cut"</span>, <span class="at">mean_var =</span> <span class="st">"carat"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `group_by()`:
+! Must group by variables found in `.data`.
+✖ Column `group_var` is not found.</code></pre>
+</div>
+</div>
+<p>What’s going on??? The <code>tidyverse</code> uses something called <strong>tidy evaluation</strong>: this allows you to refer to a variable by typing it directly (e.g., no need to put it in quotes). So <code>group_by(group_var)</code> is expecting a variable that is actually called <code>group_var</code>, and <code>mean(mean_var)</code> is expecting a variable that is actually called <code>mean_var</code>.</p>
+<p>To fix this we need to <strong>embrace</strong> the variables inside the function with <code>{{ var }}</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>group_means <span class="ot">&lt;-</span> <span class="cf">function</span>(df, group_var, mean_var) {</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    df <span class="sc">%&gt;%</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">group_by</span>({{ group_var }}) <span class="sc">%&gt;%</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>({{ mean_var }}))</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>{{ var }}</code> tells R to look at what the value of the variable <code>var</code> rather than look for <code>var</code> literally.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">group_means</span>(diamonds, <span class="at">group_var =</span> cut, <span class="at">mean_var =</span> carat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  cut        mean
+  &lt;ord&gt;     &lt;dbl&gt;
+1 Fair      1.05 
+2 Good      0.849
+3 Very Good 0.806
+4 Premium   0.892
+5 Ideal     0.703</code></pre>
+</div>
+</div>
+<p>Let’s group by both <code>cut</code> and <code>color</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">group_means</span>(diamonds, <span class="at">group_var =</span> <span class="fu">c</span>(cut, color), <span class="at">mean_var =</span> carat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `group_by()`:
+ℹ In argument: `c(cut, color)`.
+Caused by error:
+! `c(cut, color)` must be size 53940 or 1, not 107880.</code></pre>
+</div>
+</div>
+<p>Oh no! What now?! When <code>c(cut, color)</code> is put inside <code>{{ c(cut, color) }}</code> within the function, R is actually running the code inside <code>{{ }}</code>. This combines the columns for those 2 variables into one long vector. What we really meant by <code>c(cut, color)</code> is “group by both cut and color”.</p>
+<p>To fix this, we need the <code>pick()</code> function to get R to see <code>{{ group_var }}</code> as a list of separate variables (like the way <code>select()</code> works).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>group_means <span class="ot">&lt;-</span> <span class="cf">function</span>(df, group_var, mean_var) {</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    df <span class="sc">%&gt;%</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">group_by</span>(<span class="fu">pick</span>({{ group_var }})) <span class="sc">%&gt;%</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>({{ mean_var }}))</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Pair programming exercise:</strong> Partner with the person next to you again. Whoever was driver most recently should start as navigator. Switch for the second exercise.</p>
+<p><strong>Exercise:</strong> Create a new version of <code>dplyr::count()</code> that also shows proportions instead of just sample sizes. The function should be able to handle counting by multiple variables. Test your function with two different sets of arguments using the <code>diamonds</code> dataset.</p>
+<p><strong>Exercise:</strong> Create a function that creates a scatterplot from a user-supplied dataset with user-supplied x and y variables. The plot should also show a curvy smoothing line in blue, and a linear smoothing line in red. Test your function using the <code>diamonds</code> dataset.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Stop to reflect">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Stop to reflect
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In your Process and Reflection Log write a few observations about pair programming today. In terms of learning and the community aspects of the paired work, what went well, and what could go better? Why?</p>
+</div>
+</div>
+<p><br><br><br></p>
+</section>
+</section>
+<section id="homework" class="level1">
+<h1>Homework</h1>
+<p>This will be part of Homework 5 due Wed 10/18 (the week after Reflection 1 is due).</p>
+<p>Complete the first exercise in <a href="https://r4ds.hadley.nz/functions#exercises-1">Section 26.3.5</a> of <em>R for Data Science</em>. (The exercise that begins with “Using the datasets from nycflights13…” This first exercise has 5 functions to write.)</p>
+<p>For each function, test your function two times by running it with two different sets of arguments. Show this output.</p>
+<p>Put this work in a new <code>homework5.qmd</code> document.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Leslie Myint, 2023<br> All content licensed under <img src="https://static.thenounproject.com/png/70967-200.png" height="20"> (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>)</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">Site built with <a href="https://quarto.org/">Quarto</a></div>
+  </div>
+</footer>
+
+
+
+</body></html>

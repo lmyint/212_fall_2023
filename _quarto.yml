@@ -46,7 +46,7 @@ website:
         - 05-data-types-1.qmd
         - 06-data-types-2.qmd
         - 07-data-types-3.qmd
-        # - 06-functions-control-structs.qmd
+        - 08-functions-control-structs.qmd
 
     - id: homework
       title: "Homework"
