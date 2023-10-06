@@ -199,7 +199,44 @@ middle <- function(x) {
 - To convert Celsius to Fahrenheit: `(Celsius * 9/5) + 32`
 - To convert Fahrenheit to Celsius: `(Fahrenheit - 32) * 5/9`
 
+<details>
+  <summary>Solution</summary>
+
+```{r}
+convert_temp <- function(temp, unit) {
+    if (unit=="F") {
+        (temp - 32) * 5/9
+    } else if (unit=="C") {
+        (temp * 9/5) + 32
+    }
+}
+
+convert_temp(0, unit = "C")
+convert_temp(32, unit = "F")
+```
+
+</details>
+
 **Exercise:** Write a function that extracts the domain name of a supplied email address. The function should return the domain name (e.g., "gmail.com"). If the input is not a valid email address, return "Invalid Email".
+
+<details>
+  <summary>Solution</summary>
+
+```{r}
+extract_domain <- function(email) {
+    is_valid <- str_detect(email, "@.+\\.")
+    if (is_valid) {
+        str_extract(email, "@.+$") %>%
+            str_remove("@")
+    } else {
+        "Invalid Email"
+    }
+}
+
+extract_domain(email = "les@mac.edu")
+```
+
+</details>
 
 
 
@@ -267,7 +304,39 @@ group_means <- function(df, group_var, mean_var) {
 
 **Exercise:** Create a new version of `dplyr::count()` that also shows proportions instead of just sample sizes. The function should be able to handle counting by multiple variables. Test your function with two different sets of arguments using the `diamonds` dataset.
 
+<details>
+  <summary>Solution</summary>
+
+```{r}
+count_prop <- function(df, count_vars) {
+    df %>%
+        count(pick({{ count_vars }})) %>%
+        mutate(prop = n/sum(n))
+}
+
+count_prop(diamonds, count_vars = cut)
+count_prop(diamonds, count_vars = c(cut, color))
+```
+
+</details>
+
 **Exercise:** Create a function that creates a scatterplot from a user-supplied dataset with user-supplied x and y variables. The plot should also show a curvy smoothing line in blue, and a linear smoothing line in red. Test your function using the `diamonds` dataset.
+
+<details>
+  <summary>Solution</summary>
+
+```{r}
+scatter_with_smooths <- function(df, x, y) {
+    ggplot(df, aes(x = {{ x }}, y = {{ y }})) +
+        geom_point() +
+        geom_smooth(color = "blue") +
+        geom_smooth(method = "lm", color = "red")
+}
+
+scatter_with_smooths(diamonds, x = carat, y = price)
+```
+
+</details>
 
 ::: {.callout-tip title="Stop to reflect"}
 In your Process and Reflection Log write a few observations about pair programming today. In terms of learning and the community aspects of the paired work, what went well, and what could go better? Why?
@@ -281,7 +350,7 @@ In your Process and Reflection Log write a few observations about pair programmi
 
 This will be part of Homework 5 due Wed 10/18 (the week after Reflection 1 is due).
 
-Complete the first exercise in [Section 26.3.5](https://r4ds.hadley.nz/functions#exercises-1) of *R for Data Science*. (The exercise that begins with "Using the datasets from nycflights13..." This first exercise has 5 functions to write.)
+Complete the first exercise in [Section 26.3.5](https://r4ds.hadley.nz/functions#exercises-1) of *R for Data Science*. (The exercise that begins with "Using the datasets from nycflights13..." This first exercise has 5 functions to write.) 
 
 For each function, test your function two times by running it with two different sets of arguments. Show this output.
 
