@@ -119,8 +119,7 @@ Guiding questions for the readings are available at the bottom of this page.
     </td>
     
     <td class="topleft">
-      <b>10/12: Loops and iteration</b> <br>
-      Helpful readings (read before or after class): <a href="https://r4ds.hadley.nz/databases.html">Chapter 22 (Databases)</a>.
+      <b>10/12: Loops and iteration</b>
     </td>
     
     <td class="topleft">Turn in HW4 (Project Milestone 2) by Wed 10/11 if you haven't already. Turn in <a href="https://lmyint.github.io/212_fall_2023/reflection1.html">Reflection 1</a> by Wed 10/11.</td>
@@ -182,7 +181,7 @@ Guiding questions for the readings are available at the bottom of this page.
     <td class="topleft">10</td>
     <td class="topleft">
       <b>11/7: Missing data: wrangling and missingness mechanisms</b> <br>
-      Helpful readings (read before or after class): <a href="https://r4ds.hadley.nz/databases.html">R4DS Chapter 22 (Databases)</a>.
+      Helpful readings (read before or after class): 
     </td>
     
     <td class="topleft">

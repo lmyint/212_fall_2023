@@ -355,3 +355,24 @@ Complete the first exercise in [Section 26.3.5](https://r4ds.hadley.nz/functions
 For each function, test your function two times by running it with two different sets of arguments. Show this output.
 
 Put this work in a new `homework5.qmd` document.
+
+<!--
+# Activity ideas
+
+**Writing functions from scratch:**
+Function Challenge Relay: Divide the students into groups and set up stations with different R function challenges. Each station has a specific task that requires creating or using R functions. The groups rotate through the stations, completing the challenges together. For example, one station might require writing a function to calculate factorial, another to find the mean of a dataset, and so on.
+
+Write a function that fits a linear model within subgroups of the data.
+
+
+**Finding existing functions:**
+Function Library Creation: Assign each group a specific topic or problem domain (e.g., mathematical functions, data manipulation, data visualization). Each group works together to research, design, and implement a set of R functions that address various aspects of their assigned topic. They can then share their function library with the class.
+Function Scavenger Hunt: Create a scavenger hunt where each group receives a list of R functions to find and examples of tasks to perform using those functions. The hunt can involve finding functions in R documentation, tutorials, or online resources. The group that completes the most tasks correctly wins.
+
+Groups can put together a nice resource for others (e.g., a cheat sheet). Something more user-friendly than a Google Doc.
+
+**Editing functions writen by others:**
+Function Debugging Party: Give each group a set of R functions with intentional errors or bugs. The groups work together to debug and correct the functions. This activity reinforces the importance of testing and troubleshooting code collaboratively.
+Function Code Review Workshop: Each group writes an R function and shares it with another group. The receiving group reviews the code, provides feedback, and suggests improvements. This exercise promotes collaborative code development and helps students learn from each other's code.
+
+-->
