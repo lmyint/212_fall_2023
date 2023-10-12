@@ -131,7 +131,7 @@ Guiding questions for the readings are available at the bottom of this page.
     <td class="topleft">7</td>
     <td class="topleft">
       <b>10/17: Data acquisition: APIs</b> <br>
-      Helpful readings (read before or after class): <a href="https://httr.r-lib.org/articles/quickstart.html">Getting started with httr</a> <br>
+      Helpful readings (read before or after class):
     </td>
     
     <td class="topleft">

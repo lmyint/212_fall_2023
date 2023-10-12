@@ -16,6 +16,19 @@ I'm also happy to meet one-on-one if my normal drop-in hours don't work. You can
 
 # Announcements
 
+## 10/12
+
+- [Homework 5](homework5.qmd) is a set of practice exercises on writing functions. This is due next Wednesday, 10/18.
+- Make note of the first <span class="project">project progress presentation</span> on 10/24.
+- Before class on Tuesday, install the following packages:
+
+```{r eval=FALSE}
+install.package(c("jsonlite", "urltools"))
+# install.packages("devtools") # Install devtools if you haven't already
+devtools::install_github("mkearney/nytimes")
+```
+
+
 ## 10/3
 
 - [Project Milestone 2](project.qmd#milestone-2) can be turned in this Wednesday 10/4 or next Wednesday 10/11

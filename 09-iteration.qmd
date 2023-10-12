@@ -216,7 +216,7 @@ for (i in seq_along(unique_cuts)) {
 
 The `purrr` package contains general purpose functions for iteration. Let's take a look the [function reference](https://purrr.tidyverse.org/reference/index.html).
 
-The `map()` family of functions applies a given function (`f` in the image below) to each of the elements of a vector or list.
+The `map()` family of functions applies a given function (`f` in the image below) to each of the elements of a vector or list. A data frame is a special type of list. (We'll talk more about lists later.)
 
 ![](https://d33wubrfki0l68.cloudfront.net/12f6af8404d9723dff9cc665028a35f07759299d/d0d9a/diagrams/functionals/map-list.png){fig-align="center"}
 
@@ -226,6 +226,25 @@ The `map()` family of functions applies a given function (`f` in the image below
 - `map_int()` returns an integer vector
 - `map_dbl()` returns a numeric vector
 - `map_vec()` returns a vector of a different (non-atomic) type (like dates)
+
+The examples below show how `map()` iterates over each variable of a data frame to apply a function to that variable. In the picture above, we can view each of the horizontal rectangles as a variable in a data frame.
+
+```{r error=TRUE}
+# Because map_chr expects the supplied function to give a single string, we get an error
+# because the 3 factors (cut, color, and clarity) have both the "factor" and "ordered" class
+map_chr(diamonds, class)
+
+# But map() has no such expectations
+map(diamonds, class)
+
+map(diamonds %>% select(where(is.numeric)), mean)
+map_int(diamonds %>% select(where(is.numeric)), mean) # map_int gives an error because the result of mean() is a double (not an integer)
+map_dbl(diamonds %>% select(where(is.numeric)), mean)
+
+map(diamonds %>% select(!where(is.numeric)), n_distinct)
+map_int(diamonds %>% select(!where(is.numeric)), n_distinct)
+```
+
 
 `purrr` also offers the `pmap()` family of functions that take multiple inputs and loops over them simultaneously:
 
@@ -246,6 +265,10 @@ pmap_chr(df, str_replace_all)
 
 
 ## Application exercise
+
+::: {.callout-tip title="Reminder to reflect"}
+As you work through this application exercise, make note: what is challenging? What feels comfortable? What insights do you gain from collaborating with others? What ideas/strategies do you want to remember going forward?
+:::
 
 **Goal:** In the `diamonds` dataset, we want to understand the relationship between `price` and size (`carat`). We want to explore variation along two choices:
 
@@ -343,11 +366,6 @@ lin_mod_res_pmap <- pmap(df_arg_combos, fit_model)
 
 </details>
 
-
-
-::: {.callout-tip title="Stop to reflect"}
-What was challenging about this application exercise? What felt comfortable? What insights did you gain from collaborating with others? What ideas/strategies do you want to remember going forward?
-:::
 
 
 <!--

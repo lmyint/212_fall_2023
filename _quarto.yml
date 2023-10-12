@@ -58,6 +58,7 @@ website:
         - homework3.qmd
         - homework4.qmd
         - reflection1.qmd
+        - homework5.qmd
   
   page-footer:
     left: |

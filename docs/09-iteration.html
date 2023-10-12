@@ -213,6 +213,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./reflection1.html" rel="" target="">
  <span class="dropdown-text">Reflection 1</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./homework5.html" rel="" target="">
+ <span class="dropdown-text">Homework 5</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -419,20 +423,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>$mean
 function (x, ...) 
 UseMethod("mean")
-&lt;bytecode: 0x129771560&gt;
+&lt;bytecode: 0x1239b9d60&gt;
 &lt;environment: namespace:base&gt;
 
 $med
 function (x, na.rm = FALSE, ...) 
 UseMethod("median")
-&lt;bytecode: 0x1288daaa8&gt;
+&lt;bytecode: 0x144a068a8&gt;
 &lt;environment: namespace:stats&gt;
 
 $sd
 function (x, na.rm = FALSE) 
 sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x), 
     na.rm = na.rm))
-&lt;bytecode: 0x108cc5120&gt;
+&lt;bytecode: 0x107855200&gt;
 &lt;environment: namespace:stats&gt;</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(list_of_fcts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -597,7 +601,7 @@ sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x),
 <section id="purrr" class="level2">
 <h2 class="anchored" data-anchor-id="purrr"><code>purrr</code></h2>
 <p>The <code>purrr</code> package contains general purpose functions for iteration. Let’s take a look the <a href="https://purrr.tidyverse.org/reference/index.html">function reference</a>.</p>
-<p>The <code>map()</code> family of functions applies a given function (<code>f</code> in the image below) to each of the elements of a vector or list.</p>
+<p>The <code>map()</code> family of functions applies a given function (<code>f</code> in the image below) to each of the elements of a vector or list. A data frame is a special type of list. (We’ll talk more about lists later.)</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://d33wubrfki0l68.cloudfront.net/12f6af8404d9723dff9cc665028a35f07759299d/d0d9a/diagrams/functionals/map-list.png" class="img-fluid figure-img"></p>
@@ -611,6 +615,106 @@ sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x),
 <li><code>map_dbl()</code> returns a numeric vector</li>
 <li><code>map_vec()</code> returns a vector of a different (non-atomic) type (like dates)</li>
 </ul>
+<p>The examples below show how <code>map()</code> iterates over each variable of a data frame to apply a function to that variable. In the picture above, we can view each of the horizontal rectangles as a variable in a data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Because map_chr expects the supplied function to give a single string, we get an error</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># because the 3 factors (cut, color, and clarity) have both the "factor" and "ordered" class</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">map_chr</span>(diamonds, class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `map_chr()`:
+ℹ In index: 2.
+ℹ With name: cut.
+Caused by error:
+! Result must be length 1, not 2.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># But map() has no such expectations</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(diamonds, class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$carat
+[1] "numeric"
+
+$cut
+[1] "ordered" "factor" 
+
+$color
+[1] "ordered" "factor" 
+
+$clarity
+[1] "ordered" "factor" 
+
+$depth
+[1] "numeric"
+
+$table
+[1] "numeric"
+
+$price
+[1] "integer"
+
+$x
+[1] "numeric"
+
+$y
+[1] "numeric"
+
+$z
+[1] "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(diamonds <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)), mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$carat
+[1] 0.7979397
+
+$depth
+[1] 61.7494
+
+$table
+[1] 57.45718
+
+$price
+[1] 3932.8
+
+$x
+[1] 5.731157
+
+$y
+[1] 5.734526
+
+$z
+[1] 3.538734</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_int</span>(diamonds <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)), mean) <span class="co"># map_int gives an error because the result of mean() is a double (not an integer)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in `map_int()`:
+ℹ In index: 1.
+ℹ With name: carat.
+Caused by error:
+! Can't coerce from a number to an integer vector.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(diamonds <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">where</span>(is.numeric)), mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       carat        depth        table        price            x            y 
+   0.7979397   61.7494049   57.4571839 3932.7997219    5.7311572    5.7345260 
+           z 
+   3.5387338 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(diamonds <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">!</span><span class="fu">where</span>(is.numeric)), n_distinct)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$cut
+[1] 5
+
+$color
+[1] 7
+
+$clarity
+[1] 8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_int</span>(diamonds <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">!</span><span class="fu">where</span>(is.numeric)), n_distinct)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    cut   color clarity 
+      5       7       8 </code></pre>
+</div>
+</div>
 <p><code>purrr</code> also offers the <code>pmap()</code> family of functions that take multiple inputs and loops over them simultaneously:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -618,13 +722,13 @@ sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x),
 </figure>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">string =</span> <span class="fu">c</span>(<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>),</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">pattern =</span> <span class="fu">c</span>(<span class="st">"p"</span>, <span class="st">"n"</span>, <span class="st">"h"</span>),</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">replacement =</span> <span class="fu">c</span>(<span class="st">"P"</span>, <span class="st">"N"</span>, <span class="st">"H"</span>)</span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="fu">pmap</span>(df, str_replace_all)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">string =</span> <span class="fu">c</span>(<span class="st">"apple"</span>, <span class="st">"banana"</span>, <span class="st">"cherry"</span>),</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">pattern =</span> <span class="fu">c</span>(<span class="st">"p"</span>, <span class="st">"n"</span>, <span class="st">"h"</span>),</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">replacement =</span> <span class="fu">c</span>(<span class="st">"P"</span>, <span class="st">"N"</span>, <span class="st">"H"</span>)</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a><span class="fu">pmap</span>(df, str_replace_all)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] "aPPle"
@@ -635,7 +739,7 @@ sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x),
 [[3]]
 [1] "cHerry"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pmap_chr</span>(df, str_replace_all)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pmap_chr</span>(df, str_replace_all)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "aPPle"  "baNaNa" "cHerry"</code></pre>
 </div>
@@ -644,6 +748,19 @@ sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x),
 </section>
 <section id="application-exercise" class="level2">
 <h2 class="anchored" data-anchor-id="application-exercise">Application exercise</h2>
+<div class="callout callout-style-default callout-tip callout-titled" title="Reminder to reflect">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reminder to reflect
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As you work through this application exercise, make note: what is challenging? What feels comfortable? What insights do you gain from collaborating with others? What ideas/strategies do you want to remember going forward?</p>
+</div>
+</div>
 <p><strong>Goal:</strong> In the <code>diamonds</code> dataset, we want to understand the relationship between <code>price</code> and size (<code>carat</code>). We want to explore variation along two choices:</p>
 <ol type="1">
 <li>The variables included in the model. We’ll explore 3 sets of variables:
@@ -661,11 +778,11 @@ sqrt(var(if (is.vector(x) || is.factor(x)) x else as.double(x),
 Solution
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df_arg_combos <span class="ot">&lt;-</span> <span class="fu">crossing</span>(</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">mod_formula =</span> <span class="fu">c</span>(price <span class="sc">~</span> carat, price <span class="sc">~</span> carat <span class="sc">+</span> cut,  price <span class="sc">~</span> carat <span class="sc">+</span> cut <span class="sc">+</span> clarity,  price <span class="sc">~</span> carat <span class="sc">+</span> cut <span class="sc">+</span> clarity <span class="sc">+</span> color),</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">remove_outliers =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>df_arg_combos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>df_arg_combos <span class="ot">&lt;-</span> <span class="fu">crossing</span>(</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">mod_formula =</span> <span class="fu">c</span>(price <span class="sc">~</span> carat, price <span class="sc">~</span> carat <span class="sc">+</span> cut,  price <span class="sc">~</span> carat <span class="sc">+</span> cut <span class="sc">+</span> clarity,  price <span class="sc">~</span> carat <span class="sc">+</span> cut <span class="sc">+</span> clarity <span class="sc">+</span> color),</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">remove_outliers =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>df_arg_combos</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 2
   mod_formula remove_outliers
@@ -687,11 +804,11 @@ Solution
 Solution
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>remove_outliers <span class="ot">&lt;-</span> <span class="cf">function</span>(df, what_var, sd_thresh) {</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    df <span class="sc">%&gt;%</span> </span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mutate</span>(<span class="at">zscore =</span> ({{ what_var }} <span class="sc">-</span> <span class="fu">mean</span>({{ what_var}}, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))<span class="sc">/</span><span class="fu">sd</span>({{ what_var }}, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter</span>(zscore <span class="sc">&lt;=</span> sd_thresh)</span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>remove_outliers <span class="ot">&lt;-</span> <span class="cf">function</span>(df, what_var, sd_thresh) {</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    df <span class="sc">%&gt;%</span> </span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">mutate</span>(<span class="at">zscore =</span> ({{ what_var }} <span class="sc">-</span> <span class="fu">mean</span>({{ what_var}}, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))<span class="sc">/</span><span class="fu">sd</span>({{ what_var }}, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter</span>(zscore <span class="sc">&lt;=</span> sd_thresh)</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </details>
 <p><strong>Exercise 3:</strong> Write a function that implements the analysis versions specifically for the <code>diamonds</code> dataset. The user will not specify the dataset as an argument but will input the model formula and whether or not to remove outliers (cases whose <code>carat</code> is over 3 SDs away from the mean).</p>
@@ -700,15 +817,15 @@ Solution
 Solution
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>fit_model <span class="ot">&lt;-</span> <span class="cf">function</span>(mod_formula, remove_outliers) {</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (remove_outliers) {</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>        diamonds_clean <span class="ot">&lt;-</span> <span class="fu">remove_outliers</span>(diamonds, <span class="at">what_var =</span> carat, <span class="at">sd_thresh =</span> <span class="dv">3</span>)</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>        diamonds_clean <span class="ot">&lt;-</span> diamonds</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lm</span>(mod_formula, <span class="at">data =</span> diamonds_clean)</span>
-<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>fit_model <span class="ot">&lt;-</span> <span class="cf">function</span>(mod_formula, remove_outliers) {</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (remove_outliers) {</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>        diamonds_clean <span class="ot">&lt;-</span> <span class="fu">remove_outliers</span>(diamonds, <span class="at">what_var =</span> carat, <span class="at">sd_thresh =</span> <span class="dv">3</span>)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>        diamonds_clean <span class="ot">&lt;-</span> diamonds</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">lm</span>(mod_formula, <span class="at">data =</span> diamonds_clean)</span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </details>
 <p><strong>Exercise 4:</strong> Write a <code>for</code> loop that stores the fitted linear models from all versions of the analysis.</p>
@@ -723,16 +840,16 @@ Solution
 Solution
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>lin_mod_res_for <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"list"</span>, <span class="at">length =</span> <span class="fu">nrow</span>(df_arg_combos))</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(lin_mod_res_for)) {</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    this_formula <span class="ot">&lt;-</span> df_arg_combos<span class="sc">$</span>mod_formula[[i]] <span class="co"># Double [[ for the **list** of formulas</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    this_remove_outliers <span class="ot">&lt;-</span> df_arg_combos<span class="sc">$</span>remove_outliers[i] <span class="co"># Single [ for the **atomic vector** of logicals</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    lin_mod_res_for[[i]] <span class="ot">&lt;-</span> <span class="fu">fit_model</span>(</span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">mod_formula =</span> this_formula,</span>
-<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">remove_outliers =</span> this_remove_outliers</span>
-<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>lin_mod_res_for <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="at">mode =</span> <span class="st">"list"</span>, <span class="at">length =</span> <span class="fu">nrow</span>(df_arg_combos))</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(lin_mod_res_for)) {</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>    this_formula <span class="ot">&lt;-</span> df_arg_combos<span class="sc">$</span>mod_formula[[i]] <span class="co"># Double [[ for the **list** of formulas</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>    this_remove_outliers <span class="ot">&lt;-</span> df_arg_combos<span class="sc">$</span>remove_outliers[i] <span class="co"># Single [ for the **atomic vector** of logicals</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>    lin_mod_res_for[[i]] <span class="ot">&lt;-</span> <span class="fu">fit_model</span>(</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">mod_formula =</span> this_formula,</span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">remove_outliers =</span> this_remove_outliers</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </details>
 <p><strong>Exercise 5:</strong> Use <code>pmap()</code> from <code>purrr</code> to replicate what you did with the <code>for</code> loop.</p>
@@ -741,22 +858,9 @@ Solution
 Solution
 </summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>lin_mod_res_pmap <span class="ot">&lt;-</span> <span class="fu">pmap</span>(df_arg_combos, fit_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>lin_mod_res_pmap <span class="ot">&lt;-</span> <span class="fu">pmap</span>(df_arg_combos, fit_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </details>
-<div class="callout callout-style-default callout-tip callout-titled" title="Stop to reflect">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Stop to reflect
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>What was challenging about this application exercise? What felt comfortable? What insights did you gain from collaborating with others? What ideas/strategies do you want to remember going forward?</p>
-</div>
-</div>
 <!--
 
 

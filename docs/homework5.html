@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT/COMP 212 - Welcome to the course!</title>
+<title>STAT/COMP 212 - Homework 5</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -205,14 +239,21 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#required-parts" id="toc-required-parts" class="nav-link active" data-scroll-target="#required-parts">Required parts</a></li>
+  <li><a href="#optional" id="toc-optional" class="nav-link" data-scroll-target="#optional">Optional</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Welcome to the course!</h1>
+<h1 class="title">Homework 5</h1>
 </div>
 
 
@@ -227,20 +268,29 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Welcome to Intermediate Data Science! I’m thrilled to be your partners in journeying this <strong>brand new (!)</strong> course in MSCS.</p>
-<p>Our goals for today are as follows:</p>
+<section id="required-parts" class="level1">
+<h1>Required parts</h1>
+<p>Due Wednesday, October 18 by midnight <a href="">on Moodle</a>.</p>
+<p>Complete the first exercise in <a href="https://r4ds.hadley.nz/functions#exercises-1">Section 26.3.5</a> of <em>R for Data Science</em>. (The exercise that begins with “Using the datasets from nycflights13…” This first exercise has 5 functions to write.)</p>
 <ul>
-<li>What is this course about?</li>
-<li>Get to know your classmates</li>
-<li>Shaping our syllabus together</li>
-<li>Create your personal website!
-<ul>
-<li>Website content building + connecting with classmates</li>
-</ul></li>
+<li>You will need to install the <code>nycflights13</code> package to access the datasets that the exercise is referring to.</li>
+<li>Note that the <code>|&gt;</code> that appears in the exercises is effectively the same as our familiar pipe <code>%&gt;%</code>. (The <code>|&gt;</code> is a pipe operator that the base R functionality now comes with.)</li>
 </ul>
-<p>We’ll primarily be using slides today–following along <a href="./slides/day1.html">here</a>.</p>
+<p>For each function that has arguments (sub-exercises 3 to 5), test your function two times by running it with two different sets of arguments. Show this output.</p>
+<p>Put this work in a new <code>homework5.qmd</code> document. Update the header information in your <code>.qmd</code> to look like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Homework 5: Functions"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"YOUR NAME"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self-contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When you render this <code>.qmd</code>, this will create an HTML file in which images are embedded. Submit this HTML file on Moodle.</p>
+</section>
+<section id="optional" class="level1">
+<h1>Optional</h1>
+<p>Participate in the most recent <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-10-10/readme.md">Tidy Tuesday</a> challenge.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

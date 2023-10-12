@@ -1,0 +1,31 @@
+---
+title: "Homework 5"
+sidebar: false
+---
+
+# Required parts
+
+Due Wednesday, October 18 by midnight [on Moodle]().
+
+Complete the first exercise in [Section 26.3.5](https://r4ds.hadley.nz/functions#exercises-1) of *R for Data Science*. (The exercise that begins with "Using the datasets from nycflights13..." This first exercise has 5 functions to write.)
+
+- You will need to install the `nycflights13` package to access the datasets that the exercise is referring to.
+- Note that the `|>` that appears in the exercises is effectively the same as our familiar pipe `%>%`. (The `|>` is a pipe operator that the base R functionality now comes with.)
+
+For each function that has arguments (sub-exercises 3 to 5), test your function two times by running it with two different sets of arguments. Show this output.
+
+Put this work in a new `homework5.qmd` document. Update the header information in your `.qmd` to look like this:
+
+```yaml
+title: "Homework 5: Functions"
+author: "YOUR NAME"
+format: 
+  html:
+    self-contained: true
+```
+
+When you render this `.qmd`, this will create an HTML file in which images are embedded. Submit this HTML file on Moodle.
+
+# Optional
+
+Participate in the most recent [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-10-10/readme.md) challenge.
