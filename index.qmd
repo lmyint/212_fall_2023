@@ -19,7 +19,7 @@ I'm also happy to meet one-on-one if my normal drop-in hours don't work. You can
 ## 10/17
 
 - [Homework 5](homework5.qmd) is a set of practice exercises on writing functions. This is due Wednesday 10/18.
-- Make note of the first <span class="project">project progress presentation</span> on 10/24. Your homework this week is to work on your progress presentation.
+- Make note of the first <span class="project">project progress presentation</span> on 10/24. Your homework this week is to work on your progress presentation. (Presentation requirements can be found under [Milestone 3](project.qmd#milestone-3) on the [Project](project.qmd) page.)
 
 ## 10/12
 

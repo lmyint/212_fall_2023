@@ -250,9 +250,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#course-calendar" id="toc-course-calendar" class="nav-link active" data-scroll-target="#course-calendar">Course Calendar</a></li>
   <li><a href="#guiding-questions" id="toc-guiding-questions" class="nav-link" data-scroll-target="#guiding-questions">Guiding Questions</a>
   <ul class="collapse">
-  <li><a href="#advanced-visualization-in-ggplot" id="toc-advanced-visualization-in-ggplot" class="nav-link" data-scroll-target="#advanced-visualization-in-ggplot">9/7: Advanced visualization in ggplot</a></li>
-  <li><a href="#advanced-map-visualization" id="toc-advanced-map-visualization" class="nav-link" data-scroll-target="#advanced-map-visualization">9/12: Advanced map visualization</a></li>
+  <li><a href="#web-scraping" id="toc-web-scraping" class="nav-link" data-scroll-target="#web-scraping">10/19: Web scraping</a></li>
   <li><a href="#interactive-visualization" id="toc-interactive-visualization" class="nav-link" data-scroll-target="#interactive-visualization">9/19: Interactive visualization</a></li>
+  <li><a href="#advanced-map-visualization" id="toc-advanced-map-visualization" class="nav-link" data-scroll-target="#advanced-map-visualization">9/12: Advanced map visualization</a></li>
+  <li><a href="#advanced-visualization-in-ggplot" id="toc-advanced-visualization-in-ggplot" class="nav-link" data-scroll-target="#advanced-visualization-in-ggplot">9/7: Advanced visualization in ggplot</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -486,6 +487,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="guiding-questions" class="level1">
 <h1>Guiding Questions</h1>
 <p>Do your best to answer guiding questions before the indicated class period. Responses don’t need to be turned in, but answering helps you prepare effectively for class.</p>
+<section id="web-scraping" class="level2">
+<h2 class="anchored" data-anchor-id="web-scraping">10/19: Web scraping</h2>
+<p>As you read the <code>rvest</code> package <a href="https://cran.r-project.org/web/packages/rvest/vignettes/rvest.html">vignette</a>, answer the following questions:</p>
+<ul>
+<li>The first step of getting (scraping) data from an arbitrary web page is to read in the webpage. What <code>rvest</code> function(s) are relevant for this step?</li>
+<li>Next we need to select the HTML elements that contain the information that we want. What function(s) are relevant here?
+<ul>
+<li>How would we select all elements that have the class “author”?</li>
+<li>How would we select all level 1 headers (tag <code>&lt;h1&gt;</code>)?</li>
+</ul></li>
+<li>Next we extract information from the selected HTML elements.
+<ul>
+<li>What is the difference between selecting the text contents of an HTML element and selecting an attribute of the HTML element? What functions are used for these two tasks?</li>
+<li>How would we get all URLs for links that appear on a webpage?</li>
+</ul></li>
+</ul>
+</section>
+<section id="interactive-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-visualization">9/19: Interactive visualization</h2>
+<p>After listening to <a href="https://datastori.es/127-storytelling-with-data-with-cole-nussbaumer-knaflic/">this podcast</a> from Chapter 7 (timestamp 18:09) through Chapter 8 (ending at timestamp 25:27), reflect on the following question:</p>
+<ul>
+<li>What was new, unexpected, or interesting in the discussion about animations, interactivity, and dashboards?</li>
+</ul>
+<!-- Consider this post for another week: https://www.storytellingwithdata.com/blog/2014/04/exploratory-vs-explanatory-analysis -->
+</section>
+<section id="advanced-map-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-map-visualization">9/12: Advanced map visualization</h2>
+<p>After/while watching <a href="https://youtu.be/xJyJlKbZFlc?si=pc7ThQPO-v8ur-qx">this video</a> on Coordinate Reference Systems (CRS), answer the following questions:</p>
+<ul>
+<li>What is the shape of the Earth?</li>
+<li>Why is GDA94 a great datum name?</li>
+<li>What are the two components of a CRS/GCS?</li>
+<li>Why do we use many different local CRSs rather than just one CRS for the whole earth?</li>
+<li>Why is it insufficient to identify a location by its latitude and longitude?</li>
+<li>Why do we need to be mindful about CRSs when working with different spatial datasets?</li>
+</ul>
+</section>
 <section id="advanced-visualization-in-ggplot" class="level2">
 <h2 class="anchored" data-anchor-id="advanced-visualization-in-ggplot">9/7: Advanced visualization in ggplot</h2>
 <p>To review plot creation skills from STAT/COMP 112 and STAT 155, use the <code>diamonds</code> dataset in the <code>ggplot2</code> package to recreate the following visualizations:</p>
@@ -523,26 +561,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section>
-<section id="advanced-map-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="advanced-map-visualization">9/12: Advanced map visualization</h2>
-<p>After/while watching <a href="https://youtu.be/xJyJlKbZFlc?si=pc7ThQPO-v8ur-qx">this video</a> on Coordinate Reference Systems (CRS), answer the following questions:</p>
-<ul>
-<li>What is the shape of the Earth?</li>
-<li>Why is GDA94 a great datum name?</li>
-<li>What are the two components of a CRS/GCS?</li>
-<li>Why do we use many different local CRSs rather than just one CRS for the whole earth?</li>
-<li>Why is it insufficient to identify a location by its latitude and longitude?</li>
-<li>Why do we need to be mindful about CRSs when working with different spatial datasets?</li>
-</ul>
-</section>
-<section id="interactive-visualization" class="level2">
-<h2 class="anchored" data-anchor-id="interactive-visualization">9/19: Interactive visualization</h2>
-<p>After listening to <a href="https://datastori.es/127-storytelling-with-data-with-cole-nussbaumer-knaflic/">this podcast</a> from Chapter 7 (timestamp 18:09) through Chapter 8 (ending at timestamp 25:27), reflect on the following question:</p>
-<ul>
-<li>What was new, unexpected, or interesting in the discussion about animations, interactivity, and dashboards?</li>
-</ul>
-<!-- Consider this post for another week: https://www.storytellingwithdata.com/blog/2014/04/exploratory-vs-explanatory-analysis -->
 
 
 </section>

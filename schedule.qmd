@@ -216,6 +216,38 @@ Guiding questions for the readings are available at the bottom of this page.
 
 Do your best to answer guiding questions before the indicated class period. Responses don't need to be turned in, but answering helps you prepare effectively for class.
 
+## 10/19: Web scraping
+
+As you read the `rvest` package [vignette](https://cran.r-project.org/web/packages/rvest/vignettes/rvest.html), answer the following questions:
+
+- The first step of getting (scraping) data from an arbitrary web page is to read in the webpage. What `rvest` function(s) are relevant for this step?
+- Next we need to select the HTML elements that contain the information that we want. What function(s) are relevant here?
+    - How would we select all elements that have the class "author"?
+    - How would we select all level 1 headers (tag `<h1>`)?
+- Next we extract information from the selected HTML elements.
+    - What is the difference between selecting the text contents of an HTML element and selecting an attribute of the HTML element? What functions are used for these two tasks?
+    - How would we get all URLs for links that appear on a webpage?
+
+## 9/19: Interactive visualization
+
+After listening to [this podcast](https://datastori.es/127-storytelling-with-data-with-cole-nussbaumer-knaflic/) from Chapter 7 (timestamp 18:09) through Chapter 8 (ending at timestamp 25:27), reflect on the following question:
+
+- What was new, unexpected, or interesting in the discussion about animations, interactivity, and dashboards?
+
+<!-- Consider this post for another week: https://www.storytellingwithdata.com/blog/2014/04/exploratory-vs-explanatory-analysis -->
+
+## 9/12: Advanced map visualization
+
+After/while watching [this video](https://youtu.be/xJyJlKbZFlc?si=pc7ThQPO-v8ur-qx) on Coordinate Reference Systems (CRS), answer the following questions:
+
+- What is the shape of the Earth?
+- Why is GDA94 a great datum name?
+- What are the two components of a CRS/GCS?
+- Why do we use many different local CRSs rather than just one CRS for the whole earth?
+- Why is it insufficient to identify a location by its latitude and longitude?
+- Why do we need to be mindful about CRSs when working with different spatial datasets?
+
+
 ## 9/7: Advanced visualization in ggplot
 
 To review plot creation skills from STAT/COMP 112 and STAT 155, use the `diamonds` dataset in the `ggplot2` package to recreate the following visualizations:
@@ -245,23 +277,4 @@ p9 <- ggplot(diamonds, aes(x = carat, y = price)) + geom_point() + theme_classic
 p10 <- ggplot(diamonds, aes(x = carat, y = price, color = cut)) + geom_point() + geom_smooth(method = "lm") + theme_classic()
 grid.arrange(p9, p10, nrow = 1)
 ```
-
-## 9/12: Advanced map visualization
-
-After/while watching [this video](https://youtu.be/xJyJlKbZFlc?si=pc7ThQPO-v8ur-qx) on Coordinate Reference Systems (CRS), answer the following questions:
-
-- What is the shape of the Earth?
-- Why is GDA94 a great datum name?
-- What are the two components of a CRS/GCS?
-- Why do we use many different local CRSs rather than just one CRS for the whole earth?
-- Why is it insufficient to identify a location by its latitude and longitude?
-- Why do we need to be mindful about CRSs when working with different spatial datasets?
-
-## 9/19: Interactive visualization
-
-After listening to [this podcast](https://datastori.es/127-storytelling-with-data-with-cole-nussbaumer-knaflic/) from Chapter 7 (timestamp 18:09) through Chapter 8 (ending at timestamp 25:27), reflect on the following question:
-
-- What was new, unexpected, or interesting in the discussion about animations, interactivity, and dashboards?
-
-<!-- Consider this post for another week: https://www.storytellingwithdata.com/blog/2014/04/exploratory-vs-explanatory-analysis -->
 

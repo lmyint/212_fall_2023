@@ -174,6 +174,25 @@ You may be wondering why we need to use `param_set()` and `url_encode()` instead
 
 Take a look at the Wikipedia page describing [percent encoding](https://en.wikipedia.org/wiki/Percent-encoding). Explain how the process works in your own words.
 
+<details>
+  <summary>Solution</summary>
+
+```{r}
+# Note that this function uses a times_key object that has already been created
+# Another choice is to allow input of the API key as an additional argument
+create_url <- function(query) {
+    url <- "http://api.nytimes.com/svc/search/v2/articlesearch.json"
+    url <- param_set(url, "q", url_encode(query))
+    url <- param_set(url, "api-key", url_encode(times_key))
+    url
+}
+
+create_url(query = "Ferris Bueller's Day Off")
+create_url(query = "Penn & Teller")
+```
+
+</details>
+
 **Exercise:** Write out the pseudocode for a function that takes a data frame of arbitrarily many key-value pairs and constructs the URL. Then write the function itself. Example data frame of key-value pairs:
 
 ```{r}
@@ -183,6 +202,26 @@ key_val_pairs <- tibble(
 )
 key_val_pairs
 ```
+
+<details>
+  <summary>Solution</summary>
+
+```{r}
+create_url_from_df <- function(df) {
+    url <- "http://api.nytimes.com/svc/search/v2/articlesearch.json"
+    for (i in 1:nrow(df)) {
+        # get the key in the ith row...and the value
+        this_key <- df$key[i]
+        this_value <- df$value[i]
+        url <- param_set(url, this_key, url_encode(this_value))
+    }
+    url
+}
+
+create_url_from_df(df = key_val_pairs)
+```
+
+</details>
 
 
 
@@ -307,6 +346,24 @@ gamergate_json$response$meta
 - the `copyright` key
 - the number of `hits` (number of search results) within the `meta` object
 - the abstracts and leading paragraphs of the articles found in the search
+
+<details>
+  <summary>Solution</summary>
+  
+```{r}
+gamergate_json$copyright
+gamergate_json$response$meta$hits
+
+gamergate_json$response$docs$abstract
+gamergate_json$response$docs$lead_paragraph
+
+# Both (abstract and leading paragraph) at once
+gamergate_json$response$docs[c("abstract", "lead_paragraph")]
+gamergate_json$response$docs %>%
+    select(abstract, lead_paragraph)
+```
+
+</details>
 
 
 **Exercise: Your own article search** 
