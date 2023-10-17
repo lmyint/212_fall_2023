@@ -182,6 +182,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./09-iteration.html" rel="" target="">
  <span class="dropdown-text">Loops and iteration</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./10-apis.html" rel="" target="">
+ <span class="dropdown-text">Data acquisition: APIs</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -246,15 +250,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#drop-in-office-hours" id="toc-drop-in-office-hours" class="nav-link active" data-scroll-target="#drop-in-office-hours">Drop-in (office) hours</a></li>
   <li><a href="#announcements" id="toc-announcements" class="nav-link" data-scroll-target="#announcements">Announcements</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">10/12</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">10/3</a></li>
-  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">9/28</a></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">9/26</a></li>
-  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">9/19</a></li>
-  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">9/14</a></li>
-  <li><a href="#section-6" id="toc-section-6" class="nav-link" data-scroll-target="#section-6">9/12</a></li>
-  <li><a href="#section-7" id="toc-section-7" class="nav-link" data-scroll-target="#section-7">9/7</a></li>
-  <li><a href="#section-8" id="toc-section-8" class="nav-link" data-scroll-target="#section-8">9/5</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">10/17</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">10/12</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">10/3</a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3">9/28</a></li>
+  <li><a href="#section-4" id="toc-section-4" class="nav-link" data-scroll-target="#section-4">9/26</a></li>
+  <li><a href="#section-5" id="toc-section-5" class="nav-link" data-scroll-target="#section-5">9/19</a></li>
+  <li><a href="#section-6" id="toc-section-6" class="nav-link" data-scroll-target="#section-6">9/14</a></li>
+  <li><a href="#section-7" id="toc-section-7" class="nav-link" data-scroll-target="#section-7">9/12</a></li>
+  <li><a href="#section-8" id="toc-section-8" class="nav-link" data-scroll-target="#section-8">9/7</a></li>
+  <li><a href="#section-9" id="toc-section-9" class="nav-link" data-scroll-target="#section-9">9/5</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -295,20 +300,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="announcements" class="level1">
 <h1>Announcements</h1>
 <section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section">10/12</h2>
+<h2 class="anchored" data-anchor-id="section">10/17</h2>
+<ul>
+<li><a href="./homework5.html">Homework 5</a> is a set of practice exercises on writing functions. This is due Wednesday 10/18.</li>
+<li>Make note of the first <span class="project">project progress presentation</span> on 10/24. Your homework this week is to work on your progress presentation.</li>
+</ul>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">10/12</h2>
 <ul>
 <li><a href="./homework5.html">Homework 5</a> is a set of practice exercises on writing functions. This is due next Wednesday, 10/18.</li>
 <li>Make note of the first <span class="project">project progress presentation</span> on 10/24.</li>
 <li>Before class on Tuesday, install the following packages:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.package</span>(<span class="fu">c</span>(<span class="st">"jsonlite"</span>, <span class="st">"urltools"</span>))</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"jsonlite"</span>, <span class="st">"urltools"</span>))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools") # Install devtools if you haven't already</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mkearney/nytimes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="section-1" class="level2">
-<h2 class="anchored" data-anchor-id="section-1">10/3</h2>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2">10/3</h2>
 <ul>
 <li><a href="./project.html#milestone-2">Project Milestone 2</a> can be turned in this Wednesday 10/4 or next Wednesday 10/11</li>
 <li><a href="./reflection1.html">Reflection 1</a> is due next Wednesday 10/11. (I’m still finishing writing out the prompts–I’ll send a Moodle message later today when it’s ready.)</li>
@@ -320,15 +332,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
-<section id="section-2" class="level2">
-<h2 class="anchored" data-anchor-id="section-2">9/28</h2>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3">9/28</h2>
 <ul>
 <li>I thought we might be able to cover wrangling factors today, but we’ll save that for next Tuesday.</li>
 <li>Look at the updated <a href="./schedule.html">Schedule page</a>. The readings there are excellent references and can be read before or after class on Tuesday.</li>
 </ul>
 </section>
-<section id="section-3" class="level2">
-<h2 class="anchored" data-anchor-id="section-3">9/26</h2>
+<section id="section-4" class="level2">
+<h2 class="anchored" data-anchor-id="section-4">9/26</h2>
 <ul>
 <li>If you haven’t already found an initial dataset, peruse the <a href="https://github.com/rfordatascience/tidytuesday">Tidy Tuesday</a> repository for ideas.
 <ul>
@@ -338,8 +350,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>In place of a standard Homework 5, we will have the first of 3 substantive reflections.</li>
 </ul>
 </section>
-<section id="section-4" class="level2">
-<h2 class="anchored" data-anchor-id="section-4">9/19</h2>
+<section id="section-5" class="level2">
+<h2 class="anchored" data-anchor-id="section-5">9/19</h2>
 <ul>
 <li>On Thursday:
 <ul>
@@ -349,8 +361,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
-<section id="section-5" class="level2">
-<h2 class="anchored" data-anchor-id="section-5">9/14</h2>
+<section id="section-6" class="level2">
+<h2 class="anchored" data-anchor-id="section-6">9/14</h2>
 <ul>
 <li>Before next Tuesday’s class
 <ul>
@@ -363,8 +375,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
-<section id="section-6" class="level2">
-<h2 class="anchored" data-anchor-id="section-6">9/12</h2>
+<section id="section-7" class="level2">
+<h2 class="anchored" data-anchor-id="section-7">9/12</h2>
 <ul>
 <li>Homework 1 due Wednesday at midnight (Finishing up the temperature + precipitation plots from last Tuesday)
 <ul>
@@ -378,8 +390,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>There is a <a href="./syllabus_final.html">final version of our syllabus</a> that incorporates the learning goals and grading option that we discussed on our first day.</li>
 </ul>
 </section>
-<section id="section-7" class="level2">
-<h2 class="anchored" data-anchor-id="section-7">9/7</h2>
+<section id="section-8" class="level2">
+<h2 class="anchored" data-anchor-id="section-8">9/7</h2>
 <ul>
 <li>I’ll be adding a new version of the syllabus to our course website that incorporates our final choice for grading system and the learning goals that you contributed.</li>
 <li>Complete the <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1_48NE_5LxRJ5R5EDPoEWcX4d1-Kyicclbn9EjoFiv8ZW5w/viewform?usp=sf_link">pre-course survey</a> by 3pm today to shape when I hold drop-in hours (office hours).</li>
@@ -389,8 +401,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
-<section id="section-8" class="level2">
-<h2 class="anchored" data-anchor-id="section-8">9/5</h2>
+<section id="section-9" class="level2">
+<h2 class="anchored" data-anchor-id="section-9">9/5</h2>
 <p>To do before class on Thursday:</p>
 <ul>
 <li>Set up R and RStudio using <a href="./tech_setup.html">these instructions</a>.</li>

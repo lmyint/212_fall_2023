@@ -48,6 +48,7 @@ website:
         - 07-data-types-3.qmd
         - 08-functions-control-structs.qmd
         - 09-iteration.qmd
+        - 10-apis.qmd
 
     - id: homework
       title: "Homework"

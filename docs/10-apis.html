@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STAT/COMP 212 - Data acquisition: APIs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">STAT/COMP 212</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./schedule.html" rel="" target="">
+ <span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-syallbus" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Syallbus</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-syallbus">    
+        <li>
+    <a class="dropdown-item" href="./syllabus_final.html" rel="" target="">
+ <span class="dropdown-text">Final Syllabus</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./syllabus_prelim.html" rel="" target="">
+ <span class="dropdown-text">Preliminary Syllabus</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-activities" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Activities</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-activities">    
+        <li>
+    <a class="dropdown-item" href="./01-introductions.html" rel="" target="">
+ <span class="dropdown-text">Welcome to the course!</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./02-adv-ggplot.html" rel="" target="">
+ <span class="dropdown-text">Advanced Data Visualization in ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./03-adv-maps.html" rel="" target="">
+ <span class="dropdown-text">Advanced Spatial Visualizations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./workflow_files_rstudio.html" rel="" target="">
+ <span class="dropdown-text">Workflow: Files and RStudio setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./04-interactive-viz.html" rel="" target="">
+ <span class="dropdown-text">Interactive visualization</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./05-data-types-1.html" rel="" target="">
+ <span class="dropdown-text">Wrangling: numerics, logicals, dates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./06-data-types-2.html" rel="" target="">
+ <span class="dropdown-text">Wrangling: strings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./07-data-types-3.html" rel="" target="">
+ <span class="dropdown-text">Wrangling: factors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./08-functions-control-structs.html" rel="" target="">
+ <span class="dropdown-text">Functions and control structures</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./09-iteration.html" rel="" target="">
+ <span class="dropdown-text">Loops and iteration</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./10-apis.html" rel="" target="">
+ <span class="dropdown-text">Data acquisition: APIs</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-homework" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Homework</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-homework">    
+        <li>
+    <a class="dropdown-item" href="./homework0.html" rel="" target="">
+ <span class="dropdown-text">Homework 0</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework1.html" rel="" target="">
+ <span class="dropdown-text">Homework 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework2.html" rel="" target="">
+ <span class="dropdown-text">Homework 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework3.html" rel="" target="">
+ <span class="dropdown-text">Homework 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework4.html" rel="" target="">
+ <span class="dropdown-text">Homework 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./reflection1.html" rel="" target="">
+ <span class="dropdown-text">Reflection 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework5.html" rel="" target="">
+ <span class="dropdown-text">Homework 5</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./project.html" rel="" target="">
+ <span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tech_setup.html" rel="" target="">
+ <span class="menu-text">Tech Setup</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#apis" id="toc-apis" class="nav-link" data-scroll-target="#apis">APIs</a>
+  <ul class="collapse">
+  <li><a href="#wrapper-packages" id="toc-wrapper-packages" class="nav-link" data-scroll-target="#wrapper-packages">Wrapper packages</a></li>
+  <li><a href="#accessing-web-apis-directly" id="toc-accessing-web-apis-directly" class="nav-link" data-scroll-target="#accessing-web-apis-directly">Accessing web APIs directly</a>
+  <ul class="collapse">
+  <li><a href="#web-api-requests" id="toc-web-api-requests" class="nav-link" data-scroll-target="#web-api-requests">Web API requests</a></li>
+  <li><a href="#web-api-responses" id="toc-web-api-responses" class="nav-link" data-scroll-target="#web-api-responses">Web API responses</a></li>
+  <li><a href="#multiple-pages-of-search-results" id="toc-multiple-pages-of-search-results" class="nav-link" data-scroll-target="#multiple-pages-of-search-results">Multiple pages of search results</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#extra-practice-create-your-own-public-api-visualization" id="toc-extra-practice-create-your-own-public-api-visualization" class="nav-link" data-scroll-target="#extra-practice-create-your-own-public-api-visualization">Extra practice: Create your own public API visualization</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data acquisition: APIs</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="learning-goals" class="level1">
+<h1>Learning goals</h1>
+<p>After this lesson, you should be able to:</p>
+<ul>
+<li>Explain what an API is</li>
+<li>Set up an API key for a public API</li>
+<li>Develop comfort in using a wrapper package or URL-method of calling a web API</li>
+<li>Recognize the structure in a URL for a web API and adjust for your purposes</li>
+<li>Explore and subset complex nested lists</li>
+</ul>
+<p><br></p>
+<p>You can download a template Quarto file to start from <a href="activity_templates/10-apis.qmd">here</a>. Save this template within the following directory structure:</p>
+<ul>
+<li><code>your_course_folder</code>
+<ul>
+<li><code>apis</code>
+<ul>
+<li><code>code</code>
+<ul>
+<li><code>10-apis.qmd</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br><br><br></p>
+</section>
+<section id="apis" class="level1">
+<h1>APIs</h1>
+<p>In this lesson you’ll learn how to collect data from websites such as The New York Times, Zillow, and Google. While these sites are primarily known for the information they provide to humans browsing the web, they (along with most large websites) also provide information to computer programs.</p>
+<p><strong>API</strong> stands for <strong>Application Programming Interface</strong>, and this term describes a general class of tool that allows computers, rather than humans, interact with an organization’s data.</p>
+<ul>
+<li>Humans use browsers such as Firefox or Chrome to navigate the web. Behind the scenes, our browsers communicate with web servers using a technology called <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> or Hypertext Transfer Protocol to get information that is formatted into the display of a web page.</li>
+<li>Programming languages such as R can also use HTTP to communicate with web servers. We’ll see next time how we can use R to “scrape” data from almost any static web page. However, it’s easiest to interact with websites that are specifically designed to communicate with programs. These <a href="https://en.wikipedia.org/wiki/Web_API">Web APIs</a>, or Web Application Programming Interfaces, focus on transmitting raw data, rather than images, colors, or other appearance-related information that humans interact with when viewing a web page.</li>
+</ul>
+<p>A large variety of web APIs provide data accessible to programs written in R (and almost any other programming language!). Almost all reasonably large commercial websites offer APIs. Todd Motto has compiled an excellent list of <a href="https://github.com/toddmotto/public-apis">Public Web APIs</a> on GitHub. Browse the list to see what kind of information is available.</p>
+<section id="wrapper-packages" class="level2">
+<h2 class="anchored" data-anchor-id="wrapper-packages">Wrapper packages</h2>
+<p>Extra resources:</p>
+<ol type="1">
+<li><a href="https://developer.nytimes.com/?mcubz=3">NY Times API</a></li>
+<li><a href="https://open.blogs.nytimes.com/2009/02/04/announcing-the-article-search-api/?mcubz=3&amp;_r=0">NY Times Blog post announcing the API</a></li>
+<li><a href="https://www.storybench.org/working-with-the-new-york-times-api-in-r/">Working with the NY Times API in <code>R</code></a></li>
+<li><a href="https://github.com/mkearney/nytimes">nytimes pacakge for accessing the NY Times’ APIs from <code>R</code></a></li>
+<li><a href="https://www.youtube.com/watch?v=3at3YTAFbxs">Video showing how to use the NY Times API</a></li>
+<li><a href="https://ropensci.org/packages/">rOpenSci</a> has a good collection of wrapper packages</li>
+</ol>
+<p>In R, it is easiest to use Web APIs through a <strong>wrapper package</strong>, an R package written specifically for a particular Web API. The R development community has already contributed wrapper packages for most large Web APIs. To find a wrapper package, search the web for “R Package” and the name of the website. For example, a search for “R Reddit Package” returns <a href="https://cran.r-project.org/web/packages/RedditExtractoR/index.html">RedditExtractor</a> and a search for “R Weather.com Package” surfaces <a href="https://ram-n.github.io/weatherData/">weatherData</a>.</p>
+<p>This activity will build on the <a href="https://developer.nytimes.com/">New York Times Web API</a>, which provides access to news articles, movie reviews, book reviews, and many other data. Our activity will specifically focus on the <a href="https://developer.nytimes.com/docs/articlesearch-product/1/overview">Article Search API</a>, which finds information about news articles that contain a particular word or phrase.</p>
+<p>We will use the <a href="https://github.com/mkearney/nytimes">nytimes</a> wrapper package that provides functions for some (but not all) of the NYTimes APIs. You can install the package by running the following in the Console:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mkearney/nytimes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, take a look at the Article Search API example on the <a href="https://github.com/mkearney/nytimes">package website</a> to get a sense of the syntax.</p>
+<p><strong>Exercise:</strong> What do you think the <code>nyt_search()</code> function below does? How does it communicate with the NY Times? Where is the data about articles stored?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">nyt_search</span>(<span class="at">q =</span> <span class="st">"gamergate"</span>, <span class="at">n =</span> <span class="dv">20</span>, <span class="at">end_date =</span> <span class="st">"20150101"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To get started with the NY Times API, you must <a href="https://developer.nytimes.com/accounts/create">register and get an <strong>authentication key</strong></a>. Signup only takes a few seconds, and it lets the New York Times make sure nobody abuses their API for commercial purposes. It also <strong>rate limits</strong> their API and ensures programs don’t make too many requests per day. For the NY Times API, this limit is 1000 calls per day. Be aware that most APIs do have rate limits — especially for their free tiers.</p>
+<p>Once you have signed up, verified your email, log back in to https://developer.nytimes.com. Under your email address, click on Apps and Create a new App (call it First API) and enable Article Search API, then press Save. This creates an <strong>authentication key</strong>, which is a 32 digit string with numbers and the letters a-e.</p>
+<p>Store this in a variable as follows (this is just an example ID, not an actual one):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change value to your personal API key</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>times_key <span class="ot">&lt;-</span> <span class="st">"c935b213b2dc1218050eec976283dbbd"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, let’s use the key to issue our first API call. We’ll adapt the code we see in the vignette to do what we need.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nytimes)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tell nytimes what our API key is</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">NYTIMES_KEY =</span> times_key)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Issue our first API call</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">nyt_search</span>(<span class="at">q =</span> <span class="st">"gamergate"</span>, <span class="at">n =</span> <span class="dv">20</span>, <span class="at">end_date =</span> <span class="st">"20150101"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert response object to data frame</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Something magical just happened. Your computer sent a message to the New York Times and asked for information about 20 articles about <a href="https://en.wikipedia.org/wiki/Gamergate_controversy">Gamergate</a> starting at January 1, 2015 and going backwards in time. Thousands of public Web APIs allow your computer to tap into almost any piece of public digital information on the web.</p>
+<p>Let’s take a peek at the structure of the results:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "id"               "abstract"         "byline"           "document_type"   
+ [5] "headline"         "keywords"         "lead_paragraph"   "multimedia"      
+ [9] "news_desk"        "print_page"       "print_section"    "pub_date"        
+[13] "section_name"     "snippet"          "source"           "subsection_name" 
+[17] "type_of_material" "uri"              "web_url"          "word_count"      </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                                      id
+1     nyt://article/08765e5b-8d12-54dd-be58-39c6d33125c1
+2     nyt://article/5e97a537-4e5d-51b4-9571-736913a6e5c4
+3     nyt://article/ebad4be5-8e52-5490-a3bb-f5d8f684b902
+4 nyt://interactive/26986d5d-2854-5484-86b8-04dbbfea0b27
+5     nyt://article/fe201e9b-ea3b-5e9c-bb5a-ef4b0bbd30c4
+6     nyt://article/7574b532-e51f-5695-80aa-a5b24ee4e7a2
+                                                                                                                                                                     abstract
+1                                                           A service lets a person monitor his or her Facebook or Twitter account, for more awareness of one’s online image.
+2 Get recommendations from New York Times reporters and editors, highlighting great stories from around the web. Today, great reads from Dean Baquet, Susan Chira and others.
+3                                                                                                                                The answers for our ninth annual Op-Ed quiz.
+4                                                                                                   Highlights from the year, as chosen by the editors of The New York Times.
+5                                                                                             The women’s-magazine editor on the Internet, feminism and reading the comments.
+6                                                               Social media companies are often reluctant to become arbiters of appropriate and inappropriate speech online.
+                      byline document_type
+1           By Farhad Manjoo       article
+2      By The New York Times       article
+3              By Ben Schott       article
+4                       &lt;NA&gt;    multimedia
+5 Interview by Susan Dominus       article
+6           By Jenna Wortham       article
+                                                            headline
+1          ThinkUp Helps the Social Network User See the Online Self
+2 What We’re Reading: Great Times Reads of 2014 From Our Top Editors
+3                         2014: The Year in Questions – Quiz Answers
+4                                                   The Best of 2014
+5           Jane Pratt on Why Writing for Young Women Never Gets Old
+6                  Trying to Swim in a Sea of Social Media Invective
+                                                                                                                                                                keywords
+1                                                                                                 Social Media+ThinkUp LLC+Facebook Inc+Twitter+Dash, Anil+Trapani, Gina
+2 News and News Media+Newspapers+Baquet, Dean+Barry, Ellen+Chira, Susan+Duenes, Steve+Fisher, Ian+Lacey, Marc+Slackman, Michael+New York Times+AFRICA+Delhi (India)+Iraq
+3                                                                                                                                                                   &lt;NA&gt;
+4                                                                                                                                                                   &lt;NA&gt;
+5                                                                                                                       Pratt, Jane+xoJane.com+Women and Girls+Magazines
+6                                                                               Computers and the Internet+Cyberharassment+Social Media+Facebook Inc+Twitter+Yik Yak Inc
+                                                                                                                                                                                                                                                                                                                                                                                                                       lead_paragraph
+1 Anil Dash, a longtime tech entrepreneur and blogger, was recently studying a list of the top words he had used on Twitter over the course of a month during the fall. Mr. Dash has half a million followers on Twitter, and like a lot of people in tech and media circles, he uses the social network to chat with colleagues, to pontificate about technology, politics and pop culture, and to participate in a lot of in-jokes.
+2                                                                                                                                                                                                                                                           Get recommendations from New York Times reporters and editors, highlighting great stories from around the web. What We’re Reading emails are sent twice a week. Sign up »
+3                                                                                                                                                                                                                                                                                                                                                                                                                         1. B – Uber
+4                                                                                                                                                                                                                                                                                                                                                           Highlights from the year, as chosen by the editors of The New York Times.
+5                                                                                                                                                                                                                                                                                                                                             The editor talks with Susan Dominus about navigating the pitfalls of online publishing.
+6                                                                                                                                     Over the last few months, I’ve watched friends and colleagues endure endless harassment on Twitter. Strangers have hurled offensive, racist names and gendered insults, relentlessly and with little fear of consequence. I’ve come across blog posts that capture similarly awful experiences.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       multimedia
+1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          images/2015/01/01/technology/personaltech/01state-illo/01state-illo-thumbWide.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-videoThumb.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-mediumThreeByTwo210.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-mediumThreeByTwo225.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-mediumThreeByTwo440.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-facebookJumbo.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-miniMoth.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-articleLarge.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-blog480.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-blog427.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-tmagArticle.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-jumbo.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-blog225.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-master180.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-popup.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-blog533.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-tmagSF.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-slide.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-superJumbo.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-master495.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-master315.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-square320.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-filmstrip.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-moth.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-mediumSquare149.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-articleInline.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-hpSmall.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-blogSmallInline.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-mediumFlexible177.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-sfSpan.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-largeHorizontal375.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-hpLarge.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-largeWidescreen573.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-videoSmall.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-videoHpMedium.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-videoSixteenByNine600.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-videoSixteenByNine540.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-videoSixteenByNine495.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-videoSixteenByNine390.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-videoSixteenByNine480.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-videoSixteenByNine310.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-videoSixteenByNine225.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-videoSixteenByNine96.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-videoSixteenByNine150.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-thumbStandard.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-thumbLarge.jpg+images/2015/01/01/technology/personaltech/01state-illo/01state-illo-blogSmallThumb.jpg
+2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          images/2014/12/31/business/wwrn-ebola/wwrn-ebola-thumbWide.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoThumb.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoLarge.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-mediumThreeByTwo210.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-mediumThreeByTwo225.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-mediumThreeByTwo440.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-facebookJumbo.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoFifteenBySeven1305.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoFifteenBySeven2610.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-miniMoth.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-windowsTile336H.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-articleLarge.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-blog480.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-blog427.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-tmagArticle.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-jumbo.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-blog225.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-master675.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-master180.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-popup.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-blog533.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-tmagSF.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-slide.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-superJumbo.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-master1050.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-master495.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-master315.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-square320.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-filmstrip.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-square640.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-moth.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-mediumSquare149.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-articleInline.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-hpSmall.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-blogSmallInline.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-mediumFlexible177.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-sfSpan.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-largeHorizontal375.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-hpLarge.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-largeWidescreen573.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-largeWidescreen1050.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoSmall.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoHpMedium.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoSixteenByNine600.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoSixteenByNine540.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoSixteenByNine495.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoSixteenByNine390.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoSixteenByNine480.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoSixteenByNine310.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoSixteenByNine225.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoSixteenByNine96.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoSixteenByNine768.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoSixteenByNine150.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-videoSixteenByNine1050.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-thumbStandard.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-thumbLarge.jpg+images/2014/12/31/business/wwrn-ebola/wwrn-ebola-blogSmallThumb.jpg
+3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               images/2014/12/30/opinion/30schott/30schott-thumbWide.jpg+images/2014/12/30/opinion/30schott/30schott-videoThumb.jpg+images/2014/12/30/opinion/30schott/30schott-videoLarge.jpg+images/2014/12/30/opinion/30schott/30schott-mediumThreeByTwo210.jpg+images/2014/12/30/opinion/30schott/30schott-mediumThreeByTwo225.jpg+images/2014/12/30/opinion/30schott/30schott-mediumThreeByTwo440.jpg+images/2014/12/30/opinion/30schott/30schott-facebookJumbo.jpg+images/2014/12/30/opinion/30schott/30schott-videoFifteenBySeven1305.jpg+images/2014/12/30/opinion/30schott/30schott-miniMoth.jpg+images/2014/12/30/opinion/30schott/30schott-windowsTile336H.jpg+images/2014/12/30/opinion/30schott/30schott-articleLarge.jpg+images/2014/12/30/opinion/30schott/30schott-blog480.jpg+images/2014/12/30/opinion/30schott/30schott-blog427.jpg+images/2014/12/30/opinion/30schott/30schott-tmagArticle.jpg+images/2014/12/30/opinion/30schott/30schott-jumbo.jpg+images/2014/12/30/opinion/30schott/30schott-blog225.jpg+images/2014/12/30/opinion/30schott/30schott-master675.jpg+images/2014/12/30/opinion/30schott/30schott-master180.jpg+images/2014/12/30/opinion/30schott/30schott-popup.jpg+images/2014/12/30/opinion/30schott/30schott-blog533.jpg+images/2014/12/30/opinion/30schott/30schott-tmagSF.jpg+images/2014/12/30/opinion/30schott/30schott-slide.jpg+images/2014/12/30/opinion/30schott/30schott-superJumbo.jpg+images/2014/12/30/opinion/30schott/30schott-master1050.jpg+images/2014/12/30/opinion/30schott/30schott-master495.jpg+images/2014/12/30/opinion/30schott/30schott-master315.jpg+images/2014/12/30/opinion/30schott/30schott-square320.jpg+images/2014/12/30/opinion/30schott/30schott-filmstrip.jpg+images/2014/12/30/opinion/30schott/30schott-square640.jpg+images/2014/12/30/opinion/30schott/30schott-moth.jpg+images/2014/12/30/opinion/30schott/30schott-mediumSquare149.jpg+images/2014/12/30/opinion/30schott/30schott-articleInline.jpg+images/2014/12/30/opinion/30schott/30schott-hpSmall.jpg+images/2014/12/30/opinion/30schott/30schott-blogSmallInline.jpg+images/2014/12/30/opinion/30schott/30schott-mediumFlexible177.jpg+images/2014/12/30/opinion/30schott/30schott-sfSpan.jpg+images/2014/12/30/opinion/30schott/30schott-largeHorizontal375.jpg+images/2014/12/30/opinion/30schott/30schott-hpLarge.jpg+images/2014/12/30/opinion/30schott/30schott-largeWidescreen573.jpg+images/2014/12/30/opinion/30schott/30schott-largeWidescreen1050.jpg+images/2014/12/30/opinion/30schott/30schott-videoSmall.jpg+images/2014/12/30/opinion/30schott/30schott-videoHpMedium.jpg+images/2014/12/30/opinion/30schott/30schott-videoSixteenByNine600.jpg+images/2014/12/30/opinion/30schott/30schott-videoSixteenByNine540.jpg+images/2014/12/30/opinion/30schott/30schott-videoSixteenByNine495.jpg+images/2014/12/30/opinion/30schott/30schott-videoSixteenByNine390.jpg+images/2014/12/30/opinion/30schott/30schott-videoSixteenByNine480.jpg+images/2014/12/30/opinion/30schott/30schott-videoSixteenByNine310.jpg+images/2014/12/30/opinion/30schott/30schott-videoSixteenByNine225.jpg+images/2014/12/30/opinion/30schott/30schott-videoSixteenByNine96.jpg+images/2014/12/30/opinion/30schott/30schott-videoSixteenByNine768.jpg+images/2014/12/30/opinion/30schott/30schott-videoSixteenByNine150.jpg+images/2014/12/30/opinion/30schott/30schott-videoSixteenByNine1050.jpg+images/2014/12/30/opinion/30schott/30schott-thumbStandard.jpg+images/2014/12/30/opinion/30schott/30schott-thumbLarge.jpg+images/2014/12/30/opinion/30schott/30schott-blogSmallThumb.jpg
+4 images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-thumbWide.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-videoThumb.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-videoLarge.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-mediumThreeByTwo210.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-mediumThreeByTwo225.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-mediumThreeByTwo440.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-facebookJumbo.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-miniMoth.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-windowsTile336H.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-articleLarge.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-blog480.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-blog427.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-tmagArticle.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-jumbo.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-blog225.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-master675.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-master180.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-popup.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-blog533.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-tmagSF.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-slide.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-superJumbo.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-master495.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-master315.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-square320.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-filmstrip.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-square640.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-moth.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-mediumSquare149.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-articleInline.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-hpSmall.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-blogSmallInline.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-mediumFlexible177.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-sfSpan.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-largeHorizontal375.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-hpLarge.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-largeWidescreen573.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-videoSmall.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-videoHpMedium.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-videoSixteenByNine600.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-videoSixteenByNine540.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-videoSixteenByNine495.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-videoSixteenByNine390.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-videoSixteenByNine480.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-videoSixteenByNine310.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-videoSixteenByNine225.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-videoSixteenByNine96.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-videoSixteenByNine768.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-videoSixteenByNine150.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-thumbStandard.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-thumbLarge.jpg+images/2014/12/22/multimedia/the-best-of-2014-1419258019643/the-best-of-2014-1419258019643-blogSmallThumb.jpg
+5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     images/2014/12/21/magazine/21talk/21talk-videoSmall-v3.jpg+images/2014/12/21/magazine/21talk/21talk-videoHpMedium-v3.jpg+images/2014/12/21/magazine/21talk/21talk-videoSixteenByNine600-v3.jpg+images/2014/12/21/magazine/21talk/21talk-videoSixteenByNine540-v3.jpg+images/2014/12/21/magazine/21talk/21talk-videoSixteenByNine495-v3.jpg+images/2014/12/21/magazine/21talk/21talk-videoSixteenByNine390-v3.jpg+images/2014/12/21/magazine/21talk/21talk-videoSixteenByNine480-v3.jpg+images/2014/12/21/magazine/21talk/21talk-videoSixteenByNine310-v3.jpg+images/2014/12/21/magazine/21talk/21talk-videoSixteenByNine225-v3.jpg+images/2014/12/21/magazine/21talk/21talk-videoSixteenByNine96-v3.jpg+images/2014/12/21/magazine/21talk/21talk-videoSixteenByNine768-v3.jpg+images/2014/12/21/magazine/21talk/21talk-videoSixteenByNine150-v3.jpg+images/2014/12/21/magazine/21talk/21talk-videoSixteenByNine1050-v3.jpg+images/2014/12/21/magazine/21talk/21talk-hpLarge-v3.jpg+images/2014/12/21/magazine/21talk/21talk-largeWidescreen573-v3.jpg+images/2014/12/21/magazine/21talk/21talk-largeWidescreen1050-v3.jpg+images/2014/12/21/magazine/21talk/21talk-articleLarge-v2.jpg+images/2014/12/21/magazine/21talk/21talk-blog480-v2.jpg+images/2014/12/21/magazine/21talk/21talk-blog427-v2.jpg+images/2014/12/21/magazine/21talk/21talk-tmagArticle-v2.jpg+images/2014/12/21/magazine/21talk/21talk-jumbo-v2.jpg+images/2014/12/21/magazine/21talk/21talk-blog225-v2.jpg+images/2014/12/21/magazine/21talk/21talk-master675-v2.jpg+images/2014/12/21/magazine/21talk/21talk-master180-v2.jpg+images/2014/12/21/magazine/21talk/21talk-popup-v2.jpg+images/2014/12/21/magazine/21talk/21talk-blog533-v2.jpg+images/2014/12/21/magazine/21talk/21talk-tmagSF-v2.jpg+images/2014/12/21/magazine/21talk/21talk-slide-v2.jpg+images/2014/12/21/magazine/21talk/21talk-superJumbo-v2.jpg+images/2014/12/21/magazine/21talk/21talk-master1050-v2.jpg+images/2014/12/21/magazine/21talk/21talk-master495-v2.jpg+images/2014/12/21/magazine/21talk/21talk-master315-v2.jpg+images/2014/12/21/magazine/21talk/21talk-miniMoth-v3.jpg+images/2014/12/21/magazine/21talk/21talk-windowsTile336H-v3.jpg+images/2014/12/21/magazine/21talk/21talk-sfSpan.jpg+images/2014/12/21/magazine/21talk/21talk-largeHorizontal375.jpg+images/2014/12/21/magazine/21talk/21talk-verticalTwoByThree735-v2.jpg+images/2014/12/21/magazine/21talk/21talk-square320.jpg+images/2014/12/21/magazine/21talk/21talk-filmstrip.jpg+images/2014/12/21/magazine/21talk/21talk-square640.jpg+images/2014/12/21/magazine/21talk/21talk-moth.jpg+images/2014/12/21/magazine/21talk/21talk-mediumSquare149.jpg+images/2014/12/21/magazine/21talk/21talk-articleInline-v2.jpg+images/2014/12/21/magazine/21talk/21talk-hpSmall-v2.jpg+images/2014/12/21/magazine/21talk/21talk-blogSmallInline-v2.jpg+images/2014/12/21/magazine/21talk/21talk-mediumFlexible177-v2.jpg+images/2014/12/21/magazine/21talk/21talk-facebookJumbo-v2.jpg+images/2014/12/21/magazine/21talk/21talk-thumbStandard.jpg+images/2014/12/21/magazine/21talk/21talk-thumbLarge.jpg+images/2014/12/21/magazine/21talk/21talk-blogSmallThumb.jpg+images/2014/12/21/magazine/21talk/21talk-thumbWide-v3.jpg+images/2014/12/21/magazine/21talk/21talk-videoThumb-v3.jpg+images/2014/12/21/magazine/21talk/21talk-videoLarge-v3.jpg+images/2014/12/21/magazine/21talk/21talk-mediumThreeByTwo210-v3.jpg+images/2014/12/21/magazine/21talk/21talk-mediumThreeByTwo225-v3.jpg+images/2014/12/21/magazine/21talk/21talk-mediumThreeByTwo440-v3.jpg+images/2014/12/21/magazine/21talk/21talk-mediumThreeByTwo252-v2.jpg+images/2014/12/21/magazine/21talk/21talk-mediumThreeByTwo378-v2.jpg+images/2014/12/21/magazine/21talk/21talk-watch308-v2.jpg+images/2014/12/21/magazine/21talk/21talk-watch268-v2.jpg
+6                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    images/2014/12/14/business/14-BITS/14-BITS-thumbWide.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoThumb.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoLarge.jpg+images/2014/12/14/business/14-BITS/14-BITS-mediumThreeByTwo210.jpg+images/2014/12/14/business/14-BITS/14-BITS-mediumThreeByTwo225.jpg+images/2014/12/14/business/14-BITS/14-BITS-mediumThreeByTwo440.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoFifteenBySeven1305.jpg+images/2014/12/14/business/14-BITS/14-BITS-miniMoth.jpg+images/2014/12/14/business/14-BITS/14-BITS-windowsTile336H.jpg+images/2014/12/14/business/14-BITS/14-BITS-articleLarge.jpg+images/2014/12/14/business/14-BITS/14-BITS-blog480.jpg+images/2014/12/14/business/14-BITS/14-BITS-blog427.jpg+images/2014/12/14/business/14-BITS/14-BITS-tmagArticle.jpg+images/2014/12/14/business/14-BITS/14-BITS-jumbo.jpg+images/2014/12/14/business/14-BITS/14-BITS-blog225.jpg+images/2014/12/14/business/14-BITS/14-BITS-master675.jpg+images/2014/12/14/business/14-BITS/14-BITS-master180.jpg+images/2014/12/14/business/14-BITS/14-BITS-popup.jpg+images/2014/12/14/business/14-BITS/14-BITS-blog533.jpg+images/2014/12/14/business/14-BITS/14-BITS-tmagSF.jpg+images/2014/12/14/business/14-BITS/14-BITS-slide.jpg+images/2014/12/14/business/14-BITS/14-BITS-superJumbo.jpg+images/2014/12/14/business/14-BITS/14-BITS-master1050.jpg+images/2014/12/14/business/14-BITS/14-BITS-master495.jpg+images/2014/12/14/business/14-BITS/14-BITS-master315.jpg+images/2014/12/14/business/14-BITS/14-BITS-square320.jpg+images/2014/12/14/business/14-BITS/14-BITS-filmstrip.jpg+images/2014/12/14/business/14-BITS/14-BITS-square640.jpg+images/2014/12/14/business/14-BITS/14-BITS-moth.jpg+images/2014/12/14/business/14-BITS/14-BITS-mediumSquare149.jpg+images/2014/12/14/business/14-BITS/14-BITS-articleInline.jpg+images/2014/12/14/business/14-BITS/14-BITS-hpSmall.jpg+images/2014/12/14/business/14-BITS/14-BITS-blogSmallInline.jpg+images/2014/12/14/business/14-BITS/14-BITS-mediumFlexible177.jpg+images/2014/12/14/business/14-BITS/14-BITS-sfSpan.jpg+images/2014/12/14/business/14-BITS/14-BITS-largeHorizontal375.jpg+images/2014/12/14/business/14-BITS/14-BITS-hpLarge.jpg+images/2014/12/14/business/14-BITS/14-BITS-largeWidescreen573.jpg+images/2014/12/14/business/14-BITS/14-BITS-largeWidescreen1050.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoSmall.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoHpMedium.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoSixteenByNine600.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoSixteenByNine540.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoSixteenByNine495.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoSixteenByNine390.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoSixteenByNine480.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoSixteenByNine310.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoSixteenByNine225.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoSixteenByNine96.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoSixteenByNine768.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoSixteenByNine150.jpg+images/2014/12/14/business/14-BITS/14-BITS-videoSixteenByNine1050.jpg+images/2014/12/14/business/14-BITS/14-BITS-thumbStandard.jpg+images/2014/12/14/business/14-BITS/14-BITS-thumbLarge.jpg+images/2014/12/14/business/14-BITS/14-BITS-blogSmallThumb.jpg
+          news_desk print_page print_section            pub_date
+1          Business          1             B 2014-12-31 22:31:54
+2                         &lt;NA&gt;          &lt;NA&gt; 2014-12-30 22:06:27
+3              OpEd         19             A 2014-12-29 23:20:06
+4 Multimedia/Photos       &lt;NA&gt;          &lt;NA&gt; 2014-12-22 18:25:37
+5          Magazine         14            MM 2014-12-19 15:24:37
+6          Business          4            BU 2014-12-13 17:37:26
+       section_name
+1        Technology
+2             Blogs
+3           Opinion
+4 Multimedia/Photos
+5          Magazine
+6        Technology
+                                                                                                                                                                      snippet
+1                                                           A service lets a person monitor his or her Facebook or Twitter account, for more awareness of one’s online image.
+2 Get recommendations from New York Times reporters and editors, highlighting great stories from around the web. Today, great reads from Dean Baquet, Susan Chira and others.
+3                                                                                                                                The answers for our ninth annual Op-Ed quiz.
+4                                                                                                   Highlights from the year, as chosen by the editors of The New York Times.
+5                                                                                             The women’s-magazine editor on the Internet, feminism and reading the comments.
+6                                                               Social media companies are often reluctant to become arbiters of appropriate and inappropriate speech online.
+              source subsection_name    type_of_material
+1 The New York Times   Personal Tech                News
+2 The New York Times            &lt;NA&gt;                News
+3 The New York Times            &lt;NA&gt;               Op-Ed
+4 The New York Times            &lt;NA&gt; Interactive Feature
+5 The New York Times            &lt;NA&gt;                News
+6 The New York Times            &lt;NA&gt;                News
+                                                     uri
+1     nyt://article/08765e5b-8d12-54dd-be58-39c6d33125c1
+2     nyt://article/5e97a537-4e5d-51b4-9571-736913a6e5c4
+3     nyt://article/ebad4be5-8e52-5490-a3bb-f5d8f684b902
+4 nyt://interactive/26986d5d-2854-5484-86b8-04dbbfea0b27
+5     nyt://article/fe201e9b-ea3b-5e9c-bb5a-ef4b0bbd30c4
+6     nyt://article/7574b532-e51f-5695-80aa-a5b24ee4e7a2
+                                                                                                                    web_url
+1 https://www.nytimes.com/2015/01/01/technology/personaltech/thinkup-helps-the-social-network-user-see-the-online-self.html
+2               https://news.blogs.nytimes.com/2014/12/30/what-were-reading-great-times-reads-of-2014-from-our-top-editors/
+3                                   https://www.nytimes.com/2014/12/30/opinion/2014-the-year-in-questions-quiz-answers.html
+4                                                 https://www.nytimes.com/interactive/2014/multimedia/the-best-of-2014.html
+5                 https://www.nytimes.com/2014/12/21/magazine/jane-pratt-on-why-writing-for-young-women-never-gets-old.html
+6                              https://bits.blogs.nytimes.com/2014/12/13/trying-to-swim-in-a-sea-of-social-media-invective/
+  word_count
+1       1211
+2        429
+3        588
+4          0
+5        716
+6       1236</code></pre>
+</div>
+</div>
+</section>
+<section id="accessing-web-apis-directly" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-web-apis-directly">Accessing web APIs directly</h2>
+<p>Wrapper packages such as <code>nytimes</code> provide a convenient way to interact with Web APIs. However, many Web APIs have incomplete wrapper packages, or no wrapper package at all. Fortunately, most Web APIs share a common structure that <code>R</code> can access relatively easily. There are two parts to each Web API:</p>
+<ul>
+<li>The <strong>request</strong>: this amounts to calling a function that gets sent to a web server
+<ul>
+<li>In our <code>nyt_search(q = "gamergate", n = 20, end_date = "20150101")</code> example, the <code>q</code>, <code>n</code>, and <code>end_date</code> are arguments to an article search function.</li>
+</ul></li>
+<li>The <strong>response</strong>: the web server computes the result to the function call and returns the response
+<ul>
+<li>The web server uses runs a search with the <code>q</code>, <code>n</code>, and <code>end_date</code> arguments to get the search results.</li>
+</ul></li>
+</ul>
+<p>As mentioned earlier, a Web API call differs from a regular function call in that the request is sent over the Internet to a web server, which performs the computation and calculates the return result, which is sent back over the Internet to the original computer.</p>
+<section id="web-api-requests" class="level3">
+<h3 class="anchored" data-anchor-id="web-api-requests">Web API requests</h3>
+<p>For a deeper dive, consult the following readings:</p>
+<ol type="1">
+<li><a href="https://www.tutorialspoint.com/html/understanding_url_tutorial.htm">Understanding URLs</a></li>
+<li><a href="https://cran.r-project.org/web/packages/urltools/vignettes/urltools.html">urltools Vignette</a></li>
+</ol>
+<p>The request for a Web API call is usually encoded through the <a href="https://www.tutorialspoint.com/html/understanding_url_tutorial.htm">URL</a> (short for uniform resource locator), the web address associated with the API’s web server. Let’s look at the URL associated with the first <code>nytimes</code> <code>nyt_search</code> example we did. Open the following URL in your browser (you should replace <code>MY_KEY</code> with the API key you were given earlier).</p>
+<pre><code>http://api.nytimes.com/svc/search/v2/articlesearch.json?q=gamergate&amp;api-key=MY_KEY</code></pre>
+<p>The text you see in the browser is the response data. We’ll talk more about that in a bit. Right now, let’s focus on the structure of the URL. You can see that it has a few parts:</p>
+<ul>
+<li><code>http://</code> — The <strong>scheme</strong>, which tells your browser or program how to communicate with the web server. This will typically be either <code>http:</code> or <code>https:</code>.</li>
+<li><code>api.nytimes.com</code> — The <strong>hostname</strong>, which is a name that identifies the web server that will process the request.</li>
+<li><code>/svc/search/v2/articlesearch.json</code> — The <strong>path</strong>, which tells the web server what function you would like to call.</li>
+<li><code>?q=gamergate&amp;api-key=MY_KEY</code> — The <strong>query parameters</strong>, which provide the parameters for the function you would like to call. Note that the query can be thought of as a table, where each row has a key and a value (known as a key-value pair). In this case, the first row has key <code>q</code> and value <code>gamergate</code> and the second row has value <code>MY_KEY</code>. The query parameters are preceded by a <code>?</code>. Rows in the key-value table are separated by <code>&amp;</code>, and individual key-value pairs are separated by an <code>=</code>.</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">key</th>
+<th style="text-align: left;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">q</td>
+<td style="text-align: left;">gamergate</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">api-key</td>
+<td style="text-align: left;">MY_KEY</td>
+</tr>
+</tbody>
+</table>
+<p>Typically, each of these URL components will be specified in the API documentation. Sometimes, the scheme, hostname, and path (<code>http://api.nytimes.com/svc/search/v2/articlesearch.json</code>) will be referred to as the <strong><a href="https://en.wikipedia.org/wiki/Web_API#Endpoints">endpoint</a></strong> for the API call.</p>
+<p>We will use the <code>urltools</code> package to build up a full URL from its parts. Start by creating a string with the endpoint. Then add the parameters one by one using <code>param_set</code> and <code>url_encode</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(urltools)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"http://api.nytimes.com/svc/search/v2/articlesearch.json"</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"q"</span>, <span class="fu">url_encode</span>(<span class="st">"Penn &amp; Teller"</span>))</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"api-key"</span>, <span class="fu">url_encode</span>(times_key))</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>url</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=Penn%20%26%20Teller&amp;api-key=xy9oy1eczTOTGAFjAfnrmZJO2mpSPvXQ"</code></pre>
+</div>
+</div>
+<p>Copy and paste the resulting URL into your browser to see what the NY Times response looks like!</p>
+<p>You may be wondering why we need to use <code>param_set()</code> and <code>url_encode()</code> instead of writing the full URL by hand. The following exercise will illustrate why we need to be careful.</p>
+<p><strong>Pair programming exercise:</strong> Work through the two exercises below in pairs (or triples as needed). Whoever has visited more countries in their lifetime will be driver first.</p>
+<p><strong>Exercise:</strong> Write a function that generalizes our URL construction steps above so that the user can input any search query (<code>q</code>).</p>
+<ul>
+<li>Use your function to create a URL that finds articles related to <code>Ferris Bueller's Day Off</code> (note the apostrophe). What is interesting about how the title appears in the URL?</li>
+<li>Repeat for the query <code>Penn &amp; Teller</code> (make sure you use the punctuation mark <code>&amp;</code>). What do you notice?</li>
+</ul>
+<p>Take a look at the Wikipedia page describing <a href="https://en.wikipedia.org/wiki/Percent-encoding">percent encoding</a>. Explain how the process works in your own words.</p>
+<p><strong>Exercise:</strong> Write out the pseudocode for a function that takes a data frame of arbitrarily many key-value pairs and constructs the URL. Then write the function itself. Example data frame of key-value pairs:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>key_val_pairs <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">key =</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"api-key"</span>, <span class="st">"begin_date"</span>, <span class="st">"end_date"</span>),</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(<span class="st">"economy"</span>, <span class="st">"API_KEY"</span>, <span class="st">"20230101"</span>, <span class="st">"20231001"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>key_val_pairs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 2
+  key        value   
+  &lt;chr&gt;      &lt;chr&gt;   
+1 q          economy 
+2 api-key    API_KEY 
+3 begin_date 20230101
+4 end_date   20231001</code></pre>
+</div>
+</div>
+</section>
+<section id="web-api-responses" class="level3">
+<h3 class="anchored" data-anchor-id="web-api-responses">Web API responses</h3>
+<p>For a deeper dive, consult the following readings:</p>
+<ol type="1">
+<li><a href="https://blog.scottlowe.org/2013/11/08/a-non-programmers-introduction-to-json/">A Non-Programmer’s Introduction to JSON</a></li>
+<li><a href="https://cran.r-project.org/web/packages/jsonlite/vignettes/json-aaquickstart.html">Getting Started With JSON and jsonlite</a></li>
+<li><a href="https://cran.r-project.org/web/packages/jsonlite/vignettes/json-apis.html">Fetching JSON data from REST APIs</a></li>
+</ol>
+<p>Let’s discuss the structure of the web <strong>response</strong>, the return value of the Web API function. Web APIs generate string responses. If you visited the earlier New York Times API link in your browser, you would be shown the string response from the New York Times web server:</p>
+<pre><code>{"status":"OK","copyright":"Copyright (c) 2023 The New York Times Company. All Rights Reserved.","response":{"docs":[{"abstract":"Who would have guessed that magic’s most recognizable buddy pair would produce the classiest reality show on television?","web_url":"https://www.nytimes.com/2019/11/26/magazine/letter-of-recommendation-penn-teller-fool-us.html","snippet":"Who would have guessed that magic’s most recognizable buddy pair would produce the classiest reality show on television?","lead_paragraph":"“Penn &amp; Teller: Fool Us” is a reality-TV competition shown on the CW, which is a broadcast network, which is something like a streaming service that’s always on. The show was recently renewed for its seventh season. The only other person I know who watches it is a skilled amateur magician and general magic geek who lives in Chicago. For him, the show is a chance to be exposed to some of the world’s greatest magicians and get an insight into their arcane techniques. For me, who doesn’t particularly like magic and has no intention of trying to do it, the show has a different appeal: It makes me a better person.","print_section":"MM","print_page":"24","source":"The New York Times","multimedia":</code></pre>
+<p>If you stared very hard at the above response, you may be able to interpret it. However, it would be much easier to interact with the response in some more structured, programmatic way. The vast majority of Web APIs, including the New York Times, use a standard called JSON (Javascript Object Notation) to take data and encode it as a string.</p>
+<p>To understand the structure of JSON, take the NY Times web response in your browser, and copy and paste it into this online <a href="https://jsonformatter.curiousconcept.com/">JSON formatter</a>. The formatter will add newlines and tabs to make the data more human-readable. You’ll see the following:</p>
+<pre><code>{
+   "status":"OK",
+   "copyright":"Copyright (c) 2023 The New York Times Company. All Rights Reserved.",
+   "response":{  
+      "docs":[  
+      
+        # A HUGE piece of data, with one object for each of the result articles
+        
+      ],
+      "meta":{
+         "hits":1755,
+         "offset":0,
+         "time":51
+      }
+   }
+}     </code></pre>
+<p>You’ll notice a few things in the JSON above:</p>
+<ul>
+<li>Strings are enclosed in double quotes, for example <code>"status"</code> and <code>"OK"</code>.</li>
+<li>Numbers are written plainly, like <code>2350</code> or <code>72</code>.</li>
+<li>Some data is enclosed in square brackets <code>[</code> and <code>]</code>. These data containers can be thought of as R lists.</li>
+<li>Some data is enclosed in curly braces <code>{</code> and <code>}</code>. These data containers are called <strong>Objects</strong>. An object can be thought of as a single case or observation in a table.
+<ul>
+<li>The columns or variables for the observation appear as <strong>keys</strong> on the left (<code>hits</code>, <code>offset</code>, etc.).</li>
+<li>The <strong>values</strong> appear after the specific key separated by a colon (<code>2350</code>, and <code>0</code>, respectively).</li>
+</ul></li>
+</ul>
+<p>Thus, we can think of the <code>meta</code> object above as:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">hits</th>
+<th style="text-align: left;">offset</th>
+<th style="text-align: left;">time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1755</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">51</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s repeat the NY Times search for “gamergate”, but this time we will perform the Web API call by hand instead of using the <code>nytimes</code> wrapper package. We will use the <code>jsonlite</code> package to retrieve the response from the web server and turn the string response into an <code>R</code> object. The <code>fromJson</code> function sends our request out over and across the web to the NY Times web server, retrieves it, and turns it from a JSON-formatted string into R data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'jsonlite'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:purrr':
+
+    flatten</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rebuild the URL</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"http://api.nytimes.com/svc/search/v2/articlesearch.json"</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"q"</span>, <span class="fu">url_encode</span>(<span class="st">"gamergate"</span>))</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"api-key"</span>, <span class="fu">url_encode</span>(times_key))</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Send the request to the webserver over the Internet and</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># retrieve the JSON response. Turn the JSON response into an</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># R Object.</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>gamergate_json <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>gamergate_json</code> is a <strong>list</strong>. A list is a useful structure for storing elements of different types. Data frames are special cases of lists where each list element has the same length (but where the list elements have different classes).</p>
+<p>Lists are a very flexible data structure but can be very confusing because list elements can be lists themselves!</p>
+<p>We can explore the structure of a list in two ways:</p>
+<ul>
+<li>Entering <code>View(list_object)</code> in the Console. The triangle buttons on the left allow you to toggle dropdowns to explore list elements.</li>
+<li>Using the <code>str()</code> (structure) function.</li>
+</ul>
+<p><strong>Exercise:</strong> Explore the information in the <code>gamergate_json</code> using both <code>View()</code> and <code>str()</code>. When using <code>str()</code>, look up the documentation and experiment with the <code>max.level</code> and <code>vec.len</code> arguments to control how the output is displayed. Look back and forth between the <code>View()</code> and <code>str()</code> output to find correspondences in how object structure is displayed.</p>
+<hr>
+<p>We can access elements of a list in three ways:</p>
+<ul>
+<li>By <em>position</em> with double square brackets <code>[[</code>:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This gets the first element of the list</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>gamergate_json[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "OK"</code></pre>
+</div>
+</div>
+<ul>
+<li>By <em>name</em> with double square brackets <code>[[</code>: (note that list elements are not always named, so this won’t always be possible)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing by name directly</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>gamergate_json[[<span class="st">"status"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "OK"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing via a variable</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>which_element <span class="ot">&lt;-</span> <span class="st">"status"</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>gamergate_json[[which_element]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "OK"</code></pre>
+</div>
+</div>
+<ul>
+<li>By <em>name</em> with a dollar sign <code>$</code>: (Helpful tip: For this mode of access, RStudio allows tab completion to fill in the full name)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>gamergate_json<span class="sc">$</span>status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "OK"</code></pre>
+</div>
+</div>
+<p>We can retrieve these <em>nested</em> attributes by sequentially accessing the object keys from the outside in. For example, the <code>meta</code> element would be accessed as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>gamergate_json<span class="sc">$</span>response<span class="sc">$</span>meta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$hits
+[1] 142
+
+$offset
+[1] 0
+
+$time
+[1] 19</code></pre>
+</div>
+</div>
+<p><strong>Exercise:</strong> In the <code>gamergate_json</code> object, retrieve the data associated with:</p>
+<ul>
+<li>the <code>copyright</code> key</li>
+<li>the number of <code>hits</code> (number of search results) within the <code>meta</code> object</li>
+<li>the abstracts and leading paragraphs of the articles found in the search</li>
+</ul>
+<p><strong>Exercise: Your own article search</strong></p>
+<ol type="a">
+<li><p>Select your own article search query (any topic of interest to you). You may want to play with NY Times online search or the <a href="https://developer.nytimes.com/docs/articlesearch-product/1/routes/articlesearch.json/get">API web search console</a> to find a query that is interesting, but not overly popular. You can change any part of the query you would like. Your query should have at least 30 matches.</p></li>
+<li><p>Retrieve data for the first three pages of search results from the article search API, and create a data frame that joins together the <code>docs</code> data frames for the three pages of results. (Read the “Multiple pages of search results” section below to see how to combine multiple pages of results with <code>bind_rows()</code>.)</p></li>
+<li><p>Make a plot of the number of search results over time in your result set (likely by day or month). This will involve some data wrangling. It will be helpful to have the <code>lubridate</code> <a href="https://lubridate.tidyverse.org/reference/index.html">reference page</a> open.</p></li>
+</ol>
+</section>
+<section id="multiple-pages-of-search-results" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-pages-of-search-results">Multiple pages of search results</h3>
+<p>Here is some code to generate queries on NY Times articles about the Red Sox. It fetches the first thirty entries in batches of 10.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"http://api.nytimes.com/svc/search/v2/articlesearch.json"</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"q"</span>, <span class="fu">url_encode</span>(<span class="st">"Red Sox"</span>))</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"api-key"</span>, <span class="fu">url_encode</span>(times_key))</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"page"</span>, <span class="dv">0</span>)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.sleep</span>(<span class="dv">1</span>)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>res1 <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url)</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co"># This pauses for 1 second.</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co"># It is required when knitting to prevent R from issuing too many requests to</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co"># The NYT API at a time. If you don't have it you will get an error that</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co"># says "Too Many Requests (429)"</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.sleep</span>(<span class="dv">1</span>)</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"page"</span>, <span class="dv">1</span>)</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>res2 <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url)</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.sleep</span>(<span class="dv">1</span>)</span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"page"</span>, <span class="dv">2</span>)</span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>res3 <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url)</span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>docs1 <span class="ot">&lt;-</span> res1<span class="sc">$</span>response<span class="sc">$</span>docs</span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>docs2 <span class="ot">&lt;-</span> res2<span class="sc">$</span>response<span class="sc">$</span>docs</span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>docs3 <span class="ot">&lt;-</span> res3<span class="sc">$</span>response<span class="sc">$</span>docs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Each of these docs variables is a table with ten entries (articles) and the same 18 variables:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(docs1)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(docs2)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(docs3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we want to stack the tables on top of each other to get a single table with 30 rows and 18 variables. We can use:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(docs1,docs2,docs3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br><br><br></p>
+</section>
+</section>
+</section>
+<section id="extra-practice-create-your-own-public-api-visualization" class="level1">
+<h1>Extra practice: Create your own public API visualization</h1>
+<p>Browse <a href="https://github.com/toddmotto/public-apis#science">toddomotos’ list of Public APIs</a> and <a href="https://github.com/abhishekbanthia/Public-APIs">abhishekbanthia’s list of Public APIs</a>. Select one of the APIs from the list. Here are a few criteria you should consider:</p>
+<ul>
+<li>Use the JSON approach we illustrated above; not all APIs support JSON. (If you want to use an API that does not support JSON, you can check if there is an <code>R</code> wrapper package.)</li>
+<li>Stay away from APIs that require OAuth for Authorization unless you are prepared for extra work before you get data! Most of the large social APIs (Facebook, LinkedIn, Twitter, etc.) require OAuth. toddomoto’s page lists this explicitly, but you’ll need to dig a bit if the API is only on abhishekbanthia’s list.</li>
+<li>You will probably need to explore several different APIs before you find one that works well for your interests and this assignment.</li>
+<li>Beware of the <code>rate limits</code> associated with the API you choose. These determine the maximum number of API calls you can make per second, hour or day. Though these are not always officially published, you can find them by Google (for example) <code>GitHub API rate limit</code>. If you need to slow your program down to meet the API insert calls to <code>Sys.sleep(1)</code> as is done in the example below.</li>
+<li>Sketch out one interesting visualization that relies on the public API you selected earlier. Make sure the exact data you need is available. If it’s not, try a new visualization or API.</li>
+<li>If a wrapper package is available, you may use it, but you should also try to create the request URL and retrieve the JSON data using the techniques we showed earlier, without the wrapper package.</li>
+<li>Visualize the data you collected and describe the results.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Leslie Myint, 2023<br> All content licensed under <img src="https://static.thenounproject.com/png/70967-200.png" height="20"> (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>)</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">Site built with <a href="https://quarto.org/">Quarto</a></div>
+  </div>
+</footer>
+
+
+
+</body></html>
