@@ -282,9 +282,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 <section id="learning-goals" class="level1">
 <h1>Learning goals</h1>
 <p>After this lesson, you should be able to:</p>
@@ -335,38 +332,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This activity will build on the <a href="https://developer.nytimes.com/">New York Times Web API</a>, which provides access to news articles, movie reviews, book reviews, and many other data. Our activity will specifically focus on the <a href="https://developer.nytimes.com/docs/articlesearch-product/1/overview">Article Search API</a>, which finds information about news articles that contain a particular word or phrase.</p>
 <p>We will use the <a href="https://github.com/mkearney/nytimes">nytimes</a> wrapper package that provides functions for some (but not all) of the NYTimes APIs. You can install the package by running the following in the Console:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mkearney/nytimes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"mkearney/nytimes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next, take a look at the Article Search API example on the <a href="https://github.com/mkearney/nytimes">package website</a> to get a sense of the syntax.</p>
 <p><strong>Exercise:</strong> What do you think the <code>nyt_search()</code> function below does? How does it communicate with the NY Times? Where is the data about articles stored?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">nyt_search</span>(<span class="at">q =</span> <span class="st">"gamergate"</span>, <span class="at">n =</span> <span class="dv">20</span>, <span class="at">end_date =</span> <span class="st">"20150101"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">nyt_search</span>(<span class="at">q =</span> <span class="st">"gamergate"</span>, <span class="at">n =</span> <span class="dv">20</span>, <span class="at">end_date =</span> <span class="st">"20150101"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To get started with the NY Times API, you must <a href="https://developer.nytimes.com/accounts/create">register and get an <strong>authentication key</strong></a>. Signup only takes a few seconds, and it lets the New York Times make sure nobody abuses their API for commercial purposes. It also <strong>rate limits</strong> their API and ensures programs don’t make too many requests per day. For the NY Times API, this limit is 1000 calls per day. Be aware that most APIs do have rate limits — especially for their free tiers.</p>
 <p>Once you have signed up, verified your email, log back in to https://developer.nytimes.com. Under your email address, click on Apps and Create a new App (call it First API) and enable Article Search API, then press Save. This creates an <strong>authentication key</strong>, which is a 32 digit string with numbers and the letters a-e.</p>
 <p>Store this in a variable as follows (this is just an example ID, not an actual one):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change value to your personal API key</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>times_key <span class="ot">&lt;-</span> <span class="st">"c935b213b2dc1218050eec976283dbbd"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Change value to your personal API key</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>times_key <span class="ot">&lt;-</span> <span class="st">"c935b213b2dc1218050eec976283dbbd"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now, let’s use the key to issue our first API call. We’ll adapt the code we see in the vignette to do what we need.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nytimes)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tell nytimes what our API key is</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">NYTIMES_KEY =</span> times_key)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Issue our first API call</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">nyt_search</span>(<span class="at">q =</span> <span class="st">"gamergate"</span>, <span class="at">n =</span> <span class="dv">20</span>, <span class="at">end_date =</span> <span class="st">"20150101"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert response object to data frame</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nytimes)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tell nytimes what our API key is</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">NYTIMES_KEY =</span> times_key)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Issue our first API call</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">nyt_search</span>(<span class="at">q =</span> <span class="st">"gamergate"</span>, <span class="at">n =</span> <span class="dv">20</span>, <span class="at">end_date =</span> <span class="st">"20150101"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert response object to data frame</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Something magical just happened. Your computer sent a message to the New York Times and asked for information about 20 articles about <a href="https://en.wikipedia.org/wiki/Gamergate_controversy">Gamergate</a> starting at January 1, 2015 and going backwards in time. Thousands of public Web APIs allow your computer to tap into almost any piece of public digital information on the web.</p>
 <p>Let’s take a peek at the structure of the results:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "id"               "abstract"         "byline"           "document_type"   
  [5] "headline"         "keywords"         "lead_paragraph"   "multimedia"      
@@ -374,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [13] "section_name"     "snippet"          "source"           "subsection_name" 
 [17] "type_of_material" "uri"              "web_url"          "word_count"      </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                                      id
 1     nyt://article/08765e5b-8d12-54dd-be58-39c6d33125c1
@@ -528,14 +525,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Typically, each of these URL components will be specified in the API documentation. Sometimes, the scheme, hostname, and path (<code>http://api.nytimes.com/svc/search/v2/articlesearch.json</code>) will be referred to as the <strong><a href="https://en.wikipedia.org/wiki/Web_API#Endpoints">endpoint</a></strong> for the API call.</p>
 <p>We will use the <code>urltools</code> package to build up a full URL from its parts. Start by creating a string with the endpoint. Then add the parameters one by one using <code>param_set</code> and <code>url_encode</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(urltools)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"http://api.nytimes.com/svc/search/v2/articlesearch.json"</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"q"</span>, <span class="fu">url_encode</span>(<span class="st">"Penn &amp; Teller"</span>))</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"api-key"</span>, <span class="fu">url_encode</span>(times_key))</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>url</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(urltools)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"http://api.nytimes.com/svc/search/v2/articlesearch.json"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"q"</span>, <span class="fu">url_encode</span>(<span class="st">"gamergate"</span>))</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"api-key"</span>, <span class="fu">url_encode</span>(times_key))</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>url</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=Penn%20%26%20Teller&amp;api-key=xy9oy1eczTOTGAFjAfnrmZJO2mpSPvXQ"</code></pre>
+<pre><code>[1] "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=gamergate&amp;api-key=xy9oy1eczTOTGAFjAfnrmZJO2mpSPvXQ"</code></pre>
 </div>
 </div>
 <p>Copy and paste the resulting URL into your browser to see what the NY Times response looks like!</p>
@@ -549,11 +546,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Take a look at the Wikipedia page describing <a href="https://en.wikipedia.org/wiki/Percent-encoding">percent encoding</a>. Explain how the process works in your own words.</p>
 <p><strong>Exercise:</strong> Write out the pseudocode for a function that takes a data frame of arbitrarily many key-value pairs and constructs the URL. Then write the function itself. Example data frame of key-value pairs:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>key_val_pairs <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">key =</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"api-key"</span>, <span class="st">"begin_date"</span>, <span class="st">"end_date"</span>),</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(<span class="st">"economy"</span>, <span class="st">"API_KEY"</span>, <span class="st">"20230101"</span>, <span class="st">"20231001"</span>)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>key_val_pairs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>key_val_pairs <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">key =</span> <span class="fu">c</span>(<span class="st">"q"</span>, <span class="st">"api-key"</span>, <span class="st">"begin_date"</span>, <span class="st">"end_date"</span>),</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">value =</span> <span class="fu">c</span>(<span class="st">"economy"</span>, <span class="st">"API_KEY"</span>, <span class="st">"20230101"</span>, <span class="st">"20231001"</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>key_val_pairs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 2
   key        value   
@@ -623,7 +620,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p>Let’s repeat the NY Times search for “gamergate”, but this time we will perform the Web API call by hand instead of using the <code>nytimes</code> wrapper package. We will use the <code>jsonlite</code> package to retrieve the response from the web server and turn the string response into an <code>R</code> object. The <code>fromJson</code> function sends our request out over and across the web to the NY Times web server, retrieves it, and turns it from a JSON-formatted string into R data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'jsonlite'</code></pre>
@@ -633,15 +630,15 @@ Attaching package: 'jsonlite'</code></pre>
 
     flatten</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rebuild the URL</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"http://api.nytimes.com/svc/search/v2/articlesearch.json"</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"q"</span>, <span class="fu">url_encode</span>(<span class="st">"gamergate"</span>))</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"api-key"</span>, <span class="fu">url_encode</span>(times_key))</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Send the request to the webserver over the Internet and</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># retrieve the JSON response. Turn the JSON response into an</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># R Object.</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>gamergate_json <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rebuild the URL</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"http://api.nytimes.com/svc/search/v2/articlesearch.json"</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"q"</span>, <span class="fu">url_encode</span>(<span class="st">"gamergate"</span>))</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"api-key"</span>, <span class="fu">url_encode</span>(times_key))</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Send the request to the webserver over the Internet and</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># retrieve the JSON response. Turn the JSON response into an</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># R Object.</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>gamergate_json <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>gamergate_json</code> is a <strong>list</strong>. A list is a useful structure for storing elements of different types. Data frames are special cases of lists where each list element has the same length (but where the list elements have different classes).</p>
 <p>Lists are a very flexible data structure but can be very confusing because list elements can be lists themselves!</p>
@@ -657,8 +654,8 @@ Attaching package: 'jsonlite'</code></pre>
 <li>By <em>position</em> with double square brackets <code>[[</code>:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This gets the first element of the list</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>gamergate_json[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This gets the first element of the list</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>gamergate_json[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "OK"</code></pre>
 </div>
@@ -667,14 +664,14 @@ Attaching package: 'jsonlite'</code></pre>
 <li>By <em>name</em> with double square brackets <code>[[</code>: (note that list elements are not always named, so this won’t always be possible)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing by name directly</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>gamergate_json[[<span class="st">"status"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing by name directly</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>gamergate_json[[<span class="st">"status"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "OK"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing via a variable</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>which_element <span class="ot">&lt;-</span> <span class="st">"status"</span></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>gamergate_json[[which_element]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Accessing via a variable</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>which_element <span class="ot">&lt;-</span> <span class="st">"status"</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>gamergate_json[[which_element]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "OK"</code></pre>
 </div>
@@ -683,14 +680,14 @@ Attaching package: 'jsonlite'</code></pre>
 <li>By <em>name</em> with a dollar sign <code>$</code>: (Helpful tip: For this mode of access, RStudio allows tab completion to fill in the full name)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>gamergate_json<span class="sc">$</span>status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>gamergate_json<span class="sc">$</span>status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "OK"</code></pre>
 </div>
 </div>
 <p>We can retrieve these <em>nested</em> attributes by sequentially accessing the object keys from the outside in. For example, the <code>meta</code> element would be accessed as follows:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>gamergate_json<span class="sc">$</span>response<span class="sc">$</span>meta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>gamergate_json<span class="sc">$</span>response<span class="sc">$</span>meta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$hits
 [1] 142
@@ -699,7 +696,7 @@ $offset
 [1] 0
 
 $time
-[1] 19</code></pre>
+[1] 18</code></pre>
 </div>
 </div>
 <p><strong>Exercise:</strong> In the <code>gamergate_json</code> object, retrieve the data associated with:</p>
@@ -719,38 +716,38 @@ $time
 <h3 class="anchored" data-anchor-id="multiple-pages-of-search-results">Multiple pages of search results</h3>
 <p>Here is some code to generate queries on NY Times articles about the Red Sox. It fetches the first thirty entries in batches of 10.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"http://api.nytimes.com/svc/search/v2/articlesearch.json"</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"q"</span>, <span class="fu">url_encode</span>(<span class="st">"Red Sox"</span>))</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"api-key"</span>, <span class="fu">url_encode</span>(times_key))</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"page"</span>, <span class="dv">0</span>)</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.sleep</span>(<span class="dv">1</span>)</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>res1 <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url)</span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co"># This pauses for 1 second.</span></span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co"># It is required when knitting to prevent R from issuing too many requests to</span></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co"># The NYT API at a time. If you don't have it you will get an error that</span></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co"># says "Too Many Requests (429)"</span></span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.sleep</span>(<span class="dv">1</span>)</span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"page"</span>, <span class="dv">1</span>)</span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>res2 <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url)</span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.sleep</span>(<span class="dv">1</span>)</span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"page"</span>, <span class="dv">2</span>)</span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a>res3 <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url)</span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a>docs1 <span class="ot">&lt;-</span> res1<span class="sc">$</span>response<span class="sc">$</span>docs</span>
-<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a>docs2 <span class="ot">&lt;-</span> res2<span class="sc">$</span>response<span class="sc">$</span>docs</span>
-<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a>docs3 <span class="ot">&lt;-</span> res3<span class="sc">$</span>response<span class="sc">$</span>docs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"http://api.nytimes.com/svc/search/v2/articlesearch.json"</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"q"</span>, <span class="fu">url_encode</span>(<span class="st">"Red Sox"</span>))</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"api-key"</span>, <span class="fu">url_encode</span>(times_key))</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"page"</span>, <span class="dv">0</span>)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.sleep</span>(<span class="dv">1</span>)</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>res1 <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url)</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co"># This pauses for 1 second.</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a><span class="co"># It is required when knitting to prevent R from issuing too many requests to</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="co"># The NYT API at a time. If you don't have it you will get an error that</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="co"># says "Too Many Requests (429)"</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.sleep</span>(<span class="dv">1</span>)</span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"page"</span>, <span class="dv">1</span>)</span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>res2 <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url)</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.sleep</span>(<span class="dv">1</span>)</span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="fu">param_set</span>(url, <span class="st">"page"</span>, <span class="dv">2</span>)</span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>res3 <span class="ot">&lt;-</span> <span class="fu">fromJSON</span>(url)</span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>docs1 <span class="ot">&lt;-</span> res1<span class="sc">$</span>response<span class="sc">$</span>docs</span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>docs2 <span class="ot">&lt;-</span> res2<span class="sc">$</span>response<span class="sc">$</span>docs</span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>docs3 <span class="ot">&lt;-</span> res3<span class="sc">$</span>response<span class="sc">$</span>docs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Each of these docs variables is a table with ten entries (articles) and the same 18 variables:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(docs1)</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(docs2)</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(docs3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(docs1)</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(docs2)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(docs3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now we want to stack the tables on top of each other to get a single table with 30 rows and 18 variables. We can use:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(docs1,docs2,docs3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bind_rows</span>(docs1,docs2,docs3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br><br><br></p>
 </section>
@@ -758,11 +755,11 @@ $time
 </section>
 <section id="extra-practice-create-your-own-public-api-visualization" class="level1">
 <h1>Extra practice: Create your own public API visualization</h1>
-<p>Browse <a href="https://github.com/toddmotto/public-apis#science">toddomotos’ list of Public APIs</a> and <a href="https://github.com/abhishekbanthia/Public-APIs">abhishekbanthia’s list of Public APIs</a>. Select one of the APIs from the list. Here are a few criteria you should consider:</p>
+<p>Browse <a href="https://github.com/toddmotto/public-apis">toddomotos’ list of Public APIs</a> and <a href="https://github.com/abhishekbanthia/Public-APIs">abhishekbanthia’s list of Public APIs</a>. Select one of the APIs from the list. Here are a few criteria you should consider:</p>
 <ul>
 <li>Use the JSON approach we illustrated above; not all APIs support JSON. (If you want to use an API that does not support JSON, you can check if there is an <code>R</code> wrapper package.)</li>
 <li>Stay away from APIs that require OAuth for Authorization unless you are prepared for extra work before you get data! Most of the large social APIs (Facebook, LinkedIn, Twitter, etc.) require OAuth. toddomoto’s page lists this explicitly, but you’ll need to dig a bit if the API is only on abhishekbanthia’s list.</li>
-<li>You will probably need to explore several different APIs before you find one that works well for your interests and this assignment.</li>
+<li>You will probably need to explore several different APIs before you find one that works well for your interests and this exercise.</li>
 <li>Beware of the <code>rate limits</code> associated with the API you choose. These determine the maximum number of API calls you can make per second, hour or day. Though these are not always officially published, you can find them by Google (for example) <code>GitHub API rate limit</code>. If you need to slow your program down to meet the API insert calls to <code>Sys.sleep(1)</code> as is done in the example below.</li>
 <li>Sketch out one interesting visualization that relies on the public API you selected earlier. Make sure the exact data you need is available. If it’s not, try a new visualization or API.</li>
 <li>If a wrapper package is available, you may use it, but you should also try to create the request URL and retrieve the JSON data using the techniques we showed earlier, without the wrapper package.</li>

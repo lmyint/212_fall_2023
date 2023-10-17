@@ -83,12 +83,6 @@ Store this in a variable as follows (this is just an example ID, not an actual o
 times_key <- "c935b213b2dc1218050eec976283dbbd"
 ```
 
-```{r echo=FALSE}
-times_key <- read_lines("../nyt_api_key.txt")
-```
-
-
-
 Now, let's use the key to issue our first API call. We'll adapt the code we see in the vignette to do what we need.
 
 ```{r}
@@ -156,7 +150,7 @@ We will use the `urltools` package to build up a full URL from its parts. Start 
 library(urltools)
 
 url <- "http://api.nytimes.com/svc/search/v2/articlesearch.json"
-url <- param_set(url, "q", url_encode("Penn & Teller"))
+url <- param_set(url, "q", url_encode("gamergate"))
 url <- param_set(url, "api-key", url_encode(times_key))
 url
 ```
@@ -367,11 +361,11 @@ bind_rows(docs1,docs2,docs3)
 
 # Extra practice: Create your own public API visualization
 
-Browse [toddomotos' list of Public APIs](https://github.com/toddmotto/public-apis#science) and [abhishekbanthia's list of Public APIs](https://github.com/abhishekbanthia/Public-APIs). Select one of the APIs from the list. Here are a few criteria you should consider:
+Browse [toddomotos' list of Public APIs](https://github.com/toddmotto/public-apis) and [abhishekbanthia's list of Public APIs](https://github.com/abhishekbanthia/Public-APIs). Select one of the APIs from the list. Here are a few criteria you should consider:
 
 - Use the JSON approach we illustrated above; not all APIs support JSON. (If you want to use an API that does not support JSON, you can check if there is an `R` wrapper package.)
 - Stay away from APIs that require OAuth for Authorization unless you are prepared for extra work before you get data! Most of the large social APIs (Facebook, LinkedIn, Twitter, etc.) require OAuth. toddomoto's page lists this explicitly, but you'll need to dig a bit if the API is only on abhishekbanthia's list.
-- You will probably need to explore several different APIs before you find one that works well for your interests and this assignment.
+- You will probably need to explore several different APIs before you find one that works well for your interests and this exercise.
 - Beware of the `rate limits` associated with the API you choose. These determine the maximum number of API calls you can make per second, hour or day. Though these are not always officially published, you can find them by Google (for example) `GitHub API rate limit`. If you need to slow your program down to meet the API insert calls to `Sys.sleep(1)` as is done in the example below.
 - Sketch out one interesting visualization that relies on the public API you selected earlier. Make sure the exact data you need is available. If it's not, try a new visualization or API.
 - If a wrapper package is available, you may use it, but you should also try to create the request URL and retrieve the JSON data using the techniques we showed earlier, without the wrapper package.
