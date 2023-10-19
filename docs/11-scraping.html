@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT/COMP 212 - Homework 3</title>
+<title>STAT/COMP 212 - Data acquisition: Web scraping</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -217,8 +251,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#required-parts" id="toc-required-parts" class="nav-link active" data-scroll-target="#required-parts">Required parts</a></li>
-  <li><a href="#optional" id="toc-optional" class="nav-link" data-scroll-target="#optional">Optional</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#web-scraping" id="toc-web-scraping" class="nav-link" data-scroll-target="#web-scraping">Web scraping</a>
+  <ul class="collapse">
+  <li><a href="#finding-css-selectors" id="toc-finding-css-selectors" class="nav-link" data-scroll-target="#finding-css-selectors">Finding CSS Selectors</a></li>
+  <li><a href="#retrieving-data-using-rvest-and-css-selectors" id="toc-retrieving-data-using-rvest-and-css-selectors" class="nav-link" data-scroll-target="#retrieving-data-using-rvest-and-css-selectors">Retrieving Data Using <code>rvest</code> and CSS Selectors</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -227,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 3</h1>
+<h1 class="title">Data acquisition: Web scraping</h1>
 </div>
 
 
@@ -242,21 +280,116 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="required-parts" class="level1">
-<h1>Required parts</h1>
+<section id="learning-goals" class="level1">
+<h1>Learning goals</h1>
+<p>After this lesson, you should be able to:</p>
 <ul>
-<li>Finish the Shiny app from the <a href="./04-interactive-viz.html#homework">interactive viz class activity</a> up to the minimum requirements.
+<li>Use CSS Selectors and the Selector Gadget tool to locate data of interest within a webpage</li>
+<li>Use the <code>html_elements()</code> and <code>html_text()</code> functions within the <code>rvest</code> packages to scrape data from webpage using CSS selectors</li>
+</ul>
+<p><br></p>
+<p>You can download a template Quarto file to start from <a href="activity_templates/11-scraping.qmd">here</a>. Save this template within the following directory structure:</p>
 <ul>
-<li>Submission details: Submit the <code>app.R</code> file on <a href="https://moodle.macalester.edu/mod/assign/view.php?id=38956">Moodle</a> by midnight on Wednesday, 9/27.</li>
+<li><code>your_course_folder</code>
+<ul>
+<li><code>scraping</code>
+<ul>
+<li><code>code</code>
+<ul>
+<li><code>11-scraping.qmd</code></li>
 </ul></li>
-<li>Work towards <a href="./project.html#milestone-2">Milestone 2</a> of the <a href="./project.html">course project</a>. (Nothing to turn in for Homework 3, but you should be making progress.)</li>
+</ul></li>
+</ul></li>
 </ul>
 </section>
-<section id="optional" class="level1">
-<h1>Optional</h1>
-<p>Participate in the most recent <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-09-19/readme.md">Tidy Tuesday</a> challenge.</p>
+<section id="web-scraping" class="level1">
+<h1>Web scraping</h1>
+<p>We have talked about how to acquire data from APIs. Whenever an API is available for your project, you should default to getting data from the API. Sometimes an API will not be available, and <strong>web scraping</strong> is another means of getting data.</p>
+<p>Web scraping describes the use of code to extract information displayed on a web page. In R, the <code>rvest</code> package offers tools for scraping. (<code>rvest</code> is meant to sound like “harvest”.)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest) <span class="co"># install.packages("rvest")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'rvest'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:readr':
+
+    guess_encoding</code></pre>
+</div>
+</div>
+<p>Additional readings:</p>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/rvest/vignettes/rvest.html">rvest</a></li>
+<li><a href="https://css-tricks.com/how-css-selectors-work/">CSS selectors</a></li>
+</ul>
+<section id="finding-css-selectors" class="level2">
+<h2 class="anchored" data-anchor-id="finding-css-selectors">Finding CSS Selectors</h2>
+<p>In order to gather information from a webpage, we must learn the language used to identify patterns of specific information. For example, on the <a href="https://www.nih.gov/news-events/news-releases">NIH News Releases page</a>, we can see that the data is represented in a consistent pattern of image + title + abstract.</p>
+<p>We will identify data in a web page using a pattern matching language called <a href="https://css-tricks.com/how-css-selectors-work/">CSS Selectors</a> that can refer to specific patterns in HTML, the language used to write web pages.</p>
+<p>For example:</p>
+<ul>
+<li>the CSS selector “a” selects all hyperlinks in a webpage (“a” represents “anchor” links in HTML)</li>
+<li>the CSS selector “p” selects all paragraph elements</li>
+</ul>
+<p><strong>Warning</strong>: Websites change often! So if you are going to scrape a lot of data, it is probably worthwhile to save and date a copy of the website. Otherwise, you may return after some time and your scraping code will include all of the wrong CSS selectors.</p>
+<p>Although you can <a href="[CSS Selectors](https://css-tricks.com/how-css-selectors-work/)">learn how to use CSS Selectors by hand</a>, we will use a shortcut by installing the <a href="http://selectorgadget.com/">Selector Gadget</a> tool.</p>
+<ul>
+<li>There is a version available for Chrome–add it to Chrome via the <a href="https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb/related">Chome Web Store</a>.
+<ul>
+<li>Make sure to pin the extension to the menu bar. (Click the 3 dots &gt; Extensions &gt; Manage extensions. Click the “Details” button under SelectorGadget and toggle the “Pin to toolbar” option.)</li>
+</ul></li>
+<li>There is also a version that can be saved as a bookmark in the browser–see <a href="https://rvest.tidyverse.org/articles/selectorgadget.html">here</a>.</li>
+</ul>
+<p>Let’s watch the Selector Gadget <a href="http://selectorgadget.com/">tutorial video</a> before proceeding.</p>
+<hr>
+<p>Head over to the <a href="https://www.nih.gov/news-events/news-releases">NIH News Releases page</a>. Click the Selector Gadget extension icon or bookmark button. As you mouse over the webpage, different parts will be highlighted in orange. Click on the title of the first news release. You’ll notice that the Selector Gadget information in the lower right describes what you clicked on.</p>
+<p>Scroll through the page to verify that only the information you intend (the description paragraph) is selected. The selector panel shows the CSS selector (<code>.teaser-title</code>) and the number of matches for that CSS selector (10). (You may have to be careful with your clicking–there are two overlapping boxes, and clicking on the link of the title can lead to the CSS selector of “a”.)</p>
+<p>Repeat the process above to find the correct selectors for the following fields. Make sure that each matches 10 results:</p>
+<ul>
+<li>The publication date</li>
+<li>The article abstract paragraph (which will also include the publication date)</li>
+</ul>
+</section>
+<section id="retrieving-data-using-rvest-and-css-selectors" class="level2">
+<h2 class="anchored" data-anchor-id="retrieving-data-using-rvest-and-css-selectors">Retrieving Data Using <code>rvest</code> and CSS Selectors</h2>
+<p>Now that we have identified CSS selectors for the information we need, let’s fetch the data using the <code>rvest</code> package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nih <span class="ot">&lt;-</span> <span class="fu">read_html</span>(<span class="st">"https://www.nih.gov/news-events/news-releases"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Once the webpage is loaded, we can retrieve data using the CSS selectors we specified earlier. The following code retrieves the article titles:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Retrieve and inspect course numbers</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>article_titles <span class="ot">&lt;-</span> nih <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_elements</span>(<span class="st">".teaser-title"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_text</span>()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(article_titles)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Telehealth supports retention in treatment for opioid use disorder"                    
+[2] "Calorie restriction in humans builds strong muscle and stimulates healthy aging genes" 
+[3] "Study reveals how young children’s immune systems tame SARS-CoV-2"                     
+[4] "Investigational drug restores parathyroid function in rare disease"                    
+[5] "Scientists unveil detailed cell maps of the human brain and the nonhuman primate brain"
+[6] "NIH researchers work to preserve fertility for people undergoing gene therapy"         </code></pre>
+</div>
+</div>
+<p><strong>Pair programming exercise:</strong> Whoever can write down more <code>stringr</code> functions in 10 seconds will drive first and do the first exercise. Switch driver for the second exercise.</p>
+<p><strong>Exercise:</strong> Write a function that puts the article title, publication date, and abstract text from a single page of news results into a data frame.</p>
+<ul>
+<li>The only argument to the function should be the URL to a page of news results. (Mouse over the page buttons at the very bottom of the news home page to see what the URLs look like.)</li>
+<li>The abstract should not have the publication date–use string processing to remove the publication date.</li>
+</ul>
+<p><strong>Exercise:</strong> Use iteration to get article information for the first 5 pages of news results. You can use either a for-loop or <code>purrr::map()</code>. For a challenge, do both.</p>
+<hr>
+<p>A more complex example with the <a href="https://science.education.nih.gov/">NIH STEM Teaching Resources Webpage</a>.</p>
+<p>Selecting the resource titles ends up being tricky. Using Selector Gadget, we can only get one resource title at a time. In Chrome, you can right click part of a web page and click “Inspect”. This opens up Chrome’s Developer Tools. Mousing over the HTML in the top right panel highlights the corresponding part of the web page.</p>
+<ul>
+<li>For non-Chrome browsers, use the Help menu to search for Developer Tools.</li>
+</ul>
+<p>The underlying HTML used to create a web page is also called the page <strong>source code</strong> or <strong>page source</strong>. We learn from this that the resource titles are <code>&lt;h4&gt;</code> headings that have the class <code>resource-title</code>. We can infer from this that <code>.resource-title</code> would be the CSS selector for the resouce titles.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

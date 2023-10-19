@@ -49,6 +49,7 @@ website:
         - 08-functions-control-structs.qmd
         - 09-iteration.qmd
         - 10-apis.qmd
+        - 11-scraping.qmd
 
     - id: homework
       title: "Homework"

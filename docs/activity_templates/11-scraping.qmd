@@ -1,0 +1,115 @@
+---
+title: "Data acquisition: Web scraping"
+sidebar: false
+---
+
+```{r echo=FALSE, message=FALSE}
+library(tidyverse)
+```
+
+# Learning goals
+
+After this lesson, you should be able to:
+
+- Use CSS Selectors and the Selector Gadget tool to locate data of interest within a webpage
+- Use the `html_elements()` and `html_text()` functions within the `rvest` packages to scrape data from webpage using CSS selectors
+
+<br>
+
+You can download a template Quarto file to start from [here](activity_templates/11-scraping.qmd). Save this template within the following directory structure:
+
+- `your_course_folder`
+    - `scraping`
+        - `code`
+            - `11-scraping.qmd`
+            
+# Web scraping
+
+We have talked about how to acquire data from APIs. Whenever an API is available for your project, you should default to getting data from the API. Sometimes an API will not be available, and **web scraping** is another means of getting data.
+
+Web scraping describes the use of code to extract information displayed on a web page. In R, the `rvest` package offers tools for scraping. (`rvest` is meant to sound like "harvest".)
+            
+```{r}
+library(rvest) # install.packages("rvest")
+```
+
+Additional readings:  
+
+- [rvest](https://cran.r-project.org/web/packages/rvest/vignettes/rvest.html)
+- [CSS selectors](https://css-tricks.com/how-css-selectors-work/)
+
+
+## Finding CSS Selectors
+
+In order to gather information from a webpage, we must learn the language used to identify patterns of specific information. For example, on the [NIH News Releases page](https://www.nih.gov/news-events/news-releases), we can see that the data is represented in a consistent pattern of image + title + abstract.
+
+We will identify data in a web page using a pattern matching language called [CSS Selectors](https://css-tricks.com/how-css-selectors-work/) that can refer to specific patterns in HTML, the language used to write web pages.
+
+For example:
+
+- the CSS selector "a" selects all hyperlinks in a webpage ("a" represents "anchor" links in HTML)
+- the CSS selector "p" selects all paragraph elements
+
+**Warning**: Websites change often! So if you are going to scrape a lot of data, it is probably worthwhile to save and date a copy of the website. Otherwise, you may return after some time and your scraping code will include all of the wrong CSS selectors.
+
+Although you can [learn how to use CSS Selectors by hand]([CSS Selectors](https://css-tricks.com/how-css-selectors-work/)), we will use a shortcut by installing the [Selector Gadget](http://selectorgadget.com/) tool.
+
+- There is a version available for Chrome--add it to Chrome via the [Chome Web Store](https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb/related).
+    - Make sure to pin the extension to the menu bar. (Click the 3 dots > Extensions > Manage extensions. Click the "Details" button under SelectorGadget and toggle the "Pin to toolbar" option.)
+- There is also a version that can be saved as a bookmark in the browser--see [here](https://rvest.tidyverse.org/articles/selectorgadget.html).
+
+Let's watch the Selector Gadget [tutorial video](http://selectorgadget.com/) before proceeding.
+
+----------
+
+Head over to the [NIH News Releases page](https://www.nih.gov/news-events/news-releases). Click the Selector Gadget extension icon or bookmark button. As you mouse over the webpage, different parts will be highlighted in orange. Click on the title of the first news release. You'll notice that the Selector Gadget information in the lower right describes what you clicked on.
+
+Scroll through the page to verify that only the information you intend (the description paragraph) is selected. The selector panel shows the CSS selector (`.teaser-title`) and the number of matches for that CSS selector (10). (You may have to be careful with your clicking--there are two overlapping boxes, and clicking on the link of the title can lead to the CSS selector of "a".)
+
+Repeat the process above to find the correct selectors for the following fields. Make sure that each matches 10 results:
+
+- The publication date
+- The article abstract paragraph (which will also include the publication date)
+
+
+
+## Retrieving Data Using `rvest` and CSS Selectors
+
+Now that we have identified CSS selectors for the information we need, let's fetch the data using the `rvest` package.
+
+```{r}
+nih <- read_html("https://www.nih.gov/news-events/news-releases")
+```
+
+Once the webpage is loaded, we can retrieve data using the CSS selectors we specified earlier. The following code retrieves the article titles:
+
+```{r}
+# Retrieve and inspect course numbers
+article_titles <- nih %>%
+    html_elements(".teaser-title") %>%
+    html_text()
+head(article_titles)
+```
+
+**Pair programming exercise:** Whoever can write down more `stringr` functions in 10 seconds will drive first and do the first exercise. Switch driver for the second exercise.
+
+**Exercise:** Write a function that puts the article title, publication date, and abstract text from a single page of news results into a data frame.
+
+- The only argument to the function should be the URL to a page of news results. (Mouse over the page buttons at the very bottom of the news home page to see what the URLs look like.)
+- The abstract should not have the publication date--use string processing to remove the publication date.
+
+
+
+
+**Exercise:** Use iteration to get article information for the first 5 pages of news results. You can use either a for-loop or `purrr::map()`. For a challenge, do both.
+
+
+----------
+
+A more complex example with the [NIH STEM Teaching Resources Webpage](https://science.education.nih.gov/).
+
+Selecting the resource titles ends up being tricky. Using Selector Gadget, we can only get one resource title at a time. In Chrome, you can right click part of a web page and click "Inspect". This opens up Chrome's Developer Tools. Mousing over the HTML in the top right panel highlights the corresponding part of the web page.
+
+- For non-Chrome browsers, use the Help menu to search for Developer Tools.
+
+The underlying HTML used to create a web page is also called the page **source code** or **page source**. We learn from this that the resource titles are `<h4>` headings that have the class `resource-title`. We can infer from this that `.resource-title` would be the CSS selector for the resouce titles.
