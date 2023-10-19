@@ -98,10 +98,16 @@ head(article_titles)
 - The only argument to the function should be the URL to a page of news results. (Mouse over the page buttons at the very bottom of the news home page to see what the URLs look like.)
 - The abstract should not have the publication date--use string processing to remove the publication date.
 
-
+::: {.callout-tip title="Stop to reflect"}
+In your Process and Reflection Log write a few observations about your experience writing the function for this first exercise. What is starting to get easier about function writing? What is still challenging? What practices or strategies would you like to try out next?
+:::
 
 
 **Exercise:** Use iteration to get article information for the first 5 pages of news results. You can use either a for-loop or `purrr::map()`. For a challenge, do both.
+
+::: {.callout-tip title="Stop to reflect"}
+In your Process and Reflection Log write a few observations about your experience working on this second exercise. What is starting to get easier about wrting code for iteration? What is still challenging? What practices or strategies would you like to try out next?
+:::
 
 
 ----------
