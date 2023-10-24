@@ -365,12 +365,12 @@ Attaching package: 'rvest'</code></pre>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_text</span>()</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(article_titles)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Telehealth supports retention in treatment for opioid use disorder"                    
-[2] "Calorie restriction in humans builds strong muscle and stimulates healthy aging genes" 
-[3] "Study reveals how young children’s immune systems tame SARS-CoV-2"                     
-[4] "Investigational drug restores parathyroid function in rare disease"                    
-[5] "Scientists unveil detailed cell maps of the human brain and the nonhuman primate brain"
-[6] "NIH researchers work to preserve fertility for people undergoing gene therapy"         </code></pre>
+<pre><code>[1] "New smartphone app quickly analyzes human motion to aid physical rehabilitation "               
+[2] "NIH revises grant review process to improve focus on scientific merit, reduce reputational bias"
+[3] "Telehealth supports retention in treatment for opioid use disorder"                             
+[4] "Calorie restriction in humans builds strong muscle and stimulates healthy aging genes"          
+[5] "Study reveals how young children’s immune systems tame SARS-CoV-2"                              
+[6] "Investigational drug restores parathyroid function in rare disease"                             </code></pre>
 </div>
 </div>
 <p><strong>Pair programming exercise:</strong> Whoever can write down more <code>stringr</code> functions in 10 seconds will drive first and do the first exercise. Switch driver for the second exercise.</p>
@@ -379,6 +379,32 @@ Attaching package: 'rvest'</code></pre>
 <li>The only argument to the function should be the URL to a page of news results. (Mouse over the page buttons at the very bottom of the news home page to see what the URLs look like.)</li>
 <li>The abstract should not have the publication date–use string processing to remove the publication date.</li>
 </ul>
+<details>
+<summary>
+Solution
+</summary>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>get_text_from_page <span class="ot">&lt;-</span> <span class="cf">function</span>(css_selector) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    page <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">html_elements</span>(css_selector) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">html_text</span>()</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>scrape_page <span class="ot">&lt;-</span> <span class="cf">function</span>(url) {</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    page <span class="ot">&lt;-</span> <span class="fu">read_html</span>(url)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    article_titles <span class="ot">&lt;-</span> <span class="fu">get_text_from_page</span>(<span class="st">".teaser-title"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    article_dates <span class="ot">&lt;-</span> <span class="fu">get_text_from_page</span>(<span class="st">".date-display-single"</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    article_abstracts <span class="ot">&lt;-</span> <span class="fu">get_text_from_page</span>(<span class="st">".teaser-description"</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    article_abstracts <span class="ot">&lt;-</span> <span class="fu">str_remove</span>(article_abstracts, <span class="st">"^.+—"</span>) <span class="sc">%&gt;%</span> <span class="fu">trimws</span>()</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tibble</span>(</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> article_titles,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">date =</span> article_dates,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">abstract =</span> article_abstracts</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</details>
 <div class="callout callout-style-default callout-tip callout-titled" title="Stop to reflect">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -393,6 +419,38 @@ Stop to reflect
 </div>
 </div>
 <p><strong>Exercise:</strong> Use iteration to get article information for the first 5 pages of news results. You can use either a for-loop or <code>purrr::map()</code>. For a challenge, do both.</p>
+<details>
+<summary>
+Solution
+</summary>
+<p>Using a for-loop:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pages <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"list"</span>, <span class="at">length =</span> <span class="dv">5</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    base_url <span class="ot">&lt;-</span> <span class="st">"https://www.nih.gov/news-events/news-releases"</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (i<span class="sc">==</span><span class="dv">1</span>) {</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        url <span class="ot">&lt;-</span> base_url</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        url <span class="ot">&lt;-</span> <span class="fu">str_c</span>(base_url, <span class="st">"?page="</span>, i<span class="dv">-1</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    pages[[i]] <span class="ot">&lt;-</span> <span class="fu">scrape_page</span>(url)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>df_articles <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(pages)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_articles)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Using <code>purrr::map()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a character vector of URLs for the first 5 pages</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>base_url <span class="ot">&lt;-</span> <span class="st">"https://www.nih.gov/news-events/news-releases"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>urls_all_pages <span class="ot">&lt;-</span> <span class="fu">c</span>(base_url, <span class="fu">str_c</span>(base_url, <span class="st">"?page="</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>))</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>pages2 <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map</span>(urls_all_pages, scrape_page)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>df_articles2 <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(pages2)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_articles2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</details>
 <div class="callout callout-style-default callout-tip callout-titled" title="Stop to reflect">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

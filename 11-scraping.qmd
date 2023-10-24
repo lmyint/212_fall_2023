@@ -98,12 +98,77 @@ head(article_titles)
 - The only argument to the function should be the URL to a page of news results. (Mouse over the page buttons at the very bottom of the news home page to see what the URLs look like.)
 - The abstract should not have the publication date--use string processing to remove the publication date.
 
+<details>
+  <summary>Solution</summary>
+  
+```{r}
+get_text_from_page <- function(css_selector) {
+    page %>%
+        html_elements(css_selector) %>%
+        html_text()
+}
+
+scrape_page <- function(url) {
+    page <- read_html(url)
+    article_titles <- get_text_from_page(".teaser-title")
+    article_dates <- get_text_from_page(".date-display-single")
+    article_abstracts <- get_text_from_page(".teaser-description")
+    article_abstracts <- str_remove(article_abstracts, "^.+—") %>% trimws()
+    
+    tibble(
+        title = article_titles,
+        date = article_dates,
+        abstract = article_abstracts
+    )
+}
+```
+
+</details>
+
+
 ::: {.callout-tip title="Stop to reflect"}
 In your Process and Reflection Log write a few observations about your experience writing the function for this first exercise. What is starting to get easier about function writing? What is still challenging? What practices or strategies would you like to try out next?
 :::
 
 
 **Exercise:** Use iteration to get article information for the first 5 pages of news results. You can use either a for-loop or `purrr::map()`. For a challenge, do both.
+
+<details>
+  <summary>Solution</summary>
+
+Using a for-loop:
+
+```{r eval=FALSE}
+pages <- vector("list", length = 5)
+
+for (i in 1:5) {
+    base_url <- "https://www.nih.gov/news-events/news-releases"
+    if (i==1) {
+        url <- base_url
+    } else {
+        url <- str_c(base_url, "?page=", i-1)
+    }
+    pages[[i]] <- scrape_page(url)
+}
+
+df_articles <- bind_rows(pages)
+head(df_articles)
+```
+
+Using `purrr::map()`:
+
+```{r eval=FALSE}
+# Create a character vector of URLs for the first 5 pages
+base_url <- "https://www.nih.gov/news-events/news-releases"
+urls_all_pages <- c(base_url, str_c(base_url, "?page=", 1:4))
+
+pages2 <- purrr::map(urls_all_pages, scrape_page)
+df_articles2 <- bind_rows(pages2)
+head(df_articles2)
+```
+
+</details>
+
 
 ::: {.callout-tip title="Stop to reflect"}
 In your Process and Reflection Log write a few observations about your experience working on this second exercise. What is starting to get easier about wrting code for iteration? What is still challenging? What practices or strategies would you like to try out next?
