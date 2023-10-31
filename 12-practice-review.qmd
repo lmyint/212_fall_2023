@@ -3,6 +3,14 @@ title: "Practicing our tools so-far; mini-project"
 sidebar: false
 ---
 
+Based on your observations in Reflection 1, use these exercises/explorations to practice what will be most beneficial to you.
+
+As part of **Homework 6** (due next Wed 10/8), the only required part of these activities is the "Improving your data visualizations" section. You are welcome to submit anything you work on this week for feedback.
+
+
+<br><br>
+
+
 # Improving your data visualizations (REQUIRED)
 
 Section 4.2.1 [Guidelines for good plots](https://rdpeng.github.io/RProgDA/customizing-ggplot2-plots.html) presents 6 guidelines for creating great plots.
@@ -70,7 +78,7 @@ Bookmark the [strings cheatsheet](https://github.com/rstudio/cheatsheets/blob/ma
 
 - Try any number of the exercises in the [Regular Expressions chapter](https://r4ds.hadley.nz/regexps) of R4DS.
 - Try any number of the Puzzles and Challenges at <https://regexcrossword.com/>. (Start with the Tutorial.)
-    - As you work on these, 
+    - As you work on these, it may be helpful to test out the regular expressions in the Console. Try to create examples of strings that fit the pattern and examples that look like they might fit the pattern but don't.
 
 
 
@@ -81,6 +89,8 @@ Bookmark the [strings cheatsheet](https://github.com/rstudio/cheatsheets/blob/ma
 
 
 # Practice: maps
+
+***Will add exercises by Thursday***
 
 The following TidyTuesday datasets contain spatial information:
 
@@ -115,9 +125,13 @@ The following TidyTuesday datasets contain spatial information:
 
 **Part 3:** Use any data wrangling tools necessary to clean this data so that the expected data is properly formatted.
 
-**Part 4:** Scrape the following information from all courses in the [Mac course catalog](https://catalog.macalester.edu/content.php?catoid=26&navoid=2523): course ID, course title, and URL for the catalog description for the course. Combine this information with your cleaned course schedule dataset. 
+**Part 4:** (OPTIONAL STRETCH GOAL) Scrape the following information from all courses in the [Mac course catalog](https://catalog.macalester.edu/content.php?catoid=26&navoid=2523): course ID, course title, and URL for the catalog description for the course. Combine this information with your cleaned course schedule dataset.
+
+- *Note:* For getting the URL, you will need to look at the `html_attr()` function in `rvest`.
 
 **Part 5:** Create a Shiny app that allows the user to explore/filter the schedule by whatever criteria you see fit. Include functionality to allow users to navigate to course descriptions in the Mac course catalog. Use your expertise as a student to design this app in a useful way for students!
+
+- Optional: If you want to learn a new way of creating more beautiful Shiny user interfaces, check out the [`flexdashboard` package](https://pkgs.rstudio.com/flexdashboard/).
 
 
 
@@ -125,12 +139,11 @@ The following TidyTuesday datasets contain spatial information:
 
 # New topics to explore
 
+***Will fill this out more by Thursday***
+
 - Advanced interactivity
-    - In shiny: reactivity--point to cheat sheet and Posit tutorials
-    - plotly
-        - animations in plotly
-    - htmlwidgets
+    - Shiny: reactivity--point to cheat sheet and Posit tutorials
+    - `plotly`: animations in plotly
+    - [`htmlwidgets`](https://www.htmlwidgets.org/)
 
 - Text Mining with R: https://www.tidytextmining.com/
-- Tableau
-- Python
