@@ -5,7 +5,7 @@ sidebar: false
 
 # Required parts
 
-Due Wednesday, October 18 by midnight [on Moodle]().
+Due Wednesday, October 18 by midnight [on Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=44038).
 
 Complete the first exercise in [Section 26.3.5](https://r4ds.hadley.nz/functions#exercises-1) of *R for Data Science*. (The exercise that begins with "Using the datasets from nycflights13..." This first exercise has 5 functions to write.)
 

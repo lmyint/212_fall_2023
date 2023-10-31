@@ -1,0 +1,136 @@
+---
+title: "Practicing our tools so-far; mini-project"
+sidebar: false
+---
+
+# Improving your data visualizations (REQUIRED)
+
+Section 4.2.1 [Guidelines for good plots](https://rdpeng.github.io/RProgDA/customizing-ggplot2-plots.html) presents 6 guidelines for creating great plots.
+
+- **In class:** Skim through the examples for 6 guidelines to get a feel for how the guidelines are implemented.
+- **Out of class:** Read through [Guidelines for good plots](https://rdpeng.github.io/RProgDA/customizing-ggplot2-plots.html) in detail, and complete the following exercise.
+
+## Resources for sparking creativity and imagination in your plots
+
+**Exercise:** Explore at least one of these resources, and keep an eye out for the use of the 6 guidelines for great plots. Write a few sentences describing what you observe. 
+
+- [Blog post: The 30 Best Data Visualizations of 2023](https://visme.co/blog/best-data-visualizations/)
+- [The Pudding](https://pudding.cool/) is a great data journalism site. Examples of articles with unique visualizations:
+    - [Pockets](https://pudding.cool/2018/08/pockets/): On the sizes of men's and women's pockets
+    - [Making it Big](https://pudding.cool/2017/01/making-it-big/): Exploring the trajectory of bands
+    - [The Differences in How CNN, MSNBC, & FOX Cover the News](https://pudding.cool/2018/01/chyrons/)
+    - [The Physical Traits that Define Men and Women in Literature](https://pudding.cool/2020/07/gendered-descriptions/)
+    - [How News Media Covers Trump and Clinton](https://pudding.cool/2017/03/elections/): An analysis of images in news media
+    - [Where Slang Comes From](https://pudding.cool/2017/02/new-slang/): Exploring the emergence of slang over time
+- Visualizations from the New York Times:
+    - [The Best NYT Visualizations of 2015](https://www.informationisbeautifulawards.com/news/118-the-nyt-s-best-data-visualizations-of-the-year)
+    - [2022: The Year in Visual Stories and Graphics](https://www.nytimes.com/interactive/2022/12/28/us/2022-year-in-graphics.html)
+
+## Applying the guidelines to your project
+
+**Part 1:** Identify a key visualization from your project--one that communicates a finding that you really want your audience to remember. Display this original plot in the code chunk below. If you pick the same plot as your teammates, that's fine. But please work on improvements to the visualization **on your own** so that you can best develop your own skills.
+
+```{r}
+# Code for your original project visualization
+```
+
+**Part 2:** Evaluate your original visualization in terms of the 6 guidelines. Write a paragraph in the space below explaining which guidelines you want to use to improve your plot and why.
+
+> Write your evaluation here.
+
+**Part 3:** Implement the changes that you described in Part 2, and display your improved plot below.
+
+```{r}
+# Code for improved project visualization
+```
+
+
+
+
+<br><br>
+
+
+
+
+# Practice: recreating visualizations
+
+***Will add exercises by Thursday***
+
+
+
+
+<br><br>
+
+
+
+
+# Practice: string wrangling and regular expressions
+
+Bookmark the [strings cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/strings.pdf) and the [regular expressions cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/regex.pdf)
+
+- Try any number of the exercises in the [Regular Expressions chapter](https://r4ds.hadley.nz/regexps) of R4DS.
+- Try any number of the Puzzles and Challenges at <https://regexcrossword.com/>. (Start with the Tutorial.)
+    - As you work on these, 
+
+
+
+
+<br><br>
+
+
+
+
+# Practice: maps
+
+The following TidyTuesday datasets contain spatial information:
+
+- [Historical Markers](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-07-04/readme.md)
+- [Wastewater Plants](https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-09-20)
+
+
+
+
+<br><br>
+
+
+
+
+# Mini-project: Mac schedule explorer
+
+**Part 1:** Navigate to the [Spring 2024 Course Schedule](https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=202430).
+
+- **Google Chrome users:** Use Command-S, Ctrl-S, or File > Save Page As... to bring up options for saving the webpage. For Format, choose **Webpage, Complete**, and save this file as `spring24_schedule.html`.
+- **All other browsers:** Navigate to [Moodle]() to download the webpage HTML source that the instructor downloaded.
+    - Note: Safari has a Web Archive format, but unfortunately, the file type can't be read by `rvest`.
+
+**Part 2:** Use `rvest` to scrape the following data for all courses:
+
+- Course ID (e.g., STAT 212-01)
+- Course title (e.g., Intermediate Data Science)
+- Meeting days (e.g., T R)
+- Meeting times (e.g., 9:40 - 11:10 am)
+- Instructor name (e.g., Leslie Myint)
+- Available seats
+- Max enrollment
+
+**Part 3:** Use any data wrangling tools necessary to clean this data so that the expected data is properly formatted.
+
+**Part 4:** Scrape the following information from all courses in the [Mac course catalog](https://catalog.macalester.edu/content.php?catoid=26&navoid=2523): course ID, course title, and URL for the catalog description for the course. Combine this information with your cleaned course schedule dataset. 
+
+**Part 5:** Create a Shiny app that allows the user to explore/filter the schedule by whatever criteria you see fit. Include functionality to allow users to navigate to course descriptions in the Mac course catalog. Use your expertise as a student to design this app in a useful way for students!
+
+
+
+
+
+# New topics to explore
+
+- Advanced interactivity
+    - In shiny: reactivity--point to cheat sheet and Posit tutorials
+    - plotly
+        - animations in plotly
+    - htmlwidgets
+
+- Text Mining with R: https://www.tidytextmining.com/
+- Tableau
+- Python

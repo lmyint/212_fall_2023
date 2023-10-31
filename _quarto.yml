@@ -50,6 +50,7 @@ website:
         - 09-iteration.qmd
         - 10-apis.qmd
         - 11-scraping.qmd
+        - 12-practice-review.qmd
 
     - id: homework
       title: "Homework"

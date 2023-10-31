@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT/COMP 212 - Homework 2</title>
+<title>STAT/COMP 212 - Practicing our tools so-far; mini-project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -221,8 +255,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#required-parts" id="toc-required-parts" class="nav-link active" data-scroll-target="#required-parts">Required parts</a></li>
-  <li><a href="#optional" id="toc-optional" class="nav-link" data-scroll-target="#optional">Optional</a></li>
+  <li><a href="#improving-your-data-visualizations-required" id="toc-improving-your-data-visualizations-required" class="nav-link active" data-scroll-target="#improving-your-data-visualizations-required">Improving your data visualizations (REQUIRED)</a>
+  <ul class="collapse">
+  <li><a href="#resources-for-sparking-creativity-and-imagination-in-your-plots" id="toc-resources-for-sparking-creativity-and-imagination-in-your-plots" class="nav-link" data-scroll-target="#resources-for-sparking-creativity-and-imagination-in-your-plots">Resources for sparking creativity and imagination in your plots</a></li>
+  <li><a href="#applying-the-guidelines-to-your-project" id="toc-applying-the-guidelines-to-your-project" class="nav-link" data-scroll-target="#applying-the-guidelines-to-your-project">Applying the guidelines to your project</a></li>
+  </ul></li>
+  <li><a href="#practice-recreating-visualizations" id="toc-practice-recreating-visualizations" class="nav-link" data-scroll-target="#practice-recreating-visualizations">Practice: recreating visualizations</a></li>
+  <li><a href="#practice-string-wrangling-and-regular-expressions" id="toc-practice-string-wrangling-and-regular-expressions" class="nav-link" data-scroll-target="#practice-string-wrangling-and-regular-expressions">Practice: string wrangling and regular expressions</a></li>
+  <li><a href="#practice-maps" id="toc-practice-maps" class="nav-link" data-scroll-target="#practice-maps">Practice: maps</a></li>
+  <li><a href="#mini-project-mac-schedule-explorer" id="toc-mini-project-mac-schedule-explorer" class="nav-link" data-scroll-target="#mini-project-mac-schedule-explorer">Mini-project: Mac schedule explorer</a></li>
+  <li><a href="#new-topics-to-explore" id="toc-new-topics-to-explore" class="nav-link" data-scroll-target="#new-topics-to-explore">New topics to explore</a></li>
   </ul>
 </nav>
     </div>
@@ -231,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 2</h1>
+<h1 class="title">Practicing our tools so-far; mini-project</h1>
 </div>
 
 
@@ -246,19 +288,117 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="required-parts" class="level1">
-<h1>Required parts</h1>
+<section id="improving-your-data-visualizations-required" class="level1">
+<h1>Improving your data visualizations (REQUIRED)</h1>
+<p>Section 4.2.1 <a href="https://rdpeng.github.io/RProgDA/customizing-ggplot2-plots.html">Guidelines for good plots</a> presents 6 guidelines for creating great plots.</p>
 <ul>
-<li>Finish the Open-ended Exercise in our <a href="./03-adv-maps.html#open-ended-exercise-homework">Advanced Map Visualization</a> class activity.
+<li><strong>In class:</strong> Skim through the examples for 6 guidelines to get a feel for how the guidelines are implemented.</li>
+<li><strong>Out of class:</strong> Read through <a href="https://rdpeng.github.io/RProgDA/customizing-ggplot2-plots.html">Guidelines for good plots</a> in detail, and complete the following exercise.</li>
+</ul>
+<section id="resources-for-sparking-creativity-and-imagination-in-your-plots" class="level2">
+<h2 class="anchored" data-anchor-id="resources-for-sparking-creativity-and-imagination-in-your-plots">Resources for sparking creativity and imagination in your plots</h2>
+<p><strong>Exercise:</strong> Explore at least one of these resources, and keep an eye out for the use of the 6 guidelines for great plots. Write a few sentences describing what you observe.</p>
 <ul>
-<li>Submission details: Click the “Render” button to create an HTML report from your Quarto file. Open the HTML in your web browser and save the webpage as a PDF (Ctrl-P/Command P, choose “Save as PDF” as the Destination). Submit this PDF on <a href="https://moodle.macalester.edu/mod/assign/view.php?id=37543">Moodle</a> AND the <code>.qmd</code> file by midnight on Wednesday, 9/20.</li>
+<li><a href="https://visme.co/blog/best-data-visualizations/">Blog post: The 30 Best Data Visualizations of 2023</a></li>
+<li><a href="https://pudding.cool/">The Pudding</a> is a great data journalism site. Examples of articles with unique visualizations:
+<ul>
+<li><a href="https://pudding.cool/2018/08/pockets/">Pockets</a>: On the sizes of men’s and women’s pockets</li>
+<li><a href="https://pudding.cool/2017/01/making-it-big/">Making it Big</a>: Exploring the trajectory of bands</li>
+<li><a href="https://pudding.cool/2018/01/chyrons/">The Differences in How CNN, MSNBC, &amp; FOX Cover the News</a></li>
+<li><a href="https://pudding.cool/2020/07/gendered-descriptions/">The Physical Traits that Define Men and Women in Literature</a></li>
+<li><a href="https://pudding.cool/2017/03/elections/">How News Media Covers Trump and Clinton</a>: An analysis of images in news media</li>
+<li><a href="https://pudding.cool/2017/02/new-slang/">Where Slang Comes From</a>: Exploring the emergence of slang over time</li>
 </ul></li>
-<li>Complete <a href="./project.html#milestone-1">Milestone 1</a> of the <a href="./project.html">course project</a>. (Brainstorming ideas and data sources). Put this information in a <code># Project</code> section that you add to the end of your <code>03-adv-maps.qmd</code>.</li>
+<li>Visualizations from the New York Times:
+<ul>
+<li><a href="https://www.informationisbeautifulawards.com/news/118-the-nyt-s-best-data-visualizations-of-the-year">The Best NYT Visualizations of 2015</a></li>
+<li><a href="https://www.nytimes.com/interactive/2022/12/28/us/2022-year-in-graphics.html">2022: The Year in Visual Stories and Graphics</a></li>
+</ul></li>
 </ul>
 </section>
-<section id="optional" class="level1">
-<h1>Optional</h1>
-<p>Participate in the most recent <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-09-12/readme.md">Tidy Tuesday</a> challenge.</p>
+<section id="applying-the-guidelines-to-your-project" class="level2">
+<h2 class="anchored" data-anchor-id="applying-the-guidelines-to-your-project">Applying the guidelines to your project</h2>
+<p><strong>Part 1:</strong> Identify a key visualization from your project–one that communicates a finding that you really want your audience to remember. Display this original plot in the code chunk below. If you pick the same plot as your teammates, that’s fine. But please work on improvements to the visualization <strong>on your own</strong> so that you can best develop your own skills.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code for your original project visualization</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Part 2:</strong> Evaluate your original visualization in terms of the 6 guidelines. Write a paragraph in the space below explaining which guidelines you want to use to improve your plot and why.</p>
+<blockquote class="blockquote">
+<p>Write your evaluation here.</p>
+</blockquote>
+<p><strong>Part 3:</strong> Implement the changes that you described in Part 2, and display your improved plot below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Code for improved project visualization</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br><br></p>
+</section>
+</section>
+<section id="practice-recreating-visualizations" class="level1">
+<h1>Practice: recreating visualizations</h1>
+<p><strong><em>Will add exercises by Thursday</em></strong></p>
+<p><br><br></p>
+</section>
+<section id="practice-string-wrangling-and-regular-expressions" class="level1">
+<h1>Practice: string wrangling and regular expressions</h1>
+<p>Bookmark the <a href="https://github.com/rstudio/cheatsheets/blob/main/strings.pdf">strings cheatsheet</a> and the <a href="https://github.com/rstudio/cheatsheets/blob/main/regex.pdf">regular expressions cheatsheet</a></p>
+<ul>
+<li>Try any number of the exercises in the <a href="https://r4ds.hadley.nz/regexps">Regular Expressions chapter</a> of R4DS.</li>
+<li>Try any number of the Puzzles and Challenges at <a href="https://regexcrossword.com/" class="uri">https://regexcrossword.com/</a>. (Start with the Tutorial.)
+<ul>
+<li>As you work on these,</li>
+</ul></li>
+</ul>
+<p><br><br></p>
+</section>
+<section id="practice-maps" class="level1">
+<h1>Practice: maps</h1>
+<p>The following TidyTuesday datasets contain spatial information:</p>
+<ul>
+<li><a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-07-04/readme.md">Historical Markers</a></li>
+<li><a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-09-20">Wastewater Plants</a></li>
+</ul>
+<p><br><br></p>
+</section>
+<section id="mini-project-mac-schedule-explorer" class="level1">
+<h1>Mini-project: Mac schedule explorer</h1>
+<p><strong>Part 1:</strong> Navigate to the <a href="https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=202430">Spring 2024 Course Schedule</a>.</p>
+<ul>
+<li><strong>Google Chrome users:</strong> Use Command-S, Ctrl-S, or File &gt; Save Page As… to bring up options for saving the webpage. For Format, choose <strong>Webpage, Complete</strong>, and save this file as <code>spring24_schedule.html</code>.</li>
+<li><strong>All other browsers:</strong> Navigate to <a href="">Moodle</a> to download the webpage HTML source that the instructor downloaded.
+<ul>
+<li>Note: Safari has a Web Archive format, but unfortunately, the file type can’t be read by <code>rvest</code>.</li>
+</ul></li>
+</ul>
+<p><strong>Part 2:</strong> Use <code>rvest</code> to scrape the following data for all courses:</p>
+<ul>
+<li>Course ID (e.g., STAT 212-01)</li>
+<li>Course title (e.g., Intermediate Data Science)</li>
+<li>Meeting days (e.g., T R)</li>
+<li>Meeting times (e.g., 9:40 - 11:10 am)</li>
+<li>Instructor name (e.g., Leslie Myint)</li>
+<li>Available seats</li>
+<li>Max enrollment</li>
+</ul>
+<p><strong>Part 3:</strong> Use any data wrangling tools necessary to clean this data so that the expected data is properly formatted.</p>
+<p><strong>Part 4:</strong> Scrape the following information from all courses in the <a href="https://catalog.macalester.edu/content.php?catoid=26&amp;navoid=2523">Mac course catalog</a>: course ID, course title, and URL for the catalog description for the course. Combine this information with your cleaned course schedule dataset.</p>
+<p><strong>Part 5:</strong> Create a Shiny app that allows the user to explore/filter the schedule by whatever criteria you see fit. Include functionality to allow users to navigate to course descriptions in the Mac course catalog. Use your expertise as a student to design this app in a useful way for students!</p>
+</section>
+<section id="new-topics-to-explore" class="level1">
+<h1>New topics to explore</h1>
+<ul>
+<li>Advanced interactivity
+<ul>
+<li>In shiny: reactivity–point to cheat sheet and Posit tutorials</li>
+<li>plotly
+<ul>
+<li>animations in plotly</li>
+</ul></li>
+<li>htmlwidgets</li>
+</ul></li>
+<li>Text Mining with R: https://www.tidytextmining.com/</li>
+<li>Tableau</li>
+<li>Python</li>
+</ul>
 
 
 </section>

@@ -1,0 +1,27 @@
+---
+title: "Homework 6"
+sidebar: false
+---
+
+<!-- NEED TO UPDATE! -->
+
+# Required parts
+
+Due Wednesday, November 8 by midnight [on Moodle]().
+
+
+Put this work in a new `homework6.qmd` document. Update the header information in your `.qmd` to look like this:
+
+```yaml
+title: "Homework 5: Functions"
+author: "YOUR NAME"
+format: 
+  html:
+    self-contained: true
+```
+
+When you render this `.qmd`, this will create an HTML file in which images are embedded. Submit this HTML file on Moodle.
+
+# Optional
+
+Participate in the most recent [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-10-10/readme.md) challenge.
