@@ -16,7 +16,7 @@ As part of **Homework 6** (due next Wed 10/8), the only required part of these a
 Section 4.2.1 [Guidelines for good plots](https://rdpeng.github.io/RProgDA/customizing-ggplot2-plots.html) presents 6 guidelines for creating great plots.
 
 - **In class:** Skim through the examples for 6 guidelines to get a feel for how the guidelines are implemented.
-- **Out of class:** Read through [Guidelines for good plots](https://rdpeng.github.io/RProgDA/customizing-ggplot2-plots.html) in detail, and complete the following exercise.
+- **Out of class:** Read through [Guidelines for good plots](https://rdpeng.github.io/RProgDA/customizing-ggplot2-plots.html) in detail, and complete the following exercises in the following sections.
 
 ## Resources for sparking creativity and imagination in your plots
 
@@ -62,7 +62,30 @@ Section 4.2.1 [Guidelines for good plots](https://rdpeng.github.io/RProgDA/custo
 
 # Practice: recreating visualizations
 
-***Will add exercises by Thursday***
+**Context 1:** In the New York Times article [Vast New Study Shows a Key to Reducing Poverty: More Friendships Between Rich and Poor](https://www.nytimes.com/interactive/2022/08/01/upshot/rich-poor-friendships.html), jump down to the section titled "A culture of success". Recreate the "Where People Make Friends, By Income Rank" visualization for the "In College" graph. You can generate some example data with the following code:
+
+```{r eval=FALSE}
+# Each case represents a person
+# income: This person's income in dollars
+# friend_from_college: An indicator of whether this person made most of their current friends in college (1 = yes, 0 = no)
+set.seed(62)
+friend_data <- tibble(
+    income = rnorm(n = 1000, mean = rep(seq(from = 40, by = 10, length.out = 20), each = 50)*1000, sd = 1000),
+    friend_from_college = rbinom(n = 1000, size = 1, prob = rep(seq(from = 0.01, to = 0.7, length.out = 20), each = 50))
+)
+```
+
+
+**Context 2:** Recreate any of the visualizations in The Pudding's [Film or Digital?](https://pudding.cool/2018/08/filmordigital/) article using the data available [here](https://github.com/the-pudding/data/tree/master/filmordigital). Suggested plots to recreate:
+
+- The first bar graph ("MEDIUMS OF TOP MOVIES")
+- The square grid graphs ("MEDIUMS OF TOP MOVIES - Broken down by genre")
+- The final dot plot ("MEDIUMS OF TOP MOVIES BY BUDGET RANGE (in logarithmic scale)")
+
+**Context 3:** Recreate any of the visualizations in The Pudding's [When Women Make Headlines](https://pudding.cool/2022/02/women-in-headlines/) article using the data available [here](https://github.com/the-pudding/data/tree/master/women-in-headlines). Suggested plots to recreate:
+
+- The first plot(s) with the title and subtitle "Words used in headlines about women - Arranged by country and ordered by frequency". Create different plots highlighting different words.
+- The horizontal line plot with black and green dots ("Most outlets sensationalize headlines about women more than other topics - Comparing 65 news outlets over 10 years")
 
 
 
@@ -90,12 +113,20 @@ Bookmark the [strings cheatsheet](https://github.com/rstudio/cheatsheets/blob/ma
 
 # Practice: maps
 
-***Will add exercises by Thursday***
-
 The following TidyTuesday datasets contain spatial information:
 
 - [Historical Markers](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-07-04/readme.md)
 - [Wastewater Plants](https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-09-20)
+
+Use each of these datasets to create maps within the United States that display the locations of these sites (e.g., nationwide or for a particular state).
+
+1. The first step will be to display the map background. Review the use of the `tidycensus::get_acs()` function from the [setup of Homework 2](03-adv-maps.qmd#open-ended-exercise-homework). The `tidycensus` package is an API wrapper package and provides tools for accessing geographic and census information in the United States. The `get_acs()` function gets information from the American Community Survey, a regular nationwide survey that provides information on a large range of demographic and livelihood indicators at different geographic levels (i.e., census tracts, counties, states).
+    - Look at the documentation by entering `?tidycensus::get_acs` in the Console.
+    - If you want to make a choropleth map and color geographic regions by census variables, it will be useful to look at the [Seaching for variables](https://walker-data.com/tidycensus/articles/basic-usage.html#searching-for-variables) documentation from the `tidycensus` package. This will help with the `variables` argument in the `get_acs()` function.
+    
+2. Review the usage of the `st_as_sf()` function from [Homework 2](03-adv-maps.qmd#exercise-joining-and-aggregation) as well as the `st_crs()` function. Use these functions to convert the historical markers and wastewater plants datasets into `sf` objects.
+
+3. Continue to reference your work from Homework 2 as you make your maps. Practice fine tuning labels and color scales on your map.
 
 
 
@@ -110,7 +141,7 @@ The following TidyTuesday datasets contain spatial information:
 **Part 1:** Navigate to the [Spring 2024 Course Schedule](https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=202430).
 
 - **Google Chrome users:** Use Command-S, Ctrl-S, or File > Save Page As... to bring up options for saving the webpage. For Format, choose **Webpage, Complete**, and save this file as `spring24_schedule.html`.
-- **All other browsers:** Navigate to [Moodle]() to download the webpage HTML source that the instructor downloaded.
+- **All other browsers:** Navigate to [Moodle](https://moodle.macalester.edu/mod/resource/view.php?id=46803) to download the webpage HTML source that the instructor downloaded.
     - Note: Safari has a Web Archive format, but unfortunately, the file type can't be read by `rvest`.
 
 **Part 2:** Use `rvest` to scrape the following data for all courses:
@@ -139,11 +170,9 @@ The following TidyTuesday datasets contain spatial information:
 
 # New topics to explore
 
-***Will fill this out more by Thursday***
-
 - Advanced interactivity
-    - Shiny: reactivity--point to cheat sheet and Posit tutorials
-    - `plotly`: animations in plotly
+    - Shiny: Check out [this series](https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/reactive-flow.html) of tutorials to learn more about reactivity
+    - `plotly`: Check out this [tutorial](https://plotly-r.com/linking-views-with-shiny) that explains how `plotly` graphics and Shiny can work together
     - [`htmlwidgets`](https://www.htmlwidgets.org/)
 
 - Text Mining with R: https://www.tidytextmining.com/

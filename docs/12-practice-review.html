@@ -229,6 +229,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./homework5.html" rel="" target="">
  <span class="dropdown-text">Homework 5</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./homework6.html" rel="" target="">
+ <span class="dropdown-text">Homework 6</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -296,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Section 4.2.1 <a href="https://rdpeng.github.io/RProgDA/customizing-ggplot2-plots.html">Guidelines for good plots</a> presents 6 guidelines for creating great plots.</p>
 <ul>
 <li><strong>In class:</strong> Skim through the examples for 6 guidelines to get a feel for how the guidelines are implemented.</li>
-<li><strong>Out of class:</strong> Read through <a href="https://rdpeng.github.io/RProgDA/customizing-ggplot2-plots.html">Guidelines for good plots</a> in detail, and complete the following exercise.</li>
+<li><strong>Out of class:</strong> Read through <a href="https://rdpeng.github.io/RProgDA/customizing-ggplot2-plots.html">Guidelines for good plots</a> in detail, and complete the following exercises in the following sections.</li>
 </ul>
 <section id="resources-for-sparking-creativity-and-imagination-in-your-plots" class="level2">
 <h2 class="anchored" data-anchor-id="resources-for-sparking-creativity-and-imagination-in-your-plots">Resources for sparking creativity and imagination in your plots</h2>
@@ -338,7 +342,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="practice-recreating-visualizations" class="level1">
 <h1>Practice: recreating visualizations</h1>
-<p><strong><em>Will add exercises by Thursday</em></strong></p>
+<p><strong>Context 1:</strong> In the New York Times article <a href="https://www.nytimes.com/interactive/2022/08/01/upshot/rich-poor-friendships.html">Vast New Study Shows a Key to Reducing Poverty: More Friendships Between Rich and Poor</a>, jump down to the section titled “A culture of success”. Recreate the “Where People Make Friends, By Income Rank” visualization for the “In College” graph. You can generate some example data with the following code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Each case represents a person</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># income: This person's income in dollars</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># friend_from_college: An indicator of whether this person made most of their current friends in college (1 = yes, 0 = no)</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">62</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>friend_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">income =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">1000</span>, <span class="at">mean =</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">40</span>, <span class="at">by =</span> <span class="dv">10</span>, <span class="at">length.out =</span> <span class="dv">20</span>), <span class="at">each =</span> <span class="dv">50</span>)<span class="sc">*</span><span class="dv">1000</span>, <span class="at">sd =</span> <span class="dv">1000</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">friend_from_college =</span> <span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">1000</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fu">rep</span>(<span class="fu">seq</span>(<span class="at">from =</span> <span class="fl">0.01</span>, <span class="at">to =</span> <span class="fl">0.7</span>, <span class="at">length.out =</span> <span class="dv">20</span>), <span class="at">each =</span> <span class="dv">50</span>))</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Context 2:</strong> Recreate any of the visualizations in The Pudding’s <a href="https://pudding.cool/2018/08/filmordigital/">Film or Digital?</a> article using the data available <a href="https://github.com/the-pudding/data/tree/master/filmordigital">here</a>. Suggested plots to recreate:</p>
+<ul>
+<li>The first bar graph (“MEDIUMS OF TOP MOVIES”)</li>
+<li>The square grid graphs (“MEDIUMS OF TOP MOVIES - Broken down by genre”)</li>
+<li>The final dot plot (“MEDIUMS OF TOP MOVIES BY BUDGET RANGE (in logarithmic scale)”)</li>
+</ul>
+<p><strong>Context 3:</strong> Recreate any of the visualizations in The Pudding’s <a href="https://pudding.cool/2022/02/women-in-headlines/">When Women Make Headlines</a> article using the data available <a href="https://github.com/the-pudding/data/tree/master/women-in-headlines">here</a>. Suggested plots to recreate:</p>
+<ul>
+<li>The first plot(s) with the title and subtitle “Words used in headlines about women - Arranged by country and ordered by frequency”. Create different plots highlighting different words.</li>
+<li>The horizontal line plot with black and green dots (“Most outlets sensationalize headlines about women more than other topics - Comparing 65 news outlets over 10 years”)</li>
+</ul>
 <p><br><br></p>
 </section>
 <section id="practice-string-wrangling-and-regular-expressions" class="level1">
@@ -355,12 +380,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="practice-maps" class="level1">
 <h1>Practice: maps</h1>
-<p><strong><em>Will add exercises by Thursday</em></strong></p>
 <p>The following TidyTuesday datasets contain spatial information:</p>
 <ul>
 <li><a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-07-04/readme.md">Historical Markers</a></li>
 <li><a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-09-20">Wastewater Plants</a></li>
 </ul>
+<p>Use each of these datasets to create maps within the United States that display the locations of these sites (e.g., nationwide or for a particular state).</p>
+<ol type="1">
+<li><p>The first step will be to display the map background. Review the use of the <code>tidycensus::get_acs()</code> function from the <a href="./03-adv-maps.html#open-ended-exercise-homework">setup of Homework 2</a>. The <code>tidycensus</code> package is an API wrapper package and provides tools for accessing geographic and census information in the United States. The <code>get_acs()</code> function gets information from the American Community Survey, a regular nationwide survey that provides information on a large range of demographic and livelihood indicators at different geographic levels (i.e., census tracts, counties, states).</p>
+<ul>
+<li>Look at the documentation by entering <code>?tidycensus::get_acs</code> in the Console.</li>
+<li>If you want to make a choropleth map and color geographic regions by census variables, it will be useful to look at the <a href="https://walker-data.com/tidycensus/articles/basic-usage.html#searching-for-variables">Seaching for variables</a> documentation from the <code>tidycensus</code> package. This will help with the <code>variables</code> argument in the <code>get_acs()</code> function.</li>
+</ul></li>
+<li><p>Review the usage of the <code>st_as_sf()</code> function from <a href="./03-adv-maps.html#exercise-joining-and-aggregation">Homework 2</a> as well as the <code>st_crs()</code> function. Use these functions to convert the historical markers and wastewater plants datasets into <code>sf</code> objects.</p></li>
+<li><p>Continue to reference your work from Homework 2 as you make your maps. Practice fine tuning labels and color scales on your map.</p></li>
+</ol>
 <p><br><br></p>
 </section>
 <section id="mini-project-mac-schedule-explorer" class="level1">
@@ -368,7 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Part 1:</strong> Navigate to the <a href="https://macadmsys.macalester.edu/macssb/customPage/page/classSchedule?term=202430">Spring 2024 Course Schedule</a>.</p>
 <ul>
 <li><strong>Google Chrome users:</strong> Use Command-S, Ctrl-S, or File &gt; Save Page As… to bring up options for saving the webpage. For Format, choose <strong>Webpage, Complete</strong>, and save this file as <code>spring24_schedule.html</code>.</li>
-<li><strong>All other browsers:</strong> Navigate to <a href="">Moodle</a> to download the webpage HTML source that the instructor downloaded.
+<li><strong>All other browsers:</strong> Navigate to <a href="https://moodle.macalester.edu/mod/resource/view.php?id=46803">Moodle</a> to download the webpage HTML source that the instructor downloaded.
 <ul>
 <li>Note: Safari has a Web Archive format, but unfortunately, the file type can’t be read by <code>rvest</code>.</li>
 </ul></li>
@@ -395,12 +429,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="new-topics-to-explore" class="level1">
 <h1>New topics to explore</h1>
-<p><strong><em>Will fill this out more by Thursday</em></strong></p>
 <ul>
 <li>Advanced interactivity
 <ul>
-<li>Shiny: reactivity–point to cheat sheet and Posit tutorials</li>
-<li><code>plotly</code>: animations in plotly</li>
+<li>Shiny: Check out <a href="https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/reactive-flow.html">this series</a> of tutorials to learn more about reactivity</li>
+<li><code>plotly</code>: Check out this <a href="https://plotly-r.com/linking-views-with-shiny">tutorial</a> that explains how <code>plotly</code> graphics and Shiny can work together</li>
 <li><a href="https://www.htmlwidgets.org/"><code>htmlwidgets</code></a></li>
 </ul></li>
 <li>Text Mining with R: https://www.tidytextmining.com/</li>

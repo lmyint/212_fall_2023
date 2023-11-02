@@ -3,17 +3,17 @@ title: "Homework 6"
 sidebar: false
 ---
 
-<!-- NEED TO UPDATE! -->
-
 # Required parts
 
-Due Wednesday, November 8 by midnight [on Moodle]().
+Due Wednesday, November 8 by midnight [on Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=47049).
 
+- Complete all exercises in the "Improving your data visualizations" section of our [review activity](12-practice-review.qmd).
+- If you would like feedback on any other part of our [review activity](12-practice-review.qmd), you can also submit this work. **Please write 1-2 sentences in each section of additional work describing what specifically you would like feedback on.**
 
-Put this work in a new `homework6.qmd` document. Update the header information in your `.qmd` to look like this:
+Put this work in a new `.qmd` document. Update the header information in your `.qmd` to look like this:
 
 ```yaml
-title: "Homework 5: Functions"
+title: "Homework 6"
 author: "YOUR NAME"
 format: 
   html:
@@ -21,6 +21,8 @@ format:
 ```
 
 When you render this `.qmd`, this will create an HTML file in which images are embedded. Submit this HTML file on Moodle.
+
+If you decided to write a Shiny app for the [mini-project](12-practice-review.qmd#mini-project-mac-schedule-explorer) and want feedback, you can also submit your `app.R` file.
 
 # Optional
 

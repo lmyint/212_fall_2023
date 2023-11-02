@@ -139,7 +139,7 @@ Guiding questions for the readings are available at the bottom of this page.
       Helpful readings (read before or after class): <a href="https://cran.r-project.org/web/packages/rvest/vignettes/rvest.html">rvest vignette</a> <br>
     </td>
     
-    <td class="topleft"></td>
+    <td class="topleft">Turn in <a href="https://lmyint.github.io/212_fall_2023/homework5.html">HW5</a>.</td>
   </tr>
   <!----------------------------------------------------------->
   
@@ -147,9 +147,8 @@ Guiding questions for the readings are available at the bottom of this page.
   <tr>
     <td class="topleft">8</td>
     <td class="topleft">
-      <b>10/24: Project feedback & styling your personal site with HTML and CSS</b> <br>
-      <span class="project">Project progress presentation #1: Your team will present a 5-7 minute progress report and plan for next steps</span> <br>
-      After project presentations, we will learn a bit more about HTML and CSS so that you can style your personal websites.
+      <b>10/24: Project feedback</b> <br>
+      <span class="project">Project progress presentation #1: Your team will present a 5-7 minute progress report and plan for next steps</span>
     </td>
     
     <td class="topleft">
@@ -164,15 +163,14 @@ Guiding questions for the readings are available at the bottom of this page.
   <tr>
     <td class="topleft">9</td>
     <td class="topleft">
-      <b>10/31: Data acquisition: databases</b> <br>
-      Helpful readings (read before or after class): <a href="https://r4ds.hadley.nz/databases.html">R4DS Chapter 22 (Databases)</a>.
+      <b>10/31: Review and practice (Day 1)</b>
     </td>
     
     <td class="topleft">
-      <b>11/2: Causal inference and machine learning in data science</b>
+      <b>11/2: Review and practice (Day 2)</b>
     </td>
     
-    <td class="topleft"></td>
+    <td class="topleft">Work on <a href="https://lmyint.github.io/212_fall_2023/12-practice-review.html">review activities</a> as part of <a href="https://lmyint.github.io/212_fall_2023/homework5.html">HW6</a>.</td>
   </tr>
   <!----------------------------------------------------------->
   
@@ -180,12 +178,13 @@ Guiding questions for the readings are available at the bottom of this page.
   <tr>
     <td class="topleft">10</td>
     <td class="topleft">
-      <b>11/7: Missing data: wrangling and missingness mechanisms</b> <br>
-      Helpful readings (read before or after class): 
+      <b>11/7: Data acquisition: databases</b> <br>
+      Required reading before class: <a href="https://r4ds.hadley.nz/databases.html">R4DS Chapter 22 (Databases)</a>.
     </td>
     
     <td class="topleft">
-      <b>11/9: Missing data: imputation</b>
+      <b>11/9: Causal inference and machine learning in data science</b> <br>
+      Required reading before class: TBD
     </td>
     
     <td class="topleft"></td>
@@ -196,12 +195,43 @@ Guiding questions for the readings are available at the bottom of this page.
   <tr>
     <td class="topleft">11</td>
     <td class="topleft">
-      <b>11/14: Likely Python, GitHub, and topics of your choosing from this poitn onward</b> <br>
+      <b>11/14: Missing data: wrangling and missingness mechanisms</b> <br>
+      Required reading before class: TBD
     </td>
     
     <td class="topleft">
-      <b>11/16: Project presentations</b> <br>
+      <b>11/16: Missing data: imputation</b> <br>
+      Required reading before class: TBD
+    </td>
+    
+    <td class="topleft"></td>
+  </tr>
+  <!----------------------------------------------------------->
+  
+  
+  <tr>
+    <td class="topleft">
+      <b>11/21: Project presentations</b> <br>
       <span class="project">Project progress presentation #2: Your team will give a 10 minute presentation with intermediate results for 2 research questions.</span>
+    </td>
+    
+    <td class="topleft">
+      <b>11/23: No class - Thanksgiving Break 🦃</b>
+    </td>
+    
+    <td class="topleft"></td>
+  </tr>
+  <!----------------------------------------------------------->
+  
+  
+  <tr>
+    <td class="topleft">12</td>
+    <td class="topleft">
+      <b>11/28: Topics of your choosing from this point onwards (e.g., Python, GitHub, text analysis)</b>
+    </td>
+    
+    <td class="topleft">
+      <b>11/30: Topics of your choosing</b>
     </td>
     
     <td class="topleft"></td>
