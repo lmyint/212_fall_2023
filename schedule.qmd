@@ -183,8 +183,7 @@ Guiding questions for the readings are available at the bottom of this page.
     </td>
     
     <td class="topleft">
-      <b>11/9: Causal inference and machine learning in data science</b> <br>
-      Required reading before class: TBD
+      <b>11/9: Data acquisition: databases (continued)</b>
     </td>
     
     <td class="topleft"></td>
@@ -210,6 +209,7 @@ Guiding questions for the readings are available at the bottom of this page.
   
   
   <tr>
+    <td class="topleft">12</td>
     <td class="topleft">
       <b>11/21: Project presentations</b> <br>
       <span class="project">Project progress presentation #2: Your team will give a 10 minute presentation with intermediate results for 2 research questions.</span>
@@ -225,7 +225,7 @@ Guiding questions for the readings are available at the bottom of this page.
   
   
   <tr>
-    <td class="topleft">12</td>
+    <td class="topleft">13</td>
     <td class="topleft">
       <b>11/28: Topics of your choosing from this point onwards (e.g., Python, GitHub, text analysis)</b>
     </td>
@@ -245,6 +245,21 @@ Guiding questions for the readings are available at the bottom of this page.
 # Guiding Questions
 
 Do your best to answer guiding questions before the indicated class period. Responses don't need to be turned in, but answering helps you prepare effectively for class.
+
+## 11/7: Databases
+
+As you read the [Databases](https://r4ds.hadley.nz/databases.html) chapter of R4DS, answer the following questions:
+
+- What are the differences between client-server, cloud, and in-process database management systems (DBMSs)?
+- Make note of how the following functions are used in a database workflow. What does each function do? What inputs/arguments does each function require? Create a set of notes that shows the sequence of these functions in a database workflow.
+    - `DBI::dbConnect()`
+    - `DBI::dbReadTable()`
+    - `DBI::dbGetQuery()`
+    - `tbl()`
+    - `collect()`
+- Make note of how the `showQuery()` function can help you learn SQL (structured query language) by translating `dplyr` code into SQL.
+    - As you read Section 22.5 (SQL), create notes that relate parts of SQL queries to `dplyr` functions.
+
 
 ## 10/19: Web scraping
 

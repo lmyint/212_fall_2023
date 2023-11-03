@@ -262,6 +262,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#course-calendar" id="toc-course-calendar" class="nav-link active" data-scroll-target="#course-calendar">Course Calendar</a></li>
   <li><a href="#guiding-questions" id="toc-guiding-questions" class="nav-link" data-scroll-target="#guiding-questions">Guiding Questions</a>
   <ul class="collapse">
+  <li><a href="#databases" id="toc-databases" class="nav-link" data-scroll-target="#databases">11/7: Databases</a></li>
   <li><a href="#web-scraping" id="toc-web-scraping" class="nav-link" data-scroll-target="#web-scraping">10/19: Web scraping</a></li>
   <li><a href="#interactive-visualization" id="toc-interactive-visualization" class="nav-link" data-scroll-target="#interactive-visualization">9/19: Interactive visualization</a></li>
   <li><a href="#advanced-map-visualization" id="toc-advanced-map-visualization" class="nav-link" data-scroll-target="#advanced-map-visualization">9/12: Advanced map visualization</a></li>
@@ -469,8 +470,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </td>
     
     <td class="topleft">
-      <b>11/9: Causal inference and machine learning in data science</b> <br>
-      Required reading before class: TBD
+      <b>11/9: Data acquisition: databases (continued)</b>
     </td>
     
     <td class="topleft"></td>
@@ -496,6 +496,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   
   <tr>
+    <td class="topleft">12</td>
     <td class="topleft">
       <b>11/21: Project presentations</b> <br>
       <span class="project">Project progress presentation #2: Your team will give a 10 minute presentation with intermediate results for 2 research questions.</span>
@@ -511,7 +512,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
   
   <tr>
-    <td class="topleft">12</td>
+    <td class="topleft">13</td>
     <td class="topleft">
       <b>11/28: Topics of your choosing from this point onwards (e.g., Python, GitHub, text analysis)</b>
     </td>
@@ -529,6 +530,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="guiding-questions" class="level1">
 <h1>Guiding Questions</h1>
 <p>Do your best to answer guiding questions before the indicated class period. Responses don’t need to be turned in, but answering helps you prepare effectively for class.</p>
+<section id="databases" class="level2">
+<h2 class="anchored" data-anchor-id="databases">11/7: Databases</h2>
+<p>As you read the <a href="https://r4ds.hadley.nz/databases.html">Databases</a> chapter of R4DS, answer the following questions:</p>
+<ul>
+<li>What are the differences between client-server, cloud, and in-process database management systems (DBMSs)?</li>
+<li>Make note of how the following functions are used in a database workflow. What does each function do? What inputs/arguments does each function require? Create a set of notes that shows the sequence of these functions in a database workflow.
+<ul>
+<li><code>DBI::dbConnect()</code></li>
+<li><code>DBI::dbReadTable()</code></li>
+<li><code>DBI::dbGetQuery()</code></li>
+<li><code>tbl()</code></li>
+<li><code>collect()</code></li>
+</ul></li>
+<li>Make note of how the <code>showQuery()</code> function can help you learn SQL (structured query language) by translating <code>dplyr</code> code into SQL.
+<ul>
+<li>As you read Section 22.5 (SQL), create notes that relate parts of SQL queries to <code>dplyr</code> functions.</li>
+</ul></li>
+</ul>
+</section>
 <section id="web-scraping" class="level2">
 <h2 class="anchored" data-anchor-id="web-scraping">10/19: Web scraping</h2>
 <p>As you read the <code>rvest</code> package <a href="https://cran.r-project.org/web/packages/rvest/vignettes/rvest.html">vignette</a>, answer the following questions:</p>
