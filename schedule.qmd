@@ -248,6 +248,8 @@ Do your best to answer guiding questions before the indicated class period. Resp
 
 ## 11/7: Databases
 
+Before class on Tuesday, install the `DBI` and `duckdb` packages. Post in the #questions channel on Slack if you run into issues.
+
 As you read the [Databases](https://r4ds.hadley.nz/databases.html) chapter of R4DS, answer the following questions:
 
 - What are the differences between client-server, cloud, and in-process database management systems (DBMSs)?
