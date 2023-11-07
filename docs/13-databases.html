@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STAT/COMP 212 - Data acquisition: Databases and SQL</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">STAT/COMP 212</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./schedule.html" rel="" target="">
+ <span class="menu-text">Schedule</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-syallbus" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Syallbus</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-syallbus">    
+        <li>
+    <a class="dropdown-item" href="./syllabus_final.html" rel="" target="">
+ <span class="dropdown-text">Final Syllabus</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./syllabus_prelim.html" rel="" target="">
+ <span class="dropdown-text">Preliminary Syllabus</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-activities" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Activities</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-activities">    
+        <li>
+    <a class="dropdown-item" href="./01-introductions.html" rel="" target="">
+ <span class="dropdown-text">Welcome to the course!</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./02-adv-ggplot.html" rel="" target="">
+ <span class="dropdown-text">Advanced Data Visualization in ggplot2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./03-adv-maps.html" rel="" target="">
+ <span class="dropdown-text">Advanced Spatial Visualizations</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./workflow_files_rstudio.html" rel="" target="">
+ <span class="dropdown-text">Workflow: Files and RStudio setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./04-interactive-viz.html" rel="" target="">
+ <span class="dropdown-text">Interactive visualization</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./05-data-types-1.html" rel="" target="">
+ <span class="dropdown-text">Wrangling: numerics, logicals, dates</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./06-data-types-2.html" rel="" target="">
+ <span class="dropdown-text">Wrangling: strings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./07-data-types-3.html" rel="" target="">
+ <span class="dropdown-text">Wrangling: factors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./08-functions-control-structs.html" rel="" target="">
+ <span class="dropdown-text">Functions and control structures</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./09-iteration.html" rel="" target="">
+ <span class="dropdown-text">Loops and iteration</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./10-apis.html" rel="" target="">
+ <span class="dropdown-text">Data acquisition: APIs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./11-scraping.html" rel="" target="">
+ <span class="dropdown-text">Data acquisition: Web scraping</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./12-practice-review.html" rel="" target="">
+ <span class="dropdown-text">Practicing our tools so-far; mini-project</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./13-databases.html" rel="" target="">
+ <span class="dropdown-text">Data acquisition: Databases and SQL</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-homework" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Homework</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-homework">    
+        <li>
+    <a class="dropdown-item" href="./homework0.html" rel="" target="">
+ <span class="dropdown-text">Homework 0</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework1.html" rel="" target="">
+ <span class="dropdown-text">Homework 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework2.html" rel="" target="">
+ <span class="dropdown-text">Homework 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework3.html" rel="" target="">
+ <span class="dropdown-text">Homework 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework4.html" rel="" target="">
+ <span class="dropdown-text">Homework 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./reflection1.html" rel="" target="">
+ <span class="dropdown-text">Reflection 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework5.html" rel="" target="">
+ <span class="dropdown-text">Homework 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./homework6.html" rel="" target="">
+ <span class="dropdown-text">Homework 6</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./project.html" rel="" target="">
+ <span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tech_setup.html" rel="" target="">
+ <span class="menu-text">Tech Setup</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#introduction-to-databases" id="toc-introduction-to-databases" class="nav-link" data-scroll-target="#introduction-to-databases">Introduction to databases</a></li>
+  <li><a href="#connecting-to-a-database-with-dbi" id="toc-connecting-to-a-database-with-dbi" class="nav-link" data-scroll-target="#connecting-to-a-database-with-dbi">Connecting to a database with <code>DBI</code></a></li>
+  <li><a href="#warming-up-to-sql-with-dplyr" id="toc-warming-up-to-sql-with-dplyr" class="nav-link" data-scroll-target="#warming-up-to-sql-with-dplyr">Warming up to SQL with <code>dplyr</code></a></li>
+  <li><a href="#sql-practice-stack-exchange-data-explorer" id="toc-sql-practice-stack-exchange-data-explorer" class="nav-link" data-scroll-target="#sql-practice-stack-exchange-data-explorer">SQL Practice: Stack Exchange Data Explorer</a>
+  <ul class="collapse">
+  <li><a href="#select-queries" id="toc-select-queries" class="nav-link" data-scroll-target="#select-queries">Select Queries</a></li>
+  <li><a href="#sql-summarization" id="toc-sql-summarization" class="nav-link" data-scroll-target="#sql-summarization">SQL Summarization</a></li>
+  <li><a href="#sql-joins" id="toc-sql-joins" class="nav-link" data-scroll-target="#sql-joins">SQL Joins</a></li>
+  <li><a href="#additional-exercises" id="toc-additional-exercises" class="nav-link" data-scroll-target="#additional-exercises">Additional Exercises</a></li>
+  </ul></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Data acquisition: Databases and SQL</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(duckdb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="learning-goals" class="level1">
+<h1>Learning goals</h1>
+<ul>
+<li>Develop comfort in composing SQL queries</li>
+<li>See the connections between <code>tidyverse</code> verbs and SQL clauses</li>
+</ul>
+<p><br></p>
+<p>You can download a template Quarto file to start from <a href="activity_templates/13-databases.qmd">here</a>. Save this template within the following directory structure:</p>
+<ul>
+<li><code>your_course_folder</code>
+<ul>
+<li><code>databases</code>
+<ul>
+<li><code>code</code>
+<ul>
+<li><code>13-databases.qmd</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<p><br><br><br></p>
+</section>
+<section id="introduction-to-databases" class="level1">
+<h1>Introduction to databases</h1>
+<p>If you find yourself analyzing data within a medium or large organization, you will probably draw on data stored within a centralized <a href="https://en.wikipedia.org/wiki/Data_warehouse">data warehouse</a>.</p>
+<p>Data warehouses contain vast collections of information–far more than a desktop or laptop computer can easily analyze. These warehouses typically rely on structured data repositories called <strong>relational databases</strong> (also often called <strong>SQL databases</strong> because of the use of structured query language (SQL) to access the data).</p>
+<p><br><br><br></p>
+</section>
+<section id="connecting-to-a-database-with-dbi" class="level1">
+<h1>Connecting to a database with <code>DBI</code></h1>
+<p>The <code>DBI</code> package (<strong>d</strong>ata<strong>b</strong>ase <strong>i</strong>nterface) provides general tools for interacting with databases from R. It is also common for data scientists to interact with databases directly by writing SQL queries. We’ll talk about this in the next section.</p>
+<p>For now, we’ll use <code>DBI</code> to connect with an <strong>in-process</strong> database (duckdb), one that runs locally on your computer. A nice feature of duckdb is that even if your dataset is huge, duckdb can work with it very quickly.</p>
+<p>We can set up a database connection with <code>dbConnect()</code> and initialize a temporary database with <code>duckdb()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> DBI<span class="sc">::</span><span class="fu">dbConnect</span>(duckdb<span class="sc">::</span><span class="fu">duckdb</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What exactly is this <code>con</code> object?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "duckdb_connection"
+attr(,"package")
+[1] "duckdb"</code></pre>
+</div>
+</div>
+<p>In a real project we would use <code>duckdb_read_csv()</code> to store data directly into the duckdb database without first having to read it into R. Here, we will be using the datasets from the <code>nycflights13</code> package, and the <code>dbplyr</code> package provides a shortcut function for loading these datasets into the duckdb database:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This takes 1-2 minutes</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>dbplyr<span class="sc">::</span><span class="fu">copy_nycflights13</span>(con)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Creating table: airlines</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Creating table: airports</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Creating table: flights</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Creating table: planes</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Creating table: weather</code></pre>
+</div>
+</div>
+<p>We can use <code>tbl()</code> to create connections individually to the <code>flights</code> and <code>planes</code> datasets.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>flights <span class="ot">&lt;-</span> <span class="fu">tbl</span>(con, <span class="st">"flights"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>planes <span class="ot">&lt;-</span> <span class="fu">tbl</span>(con, <span class="st">"planes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note that the results of <code>tbl()</code> are not quite the same as our normal data frames. Although they have class <code>tbl</code>, note that the number of rows is <code>NA</code>! The full dataset isn’t loaded into memory when we use <code>tbl</code>, so the number of rows is unknown. This behavior is purposeful–it reduces computer resources and allows access to parts of the data only when needed.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "tbl_duckdb_connection" "tbl_dbi"               "tbl_sql"              
+[4] "tbl_lazy"              "tbl"                  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(flights)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA 19</code></pre>
+</div>
+</div>
+<p><br><br><br></p>
+</section>
+<section id="warming-up-to-sql-with-dplyr" class="level1">
+<h1>Warming up to SQL with <code>dplyr</code></h1>
+<p>A really nice feature of <code>dbplyr</code> and <code>dplyr</code> is that we can write R code for wrangling the data and use <code>show_query()</code> to translate that code into SQL.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT *
+FROM flights</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">full_date =</span> <span class="fu">str_c</span>(year, month, day, <span class="at">sep =</span> <span class="st">"-"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT *, CONCAT_WS('-', "year", "month", "day") AS full_date
+FROM flights</code></pre>
+</div>
+</div>
+<p><strong>Group exercise:</strong> Using the code examples below, work with your group to create a <code>dplyr</code>&lt;-&gt;SQL translation guide (notes document) that allows you to answer the following:</p>
+<ul>
+<li>What do <code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>GROUP BY</code>, and <code>ORDER BY</code> in SQL do? (These uppercase words are called <strong>clauses</strong> in SQL.) How do these clauses translate to the main <code>tidyverse</code> verbs <code>select</code>, <code>mutate</code>, <code>filter</code>, <code>arrange</code>, <code>summarize</code>, <code>group_by</code>?</li>
+<li>What syntax differences are there for logical comparisons? (How do the <code>&amp;</code> and <code>|</code> logical operators in R compare to SQL?)</li>
+<li>How does the R syntax for <code>mutate</code> translate to SQL?</li>
+<li>How does joining datasets seem to work in SQL?</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(dest <span class="sc">==</span> <span class="st">"IAH"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(dep_delay) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT *
+FROM flights
+WHERE (dest = 'IAH')
+ORDER BY dep_delay</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(dest <span class="sc">==</span> <span class="st">"IAH"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(dep_delay) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT *
+FROM flights
+WHERE (dest = 'IAH')
+ORDER BY dep_delay
+LIMIT 10</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(dest <span class="sc">==</span> <span class="st">"IAH"</span> <span class="sc">&amp;</span> origin <span class="sc">==</span> <span class="st">"JFK"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(dep_delay) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT *
+FROM flights
+WHERE (dest = 'IAH' AND origin = 'JFK')
+ORDER BY dep_delay</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(dest <span class="sc">==</span> <span class="st">"IAH"</span> <span class="sc">|</span> origin <span class="sc">==</span> <span class="st">"JFK"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(year, month, day, <span class="fu">desc</span>(dep_delay)) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT *
+FROM flights
+WHERE (dest = 'IAH' OR origin = 'JFK')
+ORDER BY "year", "month", "day", dep_delay DESC</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(dest <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"IAH"</span>, <span class="st">"HOU"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT *
+FROM flights
+WHERE (dest IN ('IAH', 'HOU'))</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(dep_delay)) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT *
+FROM flights
+WHERE (NOT((dep_delay IS NULL)))</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(dest) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">dep_delay =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT dest, AVG(dep_delay) AS dep_delay
+FROM flights
+GROUP BY dest</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(origin, dest) <span class="sc">%&gt;%</span> </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">dep_delay =</span> <span class="fu">mean</span>(dep_delay, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by "origin". You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT origin, dest, AVG(dep_delay) AS dep_delay
+FROM flights
+GROUP BY origin, dest</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>planes <span class="sc">%&gt;%</span> </span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(tailnum, type, manufacturer, model, year) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT tailnum, "type", manufacturer, model, "year"
+FROM planes</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>planes <span class="sc">%&gt;%</span> </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(tailnum, type, manufacturer, model, year) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="at">year_built =</span> year) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT tailnum, "type", manufacturer, model, "year" AS year_built
+FROM planes</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>planes <span class="sc">%&gt;%</span> </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(tailnum, type, manufacturer, model, year) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">relocate</span>(manufacturer, model, <span class="at">.before =</span> type) <span class="sc">%&gt;%</span> </span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT tailnum, manufacturer, model, "type", "year"
+FROM planes</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">speed =</span> distance <span class="sc">/</span> (air_time <span class="sc">/</span> <span class="dv">60</span>)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT *, distance / (air_time / 60.0) AS speed
+FROM flights</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span> </span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">left_join</span>(planes, <span class="at">by =</span> <span class="st">"tailnum"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">show_query</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;SQL&gt;
+SELECT
+  flights."year" AS "year.x",
+  "month",
+  "day",
+  dep_time,
+  sched_dep_time,
+  dep_delay,
+  arr_time,
+  sched_arr_time,
+  arr_delay,
+  carrier,
+  flight,
+  flights.tailnum AS tailnum,
+  origin,
+  dest,
+  air_time,
+  distance,
+  "hour",
+  "minute",
+  time_hour,
+  planes."year" AS "year.y",
+  "type",
+  manufacturer,
+  model,
+  engines,
+  seats,
+  speed,
+  engine
+FROM flights
+LEFT JOIN planes
+  ON (flights.tailnum = planes.tailnum)</code></pre>
+</div>
+</div>
+<p><br><br><br></p>
+</section>
+<section id="sql-practice-stack-exchange-data-explorer" class="level1">
+<h1>SQL Practice: Stack Exchange Data Explorer</h1>
+<p>We will experiment with the <a href="https://data.stackexchange.com/">Stack Exchange Data Explorer</a>, a website that provides a SQL interface for all the data in StackExchange. StackExchange powers the StackOverflow programming question and answer site, but it also powers question and answer sites related to <a href="https://stackexchange.com/sites?view=grid">126 topics</a> including <a href="https://english.stackexchange.com/">English</a>, <a href="https://travel.stackexchange.com/">Travel</a>, <a href="https://bicycles.stackexchange.com/">Bicycles</a>, and <a href="https://parenting.stackexchange.com/">Parenting</a>.</p>
+<p>StackExchange provides an in-depth <a href="https://data.stackexchange.com/help">Data Explorer Tutorial</a>. We will use this interface to construct SQL queries on the <a href="https://data.stackexchange.com/travel/queries">Travel Data Explorer</a>.</p>
+<p>Head to the <a href="https://data.stackexchange.com/travel/queries">Stack Exchange Data Explorer for Travel</a>. You will see a list of queries other users have created in the past. These queries are for all Stack Exchange sites, so some may not be relevant. Queries about <em>your</em> activity (for example, “How many upvotes do I have for each tag?”) will not be useful either if you do not have activity for the particular site.</p>
+<p>Click on one of them and you see the SQL code for the query. Then click the “Run Query” button to get results. For example, you might look at the number of <a href="https://data.stackexchange.com/travel/query/1718/up-vs-down-votes-by-day-of-week-of-question-or-answer">up vs down votes for questions and answers by weekday</a> and notice that for questions, Tuesday has the highest up vs.&nbsp;down vote ratio and Saturday has the lowest. You can contemplate hypotheses for this difference!</p>
+<section id="select-queries" class="level2">
+<h2 class="anchored" data-anchor-id="select-queries">Select Queries</h2>
+<p>Let’s experiment with our own queries. Click on “Compose Query” in the upper right, and notice the tables are shown in the right. As a reminder, a table is similar to a data frame. Each table lists the columns stored within the table and the data types for the columns. Look through the tables for Posts, Users, and Comments. Do the columns generally make sense, and correspond to the StackOverflow website? There’s a <a href="https://meta.stackexchange.com/a/2678">description of the tables and columns</a> (called a schema) available on StackExchange’s Meta Q&amp;A Site.</p>
+<p>Now enter your first query in the text box and click the “Run Query” button:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> TOP(<span class="dv">100</span>) <span class="kw">Id</span>, Title, Score, <span class="kw">Body</span>, Tags</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Posts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In this query we already see several important features of SQL:</p>
+<ul>
+<li><code>SELECT</code> tells SQL that a query is coming.</li>
+<li><code>TOP(100)</code> only returns the first 100 rows.
+<ul>
+<li>Note: The StackExchange data explorer uses a variant of SQL called <a href="https://en.wikipedia.org/wiki/Transact-SQL">Transact SQL</a> that is supported by Microsoft databases. <code>TOP(100)</code> is a non-standard SQL feature supported by T-SQL. For most databases you would accomplish the same goal by adding <code>LIMIT 100</code> to the end of the query.</li>
+</ul></li>
+<li><code>Id, Title, Score, Body, Tags</code> determines what columns are included in the result</li>
+<li><code>FROM Posts</code> determines the source dataset.</li>
+</ul>
+<p>From glancing at the results, it appears that this table contains both questions and answers. Let’s try to focus on answers. Looking again at the <a href="https://meta.stackexchange.com/a/2678">Schema Description</a>, notice that there is a <code>PostTypeId</code> column in <code>Posts</code>, and a value of <code>1</code> corresponds to questions. Let’s update our query to only include questions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> TOP(<span class="dv">100</span>)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="kw">Id</span>, Title, Score, <span class="kw">Body</span>, Tags</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Posts</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> PostTypeId <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The SQL command <code>WHERE</code> is like the <code>filter</code> command we have been using in <code>dplyr</code>.</p>
+<ul>
+<li>Note that whereas we used the double equals <code>==</code> for comparison in <code>R</code>, the SQL <code>WHERE</code> command takes just a single <code>=</code>.</li>
+</ul>
+<p><strong>Exercise:</strong> Find the title and score of Posts that have a score of at least 110. <em>Hint: TOP is not necessary here because you want all result rows.</em></p>
+<blockquote class="blockquote">
+<p>ANSWER:</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Exercise:</strong> Find posts whose title contains some place you are interested in (you pick!). <em>Hint: use SQL’s <a href="http://www.sqltutorial.org/sql-like/">LIKE operator</a>.</em></p>
+<blockquote class="blockquote">
+<p>ANSWER:</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note that you can look up the actual webpage for any question using its <code>Id</code>. For example, if the <code>Id</code> is 19591, the webpage <a href="https://en.wikipedia.org/wiki/URL">URL</a> would be https://travel.stackexchange.com/questions/19591/. Look up a few of the questions by their <code>Id</code>.</p>
+<p>It’s unclear how the 100 questions we saw were selected from among the over 43,000 total questions.</p>
+<ul>
+<li>To count the number of posts, we can use <code>COUNT</code> in SQL: <code>SELECT COUNT(Id) FROM Posts Where PostTypeId = 1</code>.</li>
+</ul>
+<p>Let’s try to arrange the Posts by score. The following query surfaces the top scoring question: <a href="https://travel.stackexchange.com/questions/3080/ok-were-all-adults-here-so-really-how-on-earth-should-i-use-a-squat-toilet">OK we’re all adults here, so really, how on earth should I use a squat toilet?</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> TOP(<span class="dv">100</span>)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="kw">Id</span>, Title, Score, <span class="kw">Body</span>, Tags</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Posts</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> PostTypeId <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Score <span class="kw">DESC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>ORDER BY ??? DESC</code> syntax is similar to R’s <code>arrange()</code>. You can leave off the <code>DESC</code> if you want the results ordered smallest to largest.</p>
+<p>We could also find the <a href="https://travel.stackexchange.com/questions/tagged/italy">highest rated questions tagged “italy”</a> (the top question is <a href="https://travel.stackexchange.com/questions/tagged/italy">Does Venice Smell?</a>):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> TOP(<span class="dv">100</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="kw">Id</span>, Title, Score, <span class="kw">Body</span>, Tags</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Posts</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> PostTypeId <span class="op">=</span> <span class="dv">1</span> <span class="kw">AND</span> Tags <span class="kw">LIKE</span> <span class="st">'%italy%'</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Score <span class="kw">DESC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Exercise:</strong> Pick two tags that interest you and you think will occur together and find the top voted posts that contain both.</p>
+<blockquote class="blockquote">
+<p>ANSWER:</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sql-summarization" class="level2">
+<h2 class="anchored" data-anchor-id="sql-summarization">SQL Summarization</h2>
+<p>So far, we have covered the equivalent of R’s selecting, filtering, and arranging. Let’s take a look at grouping and summarizing now, which has similar structures in both <code>R</code> and SQL. Imagine we want to see how many posts of each type there are. This query shows us that there are 44K questions and 71K answers.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>PostTypeId, <span class="fu">COUNT</span>(<span class="kw">Id</span>) numPosts</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> posts</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> PostTypeId </span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> PostTypeId</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note two characteristics of SQL summarization here:</p>
+<ul>
+<li>The <code>GROUP BY</code>clause indicates the table column for grouping, much like R’s <code>group_by</code>.</li>
+<li>There is no explicit <code>summarize</code>. Instead, all columns that appear in the SELECT except for those listed in <code>GROUP BY</code> must make use of an aggregate function. <code>COUNT(*)</code> is one of these, and is the equivalent of R’s <code>n()</code>. Many other <a href="https://docs.microsoft.com/en-us/sql/t-sql/functions/aggregate-functions-transact-sql">aggregate functions</a> exist, including <code>MAX</code>, <code>SUM</code>, <code>AVG</code>, and many others. Every aggregate function requires a column as an argument (even <code>COUNT()</code> which doesn’t logically need one).</li>
+<li>The aggregate column (in this case <code>COUNT(Id)</code>) must immediately be followed by a name that will be used for it in the results (in this case <code>numPosts</code>). This can be particularly useful if you want to order by the aggregated value.</li>
+</ul>
+<p><strong>Exercise:</strong> Change the previous query so it orders the result rows by the number of posts of that type. <em>Hint: Reuse the name you assigned to the aggregate function.</em></p>
+<blockquote class="blockquote">
+<p>ANSWER:</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Exercise:</strong> Find the most commonly used tagsets (sets/combinations of tags) applied to posts. Note that this is not asking you to count the most common individual tags — this would be more complex because multiple tags are squashed into the Tags field.</p>
+<blockquote class="blockquote">
+<p>ANSWER:</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sql-joins" class="level2">
+<h2 class="anchored" data-anchor-id="sql-joins">SQL Joins</h2>
+<p>Finally, as with <code>R</code>, we often want to join data from two or more tables. The types of joins in SQL are the same as we saw with R (inner, outer, left, right). Most commonly we want to perform an INNER join, which is the default if you just say <code>JOIN</code>. (We can look up the <code>inner_join()</code> documentation to remind ourselves what an inner join does.)</p>
+<p>Let’s say we wanted to enhance the earlier query to find the highest scoring answers with some information about each user.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> TOP(<span class="dv">100</span>)</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>Title, Score, DisplayName, Reputation</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> posts p</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> users u</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> p.OwnerUserId <span class="op">=</span> u.<span class="kw">Id</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> PostTypeId <span class="op">=</span><span class="dv">1</span></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Score <span class="kw">Desc</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We see a few notable items here:</p>
+<ul>
+<li>The <code>JOIN</code> keyword must go in between the two tables we want to join.</li>
+<li>Each table must be named. In this case we named posts <code>p</code> and users <code>u</code>.</li>
+<li>We need to specify the relationship that joins the two tables. In this case, a posts <code>OwnerUserId</code> column refers to the <code>Id</code> column in the users table.</li>
+</ul>
+<p><strong>Exercise:</strong> Create a query similar to the one above that identifies the authors of the top rated comments instead of posts.</p>
+<blockquote class="blockquote">
+<p>ANSWER:</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="additional-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="additional-exercises">Additional Exercises</h2>
+<p>The first few exercises will ask you to analyze <a href="https://stackoverflow.com/help/badges">Stack Exchange badges</a>. Start at https://data.stackexchange.com/stackoverflow/query/new. For each exercise, <strong>record the query you used</strong>.</p>
+<p><strong>Exercise:</strong> Count the number of total badges that have been given out. Hint: count the number of rows in the relevant table.</p>
+<blockquote class="blockquote">
+<p>ANSWER:</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Exercise:</strong> Find how many times each badge has been awarded, sorted from most awarded to least awarded.</p>
+<blockquote class="blockquote">
+<p>ANSWER:</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Exercise:</strong> Find a badge that looks interesting to you. Find all the user <strong>DisplayNames</strong> that have received the badge, along with the date at which they received it.</p>
+<blockquote class="blockquote">
+<p>ANSWER:</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Exercise:</strong> Show the users who have received the most badges, along with how many they have received.</p>
+<blockquote class="blockquote">
+<p>ANSWER:</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The next few activities analyze user activity. These activities mimic the common workflow of creating datasets in SQL that you analyze in <code>R</code>.</p>
+<p><strong>Exercise:</strong> Export a CSV file containing information about each user: <code>DisplayName, Id, Reputation, and CreationDate</code>. Name your file <code>users.csv</code></p>
+<blockquote class="blockquote">
+<p>ANSWER:</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Exercise:</strong> Make a table that has each user’s total number of posts and total number of upvotes, and export this file as a CSV named <code>posts.csv</code>. <em>Hint: Start with the posts table, join information from users, and perform some grouped summaries.</em></p>
+<blockquote class="blockquote">
+<p>ANSWER:</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Exercise:</strong> Calculate the number of comments per user, and the total number of upvotes across all comments per user (this is the sum of the <code>Score</code> variable under the Comments table) and export this as a CSV file named <code>comments.csv</code>.</p>
+<blockquote class="blockquote">
+<p>ANSWER:</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Exercise:</strong> Import these three datasets into <code>R</code>. Visualize the relationship between the three datasets. Include at least one visualization comparing each of:</p>
+<ol type="a">
+<li>information from the user CSV and the post CSV, and</li>
+<li>information from the user CSV and comment CSV</li>
+</ol>
+<p>Your goal should be to eave together your visualizations and exposition to tell a compelling story.</p>
+<blockquote class="blockquote">
+<p>ANSWER:</p>
+</blockquote>
+<p><br><br><br></p>
+</section>
+</section>
+<section id="reflection" class="level1">
+<h1>Reflection</h1>
+<p>Write a few sentences in your Process and Reflection Log about how learning SQL went today. Think about the way you organized your “translation” notes in the first part of today’s activity. Were these notes setup in a way that made it easier to write the SQL queries in the Stack Exchange exercises? How might you like to improve the organization of these notes to be a better reference for you?</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Leslie Myint, 2023<br> All content licensed under <img src="https://static.thenounproject.com/png/70967-200.png" height="20"> (<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>)</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">Site built with <a href="https://quarto.org/">Quarto</a></div>
+  </div>
+</footer>
+
+
+
+</body></html>

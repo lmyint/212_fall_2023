@@ -1,5 +1,0 @@
----
-title: "Activities"
----
-
-In-class activities
