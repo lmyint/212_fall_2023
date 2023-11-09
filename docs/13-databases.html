@@ -237,6 +237,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./homework6.html" rel="" target="">
  <span class="dropdown-text">Homework 6</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./homework7.html" rel="" target="">
+ <span class="dropdown-text">Homework 7</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -275,6 +279,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#additional-exercises" id="toc-additional-exercises" class="nav-link" data-scroll-target="#additional-exercises">Additional Exercises</a></li>
   </ul></li>
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
+  <li><a href="#sql-practice-murder-mystery" id="toc-sql-practice-murder-mystery" class="nav-link" data-scroll-target="#sql-practice-murder-mystery">SQL Practice: Murder Mystery</a></li>
+  <li><a href="#exploring-cloud-dbmss" id="toc-exploring-cloud-dbmss" class="nav-link" data-scroll-target="#exploring-cloud-dbmss">Exploring cloud DBMS’s</a></li>
   </ul>
 </nav>
     </div>
@@ -625,19 +631,27 @@ LEFT JOIN planes
 <li>Note that whereas we used the double equals <code>==</code> for comparison in <code>R</code>, the SQL <code>WHERE</code> command takes just a single <code>=</code>.</li>
 </ul>
 <p><strong>Exercise:</strong> Find the title and score of Posts that have a score of at least 110. <em>Hint: TOP is not necessary here because you want all result rows.</em></p>
-<blockquote class="blockquote">
-<p>ANSWER:</p>
-</blockquote>
+<details>
+<summary>
+Solution
+</summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Title, Score</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Posts</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> PostTypeId <span class="op">=</span> <span class="dv">1</span> <span class="kw">AND</span> Score <span class="op">&gt;=</span> <span class="dv">110</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</details>
 <p><strong>Exercise:</strong> Find posts whose title contains some place you are interested in (you pick!). <em>Hint: use SQL’s <a href="http://www.sqltutorial.org/sql-like/">LIKE operator</a>.</em></p>
-<blockquote class="blockquote">
-<p>ANSWER:</p>
-</blockquote>
+<details>
+<summary>
+Solution
+</summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Title, Score</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Posts</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> PostTypeId <span class="op">=</span> <span class="dv">1</span> <span class="kw">AND</span> Title <span class="kw">LIKE</span> <span class="st">'%Paris%'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</details>
 <p>Note that you can look up the actual webpage for any question using its <code>Id</code>. For example, if the <code>Id</code> is 19591, the webpage <a href="https://en.wikipedia.org/wiki/URL">URL</a> would be https://travel.stackexchange.com/questions/19591/. Look up a few of the questions by their <code>Id</code>.</p>
 <p>It’s unclear how the 100 questions we saw were selected from among the over 43,000 total questions.</p>
 <ul>
@@ -661,12 +675,16 @@ LEFT JOIN planes
 <span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Score <span class="kw">DESC</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Exercise:</strong> Pick two tags that interest you and you think will occur together and find the top voted posts that contain both.</p>
-<blockquote class="blockquote">
-<p>ANSWER:</p>
-</blockquote>
+<details>
+<summary>
+Solution
+</summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Title, Score, Tags</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Posts</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> PostTypeId <span class="op">=</span> <span class="dv">1</span> <span class="kw">AND</span> Tags <span class="kw">LIKE</span> <span class="st">'%paris%'</span> <span class="kw">AND</span> Tags <span class="kw">LIKE</span> <span class="st">'%france%'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</details>
 </section>
 <section id="sql-summarization" class="level2">
 <h2 class="anchored" data-anchor-id="sql-summarization">SQL Summarization</h2>
@@ -685,19 +703,31 @@ LEFT JOIN planes
 <li>The aggregate column (in this case <code>COUNT(Id)</code>) must immediately be followed by a name that will be used for it in the results (in this case <code>numPosts</code>). This can be particularly useful if you want to order by the aggregated value.</li>
 </ul>
 <p><strong>Exercise:</strong> Change the previous query so it orders the result rows by the number of posts of that type. <em>Hint: Reuse the name you assigned to the aggregate function.</em></p>
-<blockquote class="blockquote">
-<p>ANSWER:</p>
-</blockquote>
+<details>
+<summary>
+Solution
+</summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>PostTypeId, <span class="fu">COUNT</span>(<span class="kw">Id</span>) numPosts</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> posts</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> PostTypeId </span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> numPosts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</details>
 <p><strong>Exercise:</strong> Find the most commonly used tagsets (sets/combinations of tags) applied to posts. Note that this is not asking you to count the most common individual tags — this would be more complex because multiple tags are squashed into the Tags field.</p>
-<blockquote class="blockquote">
-<p>ANSWER:</p>
-</blockquote>
+<details>
+<summary>
+Solution
+</summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>Tags, <span class="fu">COUNT</span>(Tags) numTagsets</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> posts</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> Tags</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> numTagsets</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</details>
 </section>
 <section id="sql-joins" class="level2">
 <h2 class="anchored" data-anchor-id="sql-joins">SQL Joins</h2>
@@ -706,10 +736,10 @@ LEFT JOIN planes
 <div class="cell">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> TOP(<span class="dv">100</span>)</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>Title, Score, DisplayName, Reputation</span>
-<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> posts p</span>
-<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> users u</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Posts p</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> Users u</span>
 <span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> p.OwnerUserId <span class="op">=</span> u.<span class="kw">Id</span></span>
-<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> PostTypeId <span class="op">=</span><span class="dv">1</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> PostTypeId <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Score <span class="kw">Desc</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We see a few notable items here:</p>
@@ -719,12 +749,19 @@ LEFT JOIN planes
 <li>We need to specify the relationship that joins the two tables. In this case, a posts <code>OwnerUserId</code> column refers to the <code>Id</code> column in the users table.</li>
 </ul>
 <p><strong>Exercise:</strong> Create a query similar to the one above that identifies the authors of the top rated comments instead of posts.</p>
-<blockquote class="blockquote">
-<p>ANSWER:</p>
-</blockquote>
+<details>
+<summary>
+Solution
+</summary>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> TOP(<span class="dv">100</span>)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>Text, Score, DisplayName, Reputation, AboutMe, Views, UpVotes, DownVotes</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Comments c</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> Users u</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> c.UserId <span class="op">=</span> u.<span class="kw">Id</span></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Score <span class="kw">Desc</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</details>
 </section>
 <section id="additional-exercises" class="level2">
 <h2 class="anchored" data-anchor-id="additional-exercises">Additional Exercises</h2>
@@ -758,7 +795,7 @@ LEFT JOIN planes
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The next few activities analyze user activity. These activities mimic the common workflow of creating datasets in SQL that you analyze in <code>R</code>.</p>
-<p><strong>Exercise:</strong> Export a CSV file containing information about each user: <code>DisplayName, Id, Reputation, and CreationDate</code>. Name your file <code>users.csv</code></p>
+<p><strong>Exercise:</strong> Export a CSV file containing information about each user: <code>DisplayName, Id, Reputation, and CreationDate</code>. Name your file <code>users.csv</code>.</p>
 <blockquote class="blockquote">
 <p>ANSWER:</p>
 </blockquote>
@@ -794,6 +831,41 @@ LEFT JOIN planes
 <section id="reflection" class="level1">
 <h1>Reflection</h1>
 <p>Write a few sentences in your Process and Reflection Log about how learning SQL went today. Think about the way you organized your “translation” notes in the first part of today’s activity. Were these notes setup in a way that made it easier to write the SQL queries in the Stack Exchange exercises? How might you like to improve the organization of these notes to be a better reference for you?</p>
+<p><br><br><br></p>
+</section>
+<section id="sql-practice-murder-mystery" class="level1">
+<h1>SQL Practice: Murder Mystery</h1>
+<p>The <a href="https://mystery.knightlab.com/walkthrough.html">SQL Murder Mystery</a> is a game-based way to learn and practice SQL. The activity starts with a discussion of relational databases and SQL, and it ends with the application of those concepts to solve a murder mystery!</p>
+<p>As you work through the mystery, record the SQL queries you use.</p>
+<p>Put your response for the name of the killer below:</p>
+<blockquote class="blockquote">
+<p>🔎 The killer is INSERT NAME HERE!</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co">--Put your SQL queries here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br><br><br></p>
+</section>
+<section id="exploring-cloud-dbmss" class="level1">
+<h1>Exploring cloud DBMS’s</h1>
+<p><a href="https://aws.amazon.com/redshift/">Redshift</a> is Amazon’s cloud database management system (DBMS).</p>
+<ul>
+<li>To try out Redshift, you can sign up for a free <a href="https://aws.amazon.com/education/awseducate/">AWS Educate</a> account. Once your account is confirmed, you will have access to many tutorials about cloud computing.</li>
+<li>In the Getting Started section of your <a href="https://www.awseducate.com/student/s/">AWS Educate main page</a>, navigate to the <a href="https://awseducate.instructure.com/courses/912">Getting Started with Databases (Lab)</a> tutorial on the second page of tutorials.</li>
+<li>Various Redshift resources can be found <a href="https://aws.amazon.com/redshift/getting-started/">here</a>.</li>
+</ul>
+<p><br></p>
+<p><a href="https://cloud.google.com/bigquery/">BigQuery</a> is Google’s DBMS.</p>
+<ul>
+<li>BigQuery can be tried for free through <a href="https://cloud.google.com/blog/products/data-analytics/query-without-a-credit-card-introducing-bigquery-sandbox">Big Query sandbox</a>.</li>
+<li>On the <a href="https://cloud.google.com/bigquery/">main BigQuery page</a> you’ll see a big blue button that says “Try BigQuery free”.</li>
+<li>On the cloud welcome page under the Products section, you’ll see a button for “Analyze and manage data - BigQuery”.</li>
+<li>Accessing public data within BigQuery
+<ul>
+<li>In your “Welcome to BigQuery Studio!” window, you’ll see a “Try the Google Trends Demo Query” section.</li>
+<li>Click the “Open this query” blue button to get an example SQL statement for the Google Trends dataset. You’ll also see on the left panel a list of all public datasets available through BigQuery.</li>
+</ul></li>
+</ul>
 
 
 </section>

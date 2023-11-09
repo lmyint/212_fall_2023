@@ -226,21 +226,30 @@ The SQL command `WHERE` is like the `filter` command we have been using in `dply
 **Exercise:** Find the title and score of Posts that have a score of at least 110. *Hint: TOP is not necessary here because you want all result rows.*
 
 
-> ANSWER:
+<details>
+  <summary>Solution</summary>
 
 ```{sql eval=FALSE}
-
+SELECT Title, Score
+FROM Posts
+WHERE PostTypeId = 1 AND Score >= 110
 ```
+
+</details>
 
 
 **Exercise:** Find posts whose title contains some place you are interested in (you pick!). *Hint: use SQL's [LIKE operator](http://www.sqltutorial.org/sql-like/).*
 
-> ANSWER:
+<details>
+  <summary>Solution</summary>
 
 ```{sql eval=FALSE}
-
+SELECT Title, Score
+FROM Posts
+WHERE PostTypeId = 1 AND Title LIKE '%Paris%'
 ```
 
+</details>
 
 Note that you can look up the actual webpage for any question using its `Id`. For example, if the `Id` is 19591, the webpage [URL](https://en.wikipedia.org/wiki/URL) would be https://travel.stackexchange.com/questions/19591/. Look up a few of the questions by their `Id`. 
 
@@ -249,7 +258,6 @@ It's unclear how the 100 questions we saw were selected from among the over 43,0
 - To count the number of posts, we can use `COUNT` in SQL: `SELECT COUNT(Id) FROM Posts Where PostTypeId = 1`.
 
 Let's try to arrange the Posts by score. The following query surfaces the top scoring question: [OK we're all adults here, so really, how on earth should I use a squat toilet?](https://travel.stackexchange.com/questions/3080/ok-were-all-adults-here-so-really-how-on-earth-should-i-use-a-squat-toilet)
-
 
 ```{sql eval=FALSE}
 SELECT TOP(100)
@@ -273,11 +281,16 @@ ORDER BY Score DESC
 
 **Exercise:** Pick two tags that interest you and you think will occur together and find the top voted posts that contain both.
 
-> ANSWER:
+<details>
+  <summary>Solution</summary>
 
 ```{sql eval=FALSE}
-
+SELECT Title, Score, Tags
+FROM Posts
+WHERE PostTypeId = 1 AND Tags LIKE '%paris%' AND Tags LIKE '%france%'
 ```
+
+</details>
 
 
 
@@ -301,20 +314,34 @@ Note two characteristics of SQL summarization here:
 
 **Exercise:** Change the previous query so it orders the result rows by the number of posts of that type. *Hint: Reuse the name you assigned to the aggregate function.*
 
-> ANSWER:
+<details>
+  <summary>Solution</summary>
 
 ```{sql eval=FALSE}
-
+SELECT 
+PostTypeId, COUNT(Id) numPosts
+FROM posts
+GROUP BY PostTypeId 
+ORDER BY numPosts
 ```
+
+</details>
 
 
 **Exercise:** Find the most commonly used tagsets (sets/combinations of tags) applied to posts. Note that this is not asking you to count the most common individual tags --- this would be more complex because multiple tags are squashed into the Tags field.
 
-> ANSWER:
+<details>
+  <summary>Solution</summary>
 
 ```{sql eval=FALSE}
-
+SELECT
+Tags, COUNT(Tags) numTagsets
+FROM posts
+GROUP BY Tags
+ORDER BY numTagsets
 ```
+
+</details>
 
 
 
@@ -327,10 +354,10 @@ Let's say we wanted to enhance the earlier query to find the highest scoring ans
 ```{sql eval=FALSE}
 SELECT TOP(100)
 Title, Score, DisplayName, Reputation
-FROM posts p
-JOIN users u
+FROM Posts p
+JOIN Users u
 ON p.OwnerUserId = u.Id
-WHERE PostTypeId =1
+WHERE PostTypeId = 1
 ORDER BY Score Desc
 ```
 
@@ -342,12 +369,19 @@ We see a few notable items here:
 
 **Exercise:** Create a query similar to the one above that identifies the authors of the top rated comments instead of posts.
 
-> ANSWER:
+<details>
+  <summary>Solution</summary>
 
 ```{sql eval=FALSE}
-
+SELECT TOP(100)
+Text, Score, DisplayName, Reputation, AboutMe, Views, UpVotes, DownVotes
+FROM Comments c
+JOIN Users u
+ON c.UserId = u.Id
+ORDER BY Score Desc
 ```
 
+</details>
 
 ## Additional Exercises
 
@@ -392,7 +426,7 @@ The first few exercises will ask you to analyze [Stack Exchange badges](https://
 The next few activities analyze user activity. These activities mimic the common workflow of creating datasets in SQL that you analyze in `R`.
 
 
-**Exercise:** Export a CSV file containing information about each user: `DisplayName, Id, Reputation, and CreationDate`. Name your file `users.csv`
+**Exercise:** Export a CSV file containing information about each user: `DisplayName, Id, Reputation, and CreationDate`. Name your file `users.csv`.
 
 > ANSWER:
 
@@ -439,4 +473,47 @@ Your goal should be to eave together your visualizations and exposition to tell 
 # Reflection
 
 Write a few sentences in your Process and Reflection Log about how learning SQL went today. Think about the way you organized your "translation" notes in the first part of today's activity. Were these notes setup in a way that made it easier to write the SQL queries in the Stack Exchange exercises? How might you like to improve the organization of these notes to be a better reference for you?
+
+
+<br><br><br>
+
+
+# SQL Practice: Murder Mystery
+
+The [SQL Murder Mystery](https://mystery.knightlab.com/walkthrough.html) is a game-based way to learn and practice SQL. The activity starts with a discussion of relational databases and SQL, and it ends with the application of those concepts to solve a murder mystery!
+
+As you work through the mystery, record the SQL queries you use.
+
+Put your response for the name of the killer below:
+
+> 🔎 The killer is INSERT NAME HERE!
+
+```{sql, eval=FALSE}
+--Put your SQL queries here
+```
+
+
+
+<br><br><br>
+
+
+# Exploring cloud DBMS's
+
+[Redshift](https://aws.amazon.com/redshift/) is Amazon's cloud database management system (DBMS).
+
+- To try out Redshift, you can sign up for a free [AWS Educate](https://aws.amazon.com/education/awseducate/) account. Once your account is confirmed, you will have access to many tutorials about cloud computing.
+- In the Getting Started section of your [AWS Educate main page](https://www.awseducate.com/student/s/), navigate to the [Getting Started with Databases (Lab)](https://awseducate.instructure.com/courses/912) tutorial on the second page of tutorials.
+- Various Redshift resources can be found [here](https://aws.amazon.com/redshift/getting-started/).
+
+<br>
+
+[BigQuery](https://cloud.google.com/bigquery/) is Google's DBMS.
+
+- BigQuery can be tried for free through [Big Query sandbox](https://cloud.google.com/blog/products/data-analytics/query-without-a-credit-card-introducing-bigquery-sandbox).
+- On the [main BigQuery page](https://cloud.google.com/bigquery/) you'll see a big blue button that says "Try BigQuery free".
+- On the cloud welcome page under the Products section, you'll see a button for "Analyze and manage data - BigQuery".
+- Accessing public data within BigQuery
+    - In your "Welcome to BigQuery Studio!" window, you'll see a "Try the Google Trends Demo Query" section.
+    - Click the "Open this query" blue button to get an example SQL statement for the Google Trends dataset. You'll also see on the left panel a list of all public datasets available through BigQuery.
+
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT/COMP 212 - Homework 2</title>
+<title>STAT/COMP 212 - Homework 7</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -243,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 2</h1>
+<h1 class="title">Homework 7</h1>
 </div>
 
 
@@ -260,17 +294,22 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="required-parts" class="level1">
 <h1>Required parts</h1>
+<p>Due Wednesday, November 15 by midnight <a href="https://moodle.macalester.edu/mod/assign/view.php?id=48377">on Moodle</a>.</p>
 <ul>
-<li>Finish the Open-ended Exercise in our <a href="./03-adv-maps.html#open-ended-exercise-homework">Advanced Map Visualization</a> class activity.
-<ul>
-<li>Submission details: Click the “Render” button to create an HTML report from your Quarto file. Open the HTML in your web browser and save the webpage as a PDF (Ctrl-P/Command P, choose “Save as PDF” as the Destination). Submit this PDF on <a href="https://moodle.macalester.edu/mod/assign/view.php?id=37543">Moodle</a> AND the <code>.qmd</code> file by midnight on Wednesday, 9/20.</li>
-</ul></li>
-<li>Complete <a href="./project.html#milestone-1">Milestone 1</a> of the <a href="./project.html">course project</a>. (Brainstorming ideas and data sources). Put this information in a <code># Project</code> section that you add to the end of your <code>03-adv-maps.qmd</code>.</li>
+<li>Complete the <a href="./13-databases.html#additional-exercises">Additional Exercises</a> in the “SQL Practice: Stack Exchange Data Explorer” part of our <a href="./13-databases.html">databases+SQL activity</a>.</li>
+<li>Complete the “SQL Practice: Murder Mystery” section of our <a href="./13-databases.html">databases+SQL activity</a>.</li>
 </ul>
+<p>Update the header information in your <code>.qmd</code> to look like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Homework 7"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"YOUR NAME"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self-contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When you render this <code>.qmd</code>, this will create an HTML file in which images are embedded. Submit this HTML file on Moodle.</p>
 </section>
 <section id="optional" class="level1">
 <h1>Optional</h1>
-<p>Participate in the most recent <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-09-12/readme.md">Tidy Tuesday</a> challenge.</p>
+<p>Participate in the most recent <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-11-07/readme.md">Tidy Tuesday</a> challenge.</p>
 
 
 </section>

@@ -1,0 +1,28 @@
+---
+title: "Homework 7"
+sidebar: false
+---
+
+# Required parts
+
+Due Wednesday, November 15 by midnight [on Moodle](https://moodle.macalester.edu/mod/assign/view.php?id=48377).
+
+- Complete the [Additional Exercises](13-databases.qmd#additional-exercises) in the "SQL Practice: Stack Exchange Data Explorer" part of our [databases+SQL activity](13-databases.qmd).
+- Complete the "SQL Practice: Murder Mystery" section of our [databases+SQL activity](13-databases.qmd).
+
+Update the header information in your `.qmd` to look like this:
+
+```yaml
+title: "Homework 7"
+author: "YOUR NAME"
+format: 
+  html:
+    self-contained: true
+```
+
+When you render this `.qmd`, this will create an HTML file in which images are embedded. Submit this HTML file on Moodle.
+
+
+# Optional
+
+Participate in the most recent [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-11-07/readme.md) challenge.
