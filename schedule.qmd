@@ -170,7 +170,7 @@ Guiding questions for the readings are available at the bottom of this page.
       <b>11/2: Review and practice (Day 2)</b>
     </td>
     
-    <td class="topleft">Work on <a href="https://lmyint.github.io/212_fall_2023/12-practice-review.html">review activities</a> as part of <a href="https://lmyint.github.io/212_fall_2023/homework5.html">HW6</a>.</td>
+    <td class="topleft">Work on <a href="https://lmyint.github.io/212_fall_2023/12-practice-review.html">review activities</a> as part of <a href="https://lmyint.github.io/212_fall_2023/homework6.html">HW6</a>.</td>
   </tr>
   <!----------------------------------------------------------->
   
@@ -186,7 +186,7 @@ Guiding questions for the readings are available at the bottom of this page.
       <b>11/9: Data acquisition: databases (continued)</b>
     </td>
     
-    <td class="topleft"></td>
+    <td class="topleft">Work on <a href="https://lmyint.github.io/212_fall_2023/homework7.html">HW7</a>.</td>
   </tr>
   <!----------------------------------------------------------->
   
@@ -195,15 +195,15 @@ Guiding questions for the readings are available at the bottom of this page.
     <td class="topleft">11</td>
     <td class="topleft">
       <b>11/14: Missing data: wrangling and missingness mechanisms</b> <br>
-      Required reading before class: TBD
+      Required reading before class: Chapters 1, 2, and 3 in <a href="https://tmb.njtierney.com/">The Missing Book</a>
     </td>
     
     <td class="topleft">
       <b>11/16: Missing data: imputation</b> <br>
-      Required reading before class: TBD
+      Required reading before class: Chapters 11, 13, and 14 in <a href="https://tmb.njtierney.com/">The Missing Book</a>
     </td>
     
-    <td class="topleft"></td>
+    <td class="topleft">Turn in <a href="https://lmyint.github.io/212_fall_2023/homework7.html">HW7</a> on Wednesday 11/15.</td>
   </tr>
   <!----------------------------------------------------------->
   
