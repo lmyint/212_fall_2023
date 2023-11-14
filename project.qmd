@@ -42,6 +42,8 @@ Brainstorm 3 questions about your data context and sources that pique your curio
 
 Due date: Wednesday, 9/20 as part of HW2.
 
+
+
 ## Milestone 2
 
 - Form project teams.
@@ -49,6 +51,8 @@ Due date: Wednesday, 9/20 as part of HW2.
 - Each team member should create 1 "ugly" (not fully polished) visualization to demonstrate viability of the research questions. (Think of this as visualization "prototyping".)
 
 Due date: Wednesday, 10/11 as part of HW4. (You can submit early on 10/4 if you'd like.)
+
+
 
 ## Milestone 3
 
@@ -72,24 +76,33 @@ Perform the data acquisition, wrangling, visualization, and modeling needed to a
     - Based on the context you present, the instructor and your classmates will give feedback on any suggestions for ethical considerations in your analysis.
     - We will also give feedback on the clarity of your visualizations and your interpretations of them.
 
-## Milestone 4
 
-***(NOT FINALIZED YET)***
+
+## Milestone 4
 
 Adjust data sources and research questions as needed based on the results of explorations so far. Perform the data acquisition, wrangling, visualization, and modeling needed to address another one of your research questions.
 
-**Deliverable:** Project progress presentation #2--to be presented in class on Thursday 11/16.
+**Deliverable:** Project progress presentation #2 on **Tuesday, 11/21**. Instead of presenting to the class, you will present to 1-2 other groups for feedback.
 
-- **How long?** Prepare a 7 minute presentation.
+- **How long?** Prepare a 10 minute presentation. *Please practice and keep to this time limit to be mindful of the limited time we have together.*
 
 - **What should be in your presentation?**
-    - 
+    - You should tell a cohesive data story that:
+        - Clearly motivates why you have chosen to explore this topic and the particular questions that you investigated
+        - Clearly discusses what you found with attention to limitations and cautions arising from ethical considerations and data limitations
+        - Discusses what future work is planned in the remainder of the project
 
 - **Why am I asking you to do this?**
-    - 
+    - At this point in your project work, it's important to try to tie together all of your findings into a cohesive story. Presenting to your peers who are not familiar with your context is a great source of feedback in ensuring that your presentation is accessible to a general audience.
 
 - **What feedback will you receive?**
-    - 
+    - Your peers will give you feedback on the clarity and organization of your data story.
+        - Did the presenters provide enough context for the "why?" behind their topic?
+        - Is it clear what research questions/goals are being pursued?
+        - Were concerns regarding ethics and data limitations addressed well?
+        - Does the future work seem reasonable?
+
+
 
 ## Milestone 5
 

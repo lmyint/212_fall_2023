@@ -52,6 +52,7 @@ website:
         - 11-scraping.qmd
         - 12-practice-review.qmd
         - 13-databases.qmd
+        - 14-missing-data-1.qmd
 
     - id: homework
       title: "Homework"
@@ -65,6 +66,7 @@ website:
         - homework5.qmd
         - homework6.qmd
         - homework7.qmd
+        - reflection2.qmd
   
   page-footer:
     left: |

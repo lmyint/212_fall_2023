@@ -198,6 +198,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./13-databases.html" rel="" target="">
  <span class="dropdown-text">Data acquisition: Databases and SQL</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./14-missing-data-1.html" rel="" target="">
+ <span class="dropdown-text">Missing data (Part 1)</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -240,6 +244,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="./homework7.html" rel="" target="">
  <span class="dropdown-text">Homework 7</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./reflection2.html" rel="" target="">
+ <span class="dropdown-text">Reflection 2</span></a>
   </li>  
     </ul>
   </li>
@@ -756,13 +764,13 @@ Attaching package: 'jsonlite'</code></pre>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>gamergate_json<span class="sc">$</span>response<span class="sc">$</span>meta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$hits
-[1] 143
+[1] 144
 
 $offset
 [1] 0
 
 $time
-[1] 21</code></pre>
+[1] 20</code></pre>
 </div>
 </div>
 <p><strong>Exercise:</strong> In the <code>gamergate_json</code> object, retrieve the data associated with:</p>
@@ -782,15 +790,15 @@ Solution
 </div>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>gamergate_json<span class="sc">$</span>response<span class="sc">$</span>meta<span class="sc">$</span>hits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 143</code></pre>
+<pre><code>[1] 144</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>gamergate_json<span class="sc">$</span>response<span class="sc">$</span>docs<span class="sc">$</span>abstract</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Here’s what you need to know."                                                                                                                                                                                   
  [2] "Intel’s decision added to a controversy that has focused attention on the treatment of women in the games business and the power of online mobs."                                                                
  [3] "The atmosphere has become so toxic that critics and developers are urging big companies in the $70-billion-a-year video game industry to do more to stop it."                                                    
- [4] "The precursors to Gamergate were disinformation campaigns targeting women of color."                                                                                                                             
- [5] "How online mobs harassed the targets of Gamergate, Christine Blasey Ford and me."                                                                                                                                
+ [4] "How online mobs harassed the targets of Gamergate, Christine Blasey Ford and me."                                                                                                                                
+ [5] "The precursors to Gamergate were disinformation campaigns targeting women of color."                                                                                                                             
  [6] "The legacy of Gamergate."                                                                                                                                                                                        
  [7] "The powerful lesson of a 5-year-old harassment campaign: How to wage a post-truth information war."                                                                                                              
  [8] "If their bids at motherhood fail, they can then regrow their brains."                                                                                                                                            
@@ -802,8 +810,8 @@ Solution
 <pre><code> [1] "(Want to get this briefing by email? Here’s the sign-up.)"                                                                                                                                                                                                                                                                                
  [2] "For a little more than a month, a firestorm over sexism and journalistic ethics has roiled the video game community, culminating in an orchestrated campaign to pressure companies into pulling their advertisements from game sites. "                                                                                                   
  [3] "Anita Sarkeesian, a feminist cultural critic, has for months received death and rape threats from opponents of her recent work challenging the stereotypes of women in video games. Bomb threats for her public talks are now routine. One detractor created a game in which players can click their mouse to punch an image of her face."
- [4] "The precursors to Gamergate were disinformation campaigns targeting women of color."                                                                                                                                                                                                                                                      
- [5] "How online mobs harassed the targets of Gamergate, Christine Blasey Ford and me."                                                                                                                                                                                                                                                         
+ [4] "How online mobs harassed the targets of Gamergate, Christine Blasey Ford and me."                                                                                                                                                                                                                                                         
+ [5] "The precursors to Gamergate were disinformation campaigns targeting women of color."                                                                                                                                                                                                                                                      
  [6] "The legacy of Gamergate."                                                                                                                                                                                                                                                                                                                 
  [7] "The powerful lesson of a 5-year-old harassment campaign: How to wage a post-truth information war."                                                                                                                                                                                                                                       
  [8] "The Indian jumping ant, Harpegnathos saltator, has many talents. This inch-long arthropod, found in flood plains across India, has a four-inch vertical leap and the ability to take down prey nearly twice its size. If that wasn’t enough, these amazing ants can also adjust the size of their own brains."                            
@@ -817,8 +825,8 @@ Solution
 1                                                                                                                                                                                     Here’s what you need to know.
 2                                                                  Intel’s decision added to a controversy that has focused attention on the treatment of women in the games business and the power of online mobs.
 3                                                      The atmosphere has become so toxic that critics and developers are urging big companies in the $70-billion-a-year video game industry to do more to stop it.
-4                                                                                                                               The precursors to Gamergate were disinformation campaigns targeting women of color.
-5                                                                                                                                  How online mobs harassed the targets of Gamergate, Christine Blasey Ford and me.
+4                                                                                                                                  How online mobs harassed the targets of Gamergate, Christine Blasey Ford and me.
+5                                                                                                                               The precursors to Gamergate were disinformation campaigns targeting women of color.
 6                                                                                                                                                                                          The legacy of Gamergate.
 7                                                                                                                The powerful lesson of a 5-year-old harassment campaign: How to wage a post-truth information war.
 8                                                                                                                                              If their bids at motherhood fail, they can then regrow their brains.
@@ -828,8 +836,8 @@ Solution
 1                                                                                                                                                                                                                                                                                  (Want to get this briefing by email? Here’s the sign-up.)
 2                                                                                                     For a little more than a month, a firestorm over sexism and journalistic ethics has roiled the video game community, culminating in an orchestrated campaign to pressure companies into pulling their advertisements from game sites. 
 3  Anita Sarkeesian, a feminist cultural critic, has for months received death and rape threats from opponents of her recent work challenging the stereotypes of women in video games. Bomb threats for her public talks are now routine. One detractor created a game in which players can click their mouse to punch an image of her face.
-4                                                                                                                                                                                                                                                        The precursors to Gamergate were disinformation campaigns targeting women of color.
-5                                                                                                                                                                                                                                                           How online mobs harassed the targets of Gamergate, Christine Blasey Ford and me.
+4                                                                                                                                                                                                                                                           How online mobs harassed the targets of Gamergate, Christine Blasey Ford and me.
+5                                                                                                                                                                                                                                                        The precursors to Gamergate were disinformation campaigns targeting women of color.
 6                                                                                                                                                                                                                                                                                                                   The legacy of Gamergate.
 7                                                                                                                                                                                                                                         The powerful lesson of a 5-year-old harassment campaign: How to wage a post-truth information war.
 8                              The Indian jumping ant, Harpegnathos saltator, has many talents. This inch-long arthropod, found in flood plains across India, has a four-inch vertical leap and the ability to take down prey nearly twice its size. If that wasn’t enough, these amazing ants can also adjust the size of their own brains.
@@ -843,8 +851,8 @@ Solution
 1                                                                                                                                                                                     Here’s what you need to know.
 2                                                                  Intel’s decision added to a controversy that has focused attention on the treatment of women in the games business and the power of online mobs.
 3                                                      The atmosphere has become so toxic that critics and developers are urging big companies in the $70-billion-a-year video game industry to do more to stop it.
-4                                                                                                                               The precursors to Gamergate were disinformation campaigns targeting women of color.
-5                                                                                                                                  How online mobs harassed the targets of Gamergate, Christine Blasey Ford and me.
+4                                                                                                                                  How online mobs harassed the targets of Gamergate, Christine Blasey Ford and me.
+5                                                                                                                               The precursors to Gamergate were disinformation campaigns targeting women of color.
 6                                                                                                                                                                                          The legacy of Gamergate.
 7                                                                                                                The powerful lesson of a 5-year-old harassment campaign: How to wage a post-truth information war.
 8                                                                                                                                              If their bids at motherhood fail, they can then regrow their brains.
@@ -854,8 +862,8 @@ Solution
 1                                                                                                                                                                                                                                                                                  (Want to get this briefing by email? Here’s the sign-up.)
 2                                                                                                     For a little more than a month, a firestorm over sexism and journalistic ethics has roiled the video game community, culminating in an orchestrated campaign to pressure companies into pulling their advertisements from game sites. 
 3  Anita Sarkeesian, a feminist cultural critic, has for months received death and rape threats from opponents of her recent work challenging the stereotypes of women in video games. Bomb threats for her public talks are now routine. One detractor created a game in which players can click their mouse to punch an image of her face.
-4                                                                                                                                                                                                                                                        The precursors to Gamergate were disinformation campaigns targeting women of color.
-5                                                                                                                                                                                                                                                           How online mobs harassed the targets of Gamergate, Christine Blasey Ford and me.
+4                                                                                                                                                                                                                                                           How online mobs harassed the targets of Gamergate, Christine Blasey Ford and me.
+5                                                                                                                                                                                                                                                        The precursors to Gamergate were disinformation campaigns targeting women of color.
 6                                                                                                                                                                                                                                                                                                                   The legacy of Gamergate.
 7                                                                                                                                                                                                                                         The powerful lesson of a 5-year-old harassment campaign: How to wage a post-truth information war.
 8                              The Indian jumping ant, Harpegnathos saltator, has many talents. This inch-long arthropod, found in flood plains across India, has a four-inch vertical leap and the ability to take down prey nearly twice its size. If that wasn’t enough, these amazing ants can also adjust the size of their own brains.

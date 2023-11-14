@@ -148,7 +148,7 @@ Guiding questions for the readings are available at the bottom of this page.
     <td class="topleft">8</td>
     <td class="topleft">
       <b>10/24: Project feedback</b> <br>
-      <span class="project">Project progress presentation #1: Your team will present a 5-7 minute progress report and plan for next steps</span>
+      <span class="project">Project progress presentation #1 (Milestone 3): Your team will present a 5-7 minute progress report and plan for next steps</span>
     </td>
     
     <td class="topleft">
@@ -212,7 +212,7 @@ Guiding questions for the readings are available at the bottom of this page.
     <td class="topleft">12</td>
     <td class="topleft">
       <b>11/21: Project presentations</b> <br>
-      <span class="project">Project progress presentation #2: Your team will give a 10 minute presentation with intermediate results for 2 research questions.</span>
+      <span class="project">Project progress presentation #2 (Milestone 4): Your team will give a 10 minute presentation with intermediate results for 2 research questions.</span>
     </td>
     
     <td class="topleft">

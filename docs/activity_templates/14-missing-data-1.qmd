@@ -1,0 +1,185 @@
+---
+title: "Missing data (Part 1)"
+sidebar: false
+---
+
+```{r message=FALSE}
+library(tidyverse)
+library(naniar)
+```
+
+
+# Learning goals
+
+- Create tables and plots that explore the distribution of missing data across variables and cases
+- Create plots that explore missing data patterns in a way that guides construction of imputation models
+
+<br>
+
+You can download a template Quarto file to start from [here](activity_templates/14-missing-data-1.qmd). Save this template within the following directory structure:
+
+- `your_course_folder`
+    - `missing_data`
+        - `code`
+            - `14-missing-data-1.qmd`
+
+
+<br><br><br>
+
+
+# Introduction to missing data
+
+> Missing values are values that **should have been recorded but were not.**
+>
+> *[The Missing Book](https://tmb.njtierney.com/) (Chapter 1)*
+
+Context matters! If you're able to get insight into the data collection process, you might be able to fill in (**impute**) missing values. In the context below, we see that none of the `count` values are zero. This might lead us to ask the data collectors about their process, and we might learn that they left spreadsheet cells blank when the count was zero. Thus, we could impute zeros for the `NA` values.
+
+```{r echo=FALSE}
+tibble(count = c(NA, 10, 34, 17, NA, 20))
+```
+
+On the other hand, below we have zeroes along with `NA`'s, so the hypothesis of "`NA` means 0" is probably not correct. We would still want to ask the data collectors about their process.
+
+```{r echo=FALSE}
+tibble(count = c(NA, 10, 0, 17, NA, 0))
+```
+
+The visual inspection that we did with the `NA`'s above is one way to explore missing data. Exploring patterns in missing data is essential for better understanding our data as a whole and for guiding how we might **impute** that missing data.
+
+
+<br><br>
+
+
+# R objects that resemble `NA`
+
+In R, missing values are encoded with `NA`. There are special class-specific versions of `NA`:
+
+- `NA` for logical
+- `NA_character_` for characters
+- `NA_integer_` for integer values
+- `NA_real_` for doubles (numbers with decimal points)
+
+`NaN` (not a number) is a special value in R that results in these types of mathematical operations:
+
+```{r}
+sqrt(-1)
+log(-1)
+```
+
+Even though `NaN` isn't the same as `NA`, `NaN` is represented as a missing value in R. The `is.nan()` function can help you spot `NaN`'s versus `NA`'s.
+
+```{r}
+is.na(sqrt(-1))
+is.nan(sqrt(-1))
+
+is.nan(NA)
+```
+
+`Inf` (infinity) is also a special value in R:
+
+```{r}
+log(0)
+-log(0)
+```
+
+`NULL` represents an empty value:
+
+```{r}
+c(1, 5, NULL)
+c(1, 5, NA)
+
+is.null(NULL)
+is.null(NA)
+```
+
+When displaying data frames in an R notebook, the Console, or with `View()`, it is impossible to differentiate between `NA` and `"NA"` (actual missing value vs. a string). To check for this possibility, you'll want to use a combination of `is.na()` and `=="NA"`:
+
+```{r}
+x <- "NA"
+
+is.na(x)
+x=="NA"
+```
+
+
+<br><br>
+
+
+# Exploring missing data
+
+We'll look at the `airquality` dataset available in base R, which gives daily air quality measurements in New York in summer 1973. You can pull up the codebook with `?airquality` in the Console.
+
+```{r}
+data(airquality)
+```
+
+We can explore how much missing data there is for each variable with the following functions:
+
+```{r}
+vis_miss(airquality)
+gg_miss_var(airquality)
+miss_var_summary(airquality)
+```
+
+We can explore missingness by case with `miss_case_summary()`. For each case, this function calculates the number and percentage of variables with a missing value. If the `pct_miss` column is large for a case, we likely won't be able to impute its missing values because there just isn't enough known information.
+
+```{r}
+miss_case_summary(airquality)
+```
+
+A useful way to explore missing data is by creating TRUE/FALSE indicators of whether a variable is missing. In the plots below, we use `is.na(Ozone)` to explore whether cases with missing ozone values are noticeably different from cases with observed ozone values.
+
+```{r}
+ggplot(airquality, aes(x = is.na(Ozone), y = Solar.R)) + 
+    geom_boxplot()
+
+ggplot(airquality, aes(x = Solar.R, color = is.na(Ozone))) + 
+    geom_density()
+```
+
+The above boxplots and density plots suggest that days that are missing ozone levels don't have particularly different solar radiation levels than days that aren't missing ozone levels. We can see this in another way with the scatterplot below. The scatterplot helps us see the relationship between ozone and solar radiation, and overlaying the solar radiation values for the days missing ozone (in blue) helps us see that those missing cases are fairly evenly distributed across the horizontal range.
+
+```{r}
+ggplot(airquality, aes(x = Solar.R, y = Ozone, color = is.na(Ozone))) +
+    geom_point() +
+    geom_smooth() +
+    geom_point(data = airquality %>% filter(is.na(Ozone)), mapping = aes(x = Solar.R, y = 175))
+```
+
+What if the scatterplot instead looked like this? What concerns might arise from using the smooth red curve as a means for predicting (imputing) the missing values? Write a few sentences. Then discuss with your group mates.
+
+```{r echo=FALSE}
+ggplot(airquality, aes(x = Solar.R, y = Ozone, color = is.na(Ozone))) +
+    geom_point() +
+    geom_smooth() +
+    geom_point(data = airquality %>% filter(is.na(Ozone)), mapping = aes(x = 250+Solar.R/2, y = 175))
+```
+
+
+
+## Exercise
+
+In the air quality dataset, ozone has the most missing data. Do days with missing ozone tend to be in certain months? On certain days of the month? On days with certain temperatures or wind speeds? Does it look like a linear regression model (perhaps with variable transformations) could be effective in imputing the missing ozone data? Create plots to investigate the answers to these questions.
+
+
+## Pair programming exercise
+
+Whoever has most recently cooked a meal will drive first. Switch driver and navigator roles for the second part.
+
+1. Write the pseudocode for a function `impute_linmod()` that imputes missing data using linear regression. Try to be as detailed as you can with the pseudocode in anticipation of full implementation in the next part.
+    - Example usage: `impute_linmod(data = airquality, formula = Ozone ~ Wind+Temp)`
+
+2. Write the full code for the `impute_linmod()` function.
+    - An object that looks like `y ~ x1 + x2` is called a **formula object**.
+    - If `form` is a formula object, it can be used inside `lm()` like this: `lm(form, data = your_data)`.
+    - If `mod` is the result of calling `lm()`, you can get predictions from the model using `predict(mod, newdata = your_data)`.
+
+
+## Exercise
+
+Brainstorm some ways that you could evaluate the quality of the imputations using plots. Try making some of these plots to check your intuition.
+
+
+
+
