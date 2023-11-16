@@ -1,0 +1,30 @@
+---
+title: "Missing data (Part 2)"
+sidebar: false
+---
+
+```{r message=FALSE}
+library(tidyverse)
+library(missCompare)
+```
+
+# Learning goals
+
+- Explain the difference between MCAR, MAR, and MNAR missing data mechanisms and how the missing data mechanism affects the choice of imputation method
+- Use the `missCompare` package to identify the optimal imputation algorithm for a particular dataset
+
+
+<br><br><br>
+
+
+# `missCompare` package
+
+We'll be looking at the vignette (tutorial) in the `missCompare` package. To view the vignette, we can look at [the online version](https://cran.r-project.org/web/packages/missCompare/vignettes/misscompare.html) or install the `missCompare` package and view the vignette after installation:
+
+```{r eval=FALSE}
+install.packages("BiocManager")
+BiocManager::install("pcaMethods")
+install.packages(c("missCompare", "pcaMethods"))
+
+vignette("misscompare")
+```

@@ -158,6 +158,16 @@ ggplot(airquality, aes(x = Solar.R, y = Ozone, color = is.na(Ozone))) +
 
 In the air quality dataset, ozone has the most missing data. Do days with missing ozone tend to be in certain months? On certain days of the month? On days with certain temperatures or wind speeds? Does it look like a linear regression model (perhaps with variable transformations) could be effective in imputing the missing ozone data? Create plots to investigate the answers to these questions.
 
+<details>
+    <summary>Solution</summary>
+
+```{r}
+ggplot(airquality, aes(fill = factor(Month), x = is.na(Ozone))) +
+    geom_bar(position = "fill")
+```
+
+</details>
+
 
 ## Pair programming exercise
 
@@ -170,6 +180,28 @@ Whoever has most recently cooked a meal will drive first. Switch driver and navi
     - An object that looks like `y ~ x1 + x2` is called a **formula object**.
     - If `form` is a formula object, it can be used inside `lm()` like this: `lm(form, data = your_data)`.
     - If `mod` is the result of calling `lm()`, you can get predictions from the model using `predict(mod, newdata = your_data)`.
+    
+<details>
+    <summary>Solution</summary>
+
+```{r}
+impute_linmod <- function(data, formula) {
+    mod <- lm(formula, data = data)
+    pred <- predict(mod, newdata = data)
+    
+    formula_chr <- as.character(formula)
+    response_var <- formula_chr[2]
+    var_with_nas <- data[[response_var]]
+    imputed_var <- if_else(is.na(var_with_nas), pred, var_with_nas)
+    data[[response_var]] <- imputed_var
+    data
+}
+
+impute_linmod(data = airquality, formula = Ozone ~ Wind+Temp)
+```
+
+
+</details>
 
 
 ## Exercise

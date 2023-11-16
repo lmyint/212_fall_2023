@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STAT/COMP 212 - Homework 7</title>
+<title>STAT/COMP 212 - Missing data (Part 2)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -279,8 +279,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#required-parts" id="toc-required-parts" class="nav-link active" data-scroll-target="#required-parts">Required parts</a></li>
-  <li><a href="#optional" id="toc-optional" class="nav-link" data-scroll-target="#optional">Optional</a></li>
+  <li><a href="#learning-goals" id="toc-learning-goals" class="nav-link active" data-scroll-target="#learning-goals">Learning goals</a></li>
+  <li><a href="#misscompare-package" id="toc-misscompare-package" class="nav-link" data-scroll-target="#misscompare-package"><code>missCompare</code> package</a></li>
   </ul>
 </nav>
     </div>
@@ -289,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 7</h1>
+<h1 class="title">Missing data (Part 2)</h1>
 </div>
 
 
@@ -304,24 +304,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="required-parts" class="level1">
-<h1>Required parts</h1>
-<p>Due Wednesday, November 15 by midnight <a href="https://moodle.macalester.edu/mod/assign/view.php?id=48377">on Moodle</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(missCompare)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="learning-goals" class="level1">
+<h1>Learning goals</h1>
 <ul>
-<li>Complete the <a href="./13-databases.html#additional-exercises">Additional Exercises</a> in the “SQL Practice: Stack Exchange Data Explorer” part of our <a href="./13-databases.html">databases+SQL activity</a>.</li>
-<li>Complete the “SQL Practice: Murder Mystery” section of our <a href="./13-databases.html">databases+SQL activity</a>.</li>
+<li>Explain the difference between MCAR, MAR, and MNAR missing data mechanisms and how the missing data mechanism affects the choice of imputation method</li>
+<li>Use the <code>missCompare</code> package to identify the optimal imputation algorithm for a particular dataset</li>
 </ul>
-<p>Update the header information in your <code>.qmd</code> to look like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Homework 7"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"YOUR NAME"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">self-contained</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>When you render this <code>.qmd</code>, this will create an HTML file in which images are embedded. Submit this HTML file on Moodle.</p>
+<p><br><br><br></p>
 </section>
-<section id="optional" class="level1">
-<h1>Optional</h1>
-<p>Participate in the most recent <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-11-07/readme.md">Tidy Tuesday</a> challenge.</p>
+<section id="misscompare-package" class="level1">
+<h1><code>missCompare</code> package</h1>
+<p>We’ll be looking at the vignette (tutorial) in the <code>missCompare</code> package. To view the vignette, we can look at <a href="https://cran.r-project.org/web/packages/missCompare/vignettes/misscompare.html">the online version</a> or install the <code>missCompare</code> package and view the vignette after installation:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"BiocManager"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"pcaMethods"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"missCompare"</span>, <span class="st">"pcaMethods"</span>))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">vignette</span>(<span class="st">"misscompare"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 </section>

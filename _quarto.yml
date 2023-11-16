@@ -53,6 +53,7 @@ website:
         - 12-practice-review.qmd
         - 13-databases.qmd
         - 14-missing-data-1.qmd
+        - 15-missing-data-2.qmd
 
     - id: homework
       title: "Homework"
