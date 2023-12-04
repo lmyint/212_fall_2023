@@ -227,12 +227,40 @@ Guiding questions for the readings are available at the bottom of this page.
   <tr>
     <td class="topleft">13</td>
     <td class="topleft">
-      <b>11/28: Topics of your choosing from this point onwards (e.g., Python, GitHub, text analysis)</b>
+      <b>11/28: Project work time</b>
     </td>
     
     <td class="topleft">
-      <b>11/30: Topics of your choosing</b>
+      <b>11/30: Project work time</b>
     </td>
+    
+    <td class="topleft"></td>
+  </tr>
+  <!----------------------------------------------------------->
+  
+  
+  <tr>
+    <td class="topleft">14</td>
+    <td class="topleft">
+      <b>12/5: Project work time</b>
+    </td>
+    
+    <td class="topleft">
+      <b>12/7: Project work time</b>
+    </td>
+    
+    <td class="topleft"></td>
+  </tr>
+  <!----------------------------------------------------------->
+  
+  
+  <tr>
+    <td class="topleft">15</td>
+    <td class="topleft">
+      <b>12/12: Project presentations (last day of class)</b>
+    </td>
+    
+    <td class="topleft"></td>
     
     <td class="topleft"></td>
   </tr>

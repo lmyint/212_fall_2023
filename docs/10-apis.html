@@ -253,6 +253,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="dropdown-item" href="./reflection2.html" rel="" target="">
  <span class="dropdown-text">Reflection 2</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./reflection3.html" rel="" target="">
+ <span class="dropdown-text">Reflection 3</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -768,13 +772,13 @@ Attaching package: 'jsonlite'</code></pre>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>gamergate_json<span class="sc">$</span>response<span class="sc">$</span>meta</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$hits
-[1] 144
+[1] 145
 
 $offset
 [1] 0
 
 $time
-[1] 22</code></pre>
+[1] 44</code></pre>
 </div>
 </div>
 <p><strong>Exercise:</strong> In the <code>gamergate_json</code> object, retrieve the data associated with:</p>
@@ -794,7 +798,7 @@ Solution
 </div>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>gamergate_json<span class="sc">$</span>response<span class="sc">$</span>meta<span class="sc">$</span>hits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 144</code></pre>
+<pre><code>[1] 145</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>gamergate_json<span class="sc">$</span>response<span class="sc">$</span>docs<span class="sc">$</span>abstract</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
