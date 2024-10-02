@@ -3,7 +3,13 @@ title: "STAT/COMP 212: Intermediate Data Science (Fall 2023)"
 sidebar: false
 ---
 
-This is the course website for STAT/COMP 212: Intermediate Data Science at Macalester College for the Fall 2023 semester taught by Professor [Leslie Myint](https://www.lesliemyint.org). Materials were developed by Leslie Myint and multiple faculty members in the [Macalester MSCS department](https://www.macalester.edu/mscs/facultystaff/).
+This is the course website for STAT/COMP 212: Intermediate Data Science at Macalester College for the Fall 2023 semester taught by Professor [Leslie Myint](https://www.lesliemyint.org). 
+
+The activities here were developed by faculty in the [MSCS Department](https://macalester.edu/mscs) at [Macalester College](https://macalester.edu/). If you happen upon this manual and want to adapt the material to your own course, please properly attribute this work.
+
+Contributors: [Vittorio Addona](https://www.macalester.edu/~addona/), [Brianna Heggeseth](https://bcheggeseth.github.io/), [Alicia Johnson](https://ajohns24.github.io/), [Daniel Kaplan](https://dtkaplan.github.io/), [Lisa Lendway](https://www.linkedin.com/in/lisa-lendway-68a00b63/), [Leslie Myint](https://www.lesliemyint.org/), [Shilad Sen](https://www.shilad.com/), [David Shuman](http://faculty.olin.edu/dshuman/).
+
+
 
 # Drop-in (office) hours
 
